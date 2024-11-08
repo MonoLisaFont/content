@@ -1,6 +1,8 @@
 # GPT ideas below
 
-**Prompt:** I am looking to market my product called MonoLisa. It's a typeface meant for developers and you can learn more about it from https://monolisa.dev. We are looking to generate more awareness about MonoLisa, fonts, and typefaces in general and now I'm looking for specific topics to write about. Could you please generate twenty topics I could use for blogging?
+**Prompt:**
+
+I am looking to market my product called MonoLisa. It's a typeface meant for developers and you can learn more about it from https://monolisa.dev. We are looking to generate more awareness about MonoLisa, fonts, and typefaces in general and now I'm looking for specific topics to write about. Could you please generate twenty topics I could use for blogging?
 
 **Response:**
 
@@ -29,7 +31,9 @@ Here are twenty blog topic ideas that could engage your target audience and buil
 
 These topics can help showcase MonoLisa’s strengths, educate developers on font choice, and highlight the relevance of typography in coding.
 
-**Prompt:** These are great. Can you generate twenty more?
+**Prompt:**
+
+These are great. Can you generate twenty more?
 
 **Response:**
 
