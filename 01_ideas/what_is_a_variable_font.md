@@ -1,5 +1,5 @@
 ---
-title: "My awesome post about some font feature"
+title: "What is a variable font?"
 published: 2024-10-18
 updated: 2024-10-25
 keywords: ["typefaces"]

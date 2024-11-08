@@ -15,7 +15,7 @@ The posts should look like this:
 
 ```markdown
 ---
-title: My awesome post about some font feature
+title: "My awesome post about some font feature"
 published: 2024-10-18
 updated: 2024-10-25
 keywords: ["typefaces"]

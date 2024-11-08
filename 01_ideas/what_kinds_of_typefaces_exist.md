@@ -1,5 +1,5 @@
 ---
-title: "My awesome post about some font feature"
+title: "What kinds of typefaces exist?"
 published: 2024-10-18
 updated: 2024-10-25
 keywords: ["typefaces"]
