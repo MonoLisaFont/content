@@ -12,7 +12,7 @@ Brief introduction to the topic that pulls the reader in should go here. It shou
 
 This is where content should go.
 
-![This is some image caption](/images/demo.png)
+![This is some image caption](/images/webstorm.png)
 
 ## Second point
 
