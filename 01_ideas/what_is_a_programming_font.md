@@ -14,6 +14,8 @@ This is where content should go.
 
 ![This is some image caption](/images/demo.png)
 
+Added some point here.
+
 ## Second point
 
 More content goes here.
