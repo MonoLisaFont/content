@@ -3,21 +3,21 @@ title: "What are font ligatures?"
 published: 2024-10-18
 updated: 2024-10-25
 keywords: ["typefaces"]
-authors: ["Muster Mann"]
+authors: ["Marcus Sterz"]
 ---
 
-Brief introduction to the topic that pulls the reader in should go here. It should give a promise of what is to come and generate interest.
+A ligature is a combination of two or more glyphs. They form a new glyph which replaces the glyphs they are representing.
 
-## First point
+## Letter combinations
 
-This is where content should go.
+Common ligatures are `fi` and `ft` in text fonts. Other examples are the well known ampersand `&`, the european nordic letters `Æ`,`Œ` and the German letter `ß`. There are no limits to create new ligatures out of letters in the design process.
 
 ![This is some image caption](/images/demo.png)
 
-## Second point
+## Coding ligatures
 
-More content goes here.
+A popular trend are coding ligatures. While some do not appreciate them, they can make a code look more fluent and point out certain commands visually more elegant. Usually they are a combinations of mostly punctuation signs, ampersands, brackets and the like. To create these ligatures python scripting is necessary, since the ligatures need to keep the fixed width whilst displaying several symbols in a row.
 
 ## Conclusion
 
-This is the point where to recap the main point and potentially do a call to action and the a link follows this sentence as an example: [more information can be found at MonoLisa website](https://monolisa.dev).
+Coding ligatures are a fun and elegant way to visually structure your code. See what the ligatures look like in MonoLisa: [more information can be found at MonoLisa website](https://monolisa.dev).
