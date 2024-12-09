@@ -6,18 +6,18 @@ keywords: ["typefaces"]
 authors: ["Muster Mann"]
 ---
 
-Brief introduction to the topic that pulls the reader in should go here. It should give a promise of what is to come and generate interest.
+A brief introduction ot what kinds of typefaces exist.
 
-## First point
+## the common ones
 
-This is where content should go.
-
+There are various possibilities to categorize typefaces. One way is to differentiate between the tasks they are used for. Like ‘text’ (suitable for longer texts in books or magazines) or ‘display’ (used for headlines, posters, anything that needs to draw attention as quickly as possible). Others take their shapes into account, like ‘antiqua’, ‘slab serifs’ and ‘sans serif’ typefaces. The main distinction here would be if they have serifs or not and what they look like. Another method of differentiation is to determine if they are monospaced or proportional. 
 ![This is some image caption](/images/demo.png)
 
-## Second point
+## The oddballs
 
-More content goes here.
+There are also letter shapes that are less used nowadays like ‘blackletter’ or ‘gaelic’. Theoretically you could create a monospaced display font with gaelic letter shapes and slab serifs. Of course there are some typefaces that do not fall into any of these categories — often they are so unique that they don’t need one.
+These terms are quite usefull. Especially when you use two or three of them combined you can describe the overall character of a typeface pretty well.
 
-## Conclusion
+## Knowing now
 
-This is the point where to recap the main point and potentially do a call to action and the a link follows this sentence as an example: [more information can be found at MonoLisa website](https://monolisa.dev).
+So it is crystal clear: MonoLisa is a monospaced, sans serif text typeface – designed especially to make reading easier and faster. Find out more: [more information can be found at MonoLisa website](https://monolisa.dev).
