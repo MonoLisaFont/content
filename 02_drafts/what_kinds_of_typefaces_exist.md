@@ -8,9 +8,11 @@ authors: ["Muster Mann"]
 
 A brief introduction ot what kinds of typefaces exist.
 
+TODO: I would pull tons of different examples to this post as images to build up typeface categories
+
 ## the common ones
 
-There are various possibilities to categorize typefaces. One way is to differentiate between the tasks they are used for. Like ‘text’ (suitable for longer texts in books or magazines) or ‘display’ (used for headlines, posters, anything that needs to draw attention as quickly as possible). Others take their shapes into account, like ‘antiqua’, ‘slab serifs’ and ‘sans serif’ typefaces. The main distinction here would be if they have serifs or not and what they look like. Another method of differentiation is to determine if they are monospaced or proportional. 
+There are various possibilities to categorize typefaces. One way is to differentiate between the tasks they are used for. Like ‘text’ (suitable for longer texts in books or magazines) or ‘display’ (used for headlines, posters, anything that needs to draw attention as quickly as possible). Others take their shapes into account, like ‘antiqua’, ‘slab serifs’ and ‘sans serif’ typefaces. The main distinction here would be if they have serifs or not and what they look like. Another method of differentiation is to determine if they are monospaced or proportional.
 ![This is some image caption](/images/demo.png)
 
 ## The oddballs
