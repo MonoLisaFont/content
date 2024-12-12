@@ -3,7 +3,7 @@ title: "What kinds of typefaces exist?"
 published: 2024-10-18
 updated: 2024-10-25
 keywords: ["typefaces"]
-authors: ["Muster Mann"]
+authors: ["Marcus Sterz"]
 ---
 
 A brief introduction ot what kinds of typefaces exist.
