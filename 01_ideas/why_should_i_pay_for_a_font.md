@@ -22,7 +22,7 @@ To create a typeface without a client is always a lottery. Often it pays off in 
 
 We do not consider it a by-product we could just give away. Since 2020 we meet online every two weeks to discuss how to tackle issues you brought up in our feedback channel or how we proceed to better the typeface and the website in general. 
 
-Some people ask why MonoLisa is so expensive. Well, it’s actually not. Looking at prices for font families (i.e. at Myfonts) that are as well-built as MonoLisa you will find our offer is wthin this price range (and we are offering fast support and updates). Also as a professional you can deduct the costs from your tax burden. ((((((it that the case in the US?))))) 
+Some people ask why MonoLisa is so expensive. Well, it’s actually not. Looking at prices for font families (i.e. at Myfonts) that are as well-built as MonoLisa you will find our offer is within this price range (and we are offering fast support and updates). Also as a professional you can deduct the costs from your tax burden. ((((((it that the case in the US?))))) 
 
 ## Conclusion
 
