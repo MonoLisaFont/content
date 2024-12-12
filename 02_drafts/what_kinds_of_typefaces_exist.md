@@ -6,7 +6,7 @@ keywords: ["typefaces"]
 authors: ["Marcus Sterz"]
 ---
 
-A brief introduction ot what kinds of typefaces exist.
+A brief introduction of what kinds of typefaces exist.
 
 TODO: I would pull tons of different examples to this post as images to build up typeface categories
 
