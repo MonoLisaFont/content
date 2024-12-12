@@ -12,7 +12,7 @@ Sometimes we are confronted with the question ‘Why should I pay for a font whe
 
 ## Why are some typefaces not free of charge? They are just digital after all and could be copied endlessly...
 
-A good typeface is a well made product and it takes time, energy and knowledge to build and maintain it. Compare it to a book, a car, a delicious dish in a restaurant – you would not expect to get it for free. All the products you can think of are made by people like yourself and - after all – money does’t grow on trees. Some companies like Google can afford to offer free products and services (because they make their money by showing you ads). Some free typefaces are fun or side projects or a way to attract customers to the main product. XXXXXXXX THis needs more content from Andrey or Juho maybe????? XXXXXXXXXXXXXXX
+A good typeface is a well made product and it takes time, energy and knowledge to build and maintain it. Compare it to a book, a car, a delicious dish in a restaurant – you would not expect to get it for free. All the products you can think of are made by people like yourself and - after all – money does’t grow on trees. Some companies like Google can afford to offer free products and services (because they make their money by showing you ads). Some free typefaces are fun or side projects or a bait to attract customers to the main product. XXXXXXXX THis needs more content from Andrey or Juho maybe????? XXXXXXXXXXXXXXX
 
 ![This is some image caption](/images/demo.png)
 
