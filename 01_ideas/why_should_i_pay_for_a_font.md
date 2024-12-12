@@ -3,7 +3,7 @@ title: "Why should I pay for a typeface?"
 published: 2024-10-18
 updated: 2024-10-25
 keywords: ["typefaces"]
-authors: ["Muster Mann"]
+authors: ["Marcus Sterz"]
 ---
 
 Sometimes we are confronted with the question ‘Why should I pay for a font when there are free ones out there?’.
