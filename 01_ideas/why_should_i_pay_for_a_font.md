@@ -6,17 +6,18 @@ keywords: ["typefaces"]
 authors: ["Muster Mann"]
 ---
 
-Brief introduction to the topic that pulls the reader in should go here. It should give a promise of what is to come and generate interest.
+Sometimes we are confronted with the question ‘Why should I pay for a font when there are free ones out there?’.
 
-## First point
+## Why is MonoLisa not free of charge?
 
-This is where content should go.
+It is a well made product and it takes time, energy and knowledge to build it. We are 
+To make this effort sustainable for the makers, mone
 
 ![This is some image caption](/images/demo.png)
 
-## Second point
+## XXXXXXXX not?
 
-More content goes here.
+jköööpä
 
 ## Conclusion
 
