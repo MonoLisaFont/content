@@ -6,6 +6,8 @@ keywords: ["typefaces"]
 authors: ["Marcus Sterz"]
 ---
 
+TODO: Change blog post title to “Why should I pay for a typeface?”
+
 Sometimes we are confronted with the question ‘Why should I pay for a font when there are free ones out there?’.
 
 ## Why are some typefaces not free of charge? They are just digital after all and could be copied endlessly...
