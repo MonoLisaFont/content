@@ -16,7 +16,7 @@ Simply put, a ligature is a combination of two or more glyphs. They form a new g
 
 Common ligatures are `fi` and `ft` in text fonts. Other examples are the well known ampersand `&`, the european nordic letters `Æ`,`Œ` and the German letter `ß`. There are no limits to create new ligatures out of letters in the design process. The example below shows how ligatures are applied.
 
-![Common ligatures (typeface: MonoLisa)] (/images/MonoLisa Blogposts Vorlagen Ligs01.png)
+![Common ligatures (typeface: MonoLisa)](/images/MonoLisa Blogposts Vorlagen Ligs01.png)
 
 ### Coding ligatures
 
