@@ -33,6 +33,7 @@ TODO: Describe how to enable `liga` in common editors and graphics programs (als
 ## Space altering ligatures
 
 TODO: Describe `calt` and how it's commonly used
+Originally the `calt` feature is meant to support contextual changes like alternates in a ‘handwritten’ font so the reader does not recognizes the fake handwriting. The feaure basically looks for neighbouring glyphs and provides a contextual change if intended. THis feature can be turnd on and off.
 
 ## Conclusion
 
