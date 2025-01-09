@@ -8,9 +8,9 @@ authors: ["Marcus Sterz"]
 
 A brief introduction to what kinds of typefaces exist.
 
-<!---
+{/*
 TODO: I would pull tons of different examples to this post as images to build up typeface categories
--->
+*/}
 
 ## The common ones
 
@@ -26,6 +26,6 @@ These terms are quite usefull. Especially when you use two or three of them comb
 
 So it is crystal clear: MonoLisa is a monospaced, sans serif text typeface – designed especially to make reading easier and faster. Find out more: [more information can be found at MonoLisa website](https://monolisa.dev).
 
-<!---
+{/*
 JV: I would drop the CTA and recap the main points of the post here.
--->
+*/}
