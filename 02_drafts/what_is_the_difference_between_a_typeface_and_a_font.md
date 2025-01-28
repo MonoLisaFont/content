@@ -37,6 +37,8 @@ To make things more complex, there are more categories beyond bold and italic. T
 TODO: Maybe discuss variable fonts briefly as a solution to above?
 */}
 
+TODO: Add some kind of an image to show the difference - drawer (typeface) vs. utentils in the drawer (fonts)
+
 ## Why is that important?
 
 If you want to be typographically exact knowing the difference between those two terms helps communicate correctly with designers and shows that you are a pro.
