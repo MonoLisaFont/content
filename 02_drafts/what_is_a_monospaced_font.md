@@ -11,7 +11,7 @@ What is a monospaced font and why are they used for programming?
 {/*
 JV: I would expand on this
 
-If you are programming, you are most likely using a monospace font already. In this post, we explore monospaced fonts while considering the benefits and tradeoffs.
+If you are programming, you are most likely using a monospaced font already. In this post, we explore monospaced fonts while considering the benefits and tradeoffs.
 */}
 
 ## The monospace
@@ -24,6 +24,8 @@ JV: Proposed new title
 
 Monospaced means – as the word says – that each glyph (letters, signs, symbols etc.) have the same horizontal space. Other terms are fixed-pitch, fixed-width, or non-proportional. The origins of monospaced fonts are the mechanical typewriters of the 19th century, a time before computers were even built. Monospaced fonts share the characteristic that letters like M, W, m and w often look crammed while letters like i and l must be designed as wide a possible to fill the available space. To achieve this, serifs are added to some glyphs as they occupy the space. These and other constraints make the design of highly legible coding fonts a difficult task.
 
+TODO: Maybe the image should have a grid showing alignment of the characters in different scenarios
+
 ![This is some image caption](/images/demo.png)
 
 {/*
@@ -33,7 +35,7 @@ Monospaced means – as the word says – that each glyph (letters, signs, symbo
 
 TODO: Add an example image here
 
-The origins of monospaced fonts are in the mechanical typewriters of the 19th century, a time before computers were even built. In mechanical typewriters, each glyph is represented by a single stamp that is applied on paper and it was a natural choice to go with a fixed width. TODO: Mention typefaces based on typewriters here
+The origins of monospaced fonts are in the mechanical typewriters of the 19th century, a time before computers were even built (TODO(JV): better with a reference). In mechanical typewriters, each glyph is represented by a single stamp that is applied on paper and it was a natural choice to go with a fixed width. TODO: Mention typefaces based on typewriters here
 */}
 
 {/*
@@ -43,7 +45,7 @@ JV: Proposed new section to show the downsides
 
 Although monospaced fonts use space efficiently, they come with tradeoffs to consider. For example, often letters like M, W, m and w often look crammed while letters like i and l must be designed as wide a possible to fill the available space. To achieve this, serifs are added to some glyphs as they occupy the space. These and other constraints make designing of highly legible coding fonts a difficult task. The image below illustrates several problematic cases and possible solutions.
 
-TODO: Show problematic cases here in an image
+TODO: Show problematic cases here in an image vs. MonoLisa
 
 ![This is some image caption](/images/demo.png)
 */}
@@ -70,6 +72,8 @@ JV: Proposed new section to sell the benefits
 ## Beyond code
 
 Monospaced fonts have uses beyond programming due to their space fitting capabilities. Consider you are creating a space limited user interface where you have to show time spans in a column in a schedule. Although using a relative font would work, going with a monospaced font will make it easier for your users to scan the list. The image below illustrates the difference.
+
+TODO: A good spot for cross referencing with tabular figures post
 
 TODO: Add a visual example here
 */}
