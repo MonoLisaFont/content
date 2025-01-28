@@ -9,7 +9,7 @@ authors: ["Marcus Sterz"]
 A brief introduction to what kinds of typefaces exist.
 
 {/*
-TODO: I would pull tons of different examples to this post as images to build up typeface categories
+TODO: I would pull tons of different examples to this post as images to build up typeface categories (purpose vs. what does it look like (what kind of shapes (i.e., serifs) are included)?
 */}
 
 ## The common ones
