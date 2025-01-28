@@ -60,6 +60,10 @@ TODO: Link to specific studies in the text
 Monospaced fonts used typically by programmers include serifs of their own as usually the letters i, j, r and l usually have serifs. But that does not make the typeface itself a serifed font. Their function is solely to occupy as much space as possible since these letters would be too narrow without them and would create too big gaps in the text.
 */}
 
+## Flare serifs
+
+Example: https://en.wikipedia.org/wiki/Optima .
+
 ## Conclusion
 
 Serifs in monospaced fonts are rare but important. Please have a look how MonoLisa uses them to make reading easier: [more information can be found at MonoLisa website](https://monolisa.dev).
