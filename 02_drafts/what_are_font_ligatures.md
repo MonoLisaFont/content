@@ -24,7 +24,9 @@ Simply put, a ligature is a combination of two or more glyphs. They form a new g
 
 ### Letter combinations
 
-Common ligatures are `fi` and `ft` in text fonts. Other examples are the well known ampersand `&`, the european nordic letters `Æ`,`Œ` and the German letter `ß`. There are no limits to create new ligatures out of letters in the design process.
+Common ligatures are `fi` and `ft` in text fonts. https://www.preusstype.com/techdata/otf_dlig.php (add reasoning + explain dlig + history (how these combinations came to be (practical choice))
+
+Other examples are the well known ampersand `&`, the european nordic letters `Æ`,`Œ` and the German letter `ß`. There are no limits to create new ligatures out of letters in the design process.
 
 ![Common ligatures (typeface: MonoLisa)](/images/MonoLisaBlogpostsVorlagen01.png)
 
@@ -47,15 +49,7 @@ For some coders, ligatures are a controversial feature. Fortunately the feature 
 {/*
 ## How to enable ligatures?
 
-TODO: Describe how to enable `liga` in common editors and graphics programs (also limitations + freezing should be mentioned here).
-*/}
-
-{/*
-## Space altering ligatures
-
-TODO: Describe `calt` and how it's commonly used
-
-Originally the `calt` feature is meant to support contextual changes like alternates in a ‘handwritten’ font so the reader does not recognizes the fake handwriting. The feaure basically looks for neighbouring glyphs and provides a contextual change if intended. THis feature can be turnd on and off.
+TODO(Juho): Describe how to enable `liga` in common editors and graphics programs (also limitations + freezing should be mentioned here).
 */}
 
 ## Conclusion
