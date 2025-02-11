@@ -6,70 +6,32 @@ keywords: ["typefaces"]
 authors: ["Marcus Sterz", "Juho Vepsäläinen"]
 ---
 
-You may have noticed that some typefaces have these tiny legs or bars and some don’t. Those bars are called serifs.
+You may have noticed that some typefaces have tiny legs or bars attached to their glyphs. These visual elements, serifs, have a specific purpose, and in this post, we will discuss the history of serifs, when you might want to use them, and when to avoid them in your designs.
 
-{/*
-JV: I would expand this
+## Why were serifs invented?
 
-You may have noticed that some typefaces have tiny legs or bars attached to their glyphs and some don’t. Those bars are called serifs. In this post, we’ll describe what serifs are and why you might want to use them or avoid using them altogether in your designs.
-*/}
+It has been speculated that the first serifs were invented out of necessity. Suppose you look at statues from the Roman era. In that case, you might notice their usage of serifs as the visual elements were used as terminators to allow easier cutting of characters into stone. You would cut the serif end first so that the remaining cuts would terminate neatly. In other words, serifs likely exist because of practical reasons. Since then, the original characters used by the Romans were modeled as a typeface called [Trajan](https://en.wikipedia.org/wiki/Trajan_(typeface)) pictured in the image below. Trajan borrowed the characters from a roughly 2000-year-old column in Rome commemorating emperor Trajan's victory in the [Dacian Wars](https://en.wikipedia.org/wiki/Trajan%27s_Dacian_Wars).
 
-## The past
+![This is some image caption](/images/MLBlogposts-whatareserifsinafont-01.png)
 
-{/*
-JV: Proposed new heading
+The idea of serifs was further refined by the [Antiqua](https://en.wikipedia.org/wiki/Antiqua_(typeface_class)) class of typefaces, which was invented in the Middle Ages as an evolution of [Fraktur](https://en.wikipedia.org/wiki/Fraktur). The main innovation was how glyphs were constructed in a continuous manner, and Antiqua borrowed ideas from earlier work by the Romans.
 
-## History of serifs
-*/}
+[Baskerville](https://en.wikipedia.org/wiki/Baskerville) is an example of a transitional serif typeface from the 1750s. It modernized older shapes, and the typeface is still prevalent in book design. Since its introduction, Baskerville has been extended by adding a bold-variant.
 
-You can find serifed text on statues from the roman empire. You may have already used or seen a typeface called Trajan. The letter shapes are taken from a 2000 year old column in Rome that commemorates emperor Trajan's victory in the Dacian Wars – so much for history. A serifed font of this kind is also called ‘Antiqua’. With the invention of mechanical typewriters slab serifs became common. Those serifs have approximately the same stroke width as the letter shape itself. Prominent examples are Roboto Slab or Courier. These typefaces are sometimes called ‘Egyptienne’.
+Further evolution of serifs occurred in the 19th century as [Slab Serif](https://en.wikipedia.org/wiki/Slab_serif) was introduced. The development of Slab Serif was motivated by the prevalence of printing technologies where each character had to be modeled on its own. In contrast, individual letters still had to flow together when combined. Good examples of this category of typefaces are Egyptienne, Rockwell, and Courier. Note that each of these typefaces has a fixed width by definition and can, therefore, be considered to be monospaced as they always occupy the same amount of width.
 
-![This is some image caption](/images/demo.png)
+## Why are serifs still in use?
 
-{/*
-JV: I would add more context and references to build up this section.
+If serifs are such an old invention, why do we still use them? The simple answer is that serifs [may be more legible](https://pmc.ncbi.nlm.nih.gov/articles/PMC4612630/) as they provide hints for readers to allow faster comprehension. A classic example is to pick up a typeface and consider characters, such as "l", "I", "1". Leaving serifs out leads to a design challenge in communicating the difference between the characters. Unfortunately, it is not always this straightforward as [other studies](https://geniusee.com/single-blog/font-readability-research-famous-designers-vs-scientists) imply that sans serif (read: "without serif") can be the more legible option for children. The same applies to people with low vision, and the same applies even to digital displays.
 
-Serifs go back to the Roman Empire. If you pay attention near the status from the era, you will notice that people used serifs. Typeface called Trajan, illustrated below, is a good example showing how serifs affect text. The letter shapes of the typeface were taken from a 2000 year old column in Rome that commemorates emperor Trajan's victory in the Dacian Wars. A serifed font of this kind is also called `Antiqua` and you can find more typefaces like Trajan behind the term.
+Serifs have their uses, especially in print and programming. The main benefit is that they allow a font designer to effectively address differences between characters. It is even possible to selectively apply ideas from serifs to sans serif fonts to address specific design problems related to specific characters (i, j, r, and l are good examples). In monospaced fonts, serifs allow occupying space to avoid creating too large gaps between characters since the available space is fixed to a certain width.
 
-TODO: History: theory: one line -> serifs stop stone from breaking most likely
+## Bonus serif - flare serifs
 
-TODO: Add image of Trajan typeface here
-
-With the invention of mechanical typewriters slab serifs became common. Those serifs have approximately the same stroke width as the letter shape itself. Prominent examples are `Roboto`, `Slab` or `Courier` shown below. These typefaces are sometimes called `Egyptienne` (Napoleon's war in Egypt).
-
-TODO: Add images of these typefaces here
-
-![This is some image caption](/images/demo.png)
-*/}
-
-## The present
-
-{/*
-JV: Proposed new heading
-
-## Why are serifs in use still?
-*/}
-
-If they are so old why do we still use them? Studies (needs a reference) show that serifed typefaces are easier to read in long printed text. That’s why practically every book or magazine uses serif fonts for longer texts. Studies (needs a reference) also seem to indicate that that is not necessarily the case on screens. Let’s not leave monospaced fonts unmentioned: The i, j, r and l usually have serifs. But that does not make the typeface itself a serifed font. Their function is solely to occupy as much space as possible since these letters would be too narrow without them and would create too big gaps in the text.
-
-{/*
-If serifs are so old why do we still use them? Studies show that serifed typefaces are easier to read in long printed text. That’s why practically every book or magazine uses serif fonts for longer texts. Interestingly enough, studies also seem to indicate that that is not necessarily the case on screens.
-
-TODO: Link to specific studies in the text
-
-Monospaced fonts used typically by programmers include serifs of their own as usually the letters i, j, r and l usually have serifs. But that does not make the typeface itself a serifed font. Their function is solely to occupy as much space as possible since these letters would be too narrow without them and would create too big gaps in the text.
-*/}
-
-## Flare serifs
-
-Example: https://en.wikipedia.org/wiki/Optima .
+Although it is not considered a real serif, the so-called flare serif is an interesting special case as it achieves a similar effect by varying width without introducing a serif. [Optima](https://en.wikipedia.org/wiki/Optima) is a good example of a typeface implementing this technique.
 
 ## Conclusion
 
-Serifs in monospaced fonts are rare but important. Please have a look how MonoLisa uses them to make reading easier: [more information can be found at MonoLisa website](https://monolisa.dev).
+Serifs go way back, and they still have their uses even today. Although you might not use them consistently, they have specific strengths, and they can be instrumental in monospaced typefaces to improve the legibility of characters through additional hints to allow faster character recognition, not to mention the space-filling benefits of serifs. Now that you know what serifs are, it isn't easy to unsee them.
 
-{/*
-JV: I would drop CTA and capture key point
-
-Although serifs go way back, they have made it to this day and continue to be relevant. Now that you know what serifs are about, you cannot unsee them.
-*/}
+> If you want to discover more serif typefaces, [see Wikipedia's serif-related categories](https://en.wikipedia.org/wiki/Category:Serif_typefaces).
