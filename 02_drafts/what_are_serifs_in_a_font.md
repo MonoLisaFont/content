@@ -56,7 +56,7 @@ Although it is not considered a real serif, the so-called flare serif is an inte
 ## Conclusion
 
 Serifs go way back, and they still have their uses even today.
-Although you might not use them consistently, they have specific strengths, and they can be instrumental in monospaced typefaces to improve the legibility of characters through additional hints to allow faster character recognition, not to mention the space-filling benefits of serifs.
+Even if you might not use serifs always, they have specific strengths, and they can be instrumental in monospaced typefaces to improve the legibility of characters through additional hints to allow faster character recognition, not to mention the space-filling benefits of serifs.
 Now that you know what serifs are, it isn't easy to unsee them.
 
 > If you want to discover more serif typefaces, [see Wikipedia's serif-related categories](https://en.wikipedia.org/wiki/Category:Serif_typefaces).
