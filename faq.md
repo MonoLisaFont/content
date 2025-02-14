@@ -332,6 +332,7 @@ font_features MonoLisa-RegularItalic +ss02
 ### How to setup the progress bar glyphs in a terminal?
 
 [See this GitHub comment for a script.](https://github.com/MonoLisaFont/feedback/issues/133#issuecomment-1256060063)
+</details>
 
 ## WebStorm
 
