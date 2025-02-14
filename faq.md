@@ -188,11 +188,11 @@ atsutil server -ping
 1. Restart your computer
 2. Re-install the font (see previous question)
 
-Please [refer to these instructions](https://glyphsapp.com/tutorials/eliminating-font-cache-problems) if you still can’t update the font.
+Please [refer to these instructions](https://glyphsapp.com/tutorials/eliminating-font-cache-problems) if you still can’t update the font.
 
 ### How to use the typeface in program X?
 
-Generally put, the editor support for special features included in MonoLisa is weak. VS Code documented below is an exception to this rule. For the rest, it’s preferable to use the [customize tool](https://www.monolisa.dev/orders) to generate a typeface that makes sense for your use case.
+Generally put, the editor support for special features included in MonoLisa is weak. VS Code documented below is an exception to this rule. For the rest, it’s preferable to use the [customize tool](https://www.monolisa.dev/orders) to generate a typeface that makes sense for your use case.
 
 The same goes for terminals as majority of them don’t expose many font features and you are lucky if you can toggle ligatures.
 
