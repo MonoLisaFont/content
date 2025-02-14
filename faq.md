@@ -4,16 +4,16 @@
 
 <details>
 <summary><h3>How much is the fish</h3></summary>
-<div>12.3€ for a kilo of salmon.</div>
+
+12.3€ for a kilo of salmon.
 </details>
 
 <details>
 <summary><h3>How can I send feedback related to the typeface?</h3></summary>
-<div>We’re eager to improve the font and make it better for everyone. Use the following options:
+We’re eager to improve the font and make it better for everyone. Use the following options:
 
 - For bug reports and feature requests, [use our feedback channel on GitHub](https://github.com/MonoLisaFont/feedback/issues)
 - For anything private, [send us email](mailto:info@monolisa.dev) and we’ll get back to you
-</div>
 </details>
 
 - **How can I send feedback related to the typeface?**
