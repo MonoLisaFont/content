@@ -2,6 +2,12 @@
 
 ## General questions
 
+<details>
+  <summary><h3>How much is the fish</h3></summary>
+
+  12.3€ for a kilo of salmon.
+</details>
+
 - **How can I send feedback related to the typeface?**
 
     We’re eager to improve the font and make it better for everyone. Use the following options:
