@@ -1,8 +1,8 @@
 ---
 title: "What are serifs?"
-published: 2024-10-18
-updated: 2024-10-25
-keywords: ["typefaces"]
+published: 2025-02-14
+updated: 2025-02-14
+keywords: ["typefaces", "font features"]
 authors: ["Marcus Sterz", "Juho Vepsäläinen"]
 ---
 
