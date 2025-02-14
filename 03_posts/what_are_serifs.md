@@ -19,7 +19,7 @@ In other words, serifs likely exist because of practical reasons.
 Since then, the original characters used by the Romans were modeled as a typeface called [Trajan](https://en.wikipedia.org/wiki/Trajan_(typeface)) pictured in the image below.
 Trajan borrowed the characters from a roughly 2000-year-old column in Rome commemorating emperor Trajan's victory in the [Dacian Wars](https://en.wikipedia.org/wiki/Trajan%27s_Dacian_Wars).
 
-![This is some image caption](/images/MLBlogposts-whatareserifsinafont-01.png)
+![Examples of serif fonts](/images/MLBlogposts-whatareserifsinafont-01.png)
 
 [Baskerville](https://en.wikipedia.org/wiki/Baskerville) is an example of a transitional serif typeface from the 1750s.
 It modernized older shapes, and the typeface is still prevalent in book design.
