@@ -3,7 +3,7 @@ title: "What are serifs?"
 published: 2025-02-14
 updated: 2025-02-14
 keywords: ["typefaces", "font features"]
-authors: ["Marcus Sterz", "Juho Vepsäläinen"]
+authors: ["Juho Vepsäläinen"]
 ---
 
 You may have noticed that some typefaces have tiny legs or bars attached to their glyphs.
