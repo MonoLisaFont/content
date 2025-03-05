@@ -2,14 +2,14 @@
 
 ## General questions
 
-<details>
+<Details>
 ### How can I send feedback related to the typeface?
 
 We’re eager to improve the font and make it better for everyone. Use the following options:
 
 - For bug reports and feature requests, [use our feedback channel on GitHub](https://github.com/MonoLisaFont/feedback/issues)
 - For anything private, [send us email](mailto:info@monolisa.dev) and we’ll get back to you
-</details>
+</Details>
 
 <details>
 ### How can I figure out which version of the typeface I have installed?
