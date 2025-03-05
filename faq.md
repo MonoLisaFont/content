@@ -257,7 +257,7 @@ In VS Code the example below, we enable `calt` glyphs (space alterations), disab
 }
 ```
 
-The `editor.fontLigatures` accepts standard CSS.
+The `editor.fontLigatures` field accepts standard CSS.
 
 **Other programs**
 
