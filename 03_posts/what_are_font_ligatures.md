@@ -21,7 +21,7 @@ MonoLisa typeface includes both, and the idea is that `liga` contains more radic
 
 ## What are coding ligatures?
 
-Now that you understand what ligatures are and why they are used, it is good to consider how they can be used for programming. Several coding fonts contain these combinations as ligatures to improve the legibility of common combinations, such as `!=`. In other words, after replacement, the combination would stand out on its own, and often, you end up with a more mathematical look for your code that some programmers prefer. Given it is not a look all programmers like, it is possible to toggle the feature using `liga` and `dlig` OpenType flags, and even if a typeface contains ligatures, they aren’t enabled by default. Consider the figure below to get a better idea of what kind of coding ligatures are possible.
+Now that you understand what ligatures are and why they are used, it is good to consider how they can be used for programming. Several coding fonts contain these combinations as ligatures to improve the legibility of common ones, including `!=`. In other words, after replacement, the combination would stand out on its own, and often, you end up with a more mathematical look for your code that some programmers prefer. Given it is not a look all programmers like, it is possible to toggle the feature using `liga` and `dlig` OpenType flags, and even if a typeface contains ligatures, they aren’t enabled by default. Consider the figure below to get a better idea of what kind of coding ligatures are possible.
 
 ![Coding ligatures (typeface: MonoLisa)](/images/MonoLisaBlogpostsVorlagen02.png)
 
