@@ -30,6 +30,18 @@ There’s an upgrade path available for version one users. If you bought it late
 </Details>
 
 <Details>
+### How can I access version 1?
+
+Since version 1 was published years ago, we don't support it anymore and it's not available for download. [Please consider upgrading to a newer version](https://www.monolisa.dev/orders).
+</Details>
+
+<Details>
+### Can I use MonoLisa while streaming/publishing videos online?
+
+Yes, of course. It would be great if you could link to the site but you don't have to.
+</Details>
+
+<Details>
 ### Are themes visible on the site included to the font distribution?
 
 No, please see the theme collection related to your IDE to find close alternatives. Examples: [VS Code](https://vscodethemes.com/), [xcode](https://github.com/hdoria/xcode-themes), [WebStorm](https://plugins.jetbrains.com/search?tags=Theme).
