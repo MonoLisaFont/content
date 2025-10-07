@@ -102,8 +102,6 @@ There are a couple of options depending on when you bought the original typeface
 
 - If you bought v1 within six months from the release (starting from 1st of April 2022), the upgrade is free for you and you can [complete it at the orders page](https://www.monolisa.dev/orders). The free upgrade is towards the same tier. Note that for the personal plan, the upgrade is called Basic now due to a naming change.
 - If you bought v1 longer than six months ago from 1st of April 2022, you’ll get a 50% discount to the same tier. [Complete the upgrade at the orders page](https://www.monolisa.dev/orders).
-
-If you decide not to upgrade, you still have access to the original typeface and the associated features (i.e., the customize tool). It simply won’t receive any updates. The discount is perpetual and you may redeem it at any time.
 </Details>
 
 ## License
