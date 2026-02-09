@@ -62,7 +62,7 @@ To apply for a student discount, [send proof of your student status to our email
 <Details>
 ### Can I try the font beforehand?
 
-Yes, [there’s a limited trial available](https://www.monolisa.dev/buy/661578). Note that it is missing majority of the features. [See the playground](https://www.monolisa.dev/playground) as well.
+Yes, [there’s a limited trial available](https://www.monolisa.dev/buy/661578). Note that it is missing majority of the features. [See the tester](https://www.monolisa.dev/tester) as well.
 </Details>
 
 ## Orders
