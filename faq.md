@@ -26,7 +26,7 @@ As a general solution, you can [use the FontDrop web service](https://fontdrop.i
 
 In technical terms, versions one and two have been built differently. The biggest underlying change is that now the typeface is authored using Glyphs 3 (2 earlier) and it’s variable by definition. In other words, the weight of typeface became freely adjustable starting from version two. Because of the shift, all the fixes and improvements will go only towards version two as it would not be feasible to maintain both versions in parallel.
 
-There’s an upgrade path available for version one users. If you bought it later than 1st of May 2022, the upgrade is free for you, otherwise you’ll receive a 50% discount for the version two within the same tier. [See the orders page](https://www.monolisa.dev/orders) for further details.
+There’s an upgrade path available for version one users. [See the orders page](https://www.monolisa.dev/orders) for further details.
 </Details>
 
 <Details>
@@ -70,9 +70,7 @@ Yes, [there’s a limited trial available](https://www.monolisa.dev/buy/661578).
 <Details>
 ### How to upgrade to a higher tier (plus/complete)?
 
-You can upgrade by visiting [My Orders](https://www.monolisa.dev/orders) page. We will deduct the amount you have already paid for earlier tier products. The same applies also for student licenses.
-
-If you are on version 1, you have to upgrade to version 2 of the same tier first before you are able to upgrade to a higher tier of version 2.
+You can upgrade by visiting [My Orders](https://www.monolisa.dev/orders) page. The page contains further details.
 </Details>
 
 <Details>
@@ -98,10 +96,7 @@ Starting from 2.0, we have yearly subscriptions available for businesses at diff
 <Details>
 ### How can I upgrade from version 1 to version 2?
 
-There are a couple of options depending on when you bought the original typeface:
-
-- If you bought v1 within six months from the release (starting from 1st of April 2022), the upgrade is free for you and you can [complete it at the orders page](https://www.monolisa.dev/orders). The free upgrade is towards the same tier. Note that for the personal plan, the upgrade is called Basic now due to a naming change.
-- If you bought v1 longer than six months ago from 1st of April 2022, you’ll get a 50% discount to the same tier. [Complete the upgrade at the orders page](https://www.monolisa.dev/orders).
+You can upgrade by visiting [My Orders](https://www.monolisa.dev/orders) page. The page contains further details.
 </Details>
 
 ## License
