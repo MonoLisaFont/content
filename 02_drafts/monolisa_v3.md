@@ -24,23 +24,23 @@ The introduction of MonoLisa Text makes the type family useful beyond developers
 
 ## Version three – other changes
 
-To keep this short, we have listed the main changes for MonoLisa Code below (also available in the change log). <TODO: Link to the official change log from here. One option would be to push this information there potentially.>
+To keep this short, we have listed the main changes for MonoLisa Code below (also available in the change log). *TODO: Link to the official change log from here. One option would be to push this information there potentially.*
 
 **Letters, including a, b, d, p, q, and similar, have been adjusted to be more sharp and distinct.**
 
-<TODO: Include a visual comparison here>
+*TODO: Include a visual comparison here*
 
 **Selected letters in the light master have been widened.**
 
-<TODO: Include a visual comparison here>
+*TODO: Include a visual comparison here*
 
 **Vertical metrics have been adjusted to allow easier usage in a UI context.**
 
-<TODO: Include a visual example here before and after>
+*TODO: Include a visual example here before and after*
 
 **Script variant letter shapes have been revised and optimized further.**
 
-<TODO: Include a visual example here before and after>
+*TODO: Include a visual example here before and after*
 
 In addition, we have done the following changes:
 
@@ -57,7 +57,7 @@ As we worked with the additions to the typeface, we realized it's not enough to 
 
 ## Availability of version three with MonoLisa Text
 
-<TODO: Describe new packages here and the route to them from older plans>
+*TODO: Describe new packages here and the route to them from older plans*
 
 ## Conclusion
 
