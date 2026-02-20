@@ -61,4 +61,4 @@ As we worked with the additions to the typeface, we realized it's not enough to 
 
 ## Conclusion
 
-We hope you enjoy the new major version of the typeface! It represents a considerable amount of effort from our part and we hope you try it at least! <TODO: The CTA here is to pitch people to trial if they haven't tried the font before or to update as described above>
+We hope you enjoy the new major version of the typeface! It represents a considerable amount of effort from our part and we hope you try it at least! *TODO: The CTA here is to pitch people to trial if they haven't tried the font before or to update as described above*
