@@ -3,7 +3,7 @@ title: "MonoLisa v3 – Now with MonoLisa Text typeface"
 published: 2026-04-01
 updated: 2026-04-01
 keywords: ["release"]
-authors: ["Andrey Okonetchnikov" "Marcus Sterz", "Juho Vepsäläinen"]
+authors: ["Andrey Okonetchnikov", "Marcus Sterz", "Juho Vepsäläinen"]
 ---
 
 MonoLisa is a font family, or a typeface, that has been in development since 2020. Over five thousand software developers have adopted it since as their font of choice. Now with version three, the family expands yet again and in this post we show you how the font has evolved now to cover design tasks as well. It is quite rare that a typeface receives continuous care and effort from its creators but here we are still at it six years later.
