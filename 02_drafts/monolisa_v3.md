@@ -1,5 +1,5 @@
 ---
-title: "MonoLisa v3 – Now with MonoLisa Text typeface"
+title: "MonoLisa v3 – Now with MonoLisa Text variant"
 published: 2026-04-01
 updated: 2026-04-01
 keywords: ["release"]
