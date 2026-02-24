@@ -61,5 +61,5 @@ As we worked with the additions to the typeface, we realized it's not enough to 
 
 ## Conclusion
 
-With version 3 the MonoLisa project enters a new era as the family not only got even better but also bigger.
+With version 3 the MonoLisa project enters a new era as the family not only got better but also bigger.
  *TODO: The CTA here is to pitch people to trial if they haven't tried the font before or to update as described above*
