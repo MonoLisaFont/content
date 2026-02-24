@@ -1,5 +1,5 @@
 ---
-title: "MonoLisa version 3 – Now with MonoLisa Text family"
+title: "MonoLisa version 3 – now with MonoLisa Text family"
 published: 2026-04-01
 updated: 2026-04-01
 keywords: ["release"]
@@ -16,7 +16,7 @@ The second major version released on 2022 went a notch further by enabling varia
 
 The second version also included a customization tool that lets you *freeze* font features since many editors and other applications available today have limited options on how to access your font features. Freezing solved this problem as it literally froze font features, such as specific characters, directly to the font itself thereby working around limitations of software.
 
-## Version 3 – the family grows with *MonoLisa Text*
+## Version 3 – the family grows with ***MonoLisa Text***
 
 Now with version 3, the family grows with a new member besides *MonoLisa Code*, the original typeface. The new font family called *MonoLisa Text* covers the other half of common usage where a monospaced typeface reaches its limits. In other words, MonoLisa Text is a *proportional* family designed for use cases where you might have regular text and therefore completes the family while working as a complementary pair to the original version. This makes it ideal for use cases, such as prose, potentially user interfaces, and web design where you want a nice pairing.
 
