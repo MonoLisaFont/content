@@ -18,9 +18,9 @@ The second version also included a customization tool that lets you *freeze* fon
 
 ## Version 3 – the family grows with ***MonoLisa Text***
 
-Now with version 3, the family grows with a new member besides *MonoLisa Code*, the original typeface. The new font family called *MonoLisa Text* covers the other half of common usage where a monospaced typeface reaches its limits. In other words, MonoLisa Text is a *proportional* family designed for use cases where you might have regular text and therefore completes the family while working as a complementary pair to the original version. This makes it ideal for use cases, such as prose, potentially user interfaces, and web design where you want a nice pairing.
+Now with version 3, the family grows with a new member besides *MonoLisa Code*, the original typeface. The new font family called *MonoLisa Text* covers the other half of common usage where a monospaced typeface reaches its limits. In other words, MonoLisa Text is a *proportional* family designed for use cases where you might have regular text and therefore completes the family while working as a complementary pair to the original version. This makes it ideal for use cases such as prose, user interfaces, presentations and any sort of printed items like books, magazines and the like.
 
-The introduction of MonoLisa Text makes the type family useful beyond developers as now it covers a wide range of *design* tasks making it a handy tool for designers to wield in their arsenal. Besides this major addition, we have made series of smaller changes that expand the usefulness of the original font family MonoLisa Code.
+The introduction of MonoLisa Text makes the type family useful beyond programming as now it covers a wide range of *design* tasks making it a handy tool for designers to wield in their arsenal. Besides this major addition, we have made series of smaller changes that expand the usefulness of the original font family MonoLisa Code.
 
 ## Version 3 – other changes
 
@@ -44,12 +44,12 @@ To keep this short, we have listed the main changes for MonoLisa Code below (als
 
 In addition, we have done the following changes:
 
-* We reorganized and cleaned up stylistic sets so the order makes sense again
-* Figure seven (7) with a middle stroke was introduced as ss14
-* Plain zero (no center) was introduced as ss15. In MonoLisa Text, the variant is a dotted zero instead for legibility reasons.
-* MonoLisa Code only – coding related ligatures were moved behind character variants (cvXX) to allow easy adjustability
-* The support for Greek language was extended and the support for Armenian, Braille, and Hebrew has been added
-* In addition numerous smaller adjustments were made across the typeface
+* We reorganized and cleaned up stylistic sets so the order makes sense again.
+* Figure `7` (seven) with a middle stroke was introduced as `ss14`.
+* Plain `0` (zero with no center element) was introduced as `ss15`. In MonoLisa Text, the variant is a dotted zero instead for legibility reasons.
+* MonoLisa Code only – coding related ligatures were moved behind character variants `cvXX` to allow easy adjustability.
+* The support for Greek language was extended and the support for Armenian, Braille, and Hebrew has been added.
+* In addition numerous smaller adjustments were made across the typeface.
 
 ## New website
 
