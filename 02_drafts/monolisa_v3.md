@@ -46,9 +46,9 @@ In addition, we have done the following changes:
 
 * We reorganized and cleaned up stylistic sets so the order makes sense again.
 * Figure `7` (seven) with a middle stroke was introduced as `ss14`.
-* Plain `0` (zero with no center element) was introduced as `ss15`. In MonoLisa Text, the variant is a dotted zero instead for legibility reasons.
-* MonoLisa Code only – coding related ligatures were moved behind character variants `cvXX` to allow easy adjustability.
-* The support for Greek language was extended and the support for Armenian, Braille, and Hebrew has been added.
+* Plain `0` (zero with no center element) was introduced as `ss15`. In MonoLisa Text the plain zero is the default and the dotted version is the variant.
+* MonoLisa Code only – coding related ligatures were moved behind character variants `cvXX` to allow easy adjustability *??????????????? what does that mean*.
+* The support for historical Greek was extended and the support for Armenian, Hebrew, and Braille has been added.
 * In addition numerous smaller adjustments were made across the typeface.
 
 ## New website
