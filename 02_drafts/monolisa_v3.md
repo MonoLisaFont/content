@@ -6,7 +6,7 @@ keywords: ["release"]
 authors: ["Andrey Okonetchnikov", "Marcus Sterz", "Juho Vepsäläinen"]
 ---
 
-MonoLisa is a font family, or a typeface, that has been in development since 2020. Over five thousand software developers have adopted it since as their font of choice. Now with version 3, the family expands yet again and in this post we show you how the font has evolved now to cover design tasks as well. It is quite rare that a typeface receives continuous care and effort from its creators but here we are still at it six years later.
+MonoLisa is a typeface, that has been in development since 2020. Over five thousand software developers have adopted it since as their font of choice. Now with version 3, the family expands yet again and in this post we show you how the font has evolved now to cover design tasks as well. It is quite rare that a typeface receives continuous care and effort from its creators but here we are still at it six years later. Without you, the community who gave us valuable feedback, MonoLisa wouldn’t where it is now.
 
 ## Versions one and two
 
@@ -16,17 +16,17 @@ The second major version released on 2022 went a notch further in a form of rede
 
 The second version also included what we call a customization tool that lets you *freeze* font features since many editors and other applications available today have limited options on how to access your font features. Freezing solved this problem as it literally froze font features, such as specific characters, directly to the font itself thereby working around limitations of software.
 
-## Version 3 – the family grows
+## Version 3 – the family grows with MonoLisa Text
 
-Now with version 3, the family grows with a new member besides MonoLisa Code, the original typeface. The new font family called *MonoLisa Text* covers the other half of common usage where monospaced version doesn't fit so well. In other words, MonoLisa Text is a *proportional* family designed for use cases where you might have regular text and therefore completes the family while working as a complementary pair to the original version. This makes it ideal for use cases, such as prose, potentially user interfaces, and web design where you want a nice pairing.
+Now with version 3, the family grows with a new member besides *MonoLisa Code*, the original typeface. The new font family called *MonoLisa Text* covers the other half of common usage where a monospaced typeface reaches its limits. In other words, MonoLisa Text is a *proportional* family designed for use cases where you might have regular text and therefore completes the family while working as a complementary pair to the original version. This makes it ideal for use cases, such as prose, potentially user interfaces, and web design where you want a nice pairing.
 
-The introduction of MonoLisa Text makes the type family useful beyond developers as now it covers a wide range of *design* tasks making it a handy tool for designers to wield in their arsenal. Besides this major addition, we have made series of smaller changes that expand the usefulness of the original MonoLisa Code.
+The introduction of MonoLisa Text makes the type family useful beyond developers as now it covers a wide range of *design* tasks making it a handy tool for designers to wield in their arsenal. Besides this major addition, we have made series of smaller changes that expand the usefulness of the original font family MonoLisa Code.
 
 ## Version 3 – other changes
 
 To keep this short, we have listed the main changes for MonoLisa Code below (also available in the change log). *TODO: Link to the official change log from here. One option would be to push this information there potentially.*
 
-**Letters, including a, b, d, p, q, and similar, have been adjusted to be more distinct and reader friendly.**
+**Letters, including a, b, d, e, p, q, and similar, have been adjusted to be more distinct and reader-friendly.**
 
 *TODO: Include a visual comparison here*
 
