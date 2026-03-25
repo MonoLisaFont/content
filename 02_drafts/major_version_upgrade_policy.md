@@ -1,7 +1,7 @@
 ---
 title: "Our upgrade policy for major versions"
-published: 2026-25-01
-updated: 2026-25-01
+published: 2026-03-25
+updated: 2026-03-25
 keywords: ["product"]
 authors: ["Juho Vepsäläinen"]
 ---
