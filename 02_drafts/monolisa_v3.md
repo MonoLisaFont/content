@@ -26,7 +26,7 @@ The introduction of MonoLisa Text makes the type family useful beyond programmin
 
 To keep this short, we have listed the main changes for MonoLisa Code below (also available in the change log). *TODO: Link to the official change log from here. One option would be to push this information there potentially.*
 
-**Letters, including a, b, d, e, p, q, and similar, have been adjusted to be more distinct and reader-friendly.**
+**Letters, including a, b, d, e, p, q, and similar across all languages and scripts, have been adjusted to be more distinct and reader-friendly. Users with dyslexia may find the changes particularly helpful**
 
 *TODO: Include a visual comparison here*
 
