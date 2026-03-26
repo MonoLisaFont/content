@@ -32,7 +32,7 @@ There’s an upgrade path available for version one users. [See the orders page]
 <Details>
 ### How can I access version 1?
 
-Since version 1 was published years ago, we don't support it anymore and it's not available for download. [Please consider upgrading to a newer version](https://www.monolisa.dev/orders).
+[You can download it from the orders page](https://www.monolisa.dev/orders).
 </Details>
 
 <Details>
