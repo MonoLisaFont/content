@@ -48,10 +48,6 @@ Vertical metrics have been adjusted to allow easier usage in a UI context:
 
 ![Vertical metrics in version 3](/images/vertical-metrics.svg)
 
-Script variant letter shapes have been revised and optimized further:
-
-*TODO: Include a visual example here before and after*
-
 ### Other changes
 
 *TODO: Link to the official change log from here. One option would be to push this information there potentially.*
