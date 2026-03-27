@@ -22,6 +22,8 @@ Now with version 3, the family grows with a new member besides *MonoLisa Code*, 
 
 The introduction of MonoLisa Text makes the type family useful beyond programming as now it covers a wide range of *design* tasks making it a handy tool for designers to wield in their arsenal. Besides this major addition, we have made series of smaller changes that expand the usefulness of the original font family MonoLisa Code.
 
+![MonoLisa Code vs. MonoLisa Text](/images/mono-proportional.svg)
+
 ### New, more adjustable ligature behavior
 
 Ligatures are a typeface feature that allows replacements of multiple characters, such as `===`, into a single one. Some people greatly prefer this behavior while others find it distracting. Therefore it is always an optional feature in typefaces.
@@ -36,15 +38,15 @@ The problem is that typically ligatures are "all or nothing" kind of deal meanin
 
 Since legibility is one of our key concerns when designing MonoLisa, version 3 was a great point to revisit some of the characters to make them more distinct. These changes are particularly useful for dyslexic users while benefitting others as well as tends to be the case with accessibility improvements. In specific, letters a, b, d, e, p, q, and similar across all languages and scripts have been adjusted as shown by the visual comparison below:
 
-*TODO: Include a visual comparison here*
+![Letter improvements in version 3](/images/lettershapes-v3.svg)
 
 In addition, selected letters in the light master have been widened:
 
-*TODO: Include a visual comparison here*
+![Wider letters in version 3](/images/comparison-wider-letters.svg)
 
 Vertical metrics have been adjusted to allow easier usage in a UI context:
 
-*TODO: Include a visual example here before and after*
+![Vertical metrics in version 3](/images/vertical-metrics.svg)
 
 Script variant letter shapes have been revised and optimized further:
 
