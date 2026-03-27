@@ -48,6 +48,8 @@ Vertical metrics have been adjusted to allow easier usage in a UI context:
 
 ![Vertical metrics in version 3](/images/vertical-metrics.svg)
 
+<img src="/images/vertical-metrics.svg" title="Vertical metrics in version 3" height="600" />
+
 ### Other changes
 
 *TODO: Link to the official change log from here. One option would be to push this information there potentially.*
