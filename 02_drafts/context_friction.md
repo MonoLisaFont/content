@@ -6,7 +6,7 @@ keywords: ["productivity"]
 authors: ["Juho Vepsäläinen"]
 ---
 
-Context friction is the cost of switching, distractions, and managing attention. This post offers methods to preserve focus in modern workflows.
+Context friction is the cost of switching, distractions, and managing attention. In this post, I offer methods to preserve focus in modern workflows.
 
 ## Flowing alone
 
