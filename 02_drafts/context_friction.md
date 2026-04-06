@@ -30,9 +30,9 @@ You can also combine these two methods of working and work with a human pair and
 
 If there are a couple of practical things you can take out of this post, consider the following:
 
-- Use timeboxes and focus sessions (e.g., Pomodoro, 90-min flow).
-- Set expectation rules for communication channels. You don't have to respond immediately and it's not a good idea to teach people to expect an instant answer always.
-- Plan day with context sets: batch similar tasks to avoid high-cost switching as that will eat your energy.
+1. Use timeboxes and focus sessions (e.g., Pomodoro, 90-min flow).
+2. Set expectation rules for communication channels. You don't have to respond immediately and it's not a good idea to teach people to expect an instant answer always.
+3. Plan day with context sets: batch similar tasks to avoid high-cost switching as that will eat your energy.
 
 ## Conclusion
 

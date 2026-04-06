@@ -28,11 +28,11 @@ The way your lighting is set up can make a big difference since you want to avoi
 
 Mechnical friction is difficult to address entirely but there are many smaller things you can do depending on your budget:
 
-- Consider your keyboard setup and the way you use your keyboard. Can you for example consider more angled setup or define keyboard macros for common tasks? Can you use alternative modalities, such as audio, for certain tasks to avoid typing?
-- Perform an inventory of your desk and sitting setup. Can you see particular areas for improvement where you could consider an alternative? As mentioned, the best position is the next one so consider including short breaks to your workflow at least so you get regular movement since it's the long stretches staying still that are not good for us.
-- Check your display setup. Can you see any adjustments you could make to improve display height for example? Can you see any software based adjustments you could do to improve the setup?
-- Check your lighting. Are there easy fixes or improvements you could perform to make it more comfortable?
-- Check your audio setup. Are your headphones or speakers comfortable? Can you see any obvious fixes? If you work in an open office, it is often a good idea to agree on common rules around calls for example or to agree on a specific space for just taking calls to avoid disturbing others.
+1. Consider your keyboard setup and the way you use your keyboard. Can you for example consider more angled setup or define keyboard macros for common tasks? Can you use alternative modalities, such as audio, for certain tasks to avoid typing?
+2. Perform an inventory of your desk and sitting setup. Can you see particular areas for improvement where you could consider an alternative? As mentioned, the best position is the next one so consider including short breaks to your workflow at least so you get regular movement since it's the long stretches staying still that are not good for us.
+3. Check your display setup. Can you see any adjustments you could make to improve display height for example? Can you see any software based adjustments you could do to improve the setup?
+4. Check your lighting. Are there easy fixes or improvements you could perform to make it more comfortable?
+5. Check your audio setup. Are your headphones or speakers comfortable? Can you see any obvious fixes? If you work in an open office, it is often a good idea to agree on common rules around calls for example or to agree on a specific space for just taking calls to avoid disturbing others.
 
 ## Conclusion
 
