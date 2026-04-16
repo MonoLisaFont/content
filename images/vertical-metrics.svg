@@ -44,16 +44,16 @@
         </g>
         <g transform="matrix(1,0,0,1.554909,-35,-2013.684175)">
             <g transform="matrix(1,-0,-0,0.643125,768.913683,2389.631057)">
-                <path d="M398.336,30.178L392.086,17.678L385.836,30.178L398.336,30.178Z" style="fill:rgb(242,13,13);"/>
-                <path d="M398.336,98.472L392.086,110.972L385.836,98.472L398.336,98.472Z" style="fill:rgb(242,13,13);"/>
-                <path d="M392.086,27.678L392.086,100.972" style="fill:none;stroke:rgb(242,13,13);stroke-width:2.08px;"/>
+                <path d="M398.336,30.178L392.086,17.678L385.836,30.178L398.336,30.178Z" fill="currentColor" />
+                <path d="M398.336,98.472L392.086,110.972L385.836,98.472L398.336,98.472Z" fill="currentColor" />
+                <path d="M392.086,27.678L392.086,100.972" stroke="currentColor" style="fill:none;stroke-width:2.08px;" />
             </g>
         </g>
         <g transform="matrix(1,0,0,1.554909,-36,-1562.282197)">
             <g transform="matrix(1,-0,-0,0.643125,769.913683,2099.323361)">
-                <path d="M397.336,481.58L391.086,469.08L384.836,481.58L397.336,481.58Z" style="fill:rgb(242,13,13);"/>
-                <path d="M397.336,549.874L391.086,562.374L384.836,549.874L397.336,549.874Z" style="fill:rgb(242,13,13);"/>
-                <path d="M391.086,479.08L391.086,552.374" style="fill:none;stroke:rgb(242,13,13);stroke-width:2.08px;"/>
+                <path d="M397.336,481.58L391.086,469.08L384.836,481.58L397.336,481.58Z" fill="currentColor" />
+                <path d="M397.336,549.874L391.086,562.374L384.836,549.874L397.336,549.874Z" fill="currentColor" />
+                <path d="M391.086,479.08L391.086,552.374" stroke="currentColor" style="fill:none;stroke-width:2.08px;" />
             </g>
         </g>
     </g>
