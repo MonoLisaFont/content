@@ -46,6 +46,8 @@ In addition, selected letters in the light master have been widened:
 
 Vertical metrics have been adjusted to allow easier usage in a UI context:
 
+*TODO: For currentColor to work, SVGs like this have to be inlined!*
+
 <img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/vertical-metrics.svg" title="Vertical metrics in version 3" width="300" />
 
 ### Other changes
