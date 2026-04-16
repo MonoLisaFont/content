@@ -46,9 +46,7 @@ In addition, selected letters in the light master have been widened:
 
 Vertical metrics have been adjusted to allow easier usage in a UI context:
 
-![Vertical metrics in version 3](/images/vertical-metrics.svg)
-
-<img src="/images/vertical-metrics.svg" title="Vertical metrics in version 3" height="600" />
+<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/vertical-metrics.svg" title="Vertical metrics in version 3" width="300" />
 
 ### Other changes
 
