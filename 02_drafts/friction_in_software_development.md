@@ -21,7 +21,7 @@ This post is the most meta of them all as it's an anchor to the series itself th
 
 Before you go and read any specific articles, I have included series of actionable tips below to consider:
 
-- Visual: choose code-friendly fonts, set comfortable line length (80-100 characters seems to work well for fast scanning), and use adequate contrast.
+- Visual: choose code-friendly fonts, set comfortable line length (80–100 characters seems to work well for fast scanning), and use adequate contrast.
 - Cognitive: keep functions short while naming them well and pick a paradigm that fits your problem domain.
 - Mechanical: consider using an adjustable desk, learn and use keyboard shortcuts, consider voice/agentic interfaces to save typing.
 - Context: batch similar work, set notification rules, and allocate no-meeting focus segments to protect your time.
@@ -37,4 +37,4 @@ Before you go and read any specific articles, I have included series of actionab
 
 ## Conclusion
 
-I hope you enjoy this brief series and it inspires to do practical changes that improve your ergonomics!
+I hope you enjoy this brief series, and it inspires to do practical changes that improve your ergonomics!
