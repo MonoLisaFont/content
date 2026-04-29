@@ -38,11 +38,11 @@ The problem is that typically ligatures are "all or nothing" kind of deal meanin
 
 Since legibility is one of our key concerns when designing MonoLisa, version 3 was a great point to revisit some of the characters to make them more distinct. These changes are particularly useful for dyslexic users while benefitting others as well as tends to be the case with accessibility improvements. In specific, letters a, b, d, e, p, q, and similar across all languages and scripts have been adjusted as shown by the visual comparison below:
 
-<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/lettershapes-v3.svg" title="Letter improvements in version 3" width="300" />
+<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/lettershapes-v3.svg" title="Letter improvements in version 3" width="600" />
 
 In addition, selected letters in the light master have been widened:
 
-<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/comparison-wider-letters.svg" title="Wider letters in version 3" width="300" />
+<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/comparison-wider-letters.svg" title="Wider letters in version 3" width="600" />
 
 Vertical metrics have been adjusted to allow easier usage in a UI context:
 
