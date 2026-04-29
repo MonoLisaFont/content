@@ -14,15 +14,15 @@ The first version published in 2020 included a monospaced version aimed specific
 
 The second major version released on 2022 went a notch further by enabling variable weight. In other words, it became possible to make the font as thick or thin as you like since sometimes that's all you need to squeeze out that last bit of legibility. The introduction of variability also made the font useful for web related tasks as by shipping a variable version to your client, you can access all its weights without having to deliver multiple files.
 
-The second version also included a customization tool that lets you *freeze* font features since many editors and other applications available today have limited options on how to access your font features. Freezing solved this problem as it literally froze font features, such as specific characters, directly to the font itself thereby working around limitations of software.
+The second version also included a customization tool that lets you _freeze_ font features since many editors and other applications available today have limited options on how to access your font features. Freezing solved this problem as it literally froze font features, such as specific characters, directly to the font itself thereby working around limitations of software.
 
 ## Version 3 – the family grows with **MonoLisa Text**
 
-Now with version 3, the family grows with a new member besides *MonoLisa Code*, the original typeface. The new font family called *MonoLisa Text* covers the other half of common usage where a monospaced typeface reaches its limits. In other words, MonoLisa Text is a *proportional* family designed for use cases where you might have regular text and therefore completes the family while working as a complementary pair to the original version. This makes it ideal for use cases such as prose, user interfaces, presentations and any sort of printed items like books, magazines and the like.
+Now with version 3, the family grows with a new member besides _MonoLisa Code_, the original typeface. The new font family called _MonoLisa Text_ covers the other half of common usage where a monospaced typeface reaches its limits. In other words, MonoLisa Text is a _proportional_ family designed for use cases where you might have regular text and therefore completes the family while working as a complementary pair to the original version. This makes it ideal for use cases such as prose, user interfaces, presentations and any sort of printed items like books, magazines and the like.
 
-The introduction of MonoLisa Text makes the type family useful beyond programming as now it covers a wide range of *design* tasks making it a handy tool for designers to wield in their arsenal. Besides this major addition, we have made series of smaller changes that expand the usefulness of the original font family MonoLisa Code.
+The introduction of MonoLisa Text makes the type family useful beyond programming as now it covers a wide range of _design_ tasks making it a handy tool for designers to wield in their arsenal. Besides this major addition, we have made series of smaller changes that expand the usefulness of the original font family MonoLisa Code.
 
-![MonoLisa Code vs. MonoLisa Text](/images/mono-proportional.svg)
+<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/mono-proportional.svg" title="MonoLisa Code vs. MonoLisa Text" width="300" />
 
 ### New, more adjustable ligature behavior
 
@@ -30,7 +30,7 @@ Ligatures are a typeface feature that allows replacements of multiple characters
 
 If you use an editor like VS Code, then the typical way to enable ligatures in your editor is to set `"editor.fontLigatures": true`. This is the equivalent to setting `"editor.fontLigatures": "'liga', 'calt'"` so in other words it is enabling **two** sets of features, ligatures and so-called contextual alternates. The `liga` set typically contains replacements like `fi` or `fl` to improve character flow in a subtle manner while `calt` goes further and typically in programming fonts it is that set that contains combinations like `===` or `\>\=` (`>=`).
 
-*TODO: How to escape ligatures to show the combinations without applying?*
+_TODO: How to escape ligatures to show the combinations without applying?_
 
 The problem is that typically ligatures are "all or nothing" kind of deal meaning even if you liked some of the replacements, you will also get ones that you don't like, meaning enabling the whole set is not useful to you. To address this issue, we decided to go against the norm in version 3 and changed the behavior so that `liga` and `calt` do only slight space altering adjustments that you barely notice while moving specific groups of ligatures behind character variants known as `cv`s in OpenType specification. This goes well with MonoLisa since it is a combination of a typeface and a service that allows you to customize the font to your liking. If you are using an editor other than VS Code or some other that lets you adjust font behavior at a great detail, you can still freeze the specific ligature groups you prefer to your static font files.
 
@@ -38,28 +38,26 @@ The problem is that typically ligatures are "all or nothing" kind of deal meanin
 
 Since legibility is one of our key concerns when designing MonoLisa, version 3 was a great point to revisit some of the characters to make them more distinct. These changes are particularly useful for dyslexic users while benefitting others as well as tends to be the case with accessibility improvements. In specific, letters a, b, d, e, p, q, and similar across all languages and scripts have been adjusted as shown by the visual comparison below:
 
-![Letter improvements in version 3](/images/lettershapes-v3.svg)
+<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/lettershapes-v3.svg" title="Letter improvements in version 3" width="300" />
 
 In addition, selected letters in the light master have been widened:
 
-![Wider letters in version 3](/images/comparison-wider-letters.svg)
+<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/comparison-wider-letters.svg" title="Wider letters in version 3" width="300" />
 
 Vertical metrics have been adjusted to allow easier usage in a UI context:
-
-*TODO: For currentColor to work, SVGs like this have to be inlined!*
 
 <img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/vertical-metrics.svg" title="Vertical metrics in version 3" width="300" />
 
 ### Other changes
 
-*TODO: Link to the official change log from here. One option would be to push this information there potentially.*
+_TODO: Link to the official change log from here. One option would be to push this information there potentially._
 
 Besides these bigger changes, there have been other smaller changes we have listed below:
 
-* We reorganized and cleaned up stylistic sets so the order makes sense again.
-* Figure `7` (seven) with a middle stroke was introduced as `ss14`.
-* Plain `0` (zero with no center element) was introduced as `ss15`. In MonoLisa Text the plain zero is the default and the dotted version is the variant.
-* The support for historical Greek was extended and the support for Armenian, Hebrew, and Braille has been added.
+- We reorganized and cleaned up stylistic sets so the order makes sense again.
+- Figure `7` (seven) with a middle stroke was introduced as `ss14`.
+- Plain `0` (zero with no center element) was introduced as `ss15`. In MonoLisa Text the plain zero is the default and the dotted version is the variant.
+- The support for historical Greek was extended and the support for Armenian, Hebrew, and Braille has been added.
 
 ## New website
 
@@ -67,9 +65,9 @@ As we worked with the additions to the typeface, we realized it's not enough to 
 
 ## Availability of version 3 with MonoLisa Text
 
-*TODO: Describe new packages here and the route to them from older plans*
+_TODO: Describe new packages here and the route to them from older plans_
 
 ## Conclusion
 
 With version 3 the MonoLisa project enters a new era as the family not only got better but also bigger.
- *TODO: The CTA here is to pitch people to trial if they haven't tried the font before or to update as described above*
+_TODO: The CTA here is to pitch people to trial if they haven't tried the font before or to update as described above_
