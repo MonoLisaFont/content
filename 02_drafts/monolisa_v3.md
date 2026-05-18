@@ -26,7 +26,7 @@ The introduction of MonoLisa Text makes the type family useful beyond programmin
 
 ### New, more adjustable ligature behavior
 
-Ligatures are a typeface feature that allows replacements of multiple characters, such as `===`, into a single one. Some people greatly prefer this behavior while others find it distracting. Therefore it is always an optional feature in typefaces.
+Ligatures are a typeface feature that allows replacements of multiple characters, such as `===`, into a single one. Some people greatly prefer this behavior while others find it distracting. Therefore, it is always an optional feature in typefaces.
 
 If you use an editor like VS Code, then the typical way to enable ligatures in your editor is to set `"editor.fontLigatures": true`. This is the equivalent to setting `"editor.fontLigatures": "'liga', 'calt'"` so in other words it is enabling **two** sets of features, ligatures and so-called contextual alternates. The `liga` set typically contains replacements like `fi` or `fl` to improve character flow in a subtle manner while `calt` goes further and typically in programming fonts it is that set that contains combinations like `===` or `\>\=` (`>=`).
 
@@ -58,7 +58,7 @@ _TODO: Link to the official change log from here. One option would be to push th
 
 Besides these bigger changes, there have been other smaller changes we have listed below:
 
-- We reorganized and cleaned up stylistic sets so the order makes sense again.
+- We reorganized and cleaned up stylistic sets, so the order makes sense again.
 - Figure `7` (seven) with a middle stroke was introduced as `ss14`.
 - Plain `0` (zero with no center element) was introduced as `ss15`. In MonoLisa Text the plain zero is the default and the dotted version is the variant.
 - The support for historical Greek was extended and the support for Armenian, Hebrew, and Braille has been added.
