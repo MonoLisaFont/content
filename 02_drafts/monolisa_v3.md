@@ -22,7 +22,7 @@ Now with version 3, the family grows with a new member besides _MonoLisa Code_, 
 
 The introduction of MonoLisa Text makes the type family useful beyond programming as now it covers a wide range of _design_ tasks making it a handy tool for designers to wield in their arsenal. Besides this major addition, we have made series of smaller changes that expand the usefulness of the original font family MonoLisa Code.
 
-<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/mono-proportional.svg" title="MonoLisa Code vs. MonoLisa Text" width="300" />
+<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/mono-proportional.svg" title="MonoLisa Code vs. MonoLisa Text" width="100%" />
 
 ### New, more adjustable ligature behavior
 
@@ -38,11 +38,11 @@ The problem is that typically ligatures are "all or nothing" kind of deal meanin
 
 Since legibility is one of our key concerns when designing MonoLisa, version 3 was a great point to revisit some of the characters to make them more distinct. These changes are particularly useful for dyslexic users while benefitting others as well as tends to be the case with accessibility improvements. In specific, letters a, b, d, e, p, q, and similar across all languages and scripts have been adjusted as shown by the visual comparison below:
 
-<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/lettershapes-v3.svg" title="Letter improvements in version 3" width="600" />
+<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/lettershapes-v3.svg" title="Letter improvements in version 3" width="100%" />
 
 In addition, selected letters in the light master have been widened:
 
-<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/comparison-wider-letters.svg" title="Wider letters in version 3" width="600" />
+<img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/comparison-wider-letters.svg" title="Wider letters in version 3" width="100%" />
 
 Vertical metrics have been adjusted to allow easier usage in a UI context:
 
