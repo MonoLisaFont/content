@@ -30,8 +30,6 @@ Ligatures are a typeface feature that allows replacements of multiple characters
 
 If you use an editor like VS Code, then the typical way to enable ligatures in your editor is to set `"editor.fontLigatures": true`. This is the equivalent to setting `"editor.fontLigatures": "'liga', 'calt'"` so in other words it is enabling **two** sets of features, ligatures and so-called contextual alternates. The `liga` set typically contains replacements like `fi` or `fl` to improve character flow in a subtle manner while `calt` goes further and typically in programming fonts it is that set that contains combinations like `===` or `\>\=` (`>=`).
 
-_TODO: How to escape ligatures to show the combinations without applying?_
-
 The problem is that typically ligatures are "all or nothing" kind of deal meaning even if you liked some of the replacements, you will also get ones that you don't like, meaning enabling the whole set is not useful to you. To address this issue, we decided to go against the norm in version 3 and changed the behavior so that `liga` and `calt` do only slight space altering adjustments that you barely notice while moving specific groups of ligatures behind character variants known as `cv`s in OpenType specification. This goes well with MonoLisa since it is a combination of a typeface and a service that allows you to customize the font to your liking. If you are using an editor other than VS Code or some other that lets you adjust font behavior at a great detail, you can still freeze the specific ligature groups you prefer to your static font files.
 
 ### More distinct characters are now available
@@ -48,6 +46,12 @@ Vertical metrics have been adjusted to allow easier usage in a UI context:
 
 <img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/vertical-metrics.svg" title="Vertical metrics in version 3" width="300" />
 
+### Grade axis – Adjust glyph weight without changing line breaks
+
+Version 3 includes a new axis called **grade** (`GRAD` in OpenType). Essentially it allows you to subtly nudge lightness/darkness of a font. The feature is particularly useful if you work with MonoLisa Text and want to tune weight without changing your line breaks as described by [web.dev](https://web.dev/articles/variable-fonts#using_custom_axes). Why would you do this, though? It turns out there are subtle differences in how people perceive weights against dark and light backgrounds. Sometimes a small bump to a direction or another is all you need and in VS Code you could for example set `"editor.fontVariations": "'GRAD' 25"` to bump a notch up or `"editor.fontVariations": "'GRAD' -25"` to bump a notch down.
+
+In technical terms, the feature affects stroke thickness while retaining character widths and spacing and avoiding breaking your line breaks for MonoLisa Text. So consider it especially as a design feature that allows you to do subtle tweaks depending on the context while retaining the same font weight.
+
 ### Other changes
 
 _TODO: Link to the official change log from here. One option would be to push this information there potentially._
@@ -61,7 +65,7 @@ Besides these bigger changes, there have been other smaller changes we have list
 
 ## New website
 
-As we worked with the additions to the typeface, we realized it's not enough to only update only the font, but the website has to be made to fit it and showcase the new features well. Compared to the earlier one, you will likely notice that sections, such as the landing page or specimen, have received major updates. We also had to make sure the customization tool works with the new additions.
+As we worked with the additions to the typeface, we realized it's not enough to update only the font, but the website has to be made to fit it and showcase the new features well. Compared to the earlier one, you will likely notice that sections, such as the landing page or specimen, have received major updates. We also had to make sure the customization tool works with the new additions.
 
 ## Availability of version 3 with MonoLisa Text
 
