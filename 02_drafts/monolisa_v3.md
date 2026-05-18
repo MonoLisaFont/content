@@ -67,9 +67,11 @@ Besides these bigger changes, there have been other smaller changes we have list
 
 As we worked with the additions to the typeface, we realized it's not enough to update only the font, but the website has to be made to fit it and showcase the new features well. Compared to the earlier one, you will likely notice that sections, such as the landing page or specimen, have received major updates. We also had to make sure the customization tool works with the new additions.
 
-## Availability of version 3 with MonoLisa Text
+## Upgrade policy
 
-_TODO: Describe new packages here and the route to them from older plans_
+The new version is available in three plans: Trial, Dev, and Full. The Trial version is a limited version in terms of weights (normal and bold) but it's enough to get an idea of what it's like to work with MonoLisa. The new Dev version replaces our earlier plans as it bundles all the features for personal usage (including website) so there's no need to think about which plan to pick. The Full version is meant for cases where you might buy the typeface for all your team to use or for designers to use a portion of the typeface for their clients for example.
+
+A major version like this is always a major undertaking in terms of development time. For this purpose, we ask for a modest fee for upgrading to the latest version. The exact discount depends on your current plan. For those that bought the Complete version within the past two months, the upgrade is free. It is also fine to stay with your current version as the download will remain accessible, but even then give the Trial a go!
 
 ## Conclusion
 
