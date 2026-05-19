@@ -6,44 +6,50 @@ keywords: ["productivity", "code readability"]
 authors: ["Juho Vepsäläinen"]
 ---
 
-You encounter visual friction when what you read is difficult to parse at a glance. In this post, I show how presentation affects developer productivity and why readability matters for software developers.
+You encounter visual friction when something is technically visible but difficult to parse at a glance. For developers, this matters because a large part of the job is reading: code, diffs, logs, terminals, documentation, error messages, and pull requests. Visual friction does not have to make code impossible to understand. It only has to slow recognition slightly. Across thousands of small reads per day, that cost becomes real.
 
 ## What is visual friction
 
-A big chunk of development work is recognizing and using patterns. There's a reason why we split our code to functions. It's because we are adding semantics and structure to our code so it's easier for us to understand and to work with. Of course, you can overdo this and end up with a composition that's difficult to understand, so there's some balance to maintain.
+A big part of development work is recognizing patterns. We split code into functions, modules, and files partly because doing so gives the reader structure. The same is true visually: indentation, spacing, syntax color, line length, and typeface choices all affect how quickly the structure appears.
 
-It's important to separate [cognitive friction](../cognitive_friction) from visual one, since cognitive friction has specifically to do with understanding the meaning while visual friction has to do with seeing the structure. Most likely you use techniques to manage visual friction already as commonly used development environments integrate many of them by default.
+It is useful to separate [cognitive friction](../cognitive_friction) from visual friction. Cognitive friction is about understanding meaning. Visual friction is about seeing structure. They interact, but they are not the same problem.
 
-Visual friction is interesting because you encounter it anywhere where you have visual interfaces ranging from code editors to terminal output, diffs, pull requests, and documentation for example. That is not to say friction is not sometimes needed, as it absolutely is. Friction can be useful when you want to make the user to consider their actions and because of this user interfaces typically try to stop you before doing destructive actions that lose data.
+You already use techniques to manage visual friction: syntax highlighting, indentation guides, monospaced fonts, diff colors, warnings, icons, spacing, and formatting tools. Good interfaces use these cues to help the important parts stand out.
+
+Not all friction is bad. Interfaces sometimes add friction intentionally before destructive actions because slowing the user down is the point. But in normal reading and navigation, unnecessary visual friction makes development feel heavier than it needs to.
 
 ## Examples of visual friction
 
 To give you a better idea of what visual friction really is, consider the examples below:
 
-- Especially for fonts, the typical benchmark is to compare characters such as `0` and `O` or `1` and `l` since these pairs can get confused easily. Perhaps the most famous bad example is a commonly used typeface called Arial where these pairings are not easy to tell apart at all.
-- Many editors include syntax highlighting to allow you to detect keywords and structures faster. It is possible to go overboard with this, however, as wrong color choice can be counterproductive and make code harder and more annoying to read. It's also possible we haven't yet found the best ways to apply color in our editors as [discussed by Hillel Wayne](https://buttondown.com/hillelwayne/archive/syntax-highlighting-is-a-waste-of-an-information/).
-- Choice of your color theme matters as it has psychological impact as well. I don't know why, but for some reason many developers prefer a dark theme over a light one. I've found [Catppuccin](https://catppuccin.com/) to be a good option since the collection of the themes is not too "loud" and color intensity can be easily adjusted to your liking.
-- There is a connection to working in daylight and night since the amount of light from the environment. To reduce eye strain, some people use a feature called [night shift](https://support.apple.com/en-us/102191) available on macOS and likely in other operating systems as well. It turns out this isn't the full story since based on the latest research [the problem isn't blue light alone but the exposure to the light at an appropriate time of the day](https://www.bbc.com/future/article/20260407-the-blue-light-from-your-phone-isnt-ruining-your-sleep). In other words, it makes a lot of sense to spend some time outside during the day to "reset" your clock.
-- Line length, spacing, and indentation matter. For example, my preference for line length is somewhere between 80 and 110 characters as anything shorter or longer than that gets annoying to read. Sometimes you encounter this issue on websites where the designers didn't go with a conventional line length. You might not notice it consciously, but it's annoying. The same goes for spacing and indentation as there are many opinions on how to do it. Some say you should go with tabs since then it's up to the user. I like to delegate this debate to a tool like [Prettier](https://prettier.io/) that's handling indentation for me automatically.
-- In general, formatting is one source of visual friction. That's another reason why I prefer to use Prettier or a similar tool for my projects as it keeps formatting consistent thereby reducing visual noise especially when working with multiple projects as each should have same rules if possible.
+- Glyph ambiguity matters. Common checks include `0` versus `O`, `1` versus `l` versus `I`, and punctuation such as quotes, commas, periods, and colons. If characters are hard to distinguish, the reader has to spend attention on decoding rather than understanding.
+- Syntax highlighting can make structure faster to detect, but color is not automatically helpful. Too many strong colors create noise. Too little contrast hides useful distinctions. Hillel Wayne has a good critique of how syntax highlighting often wastes its information budget in ["Syntax highlighting is a waste of an information channel"](https://buttondown.com/hillelwayne/archive/syntax-highlighting-is-a-waste-of-an-information/).
+- Theme choice matters because developers stare at the theme for hours. Dark and light themes can both work well if contrast, saturation, and ambient lighting are handled carefully. I have found [Catppuccin](https://catppuccin.com/) pleasant because it is not too loud and can be tuned across tools.
+- Lighting affects visual comfort. A glossy display in direct light, a bright monitor in a dark room, or a theme that fights the surrounding environment can all increase strain. Features such as [Night Shift](https://support.apple.com/en-us/102191) can help some people, but monitor brightness, room lighting, breaks, and daylight exposure matter too. Research increasingly suggests [the problem isn't blue light alone but the exposure to the light at an appropriate time of the day](https://www.bbc.com/future/article/20260407-the-blue-light-from-your-phone-isnt-ruining-your-sleep).
+- Line length, spacing, and indentation matter. My preference for code is roughly 80 to 110 characters. Longer lines become tiring to scan, while very short lines can create excessive wrapping. For formatting, tools like [Prettier](https://prettier.io/) reduce debate and keep code visually consistent across contributors.
 
 ## How to reduce visual friction
 
-I think I covered a lot of potential solutions already, but in short consider using tools like Prettier, or a theme like Catppuccin combined with night shift. This is not all of course since it also matters what kind of typeface you use, and we hope you [give MonoLisa a go](https://monolisa.dev) since it was optimized for legibility. There are other options too, and it's worth experimenting to find a typeface that works for you since often the default one is not the ideal. This is true especially considering the amount of time you spend at your display on a daily basis. A better typeface combined with other improvements can literally save you from a headache and perhaps allow you to sleep better.
+The simplest improvements are often configuration changes: formatter defaults, theme tuning, line length, font size, line height, and typeface. Defaults are not always bad, but they are rarely chosen for your eyes, your display, your lighting, and your work.
 
-Beyond these, there are a couple of more actions you could consider:
+Typeface choice deserves special attention because it affects every line of code you read. In general, it is a good idea to test different available options since a typeface that looks nice in a specimen may behave differently in dense code, terminal output, or diffs. [MonoLisa](https://monolisa.dev) was designed for code legibility in particular and may be an option worth benchmarking.
 
-1. Consider setting your IDE line length around 100 characters. For text, simply enabling the limit and line wrapping is enough. I also tend to split the sentences of paragraphs per line since that is helpful when you are editing the transitions of your text and checking the overall flow.
-2. Adjust your color theme so that the most important aspects of code stand out while the rest get less visual attention. A common technique is to use a different style for code comments for example. You can also play with colors to see if that makes a difference.
-3. Consider the spacing and rhythm of your code. Especially now with AI-driven development, a common technique is to design your code using well written comments and then let the machine fill in the implementation. I would leave the comments in place most likely and use spacing between the blocks to differentiate them.
-4. Check the different tools you are using together for visual consistency. Often something looks off, and you might need to adjust for example the typeface or a color theme. Since adjusting typefaces can be so hard, we added a customization feature to MonoLisa that allows you to "freeze" the font features you want to an instance of a font to allow access to complex font features regardless of the environment.
+Beyond these, there are a few more actions you could consider:
+
+1. Set a visible line-length guide around the range that works for your team. Around 100 characters is a practical starting point for many codebases.
+2. Tune your theme so important structure stands out and comments, generated code, and secondary information recede.
+3. Use a formatter consistently. Formatting arguments are rarely worth spending review attention on.
+4. Check visual consistency across editor, terminal, browser, documentation, and pull request tools. Switching between very different visual environments creates its own friction.
+5. Test code fonts with the files you actually edit, including dense code, tests, logs, and diffs.
 
 ## Visual tradeoffs
 
-It's one thing to optimize visuals for yourself and another to optimize them for an entire team as there are most likely personal preferences in play. I would say it's easy to standardize on common things, such as formatting, and leave some of the other factors up to personal choice, although I would still try to share best practices with colleagues as often people don't care about visual clarity so much. A part of this is the lack of awareness, and it's something people don't think about.
+It is one thing to optimize visuals for yourself and another to optimize them for a team. Formatting rules, generated-code markers, review settings, and documentation layout are good team-level decisions because consistency helps everyone. Font, theme, and ligature choices can usually remain personal unless the team is producing shared screenshots, demos, or documentation.
 
-There are certain font features that can come with visual tradeoffs. For example ligatures help with pattern recognition, but it can be argued they hide literal characters too much making it a controversial feature. Again, it is one of the features you have to try, and a good compromise is to stick with only spacing related subtle adjustments that don't replace whole combinations in so drastic way. Good typefaces allow this type of subtle adjustments and obviously MonoLisa includes this level of flexibility.
+Some font features come with tradeoffs. Ligatures can improve pattern recognition for operators, but they can also hide the literal characters being typed. A good compromise is to start with subtle spacing improvements and only enable stronger substitutions if they genuinely help you read. Good developer typefaces expose these choices instead of forcing one style on everyone.
 
 ## Conclusion
 
-Visual friction is only one source of many frictions in development. If you want to investigate other sources of friction, [refer back to the anchor post for more ideas](../friction_in_software_development). The post that is most related out of them, is most likely [the post about friction in typography](../typography_friction) as it can be considered a subset of visual friction.
+Visual friction is easy to underestimate because developers adapt to bad defaults. That adaptation has a cost. Small improvements to rendering, spacing, contrast, and type can make code easier to scan all day.
+
+If you want to investigate other sources of friction, [refer back to the anchor post for more ideas](../friction_in_software_development). The closest related article is [typography friction](../typography_friction), which looks more closely at typeface choices for developers.

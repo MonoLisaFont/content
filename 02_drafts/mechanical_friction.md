@@ -6,36 +6,43 @@ keywords: ["productivity", "ergonomics", "hardware"]
 authors: ["Juho Vepsäläinen"]
 ---
 
-Since we cannot program effectively via thought alone just yet, there is a mechanical aspect to development work. For this reason, I look at mechanical friction in development in this post.
+Software development looks like knowledge work, but it still happens through a body: eyes, hands, wrists, neck, back, ears, and voice. Mechanical friction is the physical cost of interacting with the machine. That cost is easy to ignore until it becomes pain, fatigue, or avoidance. This post looks at the physical side of development work and the places where small improvements can matter.
 
 ## Mechanical friction in development
 
-In simplest terms, mechanical friction in development has to do about the physical effort related to writing and navigating code. You can consider this effort from multiple physical angles where you use your senses and physical actuators. This is the most physical source of friction of them all and therefore the most concrete one in this sense as it is about your interface with your machine.
+In simple terms, mechanical friction is the physical effort required to write, read, navigate, hear, and operate development tools. It includes hardware, posture, lighting, audio, keyboard layout, pointer use, shortcuts, and alternative input methods.
+
+This is the most concrete source of friction in the series because it is about the interface between you and the machine.
 
 ## How to address mechanical friction
 
-A big part of mechanical friction has to do with our ergonomics. This includes aspects such as hardware, software mechanics, and input modes. How these three are set up defines the amount of mechanical friction we experience. When it comes to hardware, there are several pieces to consider: keyboard, display, desk setup, lighting, and even your chair should you use one. Since there's a lot to unpack, I'll cover these briefly in detail next.
+A big part of mechanical friction is ergonomics. Hardware, software mechanics, and input modes all shape how much physical effort the work requires. The main areas to inspect are keyboard, pointing device, display, desk, chair, lighting, audio, and repetitive operations inside your tools.
 
-Many developers prefer to use an external keyboard since they tend to type a lot and I have found that maintaining a slight angle is good for my wrists. Since I type a lot on my laptop, I have a simple wooden stand under it, and you can find many options in the market, or you can improvise one yourself easily. Keyboard layout can matter as well since QWERTY is slow by design as the original designers wanted to avoid jams in early typewriters that could not handle speed and simply broke apart. One solution to avoid keyboard issues would be to avoid keyboard as much as you can and try options like voice input. Also consider defining keyboard macros for common operations to reduce work. AI assistants can be worth exploring as well.
+Many developers prefer external keyboards because laptop keyboards force a narrow posture and fixed screen position. I have found that a slight angle is better for my wrists, and a simple laptop stand can already improve the relationship between keyboard, screen, and neck.
 
-Using a good display configured well can make a massive difference and I have found 5K displays a great fit for Apple based flows, although many are happy with 4K ones. As far as I understand, 5K is a good option since it avoids weird scaling. Apparently that's not a problem on Windows or Linux based setups, so this may be worth researching to avoid wasting your money. It's always good to see the display you want to buy in real life since there are subtle differences in display coatings and connectivity for example.
+Keyboard layout can matter, but layout changes are only one lever. Shortcuts, macros, snippets, editor commands, and command palettes can remove repeated physical work without requiring you to relearn typing. Voice input and AI assistants are also worth exploring for tasks where typing is not the valuable part of the work.
 
-Desk setup is another big one since you likely end up sitting a lot. They say that the best sitting position is the next one and for this reason some developers alternate between sitting and standing. I have been using a saddle chair for the past five years since that gives a nicer angle for the legs, although I know it's not the right choice for all. The primary benefit seems to be that it forces me to use a better posture that's good for my back. In short, I use my muscles more on this chair which in turn can avoid issues long term. Again, this is something where it's worth experimenting and before buying something like a saddle chair, I would get a loan one. The main drawback is that you need an adjustable table first, but that's a good idea anyway.
+A good display configured well can make a large difference. Resolution, scaling, text rendering, brightness, coating, refresh rate, and physical height all affect comfort. I have found 5K displays a good fit for Apple-based setups because scaling tends to behave nicely, while many Windows and Linux users are happy with 4K or other configurations. If possible, test a display in person because coatings, brightness, and text rendering are difficult to judge from specifications alone.
 
-The way your lighting is set up can make a big difference since you want to avoid something that is blinding or interacting badly with your display, especially if it's a fancy glossy one. I tend to prefer indirect light and have it so that I can adjust the color and intensity of my lights. Because of this, I have done a fully automated setup based on Hue bulbs that are relatively cheap considering what they can do. Note that color temperatures of LED bulbs have improved a lot during the past few years so it is likely you have excellent options available in the current market.
+Desk setup matters because development often rewards staying still for too long. A useful ergonomic idea is that the best posture is the next posture and for this reason some developers alternate between sitting and standing. I have used a saddle chair for several years because it changes the leg angle and encourages a more active posture, but it is not the right choice for everyone. Therefore, before buying specialized furniture, it is better to borrow or test it so you understand if it's a good fit for you.
+
+Lighting can either support the display or fight it. Avoid glare, direct light into the eyes, and large brightness differences between the screen and the room. I prefer indirect light with adjustable color temperature and intensity. You do not need a complex setup to benefit from this: even a better lamp position can reduce strain.
 
 ## Practical advice
 
-Mechanical friction is difficult to address entirely, but there are many smaller things you can do depending on your budget:
+Mechanical friction is difficult to remove entirely, but many improvements are cheap:
 
-1. Consider your keyboard setup and the way you use your keyboard. Can you for example consider more angled setup or define keyboard macros for common tasks? Can you use alternative modalities, such as audio, for certain tasks to avoid typing?
-2. Perform an inventory of your desk and sitting setup. Can you see particular areas for improvement where you could consider an alternative? As mentioned, the best position is the next one so consider including short breaks to your workflow at least so you get regular movement since it's the long stretches staying still that are not good for us.
-3. Check your display setup. Can you see any adjustments you could make to improve display height for example? Can you see any software based adjustments you could do to improve the setup?
-4. Check your lighting. Are there easy fixes or improvements you could perform to make it more comfortable?
-5. Check your audio setup. Are your headphones or speakers comfortable? Can you see any obvious fixes? If you work in an open office, it is often a good idea to agree on common rules around calls for example or to agree on a specific space for just taking calls to avoid disturbing others.
+1. Review your keyboard and pointer setup. Look for repeated motions that shortcuts, macros, snippets, or editor commands could remove.
+2. Check display height, distance, scaling, font size, and brightness. Small adjustments can change how your neck and eyes feel by the end of the day.
+3. Inspect your desk and chair setup. Add movement, alternate postures, and avoid long stretches in one position.
+4. Fix lighting problems: glare, excessive contrast between screen and room, and direct light into your eyes.
+5. Check audio comfort. Headphones, speakers, meeting rooms, and open-office call rules all affect physical and attention load.
+6. Try alternative input for suitable tasks. Voice, dictation, and agentic tools can reduce typing when used deliberately.
 
 ## Conclusion
 
-Mechanical friction is interesting because it has so much to do with our physical environment. There are even more sources of it than I mentioned, for example ambient noise and your audio setup, but I hope this post gave you some idea on what you could consider addressing. It's likely a good idea to try to address one area at a time since there is so much you can do, and it's one of those areas where some experimentation is required. Ergonomics is a vast area by itself and I recommend reading about [Repetitive Stress Injury (RSI)](https://en.wikipedia.org/wiki/Repetitive_strain_injury) for example. The sad thing is that once it begins to hurt, it can already be too late with some of these injuries, so I recommend addressing your ergonomics early on.
+Mechanical friction is worth addressing early because the warning signs can arrive late. Ergonomics is a large topic, and [Repetitive Strain Injury](https://en.wikipedia.org/wiki/Repetitive_strain_injury) is worth understanding before pain forces the issue.
 
-Mechanical friction is only one source of friction in software development and I recommend [referring back to the anchor post of the series to learn more](../friction_in_software_development).
+The practical approach is to change one area at a time, observe the effect, and avoid turning ergonomics into an expensive shopping project. The goal is not a perfect setup. The goal is to make development physically sustainable.
+
+Mechanical friction is only one source of friction in software development. You can [refer back to the anchor post of the series to learn more](../friction_in_software_development).
