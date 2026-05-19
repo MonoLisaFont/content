@@ -24,6 +24,10 @@ Before you go into the specific articles, here are the key highlights:
 - Mechanical: consider keyboard, display, desk, chair, lighting, and input methods, so the body is not the bottleneck.
 - Context: batch similar work, set communication expectations, and reserve no-meeting focus blocks to protect your time.
 - Typography: test several monospaced typefaces on real code and prioritize glyph clarity over visual novelty.
+- Process: reduce avoidable handoffs, make ownership visible, and match process weight to change risk.
+- Toolchain: optimize the common development loop and treat flaky feedback as a product defect.
+- Communication: capture decisions, clarify requirements, and make review context easy to recover.
+- Organizational: align responsibility, authority, ownership, and incentives so developers can act.
 
 ## What this series covers
 
@@ -32,6 +36,10 @@ Before you go into the specific articles, here are the key highlights:
 - [Mechanical friction](../mechanical_friction): ergonomics, input flow, and physical comfort when coding.
 - [Context friction](../context_friction): flow, context switching, and managing your time.
 - [Typography friction](../typography_friction): a dedicated look at typeface details and why they matter for developer flow.
+- [Process friction](../process_friction): how work moves through reviews, handoffs, approvals, and release paths.
+- [Toolchain friction](../toolchain_friction): build, test, dependency, CI, and environment problems that slow feedback.
+- [Communication friction](../communication_friction): missing context, unclear requirements, noisy channels, and undocumented decisions.
+- [Organizational friction](../organizational_friction): decision latency, fragmented ownership, permissions, and misaligned incentives.
 
 ## Conclusion
 
