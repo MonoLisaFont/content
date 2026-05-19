@@ -1,36 +1,45 @@
 ---
-title: "Typography for developer friction"
+title: "Typography friction in development"
 published: 2026-04-01
 updated: 2026-04-01
 keywords: ["productivity"]
 authors: ["Juho Vepsäläinen"]
 ---
 
-Typography sits at the crossroads of [visual](../visual_friction) and [cognitive friction](../cognitive_friction) we covered separately. In this post, I examine why the choice of a typeface and its features can make a different for developer flow.
+Typography sits at the crossroads of [visual](../visual_friction) and [cognitive friction](../cognitive_friction). It shapes how quickly developers recognize characters, scan structure, and stay comfortable while reading code.
+
+This post focuses on typography from a developer's point of view: typeface choice, glyph clarity, spacing, ligatures, and the tradeoff between compactness and legibility.
 
 ## Why is typography important for developers
 
-Typography is important in sense that it is everywhere you have text. In other words, somebody had to consider how to put the content to glyphs that can be then reproduced and this process of figuring out how to do this effectively has been going on since writing was invented. It was only with the invention of the printing press that it became more formalized and scaled to masses. Digital media comes with its own typography related opportunities and challenges and that's going to be our scope in this post as we look at typography especially from a developer point of view.
+Typography matters because software development is full of text. Code, terminals, logs, documentation, comments, stack traces, pull requests, and issue trackers all rely on characters being easy to recognize and comfortable to read.
+
+For developers, typography is not only about taste. A programming typeface has to handle dense symbols, similar-looking glyphs, punctuation, mixed case, indentation, and long reading sessions. Small design decisions become practical because developers see them all day.
 
 ## What to look at in typefaces
 
-As a developer, usually you just use whatever font that comes with your editor without thinking too much about. Therefore, it's good to know what to look at if you are considering trying other options. Typically, you would look at so-called monospaced typefaces especially for code since those guarantee the same width for each glyph making it faster to scan code so apply that knowledge when looking for options. Furthermore, there are several aspects of a typeface you should be aware of when evaluating options:
+Many developers use whatever font ships with the editor. That is understandable, but it is worth knowing what to evaluate when trying alternatives.
 
-1. Consider character differentiation. I.e., look at letters such as 1, l, and I, or 0 and O. Sometimes you can see that it's not easy to tell the letters apart and that can be considered a font design issue.
-2. Consider line height and letter spacing. You can adjust especially line height in your editor. Letter spacing can be challenging in monospaced typefaces since it's typically fixed. To give more space for design, we went with slightly wider letters in [MonoLisa](https://monolisa.dev) for example. The tradeoff is that it takes slightly more horizontal space than others, but you win in terms of clarity especially for wider letters, such as m. These wide letters simply feel less cramped when you have more space available.
-3. Consider ligatures. Often typefaces aimed for developers include optional ligatures. You can try using them to see if the feature is to your liking. In MonoLisa we split up ligatures so that by default they perform only space altering tweaks making the effect subtle. You can still get full character combination replacements if you want, but that's optional.
-4. Consider compactness vs. legibility. As mentioned, more compact fonts have to make tradeoffs in terms of legibility while winning in horizontal space. Test different widths to find a typeface that makes the most sense for you.
+For code, the usual starting point is a monospaced typeface because each character occupies the same horizontal width. This supports indentation, alignment, tabular output, and fast scanning. Beyond that, there are several features to inspect:
+
+1. Character differentiation: compare `1`, `l`, and `I`; `0` and `O`; quotes; commas; periods; colons; braces; brackets; and operators. If these blur together, the font is adding work.
+2. Line height and spacing: line height is usually adjustable in the editor, but the underlying design still matters. A cramped typeface can feel efficient at first and tiring later.
+3. Width: compact fonts fit more code horizontally, but they often reduce internal space inside wide characters such as `m` and `w`. Wider fonts use more space, but can be calmer to read.
+4. Ligatures: many developer typefaces include optional ligatures. They can improve recognition for operators, but they can also hide literal character sequences. Try them rather than assuming they are always better or worse.
+5. Feature control: good code fonts should let you choose alternates, disable features, and tune behavior across environments. In [MonoLisa](https://monolisa.dev), for example, ligature behavior can remain subtle by default while stronger replacements stay optional.
 
 ## Practical advice
 
-Choosing your typeface is often a personal decision, or a given one if you just use what is given. That said, it's worth experimenting with typefaces, and I've listed several things to try below:
+Choosing a typeface is partly personal, but the experiment should be concrete:
 
-1. Find several typefaces with different characteristics and use them to render a simple code snippet while taking screenshots. Evaluate the screenshots together to see if you can spot concrete differences.
-2. Try one typeface at a time, for example a day, to see if you notice any differences or preferences. Also try adjusting features such as line height or enabling ligatures for a while to explore the typefaces.
-3. Consider typeface as an investment towards better ergonomics. There are many free ones, but also the paid ones are worth evaluating since they tend to have their own unique features and design.
+1. Pick several typefaces with different characteristics and render the same real code snippet in each.
+2. Include dense code, tests, logs, terminal output, and diffs in the comparison.
+3. Try one typeface for at least a day before judging it. First impressions can be misleading.
+4. Adjust line height, font size, and ligatures separately so you know what changed.
+5. Treat typeface choice as part of ergonomics. Free fonts can be excellent, and paid fonts can be worth evaluating when they solve a problem you feel every day. Although the cost may feel substantial initially, consider it as a long-term investment in your wellbeing.
 
 ## Conclusion
 
-Choosing your typeface well can make a difference in your daily development, and it's one of those areas where it's easy to experiment. It's worth putting some time into exploring the options beyond the defaults.
+Typography is a small configuration detail with a large surface area. You see it in every line of code, every terminal command, and every review. That makes it worth tuning deliberately.
 
 As there are more sources to friction in development, [refer back to the anchor post of the series to learn more about the topic](../friction_in_software_development).
