@@ -6,34 +6,42 @@ keywords: ["productivity"]
 authors: ["Juho Vepsäläinen"]
 ---
 
-Context friction is the cost of switching, distractions, and managing attention. In this post, I offer methods to preserve focus in modern workflows.
+Context friction is the cost of switching, interruption, and attention recovery. It shows up when you move from implementation to Slack, from code review to a meeting, from a failing test to an unrelated support question, and then back again. The interruption itself may take only a minute, but it can take a long while to rebuild the mental model you were using before the interruption. Besides feeling annoying, this can feel draining over longer term and add up if interruptions are common.
 
 ## Flowing alone
 
-Mihaly Csikszentmihalyi's concept of flow is well known in creative circles as it captures the feeling of deep focus where time seems to fly. Unfortunately it can be easy to break this state and getting back to it may require a moment. All it takes is one notification at the wrong time, and you have lost your focus, and you have to reconstruct your context to be productive again.
+Mihaly Csikszentmihalyi's concept of flow is well known in creative work: the state of deep focus where time seems to move differently and the task has your full attention. Programming often benefits from this state because you are holding many details at once: the goal, the current implementation, constraints, edge cases, and the next step. Unfortunately it is easy to break flow. One notification at the wrong time can be enough to lose the thread, after which you have to reconstruct the context before you can make progress again.
 
-My favorite way of maintaining flow is to chunk my working day into several segments dedicated to specific type of work. Often lunch provides a natural break as it can be tiring to remain in a flow state for a longer period of time. Some people prefer shorter sections of time in the form of [pomodoros](https://en.wikipedia.org/wiki/Pomodoro_Technique) (tomatoes in Italian) that mean 25 minutes of work without interruptions with a five-minute break right after where distractions are allowed.
+My preferred way to protect flow is to split the working day into segments dedicated to different types of work. Lunch provides a natural boundary, and it is usually unrealistic to expect deep focus for an entire day. Some people prefer shorter blocks, such as [Pomodoro](https://en.wikipedia.org/wiki/Pomodoro_Technique) sessions: 25 minutes of work followed by a short break.
 
-The benefit of any kind of chunking is that you can think what kind of work goes where. I have learned over time that meetings can be tiring so for this reason I prefer to push all the meetings I can towards the end of my working day as I am not going to have a fun doing deep work there anyway so it's fine to do something else.
+The benefit of chunking is that it lets you decide what kind of work belongs where. I have learned that meetings are tiring for me, so I prefer to push them toward the end of the working day when I am less likely to do good deep work anyway. Other people may have different rhythms, but the principle is the same: place expensive cognitive work where your attention is strongest.
 
-In short, you have to take control of your time and learn to manage it carefully. Most importantly, protect your productive blocks of time and disable any kinds of notifications for those times to avoid getting pulled out of your concentrated flow state.
+In short, protect the blocks where focused development can happen. Disable notifications, close unrelated tabs, and make your availability visible, so teammates know when to expect a response.
 
 ## Flowing together – pairing, ensemble programming
 
-Although programming can be considered a lone sport, it doesn't have to be so. If you can work with a colleague with complementary skills or viewpoint, then [pair programming](https://en.wikipedia.org/wiki/Pair_programming) can be a good idea to get good chunks of work done fast. If you don't have a colleague available, then even a modern language model can do the job surprisingly well as long as you are aware of the limitations. Working this way with the machine can take getting some used to, but this method of working can be highly effective for some as it can amplify your thinking. Agentic coding does require a good dose of discipline, however, and best practices are still forming.
+Although programming is often treated as solo work, it does not have to be so. With a colleague who has complementary skills, [pair programming](https://en.wikipedia.org/wiki/Pair_programming) can reduce context friction because decisions, implementation, and review happen in one shared loop.
 
-Agentic tools come with risks of their own and some call [AI brain fry](https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry) a concrete problem so it's possible to overdo it. The introduction of agentic tools is comparable to the introduction of the motor saw since now we can work much faster while also doing a lot of damage if we don't understand well what we are doing.
+Modern language models, or agents, can also play part of this role when a human pair is not available. They can help explore options, draft code, explain unfamiliar APIs, or keep a task moving. This can be effective, but it requires discipline: you still need to review the output, understand the design, and keep ownership of the result as otherwise you risk producing what is commonly known as AI slop. So be mindful when working with machines and make sure you are sitting in the driver's seat.
 
-You can also combine these two methods of working and work with a human pair and a machine at the same time, although I haven't tried this one. I have heard that ensemble/mob programming style where AI is used in addition can be highly productive as then you have a whole team that can make product decisions fast, document them, and get them implemented as you go without having to go through the usual process of creating tickets as work simply gets done as it's invented and discussed.
+Agentic tools introduce their own context friction. You may be tracking your own plan, the tool's plan, generated diffs, review comments, failing checks, and hidden assumptions at the same time. Used well, the tool reduces load. Used carelessly, it creates a new stream of work to supervise.
+
+This kind of friction tends to add up especially if you are running multiple agents in multiple contexts at once, and it can easily become overwhelming to keep track of all the action. The machine can move far faster than you can so you have to find efficient ways to deal with this difference in available bandwidth without stretching yourself too far.
+
+You can also combine human collaboration and machine assistance. In an ensemble or mob programming setting, the team can make product decisions, document them, and implement them while the shared context is still fresh. Besides speed, working together leads to fewer handoffs and a shared vision of what was done and why as work is shaped together.
 
 ## Practical advice
 
-If there are a couple of practical things you can take out of this post, consider the following:
+The practical goal is to reduce avoidable context rebuilds:
 
-1. Use timeboxes and focus sessions (e.g., Pomodoro, 90-min flow).
-2. Set expectation rules for communication channels. You don't have to respond immediately, and it's not a good idea to teach people to expect an instant answer always.
-3. Plan day with context sets: batch similar tasks to avoid high-cost switching as that will eat your energy.
+1. Use timeboxes and focus sessions, such as Pomodoro blocks or 90-minute deep-work sessions.
+2. Set expectation rules for communication channels. You do not have to respond immediately to everything.
+3. Batch similar tasks: reviews together, meetings together, support work together, implementation together.
+4. Leave breadcrumbs before switching: a failing test name, a short note, or the next command to run.
+5. Treat unfinished work as a context object. Capture enough state that future you can restart quickly.
 
 ## Conclusion
 
-I hope you found something new from this post to apply to your daily development. You can [refer to the anchor post of this series for more ideas](../friction_in_software_development).
+Context friction is often invisible because interruption feels like a normal part of the job, but it doesn't have to be so. The more complex the work, the more valuable it becomes to protect attention deliberately.
+
+You can [refer to the anchor post of this series for more ideas](../friction_in_software_development).
