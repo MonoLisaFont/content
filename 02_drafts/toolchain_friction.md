@@ -38,4 +38,6 @@ To summarize, there are several steps you could do to address toolchain friction
 
 ## Conclusion
 
-Toolchain is a considerable source of friction for developers, and it is one of those we experience constantly. Therefore, it's worth considering its impact to our work, performing analysis, and improving where possible. You can [refer back to the anchor post of this series for more ideas](../friction_in_software_development).
+Toolchain is a considerable source of friction for developers, and it is one of those we experience constantly. Therefore, it's worth considering its impact to our work, performing analysis, and improving where possible.
+
+You can [refer back to the anchor post of this series for more ideas regarding friction](../friction_in_software_development).
