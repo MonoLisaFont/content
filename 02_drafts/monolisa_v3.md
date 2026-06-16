@@ -12,7 +12,7 @@ MonoLisa is a typeface that has been in development since 2020. Over five thousa
 
 ## Versions 1 and 2
 
-The first version published in 2020 included a monospaced version aimed specifically at developers. The key point of version one was to offer a razor sharp monospaced font with clear focus on distinction and legibility.
+The first version published in 2020 included a monospaced version aimed specifically at developers. The key point of version 1 was to offer a razor sharp monospaced font with clear focus on distinction and legibility.
 
 The second major version released on 2022 went a notch further by enabling variable weight. In other words, it became possible to make the font as thick or thin as you like since sometimes that's all you need to squeeze out that last bit of legibility. The introduction of variability also made the font useful for web related tasks as by shipping a variable version to your client, you can access all its weights without having to deliver multiple files.
 
@@ -26,15 +26,15 @@ The introduction of MonoLisa Text makes the type family useful beyond programmin
 
 <img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/mono-proportional.svg" title="MonoLisa Code vs. MonoLisa Text" width="100%" />
 
-### New, more adjustable ligature behavior
+## New, more adjustable ligature behavior
 
-Ligatures are a typeface feature that allows replacements of multiple characters, such as `===`, into a single one. Some people greatly prefer this behavior while others find it distracting. Therefore, it is always an optional feature in typefaces.
+Ligatures are a typography feature that allows replacements of multiple characters, such as `===`, into a single one. Some people greatly prefer this behavior while others find it distracting. Therefore, it is always an optional feature in typefaces.
 
 If you use an editor like VS Code, then the typical way to enable ligatures in your editor is to set `"editor.fontLigatures": true`. This is the equivalent to setting `"editor.fontLigatures": "'liga', 'calt'"` so in other words it is enabling **two** sets of features, ligatures and so-called contextual alternates. The `liga` set typically contains replacements like `fi` or `fl` to improve character flow in a subtle manner while `calt` goes further and typically in programming fonts it is that set that contains combinations like `===` or `\>\=` (`>=`).
 
 The problem is that typically ligatures are "all or nothing" kind of deal meaning even if you liked some of the replacements, you will also get ones that you don't like, meaning enabling the whole set is not useful to you. To address this issue, we decided to go against the norm in version 3 and changed the behavior so that `liga` and `calt` do only slight space altering adjustments that you barely notice while moving specific groups of ligatures behind character variants known as `cv`s in OpenType specification. This goes well with MonoLisa since it is a combination of a typeface and a service that allows you to customize the font to your liking. If you are using an editor other than VS Code or some other that lets you adjust font behavior at a great detail, you can still freeze the specific ligature groups you prefer to your static font files.
 
-### More distinct characters are now available
+## More distinct characters are now available
 
 Since legibility is one of our key concerns when designing MonoLisa, version 3 was a great point to revisit some of the characters to make them more distinct. These changes are particularly useful for dyslexic users while benefitting others as well as tends to be the case with accessibility improvements. In specific, letters a, b, d, e, p, q, and similar across all languages and scripts have been adjusted as shown by the visual comparison below:
 
@@ -48,13 +48,13 @@ Vertical metrics have been adjusted to allow easier usage in a UI context:
 
 <img src="https://raw.githubusercontent.com/MonoLisaFont/content/main/images/vertical-metrics.svg" title="Vertical metrics in version 3" width="300" />
 
-### Grade axis – Adjust glyph weight without changing line breaks
+## Grade axis – Adjust glyph weight without changing line breaks
 
 Version 3 includes a new axis called **grade** (`GRAD` in OpenType). Essentially it allows you to subtly nudge lightness/darkness of a font. The feature is particularly useful if you work with MonoLisa Text and want to tune weight without changing your line breaks as described by [web.dev](https://web.dev/articles/variable-fonts#using_custom_axes). Why would you do this, though? It turns out there are subtle differences in how people perceive weights against dark and light backgrounds. Sometimes a small bump to a direction or another is all you need and in VS Code you could for example set `"editor.fontVariations": "'GRAD' 25"` to bump a notch up or `"editor.fontVariations": "'GRAD' -25"` to bump a notch down. In our case the scale goes from -50 to 50.
 
 In technical terms, the feature affects stroke thickness while retaining character widths and spacing and avoiding breaking your line breaks for MonoLisa Text. So consider it especially as a design feature that allows you to do subtle tweaks depending on the context while retaining the same font weight.
 
-### Other changes
+## Other changes
 
 Besides these bigger changes, there have been other smaller changes we have listed below:
 
@@ -75,7 +75,7 @@ The new version is available in three plans: Trial, Developer, and Creator. The 
 
 The new Developer plan replaces our earlier plans as it bundles all the features for personal usage (including websites) so there's no need to think about which plan to pick. There are two variants of the Developer plan. One with Code only and one including both Code and Text. It's also possible to upgrade to the version with Text later on if you are unsure of it.
 
-The Creator plan has been designed for commercial use cases, and it allows you to buy exactly what you need for a specific case, such as a logotype or using a font in a book. The plan has been designed so that it allows designers to buy a font to use for their clients. Essentially the plan replaces our earlier commercial subscription options.
+The Creator plan has been designed for commercial use cases, and it allows you to buy exactly what you need for a specific case, such as a logotype or using a font in a book. It also allows designers to buy a font to use for their clients. Essentially this plan replaces our earlier commercial subscription options.
 
 ## Upgrade policy
 
