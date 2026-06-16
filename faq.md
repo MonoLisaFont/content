@@ -176,6 +176,13 @@ To debug why the script variant (ss01) doesn’t work or show up, follow the ste
 5. If in doubt, [use fontdrop to verify](https://fontdrop.info/) that the feature is available in the version you downloaded. After dropping the italic version there, you should see a toggle for ss01. After pressing it, you should see the script variant applied to the sample. If you froze the feature through customization, it should be enabled by default.
 </Details>
 
+<Details>
+### Can you propose a complementary font to use for UI?
+
+Sure. Use MonoLisa Text included to the Developer plan as that family is made for the purpose.
+
+</Details>
+
 ## Downloading
 
 <Details>
