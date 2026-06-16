@@ -75,7 +75,7 @@ The new version is available in three plans: Trial, Developer, and Creator. The 
 
 The new Developer plan replaces our earlier plans as it bundles all the features for personal usage (including websites) so there's no need to think about which plan to pick. There are two variants of the Developer plan. One with Code only and one including both Code and Text. It's also possible to upgrade to the version with Text later on if you are unsure of it.
 
-The Creator plan has been designed for commercial use cases, and it allows you to buy exactly what you need for a specific case, such as a logotype or using a font in a book. It also allows designers to buy a font to use for their clients. Essentially this plan replaces our earlier commercial subscription options.
+The Creator plan has been designed for commercial use cases, and it allows you to buy exactly what you need for a specific case, such as a logotype or using a font in a book. It also allows designers to buy a font to use for their clients. Essentially this plan replaces our earlier commercial subscription options. If you are on an earlier commercial subscription, we recommend buying a fixed license, although you can still keep your earlier subscription in place if you prefer that instead.
 
 ## Upgrade policy
 
