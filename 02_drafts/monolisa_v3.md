@@ -1,7 +1,7 @@
 ---
 title: "MonoLisa version 3 – now with MonoLisa Text family"
-published: 2026-04-01
-updated: 2026-04-01
+published: 2026-06-16
+updated: 2026-06-16
 keywords: ["release"]
 authors: ["Andrey Okonetchnikov", "Marcus Sterz", "Juho Vepsäläinen"]
 ---
@@ -48,13 +48,11 @@ Vertical metrics have been adjusted to allow easier usage in a UI context:
 
 ### Grade axis – Adjust glyph weight without changing line breaks
 
-Version 3 includes a new axis called **grade** (`GRAD` in OpenType). Essentially it allows you to subtly nudge lightness/darkness of a font. The feature is particularly useful if you work with MonoLisa Text and want to tune weight without changing your line breaks as described by [web.dev](https://web.dev/articles/variable-fonts#using_custom_axes). Why would you do this, though? It turns out there are subtle differences in how people perceive weights against dark and light backgrounds. Sometimes a small bump to a direction or another is all you need and in VS Code you could for example set `"editor.fontVariations": "'GRAD' 25"` to bump a notch up or `"editor.fontVariations": "'GRAD' -25"` to bump a notch down.
+Version 3 includes a new axis called **grade** (`GRAD` in OpenType). Essentially it allows you to subtly nudge lightness/darkness of a font. The feature is particularly useful if you work with MonoLisa Text and want to tune weight without changing your line breaks as described by [web.dev](https://web.dev/articles/variable-fonts#using_custom_axes). Why would you do this, though? It turns out there are subtle differences in how people perceive weights against dark and light backgrounds. Sometimes a small bump to a direction or another is all you need and in VS Code you could for example set `"editor.fontVariations": "'GRAD' 25"` to bump a notch up or `"editor.fontVariations": "'GRAD' -25"` to bump a notch down. In our case the scale goes from -50 to 50.
 
 In technical terms, the feature affects stroke thickness while retaining character widths and spacing and avoiding breaking your line breaks for MonoLisa Text. So consider it especially as a design feature that allows you to do subtle tweaks depending on the context while retaining the same font weight.
 
 ### Other changes
-
-_TODO: Link to the official change log from here. One option would be to push this information there potentially._
 
 Besides these bigger changes, there have been other smaller changes we have listed below:
 
@@ -63,17 +61,54 @@ Besides these bigger changes, there have been other smaller changes we have list
 - Plain `0` (zero with no center element) was introduced as `ss15`. In MonoLisa Text the plain zero is the default and the dotted version is the variant.
 - The support for historical Greek was extended and the support for Armenian, Hebrew, and Braille has been added.
 
+You can [find full details at the release log](/releases/3.000).
+
 ## New website
 
 As we worked with the additions to the typeface, we realized it's not enough to update only the font, but the website has to be made to fit it and showcase the new features well. Compared to the earlier one, you will likely notice that sections, such as the landing page or specimen, have received major updates. We also had to make sure the customization tool works with the new additions.
 
+## Refreshed plans
+
+The new version is available in three plans: Trial, Developer, and Creator. The Trial plan includes a subset of both Code and Text, and it has been limited in terms of weights (Normal and Bold). The key point is that Trial gives enough of an idea of what it's like to work with MonoLisa on your own system.
+
+The new Developer plan replaces our earlier plans as it bundles all the features for personal usage (including websites) so there's no need to think about which plan to pick. There are two variants of the Developer plan. One with Code only and one including both Code and Text. It's also possible to upgrade to the version with Text later on if you are unsure of it.
+
+The Creator plan has been designed for commercial use cases, and it allows you to buy exactly what you need for a specific case, such as a logotype or using a font in a book. The plan has been designed so that it allows designers to buy a font to use for their clients. Essentially the plan replaces our earlier commercial subscription options.
+
 ## Upgrade policy
 
-The new version is available in three plans: Trial, Dev, and Full. The Trial version is a limited version in terms of weights (normal and bold) but it's enough to get an idea of what it's like to work with MonoLisa. The new Dev version replaces our earlier plans as it bundles all the features for personal usage (including website) so there's no need to think about which plan to pick. The Full version is meant for cases where you might buy the typeface for all your team to use or for designers to use a portion of the typeface for their clients for example.
+A major version like this is always a major undertaking in terms of development time. We came up with a simple model for upgrades to take into account when and what you bought:
 
-A major version like this is always a major undertaking in terms of development time. For this purpose, we ask for a modest fee for upgrading to the latest version. The exact discount depends on your current plan. For those that bought the Complete version within the past two months, the upgrade is free. It is also fine to stay with your current version as the download will remain accessible, but even then give the Trial a go!
+- If you bought Complete starting from the beginning of this year, you'll have a free upgrade to Developer.
+- For anyone else, you'll get a discount based on proximity so that if you own version 2, you'll get a bigger discount than version 1 owners towards version 3.
+
+Note that even if you decide not to upgrade, your current version will remain accessible. To ease maintenance burden, we'll sunset customize tool for version 2 in the coming months since the variant for version 3 has its own added complexity.
+
+## Note the name and stylistic set changes in your editor
+
+After upgrading to version 3, you should refer to the original MonoLisa as `MonoLisaCode` in your configuration. Text variant is available as `MonoLisaText` in case you want to try it as your user interface font and your editor supports it. As time of writing, for example VS Code doesn't expose UI font.
+
+You should also check out how the mapping between stylistic sets changed. We've highlighted key changes below to make it easier to migrate:
+
+- Normal asterisk: ss01 → ss07
+- Script variant (italic only): ss02 → ss01
+- Alt sharp s: ss05 → None. Removed as redundant.
+- Alt curly bracket: ss07 → ss11
+- Alt parenthesis: ss08 → ss12
+- Alt greater equal: ss09 → cv06
+- Alt greater equal: ss10 → cv07
+- Hexadecimal x: ss11 → ss13
+- Thin backslash: ss12 → ss12
+- Alt dollar: ss13 → ss08. ss08 contains alternate currency symbols.
+- Alt &: ss14 → ss09
+- i without serif: ss15 → ss02
+- r without serif: ss16 → ss02
+- Alt .= and ..=: ss17 → cv10
+- Alt at: ss18 → ss05
+- Besides zero, there's also ss15 (plain zero) now
+
+[See also the specimen page](/specimen) to understand what the variants look like exactly. They are also visible on your [orders page](/orders).
 
 ## Conclusion
 
-With version 3 the MonoLisa project enters a new era as the family not only got better but also bigger.
-_TODO: The CTA here is to pitch people to trial if they haven't tried the font before or to update as described above_
+Version 3 is a major milestone for MonoLisa as it expands the family while improving the pre-existing one. Especially if you haven't tried MonoLisa, we recommend [testing out the trial](/buy/trial/) as it gives you an impression of how the typeface can work on your system since it's one thing to see and another thing to experience.
