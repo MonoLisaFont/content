@@ -6,7 +6,7 @@ purpose: Tell about the new version and why it's a good time to upgrade
 
 MonoLisa typeface started in 2020 as we (Andrey, Juho, Marcus) got together, joined our expertise, and came up with a typeface for **developers**. The key point was to implement slightly wider glyphs to allow more space for design. Monospaced typefaces are full of design compromises, and you can see the impact of width in a letter like "m" for example.
 
-In version 2, we introduced variable weight since fixed weights get you only so far. Now with version 3, there are several major improvements:
+In version 2, we introduced variable weight since fixed weights get you only so far. Now with version 3 we expand the typeface to fit **designers** and there are several major improvements:
 
 - There's a new proportional font family included now that is called `MonoLisa Text`. That complements the original `MonoLisa Code` and allows further use cases as it is a perfect pairing to the original. While proportional fonts aren't used for coding for a good reason, they have uses for other tasks (think UI, presentation slides, etc.).
 - There's a new axis called **grade**. The feature comes from the OpenType standard and allows slight bumps to weight towards lighter or darker. In short, you can use the feature to adjust weight slightly without altering page breaks (important for MonoLisa Text).
@@ -16,9 +16,12 @@ There are more changes of course, and you should [read the release blog post for
 
 ## Upgrade policy
 
-The new version is available in three plans: Trial, Dev, and Full. The Trial version is a limited version in terms of weights (normal and bold) but it's enough to get an idea of what it's like to work with MonoLisa. The new Dev version replaces our earlier plans as it bundles all the features for personal usage (including website) so there's no need to think about which plan to pick. The Full version is meant for cases where you might buy the typeface for all your team to use or for designers to use a portion of the typeface for their clients for example.
+A major version like this is always a major undertaking in terms of development time. We came up with a simple model for upgrades to take into account when and what you bought:
 
-A major version like this is always a major undertaking in terms of development time. For this purpose, we ask for a modest fee for upgrading to the latest version. The exact discount depends on your current plan. For those that bought the Complete version within the past two months, the upgrade is free. It is also fine to stay with your current version as the download will remain accessible, but even then give the Trial a go!
+- If you bought Complete starting from the beginning of this year, you'll have a free upgrade to Developer.
+- For anyone else, you'll get a discount based on proximity so that if you own version 2, you'll get a bigger discount than version 1 owners towards version 3.
+
+Note that even if you decide not to upgrade, your current version will remain accessible. To ease maintenance burden, we'll sunset customize tool for version 2 in the coming months since the variant for version 3 has its own added complexity.
 
 ## Conclusion
 
