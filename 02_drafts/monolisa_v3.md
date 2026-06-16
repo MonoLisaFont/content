@@ -8,6 +8,8 @@ authors: ["Andrey Okonetchnikov", "Marcus Sterz", "Juho Vepsäläinen"]
 
 MonoLisa is a typeface that has been in development since 2020. Over five thousand software developers and companies have adopted it since as their font of choice. Now with version 3, the family expands yet again and in this post we show you how the font has evolved now to cover design tasks as well. It is quite rare that a typeface receives continuous care and effort from its creators but here we are still at it six years later. Without you, the community who gave us so much valuable feedback, MonoLisa wouldn’t be where it is now.
 
+> TLDR; [Read the migration guide if you are coming from version 2 and just want to see the changes](/releases/3.000).
+
 ## Versions 1 and 2
 
 The first version published in 2020 included a monospaced version aimed specifically at developers. The key point of version one was to offer a razor sharp monospaced font with clear focus on distinction and legibility.
@@ -61,7 +63,7 @@ Besides these bigger changes, there have been other smaller changes we have list
 - Plain `0` (zero with no center element) was introduced as `ss15`. In MonoLisa Text the plain zero is the default and the dotted version is the variant.
 - The support for historical Greek was extended and the support for Armenian, Hebrew, and Braille has been added.
 
-You can [find full details at the release log](/releases/3.000).
+You can [find full details and a migration guide at the release log](/releases/3.000).
 
 ## New website
 
@@ -83,31 +85,6 @@ A major version like this is always a major undertaking in terms of development 
 - For anyone else, you'll get a discount based on proximity so that if you own version 2, you'll get a bigger discount than version 1 owners towards version 3.
 
 Note that even if you decide not to upgrade, your current version will remain accessible. To ease maintenance burden, we'll sunset customize tool for version 2 in the coming months since the variant for version 3 has its own added complexity.
-
-## Note the name and stylistic set changes in your editor
-
-After upgrading to version 3, you should refer to the original MonoLisa as `MonoLisaCode` in your configuration. Text variant is available as `MonoLisaText` in case you want to try it as your user interface font and your editor supports it. As time of writing, for example VS Code doesn't expose UI font.
-
-You should also check out how the mapping between stylistic sets changed. We've highlighted key changes below to make it easier to migrate:
-
-- Normal asterisk: ss01 → ss07
-- Script variant (italic only): ss02 → ss01
-- Alt sharp s: ss05 → None. Removed as redundant.
-- Alt curly bracket: ss07 → ss11
-- Alt parenthesis: ss08 → ss12
-- Alt greater equal: ss09 → cv06
-- Alt greater equal: ss10 → cv07
-- Hexadecimal x: ss11 → ss13
-- Thin backslash: ss12 → ss12
-- Alt dollar: ss13 → ss08. ss08 contains alternate currency symbols.
-- Alt &: ss14 → ss09
-- i without serif: ss15 → ss02
-- r without serif: ss16 → ss02
-- Alt .= and ..=: ss17 → cv10
-- Alt at: ss18 → ss05
-- Besides zero, there's also ss15 (plain zero) now
-
-[See also the specimen page](/specimen) to understand what the variants look like exactly. They are also visible on your [orders page](/orders).
 
 ## Conclusion
 

@@ -12,7 +12,7 @@ In version 2, we introduced variable weight since fixed weights get you only so 
 - There's a new axis called **grade**. The feature comes from the OpenType standard and allows slight bumps to weight towards lighter or darker. In short, you can use the feature to adjust weight slightly without altering page breaks (important for MonoLisa Text).
 - Since we tend to add new features to the typeface rather organically, this means that the way stylistic sets were ordered wasn't ideal anymore. For this reason, we refactored their order while changing default `liga` behavior so that it's possible to enable ligatures **as you need them** instead of having a generic toggle for the feature. This goes well with the customize feature of the website and fits well with the whole ethos of the typeface.
 
-There are more changes of course, and you should [read the release blog post for further details](https://monolisa.dev/posts/monolisa_v3/) if you are into details.
+There are more changes of course, and you should [read the release blog post for further details](https://monolisa.dev/posts/monolisa_v3/). [A migration guide is available at the release notes](https://monolisa.dev/releases/3.000).
 
 ## Upgrade policy
 
