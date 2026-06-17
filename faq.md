@@ -122,6 +122,13 @@ Yes, no problem.
 </Details>
 
 <Details>
+### Can I use the font on my personal website?
+
+Assuming you bought the Developer plan, absolutely! For commercial use (i.e., a company or a product), buy a Creator plan fitting your purposes.
+
+</Details>
+
+<Details>
 ### Can I use the personal license on my phone/tablet?
 
 Yes, no problem.
