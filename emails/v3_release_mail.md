@@ -22,14 +22,14 @@ There are more changes of course, and you should [read the release blog post for
 
 To help promote the release, we launched MonoLisa version 3 at ProductHunt and Hacker News:
 
-- [Monolisa 3 on ProductHunt](https://www.producthunt.com/products/monolisa/launches/monolisa-v3)
+- [MonoLisa 3 on ProductHunt](https://www.producthunt.com/products/monolisa/launches/monolisa-v3)
 - [MonoLisa 3 on Hacker News](https://news.ycombinator.com/item?id=48630318)
 
 If you enjoy the product, consider giving us an upvote or leaving a comment!
 
 ## Upgrade policy
 
-A major version like this is always a major undertaking in terms of development time. We came up with a simple model for upgrades to take into account when and what you bought:
+We came up with a simple model for upgrades to take into account when and what you bought:
 
 - If you bought Complete starting from the beginning of this year, you'll have a free upgrade to Developer.
 - For anyone else, you'll get a discount based on proximity so that if you own version 2, you'll get a bigger discount than version 1 owners towards version 3.
