@@ -324,11 +324,11 @@ It’s important to note that the script glyphs have been defined only for the I
 <Details>
 ### How to enable Nerd Fonts with MonoLisa?
 
-[Nerd Fonts](https://www.nerdfonts.com/) is a popular collection of icons that can be patched to a font you use and the same process works with MonoLisa.
+[Nerd Fonts](https://www.nerdfonts.com/) is a popular collection of icons that can be patched to a font you use and the same process works with MonoLisa. There are two ways to make Nerd Fonts work with MonoLisa: fallback and patching.
 
-There are two ways to make Nerd Fonts work with MonoLisa: fallback and patching. The fallback approach is preferable as then you don’t have to touch the font files when upgrading and [using fallback has been covered at Nerd Fonts documentation](https://github.com/ryanoasis/nerd-fonts/wiki/Font-Substitution-&-Fallback) (works for Windows, Linux). There’s [more information available about fallbacks (Kitty terminal, VS Code) at described in this issue comment](https://github.com/MonoLisaFont/feedback/issues/53#issuecomment-1336163548).
+The fallback approach is preferable as then you don’t have to touch the font files when upgrading and [using fallback has been covered at Nerd Fonts documentation](https://github.com/ryanoasis/nerd-fonts/wiki/Font-Substitution-&-Fallback) (works for Windows, Linux). There’s [more information available about fallbacks (Kitty terminal, VS Code) at described in this issue comment](https://github.com/MonoLisaFont/feedback/issues/53#issuecomment-1336163548).
 
-In case the fallback approach doesn’t work for you, and you want to patch, [Nerd Fonts patcher](https://github.com/ryanoasis/nerd-fonts).
+In case the fallback approach doesn’t work for you, [use our official Nerd Fonts patcher](https://github.com/monolisaFont/monolisa-nerdfonts) to create a patched version of MonoLisa for your own use.
 
 </Details>
 
