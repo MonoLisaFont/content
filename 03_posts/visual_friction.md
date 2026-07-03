@@ -1,7 +1,7 @@
 ---
 title: "Visual friction in development"
-published: 2026-04-01
-updated: 2026-04-01
+published: 2026-07-03
+updated: 2026-07-03
 keywords: ["productivity", "code readability"]
 authors: ["Juho Vepsäläinen"]
 ---

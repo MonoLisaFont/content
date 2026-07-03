@@ -1,7 +1,7 @@
 ---
 title: "Context friction in development"
-published: 2026-04-01
-updated: 2026-04-01
+published: 2026-07-03
+updated: 2026-07-03
 keywords: ["productivity"]
 authors: ["Juho Vepsäläinen"]
 ---
@@ -22,7 +22,7 @@ In short, protect the blocks where focused development can happen. Disable notif
 
 Although programming is often treated as solo work, it does not have to be so. With a colleague who has complementary skills, [pair programming](https://en.wikipedia.org/wiki/Pair_programming) can reduce context friction because decisions, implementation, and review happen in one shared loop.
 
-Modern language models, or agents, can also play part of this role when a human pair is not available. They can help explore options, draft code, explain unfamiliar APIs, or keep a task moving. This can be effective, but it requires discipline: you still need to review the output, understand the design, and keep ownership of the result as otherwise you risk producing what is commonly known as AI slop. So be mindful when working with machines and make sure you are sitting in the driver's seat.
+Modern language models, or agents, can also fill part of this role when a human pair is not available. They can help explore options, draft code, explain unfamiliar APIs, or keep a task moving. This can be effective, but it requires discipline: you still need to review the output, understand the design, and keep ownership of the result, otherwise you risk producing what is commonly known as AI slop. So be mindful when working with machines and make sure you are sitting in the driver's seat.
 
 Agentic tools introduce their own context friction. You may be tracking your own plan, the tool's plan, generated diffs, review comments, failing checks, and hidden assumptions at the same time. Used well, the tool reduces load. Used carelessly, it creates a new stream of work to supervise.
 

@@ -1,7 +1,7 @@
 ---
 title: "Typography friction in development"
-published: 2026-04-01
-updated: 2026-04-01
+published: 2026-07-03
+updated: 2026-07-03
 keywords: ["productivity"]
 authors: ["Juho Vepsäläinen"]
 ---
@@ -42,4 +42,4 @@ Choosing a typeface is partly personal, but the experiment should be concrete:
 
 Typography is a small configuration detail with a large surface area. You see it in every line of code, every terminal command, and every review. That makes it worth tuning deliberately.
 
-As there are more sources to friction in development, [refer back to the anchor post of the series to learn more about the topic](../friction_in_software_development).
+As there are more sources of friction in development, [refer back to the anchor post of the series to learn more about the topic](../friction_in_software_development).
