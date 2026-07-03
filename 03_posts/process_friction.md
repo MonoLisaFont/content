@@ -1,7 +1,7 @@
 ---
 title: "Process friction in development"
-published: 2026-07-03T11:00:00+03:00
-updated: 2026-07-03T11:00:00+03:00
+published: 2026-07-03T11:10:00+03:00
+updated: 2026-07-03T11:10:00+03:00
 keywords: ["productivity"]
 authors: ["Juho Vepsäläinen"]
 ---
