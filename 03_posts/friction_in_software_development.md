@@ -1,7 +1,7 @@
 ---
 title: "Friction in software development"
-published: 2026-07-03
-updated: 2026-07-03
+published: 2026-07-03T12:00:00+03:00
+updated: 2026-07-03T12:00:00+03:00
 keywords: ["productivity"]
 authors: ["Juho Vepsäläinen"]
 ---

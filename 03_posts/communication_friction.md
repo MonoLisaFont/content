@@ -1,7 +1,7 @@
 ---
 title: "Communication friction in development"
-published: 2026-07-03
-updated: 2026-07-03
+published: 2026-07-03T10:40:00+03:00
+updated: 2026-07-03T10:40:00+03:00
 keywords: ["productivity"]
 authors: ["Juho Vepsäläinen"]
 ---
