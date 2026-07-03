@@ -53,10 +53,16 @@ The friction series can be prepared for dev.to with:
 node scripts/publish-friction-to-devto.mjs --dry-run --create-drafts --canonical-base https://monolisa.dev/posts
 ```
 
-The command above is a dry run and does not call the dev.to API. To create unpublished dev.to drafts, set `DEVTO_API_KEY` and run:
+The command above is a dry run and does not call the dev.to API. To create unpublished dev.to drafts, add a private `.env.private` file:
 
 ```bash
-DEVTO_API_KEY=... node scripts/publish-friction-to-devto.mjs --create-drafts --canonical-base https://monolisa.dev/posts
+DEVTO_API_KEY=...
+```
+
+Then run:
+
+```bash
+node scripts/publish-friction-to-devto.mjs --create-drafts --canonical-base https://monolisa.dev/posts
 ```
 
 The script stores dev.to article ids and URLs in `.devto-friction-state.json`, which is ignored by Git. After draft creation, it updates the drafts once more so crosslinks inside the friction series point to the corresponding dev.to articles while `canonical_url` still points to the MonoLisa website.
@@ -64,5 +70,5 @@ The script stores dev.to article ids and URLs in `.devto-friction-state.json`, w
 After reviewing the drafts on dev.to, publish them with:
 
 ```bash
-DEVTO_API_KEY=... node scripts/publish-friction-to-devto.mjs --publish --canonical-base https://monolisa.dev/posts
+node scripts/publish-friction-to-devto.mjs --publish --canonical-base https://monolisa.dev/posts
 ```

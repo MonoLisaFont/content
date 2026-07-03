@@ -24,6 +24,7 @@ const postSlugs = [
 ];
 
 const args = parseArgs(process.argv.slice(2));
+await loadDotenv(args["env-file"] || join(root, ".env.private"));
 
 if (args.help) {
   printUsage();
@@ -39,6 +40,8 @@ const dryRunMode = args["dry-run"] || (!args["create-drafts"] && !args.publish);
 const statePath = args.state || defaultStatePath;
 const canonicalBase = stripTrailingSlash(args["canonical-base"] || process.env.MONOLISA_POST_BASE || "");
 const apiKey = process.env.DEVTO_API_KEY;
+const requestDelayMs = Number.parseInt(process.env.DEVTO_REQUEST_DELAY_MS || "1500", 10);
+const maxRequestAttempts = Number.parseInt(process.env.DEVTO_MAX_ATTEMPTS || "5", 10);
 
 const posts = await readPosts();
 const existingState = await readState(statePath);
@@ -101,6 +104,7 @@ async function createDrafts(posts, state) {
       continue;
     }
 
+    await delayBetweenRequests();
     const initialPayload = buildPayload(post, nextState, false);
     const article = await devToRequest("/articles", {
       method: "POST",
@@ -125,6 +129,7 @@ async function createDrafts(posts, state) {
       fail(`Missing DEV article id for ${post.slug}.`);
     }
 
+    await delayBetweenRequests();
     const updatedPayload = buildPayload(post, nextState, false);
     const article = await devToRequest(`/articles/${entry.id}`, {
       method: "PUT",
@@ -155,6 +160,7 @@ async function publishDrafts(posts, state) {
       fail(`Missing DEV article id for ${post.slug}. Run --create-drafts first.`);
     }
 
+    await delayBetweenRequests();
     const payload = buildPayload(post, nextState, true);
     const article = await devToRequest(`/articles/${entry.id}`, {
       method: "PUT",
@@ -290,24 +296,51 @@ function descriptionFromBody(body) {
 }
 
 async function devToRequest(path, init) {
-  const response = await fetch(`${devToApiBase}${path}`, {
-    ...init,
-    headers: {
-      "api-key": apiKey,
-      "content-type": "application/json",
-      accept: "application/json",
-      ...init.headers,
-    },
-  });
+  let lastError;
 
-  const text = await response.text();
-  const payload = text ? JSON.parse(text) : null;
+  for (let attempt = 1; attempt <= maxRequestAttempts; attempt += 1) {
+    try {
+      const response = await fetch(`${devToApiBase}${path}`, {
+        ...init,
+        headers: {
+          "api-key": apiKey,
+          "content-type": "application/json",
+          accept: "application/json",
+          ...init.headers,
+        },
+      });
 
-  if (!response.ok) {
-    throw new Error(`DEV API ${response.status}: ${JSON.stringify(payload)}`);
+      const text = await response.text();
+      const payload = parseResponseBody(text);
+
+      if (response.ok) {
+        return payload;
+      }
+
+      const message = responseMessage(payload);
+
+      if (isRetryableResponse(response.status, message) && attempt < maxRequestAttempts) {
+        const waitMs = retryDelayMs(attempt);
+        console.warn(`DEV API ${response.status}: ${message}. Retrying in ${waitMs}ms...`);
+        await sleep(waitMs);
+        continue;
+      }
+
+      throw new Error(`DEV API ${response.status}: ${message}`);
+    } catch (error) {
+      lastError = error;
+
+      if (attempt >= maxRequestAttempts || !isRetryableError(error)) {
+        throw error;
+      }
+
+      const waitMs = retryDelayMs(attempt);
+      console.warn(`${error.message}. Retrying in ${waitMs}ms...`);
+      await sleep(waitMs);
+    }
   }
 
-  return payload;
+  throw lastError;
 }
 
 async function readState(path) {
@@ -356,8 +389,111 @@ function parseArgs(rawArgs) {
   return parsed;
 }
 
+async function loadDotenv(path) {
+  let source;
+
+  try {
+    source = await readFile(path, "utf8");
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return;
+    }
+
+    throw error;
+  }
+
+  for (const line of source.split(/\r?\n/)) {
+    const trimmed = line.trim();
+
+    if (!trimmed || trimmed.startsWith("#")) {
+      continue;
+    }
+
+    const match = trimmed.match(/^(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)=(.*)$/);
+
+    if (!match) {
+      continue;
+    }
+
+    const [, key, rawValue] = match;
+
+    if (process.env[key] !== undefined) {
+      continue;
+    }
+
+    process.env[key] = parseDotenvValue(rawValue);
+  }
+}
+
+function parseDotenvValue(value) {
+  const trimmed = value.trim();
+
+  if (
+    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+    (trimmed.startsWith("'") && trimmed.endsWith("'"))
+  ) {
+    return trimmed.slice(1, -1);
+  }
+
+  return trimmed.replace(/\s+#.*$/, "");
+}
+
 function stripTrailingSlash(value) {
   return value.replace(/\/+$/, "");
+}
+
+async function delayBetweenRequests() {
+  if (requestDelayMs > 0) {
+    await sleep(requestDelayMs);
+  }
+}
+
+function parseResponseBody(text) {
+  if (!text) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(text);
+  } catch {
+    return text.trim();
+  }
+}
+
+function responseMessage(payload) {
+  if (payload === null || payload === undefined || payload === "") {
+    return "Empty response";
+  }
+
+  if (typeof payload === "string") {
+    return payload;
+  }
+
+  if (payload.error) {
+    return payload.error;
+  }
+
+  if (payload.message) {
+    return payload.message;
+  }
+
+  return JSON.stringify(payload);
+}
+
+function isRetryableResponse(status, message) {
+  return status === 408 || status === 409 || status === 425 || status === 429 || status >= 500 || /retry later/i.test(message);
+}
+
+function isRetryableError(error) {
+  return /fetch failed|network|timeout|Retry later/i.test(error.message);
+}
+
+function retryDelayMs(attempt) {
+  return Math.min(30000, 2000 * 2 ** (attempt - 1));
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function printUsage() {
@@ -374,6 +510,12 @@ Options:
   --create-drafts creates unpublished DEV drafts, records returned URLs, then updates crosslinks.
   --publish updates those same articles with published: true.
   --state PATH controls where DEV article ids and URLs are stored.
+  --env-file PATH loads private environment variables. Default: .env.private.
+
+Environment:
+  DEVTO_API_KEY is the dev.to API key.
+  DEVTO_REQUEST_DELAY_MS controls the delay between API calls. Default: 1500.
+  DEVTO_MAX_ATTEMPTS controls retry attempts for transient DEV responses. Default: 5.
 `);
 }
 

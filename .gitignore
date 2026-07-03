@@ -1,3 +1,4 @@
 *.html
+.env.private
 .devto-friction-state.json
 devto-friction-payloads/
