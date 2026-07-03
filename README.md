@@ -44,3 +44,25 @@ For simple posts, only heading level 2 should be used as in the sample. A good l
 ## Editing
 
 Most of the edits can be done directly through GitHub user interface on web. It may be possible images may have to be added through Git repository, though.
+
+## Publishing to dev.to
+
+The friction series can be prepared for dev.to with:
+
+```bash
+node scripts/publish-friction-to-devto.mjs --dry-run --create-drafts --canonical-base https://monolisa.dev/blog
+```
+
+The command above is a dry run and does not call the dev.to API. To create unpublished dev.to drafts, set `DEVTO_API_KEY` and run:
+
+```bash
+DEVTO_API_KEY=... node scripts/publish-friction-to-devto.mjs --create-drafts --canonical-base https://monolisa.dev/blog
+```
+
+The script stores dev.to article ids and URLs in `.devto-friction-state.json`, which is ignored by Git. After draft creation, it updates the drafts once more so crosslinks inside the friction series point to the corresponding dev.to articles while `canonical_url` still points to the MonoLisa website.
+
+After reviewing the drafts on dev.to, publish them with:
+
+```bash
+DEVTO_API_KEY=... node scripts/publish-friction-to-devto.mjs --publish --canonical-base https://monolisa.dev/blog
+```
