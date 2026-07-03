@@ -2,10 +2,10 @@
 
 This repository contains content to publish through the blog and dev.to. It has been structured as follows:
 
-* `01_ideas` contains content ideas with a brief description of what the post might be about. This is ideal for ideation and initial research. There's a basic template to copy to serve as a starting point for new ideas that eventually become posts.
-* `02_drafts` is where drafting posts is done. In other words, this is where most of the work happens until a post is published by moving it to the `03_posts` directory. Each post follows Markdown format with a YAML headmatter to declare metadata related to it (i.e., `published`, `keywords` etc.).
-* `03_posts` contains published content. The website picks this up automatically and the content has to be published separately to dev.to while using a canonical link pointing to the website to gain SEO benefits.
-* `images` contains images included to the posts. Ideally these should be optimized already since there are no guarantees that publishing platforms (website, dev.to) would do it for you. [Kraken](https://kraken.io/web-interface) is a good option for web-based optimization.
+- `01_ideas` contains content ideas with a brief description of what the post might be about. This is ideal for ideation and initial research. There's a basic template to copy to serve as a starting point for new ideas that eventually become posts.
+- `02_drafts` is where drafting posts is done. In other words, this is where most of the work happens until a post is published by moving it to the `03_posts` directory. Each post follows Markdown format with a YAML headmatter to declare metadata related to it (i.e., `published`, `keywords` etc.).
+- `03_posts` contains published content. The website picks this up automatically and the content has to be published separately to dev.to while using a canonical link pointing to the website to gain SEO benefits.
+- `images` contains images included to the posts. Ideally these should be optimized already since there are no guarantees that publishing platforms (website, dev.to) would do it for you. [Kraken](https://kraken.io/web-interface) is a good option for web-based optimization.
 
 ## Post schema
 
@@ -50,13 +50,13 @@ Most of the edits can be done directly through GitHub user interface on web. It 
 The friction series can be prepared for dev.to with:
 
 ```bash
-node scripts/publish-friction-to-devto.mjs --dry-run --create-drafts --canonical-base https://monolisa.dev/blog
+node scripts/publish-friction-to-devto.mjs --dry-run --create-drafts --canonical-base https://monolisa.dev/posts
 ```
 
 The command above is a dry run and does not call the dev.to API. To create unpublished dev.to drafts, set `DEVTO_API_KEY` and run:
 
 ```bash
-DEVTO_API_KEY=... node scripts/publish-friction-to-devto.mjs --create-drafts --canonical-base https://monolisa.dev/blog
+DEVTO_API_KEY=... node scripts/publish-friction-to-devto.mjs --create-drafts --canonical-base https://monolisa.dev/posts
 ```
 
 The script stores dev.to article ids and URLs in `.devto-friction-state.json`, which is ignored by Git. After draft creation, it updates the drafts once more so crosslinks inside the friction series point to the corresponding dev.to articles while `canonical_url` still points to the MonoLisa website.
@@ -64,5 +64,5 @@ The script stores dev.to article ids and URLs in `.devto-friction-state.json`, w
 After reviewing the drafts on dev.to, publish them with:
 
 ```bash
-DEVTO_API_KEY=... node scripts/publish-friction-to-devto.mjs --publish --canonical-base https://monolisa.dev/blog
+DEVTO_API_KEY=... node scripts/publish-friction-to-devto.mjs --publish --canonical-base https://monolisa.dev/posts
 ```
