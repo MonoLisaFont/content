@@ -1,7 +1,8 @@
 ---
 title: "Comparison of MonoLisa vs. Source Code Pro"
 published: YYYY-MM-DD
-updated: YYYY-MM-DD
+updated: 2026-07-03
+draft: true
 keywords: ["MonoLisa vs Source Code Pro", "Source Code Pro alternative", "coding fonts", "programming fonts"]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
@@ -15,56 +16,74 @@ MonoLisa and Source Code Pro are both coding fonts, but they optimize for differ
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | No coding ligatures found in public README |
 | Italics | Yes | Yes |
-| Variable font | TBD | Yes |
-| Stylistic sets | Yes | TBD |
-| Character variants | Yes | TBD |
+| Variable font | Not recorded in this pass | Yes |
+| Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`-`ss07` measured |
+| Character variants | Yes; `cv01`-`cv12` measured | Yes; selected `cvXX` features measured |
 | Proportional counterpart | Yes, MonoLisa Text | Source Sans family relation |
-| Terminal symbols | Powerline/box drawing: TBD | TBD |
+| Terminal symbols | Powerline, box drawing, and block elements measured | Powerline, box drawing, and block elements measured |
 
 ## Design intent and reading comfort
 
-TBD after visual render comparison.
+The code texture specimen has been rendered for review. Marcus should still add the type-design interpretation before publication.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
-![MonoLisa and Source Code Pro code texture comparison](/images/comparison-monolisa-vs-source-code-pro-texture.svg)
+![Rendered SVG comparing MonoLisa and Source Code Pro code texture](/images/comparison-monolisa-vs-source-code-pro-texture.svg)
 
 ## Language and script coverage
 
-TBD after measured coverage from font files.
+MonoLisa measured at 2105 glyphs and 1784 cmap entries. Source Code Pro measured at 1568 glyphs and 1369 cmap entries.
+
+Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 593 languages across Latin, Cyrillic, Hebrew, Greek, and Armenian. Source Code Pro measured at 413 languages across Latin, Cyrillic, and Greek. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included.
 
 [Marcus input: Confirm how to phrase coverage differences.]
 
 ## Coding features
 
-TBD after OpenType feature extraction and rendered samples.
+Source Code Pro has a broad OpenType feature surface for alternates, numerals, and character variants, but no coding ligature set was found in the public README or measured feature pass. MonoLisa exposes coding ligatures in addition to stylistic sets and character variants.
 
-![MonoLisa and Source Code Pro ligature comparison](/images/comparison-monolisa-vs-source-code-pro-ligatures.svg)
+Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss02`-`ss15`, and `cv01`-`cv12`. Source Code Pro exposes `zero`, `ss01`-`ss07`, and selected `cvXX` features; no coding ligature feature set measured.
+
+![Rendered SVG comparing MonoLisa and Source Code Pro operator and ligature behavior](/images/comparison-monolisa-vs-source-code-pro-ligatures.svg)
 
 ## Glyph distinction
 
-TBD after rendering the shared ambiguity specimen.
+The shared ambiguity specimen has been rendered for review. Use it to compare common problem pairs such as `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
 
 [Marcus input: Add notes for intentional MonoLisa tradeoffs.]
 
-![MonoLisa and Source Code Pro ambiguous glyph comparison](/images/comparison-monolisa-vs-source-code-pro-glyphs.svg)
+![Rendered SVG comparing MonoLisa and Source Code Pro ambiguous glyph shapes](/images/comparison-monolisa-vs-source-code-pro-glyphs.svg)
 
 ## Italics and style range
 
-TBD after style inventory.
+The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
 
-![MonoLisa and Source Code Pro italic comparison](/images/comparison-monolisa-vs-source-code-pro-italics.svg)
+![Rendered SVG comparing MonoLisa and Source Code Pro italic and style samples](/images/comparison-monolisa-vs-source-code-pro-italics.svg)
 
 ## Terminal and console support
 
-TBD after checking Powerline, box drawing, block elements, and vertical metrics.
+Source Code Pro measured at Powerline 6/6, box drawing 128/128, and block elements 32/32. Its hhea/Windows metrics differ from OS/2 typo metrics in v2.042.
 
-![MonoLisa and Source Code Pro terminal comparison](/images/comparison-monolisa-vs-source-code-pro-terminal.svg)
+For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
+
+![Rendered SVG comparing MonoLisa and Source Code Pro terminal symbols and box drawing](/images/comparison-monolisa-vs-source-code-pro-terminal.svg)
 
 ## Licensing and availability
 
-Source Code Pro is free and open source. MonoLisa is a paid typeface with trial/customizer access.
+Source Code Pro is free and open source. MonoLisa is a paid typeface with trial/customizer access. The rendered comparison graphics use path-based SVG output, so the published page does not require readers to have either font installed.
+
+## Measurement notes
+
+Measurements in this draft use local font files, fonttools metadata extraction, Hyperglot 0.8.1 language coverage with primary living orthographies and base characters, and path-based SVG specimens generated by `scripts/render-comparison-svgs.mjs`.
+
+## Publication checklist
+
+- [ ] Marcus design review completed.
+- [ ] License/source basis checked.
+- [ ] Rendered SVG specimens visually reviewed.
+- [ ] Measured data verified against current font files.
+- [ ] Final recommendation/conclusion written.
 
 ## Conclusion
 
-TBD after data and Marcus review.
+Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose Source Code Pro, and which tradeoff matters most.

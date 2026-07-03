@@ -1,72 +1,76 @@
 ---
 title: "Comparison of MonoLisa vs. Dank Mono"
 published: YYYY-MM-DD
-updated: YYYY-MM-DD
+updated: 2026-07-03
+draft: true
 keywords: ["MonoLisa vs Dank Mono", "Dank Mono alternative", "coding fonts", "programming fonts"]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
 MonoLisa and Dank Mono are both paid coding fonts, but they optimize for different priorities. This comparison looks at glyph clarity, ligatures, italics, language coverage, terminal support, customization, and licensing.
 
-Draft status: deferred commercial-font comparison. Dank Mono does not appear to offer a free trial in the current manual check, so this post should not be finished with rendered specimens until we have a licensed copy, written permission/specimens, or a decision to compare only against public information.
+Draft status: Deferred commercial-font comparison. Dank Mono does not appear to offer a free trial in the current manual check, so this post should not be finished with rendered specimens until we have a licensed copy, written permission/specimens, or a decision to compare only against public information.
 
 ## Quick comparison
 
 | Category | MonoLisa | Dank Mono |
 | --- | --- | --- |
-| Pricing | Paid, with trial/customizer | Paid |
+| Pricing | Paid, with trial/customizer | Paid; no free trial found so far |
 | Coding ligatures | Yes | Needs verification |
 | Italics | Yes | Yes |
-| Variable font | TBD | TBD |
-| Stylistic sets | Yes | TBD |
-| Character variants | Yes | TBD |
-| Proportional counterpart | Yes, MonoLisa Text | TBD |
-| Terminal symbols | Powerline/box drawing: TBD | TBD |
+| Variable font | Not recorded in this pass | Needs verification |
+| Stylistic sets | Yes; `ss02`-`ss15` measured | Needs verification |
+| Character variants | Yes; `cv01`-`cv12` measured | Needs verification |
+| Proportional counterpart | Yes, MonoLisa Text | Needs verification |
+| Terminal symbols | Powerline, box drawing, and block elements measured | Needs licensed-font measurement |
 
 ## Design intent and reading comfort
 
-TBD after visual render comparison.
+Deferred until a licensed comparison basis exists.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
-![MonoLisa and Dank Mono code texture comparison](/images/comparison-monolisa-vs-dank-mono-texture.svg)
 
 ## Language and script coverage
 
-TBD after measured coverage from font files.
+Deferred until a licensed font file, trial file, or permitted specimen source is available. Do not publish measured language-count claims for Dank Mono until the exact font file and license basis are recorded.
 
-[Marcus input: Confirm how to phrase coverage differences.]
+[Marcus input: Confirm how to phrase coverage differences if this becomes a public-information-only comparison.]
 
 ## Coding features
 
-TBD after OpenType feature extraction and rendered samples.
-
-![MonoLisa and Dank Mono ligature comparison](/images/comparison-monolisa-vs-dank-mono-ligatures.svg)
+Deferred until Dank Mono can be inspected from a licensed file or documented from a permitted public source. Keep claims about ligatures, stylistic sets, and character variants as unverified until then.
 
 ## Glyph distinction
 
-TBD after rendering the shared ambiguity specimen.
+Deferred until rendered specimens are allowed. If no license or permission is available, replace this section with a public-information-only comparison and link to official specimens instead of embedding our own renders.
 
-[Marcus input: Add notes for intentional MonoLisa tradeoffs.]
-
-![MonoLisa and Dank Mono ambiguous glyph comparison](/images/comparison-monolisa-vs-dank-mono-glyphs.svg)
+[Marcus input: Add notes for intentional MonoLisa tradeoffs once a valid comparison basis exists.]
 
 ## Italics and style range
 
-TBD after style inventory.
-
-![MonoLisa and Dank Mono italic comparison](/images/comparison-monolisa-vs-dank-mono-italics.svg)
+Deferred until Dank Mono style files, trial terms, or official specimen permissions are available.
 
 ## Terminal and console support
 
-TBD after checking Powerline, box drawing, block elements, and vertical metrics.
-
-![MonoLisa and Dank Mono terminal comparison](/images/comparison-monolisa-vs-dank-mono-terminal.svg)
+Deferred until the font file can be measured for Powerline symbols, box drawing, block elements, and vertical metrics. Do not reuse the free-font terminal claims here.
 
 ## Licensing and availability
 
-Both fonts are paid. Dank Mono does not appear to offer a free trial in the current manual check; verify this before publishing and do not render specimens from the font unless the license/permission allows public comparison use.
+Deferred commercial-font comparison. Dank Mono does not appear to offer a free trial in the current manual check, so this post should not be finished with rendered specimens until we have a licensed copy, written permission/specimens, or a decision to compare only against public information. Do not render or publish specimen graphics from the commercial font unless the license or written permission allows public comparison use.
+
+## Measurement notes
+
+No local measurements are available for Dank Mono yet. Before publication, record the exact font version, license/trial basis, and whether public rendered specimens are allowed. MonoLisa and free-font measurements elsewhere in this series use fonttools, Hyperglot 0.8.1, and path-based SVG rendering.
+
+## Publication checklist
+
+- [ ] Verify license/trial availability.
+- [ ] Decide whether public rendered specimens are allowed.
+- [ ] Run fonttools and Hyperglot if a usable font file is available.
+- [ ] Ask Marcus to review design claims before publication.
+- [ ] Replace deferred placeholders or keep post unpublished.
 
 ## Conclusion
 
-TBD after data and Marcus review.
+Deferred until commercial-font access, license terms, and Marcus review are complete.

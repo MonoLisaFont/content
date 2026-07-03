@@ -1,7 +1,8 @@
 ---
 title: "Comparison of MonoLisa vs. IBM Plex Mono"
 published: YYYY-MM-DD
-updated: YYYY-MM-DD
+updated: 2026-07-03
+draft: true
 keywords: ["MonoLisa vs IBM Plex Mono", "IBM Plex Mono alternative", "coding fonts", "programming fonts"]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
@@ -15,56 +16,74 @@ MonoLisa and IBM Plex Mono are both monospaced fonts, but they optimize for diff
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | No coding ligatures found in public README |
 | Italics | Yes | Yes |
-| Variable font | TBD | TBD |
-| Stylistic sets | Yes | TBD |
-| Character variants | Yes | TBD |
+| Variable font | Not recorded in this pass | Not recorded in this pass |
+| Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`-`ss09` measured |
+| Character variants | Yes; `cv01`-`cv12` measured | Not recorded in this pass |
 | Proportional counterpart | Yes, MonoLisa Text | IBM Plex Sans / Serif / Sans Condensed |
-| Terminal symbols | Powerline/box drawing: TBD | TBD |
+| Terminal symbols | Powerline, box drawing, and block elements measured | Box drawing and block elements measured; Powerline not measured in regular build |
 
 ## Design intent and reading comfort
 
-TBD after visual render comparison.
+The code texture specimen has been rendered for review. Marcus should still add the type-design interpretation before publication.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
-![MonoLisa and IBM Plex Mono code texture comparison](/images/comparison-monolisa-vs-ibm-plex-mono-texture.svg)
+![Rendered SVG comparing MonoLisa and IBM Plex Mono code texture](/images/comparison-monolisa-vs-ibm-plex-mono-texture.svg)
 
 ## Language and script coverage
 
-The post should be careful to compare IBM Plex Mono specifically, not the full IBM Plex family, unless the broader family is explicitly discussed.
+MonoLisa measured at 2105 glyphs and 1784 cmap entries. IBM Plex Mono measured at 1207 glyphs and 1082 cmap entries.
 
-[Marcus input: Confirm whether to position this as IBM Plex Mono only or as a superfamily comparison.]
+Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 593 languages across Latin, Cyrillic, Hebrew, Greek, and Armenian. IBM Plex Mono measured at 410 languages across Latin and Cyrillic. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included.
+
+[Marcus input: Confirm how to phrase coverage differences.]
 
 ## Coding features
 
-TBD after OpenType feature extraction and rendered samples.
+IBM Plex Mono is best treated as part of the broader IBM Plex superfamily rather than as a ligature-heavy coding specialist. The measured file includes stylistic sets and zero handling but no coding ligature feature set.
 
-![MonoLisa and IBM Plex Mono ligature comparison](/images/comparison-monolisa-vs-ibm-plex-mono-ligatures.svg)
+Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss02`-`ss15`, and `cv01`-`cv12`. IBM Plex Mono exposes `zero` and `ss01`-`ss09`; no coding ligature feature set measured.
+
+![Rendered SVG comparing MonoLisa and IBM Plex Mono operator and ligature behavior](/images/comparison-monolisa-vs-ibm-plex-mono-ligatures.svg)
 
 ## Glyph distinction
 
-TBD after rendering the shared ambiguity specimen.
+The shared ambiguity specimen has been rendered for review. Use it to compare common problem pairs such as `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
 
 [Marcus input: Add notes for intentional MonoLisa tradeoffs.]
 
-![MonoLisa and IBM Plex Mono ambiguous glyph comparison](/images/comparison-monolisa-vs-ibm-plex-mono-glyphs.svg)
+![Rendered SVG comparing MonoLisa and IBM Plex Mono ambiguous glyph shapes](/images/comparison-monolisa-vs-ibm-plex-mono-glyphs.svg)
 
 ## Italics and style range
 
-TBD after style inventory.
+The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
 
-![MonoLisa and IBM Plex Mono italic comparison](/images/comparison-monolisa-vs-ibm-plex-mono-italics.svg)
+![Rendered SVG comparing MonoLisa and IBM Plex Mono italic and style samples](/images/comparison-monolisa-vs-ibm-plex-mono-italics.svg)
 
 ## Terminal and console support
 
-TBD after checking Powerline, box drawing, block elements, and vertical metrics.
+IBM Plex Mono measured at Powerline 0/6, box drawing 128/128, and block elements 32/32. Its typo metrics and line gap differ from hhea/Windows metrics in v2.005.
 
-![MonoLisa and IBM Plex Mono terminal comparison](/images/comparison-monolisa-vs-ibm-plex-mono-terminal.svg)
+For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
+
+![Rendered SVG comparing MonoLisa and IBM Plex Mono terminal symbols and box drawing](/images/comparison-monolisa-vs-ibm-plex-mono-terminal.svg)
 
 ## Licensing and availability
 
-IBM Plex Mono is free and open source. MonoLisa is a paid typeface with trial/customizer access.
+IBM Plex Mono is free and open source. MonoLisa is a paid typeface with trial/customizer access. The rendered comparison graphics use path-based SVG output, so the published page does not require readers to have either font installed.
+
+## Measurement notes
+
+Measurements in this draft use local font files, fonttools metadata extraction, Hyperglot 0.8.1 language coverage with primary living orthographies and base characters, and path-based SVG specimens generated by `scripts/render-comparison-svgs.mjs`.
+
+## Publication checklist
+
+- [ ] Marcus design review completed.
+- [ ] License/source basis checked.
+- [ ] Rendered SVG specimens visually reviewed.
+- [ ] Measured data verified against current font files.
+- [ ] Final recommendation/conclusion written.
 
 ## Conclusion
 
-TBD after data and Marcus review.
+Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose IBM Plex Mono, and which tradeoff matters most.

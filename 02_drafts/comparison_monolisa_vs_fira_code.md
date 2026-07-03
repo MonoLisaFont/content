@@ -1,7 +1,8 @@
 ---
 title: "Comparison of MonoLisa vs. Fira Code"
 published: YYYY-MM-DD
-updated: YYYY-MM-DD
+updated: 2026-07-03
+draft: true
 keywords: ["MonoLisa vs Fira Code", "Fira Code alternative", "coding fonts", "programming fonts"]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
@@ -15,7 +16,7 @@ MonoLisa and Fira Code are both coding fonts, but they optimize for different pr
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | Yes |
 | Italics | Yes | No obvious true italic in installed core family |
-| Variable font | TBD | Yes |
+| Variable font | Not recorded in this pass | Yes |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`-`ss10` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Yes; `cv01`-`cv32` measured |
 | Proportional counterpart | Yes, MonoLisa Text | Fira Sans / Fira Mono family relation |
@@ -23,50 +24,66 @@ MonoLisa and Fira Code are both coding fonts, but they optimize for different pr
 
 ## Design intent and reading comfort
 
-TBD after visual render comparison.
+The code texture specimen has been rendered for review. Marcus should still add the type-design interpretation before publication.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
-![MonoLisa and Fira Code code texture comparison](/images/comparison-monolisa-vs-fira-code-texture.svg)
+![Rendered SVG comparing MonoLisa and Fira Code code texture](/images/comparison-monolisa-vs-fira-code-texture.svg)
 
 ## Language and script coverage
 
-Measured locally from the installed font files, MonoLisaCode v3.000 contains 2105 glyphs and 1784 cmap entries. Fira Code v6.002 contains 2030 glyphs and 1586 cmap entries.
+MonoLisa measured at 2105 glyphs and 1784 cmap entries. Fira Code measured at 2030 glyphs and 1586 cmap entries.
 
-Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 593 supported languages across Latin, Cyrillic, Hebrew, Greek, and Armenian. Fira Code measured at 395 supported languages across Latin, Cyrillic, and Greek. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, the selected orthography level, and whether auxiliary characters, punctuation, marks, and shaping are included.
+Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 593 languages across Latin, Cyrillic, Hebrew, Greek, and Armenian. Fira Code measured at 395 languages across Latin, Cyrillic, and Greek. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included.
 
 [Marcus input: Confirm how to phrase coverage differences.]
 
 ## Coding features
 
-Fira Code is a strong ligature-focused comparison target. In the measured files, MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss02`-`ss15`, and `cv01`-`cv12`. Fira Code exposes `calt`, `zero`, `ss01`-`ss10`, and `cv01`-`cv32`.
+Fira Code is a strong ligature-focused comparison target, and the rendered operator specimen should be reviewed with ligatures and contextual behavior in mind.
 
-![MonoLisa and Fira Code ligature comparison](/images/comparison-monolisa-vs-fira-code-ligatures.svg)
+Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss02`-`ss15`, and `cv01`-`cv12`. Fira Code exposes `calt`, `zero`, `ss01`-`ss10`, and `cv01`-`cv32`.
+
+![Rendered SVG comparing MonoLisa and Fira Code operator and ligature behavior](/images/comparison-monolisa-vs-fira-code-ligatures.svg)
 
 ## Glyph distinction
 
-TBD after rendering the shared ambiguity specimen.
+The shared ambiguity specimen has been rendered for review. Use it to compare common problem pairs such as `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
 
 [Marcus input: Add notes for intentional MonoLisa tradeoffs.]
 
-![MonoLisa and Fira Code ambiguous glyph comparison](/images/comparison-monolisa-vs-fira-code-glyphs.svg)
+![Rendered SVG comparing MonoLisa and Fira Code ambiguous glyph shapes](/images/comparison-monolisa-vs-fira-code-glyphs.svg)
 
 ## Italics and style range
 
-TBD after style inventory.
+The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
 
-![MonoLisa and Fira Code italic comparison](/images/comparison-monolisa-vs-fira-code-italics.svg)
+![Rendered SVG comparing MonoLisa and Fira Code italic and style samples](/images/comparison-monolisa-vs-fira-code-italics.svg)
 
 ## Terminal and console support
 
-Both measured files include the six checked Powerline codepoints, the complete box drawing block, and the complete block elements range. Both also align `hhea`, OS/2 typo, and Windows vertical metrics internally, although the absolute units differ between the fonts.
+Fira Code measured at Powerline 6/6, box drawing 128/128, and block elements 32/32. Its hhea, OS/2 typo, and Windows vertical metrics align internally in v6.002.
 
-![MonoLisa and Fira Code terminal comparison](/images/comparison-monolisa-vs-fira-code-terminal.svg)
+For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
+
+![Rendered SVG comparing MonoLisa and Fira Code terminal symbols and box drawing](/images/comparison-monolisa-vs-fira-code-terminal.svg)
 
 ## Licensing and availability
 
-Fira Code is free and open source. MonoLisa is a paid typeface with trial/customizer access.
+Fira Code is free and open source. MonoLisa is a paid typeface with trial/customizer access. The rendered comparison graphics use path-based SVG output, so the published page does not require readers to have either font installed.
+
+## Measurement notes
+
+Measurements in this draft use local font files, fonttools metadata extraction, Hyperglot 0.8.1 language coverage with primary living orthographies and base characters, and path-based SVG specimens generated by `scripts/render-comparison-svgs.mjs`.
+
+## Publication checklist
+
+- [ ] Marcus design review completed.
+- [ ] License/source basis checked.
+- [ ] Rendered SVG specimens visually reviewed.
+- [ ] Measured data verified against current font files.
+- [ ] Final recommendation/conclusion written.
 
 ## Conclusion
 
-TBD after data and Marcus review.
+Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose Fira Code, and which tradeoff matters most.
