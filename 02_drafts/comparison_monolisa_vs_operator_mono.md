@@ -59,6 +59,11 @@ Deferred until the font file can be measured for Powerline symbols, box drawing,
 
 Deferred commercial-font comparison. Operator Mono needs a license/trial review before this post can use measured data or rendered specimens. Do not render or publish specimen graphics from the commercial font unless the license or written permission allows public comparison use.
 
+## Source links
+
+- [MonoLisa](https://www.monolisa.dev/)
+- [Operator Mono page](https://www.typography.com/fonts/operator/styles/)
+
 ## Measurement notes
 
 No local measurements are available for Operator Mono yet. Before publication, record the exact font version, license/trial basis, and whether public rendered specimens are allowed. MonoLisa and free-font measurements elsewhere in this series use fonttools, Hyperglot 0.8.1, and path-based SVG rendering.

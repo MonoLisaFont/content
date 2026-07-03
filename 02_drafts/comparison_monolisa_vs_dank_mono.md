@@ -59,6 +59,11 @@ Deferred until the font file can be measured for Powerline symbols, box drawing,
 
 Deferred commercial-font comparison. Dank Mono does not appear to offer a free trial in the current manual check, so this post should not be finished with rendered specimens until we have a licensed copy, written permission/specimens, or a decision to compare only against public information. Do not render or publish specimen graphics from the commercial font unless the license or written permission allows public comparison use.
 
+## Source links
+
+- [MonoLisa](https://www.monolisa.dev/)
+- [Dank Mono site](https://dank.sh/)
+
 ## Measurement notes
 
 No local measurements are available for Dank Mono yet. Before publication, record the exact font version, license/trial basis, and whether public rendered specimens are allowed. MonoLisa and free-font measurements elsewhere in this series use fonttools, Hyperglot 0.8.1, and path-based SVG rendering.
