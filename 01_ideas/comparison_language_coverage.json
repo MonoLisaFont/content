@@ -1,0 +1,116 @@
+{
+  "generated": "2026-07-03",
+  "tool": "Hyperglot 0.8.1",
+  "methodology": "Primary orthographies, living languages, base character support, shaping disabled.",
+  "options": [
+    "--no-shaping",
+    "--orthography",
+    "primary",
+    "--status",
+    "living",
+    "--check",
+    "base"
+  ],
+  "fonts": {
+    "monolisa": {
+      "label": "MonoLisa",
+      "path": "[system font] MonoLisaCodeUpright.ttf",
+      "totalLanguages": 593,
+      "totalSpeakers": "3.39B",
+      "scripts": {
+        "Latin": 496,
+        "Cyrillic": 88,
+        "Hebrew": 5,
+        "Greek": 2,
+        "Armenian": 2
+      }
+    },
+    "fira-code": {
+      "label": "Fira Code",
+      "path": ".font-sources/fira-code/FiraCode-Regular.ttf",
+      "totalLanguages": 395,
+      "totalSpeakers": "2.96B",
+      "scripts": {
+        "Latin": 302,
+        "Cyrillic": 91,
+        "Greek": 2
+      }
+    },
+    "jetbrains-mono": {
+      "label": "JetBrains Mono",
+      "path": ".font-sources/jetbrains-mono/JetBrainsMono-Regular.ttf",
+      "totalLanguages": 358,
+      "totalSpeakers": "3.00B",
+      "scripts": {
+        "Latin": 331,
+        "Cyrillic": 25,
+        "Greek": 2
+      }
+    },
+    "cascadia-code": {
+      "label": "Cascadia Code",
+      "path": ".font-sources/cascadia-code/CascadiaCode.ttf",
+      "totalLanguages": 513,
+      "totalSpeakers": "4.17B",
+      "scripts": {
+        "Latin": 421,
+        "Cyrillic": 50,
+        "Arabic": 40,
+        "Greek": 2
+      }
+    },
+    "hack": {
+      "label": "Hack",
+      "path": ".font-sources/hack/Hack-Regular.ttf",
+      "totalLanguages": 382,
+      "totalSpeakers": "2.95B",
+      "scripts": {
+        "Latin": 306,
+        "Cyrillic": 73,
+        "Armenian": 2,
+        "Greek": 1
+      }
+    },
+    "source-code-pro": {
+      "label": "Source Code Pro",
+      "path": ".font-sources/source-code-pro/SourceCodePro-Regular.ttf",
+      "totalLanguages": 413,
+      "totalSpeakers": "3.13B",
+      "scripts": {
+        "Latin": 356,
+        "Cyrillic": 55,
+        "Greek": 2
+      }
+    },
+    "ibm-plex-mono": {
+      "label": "IBM Plex Mono",
+      "path": ".font-sources/ibm-plex-mono/IBMPlexMono-Regular.ttf",
+      "totalLanguages": 410,
+      "totalSpeakers": "3.14B",
+      "scripts": {
+        "Latin": 341,
+        "Cyrillic": 69
+      }
+    },
+    "monaspace": {
+      "label": "Monaspace",
+      "path": ".font-sources/monaspace/MonaspaceNeon-Regular.otf",
+      "totalLanguages": 368,
+      "totalSpeakers": "3.05B",
+      "scripts": {
+        "Latin": 338,
+        "Cyrillic": 28,
+        "Greek": 2
+      }
+    },
+    "recursive-mono": {
+      "label": "Recursive Mono",
+      "path": ".font-sources/recursive-mono/RecMonoLinear-Regular.ttf",
+      "totalLanguages": 345,
+      "totalSpeakers": "2.85B",
+      "scripts": {
+        "Latin": 345
+      }
+    }
+  }
+}
