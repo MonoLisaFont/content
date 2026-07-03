@@ -31,15 +31,15 @@ Before you go into the specific articles, here are the key highlights:
 
 ## What this series covers
 
-- [Visual friction](../visual_friction): how code rendering and layout affect readability and quick comprehension.
-- [Cognitive friction](../cognitive_friction): naming, complexity, and paradigm mismatch that increase mental effort.
-- [Mechanical friction](../mechanical_friction): ergonomics, input flow, and physical comfort when coding.
-- [Context friction](../context_friction): flow, context switching, and managing your time.
-- [Typography friction](../typography_friction): a dedicated look at typeface details and why they matter for developer flow.
-- [Process friction](../process_friction): how work moves through reviews, handoffs, approvals, and release paths.
-- [Toolchain friction](../toolchain_friction): build, test, dependency, CI, and environment problems that slow feedback.
-- [Communication friction](../communication_friction): missing context, unclear requirements, noisy channels, and undocumented decisions.
-- [Organizational friction](../organizational_friction): decision latency, fragmented ownership, permissions, and misaligned incentives.
+- [Visual friction](/posts/visual_friction): how code rendering and layout affect readability and quick comprehension.
+- [Cognitive friction](/posts/cognitive_friction): naming, complexity, and paradigm mismatch that increase mental effort.
+- [Mechanical friction](/posts/mechanical_friction): ergonomics, input flow, and physical comfort when coding.
+- [Context friction](/posts/context_friction): flow, context switching, and managing your time.
+- [Typography friction](/posts/typography_friction): a dedicated look at typeface details and why they matter for developer flow.
+- [Process friction](/posts/process_friction): how work moves through reviews, handoffs, approvals, and release paths.
+- [Toolchain friction](/posts/toolchain_friction): build, test, dependency, CI, and environment problems that slow feedback.
+- [Communication friction](/posts/communication_friction): missing context, unclear requirements, noisy channels, and undocumented decisions.
+- [Organizational friction](/posts/organizational_friction): decision latency, fragmented ownership, permissions, and misaligned incentives.
 
 ## Conclusion
 

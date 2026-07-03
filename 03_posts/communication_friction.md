@@ -45,4 +45,4 @@ To sum up this complex topic, I've included concrete advice below:
 
 A surprisingly big part of development work has to do with communication. Now that we deal with agents that can infer meaning and context based on documentation, clear communication has become even more important than ever.
 
-You can [refer back to the anchor post of this series for more ideas regarding friction](../friction_in_software_development).
+You can [refer back to the anchor post of this series for more ideas regarding friction](/posts/friction_in_software_development).

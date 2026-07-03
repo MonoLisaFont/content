@@ -38,4 +38,4 @@ When delivering features, consider a lightweight quality gate around complexity.
 
 Cognitive friction sits at the center of software work because development is mostly structured understanding. You cannot remove it entirely, but you can make code easier to re-enter, review, modify, and trust.
 
-You can [learn more about the sources of friction in software development from the anchor post of this series](../friction_in_software_development).
+You can [learn more about the sources of friction in software development from the anchor post of this series](/posts/friction_in_software_development).

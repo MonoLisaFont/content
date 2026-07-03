@@ -44,4 +44,4 @@ The practical goal is to reduce avoidable context rebuilds:
 
 Context friction is often invisible because interruption feels like a normal part of the job, but it doesn't have to be so. The more complex the work, the more valuable it becomes to protect attention deliberately.
 
-You can [refer to the anchor post of this series for more ideas](../friction_in_software_development).
+You can [refer to the anchor post of this series for more ideas](/posts/friction_in_software_development).

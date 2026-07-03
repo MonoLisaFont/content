@@ -6,7 +6,7 @@ keywords: ["productivity"]
 authors: ["Juho Vepsäläinen"]
 ---
 
-Typography sits at the crossroads of [visual](../visual_friction) and [cognitive friction](../cognitive_friction). It shapes how quickly developers recognize characters, scan structure, and stay comfortable while reading code.
+Typography sits at the crossroads of [visual](/posts/visual_friction) and [cognitive friction](/posts/cognitive_friction). It shapes how quickly developers recognize characters, scan structure, and stay comfortable while reading code.
 
 This post focuses on typography from a developer's point of view: typeface choice, glyph clarity, spacing, ligatures, and the tradeoff between compactness and legibility.
 
@@ -42,4 +42,4 @@ Choosing a typeface is partly personal, but the experiment should be concrete:
 
 Typography is a small configuration detail with a large surface area. You see it in every line of code, every terminal command, and every review. That makes it worth tuning deliberately.
 
-As there are more sources of friction in development, [refer back to the anchor post of the series to learn more about the topic](../friction_in_software_development).
+As there are more sources of friction in development, [refer back to the anchor post of the series to learn more about the topic](/posts/friction_in_software_development).

@@ -45,4 +45,4 @@ Mechanical friction is worth addressing early because the warning signs can arri
 
 The practical approach is to change one area at a time, observe the effect, and avoid turning ergonomics into an expensive shopping project. The goal is not a perfect setup. The goal is to make development physically sustainable.
 
-Mechanical friction is only one source of friction in software development. You can [refer back to the anchor post of the series to learn more](../friction_in_software_development).
+Mechanical friction is only one source of friction in software development. You can [refer back to the anchor post of the series to learn more](/posts/friction_in_software_development).

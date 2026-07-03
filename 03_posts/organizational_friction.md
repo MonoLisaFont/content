@@ -10,7 +10,7 @@ Developers work in all kinds of organizations as software development is a core 
 
 ## Sources of organizational friction
 
-Organizational friction is related to [process friction](../process_friction), and it has more to do with the way an organization is structured to work and how people work within the organization. It is within these interfaces that you encounter friction. What makes organizational friction difficult is that it can even be cultural. Typically, organizations have their way of working, and it's not always the most efficient one, at least from the point of view of a developer.
+Organizational friction is related to [process friction](/posts/process_friction), and it has more to do with the way an organization is structured to work and how people work within the organization. It is within these interfaces that you encounter friction. What makes organizational friction difficult is that it can even be cultural. Typically, organizations have their way of working, and it's not always the most efficient one, at least from the point of view of a developer.
 
 Depending on your organization, there are likely some kinds of structures in place with some form of hierarchy and ways of working together. Often hierarchies come with incentives, permissions, and ways to perform decision-making to further the goals of the organization. Friction occurs when teams feel like they cannot make decisions fast enough or priorities shift without a clear reason, ownership is fragmented, or developers have responsibility without any authority to act. These issues can lead to decision latency, misaligned incentives between teams, blocking work, and even demotivation due to not understanding why something is happening. Therefore, organizational friction can be dangerous as it may harm the organization in the long run.
 
@@ -39,4 +39,4 @@ To sum up, there are several ways you could try to address organizational fricti
 
 Out of all the types of frictions covered, organizational friction is perhaps the most nebulous one since it's difficult to avoid, and often we cannot do so much about it ourselves. That said, organizational friction is worth addressing as it affects our wellbeing.
 
-You can [refer back to the anchor post of this series for more ideas related to friction](../friction_in_software_development).
+You can [refer back to the anchor post of this series for more ideas related to friction](/posts/friction_in_software_development).

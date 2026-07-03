@@ -49,4 +49,4 @@ Processes are an important part of our daily work even if we don't think about t
 
 That said, focusing on your process can lead to significant improvements in terms of productivity. A good process also makes work less frustrating and more predictable, so this is not only about productivity. It is also about working conditions.
 
-You can [refer back to the anchor post of this series for more ideas](../friction_in_software_development).
+You can [refer back to the anchor post of this series for more ideas](/posts/friction_in_software_development).

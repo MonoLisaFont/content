@@ -12,7 +12,7 @@ You encounter visual friction when something is technically visible but difficul
 
 A big part of development work is recognizing patterns. We split code into functions, modules, and files partly because doing so gives the reader structure. The same is true visually: indentation, spacing, syntax color, line length, and typeface choices all affect how quickly the structure appears.
 
-It is useful to separate [cognitive friction](../cognitive_friction) from visual friction. Cognitive friction is about understanding meaning. Visual friction is about seeing structure. They interact, but they are not the same problem.
+It is useful to separate [cognitive friction](/posts/cognitive_friction) from visual friction. Cognitive friction is about understanding meaning. Visual friction is about seeing structure. They interact, but they are not the same problem.
 
 You already use techniques to manage visual friction: syntax highlighting, indentation guides, monospaced fonts, diff colors, warnings, icons, spacing, and formatting tools. Good interfaces use these cues to help the important parts stand out.
 
@@ -52,4 +52,4 @@ Some font features come with tradeoffs. Ligatures can improve pattern recognitio
 
 Visual friction is easy to underestimate because developers adapt to bad defaults. That adaptation has a cost. Small improvements to rendering, spacing, contrast, and type can make code easier to scan all day.
 
-If you want to investigate other sources of friction, [refer back to the anchor post for more ideas](../friction_in_software_development). The closest related article is [typography friction](../typography_friction), which looks more closely at typeface choices for developers.
+If you want to investigate other sources of friction, [refer back to the anchor post for more ideas](/posts/friction_in_software_development). The closest related article is [typography friction](/posts/typography_friction), which looks more closely at typeface choices for developers.

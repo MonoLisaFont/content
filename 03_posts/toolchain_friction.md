@@ -10,7 +10,7 @@ As developers, we use different types of tools constantly to produce working sof
 
 ## Sources of toolchain friction
 
-If you look at the way you work with tools, it is surprisingly easy to discover sources of friction as any place where we waste time or effort can be considered as such. At a broader scale, the idea of toolchain friction is related to [process friction](../process_friction) and understanding your process and the tools within it is valuable in terms of mapping your toolchain friction.
+If you look at the way you work with tools, it is surprisingly easy to discover sources of friction as any place where we waste time or effort can be considered as such. At a broader scale, the idea of toolchain friction is related to [process friction](/posts/process_friction) and understanding your process and the tools within it is valuable in terms of mapping your toolchain friction.
 
 Since a lot of our work is automated and well containerized these days, it typically means there are many phases in the overall process where we have to wait for something to install, build, and get tested for example. The choice of tools matters as some are simply faster than others. It is not only about speed, though, as having any source of non-determinism in your process can lead to for example flaky tests or non-reproducible failures. All of that adds to toolchain friction.
 
@@ -40,4 +40,4 @@ To summarize, there are several steps you could do to address toolchain friction
 
 Toolchain is a considerable source of friction for developers, and it is one of those we experience constantly. Therefore, it's worth considering its impact to our work, performing analysis, and improving where possible.
 
-You can [refer back to the anchor post of this series for more ideas regarding friction](../friction_in_software_development).
+You can [refer back to the anchor post of this series for more ideas regarding friction](/posts/friction_in_software_development).
