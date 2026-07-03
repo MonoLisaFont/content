@@ -18,7 +18,7 @@ Draft status: Deferred commercial-font comparison. Operator Mono needs a license
 | Pricing | Paid, with trial/customizer | Paid; trial availability needs verification |
 | Coding ligatures | Yes | Needs verification |
 | Italics | Yes | Yes |
-| Variable font | Not recorded in this pass | Needs verification |
+| Variable font | Yes | Needs verification |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Needs verification |
 | Character variants | Yes; `cv01`-`cv12` measured | Needs verification |
 | Proportional counterpart | Yes, MonoLisa Text | Yes, Operator family |

@@ -23,7 +23,18 @@
         "Hebrew": 5,
         "Greek": 2,
         "Armenian": 2
-      }
+      },
+      "publicationTotalLanguages": 591,
+      "publicationScripts": {
+        "Latin": 496,
+        "Cyrillic": 88,
+        "Hebrew": 5,
+        "Greek": 2
+      },
+      "publicationNotes": [
+        "Hyperglot reports 593 languages including 2 Armenian orthographies from base character coverage.",
+        "Do not claim full Armenian support for MonoLisa yet; Armenian support is planned."
+      ]
     },
     "fira-code": {
       "label": "Fira Code",

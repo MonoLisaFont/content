@@ -18,7 +18,7 @@ Draft status: Deferred commercial-font comparison. Dank Mono does not appear to 
 | Pricing | Paid, with trial/customizer | Paid; no free trial found so far |
 | Coding ligatures | Yes | Needs verification |
 | Italics | Yes | Yes |
-| Variable font | Not recorded in this pass | Needs verification |
+| Variable font | Yes | Needs verification |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Needs verification |
 | Character variants | Yes; `cv01`-`cv12` measured | Needs verification |
 | Proportional counterpart | Yes, MonoLisa Text | Needs verification |

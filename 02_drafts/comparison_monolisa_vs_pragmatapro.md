@@ -18,7 +18,7 @@ Draft status: Deferred commercial-font comparison. PragmataPro needs edition-by-
 | Pricing | Paid, with trial/customizer | Paid; trial/testing availability needs verification |
 | Coding ligatures | Yes | Yes in full versions; verify by edition |
 | Italics | Yes | Yes |
-| Variable font | Not recorded in this pass | Needs verification |
+| Variable font | Yes | Needs verification |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Needs verification |
 | Character variants | Yes; `cv01`-`cv12` measured | Needs verification |
 | Proportional counterpart | Yes, MonoLisa Text | PragmataPro / PragmataPro Mono variants |

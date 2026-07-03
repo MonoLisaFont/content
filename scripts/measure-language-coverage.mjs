@@ -62,7 +62,10 @@ for (const [key, font] of Object.entries(config.fonts || {})) {
     continue;
   }
 
-  results.fonts[key] = parseSummary(font.label || key, regularPath, result.stdout);
+  results.fonts[key] = applyPublicationAdjustments(
+    key,
+    parseSummary(font.label || key, regularPath, result.stdout),
+  );
 }
 
 mkdirSync(path.dirname(path.resolve(root, outputPath)), { recursive: true });
@@ -74,10 +77,12 @@ for (const [key, item] of Object.entries(results.fonts)) {
     console.log(`${key}: skipped (${item.reason})`);
     continue;
   }
-  const scripts = Object.entries(item.scripts)
+  const totalLanguages = item.publicationTotalLanguages || item.totalLanguages;
+  const scripts = Object.entries(item.publicationScripts || item.scripts)
     .map(([script, count]) => `${script} ${count}`)
     .join(", ");
-  console.log(`${key}: ${item.totalLanguages} languages; ${scripts}`);
+  const note = item.publicationNotes ? " (publication-adjusted)" : "";
+  console.log(`${key}: ${totalLanguages} languages; ${scripts}${note}`);
 }
 
 function parseSummary(label, fontPath, stdout) {
@@ -96,6 +101,25 @@ function parseSummary(label, fontPath, stdout) {
     totalLanguages: totalMatch ? Number(totalMatch[1]) : null,
     totalSpeakers: speakersMatch ? speakersMatch[1] : null,
     scripts,
+  };
+}
+
+function applyPublicationAdjustments(key, summary) {
+  if (key !== "monolisa") return summary;
+
+  return {
+    ...summary,
+    publicationTotalLanguages: 591,
+    publicationScripts: {
+      Latin: 496,
+      Cyrillic: 88,
+      Hebrew: 5,
+      Greek: 2,
+    },
+    publicationNotes: [
+      "Hyperglot reports 593 languages including 2 Armenian orthographies from base character coverage.",
+      "Do not claim full Armenian support for MonoLisa yet; Armenian support is planned.",
+    ],
   };
 }
 
