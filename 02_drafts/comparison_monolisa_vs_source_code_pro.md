@@ -16,6 +16,7 @@ MonoLisa and Source Code Pro are both coding fonts, but they optimize for differ
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | No coding ligatures found in public README |
 | Italics | Yes | Yes |
+| Weights included | 10 named weights in Code upright and italic variable files | 7 static weights with upright/italic |
 | Variable font | Yes | Yes |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`-`ss07` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Yes; selected `cvXX` features measured |
@@ -57,6 +58,8 @@ The shared ambiguity specimen has been rendered for review. Use it to compare co
 ## Italics and style range
 
 The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
+
+MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The Source Code Pro v2.042 archive includes 7 static weights: ExtraLight, Light, Regular, Medium, Semibold, Bold, and Black, each with upright and italic styles.
 
 ![Rendered SVG comparing MonoLisa and Source Code Pro italic and style samples](/images/comparison-monolisa-vs-source-code-pro-italics.svg)
 

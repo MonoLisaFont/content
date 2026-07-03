@@ -16,6 +16,7 @@ MonoLisa and JetBrains Mono are both coding fonts, but they optimize for differe
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | Yes |
 | Italics | Yes | Yes |
+| Weights included | 10 named weights in Code upright and italic variable files | 8 static weights with upright/italic; variable fonts expose same 8 |
 | Variable font | Yes | Not recorded in this pass |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`, `ss02`, `ss19`, `ss20` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Yes; `cv01`-`cv12`, `cv14`-`cv20`, `cv99` measured |
@@ -57,6 +58,8 @@ The shared ambiguity specimen has been rendered for review. Use it to compare co
 ## Italics and style range
 
 The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
+
+MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The JetBrains Mono v2.304 archive includes 8 static weights from Thin through ExtraBold in upright and italic, plus variable upright and italic files exposing the same 8 named weights.
 
 ![Rendered SVG comparing MonoLisa and JetBrains Mono italic and style samples](/images/comparison-monolisa-vs-jetbrains-mono-italics.svg)
 

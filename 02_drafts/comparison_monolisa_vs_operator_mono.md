@@ -18,6 +18,7 @@ Draft status: Deferred commercial-font comparison. Operator Mono needs a license
 | Pricing | Paid, with trial/customizer | Paid; trial availability needs verification |
 | Coding ligatures | Yes | Needs verification |
 | Italics | Yes | Yes |
+| Weights included | 10 named weights in Code upright and italic variable files | Needs verification |
 | Variable font | Yes | Needs verification |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Needs verification |
 | Character variants | Yes; `cv01`-`cv12` measured | Needs verification |
@@ -50,6 +51,8 @@ Deferred until rendered specimens are allowed. If no license or permission is av
 ## Italics and style range
 
 Deferred until Operator Mono style files, trial terms, or official specimen permissions are available.
+
+MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. Operator Mono's weight count still needs verification from a licensed file, trial file, or permitted public source.
 
 ## Terminal and console support
 

@@ -16,6 +16,7 @@ MonoLisa and Recursive Mono are both coding-capable typefaces, but they optimize
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | `calt` and `rclt`; no standard coding ligature set measured |
 | Italics | Yes | Yes |
+| Weights included | 10 named weights in Code upright and italic variable files | 2 static Rec Mono Linear weights; variable font spans 8 named mono weights |
 | Variable font | Yes | Yes, five axes |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | None measured in static Rec Mono Linear |
 | Character variants | Yes; `cv01`-`cv12` measured | None measured in static Rec Mono Linear |
@@ -57,6 +58,8 @@ The shared ambiguity specimen has been rendered for review. Use it to compare co
 ## Italics and style range
 
 The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
+
+MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The static Rec Mono Linear files measured here include 2 weights, Regular and Bold, each with upright and italic styles; the Recursive v1.085 variable font spans 8 named mono weights from Light through ExtraBlack.
 
 ![Rendered SVG comparing MonoLisa and Recursive Mono italic and style samples](/images/comparison-monolisa-vs-recursive-mono-italics.svg)
 

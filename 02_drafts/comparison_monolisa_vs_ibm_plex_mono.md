@@ -16,6 +16,7 @@ MonoLisa and IBM Plex Mono are both monospaced fonts, but they optimize for diff
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | No coding ligatures found in public README |
 | Italics | Yes | Yes |
+| Weights included | 10 named weights in Code upright and italic variable files | 8 weights with upright/italic in official TTF set |
 | Variable font | Yes | Not recorded in this pass |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`-`ss09` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Not recorded in this pass |
@@ -57,6 +58,8 @@ The shared ambiguity specimen has been rendered for review. Use it to compare co
 ## Italics and style range
 
 The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
+
+MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The official IBM Plex Mono TTF set includes 8 weights: Thin, ExtraLight, Light, Regular, Text, Medium, SemiBold, and Bold, each with upright and italic styles.
 
 ![Rendered SVG comparing MonoLisa and IBM Plex Mono italic and style samples](/images/comparison-monolisa-vs-ibm-plex-mono-italics.svg)
 

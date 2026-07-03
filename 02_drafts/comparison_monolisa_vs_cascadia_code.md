@@ -16,6 +16,7 @@ MonoLisa and Cascadia Code are both coding fonts, but they optimize for differen
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | Yes; Cascadia Mono variant disables ligatures |
 | Italics | Yes | Yes |
+| Weights included | 10 named weights in Code upright and italic variable files | 6 named weights in variable upright/italic files; static builds include same 6 |
 | Variable font | Yes | Yes |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss02`, `ss19`, `ss20` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Not recorded in this pass |
@@ -57,6 +58,8 @@ The shared ambiguity specimen has been rendered for review. Use it to compare co
 ## Italics and style range
 
 The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
+
+MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The Cascadia Code v2407.024 archive includes 6 named weights: ExtraLight, Light, SemiLight, Regular, SemiBold, and Bold; the variable and static upright/italic builds expose that same weight range across the Code/Mono variants.
 
 ![Rendered SVG comparing MonoLisa and Cascadia Code italic and style samples](/images/comparison-monolisa-vs-cascadia-code-italics.svg)
 

@@ -16,6 +16,7 @@ MonoLisa and Monaspace are both coding type systems, but they optimize for diffe
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | Yes, 10 stylistic-set groups |
 | Italics | Yes | Yes |
+| Weights included | 10 named weights in Code upright and italic variable files | 7 weights in measured Neon family; width variants also included |
 | Variable font | Yes | Yes |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`-`ss10` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Yes; selected `cvXX` features measured |
@@ -57,6 +58,8 @@ The shared ambiguity specimen has been rendered for review. Use it to compare co
 ## Italics and style range
 
 The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
+
+MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The measured Monaspace Neon v1.400 static family includes 7 weights: ExtraLight, Light, Regular, Medium, SemiBold, Bold, and ExtraBold, with upright/italic styles and width variants.
 
 ![Rendered SVG comparing MonoLisa and Monaspace italic and style samples](/images/comparison-monolisa-vs-monaspace-italics.svg)
 
