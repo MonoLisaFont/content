@@ -20,6 +20,7 @@ MonoLisa and Fira Code are both coding fonts, but they optimize for different pr
 | Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Latin, Cyrillic, and Greek measured |
 | Weights included | 10 named weights in Code upright and italic variable files | 6 static upright TTF weights; variable TTF has 5 named weights |
 | Variable font | Yes | Yes |
+| Variable axes | `wght`, `GRAD` measured | `wght` measured |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`-`ss10` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Yes; `cv01`-`cv32` measured |
 | Proportional counterpart | Yes, MonoLisa Text | Fira Sans / Fira Mono family relation |

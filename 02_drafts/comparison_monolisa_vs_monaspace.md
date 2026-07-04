@@ -20,6 +20,7 @@ MonoLisa and Monaspace are both coding type systems, but they optimize for diffe
 | Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Latin, Cyrillic, and Greek measured |
 | Weights included | 10 named weights in Code upright and italic variable files | 7 weights in measured Neon family; width variants also included |
 | Variable font | Yes | Yes |
+| Variable axes | `wght`, `GRAD` measured | Not measured in static Neon files |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`-`ss10` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Yes; selected `cvXX` features measured |
 | Proportional counterpart | Yes, MonoLisa Text | Five-family coding superfamily |

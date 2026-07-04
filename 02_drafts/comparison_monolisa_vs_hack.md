@@ -20,6 +20,7 @@ MonoLisa and Hack are both coding fonts, but they optimize for different priorit
 | Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Latin, Cyrillic, Armenian, and Greek measured |
 | Weights included | 10 named weights in Code upright and italic variable files | 2 weights, Regular and Bold, with italics |
 | Variable font | Yes | No |
+| Variable axes | `wght`, `GRAD` measured | None measured |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | None measured |
 | Character variants | Yes; `cv01`-`cv12` measured | None measured |
 | Proportional counterpart | Yes, MonoLisa Text | No obvious proportional counterpart |

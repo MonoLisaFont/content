@@ -22,6 +22,7 @@ Draft status: Deferred commercial-font comparison. PragmataPro needs edition-by-
 | Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Needs licensed-font measurement |
 | Weights included | 10 named weights in Code upright and italic variable files | Needs verification by edition |
 | Variable font | Yes | Needs verification |
+| Variable axes | `wght`, `GRAD` measured | Needs verification by edition |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Needs verification |
 | Character variants | Yes; `cv01`-`cv12` measured | Needs verification |
 | Proportional counterpart | Yes, MonoLisa Text | PragmataPro / PragmataPro Mono variants |

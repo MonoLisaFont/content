@@ -20,6 +20,7 @@ MonoLisa and Recursive Mono are both coding-capable typefaces, but they optimize
 | Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Latin measured |
 | Weights included | 10 named weights in Code upright and italic variable files | 2 static Rec Mono Linear weights; variable font spans 8 named mono weights |
 | Variable font | Yes | Yes, five axes |
+| Variable axes | `wght`, `GRAD` measured | `MONO`, `CASL`, `wght`, `slnt`, `CRSV` measured |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | None measured in static Rec Mono Linear |
 | Character variants | Yes; `cv01`-`cv12` measured | None measured in static Rec Mono Linear |
 | Proportional counterpart | Yes, MonoLisa Text | Yes, Sans and Mono in one system |

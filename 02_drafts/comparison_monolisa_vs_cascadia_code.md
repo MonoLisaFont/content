@@ -20,6 +20,7 @@ MonoLisa and Cascadia Code are both coding fonts, but they optimize for differen
 | Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Latin, Cyrillic, Arabic, and Greek measured |
 | Weights included | 10 named weights in Code upright and italic variable files | 6 named weights in variable upright/italic files; static builds include same 6 |
 | Variable font | Yes | Yes |
+| Variable axes | `wght`, `GRAD` measured | `wght` measured |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss02`, `ss19`, `ss20` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Not recorded in this pass |
 | Proportional counterpart | Yes, MonoLisa Text | No obvious proportional counterpart |

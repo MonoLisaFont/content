@@ -20,6 +20,7 @@ MonoLisa and Source Code Pro are both coding fonts, but they optimize for differ
 | Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Latin, Cyrillic, and Greek measured |
 | Weights included | 10 named weights in Code upright and italic variable files | 7 static weights with upright/italic |
 | Variable font | Yes | Yes |
+| Variable axes | `wght`, `GRAD` measured | Not measured in this pass |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`-`ss07` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Yes; selected `cvXX` features measured |
 | Proportional counterpart | Yes, MonoLisa Text | Source Sans family relation |

@@ -20,6 +20,7 @@ MonoLisa and IBM Plex Mono are both monospaced fonts, but they optimize for diff
 | Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Latin and Cyrillic measured |
 | Weights included | 10 named weights in Code upright and italic variable files | 8 weights with upright/italic in official TTF set |
 | Variable font | Yes | Not recorded in this pass |
+| Variable axes | `wght`, `GRAD` measured | Not recorded in this pass |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`-`ss09` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Not recorded in this pass |
 | Proportional counterpart | Yes, MonoLisa Text | IBM Plex Sans / Serif / Sans Condensed |

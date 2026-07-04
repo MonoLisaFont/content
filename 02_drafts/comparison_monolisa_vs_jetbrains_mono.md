@@ -19,7 +19,8 @@ MonoLisa and JetBrains Mono are both coding fonts, but they optimize for differe
 | Language coverage | 591 publishable languages measured | 358 publishable languages measured |
 | Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Latin, Cyrillic, and Greek measured |
 | Weights included | 10 named weights in Code upright and italic variable files | 8 static weights with upright/italic; variable fonts expose same 8 |
-| Variable font | Yes | Not recorded in this pass |
+| Variable font | Yes | Yes |
+| Variable axes | `wght`, `GRAD` measured | `wght` measured |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`, `ss02`, `ss19`, `ss20` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Yes; `cv01`-`cv12`, `cv14`-`cv20`, `cv99` measured |
 | Proportional counterpart | Yes, MonoLisa Text | No obvious proportional counterpart |
