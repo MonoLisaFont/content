@@ -16,6 +16,8 @@ MonoLisa and Hack are both coding fonts, but they optimize for different priorit
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | No |
 | Italics | Yes | Yes |
+| Language coverage | 591 publishable languages measured | 382 publishable languages measured |
+| Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Latin, Cyrillic, Armenian, and Greek measured |
 | Weights included | 10 named weights in Code upright and italic variable files | 2 weights, Regular and Bold, with italics |
 | Variable font | Yes | No |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | None measured |
@@ -35,9 +37,7 @@ The code texture specimen has been rendered for review. Marcus should still add 
 
 MonoLisa measured at 2105 glyphs and 1784 cmap entries. Hack measured at 1573 glyphs and 1548 cmap entries.
 
-Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 591 publishable languages across Latin, Cyrillic, Hebrew, and Greek. Hack measured at 382 languages across Latin, Cyrillic, Armenian, and Greek. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included. Hyperglot also reported two Armenian orthographies for MonoLisa based on base character coverage, but MonoLisa does not fully support Armenian yet; Armenian support is planned.
-
-[Marcus input: Confirm how to phrase coverage differences.]
+Language coverage is one of the clearest measured differences in MonoLisa's favor. Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 591 publishable languages across Latin, Cyrillic, Hebrew, and Greek. Hack measured at 382 languages across Latin, Cyrillic, Armenian, and Greek. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included. Hyperglot also reported two Armenian orthographies for MonoLisa based on base character coverage, but MonoLisa does not fully support Armenian yet; Armenian support is planned.
 
 ## Coding features
 

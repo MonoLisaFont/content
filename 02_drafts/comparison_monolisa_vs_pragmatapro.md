@@ -18,6 +18,8 @@ Draft status: Deferred commercial-font comparison. PragmataPro needs edition-by-
 | Pricing | Paid, with trial/customizer | Paid; trial/testing availability needs verification |
 | Coding ligatures | Yes | Yes in full versions; verify by edition |
 | Italics | Yes | Yes |
+| Language coverage | 591 publishable languages measured | Needs licensed-font measurement |
+| Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Needs licensed-font measurement |
 | Weights included | 10 named weights in Code upright and italic variable files | Needs verification by edition |
 | Variable font | Yes | Needs verification |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Needs verification |

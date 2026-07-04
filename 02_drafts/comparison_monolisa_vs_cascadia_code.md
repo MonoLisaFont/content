@@ -16,6 +16,8 @@ MonoLisa and Cascadia Code are both coding fonts, but they optimize for differen
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | Yes; Cascadia Mono variant disables ligatures |
 | Italics | Yes | Yes |
+| Language coverage | 591 publishable languages measured | 513 publishable languages measured |
+| Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Latin, Cyrillic, Arabic, and Greek measured |
 | Weights included | 10 named weights in Code upright and italic variable files | 6 named weights in variable upright/italic files; static builds include same 6 |
 | Variable font | Yes | Yes |
 | Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss02`, `ss19`, `ss20` measured |
@@ -35,9 +37,7 @@ The code texture specimen has been rendered for review. Marcus should still add 
 
 MonoLisa measured at 2105 glyphs and 1784 cmap entries. Cascadia Code measured at 4319 glyphs and 2426 cmap entries.
 
-Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 591 publishable languages across Latin, Cyrillic, Hebrew, and Greek. Cascadia Code measured at 513 languages across Latin, Cyrillic, Arabic, and Greek. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included. Hyperglot also reported two Armenian orthographies for MonoLisa based on base character coverage, but MonoLisa does not fully support Armenian yet; Armenian support is planned.
-
-[Marcus input: Confirm how to phrase coverage differences.]
+Language coverage is one of the clearest measured differences in MonoLisa's favor. Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 591 publishable languages across Latin, Cyrillic, Hebrew, and Greek. Cascadia Code measured at 513 languages across Latin, Cyrillic, Arabic, and Greek. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included. Hyperglot also reported two Armenian orthographies for MonoLisa based on base character coverage, but MonoLisa does not fully support Armenian yet; Armenian support is planned.
 
 ## Coding features
 
