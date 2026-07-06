@@ -15,16 +15,16 @@ MonoLisa and Fira Code are both coding fonts, but they optimize for different pr
 | --- | --- | --- |
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | Yes |
-| Italics | Yes | No official italic files in v6.2 release archive |
-| Language coverage | 593 publishable languages measured | 395 publishable languages measured |
-| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Latin, Cyrillic, and Greek measured |
-| Weights included | 10 named weights in Code upright and italic variable files | 6 static upright TTF weights; variable TTF has 5 named weights |
+| Italics | Yes | No |
+| Language coverage | 593 measured languages | 395 measured languages |
+| Writing systems | 5 measured (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 measured (Latin, Cyrillic, Greek) |
+| Weights included | 10 named weights (upright and italic) | 6 static upright weights; 5 named variable weights |
 | Variable font | Yes | Yes |
-| Variable axes | `wght`, `GRAD` measured | `wght` measured |
-| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | Yes; `ss01`-`ss10` measured |
-| Character variants | Yes; `cv01`-`cv12` measured | Yes; `cv01`-`cv32` measured |
+| Variable axes | 2 (`wght`, `GRAD`) | 1 (`wght`) |
+| Stylistic sets | 15 (`ss01`-`ss15`, including `ss01` script variant) | 10 (`ss01`-`ss10`) |
+| Character variants | 12 (`cv01`-`cv12`) | 32 (`cv01`-`cv32`) |
 | Proportional counterpart | Yes, MonoLisa Text | Fira Sans / Fira Mono family relation |
-| Terminal symbols | Powerline, box drawing, and block elements measured | Powerline, box drawing, and block elements measured |
+| Terminal symbols | Yes (Powerline, box drawing, block elements) | Yes (Powerline, box drawing, block elements) |
 
 ## Design intent and reading comfort
 
@@ -36,7 +36,7 @@ The code texture specimen has been rendered for review. Marcus should still add 
 
 ## Language and script coverage
 
-MonoLisa measured at 2105 glyphs and 1784 cmap entries. Fira Code measured at 2030 glyphs and 1586 cmap entries from the v6.2 release file. The official v6.2 archive contains static upright weights and a variable weight font, but no italic or oblique font files.
+MonoLisa measured at 2105 glyphs and 1784 cmap entries. Fira Code measured at 2030 glyphs and 1586 cmap entries from the v6.2 release file. Fira Code has no italic font files; apps may synthesize slanted forms, but that is not part of the typeface.
 
 Language and writing-system coverage is one of the clearest measured differences in MonoLisa's favor. Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 593 publishable languages across Latin, Cyrillic, Hebrew, Greek, and Armenian. Fira Code measured at 395 languages across Latin, Cyrillic, and Greek. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included.
 
@@ -58,7 +58,7 @@ The shared ambiguity specimen has been rendered for review. Use it to compare co
 
 ## Italics and style range
 
-The italic/style specimen has been rendered for review. For Fira Code, treat this as an upright/style-range comparison: the official v6.2 release archive does not include italic or oblique font files, so any italic shown by an editor may be synthetic or from another Fira family/fork.
+The italic/style specimen has been rendered for review. For Fira Code, treat this as an upright/style-range comparison: Fira Code has no italics. Any italic shown by an editor is synthetic or from another Fira family/fork, not part of Fira Code itself.
 
 MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The Fira Code v6.2 archive includes 6 static upright TTF weights: Light, Regular, Retina, Medium, SemiBold, and Bold; its variable TTF exposes 5 named weights from Light through Bold.
 

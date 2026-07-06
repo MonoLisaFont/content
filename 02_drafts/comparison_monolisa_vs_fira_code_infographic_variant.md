@@ -18,13 +18,13 @@ MonoLisa and Fira Code are both coding fonts, but they optimize for different pr
 | Category | Better fit | MonoLisa | Fira Code |
 | --- | --- | --- | --- |
 | Languages | MonoLisa | 593 measured | 395 measured |
-| Writing systems | MonoLisa | Latin, Cyrillic, Greek, Hebrew, Armenian | Latin, Cyrillic, Greek |
-| Italics | MonoLisa | True italics | No official italics in v6.2 |
-| Weight range | MonoLisa | 10 named weights, upright and italic | 6 static upright weights |
-| Variable axes | MonoLisa | `wght`, `GRAD` | `wght` |
-| Style control | MonoLisa | `ss01`-`ss15`, `cv01`-`cv12` | `ss01`-`ss10`, `cv01`-`cv32` |
-| Coding ligatures | Similar | Yes; use `dlig` for full MonoLisa behavior | Yes |
-| Terminal symbols | Similar | Powerline, box drawing, block elements | Powerline, box drawing, block elements |
+| Writing systems | MonoLisa | 5 measured (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 measured (Latin, Cyrillic, Greek) |
+| Italics | MonoLisa | Yes | No |
+| Weight range | MonoLisa | 10 named weights (upright and italic) | 6 static upright weights; 5 named variable weights |
+| Variable axes | MonoLisa | 2 (`wght`, `GRAD`) | 1 (`wght`) |
+| Style control | MonoLisa | 15 stylistic sets, 12 character variants | 10 stylistic sets, 32 character variants |
+| Coding ligatures | Similar | Yes (`dlig` for full MonoLisa behavior) | Yes |
+| Terminal symbols | Similar | Yes (Powerline, box drawing, block elements) | Yes (Powerline, box drawing, block elements) |
 | Price | Fira Code | Paid, with trial/customizer | Free and open source |
 
 In short: MonoLisa wins on coverage and style range. Fira Code wins on price.
@@ -57,7 +57,7 @@ Compare common problem pairs: `0O`, `1lI|`, brackets, quotes, punctuation, and o
 
 ## Italics and style range
 
-MonoLisa Code includes variable upright and italic files with 10 named weights. The Fira Code v6.2 archive has no official italic or oblique files; its variable TTF exposes 5 named upright weights from Light through Bold.
+MonoLisa Code includes variable upright and italic files with 10 named weights. Fira Code has no italics; its variable TTF exposes 5 named upright weights from Light through Bold.
 
 ![Rendered SVG comparing MonoLisa and Fira Code italic and style samples](/images/comparison-monolisa-vs-fira-code-italics.svg)
 

@@ -16,8 +16,8 @@ const comparison = {
     descriptor: "Paid coding type system",
     languages: 593,
     scripts: ["Latin", "Cyrillic", "Greek", "Hebrew", "Armenian"],
-    weights: "10 upright + italic",
-    italics: "True italics",
+    weights: "10 named weights",
+    italics: "Yes",
     axes: ["wght", "GRAD"],
     features: ["liga", "dlig", "calt", "zero", "ss01-ss15", "cv01-cv12"],
     terminal: "Powerline, box drawing, block elements",
@@ -28,7 +28,7 @@ const comparison = {
     languages: 395,
     scripts: ["Latin", "Cyrillic", "Greek"],
     weights: "6 static, 5 variable",
-    italics: "No official italics",
+    italics: "No",
     axes: ["wght"],
     features: ["calt", "zero", "ss01-ss10", "cv01-cv32"],
     terminal: "Powerline, box drawing, block elements",
@@ -273,7 +273,7 @@ function render() {
     <rect x="142" y="98" width="340" height="26" class="language-track"/>
     <rect x="142" y="98" width="${rightLanguageWidth}" height="26" class="bar-right"/>
     <text x="542" y="118" class="metric-value right">${right.languages}</text>
-    <text x="594" y="72" class="meta">Writing systems</text>
+    <text x="594" y="72" class="meta">Writing systems: ${left.scripts.length} vs ${right.scripts.length}</text>
     ${chipRow(left.scripts, 594, 90, 430, { variant: "strong" })}
     ${chipRow(right.scripts, 594, 174, 430, { variant: "plain" })}
   </g>

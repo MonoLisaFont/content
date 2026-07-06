@@ -175,7 +175,7 @@
     <rect x="142" y="98" width="340" height="26" class="language-track"/>
     <rect x="142" y="98" width="226" height="26" class="bar-right"/>
     <text x="542" y="118" class="metric-value right">395</text>
-    <text x="594" y="72" class="meta">Writing systems</text>
+    <text x="594" y="72" class="meta">Writing systems: 5 vs 3</text>
 
     <g class="chip-box strong" transform="translate(594 90)">
       <rect width="66.5" height="30" rx="15"/>
@@ -278,8 +278,8 @@
 
     <g transform="translate(66 978)">
       <text x="0" y="0" class="metric-label">Italics</text>
-      <text x="0" y="35" class="metric-value">True italics</text>
-      <text x="1018" y="35" class="metric-value right">No official italics</text>
+      <text x="0" y="35" class="metric-value">Yes</text>
+      <text x="1018" y="35" class="metric-value right">No</text>
       <line x1="0" y1="56" x2="1018" y2="56" class="rule"/>
       <rect x="397" y="16" width="224" height="34" rx="17" class="advantage-left"/>
       <text x="509" y="38" text-anchor="middle" class="band-note">MonoLisa advantage</text>
@@ -287,7 +287,7 @@
 
     <g transform="translate(66 1052)">
       <text x="0" y="0" class="metric-label">Weight range</text>
-      <text x="0" y="35" class="metric-value">10 upright + italic</text>
+      <text x="0" y="35" class="metric-value">10 named weights</text>
       <text x="1018" y="35" class="metric-value right">6 static, 5 variable</text>
       <line x1="0" y1="56" x2="1018" y2="56" class="rule"/>
       <rect x="397" y="16" width="224" height="34" rx="17" class="advantage-left"/>
