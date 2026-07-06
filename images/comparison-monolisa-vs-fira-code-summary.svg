@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 1150 1180" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">MonoLisa vs. Fira Code summary infographic</title>
+  <desc id="desc">A comparative infographic showing headline metrics, script coverage, feature coverage, and style range for MonoLisa and Fira Code.</desc>
+  <style>
+    text {
+      font-family: "MonoLisa", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      fill: var(--icon-primary, currentColor);
+    }
+
+    .eyebrow {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
+      fill: var(--icon-secondary, currentColor);
+    }
+
+    .title {
+      font-size: 58px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      fill: var(--icon-secondary, currentColor);
+    }
+
+    .name {
+      font-size: 32px;
+      font-weight: 800;
+    }
+
+    .descriptor,
+    .meta {
+      font-size: 17px;
+      fill: var(--icon-secondary, currentColor);
+    }
+
+    .number {
+      font-size: 96px;
+      font-weight: 900;
+    }
+
+    .number-label {
+      font-size: 18px;
+      fill: var(--icon-secondary, currentColor);
+    }
+
+    .metric-label {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      fill: var(--icon-secondary, currentColor);
+    }
+
+    .metric-value {
+      font-size: 23px;
+      font-weight: 750;
+    }
+
+    .metric-value.right {
+      text-anchor: end;
+    }
+
+    .band-note,
+    .chip {
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 850;
+    }
+
+    .body {
+      font-size: 18px;
+      fill: var(--icon-secondary, currentColor);
+    }
+
+    .rule {
+      stroke: var(--icon-secondary, currentColor);
+      stroke-opacity: 0.35;
+      stroke-width: 1.25;
+    }
+
+    .panel,
+    .language-track,
+    .chip-box rect,
+    .advantage-left,
+    .advantage-right,
+    .advantage-neutral {
+      fill: none;
+      stroke: var(--icon-primary, currentColor);
+      stroke-width: 1.75;
+    }
+
+    .panel {
+      stroke-width: 2;
+    }
+
+    .panel-rule,
+    .bar-left,
+    .bar-right,
+    .top-rule {
+      fill: var(--icon-primary, currentColor);
+    }
+
+    .panel-rule,
+    .bar-right,
+    .chip-box.plain rect {
+      opacity: 0.22;
+    }
+
+    .bar-left,
+    .chip-box.strong rect,
+    .advantage-left {
+      opacity: 0.9;
+    }
+
+    .chip-box.strong rect,
+    .advantage-left,
+    .advantage-right {
+      fill: var(--icon-primary, currentColor);
+      fill-opacity: 0.1;
+    }
+
+    .advantage-neutral {
+      stroke: var(--icon-secondary, currentColor);
+      stroke-opacity: 0.55;
+    }
+
+    .divider {
+      stroke: var(--icon-primary, currentColor);
+      stroke-width: 2;
+      stroke-opacity: 0.5;
+    }
+  </style>
+
+  <path d="M66 46H1084" class="top-rule"/>
+  <text x="66" y="84" class="eyebrow">Coding font comparison</text>
+  <text x="66" y="158" class="title">MonoLisa vs. Fira Code</text>
+  <text x="66" y="196" class="subtitle">Comparison signals for coding font selection</text>
+  <line x1="66" y1="232" x2="1084" y2="232" class="rule"/>
+
+  <g transform="translate(66 280)">
+    <rect width="478" height="260" rx="0" class="panel"/>
+    <rect width="478" height="12" class="panel-rule"/>
+    <text x="28" y="58" class="name">MonoLisa</text>
+    <text x="28" y="86" class="descriptor">Paid coding type system</text>
+    <text x="28" y="180" class="number">593</text>
+    <text x="30" y="236" class="number-label">publishable languages measured</text>
+  </g>
+
+  <g transform="translate(606 280)">
+    <rect width="478" height="260" rx="0" class="panel"/>
+    <rect width="478" height="12" class="panel-rule"/>
+    <text x="28" y="58" class="name">Fira Code</text>
+    <text x="28" y="86" class="descriptor">Free ligature-focused font</text>
+    <text x="28" y="180" class="number">395</text>
+    <text x="30" y="236" class="number-label">publishable languages measured</text>
+  </g>
+
+  <g transform="translate(66 584)">
+    <text x="0" y="0" class="section-title">Language coverage</text>
+    <line x1="0" y1="28" x2="1018" y2="28" class="rule"/>
+    <text x="0" y="72" class="meta">MonoLisa</text>
+    <rect x="142" y="52" width="340" height="26" class="language-track"/>
+    <rect x="142" y="52" width="340" height="26" class="bar-left"/>
+    <text x="542" y="72" class="metric-value right">593</text>
+    <text x="0" y="118" class="meta">Fira Code</text>
+    <rect x="142" y="98" width="340" height="26" class="language-track"/>
+    <rect x="142" y="98" width="226" height="26" class="bar-right"/>
+    <text x="542" y="118" class="metric-value right">395</text>
+    <text x="594" y="72" class="meta">Writing systems</text>
+
+    <g class="chip-box strong" transform="translate(594 90)">
+      <rect width="66.5" height="30" rx="15"/>
+      <text x="33.25" y="20" text-anchor="middle" class="chip">Latin</text>
+    </g>
+
+    <g class="chip-box strong" transform="translate(670.5 90)">
+      <rect width="92" height="30" rx="15"/>
+      <text x="46" y="20" text-anchor="middle" class="chip">Cyrillic</text>
+    </g>
+
+    <g class="chip-box strong" transform="translate(772.5 90)">
+      <rect width="66.5" height="30" rx="15"/>
+      <text x="33.25" y="20" text-anchor="middle" class="chip">Greek</text>
+    </g>
+
+    <g class="chip-box strong" transform="translate(849 90)">
+      <rect width="75" height="30" rx="15"/>
+      <text x="37.5" y="20" text-anchor="middle" class="chip">Hebrew</text>
+    </g>
+
+    <g class="chip-box strong" transform="translate(594 128)">
+      <rect width="92" height="30" rx="15"/>
+      <text x="46" y="20" text-anchor="middle" class="chip">Armenian</text>
+    </g>
+
+    <g class="chip-box plain" transform="translate(594 174)">
+      <rect width="66.5" height="30" rx="15"/>
+      <text x="33.25" y="20" text-anchor="middle" class="chip">Latin</text>
+    </g>
+
+    <g class="chip-box plain" transform="translate(670.5 174)">
+      <rect width="92" height="30" rx="15"/>
+      <text x="46" y="20" text-anchor="middle" class="chip">Cyrillic</text>
+    </g>
+
+    <g class="chip-box plain" transform="translate(772.5 174)">
+      <rect width="66.5" height="30" rx="15"/>
+      <text x="33.25" y="20" text-anchor="middle" class="chip">Greek</text>
+    </g>
+  </g>
+
+  <g transform="translate(66 834)">
+    <text x="0" y="0" class="metric-label">OpenType feature surface</text>
+    <line x1="509" y1="0" x2="509" y2="112" class="divider"/>
+    <text x="0" y="32" class="meta">MonoLisa</text>
+    <text x="548" y="32" class="meta">Fira Code</text>
+
+    <g class="chip-box strong" transform="translate(0 52)">
+      <rect width="58" height="30" rx="15"/>
+      <text x="29" y="20" text-anchor="middle" class="chip">liga</text>
+    </g>
+
+    <g class="chip-box strong" transform="translate(68 52)">
+      <rect width="58" height="30" rx="15"/>
+      <text x="29" y="20" text-anchor="middle" class="chip">dlig</text>
+    </g>
+
+    <g class="chip-box strong" transform="translate(136 52)">
+      <rect width="58" height="30" rx="15"/>
+      <text x="29" y="20" text-anchor="middle" class="chip">calt</text>
+    </g>
+
+    <g class="chip-box strong" transform="translate(204 52)">
+      <rect width="58" height="30" rx="15"/>
+      <text x="29" y="20" text-anchor="middle" class="chip">zero</text>
+    </g>
+
+    <g class="chip-box strong" transform="translate(272 52)">
+      <rect width="100.5" height="30" rx="15"/>
+      <text x="50.25" y="20" text-anchor="middle" class="chip">ss01-ss15</text>
+    </g>
+
+    <g class="chip-box strong" transform="translate(0 90)">
+      <rect width="100.5" height="30" rx="15"/>
+      <text x="50.25" y="20" text-anchor="middle" class="chip">cv01-cv12</text>
+    </g>
+
+    <g class="chip-box plain" transform="translate(548 52)">
+      <rect width="58" height="30" rx="15"/>
+      <text x="29" y="20" text-anchor="middle" class="chip">calt</text>
+    </g>
+
+    <g class="chip-box plain" transform="translate(616 52)">
+      <rect width="58" height="30" rx="15"/>
+      <text x="29" y="20" text-anchor="middle" class="chip">zero</text>
+    </g>
+
+    <g class="chip-box plain" transform="translate(684 52)">
+      <rect width="100.5" height="30" rx="15"/>
+      <text x="50.25" y="20" text-anchor="middle" class="chip">ss01-ss10</text>
+    </g>
+
+    <g class="chip-box plain" transform="translate(794.5 52)">
+      <rect width="100.5" height="30" rx="15"/>
+      <text x="50.25" y="20" text-anchor="middle" class="chip">cv01-cv32</text>
+    </g>
+  </g>
+
+
+    <g transform="translate(66 978)">
+      <text x="0" y="0" class="metric-label">Italics</text>
+      <text x="0" y="35" class="metric-value">True italics</text>
+      <text x="1018" y="35" class="metric-value right">No official italics</text>
+      <line x1="0" y1="56" x2="1018" y2="56" class="rule"/>
+      <rect x="397" y="16" width="224" height="34" rx="17" class="advantage-left"/>
+      <text x="509" y="38" text-anchor="middle" class="band-note">MonoLisa advantage</text>
+    </g>
+
+    <g transform="translate(66 1052)">
+      <text x="0" y="0" class="metric-label">Weight range</text>
+      <text x="0" y="35" class="metric-value">10 upright + italic</text>
+      <text x="1018" y="35" class="metric-value right">6 static, 5 variable</text>
+      <line x1="0" y1="56" x2="1018" y2="56" class="rule"/>
+      <rect x="397" y="16" width="224" height="34" rx="17" class="advantage-left"/>
+      <text x="509" y="38" text-anchor="middle" class="band-note">MonoLisa advantage</text>
+    </g>
+
+  <g transform="translate(66 1132)">
+    <rect width="1018" height="1.5" class="panel-rule"/>
+    <text x="0" y="24" class="body">Specimen SVGs below remain the evidence layer.</text>
+  </g>
+</svg>
