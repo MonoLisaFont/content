@@ -42,6 +42,7 @@ const html = `<!doctype html>
     </style>
   </head>
   <body>
+    <img src="file://${svgPath}" alt="">
     ${svg}
     <script>
       function boxFor(el) {
@@ -64,34 +65,44 @@ const html = `<!doctype html>
         return x * y > 8;
       }
 
-      const svg = document.querySelector("svg");
-      const svgBox = svg.getBoundingClientRect();
-      const texts = [...document.querySelectorAll("text")]
-        .filter((el) => el.getClientRects().length > 0)
-        .map(boxFor);
+      window.addEventListener("load", () => {
+        const svg = document.querySelector("svg");
+        const image = document.querySelector("img");
+        const svgBox = svg.getBoundingClientRect();
+        const imageBox = image.getBoundingClientRect();
+        const texts = [...document.querySelectorAll("text")]
+          .filter((el) => el.getClientRects().length > 0)
+          .map(boxFor);
 
-      const outOfBounds = texts.filter((box) =>
-        box.x < -1 ||
-        box.y < -1 ||
-        box.right > svgBox.right + 1 ||
-        box.bottom > svgBox.bottom + 1
-      );
+        const outOfBounds = texts.filter((box) =>
+          box.x < -1 ||
+          box.y < -1 ||
+          box.right > svgBox.right + 1 ||
+          box.bottom > svgBox.bottom + 1
+        );
 
-      const overlaps = [];
-      for (let i = 0; i < texts.length; i += 1) {
-        for (let j = i + 1; j < texts.length; j += 1) {
-          if (texts[i].chip && texts[j].chip) continue;
-          if (intersects(texts[i], texts[j])) {
-            overlaps.push([texts[i].text, texts[j].text]);
+        const overlaps = [];
+        for (let i = 0; i < texts.length; i += 1) {
+          for (let j = i + 1; j < texts.length; j += 1) {
+            if (texts[i].chip && texts[j].chip) continue;
+            if (intersects(texts[i], texts[j])) {
+              overlaps.push([texts[i].text, texts[j].text]);
+            }
           }
         }
-      }
 
-      document.body.textContent = JSON.stringify({
-        textCount: texts.length,
-        outOfBounds,
-        overlaps,
-        viewport: { width: svgBox.width, height: svgBox.height }
+        document.body.textContent = JSON.stringify({
+          textCount: texts.length,
+          outOfBounds,
+          overlaps,
+          image: {
+            naturalWidth: image.naturalWidth,
+            naturalHeight: image.naturalHeight,
+            width: imageBox.width,
+            height: imageBox.height
+          },
+          viewport: { width: svgBox.width, height: svgBox.height }
+        });
       });
     </script>
   </body>
@@ -120,12 +131,17 @@ try {
   if (!jsonMatch) fail("Could not read validation output from Chromium");
 
   const report = JSON.parse(jsonMatch[1]);
-  if (report.outOfBounds.length || report.overlaps.length) {
+  if (
+    report.image.naturalWidth !== 1150 ||
+    report.image.naturalHeight !== 1180 ||
+    report.outOfBounds.length ||
+    report.overlaps.length
+  ) {
     console.error(JSON.stringify(report, null, 2));
     process.exit(1);
   }
 
-  console.log(`Layout ok: ${report.textCount} text nodes inside ${report.viewport.width}x${report.viewport.height}`);
+  console.log(`Layout ok: ${report.textCount} text nodes inside ${report.viewport.width}x${report.viewport.height}; image intrinsic ${report.image.naturalWidth}x${report.image.naturalHeight}`);
 } finally {
   rmSync(tempDir, { recursive: true, force: true });
 }

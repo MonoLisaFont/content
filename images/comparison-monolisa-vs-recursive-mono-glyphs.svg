@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="100%" height="100%" viewBox="0 0 1552 596" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--icon-primary, currentColor)" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="1552" height="501" viewBox="0 0 1552 501" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--icon-primary, currentColor)" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>Ambiguous Glyphs: MonoLisa vs. Recursive Mono</title>
   <style>
     .label {
@@ -13,11 +13,11 @@
       stroke-width: 2;
     }
   </style>
-  <line class="rule" x1="776" y1="32" x2="776" y2="544" />
+  <line class="rule" x1="776" y1="32" x2="776" y2="449" />
   
       <text x="52" y="52" class="label">MonoLisa</text>
 
-      <g transform="translate(52, 128) scale(1)">
+      <g transform="translate(52, 128) scale(0.9411764705882353)">
         
 <defs>
 <g>
@@ -96,7 +96,7 @@
 
       </g>
 
-      <g transform="translate(52, 214) scale(0.9831029185867896)">
+      <g transform="translate(52, 190.11764705882354) scale(0.9411764705882353)">
         
 <defs>
 <g>
@@ -143,7 +143,7 @@
 
       </g>
 
-      <g transform="translate(52, 300) scale(0.9411764705882353)">
+      <g transform="translate(52, 252.23529411764707) scale(0.9411764705882353)">
         
 <defs>
 <g>
@@ -215,7 +215,7 @@
 
       </g>
 
-      <g transform="translate(52, 386) scale(1)">
+      <g transform="translate(52, 314.3529411764706) scale(0.9411764705882353)">
         
 <defs>
 <g>
@@ -274,7 +274,7 @@
 
       <text x="800" y="52" class="label">Recursive Mono</text>
 
-      <g transform="translate(800, 128) scale(1)">
+      <g transform="translate(800, 128) scale(0.9411764705882353)">
         
 <defs>
 <g>
@@ -353,7 +353,7 @@
 
       </g>
 
-      <g transform="translate(800, 214) scale(1)">
+      <g transform="translate(800, 190.11764705882354) scale(0.9411764705882353)">
         
 <defs>
 <g>
@@ -400,7 +400,7 @@
 
       </g>
 
-      <g transform="translate(800, 300) scale(1)">
+      <g transform="translate(800, 252.23529411764707) scale(0.9411764705882353)">
         
 <defs>
 <g>
@@ -472,7 +472,7 @@
 
       </g>
 
-      <g transform="translate(800, 386) scale(1)">
+      <g transform="translate(800, 314.3529411764706) scale(0.9411764705882353)">
         
 <defs>
 <g>

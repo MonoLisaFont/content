@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="100%" height="100%" viewBox="0 0 1552 696" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--icon-primary, currentColor)" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="1552" height="494" viewBox="0 0 1552 494" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--icon-primary, currentColor)" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>Terminal Symbols: MonoLisa vs. Cascadia Code</title>
   <style>
     .label {
@@ -13,7 +13,7 @@
       stroke-width: 2;
     }
   </style>
-  <line class="rule" x1="776" y1="32" x2="776" y2="644" />
+  <line class="rule" x1="776" y1="32" x2="776" y2="442" />
   
       <text x="52" y="52" class="label">MonoLisa</text>
 
@@ -116,7 +116,7 @@
 
       </g>
 
-      <g transform="translate(52, 202) scale(1)">
+      <g transform="translate(52, 168.23282887077997) scale(0.7450523864959255)">
         
 <defs>
 <g>
@@ -187,7 +187,7 @@
 
       </g>
 
-      <g transform="translate(52, 276) scale(1)">
+      <g transform="translate(52, 208.46565774155994) scale(0.7450523864959255)">
         
 <defs>
 <g>
@@ -279,7 +279,7 @@
 
       </g>
 
-      <g transform="translate(52, 350) scale(0.9984399375975039)">
+      <g transform="translate(52, 248.69848661233993) scale(0.7450523864959255)">
         
 <defs>
 <g>
@@ -330,7 +330,7 @@
 
       </g>
 
-      <g transform="translate(52, 424) scale(0.9984399375975039)">
+      <g transform="translate(52, 288.9313154831199) scale(0.7450523864959255)">
         
 <defs>
 <g>
@@ -401,7 +401,7 @@
 
       </g>
 
-      <g transform="translate(52, 498) scale(0.9984399375975039)">
+      <g transform="translate(52, 329.16414435389987) scale(0.7450523864959255)">
         
 <defs>
 <g>
@@ -454,7 +454,7 @@
 
       <text x="800" y="52" class="label">Cascadia Code</text>
 
-      <g transform="translate(800, 128) scale(0.8111533586818758)">
+      <g transform="translate(800, 128) scale(0.7450523864959255)">
         
 <defs>
 <g>
@@ -553,7 +553,7 @@
 
       </g>
 
-      <g transform="translate(800, 202) scale(1)">
+      <g transform="translate(800, 168.23282887077997) scale(0.7450523864959255)">
         
 <defs>
 <g>
@@ -624,7 +624,7 @@
 
       </g>
 
-      <g transform="translate(800, 276) scale(1)">
+      <g transform="translate(800, 208.46565774155994) scale(0.7450523864959255)">
         
 <defs>
 <g>
@@ -716,7 +716,7 @@
 
       </g>
 
-      <g transform="translate(800, 350) scale(1)">
+      <g transform="translate(800, 248.69848661233993) scale(0.7450523864959255)">
         
 <defs>
 <g>
@@ -767,7 +767,7 @@
 
       </g>
 
-      <g transform="translate(800, 424) scale(1)">
+      <g transform="translate(800, 288.9313154831199) scale(0.7450523864959255)">
         
 <defs>
 <g>
@@ -838,7 +838,7 @@
 
       </g>
 
-      <g transform="translate(800, 498) scale(1)">
+      <g transform="translate(800, 329.16414435389987) scale(0.7450523864959255)">
         
 <defs>
 <g>

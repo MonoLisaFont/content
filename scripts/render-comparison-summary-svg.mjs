@@ -97,7 +97,7 @@ function render() {
   const rightLanguageWidth = Math.round(right.languages * languageScale);
 
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="100%" height="100%" viewBox="0 0 1150 1180" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<svg width="1150" height="1180" viewBox="0 0 1150 1180" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">${esc(comparison.title)} summary infographic</title>
   <desc id="desc">A comparative infographic showing headline metrics, script coverage, feature coverage, and style range for MonoLisa and Fira Code.</desc>
   <style>

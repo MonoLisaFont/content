@@ -165,34 +165,50 @@ function renderSample(competitorKey, sampleKey, sample) {
   const margin = 52;
   const gutter = 48;
   const labelHeight = 76;
-  const rowGap = 20;
   const colWidth = 700;
   const targetLineWidth = 640;
-  const panelHeight = labelHeight + sample.lines.length * (sample.lineHeight + rowGap) + margin;
-  const width = margin * 2 + colWidth * 2 + gutter;
-  const height = panelHeight + margin + 72;
   const fragments = [];
+  const renderedLines = [];
+
+  for (const [columnIndex, font] of [mono, competitor].entries()) {
+    for (const [lineIndex, line] of sample.lines.entries()) {
+      const prefix = `${competitorKey}-${sampleKey}-${columnIndex}-${lineIndex}`;
+      renderedLines.push({
+        columnIndex,
+        lineIndex,
+        fragment: renderLine(font, sample, line, prefix),
+      });
+    }
+  }
+
+  const scale = Math.min(
+    1,
+    targetLineWidth / Math.max(...renderedLines.map(({ fragment }) => fragment.width)),
+  );
+  const lineStep = sample.lineHeight * scale;
+  const panelHeight = labelHeight + sample.lines.length * lineStep + margin;
+  const width = margin * 2 + colWidth * 2 + gutter;
+  const height = Math.ceil(panelHeight + margin + 72);
 
   for (const [columnIndex, font] of [mono, competitor].entries()) {
     const x = margin + columnIndex * (colWidth + gutter);
     fragments.push(`
       <text x="${x}" y="${margin}" class="label">${esc(font.label)}</text>`);
 
-    sample.lines.forEach((line, lineIndex) => {
-      const prefix = `${competitorKey}-${sampleKey}-${columnIndex}-${lineIndex}`;
-      const fragment = renderLine(font, sample, line, prefix);
-      const scale = Math.min(1, targetLineWidth / fragment.width);
-      const y = margin + labelHeight + lineIndex * (sample.lineHeight + rowGap);
+    renderedLines
+      .filter((renderedLine) => renderedLine.columnIndex === columnIndex)
+      .forEach(({ lineIndex, fragment }) => {
+      const y = margin + labelHeight + lineIndex * lineStep;
       fragments.push(`
       <g transform="translate(${x}, ${y}) scale(${scale})">
         ${fragment.inner}
       </g>`);
-    });
+      });
   }
 
   const title = `${sample.title}: MonoLisa vs. ${competitor.label}`;
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="100%" height="100%" viewBox="0 0 ${width} ${height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--icon-primary, currentColor)" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--icon-primary, currentColor)" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>${esc(title)}</title>
   <style>
     .label {

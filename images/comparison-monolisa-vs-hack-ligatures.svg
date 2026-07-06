@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="100%" height="100%" viewBox="0 0 1552 504" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--icon-primary, currentColor)" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="1552" height="390" viewBox="0 0 1552 390" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--icon-primary, currentColor)" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>Coding Ligatures: MonoLisa vs. Hack</title>
   <style>
     .label {
@@ -13,11 +13,11 @@
       stroke-width: 2;
     }
   </style>
-  <line class="rule" x1="776" y1="32" x2="776" y2="452" />
+  <line class="rule" x1="776" y1="32" x2="776" y2="338" />
   
       <text x="52" y="52" class="label">MonoLisa</text>
 
-      <g transform="translate(52, 128) scale(0.8443271767810027)">
+      <g transform="translate(52, 128) scale(0.7174887892376681)">
         
 <defs>
 <g>
@@ -92,7 +92,7 @@
 
       </g>
 
-      <g transform="translate(52, 212) scale(0.7174887892376681)">
+      <g transform="translate(52, 173.91928251121075) scale(0.7174887892376681)">
         
 <defs>
 <g>
@@ -184,7 +184,7 @@
 
       </g>
 
-      <g transform="translate(52, 296) scale(0.8443271767810027)">
+      <g transform="translate(52, 219.8385650224215) scale(0.7174887892376681)">
         
 <defs>
 <g>
@@ -267,7 +267,7 @@
 
       <text x="800" y="52" class="label">Hack</text>
 
-      <g transform="translate(800, 128) scale(0.8951048951048951)">
+      <g transform="translate(800, 128) scale(0.7174887892376681)">
         
 <defs>
 <g>
@@ -343,7 +343,7 @@
 
       </g>
 
-      <g transform="translate(800, 212) scale(0.760998810939358)">
+      <g transform="translate(800, 173.91928251121075) scale(0.7174887892376681)">
         
 <defs>
 <g>
@@ -436,7 +436,7 @@
 
       </g>
 
-      <g transform="translate(800, 296) scale(0.8951048951048951)">
+      <g transform="translate(800, 219.8385650224215) scale(0.7174887892376681)">
         
 <defs>
 <g>
