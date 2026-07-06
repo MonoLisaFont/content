@@ -250,7 +250,7 @@ function render() {
     <text x="28" y="58" class="name">${esc(left.label)}</text>
     <text x="28" y="86" class="descriptor">${esc(left.descriptor)}</text>
     <text x="28" y="180" class="number">${left.languages}</text>
-    <text x="30" y="236" class="number-label">publishable languages measured</text>
+    <text x="30" y="236" class="number-label">Hyperglot languages</text>
   </g>
 
   <g transform="translate(606 280)">
@@ -259,11 +259,11 @@ function render() {
     <text x="28" y="58" class="name">${esc(right.label)}</text>
     <text x="28" y="86" class="descriptor">${esc(right.descriptor)}</text>
     <text x="28" y="180" class="number">${right.languages}</text>
-    <text x="30" y="236" class="number-label">publishable languages measured</text>
+    <text x="30" y="236" class="number-label">Hyperglot languages</text>
   </g>
 
   <g transform="translate(66 584)">
-    <text x="0" y="0" class="section-title">Language coverage</text>
+    <text x="0" y="0" class="section-title">Language coverage (Hyperglot)</text>
     <line x1="0" y1="28" x2="1018" y2="28" class="rule"/>
     <text x="0" y="72" class="meta">${esc(left.label)}</text>
     <rect x="142" y="52" width="340" height="26" class="language-track"/>
@@ -292,7 +292,7 @@ function render() {
 
   <g transform="translate(66 1132)">
     <rect width="1018" height="1.5" class="panel-rule"/>
-    <text x="0" y="24" class="body">Specimen SVGs below remain the evidence layer.</text>
+    <text x="0" y="24" class="body">Language counts: Hyperglot 0.8.1. Specimen SVGs below show the evidence.</text>
   </g>
 </svg>
 `;

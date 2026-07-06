@@ -16,8 +16,8 @@ MonoLisa and Fira Code are both coding fonts, but they optimize for different pr
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | Yes |
 | Italics | Yes | No |
-| Language coverage | 593 measured languages | 395 measured languages |
-| Writing systems | 5 measured (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 measured (Latin, Cyrillic, Greek) |
+| Language coverage (Hyperglot) | 593 languages | 395 languages |
+| Writing systems | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek) |
 | Weights included | 10 named weights (upright and italic) | 6 static upright weights; 5 named variable weights |
 | Variable font | Yes | Yes |
 | Variable axes | 2 (`wght`, `GRAD`) | 1 (`wght`) |
@@ -84,6 +84,7 @@ As of 2026-07-03, the Fira Code GitHub repository shows 29 non-draft, non-prerel
 
 - [MonoLisa](https://www.monolisa.dev/)
 - [Fira Code repository](https://github.com/tonsky/FiraCode)
+- [Hyperglot](https://github.com/rosettatype/hyperglot) 0.8.1 language coverage measurement
 
 ## Measurement notes
 

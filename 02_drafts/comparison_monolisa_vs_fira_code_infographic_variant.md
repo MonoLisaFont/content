@@ -3,7 +3,13 @@ title: "Comparison of MonoLisa vs. Fira Code: Infographic Variant"
 published: YYYY-MM-DD
 updated: 2026-07-06
 draft: true
-keywords: ["MonoLisa vs Fira Code", "Fira Code alternative", "coding fonts", "programming fonts"]
+keywords:
+  [
+    "MonoLisa vs Fira Code",
+    "Fira Code alternative",
+    "coding fonts",
+    "programming fonts",
+  ]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
@@ -15,17 +21,17 @@ MonoLisa and Fira Code are both coding fonts, but they optimize for different pr
 
 ## Decision table
 
-| Category | Better fit | MonoLisa | Fira Code |
-| --- | --- | --- | --- |
-| Languages | MonoLisa | 593 measured | 395 measured |
-| Writing systems | MonoLisa | 5 measured (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 measured (Latin, Cyrillic, Greek) |
-| Italics | MonoLisa | Yes | No |
-| Weight range | MonoLisa | 10 named weights (upright and italic) | 6 static upright weights; 5 named variable weights |
-| Variable axes | MonoLisa | 2 (`wght`, `GRAD`) | 1 (`wght`) |
-| Style control | MonoLisa | 15 stylistic sets, 12 character variants | 10 stylistic sets, 32 character variants |
-| Coding ligatures | Similar | Yes (`dlig` for full MonoLisa behavior) | Yes |
-| Terminal symbols | Similar | Yes (Powerline, box drawing, block elements) | Yes (Powerline, box drawing, block elements) |
-| Price | Fira Code | Paid, with trial/customizer | Free and open source |
+| Category              | Better fit | MonoLisa                                     | Fira Code                                          |
+| --------------------- | ---------- | -------------------------------------------- | -------------------------------------------------- |
+| Languages (Hyperglot) | MonoLisa   | 593                                          | 395                                                |
+| Writing systems       | MonoLisa   | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek)                         |
+| Italics               | MonoLisa   | Yes                                          | No                                                 |
+| Weights               | MonoLisa   | 10                                           | 6 static upright weights; 5 named variable weights |
+| Variable axes         | MonoLisa   | 2 (`wght`, `GRAD`)                           | 1 (`wght`)                                         |
+| Style control         | MonoLisa   | 15 stylistic sets, 12 character variants     | 10 stylistic sets, 32 character variants           |
+| Coding ligatures      | Similar    | Yes                                          | Yes                                                |
+| Terminal symbols      | Similar    | Yes                                          | Yes                                                |
+| Price                 | Fira Code  | Paid, including free trial                   | Free and open source                               |
 
 In short: MonoLisa wins on coverage and style range. Fira Code wins on price.
 
@@ -79,6 +85,7 @@ As of 2026-07-03, the Fira Code GitHub repository shows 29 non-draft, non-prerel
 
 - [MonoLisa](https://www.monolisa.dev/)
 - [Fira Code repository](https://github.com/tonsky/FiraCode)
+- [Hyperglot](https://github.com/rosettatype/hyperglot) 0.8.1 language coverage measurement
 
 ## Measurement notes
 
