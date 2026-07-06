@@ -16,12 +16,12 @@ MonoLisa and Recursive Mono are both coding-capable typefaces, but they optimize
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | `calt` and `rclt`; no standard coding ligature set measured |
 | Italics | Yes | Yes |
-| Language coverage | 591 publishable languages measured | 345 publishable languages measured |
-| Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Latin measured |
+| Language coverage | 593 publishable languages measured | 345 publishable languages measured |
+| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Latin measured |
 | Weights included | 10 named weights in Code upright and italic variable files | 2 static Rec Mono Linear weights; variable font spans 8 named mono weights |
 | Variable font | Yes | Yes, five axes |
 | Variable axes | `wght`, `GRAD` measured | `MONO`, `CASL`, `wght`, `slnt`, `CRSV` measured |
-| Stylistic sets | Yes; `ss02`-`ss15` measured | None measured in static Rec Mono Linear |
+| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | None measured in static Rec Mono Linear |
 | Character variants | Yes; `cv01`-`cv12` measured | None measured in static Rec Mono Linear |
 | Proportional counterpart | Yes, MonoLisa Text | Yes, Sans and Mono in one system |
 | Terminal symbols | Powerline, box drawing, and block elements measured | Powerline measured; box drawing and block elements not present in static Rec Mono Linear |
@@ -38,13 +38,13 @@ The code texture specimen has been rendered for review. Marcus should still add 
 
 MonoLisa measured at 2105 glyphs and 1784 cmap entries. Recursive Mono measured at 1379 glyphs and 783 cmap entries.
 
-Language and writing-system coverage is one of the clearest measured differences in MonoLisa's favor. Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 591 publishable languages across Latin, Cyrillic, Hebrew, and Greek. Recursive Mono measured at 345 languages across Latin. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included. Hyperglot also reported two Armenian orthographies for MonoLisa based on base character coverage, but MonoLisa does not fully support Armenian yet; Armenian support is planned.
+Language and writing-system coverage is one of the clearest measured differences in MonoLisa's favor. Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 593 publishable languages across Latin, Cyrillic, Hebrew, Greek, and Armenian. Recursive Mono measured at 345 languages across Latin. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included.
 
 ## Coding features
 
 Recursive Mono is most interesting as a variable type system with mono/sans, casual/linear, weight, slant, and cursive axes. In the static Rec Mono Linear file measured here, only `calt` and `rclt` were measured for coding-related behavior.
 
-Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss02`-`ss15`, and `cv01`-`cv12`. Recursive Mono exposes `calt` and `rclt`; no standard coding ligature set measured in static Rec Mono Linear.
+Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. Recursive Mono exposes `calt` and `rclt`; no standard coding ligature set measured in static Rec Mono Linear.
 
 ![Rendered SVG comparing MonoLisa and Recursive Mono operator and ligature behavior](/images/comparison-monolisa-vs-recursive-mono-ligatures.svg)
 

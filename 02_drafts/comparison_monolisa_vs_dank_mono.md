@@ -18,12 +18,12 @@ Draft status: Deferred commercial-font comparison. Dank Mono does not appear to 
 | Pricing | Paid, with trial/customizer | Paid; no free trial found so far |
 | Coding ligatures | Yes | Needs verification |
 | Italics | Yes | Yes |
-| Language coverage | 591 publishable languages measured | Needs licensed-font measurement |
-| Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Needs licensed-font measurement |
+| Language coverage | 593 publishable languages measured | Needs licensed-font measurement |
+| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Needs licensed-font measurement |
 | Weights included | 10 named weights in Code upright and italic variable files | Needs verification |
 | Variable font | Yes | Needs verification |
 | Variable axes | `wght`, `GRAD` measured | Needs verification |
-| Stylistic sets | Yes; `ss02`-`ss15` measured | Needs verification |
+| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | Needs verification |
 | Character variants | Yes; `cv01`-`cv12` measured | Needs verification |
 | Proportional counterpart | Yes, MonoLisa Text | Needs verification |
 | Terminal symbols | Powerline, box drawing, and block elements measured | Needs licensed-font measurement |

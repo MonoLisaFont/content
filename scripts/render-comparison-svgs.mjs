@@ -99,6 +99,13 @@ function variations(font, sample) {
   return font.variations;
 }
 
+function features(font, sample) {
+  if (font === mono && sample.features.includes("liga=1")) {
+    return `${sample.features},dlig=1`;
+  }
+  return sample.features;
+}
+
 function renderLine(font, sample, line, prefix) {
   const file = fontPath(font, sample);
   const resolved = path.resolve(root, file || "");
@@ -109,7 +116,7 @@ function renderLine(font, sample, line, prefix) {
   const args = [
     "--output-format=svg",
     `--font-size=${sample.fontSize}`,
-    `--features=${sample.features}`,
+    `--features=${features(font, sample)}`,
   ];
   const variationSettings = variations(font, sample);
   if (variationSettings) args.push(`--variations=${variationSettings}`);

@@ -16,12 +16,12 @@ MonoLisa and Fira Code are both coding fonts, but they optimize for different pr
 | Pricing | Paid, with trial/customizer | Free and open source |
 | Coding ligatures | Yes | Yes |
 | Italics | Yes | No official italic files in v6.2 release archive |
-| Language coverage | 591 publishable languages measured | 395 publishable languages measured |
-| Writing systems | Latin, Cyrillic, Greek, and Hebrew measured; Armenian base coverage noted, but not full support yet | Latin, Cyrillic, and Greek measured |
+| Language coverage | 593 publishable languages measured | 395 publishable languages measured |
+| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Latin, Cyrillic, and Greek measured |
 | Weights included | 10 named weights in Code upright and italic variable files | 6 static upright TTF weights; variable TTF has 5 named weights |
 | Variable font | Yes | Yes |
 | Variable axes | `wght`, `GRAD` measured | `wght` measured |
-| Stylistic sets | Yes; `ss02`-`ss15` measured | Yes; `ss01`-`ss10` measured |
+| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | Yes; `ss01`-`ss10` measured |
 | Character variants | Yes; `cv01`-`cv12` measured | Yes; `cv01`-`cv32` measured |
 | Proportional counterpart | Yes, MonoLisa Text | Fira Sans / Fira Mono family relation |
 | Terminal symbols | Powerline, box drawing, and block elements measured | Powerline, box drawing, and block elements measured |
@@ -38,13 +38,13 @@ The code texture specimen has been rendered for review. Marcus should still add 
 
 MonoLisa measured at 2105 glyphs and 1784 cmap entries. Fira Code measured at 2030 glyphs and 1586 cmap entries from the v6.2 release file. The official v6.2 archive contains static upright weights and a variable weight font, but no italic or oblique font files.
 
-Language and writing-system coverage is one of the clearest measured differences in MonoLisa's favor. Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 591 publishable languages across Latin, Cyrillic, Hebrew, and Greek. Fira Code measured at 395 languages across Latin, Cyrillic, and Greek. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included. Hyperglot also reported two Armenian orthographies for MonoLisa based on base character coverage, but MonoLisa does not fully support Armenian yet; Armenian support is planned.
+Language and writing-system coverage is one of the clearest measured differences in MonoLisa's favor. Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 593 publishable languages across Latin, Cyrillic, Hebrew, Greek, and Armenian. Fira Code measured at 395 languages across Latin, Cyrillic, and Greek. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included.
 
 ## Coding features
 
 Fira Code is a strong ligature-focused comparison target, and the rendered operator specimen should be reviewed with ligatures and contextual behavior in mind.
 
-Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss02`-`ss15`, and `cv01`-`cv12`. Fira Code exposes `calt`, `zero`, `ss01`-`ss10`, and `cv01`-`cv32`.
+Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. Fira Code exposes `calt`, `zero`, `ss01`-`ss10`, and `cv01`-`cv32`.
 
 ![Rendered SVG comparing MonoLisa and Fira Code operator and ligature behavior](/images/comparison-monolisa-vs-fira-code-ligatures.svg)
 
