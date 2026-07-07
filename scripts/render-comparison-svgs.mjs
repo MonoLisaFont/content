@@ -18,15 +18,23 @@ mkdirSync(outputDir, { recursive: true });
 const samples = {
   texture: {
     title: "Code Texture",
-    fontSize: 34,
-    lineHeight: 54,
+    fontSize: 44,
+    lineHeight: 64,
     features: "kern=1,liga=1,calt=1",
+    syntax: true,
     lines: [
       "function parseToken(input, offset = 0) {",
       "  const next = input[offset + 1] ?? \"\";",
-      "  if (next !== \"\" && input.length >= offset) {",
-      "    return { kind: \"operator\", value: input.slice(offset) };",
+      "",
+      "  if (next !== \"\") {",
+      "    if (offset < input.length) {",
+      "      return {",
+      "        kind: \"operator\",",
+      "        value: input.slice(offset),",
+      "      };",
+      "    }",
       "  }",
+      "",
       "  return null;",
       "}",
     ],
@@ -106,7 +114,7 @@ function features(font, sample) {
   return sample.features;
 }
 
-function renderLine(font, sample, line, prefix) {
+function renderLine(font, sample, line, prefix, fill = "var(--icon-primary, currentColor)") {
   const file = fontPath(font, sample);
   const resolved = path.resolve(root, file || "");
   if (!file || !existsSync(resolved)) {
@@ -127,10 +135,10 @@ function renderLine(font, sample, line, prefix) {
     throw new Error(result.stderr || `hb-view failed for ${font.label}`);
   }
 
-  return normalizeFragment(result.stdout, prefix);
+  return normalizeFragment(result.stdout, prefix, fill);
 }
 
-function normalizeFragment(svg, prefix) {
+function normalizeFragment(svg, prefix, fill) {
   const viewBox = svg.match(/viewBox="([^"]+)"/)?.[1] || "0 0 100 100";
   const [, , width, height] = viewBox.split(/\s+/).map(Number);
   let inner = svg
@@ -143,11 +151,101 @@ function normalizeFragment(svg, prefix) {
     .replace(/id="([^"]+)"/g, `id="${prefix}-$1"`)
     .replace(/xlink:href="#([^"]+)"/g, `xlink:href="#${prefix}-$1"`)
     .replace(/(?<!xlink:)href="#([^"]+)"/g, `href="#${prefix}-$1"`)
-    .replace(/fill="rgb\(0%, 0%, 0%\)"/g, 'fill="var(--icon-primary, currentColor)"')
+    .replace(/fill="rgb\(0%, 0%, 0%\)"/g, `fill="${fill}"`)
     .replace(/fill-opacity="1"/g, "")
     .replace(/fill="rgb\(100%, 100%, 100%\)"/g, 'fill="none"');
 
-  return { width, height, inner };
+  return { width, height, advanceWidth: Math.max(0, width - 32), inner };
+}
+
+const syntaxFills = {
+  keyword: "var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))",
+  function: "var(--comparison-syntax-function, #8dbdff)",
+  property: "var(--comparison-syntax-property, #9fd7ff)",
+  string: "var(--comparison-syntax-string, #f7d875)",
+  number: "var(--comparison-syntax-number, #f2a66a)",
+  operator: "var(--comparison-syntax-operator, #d8e7f7)",
+  punctuation: "var(--comparison-syntax-punctuation, #7ea0b9)",
+  identifier: "var(--comparison-syntax-identifier, var(--icon-primary, currentColor))",
+  whitespace: "var(--comparison-syntax-identifier, var(--icon-primary, currentColor))",
+};
+
+function tokenizeCode(line) {
+  const tokens = [];
+  let index = 0;
+
+  while (index < line.length) {
+    const rest = line.slice(index);
+    const match =
+      rest.match(/^\s+/) ||
+      rest.match(/^"(?:\\.|[^"])*"/) ||
+      rest.match(/^(?:!==|===|=>|<=|>=|&&|\|\||\?\?|[=+<>?:.])/) ||
+      rest.match(/^[{}()[\],;]/) ||
+      rest.match(/^\d+(?:\.\d+)?/) ||
+      rest.match(/^[A-Za-z_$][\w$]*/) ||
+      rest.match(/^./);
+    const value = match[0];
+    const previous = tokens[tokens.length - 1];
+    let type = "identifier";
+
+    if (/^\s+$/.test(value)) {
+      type = "whitespace";
+    } else if (/^"/.test(value)) {
+      type = "string";
+    } else if (/^\d/.test(value)) {
+      type = "number";
+    } else if (/^(?:function|const|if|return|null)$/.test(value)) {
+      type = "keyword";
+    } else if (/^(?:parseToken|slice)$/.test(value)) {
+      type = "function";
+    } else if (/^(?:kind|value|length)$/.test(value) || previous?.value === ".") {
+      type = "property";
+    } else if (/^(?:!==|===|=>|<=|>=|&&|\|\||\?\?|[=+<>?:.])$/.test(value)) {
+      type = "operator";
+    } else if (/^[{}()[\],;]$/.test(value)) {
+      type = "punctuation";
+    }
+
+    tokens.push({ value, type });
+    index += value.length;
+  }
+
+  return tokens;
+}
+
+function renderCodeLine(font, sample, line, prefix) {
+  if (line.length === 0) {
+    return { width: 0, height: sample.fontSize, tokens: [] };
+  }
+
+  if (!sample.syntax) {
+    const fragment = renderLine(font, sample, line, prefix);
+    return {
+      width: fragment.width,
+      height: fragment.height,
+      tokens: [{ x: 16, fragment }],
+    };
+  }
+
+  let x = 0;
+  const tokens = tokenizeCode(line).map((token, tokenIndex) => {
+    const fragment = renderLine(
+      font,
+      sample,
+      token.value,
+      `${prefix}-${tokenIndex}`,
+      syntaxFills[token.type] || syntaxFills.identifier,
+    );
+    const renderedToken = { x, fragment };
+    x += fragment.advanceWidth;
+    return renderedToken;
+  });
+
+  return {
+    width: x,
+    height: Math.max(...tokens.map(({ fragment }) => fragment.height)),
+    tokens,
+  };
 }
 
 function esc(value) {
@@ -163,10 +261,7 @@ function renderSample(competitorKey, sampleKey, sample) {
   if (!competitor) throw new Error(`Unknown comparison font: ${competitorKey}`);
 
   const margin = 52;
-  const gutter = 48;
   const labelHeight = 76;
-  const colWidth = 700;
-  const targetLineWidth = 640;
   const fragments = [];
   const renderedLines = [];
 
@@ -176,14 +271,20 @@ function renderSample(competitorKey, sampleKey, sample) {
       renderedLines.push({
         columnIndex,
         lineIndex,
-        fragment: renderLine(font, sample, line, prefix),
+        line: renderCodeLine(font, sample, line, prefix),
       });
     }
   }
 
+  const sampleLayout = sample.syntax
+    ? { colWidth: 560, targetLineWidth: 530, gutter: 48 }
+    : { colWidth: 700, targetLineWidth: 640, gutter: 48 };
+  const colWidth = sampleLayout.colWidth;
+  const targetLineWidth = sampleLayout.targetLineWidth;
+  const gutter = sampleLayout.gutter;
   const scale = Math.min(
     1,
-    targetLineWidth / Math.max(...renderedLines.map(({ fragment }) => fragment.width)),
+    targetLineWidth / Math.max(...renderedLines.map(({ line }) => line.width)),
   );
   const lineStep = sample.lineHeight * scale;
   const panelHeight = labelHeight + sample.lines.length * lineStep + margin;
@@ -197,11 +298,17 @@ function renderSample(competitorKey, sampleKey, sample) {
 
     renderedLines
       .filter((renderedLine) => renderedLine.columnIndex === columnIndex)
-      .forEach(({ lineIndex, fragment }) => {
+      .forEach(({ lineIndex, line }) => {
       const y = margin + labelHeight + lineIndex * lineStep;
+      const tokenFragments = line.tokens
+        .map(({ x: tokenX, fragment }) => `
+          <g transform="translate(${tokenX - 16}, 0)">
+            ${fragment.inner}
+          </g>`)
+        .join("\n");
       fragments.push(`
       <g transform="translate(${x}, ${y}) scale(${scale})">
-        ${fragment.inner}
+        ${tokenFragments}
       </g>`);
       });
   }
