@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1552" height="501" viewBox="0 0 1552 501" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--icon-primary, currentColor)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="1552" height="501" viewBox="0 0 1552 501" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, #cfe7ff)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>Ambiguous Glyphs: MonoLisa vs. Fira Code</title>
   <style>
     .label {
-      fill: var(--icon-secondary, currentColor);
+      fill: var(--comparison-accent, #f4cc50);
       font: 600 30px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       letter-spacing: 0;
     }
     .rule {
-      stroke: var(--icon-secondary, currentColor);
-      stroke-opacity: 0.35;
+      stroke: var(--comparison-accent, #f4cc50);
+      stroke-opacity: 0.55;
       stroke-width: 2;
     }
   </style>
@@ -19,6 +19,8 @@
 
       <g transform="translate(52, 128) scale(0.9411764705882353)">
         
+          <g transform="translate(0, 0)">
+            
 <defs>
 <g>
 <g id="fira-code-glyphs-0-0-glyph-0-0">
@@ -70,7 +72,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--icon-primary, currentColor)" >
+<g fill="var(--comparison-primary, #cfe7ff)" >
 <use xlink:href="#fira-code-glyphs-0-0-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#fira-code-glyphs-0-0-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#fira-code-glyphs-0-0-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -94,10 +96,13 @@
 <use xlink:href="#fira-code-glyphs-0-0-glyph-0-15" x="579.125" y="61.765625"/>
 </g>
 
+          </g>
       </g>
 
       <g transform="translate(52, 190.11764705882354) scale(0.9411764705882353)">
         
+          <g transform="translate(0, 0)">
+            
 <defs>
 <g>
 <g id="fira-code-glyphs-0-1-glyph-0-0">
@@ -116,7 +121,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--icon-primary, currentColor)" >
+<g fill="var(--comparison-primary, #cfe7ff)" >
 <use xlink:href="#fira-code-glyphs-0-1-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#fira-code-glyphs-0-1-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#fira-code-glyphs-0-1-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -141,10 +146,13 @@
 <use xlink:href="#fira-code-glyphs-0-1-glyph-0-3" x="607.28125" y="61.765625"/>
 </g>
 
+          </g>
       </g>
 
       <g transform="translate(52, 252.23529411764707) scale(0.9411764705882353)">
         
+          <g transform="translate(0, 0)">
+            
 <defs>
 <g>
 <g id="fira-code-glyphs-0-2-glyph-0-0">
@@ -187,7 +195,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--icon-primary, currentColor)" >
+<g fill="var(--comparison-primary, #cfe7ff)" >
 <use xlink:href="#fira-code-glyphs-0-2-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#fira-code-glyphs-0-2-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#fira-code-glyphs-0-2-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -213,10 +221,13 @@
 <use xlink:href="#fira-code-glyphs-0-2-glyph-0-12" x="635.4375" y="61.765625"/>
 </g>
 
+          </g>
       </g>
 
       <g transform="translate(52, 314.3529411764706) scale(0.9411764705882353)">
         
+          <g transform="translate(0, 0)">
+            
 <defs>
 <g>
 <g id="fira-code-glyphs-0-3-glyph-0-0">
@@ -250,7 +261,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--icon-primary, currentColor)" >
+<g fill="var(--comparison-primary, #cfe7ff)" >
 <use xlink:href="#fira-code-glyphs-0-3-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#fira-code-glyphs-0-3-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#fira-code-glyphs-0-3-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -270,12 +281,15 @@
 <use xlink:href="#fira-code-glyphs-0-3-glyph-0-9" x="466.5" y="61.765625"/>
 </g>
 
+          </g>
       </g>
 
       <text x="800" y="52" class="label">Fira Code</text>
 
       <g transform="translate(800, 128) scale(0.9411764705882353)">
         
+          <g transform="translate(0, 0)">
+            
 <defs>
 <g>
 <g id="fira-code-glyphs-1-0-glyph-0-0">
@@ -327,7 +341,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--icon-primary, currentColor)" >
+<g fill="var(--comparison-primary, #cfe7ff)" >
 <use xlink:href="#fira-code-glyphs-1-0-glyph-0-0" x="16" y="56.609375"/>
 <use xlink:href="#fira-code-glyphs-1-0-glyph-0-1" x="43.078125" y="56.609375"/>
 <use xlink:href="#fira-code-glyphs-1-0-glyph-0-2" x="70.15625" y="56.609375"/>
@@ -351,10 +365,13 @@
 <use xlink:href="#fira-code-glyphs-1-0-glyph-0-15" x="557.5625" y="56.609375"/>
 </g>
 
+          </g>
       </g>
 
       <g transform="translate(800, 190.11764705882354) scale(0.9411764705882353)">
         
+          <g transform="translate(0, 0)">
+            
 <defs>
 <g>
 <g id="fira-code-glyphs-1-1-glyph-0-0">
@@ -373,7 +390,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--icon-primary, currentColor)" >
+<g fill="var(--comparison-primary, #cfe7ff)" >
 <use xlink:href="#fira-code-glyphs-1-1-glyph-0-0" x="16" y="56.609375"/>
 <use xlink:href="#fira-code-glyphs-1-1-glyph-0-1" x="43.078125" y="56.609375"/>
 <use xlink:href="#fira-code-glyphs-1-1-glyph-0-2" x="70.15625" y="56.609375"/>
@@ -398,10 +415,13 @@
 <use xlink:href="#fira-code-glyphs-1-1-glyph-0-3" x="584.640625" y="56.609375"/>
 </g>
 
+          </g>
       </g>
 
       <g transform="translate(800, 252.23529411764707) scale(0.9411764705882353)">
         
+          <g transform="translate(0, 0)">
+            
 <defs>
 <g>
 <g id="fira-code-glyphs-1-2-glyph-0-0">
@@ -444,7 +464,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--icon-primary, currentColor)" >
+<g fill="var(--comparison-primary, #cfe7ff)" >
 <use xlink:href="#fira-code-glyphs-1-2-glyph-0-0" x="16" y="56.609375"/>
 <use xlink:href="#fira-code-glyphs-1-2-glyph-0-1" x="43.078125" y="56.609375"/>
 <use xlink:href="#fira-code-glyphs-1-2-glyph-0-2" x="70.15625" y="56.609375"/>
@@ -470,10 +490,13 @@
 <use xlink:href="#fira-code-glyphs-1-2-glyph-0-12" x="611.71875" y="56.609375"/>
 </g>
 
+          </g>
       </g>
 
       <g transform="translate(800, 314.3529411764706) scale(0.9411764705882353)">
         
+          <g transform="translate(0, 0)">
+            
 <defs>
 <g>
 <g id="fira-code-glyphs-1-3-glyph-0-0">
@@ -507,7 +530,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--icon-primary, currentColor)" >
+<g fill="var(--comparison-primary, #cfe7ff)" >
 <use xlink:href="#fira-code-glyphs-1-3-glyph-0-0" x="16" y="56.609375"/>
 <use xlink:href="#fira-code-glyphs-1-3-glyph-0-1" x="43.078125" y="56.609375"/>
 <use xlink:href="#fira-code-glyphs-1-3-glyph-0-2" x="70.15625" y="56.609375"/>
@@ -527,5 +550,6 @@
 <use xlink:href="#fira-code-glyphs-1-3-glyph-0-9" x="449.25" y="56.609375"/>
 </g>
 
+          </g>
       </g>
 </svg>

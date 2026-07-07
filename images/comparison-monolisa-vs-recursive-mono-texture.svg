@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1272" height="675" viewBox="0 0 1272 675" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--icon-primary, currentColor)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="1272" height="675" viewBox="0 0 1272 675" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, #cfe7ff)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>Code Texture: MonoLisa vs. Recursive Mono</title>
   <style>
     .label {
-      fill: var(--icon-secondary, currentColor);
+      fill: var(--comparison-accent, #f4cc50);
       font: 600 30px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       letter-spacing: 0;
     }
     .rule {
-      stroke: var(--icon-secondary, currentColor);
-      stroke-opacity: 0.35;
+      stroke: var(--comparison-accent, #f4cc50);
+      stroke-opacity: 0.55;
       stroke-width: 2;
     }
   </style>
@@ -46,7 +46,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-0-0-0-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-0-0-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-0-0-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -148,7 +148,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-0-4-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-0-4-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-0-4-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -199,7 +199,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-0-7-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-0-7-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-0-7-glyph-0-1" x="72.3125" y="61.765625"/>
@@ -296,7 +296,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-1-0-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-1-0-glyph-0-0" x="44.15625" y="61.765625"/>
 </g>
@@ -324,7 +324,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-0-1-1-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-1-1-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-1-1-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -357,7 +357,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-1-3-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-1-3-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-1-3-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -412,7 +412,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-1-7-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-1-7-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-1-7-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -458,7 +458,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-1-9-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-1-9-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-1-9-glyph-0-1" x="72.3125" y="61.765625"/>
@@ -598,7 +598,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-3-0-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-3-0-glyph-0-0" x="44.15625" y="61.765625"/>
 </g>
@@ -617,7 +617,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-0-3-1-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-3-1-glyph-0-1" x="44.15625" y="61.765625"/>
 </g>
@@ -662,7 +662,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-3-4-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-3-4-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-3-4-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -762,7 +762,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-4-0-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-4-0-glyph-0-0" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-4-0-glyph-0-0" x="72.3125" y="61.765625"/>
@@ -783,7 +783,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-0-4-1-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-4-1-glyph-0-1" x="44.15625" y="61.765625"/>
 </g>
@@ -831,7 +831,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-4-4-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-4-4-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-4-4-glyph-0-1" x="72.3125" y="61.765625"/>
@@ -888,7 +888,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-4-8-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-4-8-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-4-8-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -994,7 +994,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-5-0-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-5-0-glyph-0-0" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-5-0-glyph-0-0" x="72.3125" y="61.765625"/>
@@ -1026,7 +1026,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-0-5-1-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-5-1-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-5-1-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -1068,7 +1068,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-6-0-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-6-0-glyph-0-0" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-6-0-glyph-0-0" x="72.3125" y="61.765625"/>
@@ -1196,7 +1196,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-7-0-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-7-0-glyph-0-0" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-7-0-glyph-0-0" x="72.3125" y="61.765625"/>
@@ -1281,7 +1281,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-7-4-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-7-4-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-7-4-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -1373,7 +1373,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-7-8-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-7-8-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-7-8-glyph-0-1" x="72.3125" y="61.765625"/>
@@ -1425,7 +1425,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-8-0-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-8-0-glyph-0-0" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-8-0-glyph-0-0" x="72.3125" y="61.765625"/>
@@ -1477,7 +1477,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-9-0-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-9-0-glyph-0-0" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-9-0-glyph-0-0" x="72.3125" y="61.765625"/>
@@ -1512,7 +1512,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-10-0-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-10-0-glyph-0-0" x="44.15625" y="61.765625"/>
 </g>
@@ -1549,7 +1549,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-0-12-0-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-12-0-glyph-0-0" x="44.15625" y="61.765625"/>
 </g>
@@ -1577,7 +1577,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-0-12-1-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-12-1-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-12-1-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -1608,7 +1608,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-0-12-3-glyph-0-0" x="16" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-12-3-glyph-0-1" x="44.15625" y="61.765625"/>
 <use xlink:href="#recursive-mono-texture-0-12-3-glyph-0-2" x="72.3125" y="61.765625"/>
@@ -1682,7 +1682,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-1-0-0-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-0-0-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-0-0-glyph-0-2" x="68.8125" y="57.796875"/>
@@ -1784,7 +1784,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-0-4-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-0-4-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-0-4-glyph-0-2" x="68.8125" y="57.796875"/>
@@ -1835,7 +1835,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-0-7-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-0-7-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-0-7-glyph-0-1" x="68.8125" y="57.796875"/>
@@ -1932,7 +1932,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-1-0-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-1-0-glyph-0-0" x="42.40625" y="57.796875"/>
 </g>
@@ -1960,7 +1960,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-1-1-1-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-1-1-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-1-1-glyph-0-2" x="68.8125" y="57.796875"/>
@@ -1993,7 +1993,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-1-3-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-1-3-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-1-3-glyph-0-2" x="68.8125" y="57.796875"/>
@@ -2048,7 +2048,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-1-7-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-1-7-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-1-7-glyph-0-2" x="68.8125" y="57.796875"/>
@@ -2094,7 +2094,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-1-9-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-1-9-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-1-9-glyph-0-1" x="68.8125" y="57.796875"/>
@@ -2234,7 +2234,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-3-0-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-3-0-glyph-0-0" x="42.40625" y="57.796875"/>
 </g>
@@ -2253,7 +2253,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-1-3-1-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-3-1-glyph-0-1" x="42.40625" y="57.796875"/>
 </g>
@@ -2298,7 +2298,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-3-4-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-3-4-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-3-4-glyph-0-2" x="68.8125" y="57.796875"/>
@@ -2398,7 +2398,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-4-0-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-4-0-glyph-0-0" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-4-0-glyph-0-0" x="68.8125" y="57.796875"/>
@@ -2419,7 +2419,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-1-4-1-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-4-1-glyph-0-1" x="42.40625" y="57.796875"/>
 </g>
@@ -2467,7 +2467,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-4-4-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-4-4-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-4-4-glyph-0-1" x="68.8125" y="57.796875"/>
@@ -2524,7 +2524,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-4-8-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-4-8-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-4-8-glyph-0-2" x="68.8125" y="57.796875"/>
@@ -2630,7 +2630,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-5-0-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-5-0-glyph-0-0" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-5-0-glyph-0-0" x="68.8125" y="57.796875"/>
@@ -2662,7 +2662,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-1-5-1-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-5-1-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-5-1-glyph-0-2" x="68.8125" y="57.796875"/>
@@ -2704,7 +2704,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-6-0-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-6-0-glyph-0-0" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-6-0-glyph-0-0" x="68.8125" y="57.796875"/>
@@ -2832,7 +2832,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-7-0-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-7-0-glyph-0-0" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-7-0-glyph-0-0" x="68.8125" y="57.796875"/>
@@ -2917,7 +2917,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-7-4-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-7-4-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-7-4-glyph-0-2" x="68.8125" y="57.796875"/>
@@ -3009,7 +3009,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-7-8-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-7-8-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-7-8-glyph-0-1" x="68.8125" y="57.796875"/>
@@ -3061,7 +3061,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-8-0-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-8-0-glyph-0-0" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-8-0-glyph-0-0" x="68.8125" y="57.796875"/>
@@ -3113,7 +3113,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-9-0-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-9-0-glyph-0-0" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-9-0-glyph-0-0" x="68.8125" y="57.796875"/>
@@ -3148,7 +3148,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-10-0-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-10-0-glyph-0-0" x="42.40625" y="57.796875"/>
 </g>
@@ -3185,7 +3185,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, var(--icon-primary, currentColor))" >
+<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
 <use xlink:href="#recursive-mono-texture-1-12-0-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-12-0-glyph-0-0" x="42.40625" y="57.796875"/>
 </g>
@@ -3213,7 +3213,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-1-12-1-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-12-1-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-12-1-glyph-0-2" x="68.8125" y="57.796875"/>
@@ -3244,7 +3244,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))" >
+<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
 <use xlink:href="#recursive-mono-texture-1-12-3-glyph-0-0" x="16" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-12-3-glyph-0-1" x="42.40625" y="57.796875"/>
 <use xlink:href="#recursive-mono-texture-1-12-3-glyph-0-2" x="68.8125" y="57.796875"/>

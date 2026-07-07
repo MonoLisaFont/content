@@ -56,6 +56,7 @@ const samples = {
     fontSize: 42,
     lineHeight: 64,
     features: "kern=1,liga=1,calt=1",
+    syntax: true,
     lines: [
       "a !== b && c <= d || e >= f",
       "value -> next => result <- input",
@@ -68,6 +69,7 @@ const samples = {
     lineHeight: 64,
     style: "italic",
     features: "kern=1,liga=1,calt=1",
+    syntax: true,
     lines: [
       "const emphasis = readableIdentifier;",
       "if (quickFix !== null) return quickFix;",
@@ -79,6 +81,7 @@ const samples = {
     fontSize: 34,
     lineHeight: 54,
     features: "kern=1,liga=0,calt=0",
+    terminal: true,
     lines: [
       "main \uE0B0 feature/render-fonts \uE0B0 npm test",
       "+ added: src/render.ts",
@@ -88,6 +91,11 @@ const samples = {
       "└────────┴────────┴────────┘",
     ],
   },
+};
+
+const themeFills = {
+  accent: "var(--comparison-accent, #f4cc50)",
+  primary: "var(--comparison-primary, #cfe7ff)",
 };
 
 function fail(message) {
@@ -114,7 +122,7 @@ function features(font, sample) {
   return sample.features;
 }
 
-function renderLine(font, sample, line, prefix, fill = "var(--icon-primary, currentColor)") {
+function renderLine(font, sample, line, prefix, fill = themeFills.primary) {
   const file = fontPath(font, sample);
   const resolved = path.resolve(root, file || "");
   if (!file || !existsSync(resolved)) {
@@ -159,15 +167,21 @@ function normalizeFragment(svg, prefix, fill) {
 }
 
 const syntaxFills = {
-  keyword: "var(--comparison-syntax-keyword, var(--icon-secondary, #f4cc50))",
+  keyword: "var(--comparison-syntax-keyword, #f4cc50)",
   function: "var(--comparison-syntax-function, #8dbdff)",
   property: "var(--comparison-syntax-property, #9fd7ff)",
   string: "var(--comparison-syntax-string, #f7d875)",
   number: "var(--comparison-syntax-number, #f2a66a)",
   operator: "var(--comparison-syntax-operator, #d8e7f7)",
   punctuation: "var(--comparison-syntax-punctuation, #7ea0b9)",
-  identifier: "var(--comparison-syntax-identifier, var(--icon-primary, currentColor))",
-  whitespace: "var(--comparison-syntax-identifier, var(--icon-primary, currentColor))",
+  identifier: "var(--comparison-syntax-identifier, #cfe7ff)",
+  whitespace: "var(--comparison-syntax-identifier, #cfe7ff)",
+  terminalBranch: "var(--comparison-terminal-branch, #f4cc50)",
+  terminalPath: "var(--comparison-terminal-path, #8dbdff)",
+  terminalCommand: "var(--comparison-terminal-command, #9fd7ff)",
+  terminalAdd: "var(--comparison-terminal-add, #9ee6a8)",
+  terminalRemove: "var(--comparison-terminal-remove, #f2a66a)",
+  terminalBox: "var(--comparison-terminal-box, #9fd7ff)",
 };
 
 function tokenizeCode(line) {
@@ -179,7 +193,7 @@ function tokenizeCode(line) {
     const match =
       rest.match(/^\s+/) ||
       rest.match(/^"(?:\\.|[^"])*"/) ||
-      rest.match(/^(?:!==|===|=>|<=|>=|&&|\|\||\?\?|[=+<>?:.])/) ||
+      rest.match(/^(?:!==|===|=>|->|<-|::|<=|>=|&&|\|\||\?\?|\.\.\.|[=+<>?:.])/) ||
       rest.match(/^[{}()[\],;]/) ||
       rest.match(/^\d+(?:\.\d+)?/) ||
       rest.match(/^[A-Za-z_$][\w$]*/) ||
@@ -200,7 +214,7 @@ function tokenizeCode(line) {
       type = "function";
     } else if (/^(?:kind|value|length)$/.test(value) || previous?.value === ".") {
       type = "property";
-    } else if (/^(?:!==|===|=>|<=|>=|&&|\|\||\?\?|[=+<>?:.])$/.test(value)) {
+    } else if (/^(?:!==|===|=>|->|<-|::|<=|>=|&&|\|\||\?\?|\.\.\.|[=+<>?:.])$/.test(value)) {
       type = "operator";
     } else if (/^[{}()[\],;]$/.test(value)) {
       type = "punctuation";
@@ -213,12 +227,67 @@ function tokenizeCode(line) {
   return tokens;
 }
 
+function tokenizeTerminal(line) {
+  if (line.startsWith("+")) {
+    return [
+      { value: "+", type: "terminalAdd" },
+      ...tokenizeCode(line.slice(1)).map((token) => ({
+        ...token,
+        type: token.type === "identifier" ? "terminalAdd" : token.type,
+      })),
+    ];
+  }
+
+  if (line.startsWith("-")) {
+    return [
+      { value: "-", type: "terminalRemove" },
+      ...tokenizeCode(line.slice(1)).map((token) => ({
+        ...token,
+        type: token.type === "identifier" ? "terminalRemove" : token.type,
+      })),
+    ];
+  }
+
+  if (/^[┌┬┐│└┴┘─\sstatusbuildtes]+$/.test(line)) {
+    return tokenizeCode(line).map((token) => ({
+      ...token,
+      type: /[┌┬┐│└┴┘─]/.test(token.value) ? "terminalBox" : token.type,
+    }));
+  }
+
+  const tokens = [];
+  let index = 0;
+  const tokenPattern = /\s+|\uE0B0|[^\s\uE0B0]+/gu;
+  for (const match of line.matchAll(tokenPattern)) {
+    const value = match[0];
+    let type = "identifier";
+    if (/^\s+$/.test(value)) type = "whitespace";
+    else if (value === "\uE0B0") type = "operator";
+    else if (index === 0) type = "terminalBranch";
+    else if (value.includes("/")) type = "terminalPath";
+    else type = "terminalCommand";
+    tokens.push({ value, type });
+    index += 1;
+  }
+
+  return tokens;
+}
+
+function isTerminalTableLine(line) {
+  return /^[┌┬┐│└┴┘─\sstatusbuildtes]+$/.test(line);
+}
+
+function tokensForLine(sample, line) {
+  if (sample.terminal) return tokenizeTerminal(line);
+  return tokenizeCode(line);
+}
+
 function renderCodeLine(font, sample, line, prefix) {
   if (line.length === 0) {
     return { width: 0, height: sample.fontSize, tokens: [] };
   }
 
-  if (!sample.syntax) {
+  if (!sample.syntax && !sample.terminal) {
     const fragment = renderLine(font, sample, line, prefix);
     return {
       width: fragment.width,
@@ -227,8 +296,17 @@ function renderCodeLine(font, sample, line, prefix) {
     };
   }
 
+  if (sample.terminal && isTerminalTableLine(line)) {
+    const fragment = renderLine(font, sample, line, prefix, syntaxFills.terminalBox);
+    return {
+      width: fragment.width,
+      height: fragment.height,
+      tokens: [{ x: 16, fragment }],
+    };
+  }
+
   let x = 0;
-  const tokens = tokenizeCode(line).map((token, tokenIndex) => {
+  const tokens = tokensForLine(sample, line).map((token, tokenIndex) => {
     const fragment = renderLine(
       font,
       sample,
@@ -315,17 +393,17 @@ function renderSample(competitorKey, sampleKey, sample) {
 
   const title = `${sample.title}: MonoLisa vs. ${competitor.label}`;
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--icon-primary, currentColor)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="${themeFills.primary}" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>${esc(title)}</title>
   <style>
     .label {
-      fill: var(--icon-secondary, currentColor);
+      fill: ${themeFills.accent};
       font: 600 30px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       letter-spacing: 0;
     }
     .rule {
-      stroke: var(--icon-secondary, currentColor);
-      stroke-opacity: 0.35;
+      stroke: ${themeFills.accent};
+      stroke-opacity: 0.55;
       stroke-width: 2;
     }
   </style>
