@@ -2,7 +2,7 @@
   "outputDir": "images",
   "fonts": {
     "monolisa": {
-      "label": "MonoLisa",
+      "label": "MonoLisa Code",
       "regular": ".font-sources/monolisa/MonoLisa-Regular.ttf",
       "italic": ".font-sources/monolisa/MonoLisa-RegularItalic.ttf"
     },

@@ -9,10 +9,10 @@ mkdirSync(outputDir, { recursive: true });
 
 const comparison = {
   key: "fira-code",
-  title: "MonoLisa vs. Fira Code",
+  title: "MonoLisa Code vs. Fira Code",
   subtitle: "Comparison signals for coding font selection",
   left: {
-    label: "MonoLisa",
+    label: "MonoLisa Code",
     descriptor: "Paid coding type system",
     languages: 593,
     scripts: ["Latin", "Cyrillic", "Greek", "Hebrew", "Armenian"],

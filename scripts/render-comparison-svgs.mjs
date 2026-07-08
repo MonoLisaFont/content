@@ -66,13 +66,18 @@ const samples = {
   italics: {
     title: "Italic Forms",
     fontSize: 42,
-    lineHeight: 64,
+    lineHeight: 60,
+    marginY: 24,
+    labelHeight: 58,
+    blankLineScale: 0.45,
     style: "italic",
     features: "kern=1,liga=1,calt=1",
     syntax: true,
     lines: [
       "const emphasis = readableIdentifier;",
+      "",
       "if (quickFix !== null) return quickFix;",
+      "",
       "alpha beta gamma delta epsilon",
     ],
   },
@@ -338,12 +343,15 @@ function renderSample(competitorKey, sampleKey, sample) {
   const competitor = config.fonts[competitorKey];
   if (!competitor) throw new Error(`Unknown comparison font: ${competitorKey}`);
 
-  const margin = 52;
-  const labelHeight = 76;
+  const marginX = 0;
+  const marginY = sample.marginY ?? 52;
+  const labelHeight = sample.labelHeight ?? 48;
+  const bottomPadding = sample.bottomPadding ?? 28;
   const fragments = [];
   const renderedLines = [];
+  const fonts = sample.style === "italic" && !competitor.italic ? [mono] : [mono, competitor];
 
-  for (const [columnIndex, font] of [mono, competitor].entries()) {
+  for (const [columnIndex, font] of fonts.entries()) {
     for (const [lineIndex, line] of sample.lines.entries()) {
       const prefix = `${competitorKey}-${sampleKey}-${columnIndex}-${lineIndex}`;
       renderedLines.push({
@@ -360,24 +368,32 @@ function renderSample(competitorKey, sampleKey, sample) {
   const colWidth = sampleLayout.colWidth;
   const targetLineWidth = sampleLayout.targetLineWidth;
   const gutter = sampleLayout.gutter;
+  const columnCount = fonts.length;
   const scale = Math.min(
     1,
     targetLineWidth / Math.max(...renderedLines.map(({ line }) => line.width)),
   );
   const lineStep = sample.lineHeight * scale;
-  const panelHeight = labelHeight + sample.lines.length * lineStep + margin;
-  const width = margin * 2 + colWidth * 2 + gutter;
-  const height = Math.ceil(panelHeight + margin + 72);
+  const lineOffsets = [];
+  let lineCursor = 0;
+  for (const line of sample.lines) {
+    lineOffsets.push(lineCursor);
+    lineCursor += line === "" ? lineStep * (sample.blankLineScale ?? 1) : lineStep;
+  }
+  const width = marginX * 2 + colWidth * columnCount + gutter * (columnCount - 1);
+  const height = Math.ceil(marginY + labelHeight + lineCursor + bottomPadding);
 
-  for (const [columnIndex, font] of [mono, competitor].entries()) {
-    const x = margin + columnIndex * (colWidth + gutter);
+  for (const [columnIndex, font] of fonts.entries()) {
+    const x = marginX + columnIndex * (colWidth + gutter);
     fragments.push(`
-      <text x="${x}" y="${margin}" class="label">${esc(font.label)}</text>`);
+      <text x="${x}" y="${marginY}" class="label">${esc(font.label)}</text>`);
 
     renderedLines
       .filter((renderedLine) => renderedLine.columnIndex === columnIndex)
       .forEach(({ lineIndex, line }) => {
-      const y = margin + labelHeight + lineIndex * lineStep;
+      if (line.tokens.length === 0) return;
+
+      const y = marginY + labelHeight + lineOffsets[lineIndex];
       const tokenFragments = line.tokens
         .map(({ x: tokenX, fragment }) => `
           <g transform="translate(${tokenX - 16}, 0)">
@@ -391,7 +407,7 @@ function renderSample(competitorKey, sampleKey, sample) {
       });
   }
 
-  const title = `${sample.title}: MonoLisa vs. ${competitor.label}`;
+  const title = `${sample.title}: ${mono.label} vs. ${competitor.label}`;
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="${themeFills.primary}" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>${esc(title)}</title>
@@ -407,7 +423,6 @@ function renderSample(competitorKey, sampleKey, sample) {
       stroke-width: 2;
     }
   </style>
-  <line class="rule" x1="${margin + colWidth + gutter / 2}" y1="${margin - 20}" x2="${margin + colWidth + gutter / 2}" y2="${height - margin}" />
   ${fragments.join("\n")}
 </svg>
 `;

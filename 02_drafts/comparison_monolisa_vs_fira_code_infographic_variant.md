@@ -21,19 +21,21 @@ MonoLisa and Fira Code are both coding fonts, but they optimize for different pr
 
 ## Decision table
 
-| Category              | Better fit | MonoLisa                                     | Fira Code                                          |
-| --------------------- | ---------- | -------------------------------------------- | -------------------------------------------------- |
-| Languages (Hyperglot) | MonoLisa   | 593                                          | 395                                                |
-| Writing systems       | MonoLisa   | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek)                         |
-| Italics               | MonoLisa   | Yes                                          | No                                                 |
-| Weights               | MonoLisa   | 10                                           | 6 static upright weights; 5 named variable weights |
-| Variable axes         | MonoLisa   | 2 (`wght`, `GRAD`)                           | 1 (`wght`)                                         |
-| Style control         | MonoLisa   | 15 stylistic sets, 12 character variants     | 10 stylistic sets, 32 character variants           |
-| Coding ligatures      | Similar    | Yes                                          | Yes                                                |
-| Terminal symbols      | Similar    | Yes                                          | Yes                                                |
-| Price                 | Fira Code  | Paid, including free trial                   | Free and open source                               |
+| Category                                                              | Better fit    | MonoLisa Code                                                                          | Fira Code                                                               |
+| --------------------------------------------------------------------- | ------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | MonoLisa      | 593                                                                                    | 395                                                                     |
+| **Writing systems**                                                   | MonoLisa      | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                           | 3 (Latin, Cyrillic, Greek)                                              |
+| **Italics**                                                           | MonoLisa      | <span style={{ color: "var(--icon-primary, currentColor)" }}>Yes</span>                | No                                                                      |
+| **Weights**                                                           | MonoLisa      | 10                                                                                     | 6                                                                       |
+| **Variable axes**                                                     | MonoLisa      | 2 (`wght`, `GRAD`)                                                                     | 1 (`wght`)                                                              |
+| **Style control**                                                     | MonoLisa      | 15 stylistic sets, 12 character variants                                               | 10 stylistic sets, 32 character variants                                |
+| **Coding ligatures**                                                  | Similar       | <span style={{ color: "var(--icon-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--icon-primary, currentColor)" }}>Yes</span> |
+| **Terminal symbols**                                                  | Similar       | <span style={{ color: "var(--icon-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--icon-primary, currentColor)" }}>Yes</span> |
+| **Proportional counterpart**                                          | MonoLisa      | <span style={{ color: "var(--icon-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Fira Sans / Fira Mono family relation                                   |
+| **Price**                                                             | Fira Code     | Paid, including free trial and customizer                                              | Free and open source                                                    |
+| **Source**                                                            | -             | [monolisa.dev](https://www.monolisa.dev/)                                              | [Fira Code GitHub repository](https://github.com/tonsky/FiraCode)       |
 
-In short: MonoLisa wins on coverage and style range. Fira Code wins on price.
+In short: MonoLisa Code wins on coverage and style range. Fira Code wins on price.
 
 ## Reading texture
 
@@ -49,13 +51,18 @@ Measured with Hyperglot 0.8.1 using primary living orthographies and base charac
 
 ## Coding features
 
-Both fonts support coding ligatures. MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`; Fira Code exposes `calt`, `zero`, `ss01`-`ss10`, and `cv01`-`cv32`.
+Both fonts support coding ligatures. MonoLisa Code exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`; Fira Code exposes `calt`, `zero`, `ss01`-`ss10`, and `cv01`-`cv32`.
 
 ![Rendered SVG comparing MonoLisa and Fira Code operator and ligature behavior](/images/comparison-monolisa-vs-fira-code-ligatures.svg)
 
 ## Glyph distinction
 
-Compare common problem pairs: `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
+| Pair                   | MonoLisa Code                                                                  | Fira Code                                                                      |
+| ---------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `0O`                   | Zero and capital O are visibly separated by construction and interior shape.   | Zero and capital O are distinct, with a different rhythm and counter shape.    |
+| <code>1lI&#124;</code> | One, lowercase l, capital I, and bar keep separate silhouettes.                | The set remains distinguishable, with a more geometric texture.                |
+| Brackets and quotes    | Brackets, braces, parentheses, quotes, and backticks are tuned for dense code. | Shapes are clear and compact for ligature-heavy code.                          |
+| Operators              | Operator punctuation stays legible with and without ligatures.                 | Operator sequences are a core strength, especially when ligatures are enabled. |
 
 [Marcus input: Add notes for intentional MonoLisa tradeoffs.]
 
@@ -63,9 +70,11 @@ Compare common problem pairs: `0O`, `1lI|`, brackets, quotes, punctuation, and o
 
 ## Italics and style range
 
-MonoLisa Code includes variable upright and italic files with 10 named weights. Fira Code has no italics; its variable TTF exposes 5 named upright weights from Light through Bold.
+MonoLisa Code includes variable upright and italic files with 10 named weights.
 
-![Rendered SVG comparing MonoLisa and Fira Code italic and style samples](/images/comparison-monolisa-vs-fira-code-italics.svg)
+Fira Code has no italics; its variable TTF exposes 5 named upright weights from Light through Bold.
+
+![Rendered SVG showing MonoLisa Code italic and style samples](/images/comparison-monolisa-vs-fira-code-italics.svg)
 
 ## Terminal and console support
 
@@ -75,23 +84,13 @@ Both measured well here: Powerline 6/6, box drawing 128/128, block elements 32/3
 
 ## Licensing and availability
 
-Fira Code is free and open source. MonoLisa is a paid typeface with trial/customizer access. The rendered comparison graphics use path-based SVG output, so the published page does not require readers to have either font installed.
-
-## Project activity
-
-As of 2026-07-03, the Fira Code GitHub repository shows 29 non-draft, non-prerelease releases, with the latest release on 2021-12-06. Across the release history returned by the GitHub API, that is about 4.1 releases per year. The repository has 423 open issues, and the median close time for the recent closed-issue sample is 0.7 days. Treat this as a maintenance/activity signal, not a type-design quality score.
-
-## Source links
-
-- [MonoLisa](https://www.monolisa.dev/)
-- [Fira Code repository](https://github.com/tonsky/FiraCode)
-- [Hyperglot](https://github.com/rosettatype/hyperglot) 0.8.1 language coverage measurement
+Fira Code is free and open source. MonoLisa Code is a paid typeface with free trial and customizer access. The rendered comparison graphics use path-based SVG output, so the published page does not require readers to have either font installed.
 
 ## Measurement notes
 
-Measurements in this draft use MonoLisa font files plus competitor font files downloaded from the official repository or release archive, fonttools metadata extraction, Hyperglot 0.8.1 language coverage with primary living orthographies and base characters, and path-based SVG specimens generated by `scripts/render-comparison-svgs.mjs`.
+Treat these numbers as local measurements, not absolute promises. They depend on the tested font files, the version available at the time of measurement, and the measurement settings. Language coverage was checked with Hyperglot 0.8.1 using primary living orthographies and base character support.
 
-The summary infographic is generated by `scripts/render-comparison-summary-svg.mjs`.
+The comparison was prepared carefully, but mistakes are possible in font selection, metadata interpretation, feature detection, or rendering. If you rely on a specific language, glyph, OpenType feature, license term, or editor behavior, verify it against the current font files and official sources before making a decision.
 
 ## Publication checklist
 
