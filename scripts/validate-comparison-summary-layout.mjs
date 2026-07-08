@@ -37,7 +37,7 @@ const html = `<!doctype html>
       svg {
         display: block;
         width: 1150px;
-        height: 1180px;
+        height: 720px;
       }
     </style>
   </head>
@@ -45,17 +45,17 @@ const html = `<!doctype html>
     <img src="file://${svgPath}" alt="">
     ${svg}
     <script>
-      function boxFor(el) {
+      function boxFor(el, svgBox) {
         const box = el.getBoundingClientRect();
         return {
           text: el.textContent.trim(),
           chip: Boolean(el.closest(".chip-box")),
-          x: box.x,
-          y: box.y,
+          x: box.x - svgBox.x,
+          y: box.y - svgBox.y,
           width: box.width,
           height: box.height,
-          right: box.right,
-          bottom: box.bottom
+          right: box.right - svgBox.x,
+          bottom: box.bottom - svgBox.y
         };
       }
 
@@ -72,13 +72,13 @@ const html = `<!doctype html>
         const imageBox = image.getBoundingClientRect();
         const texts = [...document.querySelectorAll("text")]
           .filter((el) => el.getClientRects().length > 0)
-          .map(boxFor);
+          .map((el) => boxFor(el, svgBox));
 
         const outOfBounds = texts.filter((box) =>
           box.x < -1 ||
           box.y < -1 ||
-          box.right > svgBox.right + 1 ||
-          box.bottom > svgBox.bottom + 1
+          box.right > svgBox.width + 1 ||
+          box.bottom > svgBox.height + 1
         );
 
         const overlaps = [];
@@ -133,7 +133,7 @@ try {
   const report = JSON.parse(jsonMatch[1]);
   if (
     report.image.naturalWidth !== 1150 ||
-    report.image.naturalHeight !== 1180 ||
+    report.image.naturalHeight !== 720 ||
     report.outOfBounds.length ||
     report.overlaps.length
   ) {

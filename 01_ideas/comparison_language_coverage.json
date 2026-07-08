@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-03",
+  "generated": "2026-07-08",
   "tool": "Hyperglot 0.8.1",
   "methodology": "Primary orthographies, living languages, base character support, shaping disabled.",
   "options": [
@@ -11,9 +11,16 @@
     "--check",
     "base"
   ],
+  "baseline": {
+    "label": "Hyperglot baseline",
+    "totalLanguages": 748,
+    "totalSpeakersRaw": 7375524844,
+    "totalSpeakers": "7.38B",
+    "methodology": "Living languages with draft-or-better Hyperglot data and primary orthographies."
+  },
   "fonts": {
     "monolisa": {
-      "label": "MonoLisa",
+      "label": "MonoLisa Code",
       "path": "[system font] MonoLisaCodeUpright.ttf",
       "totalLanguages": 593,
       "totalSpeakers": "3.39B",
