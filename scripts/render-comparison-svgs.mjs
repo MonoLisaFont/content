@@ -68,7 +68,7 @@ const samples = {
     fontSize: 42,
     lineHeight: 60,
     marginY: 24,
-    labelHeight: 58,
+    labelHeight: 42,
     blankLineScale: 0.45,
     style: "italic",
     features: "kern=1,liga=1,calt=1",

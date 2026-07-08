@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="560" height="229" viewBox="0 0 560 229" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, #cfe7ff)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="560" height="213" viewBox="0 0 560 213" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, #cfe7ff)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>Italic Forms: MonoLisa Code vs. Fira Code</title>
   <style>
     .label {
@@ -16,7 +16,7 @@
   
       <text x="0" y="24" class="label">MonoLisa Code</text>
 
-      <g transform="translate(0, 82) scale(0.5042816365366318)">
+      <g transform="translate(0, 66) scale(0.5042816365366318)">
         
           <g transform="translate(-16, 0)">
             
@@ -197,7 +197,7 @@
           </g>
       </g>
 
-      <g transform="translate(0, 125.87250237868696) scale(0.5042816365366318)">
+      <g transform="translate(0, 109.87250237868696) scale(0.5042816365366318)">
         
           <g transform="translate(-16, 0)">
             
@@ -445,7 +445,7 @@
           </g>
       </g>
 
-      <g transform="translate(0, 169.74500475737395) scale(0.5042816365366318)">
+      <g transform="translate(0, 153.74500475737395) scale(0.5042816365366318)">
         
           <g transform="translate(-16, 0)">
             
