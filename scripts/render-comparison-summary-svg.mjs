@@ -17,10 +17,26 @@ mkdirSync(outputDir, { recursive: true });
 
 const monoLisaCoverage = coverage.fonts.monolisa;
 const firaCodeCoverage = coverage.fonts["fira-code"];
-const monoLisaFontPath = path.resolve(root, fontConfig.fonts.monolisa.regular);
-const monoLisaItalicPath = fontConfig.fonts.monolisa.italic
+const monoLisaCodeFontPath = path.resolve(root, fontConfig.fonts.monolisa.regular);
+const monoLisaCodeItalicPath = fontConfig.fonts.monolisa.italic
   ? path.resolve(root, fontConfig.fonts.monolisa.italic)
   : null;
+const monoLisaTextFontPath = resolveFontPath(
+  [
+    fontConfig.fonts.monolisa.textRegular,
+    ".font-sources/monolisa/MonoLisaTextUpright.ttf",
+    "/Library/Fonts/monolisa/MonoLisaTextUpright.ttf",
+  ],
+  monoLisaCodeFontPath,
+);
+const monoLisaTextItalicPath = resolveFontPath(
+  [
+    fontConfig.fonts.monolisa.textItalic,
+    ".font-sources/monolisa/MonoLisaTextItalic.ttf",
+    "/Library/Fonts/monolisa/MonoLisaTextItalic.ttf",
+  ],
+  monoLisaCodeItalicPath ?? monoLisaTextFontPath,
+);
 
 const comparison = {
   key: "fira-code",
@@ -59,6 +75,28 @@ function esc(value) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function resolveFontPath(candidates, fallback) {
+  for (const candidate of candidates) {
+    if (!candidate) continue;
+    const candidatePath = path.resolve(root, candidate);
+    if (existsSync(candidatePath)) return candidatePath;
+  }
+
+  return fallback;
+}
+
+function fontPathFor(options = {}) {
+  if (options.family === "code") {
+    return options.style === "italic" && monoLisaCodeItalicPath && existsSync(monoLisaCodeItalicPath)
+      ? monoLisaCodeItalicPath
+      : monoLisaCodeFontPath;
+  }
+
+  return options.style === "italic" && monoLisaTextItalicPath && existsSync(monoLisaTextItalicPath)
+    ? monoLisaTextItalicPath
+    : monoLisaTextFontPath;
 }
 
 function normalizeFragment(svg, prefix, fill) {
@@ -123,13 +161,12 @@ function renderText(text, x, y, options = {}) {
   const anchor = options.anchor ?? "start";
   const prefix = options.prefix ?? `text-${fontSize}-${String(text).replace(/\W+/g, "-")}`;
   const className = options.className ? ` class="${esc(options.className)}"` : "";
-  const fontPath = options.style === "italic" && monoLisaItalicPath && existsSync(monoLisaItalicPath)
-    ? monoLisaItalicPath
-    : monoLisaFontPath;
+  const fontPath = fontPathFor(options);
+  const features = ["kern=1", "liga=1", "calt=1", ...(options.features ?? [])].join(",");
   const args = [
     "--output-format=svg",
     `--font-size=${fontSize}`,
-    "--features=kern=1,liga=1,calt=1",
+    `--features=${features}`,
     "--",
     fontPath,
     String(text),
@@ -191,6 +228,7 @@ function chip(label, x, y, options = {}) {
         fill: "var(--icon-primary, currentColor)",
         className: "chip-label",
         prefix: `chip-${variant}-${label}`,
+        family: "code",
       })}
     </g>`;
 }
@@ -342,16 +380,20 @@ function render() {
       fontSize: 136,
       fill: "var(--ml-colors-primary, var(--icon-primary, currentColor))",
       prefix: "language-left-value",
+      family: "code",
+      features: ["tnum=1"],
     })}
     ${text(right.languages, lowerRightColumnX, 136, {
       fontSize: 136,
       fill: "var(--icon-primary, currentColor)",
       prefix: "language-right-value",
+      family: "code",
+      features: ["tnum=1"],
     })}
     ${text("Languages measured with Hyperglot*", 0, 244, {
       fontSize: 28,
       style: "italic",
-      fill: "var(--icon-secondary, currentColor)",
+      fill: "var(--ml-colors-comment, var(--icon-secondary, currentColor))",
       prefix: "language-note",
     })}
     ${speakerRow({
