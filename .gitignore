@@ -2,3 +2,7 @@
 .env.private
 .devto-friction-state.json
 devto-friction-payloads/
+.font-sources/
+.venv-hyperglot/
+.hyperglot-cache
+scripts/comparison-fonts.local.json

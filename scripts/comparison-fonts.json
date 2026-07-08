@@ -1,0 +1,78 @@
+{
+  "outputDir": "images",
+  "fonts": {
+    "monolisa": {
+      "label": "MonoLisa Code",
+      "regular": ".font-sources/monolisa/MonoLisa-Regular.ttf",
+      "italic": ".font-sources/monolisa/MonoLisa-RegularItalic.ttf"
+    },
+    "jetbrains-mono": {
+      "label": "JetBrains Mono",
+      "regular": ".font-sources/jetbrains-mono/JetBrainsMono-Regular.ttf",
+      "italic": ".font-sources/jetbrains-mono/JetBrainsMono-Italic.ttf"
+    },
+    "fira-code": {
+      "label": "Fira Code",
+      "regular": ".font-sources/fira-code/FiraCode-Regular.ttf",
+      "italic": null
+    },
+    "cascadia-code": {
+      "label": "Cascadia Code",
+      "regular": ".font-sources/cascadia-code/CascadiaCode.ttf",
+      "italic": ".font-sources/cascadia-code/CascadiaCodeItalic.ttf"
+    },
+    "hack": {
+      "label": "Hack",
+      "regular": ".font-sources/hack/Hack-Regular.ttf",
+      "italic": ".font-sources/hack/Hack-Italic.ttf"
+    },
+    "source-code-pro": {
+      "label": "Source Code Pro",
+      "regular": ".font-sources/source-code-pro/SourceCodePro-Regular.ttf",
+      "italic": ".font-sources/source-code-pro/SourceCodePro-It.ttf"
+    },
+    "ibm-plex-mono": {
+      "label": "IBM Plex Mono",
+      "regular": ".font-sources/ibm-plex-mono/IBMPlexMono-Regular.ttf",
+      "italic": ".font-sources/ibm-plex-mono/IBMPlexMono-Italic.ttf"
+    },
+    "monaspace": {
+      "label": "Monaspace",
+      "regular": ".font-sources/monaspace/MonaspaceNeon-Regular.otf",
+      "italic": ".font-sources/monaspace/MonaspaceNeon-Italic.otf"
+    },
+    "recursive-mono": {
+      "label": "Recursive Mono",
+      "regular": ".font-sources/recursive-mono/RecMonoLinear-Regular.ttf",
+      "italic": ".font-sources/recursive-mono/RecMonoLinear-Italic.ttf"
+    },
+    "dank-mono": {
+      "label": "Dank Mono",
+      "regular": ".font-sources/dank-mono/DankMono-Regular.ttf",
+      "italic": ".font-sources/dank-mono/DankMono-Italic.ttf"
+    },
+    "operator-mono": {
+      "label": "Operator Mono",
+      "regular": ".font-sources/operator-mono/OperatorMono-Book.otf",
+      "italic": ".font-sources/operator-mono/OperatorMono-BookItalic.otf"
+    },
+    "pragmatapro": {
+      "label": "PragmataPro",
+      "regular": ".font-sources/pragmatapro/PragmataPro-Regular.ttf",
+      "italic": ".font-sources/pragmatapro/PragmataPro-Italic.ttf"
+    }
+  },
+  "comparisons": [
+    "jetbrains-mono",
+    "fira-code",
+    "cascadia-code",
+    "hack",
+    "source-code-pro",
+    "ibm-plex-mono",
+    "monaspace",
+    "recursive-mono",
+    "dank-mono",
+    "operator-mono",
+    "pragmatapro"
+  ]
+}

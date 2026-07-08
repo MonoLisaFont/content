@@ -1,0 +1,102 @@
+{
+  "generated": "2026-07-03",
+  "methodology": "GitHub REST API. Release cadence uses non-draft, non-prerelease GitHub releases from the first results page. Open issues use search query is:issue is:open. Close speed is median days from created_at to closed_at for up to 100 recently updated closed issues, excluding pull requests.",
+  "repositories": {
+    "jetbrains-mono": {
+      "label": "JetBrains Mono",
+      "repository": "https://github.com/JetBrains/JetBrainsMono",
+      "releaseCount": 16,
+      "firstRelease": "2020-01-21",
+      "latestRelease": "2023-01-14",
+      "releasesPerYear": 5.37,
+      "daysSinceLatestRelease": 1266,
+      "openIssues": 198,
+      "recentClosedIssuesSample": 87,
+      "medianDaysToCloseRecentIssues": 47.3
+    },
+    "fira-code": {
+      "label": "Fira Code",
+      "repository": "https://github.com/tonsky/FiraCode",
+      "releaseCount": 29,
+      "firstRelease": "2014-11-11",
+      "latestRelease": "2021-12-06",
+      "releasesPerYear": 4.1,
+      "daysSinceLatestRelease": 1669,
+      "openIssues": 423,
+      "recentClosedIssuesSample": 72,
+      "medianDaysToCloseRecentIssues": 0.7
+    },
+    "cascadia-code": {
+      "label": "Cascadia Code",
+      "repository": "https://github.com/microsoft/cascadia-code",
+      "releaseCount": 19,
+      "firstRelease": "2019-09-18",
+      "latestRelease": "2024-11-27",
+      "releasesPerYear": 3.66,
+      "daysSinceLatestRelease": 583,
+      "openIssues": 158,
+      "recentClosedIssuesSample": 64,
+      "medianDaysToCloseRecentIssues": 16.3
+    },
+    "hack": {
+      "label": "Hack",
+      "repository": "https://github.com/source-foundry/Hack",
+      "releaseCount": 15,
+      "firstRelease": "2015-06-23",
+      "latestRelease": "2018-03-06",
+      "releasesPerYear": 5.55,
+      "daysSinceLatestRelease": 3041,
+      "openIssues": 144,
+      "recentClosedIssuesSample": 78,
+      "medianDaysToCloseRecentIssues": 5.2
+    },
+    "source-code-pro": {
+      "label": "Source Code Pro",
+      "repository": "https://github.com/adobe-fonts/source-code-pro",
+      "releaseCount": 11,
+      "firstRelease": "2014-08-27",
+      "latestRelease": "2023-04-12",
+      "releasesPerYear": 1.28,
+      "daysSinceLatestRelease": 1178,
+      "openIssues": 84,
+      "recentClosedIssuesSample": 70,
+      "medianDaysToCloseRecentIssues": 4.3
+    },
+    "ibm-plex-mono": {
+      "label": "IBM Plex Mono",
+      "repository": "https://github.com/IBM/plex",
+      "releaseCount": 69,
+      "firstRelease": "2018-02-21",
+      "latestRelease": "2026-06-11",
+      "releasesPerYear": 8.31,
+      "daysSinceLatestRelease": 21,
+      "openIssues": 73,
+      "recentClosedIssuesSample": 82,
+      "medianDaysToCloseRecentIssues": 31.7
+    },
+    "monaspace": {
+      "label": "Monaspace",
+      "repository": "https://github.com/githubnext/monaspace",
+      "releaseCount": 7,
+      "firstRelease": "2023-11-09",
+      "latestRelease": "2026-03-28",
+      "releasesPerYear": 2.94,
+      "daysSinceLatestRelease": 97,
+      "openIssues": 52,
+      "recentClosedIssuesSample": 81,
+      "medianDaysToCloseRecentIssues": 194.8
+    },
+    "recursive-mono": {
+      "label": "Recursive Mono",
+      "repository": "https://github.com/arrowtype/recursive",
+      "releaseCount": 27,
+      "firstRelease": "2020-05-17",
+      "latestRelease": "2022-06-30",
+      "releasesPerYear": 12.73,
+      "daysSinceLatestRelease": 1463,
+      "openIssues": 37,
+      "recentClosedIssuesSample": 74,
+      "medianDaysToCloseRecentIssues": 11.3
+    }
+  }
+}
