@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1272" height="371" viewBox="0 0 1272 371" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, #cfe7ff)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-  <title>Coding Ligatures: MonoLisa vs. Recursive Mono</title>
+<svg width="1168" height="247" viewBox="0 0 1168 247" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, #cfe7ff)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+  <title>Coding Ligatures: MonoLisa Code vs. Recursive Mono</title>
   <style>
     .label {
       fill: var(--comparison-accent, #f4cc50);
@@ -13,11 +13,10 @@
       stroke-width: 2;
     }
   </style>
-  <line class="rule" x1="636" y1="32" x2="636" y2="319" />
   
-      <text x="52" y="52" class="label">MonoLisa</text>
+      <text x="0" y="52" class="label">MonoLisa Code</text>
 
-      <g transform="translate(52, 128) scale(0.6155632984901278)">
+      <g transform="translate(0, 100) scale(0.6155632984901278)">
         
           <g transform="translate(-16, 0)">
             
@@ -249,7 +248,7 @@
           </g>
       </g>
 
-      <g transform="translate(52, 167.39605110336817) scale(0.6155632984901278)">
+      <g transform="translate(0, 139.39605110336817) scale(0.6155632984901278)">
         
           <g transform="translate(-16, 0)">
             
@@ -460,7 +459,7 @@
           </g>
       </g>
 
-      <g transform="translate(52, 206.79210220673636) scale(0.6155632984901278)">
+      <g transform="translate(0, 178.79210220673636) scale(0.6155632984901278)">
         
           <g transform="translate(-16, 0)">
             
@@ -675,9 +674,9 @@
           </g>
       </g>
 
-      <text x="660" y="52" class="label">Recursive Mono</text>
+      <text x="608" y="52" class="label">Recursive Mono</text>
 
-      <g transform="translate(660, 128) scale(0.6155632984901278)">
+      <g transform="translate(608, 100) scale(0.6155632984901278)">
         
           <g transform="translate(-16, 0)">
             
@@ -911,7 +910,7 @@
           </g>
       </g>
 
-      <g transform="translate(660, 167.39605110336817) scale(0.6155632984901278)">
+      <g transform="translate(608, 139.39605110336817) scale(0.6155632984901278)">
         
           <g transform="translate(-16, 0)">
             
@@ -1122,7 +1121,7 @@
           </g>
       </g>
 
-      <g transform="translate(660, 206.79210220673636) scale(0.6155632984901278)">
+      <g transform="translate(608, 178.79210220673636) scale(0.6155632984901278)">
         
           <g transform="translate(-16, 0)">
             

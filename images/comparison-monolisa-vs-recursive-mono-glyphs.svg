@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1552" height="501" viewBox="0 0 1552 501" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, #cfe7ff)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-  <title>Ambiguous Glyphs: MonoLisa vs. Recursive Mono</title>
+<svg width="1448" height="377" viewBox="0 0 1448 377" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, #cfe7ff)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+  <title>Ambiguous Glyphs: MonoLisa Code vs. Recursive Mono</title>
   <style>
     .label {
       fill: var(--comparison-accent, #f4cc50);
@@ -13,11 +13,10 @@
       stroke-width: 2;
     }
   </style>
-  <line class="rule" x1="776" y1="32" x2="776" y2="449" />
   
-      <text x="52" y="52" class="label">MonoLisa</text>
+      <text x="0" y="52" class="label">MonoLisa Code</text>
 
-      <g transform="translate(52, 128) scale(0.9411764705882353)">
+      <g transform="translate(0, 100) scale(0.9411764705882353)">
         
           <g transform="translate(0, 0)">
             
@@ -99,7 +98,7 @@
           </g>
       </g>
 
-      <g transform="translate(52, 190.11764705882354) scale(0.9411764705882353)">
+      <g transform="translate(0, 162.11764705882354) scale(0.9411764705882353)">
         
           <g transform="translate(0, 0)">
             
@@ -149,7 +148,7 @@
           </g>
       </g>
 
-      <g transform="translate(52, 252.23529411764707) scale(0.9411764705882353)">
+      <g transform="translate(0, 224.23529411764707) scale(0.9411764705882353)">
         
           <g transform="translate(0, 0)">
             
@@ -224,7 +223,7 @@
           </g>
       </g>
 
-      <g transform="translate(52, 314.3529411764706) scale(0.9411764705882353)">
+      <g transform="translate(0, 286.3529411764706) scale(0.9411764705882353)">
         
           <g transform="translate(0, 0)">
             
@@ -284,9 +283,9 @@
           </g>
       </g>
 
-      <text x="800" y="52" class="label">Recursive Mono</text>
+      <text x="748" y="52" class="label">Recursive Mono</text>
 
-      <g transform="translate(800, 128) scale(0.9411764705882353)">
+      <g transform="translate(748, 100) scale(0.9411764705882353)">
         
           <g transform="translate(0, 0)">
             
@@ -368,7 +367,7 @@
           </g>
       </g>
 
-      <g transform="translate(800, 190.11764705882354) scale(0.9411764705882353)">
+      <g transform="translate(748, 162.11764705882354) scale(0.9411764705882353)">
         
           <g transform="translate(0, 0)">
             
@@ -418,7 +417,7 @@
           </g>
       </g>
 
-      <g transform="translate(800, 252.23529411764707) scale(0.9411764705882353)">
+      <g transform="translate(748, 224.23529411764707) scale(0.9411764705882353)">
         
           <g transform="translate(0, 0)">
             
@@ -493,7 +492,7 @@
           </g>
       </g>
 
-      <g transform="translate(800, 314.3529411764706) scale(0.9411764705882353)">
+      <g transform="translate(748, 286.3529411764706) scale(0.9411764705882353)">
         
           <g transform="translate(0, 0)">
             

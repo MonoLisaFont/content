@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1552" height="502" viewBox="0 0 1552 502" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, #cfe7ff)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-  <title>Terminal Symbols: MonoLisa vs. Hack</title>
+<svg width="1448" height="378" viewBox="0 0 1448 378" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, #cfe7ff)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+  <title>Terminal Symbols: MonoLisa Code vs. Hack</title>
   <style>
     .label {
       fill: var(--comparison-accent, #f4cc50);
@@ -13,11 +13,10 @@
       stroke-width: 2;
     }
   </style>
-  <line class="rule" x1="776" y1="32" x2="776" y2="450" />
   
-      <text x="52" y="52" class="label">MonoLisa</text>
+      <text x="0" y="52" class="label">MonoLisa Code</text>
 
-      <g transform="translate(52, 128) scale(0.7710843373493976)">
+      <g transform="translate(0, 100) scale(0.7710843373493976)">
         
           <g transform="translate(-16, 0)">
             
@@ -216,7 +215,7 @@
           </g>
       </g>
 
-      <g transform="translate(52, 169.63855421686748) scale(0.7710843373493976)">
+      <g transform="translate(0, 141.63855421686748) scale(0.7710843373493976)">
         
           <g transform="translate(-16, 0)">
             
@@ -385,7 +384,7 @@
           </g>
       </g>
 
-      <g transform="translate(52, 211.27710843373495) scale(0.7710843373493976)">
+      <g transform="translate(0, 183.27710843373495) scale(0.7710843373493976)">
         
           <g transform="translate(-16, 0)">
             
@@ -572,7 +571,7 @@
           </g>
       </g>
 
-      <g transform="translate(52, 252.9156626506024) scale(0.7710843373493976)">
+      <g transform="translate(0, 224.9156626506024) scale(0.7710843373493976)">
         
           <g transform="translate(0, 0)">
             
@@ -626,7 +625,7 @@
           </g>
       </g>
 
-      <g transform="translate(52, 294.5542168674699) scale(0.7710843373493976)">
+      <g transform="translate(0, 266.5542168674699) scale(0.7710843373493976)">
         
           <g transform="translate(0, 0)">
             
@@ -700,7 +699,7 @@
           </g>
       </g>
 
-      <g transform="translate(52, 336.1927710843373) scale(0.7710843373493976)">
+      <g transform="translate(0, 308.1927710843373) scale(0.7710843373493976)">
         
           <g transform="translate(0, 0)">
             
@@ -754,9 +753,9 @@
           </g>
       </g>
 
-      <text x="800" y="52" class="label">Hack</text>
+      <text x="748" y="52" class="label">Hack</text>
 
-      <g transform="translate(800, 128) scale(0.7710843373493976)">
+      <g transform="translate(748, 100) scale(0.7710843373493976)">
         
           <g transform="translate(-16, 0)">
             
@@ -955,7 +954,7 @@
           </g>
       </g>
 
-      <g transform="translate(800, 169.63855421686748) scale(0.7710843373493976)">
+      <g transform="translate(748, 141.63855421686748) scale(0.7710843373493976)">
         
           <g transform="translate(-16, 0)">
             
@@ -1124,7 +1123,7 @@
           </g>
       </g>
 
-      <g transform="translate(800, 211.27710843373495) scale(0.7710843373493976)">
+      <g transform="translate(748, 183.27710843373495) scale(0.7710843373493976)">
         
           <g transform="translate(-16, 0)">
             
@@ -1311,7 +1310,7 @@
           </g>
       </g>
 
-      <g transform="translate(800, 252.9156626506024) scale(0.7710843373493976)">
+      <g transform="translate(748, 224.9156626506024) scale(0.7710843373493976)">
         
           <g transform="translate(0, 0)">
             
@@ -1365,7 +1364,7 @@
           </g>
       </g>
 
-      <g transform="translate(800, 294.5542168674699) scale(0.7710843373493976)">
+      <g transform="translate(748, 266.5542168674699) scale(0.7710843373493976)">
         
           <g transform="translate(0, 0)">
             
@@ -1439,7 +1438,7 @@
           </g>
       </g>
 
-      <g transform="translate(800, 336.1927710843373) scale(0.7710843373493976)">
+      <g transform="translate(748, 308.1927710843373) scale(0.7710843373493976)">
         
           <g transform="translate(0, 0)">
             
