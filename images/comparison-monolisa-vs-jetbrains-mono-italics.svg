@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1168" height="213" viewBox="0 0 1168 213" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, #cfe7ff)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="1168" height="213" viewBox="0 0 1168 213" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, var(--ml-colors-text, currentColor))" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>Italic Forms: MonoLisa Code vs. JetBrains Mono</title>
   <style>
     .label {
-      fill: var(--comparison-accent, #f4cc50);
+      fill: var(--comparison-accent, var(--ml-colors-primary, #f4cc50));
       font: 600 30px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       letter-spacing: 0;
     }
     .rule {
-      stroke: var(--comparison-accent, #f4cc50);
+      stroke: var(--comparison-accent, var(--ml-colors-primary, #f4cc50));
       stroke-opacity: 0.55;
       stroke-width: 2;
     }
@@ -39,7 +39,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
+<g fill="var(--comparison-syntax-keyword, var(--ml-colors-primary, #b7791f))" >
 <use xlink:href="#jetbrains-mono-italics-0-0-0-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-0-0-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-0-0-glyph-0-2" x="69.75" y="59.6875"/>
@@ -81,7 +81,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-0-2-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-0-2-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-0-2-glyph-0-2" x="69.75" y="59.6875"/>
@@ -108,7 +108,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-0-4-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -158,7 +158,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-0-6-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-0-6-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-0-6-glyph-0-2" x="69.75" y="59.6875"/>
@@ -190,7 +190,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-punctuation, #7ea0b9)" >
+<g fill="var(--comparison-syntax-punctuation, var(--ml-colors-comment, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-0-7-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -211,7 +211,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
+<g fill="var(--comparison-syntax-keyword, var(--ml-colors-primary, #b7791f))" >
 <use xlink:href="#jetbrains-mono-italics-0-2-0-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-2-0-glyph-0-1" x="42.875" y="59.6875"/>
 </g>
@@ -232,7 +232,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-punctuation, #7ea0b9)" >
+<g fill="var(--comparison-syntax-punctuation, var(--ml-colors-comment, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-2-2-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -265,7 +265,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-2-3-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-2-3-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-2-3-glyph-0-2" x="69.75" y="59.6875"/>
@@ -295,7 +295,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-2-5-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-2-5-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-2-5-glyph-0-1" x="69.75" y="59.6875"/>
@@ -323,7 +323,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
+<g fill="var(--comparison-syntax-keyword, var(--ml-colors-primary, #b7791f))" >
 <use xlink:href="#jetbrains-mono-italics-0-2-7-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-2-7-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-2-7-glyph-0-2" x="69.75" y="59.6875"/>
@@ -341,7 +341,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-punctuation, #7ea0b9)" >
+<g fill="var(--comparison-syntax-punctuation, var(--ml-colors-comment, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-2-8-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -373,7 +373,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
+<g fill="var(--comparison-syntax-keyword, var(--ml-colors-primary, #b7791f))" >
 <use xlink:href="#jetbrains-mono-italics-0-2-10-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-2-10-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-2-10-glyph-0-2" x="69.75" y="59.6875"/>
@@ -416,7 +416,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-2-12-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-2-12-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-2-12-glyph-0-2" x="69.75" y="59.6875"/>
@@ -438,7 +438,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-punctuation, #7ea0b9)" >
+<g fill="var(--comparison-syntax-punctuation, var(--ml-colors-comment, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-2-13-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -465,7 +465,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-4-0-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-4-0-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-4-0-glyph-0-2" x="69.75" y="59.6875"/>
@@ -498,7 +498,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-4-2-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-4-2-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-4-2-glyph-0-2" x="69.75" y="59.6875"/>
@@ -527,7 +527,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-4-4-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-4-4-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-4-4-glyph-0-2" x="69.75" y="59.6875"/>
@@ -563,7 +563,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-4-6-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-4-6-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-4-6-glyph-0-2" x="69.75" y="59.6875"/>
@@ -605,7 +605,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-0-4-8-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-4-8-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#jetbrains-mono-italics-0-4-8-glyph-0-2" x="69.75" y="59.6875"/>
@@ -643,7 +643,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
+<g fill="var(--comparison-syntax-keyword, var(--ml-colors-primary, #b7791f))" >
 <use xlink:href="#jetbrains-mono-italics-1-0-0-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-0-0-glyph-0-1" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-0-0-glyph-0-2" x="66.40625" y="58.84375"/>
@@ -685,7 +685,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-0-2-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-0-2-glyph-0-1" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-0-2-glyph-0-2" x="66.40625" y="58.84375"/>
@@ -712,7 +712,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-0-4-glyph-0-0" x="16" y="58.84375"/>
 </g>
 
@@ -762,7 +762,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-0-6-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-0-6-glyph-0-1" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-0-6-glyph-0-2" x="66.40625" y="58.84375"/>
@@ -794,7 +794,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-punctuation, #7ea0b9)" >
+<g fill="var(--comparison-syntax-punctuation, var(--ml-colors-comment, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-0-7-glyph-0-0" x="16" y="58.84375"/>
 </g>
 
@@ -815,7 +815,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
+<g fill="var(--comparison-syntax-keyword, var(--ml-colors-primary, #b7791f))" >
 <use xlink:href="#jetbrains-mono-italics-1-2-0-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-2-0-glyph-0-1" x="41.203125" y="58.84375"/>
 </g>
@@ -836,7 +836,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-punctuation, #7ea0b9)" >
+<g fill="var(--comparison-syntax-punctuation, var(--ml-colors-comment, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-2-2-glyph-0-0" x="16" y="58.84375"/>
 </g>
 
@@ -869,7 +869,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-2-3-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-2-3-glyph-0-1" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-2-3-glyph-0-2" x="66.40625" y="58.84375"/>
@@ -898,7 +898,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-2-5-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-2-5-glyph-0-0" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-2-5-glyph-0-1" x="66.40625" y="58.84375"/>
@@ -926,7 +926,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
+<g fill="var(--comparison-syntax-keyword, var(--ml-colors-primary, #b7791f))" >
 <use xlink:href="#jetbrains-mono-italics-1-2-7-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-2-7-glyph-0-1" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-2-7-glyph-0-2" x="66.40625" y="58.84375"/>
@@ -944,7 +944,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-punctuation, #7ea0b9)" >
+<g fill="var(--comparison-syntax-punctuation, var(--ml-colors-comment, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-2-8-glyph-0-0" x="16" y="58.84375"/>
 </g>
 
@@ -976,7 +976,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-keyword, #f4cc50)" >
+<g fill="var(--comparison-syntax-keyword, var(--ml-colors-primary, #b7791f))" >
 <use xlink:href="#jetbrains-mono-italics-1-2-10-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-2-10-glyph-0-1" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-2-10-glyph-0-2" x="66.40625" y="58.84375"/>
@@ -1019,7 +1019,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-2-12-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-2-12-glyph-0-1" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-2-12-glyph-0-2" x="66.40625" y="58.84375"/>
@@ -1041,7 +1041,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-punctuation, #7ea0b9)" >
+<g fill="var(--comparison-syntax-punctuation, var(--ml-colors-comment, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-2-13-glyph-0-0" x="16" y="58.84375"/>
 </g>
 
@@ -1068,7 +1068,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-4-0-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-4-0-glyph-0-1" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-4-0-glyph-0-2" x="66.40625" y="58.84375"/>
@@ -1101,7 +1101,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-4-2-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-4-2-glyph-0-1" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-4-2-glyph-0-2" x="66.40625" y="58.84375"/>
@@ -1130,7 +1130,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-4-4-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-4-4-glyph-0-1" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-4-4-glyph-0-2" x="66.40625" y="58.84375"/>
@@ -1166,7 +1166,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-4-6-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-4-6-glyph-0-1" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-4-6-glyph-0-2" x="66.40625" y="58.84375"/>
@@ -1208,7 +1208,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#jetbrains-mono-italics-1-4-8-glyph-0-0" x="16" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-4-8-glyph-0-1" x="41.203125" y="58.84375"/>
 <use xlink:href="#jetbrains-mono-italics-1-4-8-glyph-0-2" x="66.40625" y="58.84375"/>

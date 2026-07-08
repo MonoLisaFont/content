@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1168" height="247" viewBox="0 0 1168 247" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, #cfe7ff)" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="1168" height="247" viewBox="0 0 1168 247" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, var(--ml-colors-text, currentColor))" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>Coding Ligatures: MonoLisa Code vs. Monaspace</title>
   <style>
     .label {
-      fill: var(--comparison-accent, #f4cc50);
+      fill: var(--comparison-accent, var(--ml-colors-primary, #f4cc50));
       font: 600 30px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       letter-spacing: 0;
     }
     .rule {
-      stroke: var(--comparison-accent, #f4cc50);
+      stroke: var(--comparison-accent, var(--ml-colors-primary, #f4cc50));
       stroke-opacity: 0.55;
       stroke-width: 2;
     }
@@ -27,7 +27,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-0-0-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -49,7 +49,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-0-2-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-0-2-glyph-0-0" x="42.875" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-0-2-glyph-0-1" x="69.75" y="59.6875"/>
@@ -71,7 +71,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-0-4-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -93,7 +93,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-0-6-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-0-6-glyph-0-1" x="42.875" y="59.6875"/>
 </g>
@@ -114,7 +114,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-0-8-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -136,7 +136,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-0-10-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-0-10-glyph-0-1" x="42.875" y="59.6875"/>
 </g>
@@ -157,7 +157,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-0-12-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -177,7 +177,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-0-14-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-0-14-glyph-0-0" x="42.875" y="59.6875"/>
 </g>
@@ -198,7 +198,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-0-16-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -220,7 +220,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-0-18-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-0-18-glyph-0-1" x="42.875" y="59.6875"/>
 </g>
@@ -241,7 +241,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-0-20-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -271,7 +271,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-property, #9fd7ff)" >
+<g fill="var(--comparison-syntax-property, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-1-0-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-1-0-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-1-0-glyph-0-2" x="69.75" y="59.6875"/>
@@ -297,7 +297,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-1-2-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-1-2-glyph-0-1" x="42.875" y="59.6875"/>
 </g>
@@ -327,7 +327,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-1-4-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-1-4-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-1-4-glyph-0-2" x="69.75" y="59.6875"/>
@@ -352,7 +352,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-1-6-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-1-6-glyph-0-1" x="42.875" y="59.6875"/>
 </g>
@@ -388,7 +388,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-1-8-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-1-8-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-1-8-glyph-0-2" x="69.75" y="59.6875"/>
@@ -415,7 +415,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-1-10-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-1-10-glyph-0-1" x="42.875" y="59.6875"/>
 </g>
@@ -448,7 +448,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-1-12-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-1-12-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-1-12-glyph-0-2" x="69.75" y="59.6875"/>
@@ -470,7 +470,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-2-0-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -492,7 +492,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-2-2-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-2-2-glyph-0-0" x="42.875" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-2-2-glyph-0-1" x="69.75" y="59.6875"/>
@@ -514,7 +514,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-2-4-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -534,7 +534,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-2-6-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -557,7 +557,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-2-8-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-2-8-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-2-8-glyph-0-1" x="69.75" y="59.6875"/>
@@ -576,7 +576,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-2-9-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-2-9-glyph-0-1" x="42.875" y="59.6875"/>
 </g>
@@ -598,7 +598,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-2-10-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-2-10-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-2-10-glyph-0-2" x="69.75" y="59.6875"/>
@@ -620,7 +620,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-2-12-glyph-0-0" x="16" y="59.6875"/>
 </g>
 
@@ -646,7 +646,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-2-14-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-2-14-glyph-0-1" x="42.875" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-2-14-glyph-0-2" x="69.75" y="59.6875"/>
@@ -665,7 +665,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-0-2-15-glyph-0-0" x="16" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-2-15-glyph-0-0" x="42.875" y="59.6875"/>
 <use xlink:href="#monaspace-ligatures-0-2-15-glyph-0-1" x="69.75" y="59.6875"/>
@@ -687,7 +687,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-0-0-glyph-0-0" x="16" y="55.6875"/>
 </g>
 
@@ -710,7 +710,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-0-2-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-0-2-glyph-0-1" x="42.046875" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-0-2-glyph-0-1" x="68.09375" y="55.6875"/>
@@ -732,7 +732,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-0-4-glyph-0-0" x="16" y="55.6875"/>
 </g>
 
@@ -752,7 +752,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-0-6-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-0-6-glyph-0-0" x="42.046875" y="55.6875"/>
 </g>
@@ -773,7 +773,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-0-8-glyph-0-0" x="16" y="55.6875"/>
 </g>
 
@@ -796,7 +796,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-0-10-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-0-10-glyph-0-1" x="42.046875" y="55.6875"/>
 </g>
@@ -817,7 +817,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-0-12-glyph-0-0" x="16" y="55.6875"/>
 </g>
 
@@ -839,7 +839,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-0-14-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-0-14-glyph-0-1" x="42.046875" y="55.6875"/>
 </g>
@@ -860,7 +860,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-0-16-glyph-0-0" x="16" y="55.6875"/>
 </g>
 
@@ -883,7 +883,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-0-18-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-0-18-glyph-0-1" x="42.046875" y="55.6875"/>
 </g>
@@ -904,7 +904,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-0-20-glyph-0-0" x="16" y="55.6875"/>
 </g>
 
@@ -934,7 +934,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-property, #9fd7ff)" >
+<g fill="var(--comparison-syntax-property, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-1-0-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-1-0-glyph-0-1" x="42.046875" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-1-0-glyph-0-2" x="68.09375" y="55.6875"/>
@@ -961,7 +961,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-1-2-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-1-2-glyph-0-1" x="42.046875" y="55.6875"/>
 </g>
@@ -991,7 +991,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-1-4-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-1-4-glyph-0-1" x="42.046875" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-1-4-glyph-0-2" x="68.09375" y="55.6875"/>
@@ -1017,7 +1017,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-1-6-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-1-6-glyph-0-1" x="42.046875" y="55.6875"/>
 </g>
@@ -1053,7 +1053,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-1-8-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-1-8-glyph-0-1" x="42.046875" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-1-8-glyph-0-2" x="68.09375" y="55.6875"/>
@@ -1081,7 +1081,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-1-10-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-1-10-glyph-0-1" x="42.046875" y="55.6875"/>
 </g>
@@ -1114,7 +1114,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-1-12-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-1-12-glyph-0-1" x="42.046875" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-1-12-glyph-0-2" x="68.09375" y="55.6875"/>
@@ -1136,7 +1136,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-2-0-glyph-0-0" x="16" y="55.6875"/>
 </g>
 
@@ -1156,7 +1156,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-2-2-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-2-2-glyph-0-0" x="42.046875" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-2-2-glyph-0-0" x="68.09375" y="55.6875"/>
@@ -1178,7 +1178,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-2-4-glyph-0-0" x="16" y="55.6875"/>
 </g>
 
@@ -1198,7 +1198,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-2-6-glyph-0-0" x="16" y="55.6875"/>
 </g>
 
@@ -1221,7 +1221,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-2-8-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-2-8-glyph-0-1" x="42.046875" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-2-8-glyph-0-1" x="68.09375" y="55.6875"/>
@@ -1238,7 +1238,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-2-9-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-2-9-glyph-0-0" x="42.046875" y="55.6875"/>
 </g>
@@ -1260,7 +1260,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-2-10-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-2-10-glyph-0-1" x="42.046875" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-2-10-glyph-0-2" x="68.09375" y="55.6875"/>
@@ -1282,7 +1282,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-2-12-glyph-0-0" x="16" y="55.6875"/>
 </g>
 
@@ -1308,7 +1308,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-identifier, #cfe7ff)" >
+<g fill="var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-2-14-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-2-14-glyph-0-1" x="42.046875" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-2-14-glyph-0-2" x="68.09375" y="55.6875"/>
@@ -1327,7 +1327,7 @@
 </g>
 </g>
 </defs>
-<g fill="var(--comparison-syntax-operator, #d8e7f7)" >
+<g fill="var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))" >
 <use xlink:href="#monaspace-ligatures-1-2-15-glyph-0-0" x="16" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-2-15-glyph-0-0" x="42.046875" y="55.6875"/>
 <use xlink:href="#monaspace-ligatures-1-2-15-glyph-0-1" x="68.09375" y="55.6875"/>

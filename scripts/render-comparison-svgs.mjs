@@ -99,8 +99,8 @@ const samples = {
 };
 
 const themeFills = {
-  accent: "var(--comparison-accent, #f4cc50)",
-  primary: "var(--comparison-primary, #cfe7ff)",
+  accent: "var(--comparison-accent, var(--ml-colors-primary, #f4cc50))",
+  primary: "var(--comparison-primary, var(--ml-colors-text, currentColor))",
 };
 
 function fail(message) {
@@ -172,21 +172,21 @@ function normalizeFragment(svg, prefix, fill) {
 }
 
 const syntaxFills = {
-  keyword: "var(--comparison-syntax-keyword, #f4cc50)",
-  function: "var(--comparison-syntax-function, #8dbdff)",
-  property: "var(--comparison-syntax-property, #9fd7ff)",
-  string: "var(--comparison-syntax-string, #f7d875)",
-  number: "var(--comparison-syntax-number, #f2a66a)",
-  operator: "var(--comparison-syntax-operator, #d8e7f7)",
-  punctuation: "var(--comparison-syntax-punctuation, #7ea0b9)",
-  identifier: "var(--comparison-syntax-identifier, #cfe7ff)",
-  whitespace: "var(--comparison-syntax-identifier, #cfe7ff)",
-  terminalBranch: "var(--comparison-terminal-branch, #f4cc50)",
-  terminalPath: "var(--comparison-terminal-path, #8dbdff)",
-  terminalCommand: "var(--comparison-terminal-command, #9fd7ff)",
-  terminalAdd: "var(--comparison-terminal-add, #9ee6a8)",
-  terminalRemove: "var(--comparison-terminal-remove, #f2a66a)",
-  terminalBox: "var(--comparison-terminal-box, #9fd7ff)",
+  keyword: "var(--comparison-syntax-keyword, var(--ml-colors-primary, #b7791f))",
+  function: "var(--comparison-syntax-function, var(--ml-colors-text, currentColor))",
+  property: "var(--comparison-syntax-property, var(--ml-colors-text, currentColor))",
+  string: "var(--comparison-syntax-string, var(--ml-colors-primary, #b7791f))",
+  number: "var(--comparison-syntax-number, var(--ml-colors-primary, #b7791f))",
+  operator: "var(--comparison-syntax-operator, var(--ml-colors-text, currentColor))",
+  punctuation: "var(--comparison-syntax-punctuation, var(--ml-colors-comment, currentColor))",
+  identifier: "var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))",
+  whitespace: "var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))",
+  terminalBranch: "var(--comparison-terminal-branch, var(--ml-colors-primary, #b7791f))",
+  terminalPath: "var(--comparison-terminal-path, var(--ml-colors-text, currentColor))",
+  terminalCommand: "var(--comparison-terminal-command, var(--ml-colors-text, currentColor))",
+  terminalAdd: "var(--comparison-terminal-add, var(--ml-colors-primary, #b7791f))",
+  terminalRemove: "var(--comparison-terminal-remove, var(--ml-colors-text, currentColor))",
+  terminalBox: "var(--comparison-terminal-box, var(--ml-colors-text, currentColor))",
 };
 
 function tokenizeCode(line) {
