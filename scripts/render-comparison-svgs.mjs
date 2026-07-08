@@ -401,8 +401,9 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
     lineOffsets.push(lineCursor);
     lineCursor += line === "" ? lineStep * (sample.blankLineScale ?? 1) : lineStep;
   }
-  const columnGapY = stacked ? 56 : 0;
-  const blockHeight = labelHeight + lineCursor;
+  const effectiveLabelHeight = stacked ? Math.min(labelHeight, 16) : labelHeight;
+  const columnGapY = stacked ? 68 : 0;
+  const blockHeight = effectiveLabelHeight + lineCursor;
   const width = marginX * 2 + colWidth * visibleColumnCount + gutter * (visibleColumnCount - 1);
   const height = stacked
     ? Math.ceil(marginY + blockHeight * columnCount + columnGapY * (columnCount - 1) + bottomPadding)
@@ -418,7 +419,7 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
       .forEach(({ lineIndex, line }) => {
       if (line.tokens.length === 0) return;
 
-      const y = yStart + labelHeight + lineOffsets[lineIndex];
+      const y = yStart + effectiveLabelHeight + lineOffsets[lineIndex];
       const tokenFragments = line.tokens
         .map(({ x: tokenX, fragment }) => `
           <g transform="translate(${tokenX - 16}, 0)">

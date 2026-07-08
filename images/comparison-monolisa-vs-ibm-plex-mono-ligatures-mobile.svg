@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="560" height="469" viewBox="0 0 560 469" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, var(--ml-colors-text, currentColor))" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="560" height="417" viewBox="0 0 560 417" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, var(--ml-colors-text, currentColor))" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>Coding Ligatures: MonoLisa Code vs. IBM Plex Mono</title>
   <style>
     .rule {
@@ -65,7 +65,7 @@
 
       </g>
 
-      <g transform="translate(0, 100) scale(0.6155632984901278)">
+      <g transform="translate(0, 68) scale(0.6155632984901278)">
         
           <g transform="translate(-16, 0)">
             
@@ -297,7 +297,7 @@
           </g>
       </g>
 
-      <g transform="translate(0, 139.39605110336817) scale(0.6155632984901278)">
+      <g transform="translate(0, 107.39605110336818) scale(0.6155632984901278)">
         
           <g transform="translate(-16, 0)">
             
@@ -508,7 +508,7 @@
           </g>
       </g>
 
-      <g transform="translate(0, 178.79210220673636) scale(0.6155632984901278)">
+      <g transform="translate(0, 146.79210220673636) scale(0.6155632984901278)">
         
           <g transform="translate(-16, 0)">
             
@@ -723,7 +723,7 @@
           </g>
       </g>
 
-      <g transform="translate(-16, 226.98502831010455)">
+      <g transform="translate(-16, 206.98502831010455)">
         
 <defs>
 <g>
@@ -776,7 +776,7 @@
 
       </g>
 
-      <g transform="translate(0, 322.18815331010455) scale(0.6155632984901278)">
+      <g transform="translate(0, 270.18815331010455) scale(0.6155632984901278)">
         
           <g transform="translate(-16, 0)">
             
@@ -1009,7 +1009,7 @@
           </g>
       </g>
 
-      <g transform="translate(0, 361.5842044134727) scale(0.6155632984901278)">
+      <g transform="translate(0, 309.5842044134727) scale(0.6155632984901278)">
         
           <g transform="translate(-16, 0)">
             
@@ -1223,7 +1223,7 @@
           </g>
       </g>
 
-      <g transform="translate(0, 400.9802555168409) scale(0.6155632984901278)">
+      <g transform="translate(0, 348.9802555168409) scale(0.6155632984901278)">
         
           <g transform="translate(-16, 0)">
             
