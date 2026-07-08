@@ -1,5 +1,5 @@
 ---
-title: "Comparison of MonoLisa vs. Fira Code: Infographic Variant"
+title: "Comparison of MonoLisa vs. Fira Code"
 published: YYYY-MM-DD
 updated: 2026-07-06
 draft: true
@@ -21,19 +21,19 @@ MonoLisa and Fira Code are both coding fonts, but they optimize for different pr
 
 ## Decision table
 
-| Category                                                              | Better fit    | MonoLisa Code                                                                          | Fira Code                                                               |
-| --------------------------------------------------------------------- | ------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | MonoLisa      | 593                                                                                    | 395                                                                     |
-| **Writing systems**                                                   | MonoLisa      | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                           | 3 (Latin, Cyrillic, Greek)                                              |
-| **Italics**                                                           | MonoLisa      | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>           | No                                                                      |
-| **Weights**                                                           | MonoLisa      | 10                                                                                     | 6                                                                       |
-| **Variable axes**                                                     | MonoLisa      | 2 (`wght`, `GRAD`)                                                                     | 1 (`wght`)                                                              |
-| **Style control**                                                     | MonoLisa      | 15 stylistic sets, 12 character variants                                               | 10 stylistic sets, 32 character variants                                |
-| **Coding ligatures**                                                  | Similar       | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>           | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Terminal symbols**                                                  | Similar       | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>           | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Proportional counterpart**                                          | MonoLisa      | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Fira Sans / Fira Mono family relation                                   |
-| **Price**                                                             | Fira Code     | Paid, including free trial and customizer                                              | Free and open source                                                    |
-| **Source**                                                            | -             | [monolisa.dev](https://www.monolisa.dev/)                                              | [Fira Code GitHub repository](https://github.com/tonsky/FiraCode)       |
+| Category                                                              | Better fit | MonoLisa Code                                                                               | Fira Code                                                                    |
+| --------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | MonoLisa   | 593                                                                                         | 395                                                                          |
+| **Writing systems**                                                   | MonoLisa   | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 3 (Latin, Cyrillic, Greek)                                                   |
+| **Italics**                                                           | MonoLisa   | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No                                                                           |
+| **Weights**                                                           | MonoLisa   | 10                                                                                          | 6                                                                            |
+| **Variable axes**                                                     | MonoLisa   | 2 (`wght`, `GRAD`)                                                                          | 1 (`wght`)                                                                   |
+| **Style control**                                                     | MonoLisa   | 15 stylistic sets, 12 character variants                                                    | 10 stylistic sets, 32 character variants                                     |
+| **Coding ligatures**                                                  | Similar    | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Terminal symbols**                                                  | Similar    | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Proportional counterpart**                                          | MonoLisa   | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Fira Sans / Fira Mono family relation                                        |
+| **Price**                                                             | Fira Code  | Paid, including free trial and customizer                                                   | Free and open source                                                         |
+| **Source**                                                            | -          | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Fira Code GitHub repository](https://github.com/tonsky/FiraCode)            |
 
 In short: MonoLisa Code wins on coverage and style range. Fira Code wins on price.
 
