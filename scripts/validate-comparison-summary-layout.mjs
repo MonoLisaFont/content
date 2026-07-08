@@ -37,7 +37,7 @@ const html = `<!doctype html>
       svg {
         display: block;
         width: 1150px;
-        height: 720px;
+        height: 1050px;
       }
     </style>
   </head>
@@ -133,7 +133,7 @@ try {
   const report = JSON.parse(jsonMatch[1]);
   if (
     report.image.naturalWidth !== 1150 ||
-    report.image.naturalHeight !== 720 ||
+    report.image.naturalHeight !== 1050 ||
     report.outOfBounds.length ||
     report.overlaps.length
   ) {

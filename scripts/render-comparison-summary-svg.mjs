@@ -1,29 +1,33 @@
 #!/usr/bin/env node
 
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { spawnSync } from "node:child_process";
 import path from "node:path";
 
 const root = process.cwd();
 const outputDir = path.resolve(root, "images");
 const coveragePath = path.resolve(root, "01_ideas/comparison_language_coverage.json");
 const coverage = JSON.parse(readFileSync(coveragePath, "utf8"));
+const configPath = path.resolve(root, "scripts/comparison-fonts.local.json");
+const fallbackConfigPath = path.resolve(root, "scripts/comparison-fonts.json");
+const fontConfig = JSON.parse(
+  readFileSync(existsSync(configPath) ? configPath : fallbackConfigPath, "utf8"),
+);
 mkdirSync(outputDir, { recursive: true });
 
 const monoLisaCoverage = coverage.fonts.monolisa;
 const firaCodeCoverage = coverage.fonts["fira-code"];
-const baselineCoverage = coverage.baseline;
+const monoLisaFontPath = path.resolve(root, fontConfig.fonts.monolisa.regular);
+const monoLisaItalicPath = fontConfig.fonts.monolisa.italic
+  ? path.resolve(root, fontConfig.fonts.monolisa.italic)
+  : null;
 
 const comparison = {
   key: "fira-code",
   title: "MonoLisa Code vs. Fira Code",
-  subtitle: "Comparison signals for coding font selection",
-  baseline: {
-    label: "Hyperglot baseline",
-    languages: baselineCoverage.totalLanguages,
-    speakers: baselineCoverage.totalSpeakers,
-  },
   left: {
     label: "MonoLisa Code",
+    shortLabel: "MonoLisa",
     descriptor: "Paid coding type system",
     languages: monoLisaCoverage.publicationTotalLanguages ?? monoLisaCoverage.totalLanguages,
     speakers: monoLisaCoverage.totalSpeakers,
@@ -36,6 +40,7 @@ const comparison = {
   },
   right: {
     label: "Fira Code",
+    shortLabel: "Fira Code",
     descriptor: "Free ligature-focused font",
     languages: firaCodeCoverage.totalLanguages,
     speakers: firaCodeCoverage.totalSpeakers,
@@ -56,13 +61,95 @@ function esc(value) {
     .replace(/"/g, "&quot;");
 }
 
+function normalizeFragment(svg, prefix, fill) {
+  const viewBox = svg.match(/viewBox="([^"]+)"/)?.[1] || "0 0 100 100";
+  const [, , width] = viewBox.split(/\s+/).map(Number);
+  const baselineY = Number(svg.match(/<use[^>]*\sy="([^"]+)"/)?.[1] || 0);
+  let inner = svg
+    .replace(/<\?xml[^>]*>\s*/g, "")
+    .replace(/<svg[^>]*>/, "")
+    .replace(/<\/svg>\s*$/, "")
+    .replace(/<rect[^>]*>\s*/g, "");
+
+  inner = inner
+    .replace(/id="([^"]+)"/g, `id="${prefix}-$1"`)
+    .replace(/xlink:href="#([^"]+)"/g, `xlink:href="#${prefix}-$1"`)
+    .replace(/(?<!xlink:)href="#([^"]+)"/g, `href="#${prefix}-$1"`)
+    .replace(/fill="rgb\(0%, 0%, 0%\)"/g, `fill="${fill}"`)
+    .replace(/fill-opacity="1"/g, "")
+    .replace(/fill="rgb\(100%, 100%, 100%\)"/g, 'fill="none"');
+
+  return { advanceWidth: Math.max(0, width - 32), baselineY, inner };
+}
+
+function renderText(text, x, y, options = {}) {
+  const fontSize = options.fontSize ?? 20;
+  const fill = options.fill ?? "var(--icon-primary, currentColor)";
+  const anchor = options.anchor ?? "start";
+  const prefix = options.prefix ?? `text-${fontSize}-${String(text).replace(/\W+/g, "-")}`;
+  const fontPath = options.style === "italic" && monoLisaItalicPath && existsSync(monoLisaItalicPath)
+    ? monoLisaItalicPath
+    : monoLisaFontPath;
+  const args = [
+    "--output-format=svg",
+    `--font-size=${fontSize}`,
+    "--features=kern=1,liga=1,calt=1",
+    "--",
+    fontPath,
+    String(text),
+  ];
+  const result = spawnSync("hb-view", args, { cwd: root, encoding: "utf8" });
+
+  if (result.status !== 0) {
+    throw new Error(result.stderr || `hb-view failed for ${text}`);
+  }
+
+  const fragment = normalizeFragment(result.stdout, prefix, fill);
+  const offset =
+    anchor === "middle" ? fragment.advanceWidth / 2 :
+    anchor === "end" ? fragment.advanceWidth :
+    0;
+
+  return `
+    <g transform="translate(${x - offset - 16} ${y - fragment.baselineY})">
+      ${fragment.inner}
+    </g>`;
+}
+
+function orderedScripts(scripts) {
+  const preferredOrder = ["Latin", "Cyrillic", "Greek", "Armenian", "Hebrew", "Braille"];
+  return [...scripts].sort((a, b) => {
+    const aIndex = preferredOrder.indexOf(a);
+    const bIndex = preferredOrder.indexOf(b);
+    if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+    if (aIndex !== -1) return -1;
+    if (bIndex !== -1) return 1;
+    return a.localeCompare(b);
+  });
+}
+
+function chipWidth(label, options = {}) {
+  const fontSize = options.fontSize ?? 14;
+  const paddingX = options.paddingX ?? 24;
+  const minWidth = options.minWidth ?? 58;
+  return Math.max(minWidth, Math.round(label.length * fontSize * 0.72 + paddingX));
+}
+
 function chip(label, x, y, options = {}) {
-  const width = Math.max(58, label.length * 9 + 24);
+  const width = chipWidth(label, options);
+  const height = options.height ?? 30;
+  const radius = options.radius ?? height / 2;
+  const fontSize = options.fontSize ?? 14;
   const variant = options.variant || "plain";
   return `
     <g class="chip-box ${variant}" transform="translate(${x} ${y})">
-      <rect width="${width}" height="30" rx="15"/>
-      <text x="${width / 2}" y="20" text-anchor="middle" class="chip">${esc(label)}</text>
+      <rect width="${width}" height="${height}" rx="${radius}"/>
+      ${renderText(label, width / 2, Math.round(height * 0.68), {
+        anchor: "middle",
+        fontSize,
+        fill: "var(--icon-primary, currentColor)",
+        prefix: `chip-${variant}-${label}`,
+      })}
     </g>`;
 }
 
@@ -72,13 +159,13 @@ function chipRow(items, x, y, maxWidth, options = {}) {
   const parts = [];
 
   for (const item of items) {
-    const width = Math.max(58, item.length * 9 + 24);
+    const width = chipWidth(item, options);
     if (cursorX + width > x + maxWidth) {
       cursorX = x;
-      cursorY += 38;
+      cursorY += options.rowGap ?? 38;
     }
     parts.push(chip(item, cursorX, cursorY, options));
-    cursorX += width + 10;
+    cursorX += width + (options.columnGap ?? 10);
   }
 
   return parts.join("\n");
@@ -93,123 +180,56 @@ function speakerBillions(value) {
   return Number(match[1]);
 }
 
-function speakerLong(value) {
-  return `${speakerBillions(value).toFixed(2)} billion`;
+function speakerLabel(value) {
+  return `${speakerBillions(value).toFixed(1)} billion`;
 }
 
-function speakerBar({ label, value, y, width, variant = "neutral", suffix }) {
-  const valueInside = width > 900;
-  const valueX = valueInside ? width - 16 : width + 18;
-  const valueClass = valueInside ? "bar-value inside" : "bar-value";
-
+function speakerRow({ label, value, width, y, variant = "plain" }) {
   return `
-    <g transform="translate(66 ${y})">
-      <rect width="${width}" height="42" rx="0" class="speaker-bar ${variant}"/>
-      <text x="16" y="28" class="bar-label">${esc(label)}: ${esc(suffix)}</text>
-      <text x="${valueX}" y="28" class="${valueClass}">${value}</text>
+    <g transform="translate(0 ${y})">
+      <rect width="${width}" height="46" class="speaker-bar ${variant}"/>
+      ${renderText(`${label}: ${value}`, 24, 30, {
+        fontSize: 30,
+        fill: "var(--icon-primary, currentColor)",
+        prefix: `speaker-${variant}-${label}`,
+      })}
     </g>`;
 }
 
 function render() {
-  const { baseline, left, right } = comparison;
-  const baselineSpeakers = speakerBillions(baseline.speakers);
-  const leftSpeakers = speakerBillions(left.speakers);
-  const rightSpeakers = speakerBillions(right.speakers);
-  const barScale = 1018 / baselineSpeakers;
-  const baselineSpeakerWidth = Math.round(baselineSpeakers * barScale);
-  const leftSpeakerWidth = Math.round(leftSpeakers * barScale);
-  const rightSpeakerWidth = Math.round(rightSpeakers * barScale);
+  const { left, right } = comparison;
+  const fullWidth = 1150;
+  const rightEdge = 1150;
+  const lowerRightColumnX = 640;
+  const worldSpeakers = 8.3;
+  const speakerScale = fullWidth / worldSpeakers;
+  const leftSpeakerWidth = Math.round(speakerBillions(left.speakers) * speakerScale);
+  const rightSpeakerWidth = Math.round(speakerBillions(right.speakers) * speakerScale);
+  const text = (value, x, y, options) => renderText(value, x, y, options);
+  const strongChipOptions = {
+    variant: "strong",
+    fontSize: 22,
+    height: 40,
+    minWidth: 78,
+    paddingX: 34,
+    rowGap: 52,
+    columnGap: 12,
+  };
+  const plainChipOptions = {
+    variant: "plain",
+    fontSize: 22,
+    height: 40,
+    minWidth: 78,
+    paddingX: 34,
+    rowGap: 52,
+    columnGap: 12,
+  };
 
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1150" height="720" viewBox="0 0 1150 720" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<svg width="1150" height="1050" viewBox="0 0 1150 1050" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="title desc">
   <title id="title">${esc(comparison.title)} summary infographic</title>
-  <desc id="desc">A compact comparative infographic showing speaker coverage, script coverage, and OpenType feature signals for MonoLisa Code and Fira Code.</desc>
+  <desc id="desc">A compact comparative infographic showing measured language counts, script coverage, and OpenType feature signals for MonoLisa Code and Fira Code.</desc>
   <style>
-    text {
-      font-family: "MonoLisa", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      fill: var(--icon-primary, currentColor);
-    }
-
-    .eyebrow {
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 2.6px;
-      text-transform: uppercase;
-      fill: var(--icon-secondary, currentColor);
-    }
-
-    .title {
-      font-size: 50px;
-      font-weight: 800;
-      letter-spacing: 0;
-    }
-
-    .subtitle {
-      font-size: 20px;
-      fill: var(--icon-secondary, currentColor);
-    }
-
-    .name {
-      font-size: 34px;
-      font-weight: 800;
-    }
-
-    .descriptor,
-    .meta {
-      font-size: 17px;
-      fill: var(--icon-secondary, currentColor);
-    }
-
-    .bar-label {
-      font-size: 24px;
-      font-weight: 750;
-    }
-
-    .bar-value {
-      font-size: 20px;
-      fill: var(--icon-secondary, currentColor);
-    }
-
-    .bar-value.inside {
-      text-anchor: end;
-    }
-
-    .group-label {
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: 1.7px;
-      text-transform: uppercase;
-      fill: var(--icon-secondary, currentColor);
-    }
-
-    .metric-label {
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      fill: var(--icon-secondary, currentColor);
-    }
-
-    .metric-value {
-      font-size: 22px;
-      font-weight: 750;
-    }
-
-    .chip {
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .section-title {
-      font-size: 24px;
-      font-weight: 850;
-    }
-
-    .body {
-      font-size: 16px;
-      fill: var(--icon-secondary, currentColor);
-    }
-
     .rule {
       stroke: var(--icon-secondary, currentColor);
       stroke-opacity: 0.35;
@@ -220,79 +240,116 @@ function render() {
       fill: var(--icon-primary, currentColor);
     }
 
-    .speaker-bar,
     .chip-box rect {
       fill: var(--icon-primary, currentColor);
     }
 
-    .speaker-bar.neutral,
     .chip-box.plain rect {
       opacity: 0.12;
     }
 
-    .speaker-bar.left,
     .chip-box.strong rect {
       fill: var(--ml-colors-primary, var(--icon-primary, currentColor));
       opacity: 0.28;
     }
 
-    .speaker-bar.right {
-      opacity: 0.18;
+    .speaker-bar {
+      fill: var(--icon-primary, currentColor);
+      opacity: 0.12;
+    }
+
+    .speaker-bar.strong {
+      fill: var(--ml-colors-primary, var(--icon-primary, currentColor));
+      opacity: 0.45;
+    }
+
+    .speaker-bar.plain {
+      fill: var(--icon-primary, currentColor);
+      opacity: 0.22;
     }
   </style>
 
-  <path d="M66 40H1084" class="top-rule"/>
-  <text x="66" y="78" class="eyebrow">Coding font comparison</text>
-  <text x="66" y="138" class="title">${esc(comparison.title)}</text>
-  <text x="66" y="174" class="subtitle">${esc(comparison.subtitle)}</text>
+  ${text("L A N G U A G E S", 0, 32, {
+    fontSize: 22,
+    fill: "var(--icon-primary, currentColor)",
+    prefix: "language-section-title",
+  })}
 
-  <g transform="translate(0 222)">
-    <text x="66" y="-24" class="group-label">Hyperglot speaker coverage</text>
-    ${speakerBar({
-      label: baseline.label,
-      value: `${baseline.languages} languages`,
-      suffix: speakerLong(baseline.speakers),
-      y: 0,
-      width: baselineSpeakerWidth,
+  <g transform="translate(0 118)">
+    ${text(left.shortLabel, 0, 0, {
+      fontSize: 54,
+      fill: "var(--icon-primary, currentColor)",
+      prefix: "language-left-label",
     })}
-    ${speakerBar({
+    ${text(right.shortLabel, rightEdge, 0, {
+      anchor: "end",
+      fontSize: 54,
+      fill: "var(--icon-primary, currentColor)",
+      prefix: "language-right-label",
+    })}
+    ${text(left.languages, 0, 136, {
+      fontSize: 136,
+      fill: "var(--ml-colors-primary, var(--icon-primary, currentColor))",
+      prefix: "language-left-value",
+    })}
+    ${text(right.languages, rightEdge, 136, {
+      anchor: "end",
+      fontSize: 136,
+      fill: "var(--icon-primary, currentColor)",
+      prefix: "language-right-value",
+    })}
+    ${text("Languages measured with Hyperglot*", 0, 244, {
+      fontSize: 28,
+      style: "italic",
+      fill: "var(--icon-secondary, currentColor)",
+      prefix: "language-note",
+    })}
+    ${speakerRow({
+      label: "Speakers worldwide",
+      value: "8.3 billion",
+      width: fullWidth,
+      y: 320,
+    })}
+    ${speakerRow({
       label: left.label,
-      value: `${left.languages} languages`,
-      suffix: speakerLong(left.speakers),
-      y: 48,
+      value: speakerLabel(left.speakers),
       width: leftSpeakerWidth,
-      variant: "left",
+      y: 376,
+      variant: "strong",
     })}
-    ${speakerBar({
+    ${speakerRow({
       label: right.label,
-      value: `${right.languages} languages`,
-      suffix: speakerLong(right.speakers),
-      y: 96,
+      value: speakerLabel(right.speakers),
       width: rightSpeakerWidth,
-      variant: "right",
+      y: 432,
     })}
   </g>
 
-  <g transform="translate(66 406)">
-    <text x="0" y="0" class="name">${esc(left.label)}</text>
-    <text x="574" y="0" class="name">${esc(right.label)}</text>
-    <text x="0" y="32" class="meta">${left.languages} languages · 10 weights · italics</text>
-    <text x="574" y="32" class="meta">${right.languages} languages · 5 variable weights · no italics</text>
+  <g transform="translate(0 665)">
+    ${text("WRITING SYSTEMS", 0, 0, {
+      fontSize: 24,
+      fill: "var(--icon-secondary, currentColor)",
+      prefix: "writing-systems-label",
+    })}
+    ${chipRow(orderedScripts(left.scripts), 0, 42, 500, strongChipOptions)}
+    ${chipRow(orderedScripts(right.scripts), lowerRightColumnX, 42, 460, plainChipOptions)}
 
-    <text x="0" y="88" class="group-label">Writing systems</text>
-    <text x="574" y="88" class="group-label">Writing systems</text>
-    ${chipRow(left.scripts, 0, 108, 460, { variant: "strong" })}
-    ${chipRow(right.scripts, 574, 108, 444, { variant: "plain" })}
-
-    <text x="0" y="218" class="group-label">OpenType features</text>
-    <text x="574" y="218" class="group-label">OpenType features</text>
-    ${chipRow(left.features, 0, 238, 500, { variant: "strong" })}
-    ${chipRow(right.features, 574, 238, 444, { variant: "plain" })}
+    ${text("OPENTYPE FEATURES", 0, 182, {
+      fontSize: 24,
+      fill: "var(--icon-secondary, currentColor)",
+      prefix: "opentype-features-label",
+    })}
+    ${chipRow(left.features, 0, 224, 560, strongChipOptions)}
+    ${chipRow(right.features, lowerRightColumnX, 224, 460, plainChipOptions)}
   </g>
 
-  <g transform="translate(66 680)">
-    <line x1="0" y1="0" x2="1018" y2="0" class="rule"/>
-    <text x="0" y="24" class="body">Language counts: Hyperglot 0.8.1, primary living orthographies, base character support.</text>
+  <g transform="translate(0 1012)">
+    <line x1="0" y1="0" x2="${fullWidth}" y2="0" class="rule"/>
+    ${text("Language counts: Hyperglot 0.8.1, primary living orthographies, base character support.", 0, 24, {
+      fontSize: 16,
+      fill: "var(--icon-secondary, currentColor)",
+      prefix: "footnote",
+    })}
   </g>
 </svg>
 `;

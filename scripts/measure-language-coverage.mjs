@@ -33,7 +33,6 @@ const results = {
   tool: "Hyperglot 0.8.1",
   methodology: "Primary orthographies, living languages, base character support, shaping disabled.",
   options,
-  baseline: measureBaseline(),
   fonts: {},
 };
 
@@ -102,50 +101,6 @@ function parseSummary(label, fontPath, stdout) {
     totalLanguages: totalMatch ? Number(totalMatch[1]) : null,
     totalSpeakers: speakersMatch ? speakersMatch[1] : null,
     scripts,
-  };
-}
-
-function measureBaseline() {
-  const script = [
-    "from hyperglot.languages import Languages",
-    "from hyperglot import LanguageValidity, LanguageStatus, OrthographyStatus",
-    "langs = Languages()",
-    "total = 0",
-    "count = 0",
-    "scripts = {}",
-    "for iso in langs:",
-    "    lang = langs[iso]",
-    "    if LanguageValidity.index(lang['validity']) < LanguageValidity.index(LanguageValidity.DRAFT.value):",
-    "        continue",
-    "    if lang.status != LanguageStatus.LIVING.value:",
-    "        continue",
-    "    orthographies = lang.get_check_orthographies([OrthographyStatus.PRIMARY.value])",
-    "    if not orthographies:",
-    "        continue",
-    "    count += 1",
-    "    total += lang.speakers",
-    "    for orthography in orthographies:",
-    "        scripts[orthography.script] = scripts.get(orthography.script, 0) + 1",
-    "print(f'{count}\\t{total}\\t{total / 1_000_000_000:.2f}B')",
-  ].join("\n");
-
-  const result = spawnSync(path.join(root, ".venv-hyperglot", "bin", "python"), ["-c", script], {
-    cwd: root,
-    encoding: "utf8",
-    maxBuffer: 1024 * 1024 * 20,
-  });
-
-  if (result.status !== 0) {
-    fail(result.stderr.trim() || result.stdout.trim() || "Hyperglot baseline measurement failed");
-  }
-
-  const [totalLanguages, totalSpeakersRaw, totalSpeakers] = result.stdout.trim().split("\t");
-  return {
-    label: "Hyperglot baseline",
-    totalLanguages: Number(totalLanguages),
-    totalSpeakersRaw: Number(totalSpeakersRaw),
-    totalSpeakers,
-    methodology: "Living languages with draft-or-better Hyperglot data and primary orthographies.",
   };
 }
 

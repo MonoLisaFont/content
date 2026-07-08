@@ -154,6 +154,7 @@ function renderLine(font, sample, line, prefix, fill = themeFills.primary) {
 function normalizeFragment(svg, prefix, fill) {
   const viewBox = svg.match(/viewBox="([^"]+)"/)?.[1] || "0 0 100 100";
   const [, , width, height] = viewBox.split(/\s+/).map(Number);
+  const baselineY = Number(svg.match(/<use[^>]*\sy="([^"]+)"/)?.[1] || 0);
   let inner = svg
     .replace(/<\?xml[^>]*>\s*/g, "")
     .replace(/<svg[^>]*>/, "")
@@ -168,7 +169,7 @@ function normalizeFragment(svg, prefix, fill) {
     .replace(/fill-opacity="1"/g, "")
     .replace(/fill="rgb\(100%, 100%, 100%\)"/g, 'fill="none"');
 
-  return { width, height, advanceWidth: Math.max(0, width - 32), inner };
+  return { width, height, advanceWidth: Math.max(0, width - 32), baselineY, inner };
 }
 
 const syntaxFills = {
@@ -331,6 +332,24 @@ function renderCodeLine(font, sample, line, prefix) {
   };
 }
 
+function renderLabel(label, x, y, prefix) {
+  const fragment = renderLine(
+    mono,
+    {
+      fontSize: 30,
+      features: "kern=1,liga=1,calt=1",
+    },
+    label,
+    prefix,
+    themeFills.accent,
+  );
+
+  return `
+      <g transform="translate(${x - 16}, ${y - fragment.baselineY})">
+        ${fragment.inner}
+      </g>`;
+}
+
 function esc(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -385,8 +404,7 @@ function renderSample(competitorKey, sampleKey, sample) {
 
   for (const [columnIndex, font] of fonts.entries()) {
     const x = marginX + columnIndex * (colWidth + gutter);
-    fragments.push(`
-      <text x="${x}" y="${marginY}" class="label">${esc(font.label)}</text>`);
+    fragments.push(renderLabel(font.label, x, marginY, `${competitorKey}-${sampleKey}-${columnIndex}-label`));
 
     renderedLines
       .filter((renderedLine) => renderedLine.columnIndex === columnIndex)
@@ -412,11 +430,6 @@ function renderSample(competitorKey, sampleKey, sample) {
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="${themeFills.primary}" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>${esc(title)}</title>
   <style>
-    .label {
-      fill: ${themeFills.accent};
-      font: 600 30px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      letter-spacing: 0;
-    }
     .rule {
       stroke: ${themeFills.accent};
       stroke-opacity: 0.55;

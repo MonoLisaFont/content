@@ -11,13 +11,6 @@
     "--check",
     "base"
   ],
-  "baseline": {
-    "label": "Hyperglot baseline",
-    "totalLanguages": 748,
-    "totalSpeakersRaw": 7375524844,
-    "totalSpeakers": "7.38B",
-    "methodology": "Living languages with draft-or-better Hyperglot data and primary orthographies."
-  },
   "fonts": {
     "monolisa": {
       "label": "MonoLisa Code",
