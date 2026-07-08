@@ -7,39 +7,37 @@ keywords: ["MonoLisa vs Operator Mono", "Operator Mono alternative", "coding fon
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Operator Mono are both paid typefaces used by developers, but they optimize for different priorities. This comparison looks at glyph clarity, ligatures, italics, language coverage, terminal support, customization, and licensing.
+MonoLisa and Operator Mono are both paid typefaces used by developers, but they optimize for different priorities. This draft puts the comparison status and decision table first, but it remains deferred until there is a licensed comparison basis.
 
 Draft status: Deferred commercial-font comparison. Operator Mono needs a license/trial review before this post can use measured data or rendered specimens.
 
-## Quick comparison
+## Decision table
 
-| Category | MonoLisa | Operator Mono |
-| --- | --- | --- |
-| Pricing | Paid, with trial/customizer | Paid; trial availability needs verification |
-| Coding ligatures | Yes | Needs verification |
-| Italics | Yes | Yes |
-| Language coverage | 593 publishable languages measured | Needs licensed-font measurement |
-| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Needs licensed-font measurement |
-| Weights included | 10 named weights in Code upright and italic variable files | Needs verification |
-| Variable font | Yes | Needs verification |
-| Variable axes | `wght`, `GRAD` measured | Needs verification |
-| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | Needs verification |
-| Character variants | Yes; `cv01`-`cv12` measured | Needs verification |
-| Proportional counterpart | Yes, MonoLisa Text | Yes, Operator family |
-| Terminal symbols | Powerline, box drawing, and block elements measured | Needs licensed-font measurement |
+| Category | Better fit | MonoLisa Code | Operator Mono |
+| --- | --- | --- | --- |
+| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | Deferred | 593 | Needs licensed-font measurement |
+| **Writing systems** | Deferred | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | Needs licensed-font measurement |
+| **Italics** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Weights** | Deferred | 10 | Needs verification |
+| **Variable axes** | Deferred | 2 (`wght`, `GRAD`) | Needs verification |
+| **Style control** | Deferred | 15 stylistic sets, 12 character variants | Needs verification |
+| **Coding ligatures** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs verification |
+| **Terminal symbols** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs licensed-font measurement |
+| **Proportional counterpart** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Operator family |
+| **Price** | Deferred | Paid, including free trial and customizer | Paid; trial availability needs verification |
+| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Operator Mono page](https://www.typography.com/fonts/operator/styles/) |
 
-## Design intent and reading comfort
+In short: this comparison should stay unpublished until the licensing, source, and specimen basis is clear.
+
+## Reading texture
 
 Deferred until a licensed comparison basis exists.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
-
 ## Language and script coverage
 
 Deferred until a licensed font file, trial file, or permitted specimen source is available. Do not publish measured language-count claims for Operator Mono until the exact font file and license basis are recorded.
-
-[Marcus input: Confirm how to phrase coverage differences if this becomes a public-information-only comparison.]
 
 ## Coding features
 

@@ -7,28 +7,33 @@ keywords: ["MonoLisa vs Cascadia Code", "Cascadia Code alternative", "coding fon
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Cascadia Code are both coding fonts, but they optimize for different priorities. This comparison looks at glyph clarity, ligatures, italics, language coverage, terminal support, customization, and licensing.
+MonoLisa and Cascadia Code are both coding fonts, but they optimize for different priorities. This draft puts the visual summary and the decision table first, so the main differences are visible before the detailed specimens.
 
-## Quick comparison
+![Summary infographic comparing MonoLisa and Cascadia Code](/images/comparison-monolisa-vs-cascadia-code-summary.svg)
 
-| Category | MonoLisa | Cascadia Code |
-| --- | --- | --- |
-| Pricing | Paid, with trial/customizer | Free and open source |
-| Coding ligatures | Yes | Yes; Cascadia Mono variant disables ligatures |
-| Italics | Yes | Yes |
-| Language coverage | 593 publishable languages measured | 513 publishable languages measured |
-| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Latin, Cyrillic, Arabic, and Greek measured |
-| Weights included | 10 named weights in Code upright and italic variable files | 6 named weights in variable upright/italic files; static builds include same 6 |
-| Variable font | Yes | Yes |
-| Variable axes | `wght`, `GRAD` measured | `wght` measured |
-| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | Yes; `ss02`, `ss19`, `ss20` measured |
-| Character variants | Yes; `cv01`-`cv12` measured | Not recorded in this pass |
-| Proportional counterpart | Yes, MonoLisa Text | No obvious proportional counterpart |
-| Terminal symbols | Powerline, box drawing, and block elements measured | Box drawing and block elements measured; standard build measured without Powerline |
+[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
 
-## Design intent and reading comfort
+## Decision table
 
-The code texture specimen has been rendered for review. Marcus should still add the type-design interpretation before publication.
+| Category | Better fit | MonoLisa Code | Cascadia Code |
+| --- | --- | --- | --- |
+| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | MonoLisa | 593 | 513 |
+| **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 4 (Latin, Cyrillic, Arabic, Greek) |
+| **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Weights** | MonoLisa | 10 | 6 |
+| **Variable axes** | MonoLisa | 2 (`wght`, `GRAD`) | 1 (`wght`) |
+| **Style control** | MonoLisa | 15 stylistic sets, 12 character variants | 3 stylistic sets recorded |
+| **Coding ligatures** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Terminal symbols** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Box drawing and block elements measured; standard build measured without Powerline |
+| **Proportional counterpart** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart |
+| **Price** | Cascadia Code | Paid, including free trial and customizer | Free and open source |
+| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Cascadia Code GitHub repository](https://github.com/microsoft/cascadia-code) |
+
+In short: MonoLisa Code wins on language coverage, style range, and measured terminal completeness. Cascadia Code wins on price.
+
+## Reading texture
+
+Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 

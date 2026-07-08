@@ -16,7 +16,6 @@ const fontConfig = JSON.parse(
 mkdirSync(outputDir, { recursive: true });
 
 const monoLisaCoverage = coverage.fonts.monolisa;
-const firaCodeCoverage = coverage.fonts["fira-code"];
 const monoLisaCodeFontPath = path.resolve(root, fontConfig.fonts.monolisa.regular);
 const monoLisaCodeItalicPath = fontConfig.fonts.monolisa.italic
   ? path.resolve(root, fontConfig.fonts.monolisa.italic)
@@ -38,36 +37,122 @@ const monoLisaTextItalicPath = resolveFontPath(
   monoLisaCodeItalicPath ?? monoLisaTextFontPath,
 );
 
-const comparison = {
-  key: "fira-code",
-  title: "MonoLisa Code vs. Fira Code",
-  left: {
-    label: "MonoLisa Code",
-    shortLabel: "MonoLisa",
-    descriptor: "Paid coding type system",
-    languages: monoLisaCoverage.publicationTotalLanguages ?? monoLisaCoverage.totalLanguages,
-    speakers: monoLisaCoverage.totalSpeakers,
-    scripts: Object.keys(monoLisaCoverage.publicationScripts ?? monoLisaCoverage.scripts),
-    weights: "10 named weights",
-    italics: "Yes",
-    axes: ["wght", "GRAD"],
-    features: ["liga", "dlig", "calt", "zero", "ss01-ss15", "cv01-cv12"],
-    terminal: "Powerline, box drawing, block elements",
-  },
-  right: {
-    label: "Fira Code",
-    shortLabel: "Fira Code",
+const leftComparison = {
+  label: "MonoLisa Code",
+  shortLabel: "MonoLisa",
+  descriptor: "Paid coding type system",
+  languages: monoLisaCoverage.publicationTotalLanguages ?? monoLisaCoverage.totalLanguages,
+  speakers: monoLisaCoverage.totalSpeakers,
+  scripts: Object.keys(monoLisaCoverage.publicationScripts ?? monoLisaCoverage.scripts),
+  weights: "10 named weights",
+  italics: "Yes",
+  axes: ["wght", "GRAD"],
+  features: ["liga", "dlig", "calt", "zero", "ss01-ss15", "cv01-cv12"],
+  terminal: "Powerline, box drawing, block elements",
+};
+
+const rightComparisons = [
+  {
+    key: "fira-code",
+    title: "MonoLisa Code vs. Fira Code",
     descriptor: "Free ligature-focused font",
-    languages: firaCodeCoverage.totalLanguages,
-    speakers: firaCodeCoverage.totalSpeakers,
-    scripts: Object.keys(firaCodeCoverage.scripts),
     weights: "6 static, 5 variable",
     italics: "No",
     axes: ["wght"],
     features: ["calt", "zero", "ss01-ss10", "cv01-cv32"],
     terminal: "Powerline, box drawing, block elements",
   },
-};
+  {
+    key: "jetbrains-mono",
+    title: "MonoLisa Code vs. JetBrains Mono",
+    descriptor: "Free coding typeface",
+    weights: "8 named weights",
+    italics: "Yes",
+    axes: ["wght"],
+    features: ["calt", "zero", "ss01-ss02", "ss19-ss20", "cv01-cv20", "cv99"],
+    terminal: "Powerline, box drawing, block elements",
+  },
+  {
+    key: "cascadia-code",
+    title: "MonoLisa Code vs. Cascadia Code",
+    descriptor: "Free coding typeface",
+    weights: "6 named weights",
+    italics: "Yes",
+    axes: ["wght"],
+    features: ["calt", "rclt", "rlig", "zero", "ss02", "ss19-ss20"],
+    terminal: "Box drawing, block elements",
+  },
+  {
+    key: "hack",
+    title: "MonoLisa Code vs. Hack",
+    descriptor: "Free no-frills coding font",
+    weights: "2 named weights",
+    italics: "Yes",
+    axes: [],
+    features: ["aalt", "frac", "locl", "ordn", "sinf", "subs", "sups"],
+    terminal: "Powerline, box drawing, block elements",
+  },
+  {
+    key: "source-code-pro",
+    title: "MonoLisa Code vs. Source Code Pro",
+    descriptor: "Free Adobe coding font",
+    weights: "7 named weights",
+    italics: "Yes",
+    axes: [],
+    features: ["zero", "ss01-ss07", "cvXX"],
+    terminal: "Powerline, box drawing, block elements",
+  },
+  {
+    key: "ibm-plex-mono",
+    title: "MonoLisa Code vs. IBM Plex Mono",
+    descriptor: "Free mono family member",
+    weights: "8 named weights",
+    italics: "Yes",
+    axes: [],
+    features: ["zero", "ss01-ss09"],
+    terminal: "Box drawing, block elements",
+  },
+  {
+    key: "monaspace",
+    title: "MonoLisa Code vs. Monaspace",
+    descriptor: "Free coding superfamily",
+    weights: "7 named weights",
+    italics: "Yes",
+    axes: [],
+    features: ["calt", "liga", "ss01-ss10", "cvXX"],
+    terminal: "Powerline, box drawing, block elements",
+  },
+  {
+    key: "recursive-mono",
+    title: "MonoLisa Code vs. Recursive Mono",
+    descriptor: "Free variable type system",
+    weights: "2 static, 8 variable",
+    italics: "Yes",
+    axes: ["MONO", "CASL", "wght", "slnt", "CRSV"],
+    features: ["calt", "rclt"],
+    terminal: "Powerline",
+  },
+].map((comparison) => {
+  const rightCoverage = coverage.fonts[comparison.key];
+
+  return {
+    ...comparison,
+    left: leftComparison,
+    right: {
+      label: rightCoverage.label,
+      shortLabel: rightCoverage.label,
+      languages: rightCoverage.totalLanguages,
+      speakers: rightCoverage.totalSpeakers,
+      scripts: Object.keys(rightCoverage.scripts),
+      descriptor: comparison.descriptor,
+      weights: comparison.weights,
+      italics: comparison.italics,
+      axes: comparison.axes,
+      features: comparison.features,
+      terminal: comparison.terminal,
+    },
+  };
+});
 
 function esc(value) {
   return String(value)
@@ -281,7 +366,7 @@ function speakerRow({ label, value, width, y, variant = "plain" }) {
     </g>`;
 }
 
-function render() {
+function render(comparison) {
   const { left, right } = comparison;
   const fullWidth = 1150;
   const fullHeight = 1120;
@@ -318,7 +403,7 @@ function render() {
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="${fullWidth}" height="${fullHeight}" viewBox="0 0 ${fullWidth} ${fullHeight}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="title desc">
   <title id="title">${esc(comparison.title)} summary infographic</title>
-  <desc id="desc">A compact comparative infographic showing measured language counts, script coverage, and OpenType feature signals for MonoLisa Code and Fira Code.</desc>
+  <desc id="desc">A compact comparative infographic showing measured language counts, script coverage, and OpenType feature signals for ${esc(comparison.title)}.</desc>
   <style>
     .rule {
       stroke: var(--icon-secondary, currentColor);
@@ -432,7 +517,7 @@ function render() {
       prefix: "opentype-features-label",
     })}
     ${chipRow(left.features, 0, opentypeChipY, 560, strongChipOptions)}
-    ${chipRow(right.features, lowerRightColumnX, opentypeChipY, 460, plainChipOptions)}
+    ${chipRow(right.features.length ? right.features : ["none measured"], lowerRightColumnX, opentypeChipY, 460, plainChipOptions)}
   </g>
 
   <g transform="translate(0 ${footnoteY})">
@@ -451,4 +536,6 @@ function render() {
   console.log(path.relative(root, outputPath));
 }
 
-render();
+for (const comparison of rightComparisons) {
+  render(comparison);
+}

@@ -7,28 +7,33 @@ keywords: ["MonoLisa vs Recursive Mono", "Recursive Mono alternative", "coding f
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Recursive Mono are both coding-capable typefaces, but they optimize for different priorities. This comparison looks at glyph clarity, ligatures, italics, language coverage, terminal support, customization, and licensing.
+MonoLisa and Recursive Mono are both coding-capable typefaces, but they optimize for different priorities. This draft puts the visual summary and the decision table first, so the main differences are visible before the detailed specimens.
 
-## Quick comparison
+![Summary infographic comparing MonoLisa and Recursive Mono](/images/comparison-monolisa-vs-recursive-mono-summary.svg)
 
-| Category | MonoLisa | Recursive Mono |
-| --- | --- | --- |
-| Pricing | Paid, with trial/customizer | Free and open source |
-| Coding ligatures | Yes | `calt` and `rclt`; no standard coding ligature set measured |
-| Italics | Yes | Yes |
-| Language coverage | 593 publishable languages measured | 345 publishable languages measured |
-| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Latin measured |
-| Weights included | 10 named weights in Code upright and italic variable files | 2 static Rec Mono Linear weights; variable font spans 8 named mono weights |
-| Variable font | Yes | Yes, five axes |
-| Variable axes | `wght`, `GRAD` measured | `MONO`, `CASL`, `wght`, `slnt`, `CRSV` measured |
-| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | None measured in static Rec Mono Linear |
-| Character variants | Yes; `cv01`-`cv12` measured | None measured in static Rec Mono Linear |
-| Proportional counterpart | Yes, MonoLisa Text | Yes, Sans and Mono in one system |
-| Terminal symbols | Powerline, box drawing, and block elements measured | Powerline measured; box drawing and block elements not present in static Rec Mono Linear |
+[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
 
-## Design intent and reading comfort
+## Decision table
 
-The code texture specimen has been rendered for review. Marcus should still add the type-design interpretation before publication.
+| Category | Better fit | MonoLisa Code | Recursive Mono |
+| --- | --- | --- | --- |
+| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | MonoLisa | 593 | 345 |
+| **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 1 (Latin) |
+| **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Weights** | MonoLisa | 10 | 2 static Rec Mono Linear weights; variable font spans 8 named mono weights |
+| **Variable axes** | Recursive Mono | 2 (`wght`, `GRAD`) | 5 (`MONO`, `CASL`, `wght`, `slnt`, `CRSV`) |
+| **Style control** | MonoLisa | 15 stylistic sets, 12 character variants | None measured in static Rec Mono Linear |
+| **Coding ligatures** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | `calt` and `rclt`; no standard coding ligature set measured |
+| **Terminal symbols** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Powerline measured; box drawing and block elements not present in static Rec Mono Linear |
+| **Proportional counterpart** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Sans and Mono in one system |
+| **Price** | Recursive Mono | Paid, including free trial and customizer | Free and open source |
+| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Recursive GitHub repository](https://github.com/arrowtype/recursive) |
+
+In short: MonoLisa Code wins on measured coverage, coding features, and terminal symbols. Recursive Mono wins on axis range and price.
+
+## Reading texture
+
+Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 

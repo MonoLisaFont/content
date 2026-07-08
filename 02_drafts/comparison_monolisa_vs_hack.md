@@ -7,28 +7,33 @@ keywords: ["MonoLisa vs Hack", "Hack font alternative", "coding fonts", "program
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Hack are both coding fonts, but they optimize for different priorities. This comparison looks at glyph clarity, ligatures, italics, language coverage, terminal support, customization, and licensing.
+MonoLisa and Hack are both coding fonts, but they optimize for different priorities. This draft puts the visual summary and the decision table first, so the main differences are visible before the detailed specimens.
 
-## Quick comparison
+![Summary infographic comparing MonoLisa and Hack](/images/comparison-monolisa-vs-hack-summary.svg)
 
-| Category | MonoLisa | Hack |
-| --- | --- | --- |
-| Pricing | Paid, with trial/customizer | Free and open source |
-| Coding ligatures | Yes | No |
-| Italics | Yes | Yes |
-| Language coverage | 593 publishable languages measured | 382 publishable languages measured |
-| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Latin, Cyrillic, Armenian, and Greek measured |
-| Weights included | 10 named weights in Code upright and italic variable files | 2 weights, Regular and Bold, with italics |
-| Variable font | Yes | No |
-| Variable axes | `wght`, `GRAD` measured | None measured |
-| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | None measured |
-| Character variants | Yes; `cv01`-`cv12` measured | None measured |
-| Proportional counterpart | Yes, MonoLisa Text | No obvious proportional counterpart |
-| Terminal symbols | Powerline, box drawing, and block elements measured | Powerline, box drawing, and block elements measured |
+[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
 
-## Design intent and reading comfort
+## Decision table
 
-The code texture specimen has been rendered for review. Marcus should still add the type-design interpretation before publication.
+| Category | Better fit | MonoLisa Code | Hack |
+| --- | --- | --- | --- |
+| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | MonoLisa | 593 | 382 |
+| **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 4 (Latin, Cyrillic, Armenian, Greek) |
+| **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Weights** | MonoLisa | 10 | 2 |
+| **Variable axes** | MonoLisa | 2 (`wght`, `GRAD`) | None measured |
+| **Style control** | MonoLisa | 15 stylistic sets, 12 character variants | None measured |
+| **Coding ligatures** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | No |
+| **Terminal symbols** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Proportional counterpart** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart |
+| **Price** | Hack | Paid, including free trial and customizer | Free and open source |
+| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Hack GitHub repository](https://github.com/source-foundry/Hack) |
+
+In short: MonoLisa Code wins on coverage, ligatures, variable axes, and style control. Hack wins on price and remains a strong no-frills baseline.
+
+## Reading texture
+
+Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 

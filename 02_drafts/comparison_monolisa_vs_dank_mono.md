@@ -7,39 +7,37 @@ keywords: ["MonoLisa vs Dank Mono", "Dank Mono alternative", "coding fonts", "pr
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Dank Mono are both paid coding fonts, but they optimize for different priorities. This comparison looks at glyph clarity, ligatures, italics, language coverage, terminal support, customization, and licensing.
+MonoLisa and Dank Mono are both paid coding fonts, but they optimize for different priorities. This draft puts the comparison status and decision table first, but it remains deferred until there is a licensed comparison basis.
 
 Draft status: Deferred commercial-font comparison. Dank Mono does not appear to offer a free trial in the current manual check, so this post should not be finished with rendered specimens until we have a licensed copy, written permission/specimens, or a decision to compare only against public information.
 
-## Quick comparison
+## Decision table
 
-| Category | MonoLisa | Dank Mono |
-| --- | --- | --- |
-| Pricing | Paid, with trial/customizer | Paid; no free trial found so far |
-| Coding ligatures | Yes | Needs verification |
-| Italics | Yes | Yes |
-| Language coverage | 593 publishable languages measured | Needs licensed-font measurement |
-| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Needs licensed-font measurement |
-| Weights included | 10 named weights in Code upright and italic variable files | Needs verification |
-| Variable font | Yes | Needs verification |
-| Variable axes | `wght`, `GRAD` measured | Needs verification |
-| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | Needs verification |
-| Character variants | Yes; `cv01`-`cv12` measured | Needs verification |
-| Proportional counterpart | Yes, MonoLisa Text | Needs verification |
-| Terminal symbols | Powerline, box drawing, and block elements measured | Needs licensed-font measurement |
+| Category | Better fit | MonoLisa Code | Dank Mono |
+| --- | --- | --- | --- |
+| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | Deferred | 593 | Needs licensed-font measurement |
+| **Writing systems** | Deferred | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | Needs licensed-font measurement |
+| **Italics** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Weights** | Deferred | 10 | Needs verification |
+| **Variable axes** | Deferred | 2 (`wght`, `GRAD`) | Needs verification |
+| **Style control** | Deferred | 15 stylistic sets, 12 character variants | Needs verification |
+| **Coding ligatures** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs verification |
+| **Terminal symbols** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs licensed-font measurement |
+| **Proportional counterpart** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Needs verification |
+| **Price** | Deferred | Paid, including free trial and customizer | Paid; no free trial found so far |
+| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Dank Mono site](https://dank.sh/) |
 
-## Design intent and reading comfort
+In short: this comparison should stay unpublished until the licensing, source, and specimen basis is clear.
+
+## Reading texture
 
 Deferred until a licensed comparison basis exists.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
-
 ## Language and script coverage
 
 Deferred until a licensed font file, trial file, or permitted specimen source is available. Do not publish measured language-count claims for Dank Mono until the exact font file and license basis are recorded.
-
-[Marcus input: Confirm how to phrase coverage differences if this becomes a public-information-only comparison.]
 
 ## Coding features
 

@@ -7,28 +7,33 @@ keywords: ["MonoLisa vs Monaspace", "Monaspace alternative", "coding fonts", "pr
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Monaspace are both coding type systems, but they optimize for different priorities. This comparison looks at glyph clarity, ligatures, italics, language coverage, terminal support, customization, and licensing.
+MonoLisa and Monaspace are both coding type systems, but they optimize for different priorities. This draft puts the visual summary and the decision table first, so the main differences are visible before the detailed specimens.
 
-## Quick comparison
+![Summary infographic comparing MonoLisa and Monaspace](/images/comparison-monolisa-vs-monaspace-summary.svg)
 
-| Category | MonoLisa | Monaspace |
-| --- | --- | --- |
-| Pricing | Paid, with trial/customizer | Free and open source |
-| Coding ligatures | Yes | Yes, 10 stylistic-set groups |
-| Italics | Yes | Yes |
-| Language coverage | 593 publishable languages measured | 368 publishable languages measured |
-| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Latin, Cyrillic, and Greek measured |
-| Weights included | 10 named weights in Code upright and italic variable files | 7 weights in measured Neon family; width variants also included |
-| Variable font | Yes | Yes |
-| Variable axes | `wght`, `GRAD` measured | Not measured in static Neon files |
-| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | Yes; `ss01`-`ss10` measured |
-| Character variants | Yes; `cv01`-`cv12` measured | Yes; selected `cvXX` features measured |
-| Proportional counterpart | Yes, MonoLisa Text | Five-family coding superfamily |
-| Terminal symbols | Powerline, box drawing, and block elements measured | Powerline, box drawing, and block elements measured |
+[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
 
-## Design intent and reading comfort
+## Decision table
 
-The code texture specimen has been rendered for review. Marcus should still add the type-design interpretation before publication.
+| Category | Better fit | MonoLisa Code | Monaspace |
+| --- | --- | --- | --- |
+| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | MonoLisa | 593 | 368 |
+| **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek) |
+| **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Weights** | MonoLisa | 10 | 7 in measured Neon family |
+| **Variable axes** | MonoLisa | 2 (`wght`, `GRAD`) | Not measured in static Neon files |
+| **Style control** | Similar | 15 stylistic sets, 12 character variants | 10 stylistic sets, selected character variants |
+| **Coding ligatures** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Terminal symbols** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Proportional counterpart** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Five-family coding superfamily |
+| **Price** | Monaspace | Paid, including free trial and customizer | Free and open source |
+| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Monaspace GitHub repository](https://github.com/githubnext/monaspace) |
+
+In short: MonoLisa Code wins on measured language coverage and axes. Monaspace wins on price, while both offer rich coding-focused style systems.
+
+## Reading texture
+
+Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 

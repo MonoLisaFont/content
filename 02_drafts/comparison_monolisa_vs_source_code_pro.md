@@ -7,28 +7,33 @@ keywords: ["MonoLisa vs Source Code Pro", "Source Code Pro alternative", "coding
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Source Code Pro are both coding fonts, but they optimize for different priorities. This comparison looks at glyph clarity, ligatures, italics, language coverage, terminal support, customization, and licensing.
+MonoLisa and Source Code Pro are both coding fonts, but they optimize for different priorities. This draft puts the visual summary and the decision table first, so the main differences are visible before the detailed specimens.
 
-## Quick comparison
+![Summary infographic comparing MonoLisa and Source Code Pro](/images/comparison-monolisa-vs-source-code-pro-summary.svg)
 
-| Category | MonoLisa | Source Code Pro |
-| --- | --- | --- |
-| Pricing | Paid, with trial/customizer | Free and open source |
-| Coding ligatures | Yes | No coding ligatures found in public README |
-| Italics | Yes | Yes |
-| Language coverage | 593 publishable languages measured | 413 publishable languages measured |
-| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Latin, Cyrillic, and Greek measured |
-| Weights included | 10 named weights in Code upright and italic variable files | 7 static weights with upright/italic |
-| Variable font | Yes | Yes |
-| Variable axes | `wght`, `GRAD` measured | Not measured in this pass |
-| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | Yes; `ss01`-`ss07` measured |
-| Character variants | Yes; `cv01`-`cv12` measured | Yes; selected `cvXX` features measured |
-| Proportional counterpart | Yes, MonoLisa Text | Source Sans family relation |
-| Terminal symbols | Powerline, box drawing, and block elements measured | Powerline, box drawing, and block elements measured |
+[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
 
-## Design intent and reading comfort
+## Decision table
 
-The code texture specimen has been rendered for review. Marcus should still add the type-design interpretation before publication.
+| Category | Better fit | MonoLisa Code | Source Code Pro |
+| --- | --- | --- | --- |
+| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | MonoLisa | 593 | 413 |
+| **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek) |
+| **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Weights** | MonoLisa | 10 | 7 |
+| **Variable axes** | MonoLisa | 2 (`wght`, `GRAD`) | Not measured in this pass |
+| **Style control** | MonoLisa | 15 stylistic sets, 12 character variants | 7 stylistic sets, selected character variants |
+| **Coding ligatures** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | No coding ligature set measured |
+| **Terminal symbols** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Proportional counterpart** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Source Sans family relation |
+| **Price** | Source Code Pro | Paid, including free trial and customizer | Free and open source |
+| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Source Code Pro GitHub repository](https://github.com/adobe-fonts/source-code-pro) |
+
+In short: MonoLisa Code wins on coverage, coding ligatures, axes, and style range. Source Code Pro wins on price.
+
+## Reading texture
+
+Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 

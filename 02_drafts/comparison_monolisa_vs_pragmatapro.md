@@ -7,39 +7,37 @@ keywords: ["MonoLisa vs PragmataPro", "PragmataPro alternative", "coding fonts",
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and PragmataPro are both paid coding fonts, but they optimize for different priorities. This comparison looks at glyph clarity, ligatures, italics, language coverage, terminal support, customization, and licensing.
+MonoLisa and PragmataPro are both paid coding fonts, but they optimize for different priorities. This draft puts the comparison status and decision table first, but it remains deferred until there is a licensed comparison basis.
 
 Draft status: Deferred commercial-font comparison. PragmataPro needs edition-by-edition license/trial review before this post can use measured data or rendered specimens.
 
-## Quick comparison
+## Decision table
 
-| Category | MonoLisa | PragmataPro |
-| --- | --- | --- |
-| Pricing | Paid, with trial/customizer | Paid; trial/testing availability needs verification |
-| Coding ligatures | Yes | Yes in full versions; verify by edition |
-| Italics | Yes | Yes |
-| Language coverage | 593 publishable languages measured | Needs licensed-font measurement |
-| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Needs licensed-font measurement |
-| Weights included | 10 named weights in Code upright and italic variable files | Needs verification by edition |
-| Variable font | Yes | Needs verification |
-| Variable axes | `wght`, `GRAD` measured | Needs verification by edition |
-| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | Needs verification |
-| Character variants | Yes; `cv01`-`cv12` measured | Needs verification |
-| Proportional counterpart | Yes, MonoLisa Text | PragmataPro / PragmataPro Mono variants |
-| Terminal symbols | Powerline, box drawing, and block elements measured | Needs licensed-font measurement |
+| Category | Better fit | MonoLisa Code | PragmataPro |
+| --- | --- | --- | --- |
+| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | Deferred | 593 | Needs licensed-font measurement |
+| **Writing systems** | Deferred | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | Needs licensed-font measurement |
+| **Italics** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Weights** | Deferred | 10 | Needs verification by edition |
+| **Variable axes** | Deferred | 2 (`wght`, `GRAD`) | Needs verification by edition |
+| **Style control** | Deferred | 15 stylistic sets, 12 character variants | Needs verification |
+| **Coding ligatures** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Yes in full versions; verify by edition |
+| **Terminal symbols** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs licensed-font measurement |
+| **Proportional counterpart** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | PragmataPro / PragmataPro Mono variants |
+| **Price** | Deferred | Paid, including free trial and customizer | Paid; trial/testing availability needs verification |
+| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [PragmataPro page](https://fsd.it/shop/fonts/pragmatapro/) |
 
-## Design intent and reading comfort
+In short: this comparison should stay unpublished until the licensing, source, and specimen basis is clear.
+
+## Reading texture
 
 Deferred until a licensed comparison basis exists.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
-
 ## Language and script coverage
 
 Deferred until a licensed font file, trial file, or permitted specimen source is available. Do not publish measured language-count claims for PragmataPro until the exact font file and license basis are recorded.
-
-[Marcus input: Confirm how to phrase coverage differences if this becomes a public-information-only comparison.]
 
 ## Coding features
 

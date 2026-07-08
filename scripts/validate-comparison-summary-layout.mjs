@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 
 const root = process.cwd();
-const svgPath = path.resolve(root, "images/comparison-monolisa-vs-fira-code-summary.svg");
+const imageDir = path.resolve(root, "images");
+const svgPaths = readdirSync(imageDir)
+  .filter((file) => /^comparison-monolisa-vs-.+-summary\.svg$/.test(file))
+  .sort()
+  .map((file) => path.join(imageDir, file));
 const chromiumPath = "/Applications/Chromium.app/Contents/MacOS/Chromium";
 
 function fail(message) {
@@ -14,18 +18,14 @@ function fail(message) {
   process.exit(1);
 }
 
-function escHtml(value) {
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
+if (!svgPaths.length) fail("No comparison summary SVGs found");
 
-const svg = readFileSync(svgPath, "utf8");
-const tempDir = mkdtempSync(path.join(tmpdir(), "comparison-summary-"));
-const htmlPath = path.join(tempDir, "validate.html");
+function validate(svgPath) {
+  const svg = readFileSync(svgPath, "utf8");
+  const tempDir = mkdtempSync(path.join(tmpdir(), "comparison-summary-"));
+  const htmlPath = path.join(tempDir, "validate.html");
 
-const html = `<!doctype html>
+  const html = `<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -141,41 +141,47 @@ const html = `<!doctype html>
   </body>
 </html>`;
 
-writeFileSync(htmlPath, html);
+  writeFileSync(htmlPath, html);
 
-try {
-  const result = spawnSync(
-    chromiumPath,
-    [
-      "--headless",
-      "--disable-gpu",
-      "--no-sandbox",
-      "--dump-dom",
-      `file://${htmlPath}`,
-    ],
-    { encoding: "utf8" },
-  );
+  try {
+    const result = spawnSync(
+      chromiumPath,
+      [
+        "--headless",
+        "--disable-gpu",
+        "--no-sandbox",
+        "--dump-dom",
+        `file://${htmlPath}`,
+      ],
+      { encoding: "utf8" },
+    );
 
-  if (result.status !== 0) {
-    fail(result.stderr || "Chromium layout validation failed");
+    if (result.status !== 0) {
+      fail(result.stderr || "Chromium layout validation failed");
+    }
+
+    const jsonMatch = result.stdout.match(/<body>(.*?)<\/body>/s);
+    if (!jsonMatch) fail("Could not read validation output from Chromium");
+
+    const report = JSON.parse(jsonMatch[1]);
+    if (
+      report.image.naturalWidth !== 1150 ||
+      report.image.naturalHeight !== 1120 ||
+      report.outOfBounds.length ||
+      report.overlaps.length ||
+      report.offCenterLabels.length
+    ) {
+      console.error(path.relative(root, svgPath));
+      console.error(JSON.stringify(report, null, 2));
+      process.exit(1);
+    }
+
+    console.log(`Layout ok: ${path.relative(root, svgPath)} inside ${report.viewport.width}x${report.viewport.height}; image intrinsic ${report.image.naturalWidth}x${report.image.naturalHeight}`);
+  } finally {
+    rmSync(tempDir, { recursive: true, force: true });
   }
+}
 
-  const jsonMatch = result.stdout.match(/<body>(.*?)<\/body>/s);
-  if (!jsonMatch) fail("Could not read validation output from Chromium");
-
-  const report = JSON.parse(jsonMatch[1]);
-  if (
-    report.image.naturalWidth !== 1150 ||
-    report.image.naturalHeight !== 1120 ||
-    report.outOfBounds.length ||
-    report.overlaps.length ||
-    report.offCenterLabels.length
-  ) {
-    console.error(JSON.stringify(report, null, 2));
-    process.exit(1);
-  }
-
-  console.log(`Layout ok: ${report.textCount} text nodes inside ${report.viewport.width}x${report.viewport.height}; image intrinsic ${report.image.naturalWidth}x${report.image.naturalHeight}`);
-} finally {
-  rmSync(tempDir, { recursive: true, force: true });
+for (const svgPath of svgPaths) {
+  validate(svgPath);
 }

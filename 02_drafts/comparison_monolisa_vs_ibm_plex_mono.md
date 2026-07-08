@@ -7,28 +7,33 @@ keywords: ["MonoLisa vs IBM Plex Mono", "IBM Plex Mono alternative", "coding fon
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and IBM Plex Mono are both monospaced fonts, but they optimize for different priorities. This comparison looks at glyph clarity, ligatures, italics, language coverage, terminal support, customization, and licensing.
+MonoLisa and IBM Plex Mono are both monospaced fonts, but they optimize for different priorities. This draft puts the visual summary and the decision table first, so the main differences are visible before the detailed specimens.
 
-## Quick comparison
+![Summary infographic comparing MonoLisa and IBM Plex Mono](/images/comparison-monolisa-vs-ibm-plex-mono-summary.svg)
 
-| Category | MonoLisa | IBM Plex Mono |
-| --- | --- | --- |
-| Pricing | Paid, with trial/customizer | Free and open source |
-| Coding ligatures | Yes | No coding ligatures found in public README |
-| Italics | Yes | Yes |
-| Language coverage | 593 publishable languages measured | 410 publishable languages measured |
-| Writing systems | Latin, Cyrillic, Greek, Hebrew, and Armenian measured | Latin and Cyrillic measured |
-| Weights included | 10 named weights in Code upright and italic variable files | 8 weights with upright/italic in official TTF set |
-| Variable font | Yes | Not recorded in this pass |
-| Variable axes | `wght`, `GRAD` measured | Not recorded in this pass |
-| Stylistic sets | Yes; `ss01`-`ss15` measured, including `ss01` script variant | Yes; `ss01`-`ss09` measured |
-| Character variants | Yes; `cv01`-`cv12` measured | Not recorded in this pass |
-| Proportional counterpart | Yes, MonoLisa Text | IBM Plex Sans / Serif / Sans Condensed |
-| Terminal symbols | Powerline, box drawing, and block elements measured | Box drawing and block elements measured; Powerline not measured in regular build |
+[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
 
-## Design intent and reading comfort
+## Decision table
 
-The code texture specimen has been rendered for review. Marcus should still add the type-design interpretation before publication.
+| Category | Better fit | MonoLisa Code | IBM Plex Mono |
+| --- | --- | --- | --- |
+| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | MonoLisa | 593 | 410 |
+| **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 2 (Latin, Cyrillic) |
+| **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Weights** | MonoLisa | 10 | 8 |
+| **Variable axes** | MonoLisa | 2 (`wght`, `GRAD`) | Not recorded in this pass |
+| **Style control** | MonoLisa | 15 stylistic sets, 12 character variants | 9 stylistic sets recorded |
+| **Coding ligatures** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | No coding ligature set measured |
+| **Terminal symbols** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Box drawing and block elements measured; Powerline not measured in regular build |
+| **Proportional counterpart** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | IBM Plex Sans / Serif / Sans Condensed |
+| **Price** | IBM Plex Mono | Paid, including free trial and customizer | Free and open source |
+| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [IBM Plex GitHub repository](https://github.com/IBM/plex) |
+
+In short: MonoLisa Code wins on measured coverage, coding features, axes, and terminal completeness. IBM Plex Mono wins on price.
+
+## Reading texture
+
+Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
