@@ -65,6 +65,37 @@ function normalizeFragment(svg, prefix, fill) {
   const viewBox = svg.match(/viewBox="([^"]+)"/)?.[1] || "0 0 100 100";
   const [, , width] = viewBox.split(/\s+/).map(Number);
   const baselineY = Number(svg.match(/<use[^>]*\sy="([^"]+)"/)?.[1] || 0);
+  const glyphYBounds = new Map();
+
+  for (const glyphMatch of svg.matchAll(/<g id="([^"]+)">([\s\S]*?)<\/g>/g)) {
+    const [, id, body] = glyphMatch;
+    let minY = Infinity;
+    let maxY = -Infinity;
+
+    for (const pathMatch of body.matchAll(/<path[^>]*\sd="([^"]+)"/g)) {
+      const values = pathMatch[1].match(/-?\d+(?:\.\d+)?/g)?.map(Number) ?? [];
+      for (let index = 1; index < values.length; index += 2) {
+        minY = Math.min(minY, values[index]);
+        maxY = Math.max(maxY, values[index]);
+      }
+    }
+
+    if (Number.isFinite(minY) && Number.isFinite(maxY)) {
+      glyphYBounds.set(id, { minY, maxY });
+    }
+  }
+
+  let inkMinY = Infinity;
+  let inkMaxY = -Infinity;
+  for (const useMatch of svg.matchAll(/<use[^>]*(?:xlink:href|href)="#([^"]+)"[^>]*\sy="([^"]+)"/g)) {
+    const [, id, y] = useMatch;
+    const bounds = glyphYBounds.get(id);
+    if (!bounds) continue;
+    const useY = Number(y);
+    inkMinY = Math.min(inkMinY, useY + bounds.minY);
+    inkMaxY = Math.max(inkMaxY, useY + bounds.maxY);
+  }
+
   let inner = svg
     .replace(/<\?xml[^>]*>\s*/g, "")
     .replace(/<svg[^>]*>/, "")
@@ -79,7 +110,11 @@ function normalizeFragment(svg, prefix, fill) {
     .replace(/fill-opacity="1"/g, "")
     .replace(/fill="rgb\(100%, 100%, 100%\)"/g, 'fill="none"');
 
-  return { advanceWidth: Math.max(0, width - 32), baselineY, inner };
+  const inkCenterY = Number.isFinite(inkMinY) && Number.isFinite(inkMaxY)
+    ? (inkMinY + inkMaxY) / 2
+    : baselineY;
+
+  return { advanceWidth: Math.max(0, width - 32), baselineY, inkCenterY, inner };
 }
 
 function renderText(text, x, y, options = {}) {
@@ -87,6 +122,7 @@ function renderText(text, x, y, options = {}) {
   const fill = options.fill ?? "var(--icon-primary, currentColor)";
   const anchor = options.anchor ?? "start";
   const prefix = options.prefix ?? `text-${fontSize}-${String(text).replace(/\W+/g, "-")}`;
+  const className = options.className ? ` class="${esc(options.className)}"` : "";
   const fontPath = options.style === "italic" && monoLisaItalicPath && existsSync(monoLisaItalicPath)
     ? monoLisaItalicPath
     : monoLisaFontPath;
@@ -110,8 +146,12 @@ function renderText(text, x, y, options = {}) {
     anchor === "end" ? fragment.advanceWidth :
     0;
 
+  const translateY = options.centerY == null
+    ? y - fragment.baselineY
+    : options.centerY - fragment.inkCenterY;
+
   return `
-    <g transform="translate(${x - offset - 16} ${y - fragment.baselineY})">
+    <g${className} transform="translate(${x - offset - 16} ${translateY})">
       ${fragment.inner}
     </g>`;
 }
@@ -144,10 +184,12 @@ function chip(label, x, y, options = {}) {
   return `
     <g class="chip-box ${variant}" transform="translate(${x} ${y})">
       <rect width="${width}" height="${height}" rx="${radius}"/>
-      ${renderText(label, width / 2, Math.round(height * 0.68), {
+      ${renderText(label, width / 2, 0, {
         anchor: "middle",
         fontSize,
+        centerY: height / 2,
         fill: "var(--icon-primary, currentColor)",
+        className: "chip-label",
         prefix: `chip-${variant}-${label}`,
       })}
     </g>`;
@@ -185,12 +227,17 @@ function speakerLabel(value) {
 }
 
 function speakerRow({ label, value, width, y, variant = "plain" }) {
+  const height = 46;
+  const fontSize = 30;
+
   return `
     <g transform="translate(0 ${y})">
-      <rect width="${width}" height="46" class="speaker-bar ${variant}"/>
-      ${renderText(`${label}: ${value}`, 24, 30, {
-        fontSize: 30,
+      <rect width="${width}" height="${height}" class="speaker-bar ${variant}"/>
+      ${renderText(`${label}: ${value}`, 24, 0, {
+        fontSize,
+        centerY: height / 2,
         fill: "var(--icon-primary, currentColor)",
+        className: "speaker-label",
         prefix: `speaker-${variant}-${label}`,
       })}
     </g>`;
@@ -199,8 +246,13 @@ function speakerRow({ label, value, width, y, variant = "plain" }) {
 function render() {
   const { left, right } = comparison;
   const fullWidth = 1150;
-  const rightEdge = 1150;
+  const fullHeight = 1120;
+  const footnoteY = 1084;
   const lowerRightColumnX = 640;
+  const lowerBlockY = 700;
+  const writingChipY = 42;
+  const opentypeLabelY = 230;
+  const opentypeChipY = 272;
   const worldSpeakers = 8.3;
   const speakerScale = fullWidth / worldSpeakers;
   const leftSpeakerWidth = Math.round(speakerBillions(left.speakers) * speakerScale);
@@ -226,7 +278,7 @@ function render() {
   };
 
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1150" height="1050" viewBox="0 0 1150 1050" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="title desc">
+<svg width="${fullWidth}" height="${fullHeight}" viewBox="0 0 ${fullWidth} ${fullHeight}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="title desc">
   <title id="title">${esc(comparison.title)} summary infographic</title>
   <desc id="desc">A compact comparative infographic showing measured language counts, script coverage, and OpenType feature signals for MonoLisa Code and Fira Code.</desc>
   <style>
@@ -269,20 +321,19 @@ function render() {
     }
   </style>
 
-  ${text("L A N G U A G E S", 0, 32, {
-    fontSize: 22,
-    fill: "var(--icon-primary, currentColor)",
+  ${text("LANGUAGES", 0, 32, {
+    fontSize: 24,
+    fill: "var(--icon-secondary, currentColor)",
     prefix: "language-section-title",
   })}
 
   <g transform="translate(0 118)">
     ${text(left.shortLabel, 0, 0, {
       fontSize: 54,
-      fill: "var(--icon-primary, currentColor)",
+      fill: "var(--ml-colors-primary, var(--icon-secondary, currentColor))",
       prefix: "language-left-label",
     })}
-    ${text(right.shortLabel, rightEdge, 0, {
-      anchor: "end",
+    ${text(right.shortLabel, lowerRightColumnX, 0, {
       fontSize: 54,
       fill: "var(--icon-primary, currentColor)",
       prefix: "language-right-label",
@@ -292,8 +343,7 @@ function render() {
       fill: "var(--ml-colors-primary, var(--icon-primary, currentColor))",
       prefix: "language-left-value",
     })}
-    ${text(right.languages, rightEdge, 136, {
-      anchor: "end",
+    ${text(right.languages, lowerRightColumnX, 136, {
       fontSize: 136,
       fill: "var(--icon-primary, currentColor)",
       prefix: "language-right-value",
@@ -325,25 +375,25 @@ function render() {
     })}
   </g>
 
-  <g transform="translate(0 665)">
+  <g transform="translate(0 ${lowerBlockY})">
     ${text("WRITING SYSTEMS", 0, 0, {
       fontSize: 24,
       fill: "var(--icon-secondary, currentColor)",
       prefix: "writing-systems-label",
     })}
-    ${chipRow(orderedScripts(left.scripts), 0, 42, 500, strongChipOptions)}
-    ${chipRow(orderedScripts(right.scripts), lowerRightColumnX, 42, 460, plainChipOptions)}
+    ${chipRow(orderedScripts(left.scripts), 0, writingChipY, 500, strongChipOptions)}
+    ${chipRow(orderedScripts(right.scripts), lowerRightColumnX, writingChipY, 460, plainChipOptions)}
 
-    ${text("OPENTYPE FEATURES", 0, 182, {
+    ${text("OPENTYPE FEATURES", 0, opentypeLabelY, {
       fontSize: 24,
       fill: "var(--icon-secondary, currentColor)",
       prefix: "opentype-features-label",
     })}
-    ${chipRow(left.features, 0, 224, 560, strongChipOptions)}
-    ${chipRow(right.features, lowerRightColumnX, 224, 460, plainChipOptions)}
+    ${chipRow(left.features, 0, opentypeChipY, 560, strongChipOptions)}
+    ${chipRow(right.features, lowerRightColumnX, opentypeChipY, 460, plainChipOptions)}
   </g>
 
-  <g transform="translate(0 1012)">
+  <g transform="translate(0 ${footnoteY})">
     <line x1="0" y1="0" x2="${fullWidth}" y2="0" class="rule"/>
     ${text("Language counts: Hyperglot 0.8.1, primary living orthographies, base character support.", 0, 24, {
       fontSize: 16,

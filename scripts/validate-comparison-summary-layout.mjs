@@ -37,7 +37,7 @@ const html = `<!doctype html>
       svg {
         display: block;
         width: 1150px;
-        height: 1050px;
+        height: 1120px;
       }
     </style>
   </head>
@@ -63,6 +63,33 @@ const html = `<!doctype html>
         const x = Math.max(0, Math.min(a.right, b.right) - Math.max(a.x, b.x));
         const y = Math.max(0, Math.min(a.bottom, b.bottom) - Math.max(a.y, b.y));
         return x * y > 8;
+      }
+
+      function relativeBox(el, svgBox) {
+        const box = el.getBoundingClientRect();
+        return {
+          x: box.x - svgBox.x,
+          y: box.y - svgBox.y,
+          width: box.width,
+          height: box.height,
+          right: box.right - svgBox.x,
+          bottom: box.bottom - svgBox.y,
+          centerY: box.y - svgBox.y + box.height / 2
+        };
+      }
+
+      function measuredLabel(label, svgBox) {
+        const chip = label.closest(".chip-box");
+        const rect = chip ? chip.querySelector(":scope > rect") : label.previousElementSibling;
+        const labelBox = relativeBox(label, svgBox);
+        const rectBox = relativeBox(rect, svgBox);
+        return {
+          kind: label.classList.contains("chip-label") ? "chip" : "speaker",
+          label: label.id || label.getAttribute("data-label") || "",
+          deltaY: Number((labelBox.centerY - rectBox.centerY).toFixed(2)),
+          labelBox,
+          rectBox
+        };
       }
 
       window.addEventListener("load", () => {
@@ -91,10 +118,16 @@ const html = `<!doctype html>
           }
         }
 
+        const verticalLabels = [...document.querySelectorAll(".speaker-label, .chip-label")]
+          .map((label) => measuredLabel(label, svgBox));
+        const offCenterLabels = verticalLabels.filter((item) => Math.abs(item.deltaY) > 1.5);
+
         document.body.textContent = JSON.stringify({
           textCount: texts.length,
           outOfBounds,
           overlaps,
+          verticalLabels,
+          offCenterLabels,
           image: {
             naturalWidth: image.naturalWidth,
             naturalHeight: image.naturalHeight,
@@ -133,9 +166,10 @@ try {
   const report = JSON.parse(jsonMatch[1]);
   if (
     report.image.naturalWidth !== 1150 ||
-    report.image.naturalHeight !== 1050 ||
+    report.image.naturalHeight !== 1120 ||
     report.outOfBounds.length ||
-    report.overlaps.length
+    report.overlaps.length ||
+    report.offCenterLabels.length
   ) {
     console.error(JSON.stringify(report, null, 2));
     process.exit(1);
