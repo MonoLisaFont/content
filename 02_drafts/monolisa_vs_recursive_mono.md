@@ -37,7 +37,10 @@ Use this specimen to judge rhythm, spacing, punctuation weight, and identifier t
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
-![Rendered SVG comparing MonoLisa and Recursive Mono code texture](/images/comparison-monolisa-vs-recursive-mono-texture.svg)
+<picture>
+  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-recursive-mono-texture-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-recursive-mono-texture.svg" alt="Rendered SVG comparing MonoLisa and Recursive Mono code texture" width="100%" />
+</picture>
 
 ## Language and script coverage
 
@@ -51,7 +54,10 @@ Recursive Mono is most interesting as a variable type system with mono/sans, cas
 
 Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. Recursive Mono exposes `calt` and `rclt`; no standard coding ligature set measured in static Rec Mono Linear.
 
-![Rendered SVG comparing MonoLisa and Recursive Mono operator and ligature behavior](/images/comparison-monolisa-vs-recursive-mono-ligatures.svg)
+<picture>
+  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-recursive-mono-ligatures-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-recursive-mono-ligatures.svg" alt="Rendered SVG comparing MonoLisa and Recursive Mono operator and ligature behavior" width="100%" />
+</picture>
 
 ## Glyph distinction
 
@@ -59,7 +65,10 @@ The shared ambiguity specimen has been rendered for review. Use it to compare co
 
 [Marcus input: Add notes for intentional MonoLisa tradeoffs.]
 
-![Rendered SVG comparing MonoLisa and Recursive Mono ambiguous glyph shapes](/images/comparison-monolisa-vs-recursive-mono-glyphs.svg)
+<picture>
+  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-recursive-mono-glyphs-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-recursive-mono-glyphs.svg" alt="Rendered SVG comparing MonoLisa and Recursive Mono ambiguous glyph shapes" width="100%" />
+</picture>
 
 ## Italics and style range
 
@@ -67,7 +76,10 @@ The italic/style specimen has been rendered for review. Confirm whether the comp
 
 MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The static Rec Mono Linear files measured here include 2 weights, Regular and Bold, each with upright and italic styles; the Recursive v1.085 variable font spans 8 named mono weights from Light through ExtraBlack.
 
-![Rendered SVG comparing MonoLisa and Recursive Mono italic and style samples](/images/comparison-monolisa-vs-recursive-mono-italics.svg)
+<picture>
+  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-recursive-mono-italics-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-recursive-mono-italics.svg" alt="Rendered SVG comparing MonoLisa and Recursive Mono italic and style samples" width="100%" />
+</picture>
 
 ## Terminal and console support
 
@@ -75,7 +87,10 @@ The static Rec Mono Linear file measured at Powerline 6/6, box drawing 0/128, an
 
 For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
 
-![Rendered SVG comparing MonoLisa and Recursive Mono terminal symbols and box drawing](/images/comparison-monolisa-vs-recursive-mono-terminal.svg)
+<picture>
+  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-recursive-mono-terminal-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-recursive-mono-terminal.svg" alt="Rendered SVG comparing MonoLisa and Recursive Mono terminal symbols and box drawing" width="100%" />
+</picture>
 
 ## Licensing and availability
 

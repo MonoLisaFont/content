@@ -37,7 +37,10 @@ Use this specimen to judge rhythm, spacing, punctuation weight, and identifier t
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
-![Rendered SVG comparing MonoLisa and Cascadia Code code texture](/images/comparison-monolisa-vs-cascadia-code-texture.svg)
+<picture>
+  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-cascadia-code-texture-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-cascadia-code-texture.svg" alt="Rendered SVG comparing MonoLisa and Cascadia Code code texture" width="100%" />
+</picture>
 
 ## Language and script coverage
 
@@ -51,7 +54,10 @@ Cascadia Code includes coding ligature behavior and contextual features. The mea
 
 Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. Cascadia Code exposes `calt`, `rclt`, `rlig`, `zero`, `ss02`, `ss19`, and `ss20`.
 
-![Rendered SVG comparing MonoLisa and Cascadia Code operator and ligature behavior](/images/comparison-monolisa-vs-cascadia-code-ligatures.svg)
+<picture>
+  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-cascadia-code-ligatures-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-cascadia-code-ligatures.svg" alt="Rendered SVG comparing MonoLisa and Cascadia Code operator and ligature behavior" width="100%" />
+</picture>
 
 ## Glyph distinction
 
@@ -59,7 +65,10 @@ The shared ambiguity specimen has been rendered for review. Use it to compare co
 
 [Marcus input: Add notes for intentional MonoLisa tradeoffs.]
 
-![Rendered SVG comparing MonoLisa and Cascadia Code ambiguous glyph shapes](/images/comparison-monolisa-vs-cascadia-code-glyphs.svg)
+<picture>
+  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-cascadia-code-glyphs-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-cascadia-code-glyphs.svg" alt="Rendered SVG comparing MonoLisa and Cascadia Code ambiguous glyph shapes" width="100%" />
+</picture>
 
 ## Italics and style range
 
@@ -67,7 +76,10 @@ The italic/style specimen has been rendered for review. Confirm whether the comp
 
 MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The Cascadia Code v2407.024 archive includes 6 named weights: ExtraLight, Light, SemiLight, Regular, SemiBold, and Bold; the variable and static upright/italic builds expose that same weight range across the Code/Mono variants.
 
-![Rendered SVG comparing MonoLisa and Cascadia Code italic and style samples](/images/comparison-monolisa-vs-cascadia-code-italics.svg)
+<picture>
+  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-cascadia-code-italics-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-cascadia-code-italics.svg" alt="Rendered SVG comparing MonoLisa and Cascadia Code italic and style samples" width="100%" />
+</picture>
 
 ## Terminal and console support
 
@@ -75,7 +87,10 @@ The measured standard Cascadia Code build has Powerline 0/6, box drawing 128/128
 
 For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
 
-![Rendered SVG comparing MonoLisa and Cascadia Code terminal symbols and box drawing](/images/comparison-monolisa-vs-cascadia-code-terminal.svg)
+<picture>
+  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-cascadia-code-terminal-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-cascadia-code-terminal.svg" alt="Rendered SVG comparing MonoLisa and Cascadia Code terminal symbols and box drawing" width="100%" />
+</picture>
 
 ## Licensing and availability
 

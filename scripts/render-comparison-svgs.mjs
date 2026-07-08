@@ -358,9 +358,10 @@ function esc(value) {
     .replace(/"/g, "&quot;");
 }
 
-function renderSample(competitorKey, sampleKey, sample) {
+function renderSample(competitorKey, sampleKey, sample, options = {}) {
   const competitor = config.fonts[competitorKey];
   if (!competitor) throw new Error(`Unknown comparison font: ${competitorKey}`);
+  const stacked = options.layout === "stacked";
 
   const marginX = 0;
   const marginY = sample.marginY ?? 52;
@@ -388,6 +389,7 @@ function renderSample(competitorKey, sampleKey, sample) {
   const targetLineWidth = sampleLayout.targetLineWidth;
   const gutter = sampleLayout.gutter;
   const columnCount = fonts.length;
+  const visibleColumnCount = stacked ? 1 : columnCount;
   const scale = Math.min(
     1,
     targetLineWidth / Math.max(...renderedLines.map(({ line }) => line.width)),
@@ -399,19 +401,24 @@ function renderSample(competitorKey, sampleKey, sample) {
     lineOffsets.push(lineCursor);
     lineCursor += line === "" ? lineStep * (sample.blankLineScale ?? 1) : lineStep;
   }
-  const width = marginX * 2 + colWidth * columnCount + gutter * (columnCount - 1);
-  const height = Math.ceil(marginY + labelHeight + lineCursor + bottomPadding);
+  const columnGapY = stacked ? 56 : 0;
+  const blockHeight = labelHeight + lineCursor;
+  const width = marginX * 2 + colWidth * visibleColumnCount + gutter * (visibleColumnCount - 1);
+  const height = stacked
+    ? Math.ceil(marginY + blockHeight * columnCount + columnGapY * (columnCount - 1) + bottomPadding)
+    : Math.ceil(marginY + blockHeight + bottomPadding);
 
   for (const [columnIndex, font] of fonts.entries()) {
-    const x = marginX + columnIndex * (colWidth + gutter);
-    fragments.push(renderLabel(font.label, x, marginY, `${competitorKey}-${sampleKey}-${columnIndex}-label`));
+    const x = stacked ? marginX : marginX + columnIndex * (colWidth + gutter);
+    const yStart = stacked ? marginY + columnIndex * (blockHeight + columnGapY) : marginY;
+    fragments.push(renderLabel(font.label, x, yStart, `${competitorKey}-${sampleKey}-${columnIndex}-label`));
 
     renderedLines
       .filter((renderedLine) => renderedLine.columnIndex === columnIndex)
       .forEach(({ lineIndex, line }) => {
       if (line.tokens.length === 0) return;
 
-      const y = marginY + labelHeight + lineOffsets[lineIndex];
+      const y = yStart + labelHeight + lineOffsets[lineIndex];
       const tokenFragments = line.tokens
         .map(({ x: tokenX, fragment }) => `
           <g transform="translate(${tokenX - 16}, 0)">
@@ -440,7 +447,10 @@ function renderSample(competitorKey, sampleKey, sample) {
 </svg>
 `;
 
-  const outputPath = path.join(outputDir, `comparison-monolisa-vs-${competitorKey}-${sampleKey}.svg`);
+  const outputPath = path.join(
+    outputDir,
+    `comparison-monolisa-vs-${competitorKey}-${sampleKey}${stacked ? "-mobile" : ""}.svg`,
+  );
   writeFileSync(outputPath, svg);
   return outputPath;
 }
@@ -459,6 +469,8 @@ for (const competitorKey of comparisons) {
     try {
       const outputPath = renderSample(competitorKey, sampleKey, sample);
       console.log(path.relative(root, outputPath));
+      const mobileOutputPath = renderSample(competitorKey, sampleKey, sample, { layout: "stacked" });
+      console.log(path.relative(root, mobileOutputPath));
       rendered += 1;
     } catch (error) {
       console.warn(`Skipped ${competitorKey}/${sampleKey}: ${error.message}`);
