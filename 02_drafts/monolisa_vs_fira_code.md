@@ -44,7 +44,7 @@ Use this specimen to judge rhythm, spacing, punctuation weight, and identifier t
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-fira-code-texture-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-fira-code-texture-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-fira-code-texture.svg" alt="Rendered SVG comparing MonoLisa and Fira Code code texture" width="100%" />
 </picture>
 
@@ -57,7 +57,7 @@ Measured with Hyperglot 0.8.1 using primary living orthographies and base charac
 Both fonts support coding ligatures. MonoLisa Code exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`; Fira Code exposes `calt`, `zero`, `ss01`-`ss10`, and `cv01`-`cv32`.
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-fira-code-ligatures-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-fira-code-ligatures-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-fira-code-ligatures.svg" alt="Rendered SVG comparing MonoLisa and Fira Code operator and ligature behavior" width="100%" />
 </picture>
 
@@ -73,7 +73,7 @@ Both fonts support coding ligatures. MonoLisa Code exposes `liga`, `dlig`, `calt
 [Marcus input: Add notes for intentional MonoLisa tradeoffs.]
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-fira-code-glyphs-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-fira-code-glyphs-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-fira-code-glyphs.svg" alt="Rendered SVG comparing MonoLisa and Fira Code ambiguous glyph shapes" width="100%" />
 </picture>
 
@@ -84,7 +84,7 @@ MonoLisa Code includes variable upright and italic files with 10 named weights.
 Fira Code has no italics; its variable TTF exposes 5 named upright weights from Light through Bold.
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-fira-code-italics-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-fira-code-italics-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-fira-code-italics.svg" alt="Rendered SVG showing MonoLisa Code italic and style samples" width="100%" />
 </picture>
 
@@ -93,7 +93,7 @@ Fira Code has no italics; its variable TTF exposes 5 named upright weights from 
 Both measured well here: Powerline 6/6, box drawing 128/128, block elements 32/32, and internally aligned vertical metrics.
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-fira-code-terminal-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-fira-code-terminal-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-fira-code-terminal.svg" alt="Rendered SVG comparing MonoLisa and Fira Code terminal symbols and box drawing" width="100%" />
 </picture>
 

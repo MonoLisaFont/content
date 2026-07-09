@@ -38,7 +38,7 @@ Use this specimen to judge rhythm, spacing, punctuation weight, and identifier t
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph. Name the actual form or spacing choice.]
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-jetbrains-mono-texture-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-texture-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-jetbrains-mono-texture.svg" alt="Rendered SVG comparing MonoLisa and JetBrains Mono code texture" width="100%" />
 </picture>
 
@@ -55,7 +55,7 @@ Both fonts expose coding ligature support through OpenType features. MonoLisa ha
 Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. JetBrains Mono exposes `calt`, `zero`, `ss01`, `ss02`, `ss19`, `ss20`, `cv01`-`cv12`, `cv14`-`cv20`, and `cv99`.
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-jetbrains-mono-ligatures-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-ligatures-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-jetbrains-mono-ligatures.svg" alt="Rendered SVG comparing MonoLisa and JetBrains Mono operator and ligature behavior" width="100%" />
 </picture>
 
@@ -66,7 +66,7 @@ The shared ambiguity specimen has been rendered for review. Use it to compare co
 [Marcus input: Add notes for intentional MonoLisa tradeoffs.]
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-jetbrains-mono-glyphs-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-glyphs-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-jetbrains-mono-glyphs.svg" alt="Rendered SVG comparing MonoLisa and JetBrains Mono ambiguous glyph shapes" width="100%" />
 </picture>
 
@@ -77,7 +77,7 @@ The italic/style specimen has been rendered for review. Confirm whether the comp
 MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The JetBrains Mono v2.304 archive includes 8 static weights from Thin through ExtraBold in upright and italic, plus variable upright and italic files exposing the same 8 named weights.
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-jetbrains-mono-italics-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-italics-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-jetbrains-mono-italics.svg" alt="Rendered SVG comparing MonoLisa and JetBrains Mono italic and style samples" width="100%" />
 </picture>
 
@@ -88,7 +88,7 @@ JetBrains Mono measured at Powerline 6/6, box drawing 128/128, and block element
 For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-jetbrains-mono-terminal-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-terminal-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-jetbrains-mono-terminal.svg" alt="Rendered SVG comparing MonoLisa and JetBrains Mono terminal symbols and box drawing" width="100%" />
 </picture>
 

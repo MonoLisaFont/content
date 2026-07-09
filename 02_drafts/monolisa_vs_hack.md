@@ -38,7 +38,7 @@ Use this specimen to judge rhythm, spacing, punctuation weight, and identifier t
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-hack-texture-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-texture-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-hack-texture.svg" alt="Rendered SVG comparing MonoLisa and Hack code texture" width="100%" />
 </picture>
 
@@ -55,7 +55,7 @@ Hack is a useful no-frills baseline because no coding ligature feature set was m
 Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. Hack exposes `aalt`, `frac`, `locl`, `ordn`, `sinf`, `subs`, and `sups`; no coding ligature feature set measured.
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-hack-ligatures-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-ligatures-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-hack-ligatures.svg" alt="Rendered SVG comparing MonoLisa and Hack operator and ligature behavior" width="100%" />
 </picture>
 
@@ -66,7 +66,7 @@ The shared ambiguity specimen has been rendered for review. Use it to compare co
 [Marcus input: Add notes for intentional MonoLisa tradeoffs.]
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-hack-glyphs-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-glyphs-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-hack-glyphs.svg" alt="Rendered SVG comparing MonoLisa and Hack ambiguous glyph shapes" width="100%" />
 </picture>
 
@@ -77,7 +77,7 @@ The italic/style specimen has been rendered for review. Confirm whether the comp
 MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The Hack v3.003 TTF archive includes 2 weights, Regular and Bold, each with upright and italic styles.
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-hack-italics-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-italics-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-hack-italics.svg" alt="Rendered SVG comparing MonoLisa and Hack italic and style samples" width="100%" />
 </picture>
 
@@ -88,7 +88,7 @@ Hack measured at Powerline 6/6, box drawing 128/128, and block elements 32/32. I
 For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-hack-terminal-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-terminal-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-hack-terminal.svg" alt="Rendered SVG comparing MonoLisa and Hack terminal symbols and box drawing" width="100%" />
 </picture>
 

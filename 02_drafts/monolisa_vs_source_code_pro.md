@@ -38,7 +38,7 @@ Use this specimen to judge rhythm, spacing, punctuation weight, and identifier t
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-source-code-pro-texture-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-source-code-pro-texture-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-source-code-pro-texture.svg" alt="Rendered SVG comparing MonoLisa and Source Code Pro code texture" width="100%" />
 </picture>
 
@@ -55,7 +55,7 @@ Source Code Pro has a broad OpenType feature surface for alternates, numerals, a
 Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. Source Code Pro exposes `zero`, `ss01`-`ss07`, and selected `cvXX` features; no coding ligature feature set measured.
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-source-code-pro-ligatures-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-source-code-pro-ligatures-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-source-code-pro-ligatures.svg" alt="Rendered SVG comparing MonoLisa and Source Code Pro operator and ligature behavior" width="100%" />
 </picture>
 
@@ -66,7 +66,7 @@ The shared ambiguity specimen has been rendered for review. Use it to compare co
 [Marcus input: Add notes for intentional MonoLisa tradeoffs.]
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-source-code-pro-glyphs-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-source-code-pro-glyphs-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-source-code-pro-glyphs.svg" alt="Rendered SVG comparing MonoLisa and Source Code Pro ambiguous glyph shapes" width="100%" />
 </picture>
 
@@ -77,7 +77,7 @@ The italic/style specimen has been rendered for review. Confirm whether the comp
 MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The Source Code Pro v2.042 archive includes 7 static weights: ExtraLight, Light, Regular, Medium, Semibold, Bold, and Black, each with upright and italic styles.
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-source-code-pro-italics-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-source-code-pro-italics-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-source-code-pro-italics.svg" alt="Rendered SVG comparing MonoLisa and Source Code Pro italic and style samples" width="100%" />
 </picture>
 
@@ -88,7 +88,7 @@ Source Code Pro measured at Powerline 6/6, box drawing 128/128, and block elemen
 For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
 
 <picture>
-  <source media="(max-width: 640px)" srcset="/images/comparison-monolisa-vs-source-code-pro-terminal-mobile.svg" />
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-source-code-pro-terminal-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-source-code-pro-terminal.svg" alt="Rendered SVG comparing MonoLisa and Source Code Pro terminal symbols and box drawing" width="100%" />
 </picture>
 
