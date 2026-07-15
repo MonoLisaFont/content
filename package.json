@@ -1,0 +1,12 @@
+{
+  "name": "@monolisa/content",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "publish:content": "node scripts/publish-content-to-blob.mjs"
+  },
+  "dependencies": {
+    "@vercel/blob": "2.6.1",
+    "dotenv": "17.4.2"
+  }
+}
