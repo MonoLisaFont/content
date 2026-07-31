@@ -45,11 +45,8 @@ const comparisons = [
 
 const monoLisa = {
   label: "MonoLisa Code",
-  languages:
-    coverage.fonts.monolisa.publicationTotalLanguages ?? coverage.fonts.monolisa.totalLanguages,
-  writingSystems: Object.keys(
-    coverage.fonts.monolisa.publicationScripts ?? coverage.fonts.monolisa.scripts,
-  ),
+  languages: coverage.fonts.monolisa.totalLanguages,
+  writingSystems: Object.keys(coverage.fonts.monolisa.scripts),
   axes: "wght + GRAD",
   italics: "Yes",
   ligatures: "Yes",

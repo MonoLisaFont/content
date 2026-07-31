@@ -31,7 +31,11 @@ const options = [
 const results = {
   generated: new Date().toISOString().slice(0, 10),
   tool: "Hyperglot 0.8.1",
+  command:
+    ".venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>",
   methodology: "Primary orthographies, living languages, base character support, shaping disabled.",
+  languageListMethodology:
+    "For each font, the recorded command is run and language names are parsed from Hyperglot's supported-language summary, then grouped by script. Entries represent orthography-script matches, so a language can appear under more than one script.",
   options,
   fonts: {},
 };
@@ -62,10 +66,7 @@ for (const [key, font] of Object.entries(config.fonts || {})) {
     continue;
   }
 
-  results.fonts[key] = applyPublicationAdjustments(
-    key,
-    parseSummary(font.label || key, regularPath, result.stdout),
-  );
+  results.fonts[key] = parseSummary(font.label || key, regularPath, result.stdout);
 }
 
 mkdirSync(path.dirname(path.resolve(root, outputPath)), { recursive: true });
@@ -77,19 +78,30 @@ for (const [key, item] of Object.entries(results.fonts)) {
     console.log(`${key}: skipped (${item.reason})`);
     continue;
   }
-  const totalLanguages = item.publicationTotalLanguages || item.totalLanguages;
-  const scripts = Object.entries(item.publicationScripts || item.scripts)
+  const totalLanguages = item.totalLanguages;
+  const scripts = Object.entries(item.scripts)
     .map(([script, count]) => `${script} ${count}`)
     .join(", ");
-  const note = item.publicationNotes ? " (publication-adjusted)" : "";
-  console.log(`${key}: ${totalLanguages} languages; ${scripts}${note}`);
+  console.log(`${key}: ${totalLanguages} languages; ${scripts}`);
 }
 
 function parseSummary(label, fontPath, stdout) {
   const scripts = {};
-  const scriptPattern = /(\d+) languages? of ([^\n]+?) script:/g;
+  const languagesByScript = {};
+  const scriptPattern = /(\d+) languages? of ([^\n]+?) script:\n-+\n([^\n]+)/g;
   for (const match of stdout.matchAll(scriptPattern)) {
-    scripts[match[2].trim()] = Number(match[1]);
+    const count = Number(match[1]);
+    const script = match[2].trim();
+    const languages = match[3].split(", ").map((language) => language.trim());
+
+    if (languages.length !== count) {
+      fail(
+        `Hyperglot listed ${languages.length} ${script} languages for ${label}, expected ${count}`,
+      );
+    }
+
+    scripts[script] = count;
+    languagesByScript[script] = languages;
   }
 
   const totalMatch = stdout.match(/(\d+) languages supported in total\./);
@@ -101,26 +113,7 @@ function parseSummary(label, fontPath, stdout) {
     totalLanguages: totalMatch ? Number(totalMatch[1]) : null,
     totalSpeakers: speakersMatch ? speakersMatch[1] : null,
     scripts,
-  };
-}
-
-function applyPublicationAdjustments(key, summary) {
-  if (key !== "monolisa") return summary;
-
-  return {
-    ...summary,
-    publicationTotalLanguages: 593,
-    publicationScripts: {
-      Latin: 496,
-      Cyrillic: 88,
-      Hebrew: 5,
-      Greek: 2,
-      Armenian: 2,
-    },
-    publicationNotes: [
-      "Hyperglot reports 593 languages including 2 Armenian orthographies from base character coverage.",
-      "MonoLisa has full Armenian support.",
-    ],
+    languagesByScript,
   };
 }
 
