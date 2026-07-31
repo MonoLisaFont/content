@@ -14,23 +14,24 @@ const COLLECTIONS = new Map([
   ["02_drafts", "drafts"],
   ["03_posts", "posts"],
 ]);
+const STANDALONE_FILES = new Map([["faq.md", "faq.md"]]);
 const CACHE_MAX_AGE = 60;
 
 function usage() {
-  return `Publish MonoLisa drafts and posts to Vercel Blob.
+  return `Publish MonoLisa drafts, posts, and FAQ to Vercel Blob.
 
 Usage:
   npm run publish:content -- --all
-  npm run publish:content -- 02_drafts/my-post.md 03_posts/another-post.md
+  npm run publish:content -- 02_drafts/my-post.md 03_posts/another-post.md faq.md
   npm run publish:content -- 02_drafts
 
 Options:
-  --all      Publish every Markdown file in 02_drafts and 03_posts
+  --all      Publish every draft and post plus faq.md
   --dry-run  Show what would be published without contacting Vercel
   --help     Show this help
 
 Objects use deterministic paths such as drafts/my-post.md and
-posts/another-post.md. Existing objects are overwritten.`;
+posts/another-post.md; the FAQ is stored as faq.md. Existing objects are overwritten.`;
 }
 
 function parseArgs(argv) {
@@ -61,12 +62,15 @@ function repositoryPath(path) {
 
 function blobPathFor(path) {
   const localPath = repositoryPath(path);
+  const standaloneBlobPath = STANDALONE_FILES.get(localPath);
+  if (standaloneBlobPath) return standaloneBlobPath;
+
   const [directory, ...rest] = localPath.split("/");
   const prefix = COLLECTIONS.get(directory);
 
   if (!prefix || rest.length !== 1 || extname(rest[0]) !== ".md") {
     throw new Error(
-      `${localPath} must be a Markdown file directly inside 02_drafts or 03_posts`,
+      `${localPath} must be faq.md or a Markdown file directly inside 02_drafts or 03_posts`,
     );
   }
   return `${prefix}/${rest[0]}`;
@@ -114,6 +118,7 @@ async function collectFiles(options) {
     for (const directory of COLLECTIONS.keys()) {
       paths.push(...(await markdownFilesIn(directory)));
     }
+    for (const file of STANDALONE_FILES.keys()) paths.push(resolve(root, file));
   }
   for (const input of options.inputs) paths.push(...(await filesForInput(input)));
 

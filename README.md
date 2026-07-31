@@ -45,7 +45,7 @@ For simple posts, only heading level 2 should be used as in the sample. A good l
 
 Most of the edits can be done directly through GitHub user interface on web. It may be possible images may have to be added through Git repository, though.
 
-## Publishing drafts and posts to Vercel Blob
+## Publishing drafts, posts, and FAQ to Vercel Blob
 
 Install dependencies once with `npm install`, then add the Blob credentials to
 the ignored `.env.private` file:
@@ -54,7 +54,7 @@ the ignored `.env.private` file:
 BLOB_READ_WRITE_TOKEN=...
 ```
 
-Publish every draft and post with:
+Publish every draft, post, and the FAQ with:
 
 ```bash
 npm run publish:content -- --all
@@ -67,10 +67,11 @@ directories instead:
 npm run publish:content -- 02_drafts/my-draft.md
 npm run publish:content -- 03_posts/my-post.md
 npm run publish:content -- 02_drafts
+npm run publish:content -- faq.md
 ```
 
 Drafts are stored at `drafts/<filename>` and published posts at
-`posts/<filename>`. These are stable public URLs; an update can take up to a
+`posts/<filename>`. The FAQ is stored at `faq.md`. These are stable public URLs; an update can take up to a
 minute to propagate through Vercel Blob's cache. Use `--dry-run` to inspect a
 sync without uploading anything.
 
