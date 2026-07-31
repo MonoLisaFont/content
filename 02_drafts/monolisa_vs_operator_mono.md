@@ -13,18 +13,18 @@ Draft status: Deferred commercial-font comparison. Operator Mono needs a license
 
 ## Decision table
 
-| Category | Better fit | MonoLisa Code | Operator Mono |
+| Category | Better&nbsp;fit | MonoLisa Code | Operator Mono |
 | --- | --- | --- | --- |
-| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | Deferred | 593 | Needs licensed-font measurement |
+| **Languages\*** | Deferred | 593 | Needs licensed-font measurement |
 | **Writing systems** | Deferred | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | Needs licensed-font measurement |
 | **Italics** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Weights** | Deferred | 10 | Needs verification |
+| **Fixed weights** | Deferred | 10 | Needs verification |
 | **Variable axes** | Deferred | 2 (`wght`, `GRAD`) | Needs verification |
 | **Style control** | Deferred | 15 stylistic sets, 12 character variants | Needs verification |
 | **Coding ligatures** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs verification |
 | **Terminal symbols** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs licensed-font measurement |
 | **Proportional counterpart** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Operator family |
-| **Price** | Deferred | Paid, including free trial and customizer | Paid; trial availability needs verification |
+| **Price** | Deferred | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; trial availability needs verification |
 | **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Operator Mono page](https://www.typography.com/fonts/operator/styles/) |
 
 In short: this comparison should stay unpublished until the licensing, source, and specimen basis is clear.
@@ -34,10 +34,6 @@ In short: this comparison should stay unpublished until the licensing, source, a
 Deferred until a licensed comparison basis exists.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
-
-## Language and script coverage
-
-Deferred until a licensed font file, trial file, or permitted specimen source is available. Do not publish measured language-count claims for Operator Mono until the exact font file and license basis are recorded.
 
 ## Coding features
 
@@ -68,10 +64,6 @@ Deferred commercial-font comparison. Operator Mono needs a license/trial review 
 - [MonoLisa](https://www.monolisa.dev/)
 - [Operator Mono page](https://www.typography.com/fonts/operator/styles/)
 
-## Measurement notes
-
-No local measurements are available for Operator Mono yet. Before publication, record the exact font version, license/trial basis, and whether public rendered specimens are allowed. MonoLisa and free-font measurements elsewhere in this series use fonttools, Hyperglot 0.8.1, and path-based SVG rendering.
-
 ## Publication checklist
 
 - [ ] Verify license/trial availability.
@@ -83,3 +75,5 @@ No local measurements are available for Operator Mono yet. Before publication, r
 ## Conclusion
 
 Deferred until commercial-font access, license terms, and Marcus review are complete.
+
+> * Languages are measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled. Operator Mono awaits licensed-font measurement.

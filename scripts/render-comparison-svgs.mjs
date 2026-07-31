@@ -56,6 +56,7 @@ const samples = {
     fontSize: 42,
     lineHeight: 64,
     features: "kern=1,liga=1,calt=1",
+    featureProfile: "ligatures",
     syntax: true,
     lines: [
       "a !== b && c <= d || e >= f",
@@ -68,7 +69,7 @@ const samples = {
     fontSize: 42,
     lineHeight: 60,
     marginY: 24,
-    labelHeight: 42,
+    labelHeight: 28,
     blankLineScale: 0.45,
     style: "italic",
     features: "kern=1,liga=1,calt=1",
@@ -103,6 +104,33 @@ const themeFills = {
   primary: "var(--comparison-primary, var(--ml-colors-text, currentColor))",
 };
 
+// Some fonts expose their primary coding ligatures through opt-in features.
+// Keep those choices explicit so specimens show the intended coding feature
+// set without enabling unrelated character-shape preferences for every font.
+const fontFeatureProfiles = {
+  monolisa: {
+    liga: ["dlig=1"],
+  },
+  monaspace: {
+    ligatures: [
+      "ss01=1",
+      "ss02=1",
+      "ss03=1",
+      "ss04=1",
+      "ss05=1",
+      "ss06=1",
+      "ss07=1",
+      "ss08=1",
+      "ss09=1",
+      "ss10=1",
+    ],
+  },
+};
+
+const fontKeys = new Map(
+  Object.entries(config.fonts).map(([key, font]) => [font, key]),
+);
+
 function fail(message) {
   console.error(message);
   process.exitCode = 1;
@@ -116,15 +144,18 @@ function fontPath(font, sample) {
 }
 
 function variations(font, sample) {
+  if (sample.variations) return sample.variations;
   if (sample.style === "italic" && font.italicVariations) return font.italicVariations;
   return font.variations;
 }
 
 function features(font, sample) {
-  if (font === mono && sample.features.includes("liga=1")) {
-    return `${sample.features},dlig=1`;
-  }
-  return sample.features;
+  const profile = fontFeatureProfiles[fontKeys.get(font)] || {};
+  const additions = [
+    ...(sample.features.includes("liga=1") ? profile.liga || [] : []),
+    ...(sample.featureProfile ? profile[sample.featureProfile] || [] : []),
+  ];
+  return [sample.features, ...additions].join(",");
 }
 
 function renderLine(font, sample, line, prefix, fill = themeFills.primary) {
@@ -332,20 +363,21 @@ function renderCodeLine(font, sample, line, prefix) {
   };
 }
 
-function renderLabel(label, x, y, prefix) {
+function renderLabel(label, x, y, prefix, fontSize) {
   const fragment = renderLine(
     mono,
     {
-      fontSize: 30,
+      fontSize,
       features: "kern=1,liga=1,calt=1",
+      variations: "wght=700",
     },
     label,
     prefix,
-    themeFills.accent,
+    themeFills.primary,
   );
 
   return `
-      <g transform="translate(${x - 16}, ${y - fragment.baselineY})">
+      <g class="specimen-label" transform="translate(${x - 16}, ${y - fragment.baselineY})">
         ${fragment.inner}
       </g>`;
 }
@@ -364,8 +396,8 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   const stacked = options.layout === "stacked";
 
   const marginX = 0;
-  const marginY = sample.marginY ?? 52;
-  const labelHeight = sample.labelHeight ?? 48;
+  const marginY = sample.marginY ?? 32;
+  const labelHeight = sample.labelHeight ?? 28;
   const bottomPadding = sample.bottomPadding ?? 28;
   const fragments = [];
   const renderedLines = [];
@@ -388,6 +420,7 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   const colWidth = sampleLayout.colWidth;
   const targetLineWidth = sampleLayout.targetLineWidth;
   const gutter = sampleLayout.gutter;
+  const labelFontSize = 20 * (colWidth / 560);
   const columnCount = fonts.length;
   const visibleColumnCount = stacked ? 1 : columnCount;
   const scale = Math.min(
@@ -412,7 +445,15 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   for (const [columnIndex, font] of fonts.entries()) {
     const x = stacked ? marginX : marginX + columnIndex * (colWidth + gutter);
     const yStart = stacked ? marginY + columnIndex * (blockHeight + columnGapY) : marginY;
-    fragments.push(renderLabel(font.label, x, yStart, `${competitorKey}-${sampleKey}-${columnIndex}-label`));
+    fragments.push(
+      renderLabel(
+        font.label,
+        x,
+        yStart,
+        `${competitorKey}-${sampleKey}-${columnIndex}-label`,
+        labelFontSize,
+      ),
+    );
 
     renderedLines
       .filter((renderedLine) => renderedLine.columnIndex === columnIndex)
@@ -438,6 +479,9 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="${themeFills.primary}" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>${esc(title)}</title>
   <style>
+    .specimen-label {
+      opacity: 0.62;
+    }
     .rule {
       stroke: ${themeFills.accent};
       stroke-opacity: 0.55;

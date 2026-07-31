@@ -15,18 +15,18 @@ MonoLisa and Cascadia Code are both coding fonts, but they optimize for differen
 
 ## Decision table
 
-| Category | Better fit | MonoLisa Code | Cascadia Code |
+| Category | Better&nbsp;fit | MonoLisa Code | Cascadia Code |
 | --- | --- | --- | --- |
-| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | MonoLisa | 593 | 513 |
+| **Languages\*** | MonoLisa | 593 | 513 |
 | **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 4 (Latin, Cyrillic, Arabic, Greek) |
 | **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Weights** | MonoLisa | 10 | 6 |
+| **Fixed weights** | MonoLisa | 10 | 6 |
 | **Variable axes** | MonoLisa | 2 (`wght`, `GRAD`) | 1 (`wght`) |
 | **Style control** | MonoLisa | 15 stylistic sets, 12 character variants | 3 stylistic sets recorded |
 | **Coding ligatures** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
 | **Terminal symbols** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Box drawing and block elements measured; standard build measured without Powerline |
 | **Proportional counterpart** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart |
-| **Price** | Cascadia Code | Paid, including free trial and customizer | Free and open source |
+| **Price** | Cascadia Code | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Free and open source |
 | **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Cascadia Code GitHub repository](https://github.com/microsoft/cascadia-code) |
 
 In short: MonoLisa Code wins on language coverage, style range, and measured terminal completeness. Cascadia Code wins on price.
@@ -42,12 +42,6 @@ Use this specimen to judge rhythm, spacing, punctuation weight, and identifier t
   <img src="/images/comparison-monolisa-vs-cascadia-code-texture.svg" alt="Rendered SVG comparing MonoLisa and Cascadia Code code texture" width="100%" />
 </picture>
 
-## Language and script coverage
-
-MonoLisa measured at 2105 glyphs and 1784 cmap entries. Cascadia Code measured at 4319 glyphs and 2426 cmap entries.
-
-Language coverage is one of the clearest measured differences in MonoLisa's favor. Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 593 publishable languages across Latin, Cyrillic, Hebrew, Greek, and Armenian. Cascadia Code measured at 513 languages across Latin, Cyrillic, Arabic, and Greek. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included.
-
 ## Coding features
 
 Cascadia Code includes coding ligature behavior and contextual features. The measured standard Cascadia Code build includes `calt`, `rclt`, `rlig`, `zero`, `ss02`, `ss19`, and `ss20`; use a Cascadia PL build if the post needs to evaluate Powerline-specific variants.
@@ -61,14 +55,9 @@ Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01
 
 ## Glyph distinction
 
-The shared ambiguity specimen has been rendered for review. Use it to compare common problem pairs such as `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
+This section should compare common problem pairs such as `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
 
 [Marcus input: Add notes for intentional MonoLisa tradeoffs.]
-
-<picture>
-  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-cascadia-code-glyphs-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-cascadia-code-glyphs.svg" alt="Rendered SVG comparing MonoLisa and Cascadia Code ambiguous glyph shapes" width="100%" />
-</picture>
 
 ## Italics and style range
 
@@ -94,7 +83,7 @@ For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block e
 
 ## Licensing and availability
 
-Cascadia Code is free and open source. MonoLisa is a paid typeface with trial/customizer access. The rendered comparison graphics use path-based SVG output, so the published page does not require readers to have either font installed.
+Cascadia Code is free and open source. MonoLisa is a paid typeface with [free trial access](https://monolisa.dev/buy/trial) and a customizer.
 
 ## Project activity
 
@@ -104,10 +93,6 @@ As of 2026-07-03, the Cascadia Code GitHub repository shows 19 non-draft, non-pr
 
 - [MonoLisa](https://www.monolisa.dev/)
 - [Cascadia Code repository](https://github.com/microsoft/cascadia-code)
-
-## Measurement notes
-
-Measurements in this draft use MonoLisa font files plus competitor font files downloaded from the official repository or release archive, fonttools metadata extraction, Hyperglot 0.8.1 language coverage with primary living orthographies and base characters, and path-based SVG specimens generated by `scripts/render-comparison-svgs.mjs`.
 
 ## Publication checklist
 
@@ -120,3 +105,5 @@ Measurements in this draft use MonoLisa font files plus competitor font files do
 ## Conclusion
 
 Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose Cascadia Code, and which tradeoff matters most.
+
+> * Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.

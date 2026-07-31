@@ -15,18 +15,18 @@ MonoLisa and IBM Plex Mono are both monospaced fonts, but they optimize for diff
 
 ## Decision table
 
-| Category | Better fit | MonoLisa Code | IBM Plex Mono |
+| Category | Better&nbsp;fit | MonoLisa Code | IBM Plex Mono |
 | --- | --- | --- | --- |
-| **Languages ([Hyperglot](https://github.com/rosettatype/hyperglot))** | MonoLisa | 593 | 410 |
+| **Languages\*** | MonoLisa | 593 | 410 |
 | **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 2 (Latin, Cyrillic) |
 | **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Weights** | MonoLisa | 10 | 8 |
+| **Fixed weights** | MonoLisa | 10 | 8 |
 | **Variable axes** | MonoLisa | 2 (`wght`, `GRAD`) | Not recorded in this pass |
 | **Style control** | MonoLisa | 15 stylistic sets, 12 character variants | 9 stylistic sets recorded |
 | **Coding ligatures** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | No coding ligature set measured |
 | **Terminal symbols** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Box drawing and block elements measured; Powerline not measured in regular build |
 | **Proportional counterpart** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | IBM Plex Sans / Serif / Sans Condensed |
-| **Price** | IBM Plex Mono | Paid, including free trial and customizer | Free and open source |
+| **Price** | IBM Plex Mono | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Free and open source |
 | **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [IBM Plex GitHub repository](https://github.com/IBM/plex) |
 
 In short: MonoLisa Code wins on measured coverage, coding features, axes, and terminal completeness. IBM Plex Mono wins on price.
@@ -42,12 +42,6 @@ Use this specimen to judge rhythm, spacing, punctuation weight, and identifier t
   <img src="/images/comparison-monolisa-vs-ibm-plex-mono-texture.svg" alt="Rendered SVG comparing MonoLisa and IBM Plex Mono code texture" width="100%" />
 </picture>
 
-## Language and script coverage
-
-MonoLisa measured at 2105 glyphs and 1784 cmap entries. IBM Plex Mono measured at 1207 glyphs and 1082 cmap entries.
-
-Language and writing-system coverage is one of the clearest measured differences in MonoLisa's favor. Using Hyperglot 0.8.1 with primary orthographies, living languages, base character support, and shaping disabled, MonoLisa measured at 593 publishable languages across Latin, Cyrillic, Hebrew, Greek, and Armenian. IBM Plex Mono measured at 410 languages across Latin and Cyrillic. Treat these as comparable local measurements, not universal language promises: the result depends on the tested font file, orthography settings, and whether auxiliary characters, punctuation, marks, and shaping are included.
-
 ## Coding features
 
 IBM Plex Mono is best treated as part of the broader IBM Plex superfamily rather than as a ligature-heavy coding specialist. The measured file includes stylistic sets and zero handling but no coding ligature feature set.
@@ -61,14 +55,9 @@ Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01
 
 ## Glyph distinction
 
-The shared ambiguity specimen has been rendered for review. Use it to compare common problem pairs such as `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
+This section should compare common problem pairs such as `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
 
 [Marcus input: Add notes for intentional MonoLisa tradeoffs.]
-
-<picture>
-  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-ibm-plex-mono-glyphs-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-ibm-plex-mono-glyphs.svg" alt="Rendered SVG comparing MonoLisa and IBM Plex Mono ambiguous glyph shapes" width="100%" />
-</picture>
 
 ## Italics and style range
 
@@ -94,7 +83,7 @@ For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block e
 
 ## Licensing and availability
 
-IBM Plex Mono is free and open source. MonoLisa is a paid typeface with trial/customizer access. The rendered comparison graphics use path-based SVG output, so the published page does not require readers to have either font installed.
+IBM Plex Mono is free and open source. MonoLisa is a paid typeface with [free trial access](https://monolisa.dev/buy/trial) and a customizer.
 
 ## Project activity
 
@@ -104,10 +93,6 @@ As of 2026-07-03, the IBM Plex Mono GitHub repository shows 69 non-draft, non-pr
 
 - [MonoLisa](https://www.monolisa.dev/)
 - [IBM Plex repository](https://github.com/IBM/plex)
-
-## Measurement notes
-
-Measurements in this draft use MonoLisa font files plus competitor font files downloaded from the official repository or release archive, fonttools metadata extraction, Hyperglot 0.8.1 language coverage with primary living orthographies and base characters, and path-based SVG specimens generated by `scripts/render-comparison-svgs.mjs`.
 
 ## Publication checklist
 
@@ -120,3 +105,5 @@ Measurements in this draft use MonoLisa font files plus competitor font files do
 ## Conclusion
 
 Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose IBM Plex Mono, and which tradeoff matters most.
+
+> * Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.

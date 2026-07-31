@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "publish:content": "node scripts/publish-content-to-blob.mjs"
+    "publish:content": "node scripts/publish-content-to-blob.mjs",
+    "render:social-comparisons": "node scripts/render-comparison-social-cards.mjs"
   },
   "dependencies": {
     "@vercel/blob": "2.6.1",

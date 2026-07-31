@@ -46,12 +46,19 @@ def names(name_id):
     return values
 
 features = set()
+feature_names = {}
 for table_name in ("GSUB", "GPOS"):
     if table_name in font:
         table = font[table_name].table
         if getattr(table, "FeatureList", None):
             for record in table.FeatureList.FeatureRecord:
                 features.add(record.FeatureTag)
+                params = getattr(record.Feature, "FeatureParams", None)
+                ui_name_id = getattr(params, "UINameID", None)
+                if ui_name_id is not None:
+                    feature_name = font["name"].getDebugName(ui_name_id)
+                    if feature_name:
+                        feature_names[record.FeatureTag] = feature_name
 
 cmap = {}
 for table in font["cmap"].tables:
@@ -87,6 +94,7 @@ print(json.dumps({
     "full_name": names(4),
     "version": names(5),
     "features": sorted(features),
+    "feature_names": feature_names,
     "glyph_count": len(font.getGlyphOrder()),
     "cmap_count": len(cmap),
     "metrics": metrics,
