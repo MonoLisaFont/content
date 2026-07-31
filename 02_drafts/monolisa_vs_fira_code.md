@@ -13,11 +13,9 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Fira Code are both coding fonts, but they optimize for different priorities. This variant puts the visual summary and the decision table first, so the main differences are visible before the detailed specimens.
+Both MonoLisa and Fira Code are coding fonts with different priorities. In this comparison, we look at the main differences so you have a better idea of each of their strengths. Consider the infographic below to get the gist of it.
 
 ![Summary infographic comparing MonoLisa and Fira Code](/images/comparison-monolisa-vs-fira-code-summary.svg)
-
-[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
 
 ## Decision table
 
