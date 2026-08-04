@@ -40,6 +40,7 @@ In short: MonoLisa Code wins on coverage and style range. Fira Code wins on pric
 Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
 
 [Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
+MonoLisa’s punctuation elements are angular and stronger in shapes lightly bolder in comparison to Fira’s. We believe this impacts reading speed and the user’s ability to distinguish the particular glyphs.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-fira-code-texture-mobile.svg" />
