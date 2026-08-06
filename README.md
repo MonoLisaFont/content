@@ -60,6 +60,12 @@ Publish every draft, post, and the FAQ with:
 npm run publish:content -- --all
 ```
 
+Images referenced by the selected Markdown files are uploaded before the
+content. Both Markdown image syntax and HTML `img`/`source` elements are
+supported. Image objects keep their repository paths, such as
+`images/example.svg`. Publishing a post or the FAQ stops if a referenced local
+image is missing; draft placeholder images produce warnings instead.
+
 To create or update only selected objects, pass files or one of the content
 directories instead:
 
@@ -68,6 +74,13 @@ npm run publish:content -- 02_drafts/my-draft.md
 npm run publish:content -- 03_posts/my-post.md
 npm run publish:content -- 02_drafts
 npm run publish:content -- faq.md
+```
+
+Images can also be published directly, either individually or as a directory:
+
+```bash
+npm run publish:content -- images/example.svg
+npm run publish:content -- images
 ```
 
 Drafts are stored at `drafts/<filename>` and published posts at
