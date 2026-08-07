@@ -2,13 +2,16 @@
 
 import { readdir, readFile, stat } from "node:fs/promises";
 import { dirname, extname, relative, resolve, sep } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 import { put } from "@vercel/blob";
 import dotenv from "dotenv";
+import {
+  getWebsiteRevalidationConfig,
+  revalidateWebsitePathname,
+} from "./revalidate-website.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-dotenv.config({ path: resolve(root, ".env.private"), quiet: true });
 
 const COLLECTIONS = new Map([
   ["02_drafts", "drafts"],
@@ -39,16 +42,17 @@ Usage:
 
 Options:
   --all      Publish every draft and post plus faq.md
-  --dry-run  Show what would be published without contacting Vercel
+  --dry-run  Show uploads and invalidations without making network requests
   --help     Show this help
 
 Objects use deterministic paths such as drafts/my-post.md,
 posts/another-post.md, and images/example.png; the FAQ is stored as faq.md.
 Images referenced by selected Markdown files are published first. Existing
-objects are overwritten.`;
+objects are overwritten. Website caches are invalidated after every upload
+succeeds.`;
 }
 
-function parseArgs(argv) {
+export function parseArgs(argv) {
   const options = { all: false, dryRun: false, inputs: [] };
 
   for (const arg of argv) {
@@ -65,7 +69,7 @@ function parseArgs(argv) {
   }
 
   if (!options.all && options.inputs.length === 0) {
-    throw new Error("Pass --all or at least one draft/post path.\n\n" + usage());
+    throw new Error("Pass --all or at least one content/image path.\n\n" + usage());
   }
   return options;
 }
@@ -164,7 +168,7 @@ async function filesForInput(input) {
   return [path];
 }
 
-function referencedImagePaths(markdown) {
+export function referencedImagePaths(markdown) {
   const references = [];
   const markdownImagePattern = /!\[[^\]]*\]\(\s*<?([^\s)>]+)>?(?:\s+[^)]*)?\)/g;
   const htmlElementPattern = /<(?:img|source)\b[^>]*>/gi;
@@ -176,7 +180,7 @@ function referencedImagePaths(markdown) {
 
   for (const elementMatch of markdown.matchAll(htmlElementPattern)) {
     for (const attributeMatch of elementMatch[0].matchAll(htmlAttributePattern)) {
-      for (const candidate of attributeMatch[1].split(",")) {
+      for (const candidate of attributeMatch[1].split(/,\s+/)) {
         const [url] = candidate.trim().split(/\s+/);
         if (url) references.push(url);
       }
@@ -251,7 +255,7 @@ async function relatedImageFiles(markdownPaths) {
   return images;
 }
 
-async function collectFiles(options) {
+export async function collectFiles(options) {
   const paths = [];
   if (options.all) {
     for (const directory of COLLECTIONS.keys()) {
@@ -275,41 +279,122 @@ function contentTypeFor(path) {
   return IMAGE_CONTENT_TYPES.get(extname(path).toLowerCase());
 }
 
-async function main() {
-  const options = parseArgs(process.argv.slice(2));
-  const files = await collectFiles(options);
+function plural(count, singular, pluralForm = `${singular}s`) {
+  return count === 1 ? singular : pluralForm;
+}
 
-  if (!options.dryRun && !process.env.BLOB_READ_WRITE_TOKEN) {
-    throw new Error("BLOB_READ_WRITE_TOKEN is missing from .env.private");
+function redactSecret(value, secret) {
+  return String(value).split(secret).join("[REDACTED]");
+}
+
+function shellQuote(value) {
+  const stringValue = String(value);
+  if (/^[a-zA-Z0-9_./-]+$/.test(stringValue)) return stringValue;
+  return `'${stringValue.replaceAll("'", "'\\''")}'`;
+}
+
+export async function publishContentFiles(
+  files,
+  { dryRun = false, env = process.env } = {},
+  {
+    logger = console,
+    putBlob = put,
+    readFileImpl = readFile,
+    revalidateWebsiteImpl = revalidateWebsitePathname,
+  } = {},
+) {
+  const publications = [
+    ...new Map(
+      files.map((file) => {
+        const pathname = blobPathFor(file);
+        return [pathname, { file, localPath: repositoryPath(file), pathname }];
+      }),
+    ).values(),
+  ];
+  const pathnames = publications.map(({ pathname }) => pathname);
+
+  if (dryRun) {
+    for (const { localPath, pathname } of publications) {
+      logger.log(`${localPath} -> ${pathname}`);
+    }
+    for (const pathname of pathnames) {
+      logger.log(
+        `Would revalidate website caches: ${JSON.stringify({ pathname })}`,
+      );
+    }
+    logger.log(
+      `Would publish ${publications.length} ${plural(publications.length, "file")} and revalidate ${pathnames.length} website cache ${plural(pathnames.length, "pathname")}.`,
+    );
+    return { publications, pathnames };
   }
 
-  for (const file of files) {
-    const localPath = repositoryPath(file);
-    const blobPath = blobPathFor(file);
+  if (!env.BLOB_READ_WRITE_TOKEN) {
+    throw new Error("BLOB_READ_WRITE_TOKEN is missing from .env.private");
+  }
+  const { url, secret } = getWebsiteRevalidationConfig(env);
 
-    if (options.dryRun) {
-      console.log(`${localPath} -> ${blobPath}`);
-      continue;
-    }
-
-    const body = await readFile(file);
-    const blob = await put(blobPath, body, {
+  for (const { file, localPath, pathname } of publications) {
+    const body = await readFileImpl(file);
+    const blob = await putBlob(pathname, body, {
       access: "public",
-      token: process.env.BLOB_READ_WRITE_TOKEN,
+      token: env.BLOB_READ_WRITE_TOKEN,
       addRandomSuffix: false,
       allowOverwrite: true,
       contentType: contentTypeFor(file),
       cacheControlMaxAge: CACHE_MAX_AGE,
     });
-    console.log(`${localPath} -> ${blob.url}`);
+    logger.log(`${localPath} -> ${blob.url}`);
   }
 
-  console.log(
-    `${options.dryRun ? "Would publish" : "Published"} ${files.length} file${files.length === 1 ? "" : "s"}.`,
+  for (let index = 0; index < pathnames.length; index++) {
+    const pathname = pathnames[index];
+    try {
+      await revalidateWebsiteImpl(pathname, { url, secret });
+    } catch (error) {
+      const detail = error instanceof Error ? error.message : error;
+      const safeDetail = redactSecret(detail, secret);
+      const retryCommands = pathnames
+        .slice(index)
+        .map(
+          (pendingPathname) =>
+            `npm run website:revalidate -- --pathname ${shellQuote(pendingPathname)}`,
+        );
+      throw new Error(
+        [
+          "Website revalidation failed after all Blob uploads succeeded.",
+          safeDetail,
+          "Retry revalidation for the failed and remaining pathnames:",
+          ...retryCommands,
+        ].join("\n"),
+      );
+    }
+    logger.log(`Revalidated website caches for ${pathname}.`);
+  }
+
+  logger.log(
+    `Published ${publications.length} ${plural(publications.length, "file")} and revalidated ${pathnames.length} website cache ${plural(pathnames.length, "pathname")}.`,
   );
+  return { publications, pathnames };
 }
 
-main().catch((error) => {
-  console.error(error.message ?? error);
-  process.exitCode = 1;
-});
+export async function runContentPublisher(
+  argv = process.argv.slice(2),
+  env = process.env,
+  dependencies = {},
+) {
+  const options = parseArgs(argv);
+  const collectFilesImpl = dependencies.collectFilesImpl ?? collectFiles;
+  const files = await collectFilesImpl(options);
+  return publishContentFiles(files, { dryRun: options.dryRun, env }, dependencies);
+}
+
+const isMain =
+  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (isMain) {
+  dotenv.config({ path: resolve(root, ".env.private"), quiet: true });
+  runContentPublisher().catch((error) => {
+    console.error(error.message ?? error);
+    process.exitCode = 1;
+  });
+}

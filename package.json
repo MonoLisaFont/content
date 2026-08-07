@@ -4,7 +4,9 @@
   "type": "module",
   "scripts": {
     "publish:content": "node scripts/publish-content-to-blob.mjs",
-    "render:social-comparisons": "node scripts/render-comparison-social-cards.mjs"
+    "render:social-comparisons": "node scripts/render-comparison-social-cards.mjs",
+    "test": "node --test ./scripts/*.test.mjs",
+    "website:revalidate": "node scripts/revalidate-website.mjs"
   },
   "dependencies": {
     "@vercel/blob": "2.6.1",

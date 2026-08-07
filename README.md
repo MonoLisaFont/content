@@ -47,12 +47,22 @@ Most of the edits can be done directly through GitHub user interface on web. It 
 
 ## Publishing drafts, posts, and FAQ to Vercel Blob
 
-Install dependencies once with `npm install`, then add the Blob credentials to
-the ignored `.env.private` file:
+> [!WARNING]
+> Drafts are public editorial content, not confidential material. Publishing a
+> file from `02_drafts` uploads it to a publicly readable Blob URL.
+
+Install dependencies once with `npm install`, then add the publishing
+credentials to the ignored `.env.private` file:
 
 ```bash
 BLOB_READ_WRITE_TOKEN=...
+WEBSITE_REVALIDATION_URL=https://www.monolisa.dev/api/revalidate/blob
+WEBSITE_REVALIDATION_SECRET=...
 ```
+
+The revalidation URL is the full website endpoint, and the secret must match
+the website's `REVALIDATION_SECRET`. All three variables are required for a
+real publish. A dry run requires no credentials and makes no network requests.
 
 Publish every draft, post, and the FAQ with:
 
@@ -64,7 +74,9 @@ Images referenced by the selected Markdown files are uploaded before the
 content. Both Markdown image syntax and HTML `img`/`source` elements are
 supported. Image objects keep their repository paths, such as
 `images/example.svg`. Publishing a post or the FAQ stops if a referenced local
-image is missing; draft placeholder images produce warnings instead.
+image is missing; draft placeholder images produce warnings instead. After all
+uploads finish, the publisher invalidates the corresponding website caches. It
+omits image context so both published and draft cache variants are refreshed.
 
 To create or update only selected objects, pass files or one of the content
 directories instead:
@@ -84,9 +96,22 @@ npm run publish:content -- images
 ```
 
 Drafts are stored at `drafts/<filename>` and published posts at
-`posts/<filename>`. The FAQ is stored at `faq.md`. These are stable public URLs; an update can take up to a
-minute to propagate through Vercel Blob's cache. Use `--dry-run` to inspect a
-sync without uploading anything.
+`posts/<filename>`. The FAQ is stored at `faq.md`. These are stable public URLs;
+an update can take up to a minute to propagate through Vercel Blob's cache. Use
+`--dry-run` to inspect both the uploads and cache invalidation payloads without
+contacting Vercel.
+
+> [!WARNING]
+> Publishing creates or overwrites objects; it does not delete old Blob paths.
+> Moving or deleting a source file requires explicitly unpublishing the old
+> object.
+
+If website revalidation fails, the Blob uploads have already succeeded. Retry
+only the safe final step for each pathname reported by the publisher:
+
+```bash
+npm run website:revalidate -- --pathname images/example.svg
+```
 
 ## Publishing to dev.to
 
