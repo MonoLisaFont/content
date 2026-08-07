@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="560" height="389" viewBox="0 0 560 389" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, var(--ml-colors-text, currentColor))" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="560" height="375" viewBox="0 0 560 375" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, var(--ml-colors-text, currentColor))" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>Italic Forms: MonoLisa Code vs. Recursive Mono</title>
   <style>
     .specimen-label {
@@ -68,7 +68,7 @@
 
       </g>
 
-      <g transform="translate(0, 40) scale(0.5042816365366318)">
+      <g transform="translate(0, 40) scale(0.47619047619047616)">
         
           <g transform="translate(-16, 0)">
             
@@ -249,7 +249,7 @@
           </g>
       </g>
 
-      <g transform="translate(0, 83.87250237868696) scale(0.5042816365366318)">
+      <g transform="translate(0, 81.42857142857142) scale(0.47619047619047616)">
         
           <g transform="translate(-16, 0)">
             
@@ -497,7 +497,7 @@
           </g>
       </g>
 
-      <g transform="translate(0, 127.74500475737395) scale(0.5042816365366318)">
+      <g transform="translate(0, 122.85714285714286) scale(0.47619047619047616)">
         
           <g transform="translate(-16, 0)">
             
@@ -670,7 +670,7 @@
           </g>
       </g>
 
-      <g class="specimen-label" transform="translate(-16, 189.20502794957184)">
+      <g class="specimen-label" transform="translate(-16, 182.63169642857144)">
         
 <defs>
 <g>
@@ -730,7 +730,7 @@
 
       </g>
 
-      <g transform="translate(0, 242.00190294957184) scale(0.5042816365366318)">
+      <g transform="translate(0, 235.42857142857144) scale(0.47619047619047616)">
         
           <g transform="translate(-16, 0)">
             
@@ -911,7 +911,7 @@
           </g>
       </g>
 
-      <g transform="translate(0, 285.87440532825883) scale(0.5042816365366318)">
+      <g transform="translate(0, 276.8571428571429) scale(0.47619047619047616)">
         
           <g transform="translate(-16, 0)">
             
@@ -1158,7 +1158,7 @@
           </g>
       </g>
 
-      <g transform="translate(0, 329.74690770694576) scale(0.5042816365366318)">
+      <g transform="translate(0, 318.28571428571433) scale(0.47619047619047616)">
         
           <g transform="translate(-16, 0)">
             

@@ -15,9 +15,14 @@ const mono = config.fonts.monolisa;
 const outputDir = path.resolve(root, config.outputDir || "images");
 mkdirSync(outputDir, { recursive: true });
 
+// Blog specimens are displayed at full width, so their effective type size and
+// canvas width must match even though they are shaped at different base sizes.
+const codeExampleFontSize = 20;
+
 const samples = {
   texture: {
     title: "Code Texture",
+    codeExample: true,
     fontSize: 44,
     lineHeight: 64,
     features: "kern=1,liga=1,calt=1",
@@ -53,6 +58,7 @@ const samples = {
   },
   ligatures: {
     title: "Coding Ligatures",
+    codeExample: true,
     fontSize: 42,
     lineHeight: 64,
     features: "kern=1,liga=1,calt=1",
@@ -66,6 +72,7 @@ const samples = {
   },
   italics: {
     title: "Italic Forms",
+    codeExample: true,
     fontSize: 42,
     lineHeight: 60,
     marginY: 24,
@@ -84,6 +91,7 @@ const samples = {
   },
   terminal: {
     title: "Terminal Symbols",
+    codeExample: true,
     fontSize: 34,
     lineHeight: 54,
     features: "kern=1,liga=0,calt=0",
@@ -414,7 +422,7 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
     }
   }
 
-  const sampleLayout = sample.syntax
+  const sampleLayout = sample.codeExample
     ? { colWidth: 560, targetLineWidth: 530, gutter: 48 }
     : { colWidth: 700, targetLineWidth: 640, gutter: 48 };
   const colWidth = sampleLayout.colWidth;
@@ -422,11 +430,10 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   const gutter = sampleLayout.gutter;
   const labelFontSize = 20 * (colWidth / 560);
   const columnCount = fonts.length;
-  const visibleColumnCount = stacked ? 1 : columnCount;
-  const scale = Math.min(
-    1,
-    targetLineWidth / Math.max(...renderedLines.map(({ line }) => line.width)),
-  );
+  const visibleColumnCount = stacked ? 1 : Math.max(2, columnCount);
+  const fitScale = targetLineWidth / Math.max(...renderedLines.map(({ line }) => line.width));
+  const codeExampleScale = sample.codeExample ? codeExampleFontSize / sample.fontSize : 1;
+  const scale = Math.min(1, codeExampleScale, fitScale);
   const lineStep = sample.lineHeight * scale;
   const lineOffsets = [];
   let lineCursor = 0;
@@ -443,7 +450,10 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
     : Math.ceil(marginY + blockHeight + bottomPadding);
 
   for (const [columnIndex, font] of fonts.entries()) {
-    const x = stacked ? marginX : marginX + columnIndex * (colWidth + gutter);
+    const x = stacked
+      ? marginX
+      : marginX +
+        (columnCount === 1 ? (width - colWidth) / 2 : columnIndex * (colWidth + gutter));
     const yStart = stacked ? marginY + columnIndex * (blockHeight + columnGapY) : marginY;
     fragments.push(
       renderLabel(

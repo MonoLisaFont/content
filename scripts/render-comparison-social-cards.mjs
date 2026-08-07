@@ -182,6 +182,7 @@ function renderCard(comparison) {
   const height = 900;
   const leftX = 104;
   const rightX = 866;
+  const codeFontSize = 34;
   const codeLines = [
     "O0 !== l1I && value <= 10",
     "value -> next => result",
@@ -254,49 +255,49 @@ function renderCard(comparison) {
       <rect x="32" y="28" width="664" height="378" rx="18" fill="#0d2638"/>
       <rect x="760" y="28" width="664" height="378" rx="18" fill="#0d2638"/>
       ${text(codeLines[0], 64, 105, {
-        fontSize: 34,
+        fontSize: codeFontSize,
         fill: "#d1b64d",
         weight: 600,
         features: ["dlig=1"],
       })}
       ${text(codeLines[1], 64, 191, {
-        fontSize: 34,
+        fontSize: codeFontSize,
         fill: "#d1b64d",
         weight: 600,
         features: ["dlig=1"],
       })}
       ${text(codeLines[2], 64, 278, {
-        fontSize: 32,
+        fontSize: codeFontSize,
         fill: "#d1b64d",
         font: monoLisaItalicFont,
         features: ["dlig=1"],
       })}
       ${text(codeLines[3], 64, 365, {
-        fontSize: 32,
+        fontSize: codeFontSize,
         fill: "#d1b64d",
         font: monoLisaItalicFont,
         features: ["dlig=1", "ss01=1"],
       })}
       ${text(codeLines[0], 792, 105, {
-        fontSize: 34,
+        fontSize: codeFontSize,
         fill: "#90b4ca",
         font: comparison.font,
         features: competitorCodeFeatures,
       })}
       ${text(codeLines[1], 792, 191, {
-        fontSize: 34,
+        fontSize: codeFontSize,
         fill: "#90b4ca",
         font: comparison.font,
         features: competitorCodeFeatures,
       })}
       ${text(codeLines[2], 792, 278, {
-        fontSize: 32,
+        fontSize: codeFontSize,
         fill: "#90b4ca",
         font: comparison.italicFont,
         features: competitorCodeFeatures,
       })}
       ${text(codeLines[3], 792, 365, {
-        fontSize: 32,
+        fontSize: codeFontSize,
         fill: "#90b4ca",
         font: comparison.italicFont,
         features: competitorCodeFeatures,
