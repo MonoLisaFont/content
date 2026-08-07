@@ -19,27 +19,24 @@ Both MonoLisa and Fira Code are coding fonts with different priorities. In this 
 
 ## Decision table
 
-| Category                                                              | Better&nbsp;fit | MonoLisa Code                                                                               | Fira Code                                                                    |
-| --------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| **Languages\***                                                      | MonoLisa   | 593                                                                                         | 395                                                                          |
-| **Writing systems**                                                   | MonoLisa   | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 3 (Latin, Cyrillic, Greek)                                                   |
-| **Italics**                                                           | MonoLisa   | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No                                                                           |
-| **Fixed weights**                                                     | MonoLisa   | 10                                                                                          | 6                                                                            |
-| **Variable axes**                                                     | MonoLisa   | 2 (`wght`, `GRAD`)                                                                          | 1 (`wght`)                                                                   |
-| **Style control**                                                     | MonoLisa   | 15 stylistic sets, 12 character variants                                                    | 10 stylistic sets, 32 character variants                                     |
-| **Coding ligatures**                                                  | Similar    | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Terminal symbols**                                                  | Similar    | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Proportional counterpart**                                          | Similar    | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, Fira Sans |
-| **Price**                                                             | Fira Code  | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                         |
-| **Source**                                                            | -          | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Fira Code GitHub repository](https://github.com/tonsky/FiraCode)            |
+| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | Fira Code                                                                               |
+| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| **Languages\***              | MonoLisa        | 593                                                                                         | 395                                                                                     |
+| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 3 (Latin, Cyrillic, Greek)                                                              |
+| **Italics**                  | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No                                                                                      |
+| **Fixed weights**            | MonoLisa        | 10                                                                                          | 6                                                                                       |
+| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | 1 (`wght`)                                                                              |
+| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | 10 stylistic sets, 32 character variants                                                |
+| **Coding ligatures**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>            |
+| **Terminal symbols**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>            |
+| **Proportional counterpart** | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, Fira Sans |
+| **Price**                    | Fira Code       | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                                    |
+| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Fira Code GitHub repository](https://github.com/tonsky/FiraCode)                       |
 
 In short: MonoLisa Code wins on coverage and style range. Fira Code wins on price.
 
 ## Reading texture
 
-Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
-
-[Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
 MonoLisa’s punctuation elements are angular and stronger in shapes lightly bolder in comparison to Fira’s. We believe this impacts reading speed and the user’s ability to distinguish the particular glyphs.
 
 <picture>
@@ -65,8 +62,6 @@ Both fonts support coding ligatures. MonoLisa Code exposes `liga`, `dlig`, `calt
 | Brackets and quotes    | Brackets, braces, parentheses, quotes, and backticks are tuned for dense code. | Shapes are clear and compact for ligature-heavy code.                          |
 | Operators              | Operator punctuation stays legible with and without ligatures.                 | Operator sequences are a core strength, especially when ligatures are enabled. |
 
-[Marcus input: Add notes for intentional MonoLisa tradeoffs.]
-
 ## Italics and style range
 
 MonoLisa Code includes variable upright and italic files with 10 named weights.
@@ -91,17 +86,8 @@ Both measured well here: Powerline 6/6, box drawing 128/128, block elements 32/3
 
 Fira Code is free and open source. MonoLisa Code is a paid typeface with [free trial access](https://monolisa.dev/buy/trial) and a customizer.
 
-## Publication checklist
-
-- [ ] Marcus design review completed.
-- [ ] Infographic direction accepted or revised.
-- [ ] License/source basis checked.
-- [ ] Rendered SVG specimens visually reviewed.
-- [ ] Measured data verified against current font files.
-- [ ] Final recommendation/conclusion written.
-
 ## Conclusion
 
-Draft conclusion pending Marcus review. The measured data is ready; this variant tests whether an infographic-first opening makes the comparison clearer before the detailed type-design commentary.
+Both MonoLisa and Fira Code are strong options for a coding font. Both have their distinctive strengths while MonoLisa comes with a stronger language support and italics, a feature missing from Fira Code.
 
-> * Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
+> - Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
