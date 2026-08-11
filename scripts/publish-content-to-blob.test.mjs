@@ -4,8 +4,10 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 
 import {
+  localImagePathForReference,
   publishContentFiles,
   referencedImagePaths,
+  unpublishContentPathnames,
 } from "./publish-content-to-blob.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -32,6 +34,105 @@ test("referencedImagePaths preserves commas inside srcSet image URLs", () => {
     "images/example,small.png",
     "images/example.png",
   ]);
+});
+
+test("referencedImagePaths parses compact srcset candidates and ignores code", () => {
+  const markdown = `
+<source srcset="https://cdn.example.com/images/external.svg 1x,/images/first.svg 2x,/images/second.svg 3x" />
+
+\`![Inline example](/images/not-inline.svg)\`
+
+\`\`\`markdown
+![Fenced example](/images/not-fenced.svg)
+<img src="/images/not-fenced-either.svg" />
+\`\`\`
+
+    ![Indented example](/images/not-indented.svg)
+
+<pre><code>![HTML code](/images/not-html-code.svg)</code></pre>
+
+- List item
+    ![List image](/images/list-image.svg)
+`;
+
+  assert.deepEqual(referencedImagePaths(markdown), [
+    "images/first.svg",
+    "images/second.svg",
+    "images/list-image.svg",
+  ]);
+});
+
+test("referencedImagePaths supports reference images and unquoted HTML attributes", () => {
+  const markdown = `![Full reference][Diagram]
+![Collapsed reference][]
+![Shortcut]
+
+[diagram]: /images/reference.svg#detail "Diagram"
+[Collapsed reference]: </images/collapsed.png?size=2>
+[shortcut]: /images/shortcut.webp
+[ordinary-link]: /images/not-an-image-reference.svg
+
+<img src=/images/unquoted.svg>
+<source srcset=/images/unquoted-source.svg>
+
+\`![Code reference][ignored]\`
+[ignored]: /images/ignored.svg
+`;
+
+  assert.deepEqual(referencedImagePaths(markdown), [
+    "images/unquoted.svg",
+    "images/unquoted-source.svg",
+    "images/reference.svg",
+    "images/collapsed.png",
+    "images/shortcut.webp",
+  ]);
+});
+
+test("referencedImagePaths supports balanced brackets in inline image descriptions", () => {
+  assert.deepEqual(
+    referencedImagePaths(
+      `![Alt text with [nested description]](/images/nested.svg "Caption")`,
+    ),
+    ["images/nested.svg"],
+  );
+  assert.deepEqual(
+    referencedImagePaths(
+      `![Alt text with [nested description]][hero]\n\n[hero]: /images/nested.svg`,
+    ),
+    ["images/nested.svg"],
+  );
+});
+
+test("referencedImagePaths ignores comments, escapes, nested code, and quoted attribute text", () => {
+  const markdown = `<img alt="literal src=/images/not-an-attribute.svg" src="/images/real.svg">
+<img alt="2 > 1" src="/images/quoted-angle.svg">
+\\<img src="/images/escaped-html.svg">
+<!-- ![Disabled](/images/disabled.svg) -->
+\\![Escaped](/images/escaped.svg)
+
+> ~~~markdown
+> ![Blockquote code](/images/blockquote-code.svg)
+> ~~~
+
+- List item
+
+        ![Nested code](/images/nested-code.svg)
+`;
+
+  assert.deepEqual(referencedImagePaths(markdown), [
+    "images/real.svg",
+    "images/quoted-angle.svg",
+  ]);
+});
+
+test("localImagePathForReference rejects decoded Windows path separators", () => {
+  assert.throws(
+    () =>
+      localImagePathForReference(
+        "/images/..%5C..%5Coutside.svg",
+      ),
+    /cannot contain backslashes/,
+  );
 });
 
 test("publishContentFiles uploads every object before invalidating website caches", async () => {
@@ -103,6 +204,88 @@ test("publishContentFiles deduplicates deterministic Blob pathnames", async () =
   assert.deepEqual(uploads, ["images/example.svg", "faq.md"]);
   assert.deepEqual(revalidations, ["images/example.svg", "faq.md"]);
   assert.deepEqual(result.pathnames, ["images/example.svg", "faq.md"]);
+  assert.deepEqual(
+    result.publications.map(({ pathname, url }) => ({ pathname, url })),
+    [
+      {
+        pathname: "images/example.svg",
+        url: "https://blob.example/images/example.svg",
+      },
+      { pathname: "faq.md", url: "https://blob.example/faq.md" },
+    ],
+  );
+});
+
+test("unpublishContentPathnames deletes deterministic objects before revalidating", async () => {
+  const events = [];
+
+  const result = await unpublishContentPathnames(
+    ["drafts/example.md", "drafts/example.md"],
+    { env },
+    {
+      logger: silentLogger,
+      deleteBlobImpl: async (pathnames, options) => {
+        events.push(["delete", pathnames, options]);
+      },
+      revalidateWebsiteImpl: async (pathname, options) => {
+        events.push(["revalidate", pathname, options]);
+      },
+    },
+  );
+
+  assert.deepEqual(events, [
+    ["delete", ["drafts/example.md"], { token: "blob-token" }],
+    [
+      "revalidate",
+      "drafts/example.md",
+      {
+        url: "https://www.monolisa.dev/api/revalidate/blob",
+        secret: "website-secret",
+      },
+    ],
+  ]);
+  assert.deepEqual(result.pathnames, ["drafts/example.md"]);
+});
+
+test("unpublishContentPathnames dry-run needs no configuration or network", async () => {
+  const logs = [];
+  const calls = [];
+
+  await unpublishContentPathnames(
+    ["drafts/example.md"],
+    { dryRun: true, env: {} },
+    {
+      logger: { log: (message) => logs.push(message) },
+      deleteBlobImpl: async () => calls.push("delete"),
+      revalidateWebsiteImpl: async () => calls.push("revalidate"),
+    },
+  );
+
+  assert.deepEqual(calls, []);
+  assert.deepEqual(logs, [
+    "Would delete Blob object: drafts/example.md",
+    'Would revalidate website caches: {"pathname":"drafts/example.md"}',
+  ]);
+});
+
+test("unpublishContentPathnames redacts deletion failures", async () => {
+  await assert.rejects(
+    unpublishContentPathnames(
+      ["drafts/example.md"],
+      { env },
+      {
+        logger: silentLogger,
+        deleteBlobImpl: async () => {
+          throw new Error("delete failed for blob-token");
+        },
+      },
+    ),
+    (error) => {
+      assert.match(error.message, /delete failed for \[REDACTED\]/);
+      assert.doesNotMatch(error.message, /blob-token/);
+      return true;
+    },
+  );
 });
 
 test("publishContentFiles dry-run needs no configuration or network and prints invalidation payloads", async () => {

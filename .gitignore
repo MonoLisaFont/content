@@ -2,6 +2,9 @@
 node_modules/
 .env.private
 .devto-friction-state.json
+.devto-state.json
+.devto-state.json.*.tmp
+.devto-state.json.lock
 devto-friction-payloads/
 .font-sources/
 .venv-hyperglot/

@@ -9,7 +9,9 @@ This repository contains content to publish through the blog and dev.to. It has 
 
 ## Post schema
 
-For published posts, the name of the file should be constructed as follows: `<number>-<slug>.md` where `number` is for example `004`, so the posts are ordered easily, and `slug` is the url slug you want to see on the website. The slug should be short but not too short while not being too long. Around 10-20 characters is a good length for a slug.
+For published posts, use `<slug>.md`; the filename becomes the URL slug on the
+website. Existing posts use short `snake_case` slugs such as
+`what_are_serifs.md`.
 
 The posts should look like this:
 
@@ -44,6 +46,76 @@ For simple posts, only heading level 2 should be used as in the sample. A good l
 ## Editing
 
 Most of the edits can be done directly through GitHub user interface on web. It may be possible images may have to be added through Git repository, though.
+
+## Publishing a draft
+
+Preview a promotion without changing files or contacting external services:
+
+```bash
+npm run publish:draft -- 02_drafts/my-post.md --dry-run
+```
+
+Then publish it to the MonoLisa website:
+
+```bash
+npm run publish:draft -- 02_drafts/my-post.md
+```
+
+The command uses today's local calendar date for `published` and for `updated`
+when that field is present, removes `draft` metadata, and moves the file to
+`03_posts` without renaming it. It uploads the post and every referenced local
+image to Vercel Blob, revalidates the website, and deletes and revalidates the
+obsolete `drafts/<filename>` Blob object. It uses the same `.env.private` Blob
+and website-revalidation credentials documented below.
+
+To publish the same article to dev.to, configure these additional values:
+
+```bash
+DEVTO_API_KEY=...
+DEVTO_SESSION_COOKIE="_dev_to_session=..."
+MONOLISA_POST_BASE=https://www.monolisa.dev/posts
+```
+
+`DEVTO_SESSION_COOKIE` is needed when the post contains images. Copy the
+`Cookie` request header from an already signed-in dev.to browser session into
+the private environment file; do not commit or share it. The command fetches a
+fresh CSRF token itself and verifies that the browser session belongs to the
+same DEV account as `DEVTO_API_KEY`.
+
+Then opt in with `--devto`:
+
+```bash
+npm run publish:draft -- 02_drafts/my-post.md --devto
+```
+
+DEV receives a canonical URL pointing to the MonoLisa post, but its image
+copies are kept separate from MonoLisa's Blob storage. Raster images are
+uploaded unchanged to DEV's image storage. Its uploader does not accept SVG,
+so SVGs are converted in memory to PNG with `rsvg-convert` before upload. The
+SVG remains unchanged in the repository and on Blob, and the generated PNG is
+not written into `images/`.
+
+Install [librsvg](https://gitlab.gnome.org/GNOME/librsvg) so
+`rsvg-convert --version` works before publishing an SVG-bearing post. DEV does
+not expose image upload through its API-key API, so this command uses the same
+session-authenticated `/image_uploads` endpoint as DEV's editor. That endpoint
+is internal and may change; an expired session fails with a prompt to refresh
+`DEVTO_SESSION_COOKIE`.
+
+By default, DEV tags are derived from the post keywords. Override them with
+`--tags "fonts,typography"` (at most four), or use `--series "Series name"`.
+The script stores the DEV article id and the successful DEV image URLs in the
+ignored `.devto-state.json` file. Image entries are keyed by a content hash, so
+retries reuse uploaded copies when the source has not changed. The script also
+checks existing articles by canonical URL before creating one, which makes
+retries update the same article.
+
+All credentials are validated before the local move. Once the local promotion
+succeeds, a later Blob or DEV failure is intentionally not rolled back. Run the
+same command again: when the draft is absent and the matching file already
+exists in `03_posts`, the script resumes the external publication without
+changing its publication date. Use `--date YYYY-MM-DD` to select an explicit
+date for a new promotion.
 
 ## Publishing drafts, posts, and FAQ to Vercel Blob
 
