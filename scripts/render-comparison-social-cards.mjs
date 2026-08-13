@@ -14,6 +14,24 @@ const fallbackConfigPath = path.resolve(root, "scripts/comparison-fonts.json");
 const fontConfig = JSON.parse(
   readFileSync(existsSync(localConfigPath) ? localConfigPath : fallbackConfigPath, "utf8"),
 );
+const faceTypeLogoSvg = readFileSync(
+  path.resolve(root, "scripts/assets/facetype-mobile-logo.svg"),
+  "utf8",
+);
+const faceTypeLogoMatch = faceTypeLogoSvg.match(
+  /<svg\b[^>]*\bviewBox="([^"]+)"[^>]*>([\s\S]*?)<\/svg>/,
+);
+
+if (!faceTypeLogoMatch) throw new Error("Invalid FaceType logo SVG");
+
+const [, faceTypeLogoViewBox, faceTypeLogoContent] = faceTypeLogoMatch;
+const [, , faceTypeLogoWidth, faceTypeLogoHeight] = faceTypeLogoViewBox
+  .split(/\s+/)
+  .map(Number);
+
+if (!faceTypeLogoWidth || !faceTypeLogoHeight) {
+  throw new Error("Invalid FaceType logo viewBox");
+}
 
 mkdirSync(outputDir, { recursive: true });
 
@@ -70,6 +88,15 @@ function esc(value) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function faceTypeLogo(x, y, height, fill) {
+  const width = (height * faceTypeLogoWidth) / faceTypeLogoHeight;
+
+  return `
+    <svg x="${x}" y="${y}" width="${width}" height="${height}" viewBox="${faceTypeLogoViewBox}" fill="${fill}" aria-hidden="true">
+      ${faceTypeLogoContent}
+    </svg>`;
 }
 
 function normalizeFragment(svg, prefix, fill) {
@@ -226,9 +253,7 @@ function renderCard(comparison) {
   <rect width="${width}" height="${height}" fill="url(#grid)"/>
   <path d="M0 0H18V900H0Z" fill="#f4cc50"/>
 
-  <g transform="translate(70 62)">
-    <path d="M0 0H48V15H0ZM0 23H32V38H0ZM0 46H16V61H0Z" fill="#f4cc50"/>
-  </g>
+  ${faceTypeLogo(70, 62, 61, "#f4cc50")}
   ${text("MonoLisa Code", 710, 145, {
     anchor: "end",
     fontSize: 58,

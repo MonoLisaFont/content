@@ -7,6 +7,7 @@ Landscape comparison graphics for social posts, designed primarily for X.
 - Color space: RGB
 - Naming: `comparison-monolisa-vs-{font}-x-1600x900.png`
 - Generator: `scripts/render-comparison-social-cards.mjs`
+- FaceType logo source: `scripts/assets/facetype-mobile-logo.svg`
 
 Regenerate every supported comparison from the repository root:
 
