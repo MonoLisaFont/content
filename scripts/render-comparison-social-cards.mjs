@@ -52,7 +52,7 @@ const comparisons = [
     axesDividerOffset: 0,
     axesLeftFontSize: 16,
     axesRightFontSize: 15,
-    italics: "Slant + forms",
+    italics: "Mostly oblique",
     monoLisaItalics: "Redrawn",
     italicsLabel: "Italic styling",
     italicLeftFontSize: 28,

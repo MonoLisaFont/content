@@ -117,7 +117,7 @@ const rightComparisons = [
     title: "MonoLisa Code vs. Monaspace",
     descriptor: "Free coding superfamily",
     weights: "7 named weights",
-    italics: "Slant with selected italic forms",
+    italics: "Predominantly oblique",
     axes: ["wght", "wdth", "slnt"],
     features: ["calt", "liga", "ss01-ss10", "cvXX"],
     terminal: "Powerline, box drawing, block elements",

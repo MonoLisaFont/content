@@ -23,7 +23,7 @@ MonoLisa and Monaspace are both coding type systems, but they optimize for diffe
 | ---------------------------- | ------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | **Languages\***              | MonoLisa            | 593                                                                                         | 368                                                                          |
 | **Writing systems**          | MonoLisa            | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 3 (Latin, Cyrillic, Greek)                                                   |
-| **Italic differentiation**   | MonoLisa            | More extensively redrawn forms create stronger contrast with the upright                    | Slant-driven hybrid; selected glyphs switch to italic forms                  |
+| **Italic contrast (Neon)**  | MonoLisa            | More extensively redrawn forms create stronger contrast with the upright                    | Predominantly oblique; no automatic basic-Latin axis swaps in Neon v1.400    |
 | **Fixed weights**            | MonoLisa            | 10                                                                                          | 7 in measured Neon family                                                    |
 | **Variable axes**            | Different strengths | 2 (`wght`, `GRAD`)                                                                          | 3 (`wght`, `wdth`, `slnt`)                                                   |
 | **Style control**            | Similar             | 15 stylistic sets, 12 character variants                                                    | 10 stylistic sets, selected character variants                               |
@@ -33,7 +33,7 @@ MonoLisa and Monaspace are both coding type systems, but they optimize for diffe
 | **Price**                    | Monaspace           | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                         |
 | **Source**                   | -                   | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Monaspace GitHub repository](https://github.com/githubnext/monaspace)       |
 
-In short: MonoLisa Code leads on measured language coverage and upright-to-italic differentiation. Monaspace is free and open source and exposes three variable axes—weight, width, and slant—while MonoLisa exposes weight and grade. Both offer rich coding-focused style systems.
+In short: MonoLisa Code leads on measured language coverage and, in the Neon specimen, upright-to-italic differentiation. Monaspace is free and open source and exposes three variable axes—weight, width, and slant—while MonoLisa exposes weight and grade. Both offer rich coding-focused style systems.
 
 ## Reading texture
 
@@ -67,7 +67,11 @@ This section should compare common problem pairs such as `0O`, `1lI|`, brackets,
 
 ## Italics and style range
 
-Both families support italic styling, but their approaches differ. [Monaspace's `slnt` axis](https://monaspace.githubnext.com/) keeps many glyphs close to their upright construction, while selected letters switch to italic forms. MonoLisa's more extensively redrawn italics create a stronger distinction from the upright—useful when italics identify comments or other syntax roles. The benefit is clearer differentiation, not a blanket claim that italic text is always more legible.
+Monaspace ships named Italic instances for all five families on its [`slnt` axis](https://monaspace.githubnext.com/), but its v1.400 Latin designs are [predominantly oblique](https://www.w3.org/TR/css-fonts-4/#font-style-prop): the font supplies the slanted outlines and contour corrections while most letters retain their upright construction. The project page says that some letters switch at `slnt=-5.5`; inspection of the [published v1.400 variable fonts](https://github.com/githubnext/monaspace/tree/v1.400/fonts/Variable%20Fonts) shows that, for basic Latin, Argon automatically substitutes only `f`, while Xenon substitutes `f`, `h`, `i`, `k`, `l`, `m`, `n`, `r`, and `u`. Neon, Radon, and Krypton make no automatic basic-Latin substitutions on the axis, and neither `a` nor `g` switches in any family. Neon, Argon, and Krypton do switch several localized Serbian Cyrillic forms, while Xenon has broader Cyrillic substitutions; Radon has no slant-triggered substitutions.
+
+Monaspace also contains a separate [OpenType `ital` substitution feature](https://learn.microsoft.com/en-us/typography/opentype/spec/features_fj#tag-ital) with additional family-specific alternates, but moving only the `slnt` axis—as in the FontGauntlet test—does not activate all of them. Some are still geometric slants rather than substantially redrawn forms. Monaspace is therefore more accurately described as a set of designed obliques with selective italic alternates, not as either a wholly synthetic slant or a fully redrawn italic system across all five families.
+
+The specimen below uses Neon. MonoLisa's more extensively redrawn italics create a stronger distinction from the upright—useful when italics identify comments or other syntax roles. The benefit is clearer differentiation, not a blanket claim that italic text is always more legible.
 
 The specimen pairs upright and italic text within each family so the degree and character of the change are visible.
 
@@ -113,6 +117,7 @@ As of 2026-07-03, the Monaspace GitHub repository shows 7 non-draft, non-prerele
 
 ## Conclusion
 
-Choose MonoLisa Code when broader measured language coverage and strong upright-to-italic differentiation matter most. Choose Monaspace when free, open-source licensing or variable width and slant controls matter more. Both are feature-rich coding families; the italic distinction is about how visibly the style departs from the upright, not whether Monaspace has italic forms.
+Choose MonoLisa Code when broader measured language coverage and strong upright-to-italic differentiation matter most. Choose Monaspace when free, open-source licensing or variable width and slant controls matter more. All five Monaspace families supply named Italic instances, but their basic-Latin construction is predominantly oblique and their form substitutions vary by family; this comparison does not characterize them as fully redrawn italics across the superfamily.
 
 > - Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
+> - Slant-triggered substitutions were checked in all five Monaspace v1.400 variable fonts with HarfBuzz shaping at `slnt=0` and `slnt=-11`; the separate `ital` feature was checked explicitly. The listed letters are basic Latin; localized Cyrillic substitutions are described separately.
