@@ -3,7 +3,13 @@ title: "Comparison of MonoLisa vs. Source Code Pro"
 published: YYYY-MM-DD
 updated: 2026-07-03
 draft: true
-keywords: ["MonoLisa vs Source Code Pro", "Source Code Pro alternative", "coding fonts", "programming fonts"]
+keywords:
+  [
+    "MonoLisa vs Source Code Pro",
+    "Source Code Pro alternative",
+    "coding fonts",
+    "programming fonts",
+  ]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
@@ -11,23 +17,21 @@ MonoLisa and Source Code Pro are both coding fonts, but they optimize for differ
 
 ![Summary infographic comparing MonoLisa and Source Code Pro](/images/comparison-monolisa-vs-source-code-pro-summary.svg)
 
-[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
-
 ## Decision table
 
-| Category | Better&nbsp;fit | MonoLisa Code | Source Code Pro |
-| --- | --- | --- | --- |
-| **Languages\*** | MonoLisa | 593 | 413 |
-| **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek) |
-| **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Fixed weights** | MonoLisa | 10 | 7 |
-| **Variable axes** | MonoLisa | 2 (`wght`, `GRAD`) | Not measured in this pass |
-| **Style control** | MonoLisa | 15 stylistic sets, 12 character variants | 7 stylistic sets, selected character variants |
-| **Coding ligatures** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | No coding ligature set measured |
-| **Terminal symbols** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Proportional counterpart** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Source Sans family relation |
-| **Price** | Source Code Pro | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Free and open source |
-| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Source Code Pro GitHub repository](https://github.com/adobe-fonts/source-code-pro) |
+| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | Source Code Pro                                                                     |
+| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| **Languages\***              | MonoLisa        | 593                                                                                         | 413                                                                                 |
+| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 3 (Latin, Cyrillic, Greek)                                                          |
+| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>        |
+| **Fixed weights**            | MonoLisa        | 10                                                                                          | 7                                                                                   |
+| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | Not measured in this pass                                                           |
+| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | 7 stylistic sets, selected character variants                                       |
+| **Coding ligatures**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No coding ligature set measured                                                     |
+| **Terminal symbols**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>        |
+| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Source Sans family relation                                                         |
+| **Price**                    | Source Code Pro | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                                |
+| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Source Code Pro GitHub repository](https://github.com/adobe-fonts/source-code-pro) |
 
 In short: MonoLisa Code wins on coverage, coding ligatures, axes, and style range. Source Code Pro wins on price.
 
@@ -106,4 +110,4 @@ As of 2026-07-03, the Source Code Pro GitHub repository shows 11 non-draft, non-
 
 Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose Source Code Pro, and which tradeoff matters most.
 
-> * Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
+> - Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.

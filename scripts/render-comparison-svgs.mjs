@@ -107,6 +107,22 @@ const samples = {
   },
 };
 
+const sampleOverrides = {
+  monaspace: {
+    italics: {
+      style: "normal",
+      lines: [
+        "UPRIGHT",
+        "const affinity = glyphStyle;",
+        "",
+        "ITALIC",
+        "const affinity = glyphStyle;",
+      ],
+      lineStyles: ["normal", "normal", "normal", "italic", "italic"],
+    },
+  },
+};
+
 const themeFills = {
   accent: "var(--comparison-accent, var(--ml-colors-primary, #f4cc50))",
   primary: "var(--comparison-primary, var(--ml-colors-text, currentColor))",
@@ -414,10 +430,13 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   for (const [columnIndex, font] of fonts.entries()) {
     for (const [lineIndex, line] of sample.lines.entries()) {
       const prefix = `${competitorKey}-${sampleKey}-${columnIndex}-${lineIndex}`;
+      const lineSample = sample.lineStyles?.[lineIndex]
+        ? { ...sample, style: sample.lineStyles[lineIndex] }
+        : sample;
       renderedLines.push({
         columnIndex,
         lineIndex,
-        line: renderCodeLine(font, sample, line, prefix),
+        line: renderCodeLine(font, lineSample, line, prefix),
       });
     }
   }
@@ -521,10 +540,19 @@ if (!existsSync(path.resolve(root, mono.regular))) {
 
 for (const competitorKey of comparisons) {
   for (const [sampleKey, sample] of Object.entries(samples)) {
+    const comparisonSample = {
+      ...sample,
+      ...sampleOverrides[competitorKey]?.[sampleKey],
+    };
     try {
-      const outputPath = renderSample(competitorKey, sampleKey, sample);
+      const outputPath = renderSample(competitorKey, sampleKey, comparisonSample);
       console.log(path.relative(root, outputPath));
-      const mobileOutputPath = renderSample(competitorKey, sampleKey, sample, { layout: "stacked" });
+      const mobileOutputPath = renderSample(
+        competitorKey,
+        sampleKey,
+        comparisonSample,
+        { layout: "stacked" },
+      );
       console.log(path.relative(root, mobileOutputPath));
       rendered += 1;
     } catch (error) {

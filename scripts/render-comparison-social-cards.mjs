@@ -44,7 +44,21 @@ const comparisons = [
   { key: "hack", axes: "None", italics: "Yes", ligatures: "No" },
   { key: "source-code-pro", axes: "Not measured", italics: "Yes", ligatures: "No" },
   { key: "ibm-plex-mono", axes: "Not measured", italics: "Yes", ligatures: "No" },
-  { key: "monaspace", axes: "Not measured", italics: "Yes", ligatures: "Yes" },
+  {
+    key: "monaspace",
+    axes: "wght + wdth + slnt",
+    axesLeftValueOffset: 91,
+    axesRightValueOffset: 91,
+    axesDividerOffset: 0,
+    axesLeftFontSize: 16,
+    axesRightFontSize: 15,
+    italics: "Slant + forms",
+    monoLisaItalics: "Redrawn",
+    italicsLabel: "Italic styling",
+    italicLeftFontSize: 28,
+    italicRightFontSize: 19,
+    ligatures: "Yes",
+  },
   { key: "recursive-mono", axes: "5 axes", italics: "Yes", ligatures: "Yes" },
 ].map((comparison) => {
   const font = fontConfig.fonts[comparison.key];
@@ -337,14 +351,27 @@ function renderCard(comparison) {
     <line x1="728" y1="20" x2="728" y2="124" stroke="#52758d" stroke-opacity=".45"/>
     <line x1="1092" y1="20" x2="1092" y2="124" stroke="#52758d" stroke-opacity=".45"/>
     ${metric("Variable axes", monoLisa.axes, comparison.axes, 0, 364, {
-      dividerOffset: 18,
+      leftValueOffset: comparison.axesLeftValueOffset,
+      rightValueOffset: comparison.axesRightValueOffset,
+      dividerOffset: comparison.axesDividerOffset ?? 18,
       dividerY: 106,
       dividerFontSize: 24,
-      leftFontSize: 18,
-      rightFontSize: comparison.axes.length > 8 ? 18 : 22,
+      leftFontSize: comparison.axesLeftFontSize ?? 18,
+      rightFontSize:
+        comparison.axesRightFontSize ?? (comparison.axes.length > 8 ? 18 : 22),
     })}
     ${metric("Languages*", monoLisa.languages, comparison.languages, 364, 364)}
-    ${metric("True italics", monoLisa.italics, comparison.italics, 728, 364)}
+    ${metric(
+      comparison.italicsLabel ?? "True italics",
+      comparison.monoLisaItalics ?? monoLisa.italics,
+      comparison.italics,
+      728,
+      364,
+      {
+        leftFontSize: comparison.italicLeftFontSize,
+        rightFontSize: comparison.italicRightFontSize,
+      },
+    )}
     ${metric("Coding ligatures", monoLisa.ligatures, comparison.ligatures, 1092, 364)}
   </g>
 

@@ -3,7 +3,13 @@ title: "Comparison of MonoLisa vs. Recursive Mono"
 published: YYYY-MM-DD
 updated: 2026-07-03
 draft: true
-keywords: ["MonoLisa vs Recursive Mono", "Recursive Mono alternative", "coding fonts", "programming fonts"]
+keywords:
+  [
+    "MonoLisa vs Recursive Mono",
+    "Recursive Mono alternative",
+    "coding fonts",
+    "programming fonts",
+  ]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
@@ -11,23 +17,21 @@ MonoLisa and Recursive Mono are both coding-capable typefaces, but they optimize
 
 ![Summary infographic comparing MonoLisa and Recursive Mono](/images/comparison-monolisa-vs-recursive-mono-summary.svg)
 
-[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
-
 ## Decision table
 
-| Category | Better&nbsp;fit | MonoLisa Code | Recursive Mono |
-| --- | --- | --- | --- |
-| **Languages\*** | MonoLisa | 593 | 345 |
-| **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 1 (Latin) |
-| **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Fixed weights** | MonoLisa | 10 | 2 static Rec Mono Linear weights; variable font spans 8 named mono weights |
-| **Variable axes** | Recursive Mono | 2 (`wght`, `GRAD`) | 5 (`MONO`, `CASL`, `wght`, `slnt`, `CRSV`) |
-| **Style control** | MonoLisa | 15 stylistic sets, 12 character variants | None measured in static Rec Mono Linear |
-| **Coding ligatures** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, through `rclt` |
-| **Terminal symbols** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Powerline measured; box drawing and block elements not present in static Rec Mono Linear |
-| **Proportional counterpart** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Sans and Mono in one system |
-| **Price** | Recursive Mono | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Free and open source |
-| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Recursive GitHub repository](https://github.com/arrowtype/recursive) |
+| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | Recursive Mono                                                                               |
+| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **Languages\***              | MonoLisa        | 593                                                                                         | 345                                                                                          |
+| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 1 (Latin)                                                                                    |
+| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                 |
+| **Fixed weights**            | MonoLisa        | 10                                                                                          | 2 static Rec Mono Linear weights; variable font spans 8 named mono weights                   |
+| **Variable axes**            | Recursive Mono  | 2 (`wght`, `GRAD`)                                                                          | 5 (`MONO`, `CASL`, `wght`, `slnt`, `CRSV`)                                                   |
+| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | None measured in static Rec Mono Linear                                                      |
+| **Coding ligatures**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, through `rclt` |
+| **Terminal symbols**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | Powerline measured; box drawing and block elements not present in static Rec Mono Linear     |
+| **Proportional counterpart** | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Sans and Mono in one system                                                                  |
+| **Price**                    | Recursive Mono  | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                                         |
+| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Recursive GitHub repository](https://github.com/arrowtype/recursive)                        |
 
 In short: MonoLisa Code wins on measured coverage, coding features, and terminal symbols. Recursive Mono wins on axis range and price.
 
@@ -106,4 +110,4 @@ As of 2026-07-03, the Recursive Mono GitHub repository shows 27 non-draft, non-p
 
 Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose Recursive Mono, and which tradeoff matters most.
 
-> * Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
+> - Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.

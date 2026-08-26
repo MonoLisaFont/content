@@ -3,7 +3,13 @@ title: "Comparison of MonoLisa vs. Hack"
 published: YYYY-MM-DD
 updated: 2026-07-03
 draft: true
-keywords: ["MonoLisa vs Hack", "Hack font alternative", "coding fonts", "programming fonts"]
+keywords:
+  [
+    "MonoLisa vs Hack",
+    "Hack font alternative",
+    "coding fonts",
+    "programming fonts",
+  ]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
@@ -11,23 +17,21 @@ MonoLisa and Hack are both coding fonts, but they optimize for different priorit
 
 ![Summary infographic comparing MonoLisa and Hack](/images/comparison-monolisa-vs-hack-summary.svg)
 
-[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
-
 ## Decision table
 
-| Category | Better&nbsp;fit | MonoLisa Code | Hack |
-| --- | --- | --- | --- |
-| **Languages\*** | MonoLisa | 593 | 382 |
-| **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 4 (Latin, Cyrillic, Armenian, Greek) |
-| **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Fixed weights** | MonoLisa | 10 | 2 |
-| **Variable axes** | MonoLisa | 2 (`wght`, `GRAD`) | None measured |
-| **Style control** | MonoLisa | 15 stylistic sets, 12 character variants | None measured |
-| **Coding ligatures** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | No |
-| **Terminal symbols** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Proportional counterpart** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart |
-| **Price** | Hack | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Free and open source |
-| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Hack GitHub repository](https://github.com/source-foundry/Hack) |
+| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | Hack                                                                         |
+| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Languages\***              | MonoLisa        | 593                                                                                         | 382                                                                          |
+| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 4 (Latin, Cyrillic, Armenian, Greek)                                         |
+| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Fixed weights**            | MonoLisa        | 10                                                                                          | 2                                                                            |
+| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | None measured                                                                |
+| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | None measured                                                                |
+| **Coding ligatures**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No                                                                           |
+| **Terminal symbols**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart                                          |
+| **Price**                    | Hack            | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                         |
+| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Hack GitHub repository](https://github.com/source-foundry/Hack)             |
 
 In short: MonoLisa Code wins on coverage, ligatures, variable axes, and style control. Hack wins on price and remains a strong no-frills baseline.
 
@@ -106,4 +110,4 @@ As of 2026-07-03, the Hack GitHub repository shows 15 non-draft, non-prerelease 
 
 Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose Hack, and which tradeoff matters most.
 
-> * Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
+> - Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.

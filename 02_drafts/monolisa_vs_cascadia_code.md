@@ -3,7 +3,13 @@ title: "Comparison of MonoLisa vs. Cascadia Code"
 published: YYYY-MM-DD
 updated: 2026-07-03
 draft: true
-keywords: ["MonoLisa vs Cascadia Code", "Cascadia Code alternative", "coding fonts", "programming fonts"]
+keywords:
+  [
+    "MonoLisa vs Cascadia Code",
+    "Cascadia Code alternative",
+    "coding fonts",
+    "programming fonts",
+  ]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
@@ -11,23 +17,21 @@ MonoLisa and Cascadia Code are both coding fonts, but they optimize for differen
 
 ![Summary infographic comparing MonoLisa and Cascadia Code](/images/comparison-monolisa-vs-cascadia-code-summary.svg)
 
-[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
-
 ## Decision table
 
-| Category | Better&nbsp;fit | MonoLisa Code | Cascadia Code |
-| --- | --- | --- | --- |
-| **Languages\*** | MonoLisa | 593 | 513 |
-| **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 4 (Latin, Cyrillic, Arabic, Greek) |
-| **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Fixed weights** | MonoLisa | 10 | 6 |
-| **Variable axes** | MonoLisa | 2 (`wght`, `GRAD`) | 1 (`wght`) |
-| **Style control** | MonoLisa | 15 stylistic sets, 12 character variants | 3 stylistic sets recorded |
-| **Coding ligatures** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Terminal symbols** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Box drawing and block elements measured; standard build measured without Powerline |
-| **Proportional counterpart** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart |
-| **Price** | Cascadia Code | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Free and open source |
-| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Cascadia Code GitHub repository](https://github.com/microsoft/cascadia-code) |
+| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | Cascadia Code                                                                      |
+| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **Languages\***              | MonoLisa        | 593                                                                                         | 513                                                                                |
+| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 4 (Latin, Cyrillic, Arabic, Greek)                                                 |
+| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>       |
+| **Fixed weights**            | MonoLisa        | 10                                                                                          | 6                                                                                  |
+| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | 1 (`wght`)                                                                         |
+| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | 3 stylistic sets recorded                                                          |
+| **Coding ligatures**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>       |
+| **Terminal symbols**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | Box drawing and block elements measured; standard build measured without Powerline |
+| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart                                                |
+| **Price**                    | Cascadia Code   | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                               |
+| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Cascadia Code GitHub repository](https://github.com/microsoft/cascadia-code)      |
 
 In short: MonoLisa Code wins on language coverage, style range, and measured terminal completeness. Cascadia Code wins on price.
 
@@ -106,4 +110,4 @@ As of 2026-07-03, the Cascadia Code GitHub repository shows 19 non-draft, non-pr
 
 Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose Cascadia Code, and which tradeoff matters most.
 
-> * Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
+> - Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.

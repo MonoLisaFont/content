@@ -3,7 +3,13 @@ title: "Comparison of MonoLisa vs. JetBrains Mono"
 published: YYYY-MM-DD
 updated: 2026-07-03
 draft: true
-keywords: ["MonoLisa vs JetBrains Mono", "JetBrains Mono alternative", "coding fonts", "programming fonts"]
+keywords:
+  [
+    "MonoLisa vs JetBrains Mono",
+    "JetBrains Mono alternative",
+    "coding fonts",
+    "programming fonts",
+  ]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
@@ -11,23 +17,21 @@ MonoLisa and JetBrains Mono are both coding fonts, but they optimize for differe
 
 ![Summary infographic comparing MonoLisa and JetBrains Mono](/images/comparison-monolisa-vs-jetbrains-mono-summary.svg)
 
-[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
-
 ## Decision table
 
-| Category | Better&nbsp;fit | MonoLisa Code | JetBrains Mono |
-| --- | --- | --- | --- |
-| **Languages\*** | MonoLisa | 593 | 358 |
-| **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek) |
-| **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Fixed weights** | MonoLisa | 10 | 8 |
-| **Variable axes** | MonoLisa | 2 (`wght`, `GRAD`) | 1 (`wght`) |
-| **Style control** | Similar | 15 stylistic sets, 12 character variants | 4 stylistic sets, 20 character variants |
-| **Coding ligatures** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Terminal symbols** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Proportional counterpart** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart |
-| **Price** | JetBrains Mono | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Free and open source |
-| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [JetBrains Mono GitHub repository](https://github.com/JetBrains/JetBrainsMono) |
+| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | JetBrains Mono                                                                 |
+| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Languages\***              | MonoLisa        | 593                                                                                         | 358                                                                            |
+| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 3 (Latin, Cyrillic, Greek)                                                     |
+| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>   |
+| **Fixed weights**            | MonoLisa        | 10                                                                                          | 8                                                                              |
+| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | 1 (`wght`)                                                                     |
+| **Style control**            | Similar         | 15 stylistic sets, 12 character variants                                                    | 4 stylistic sets, 20 character variants                                        |
+| **Coding ligatures**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>   |
+| **Terminal symbols**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>   |
+| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart                                            |
+| **Price**                    | JetBrains Mono  | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                           |
+| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [JetBrains Mono GitHub repository](https://github.com/JetBrains/JetBrainsMono) |
 
 In short: MonoLisa Code wins on coverage, axes, and family range. JetBrains Mono wins on price, while both offer ligatures, italics, and terminal symbol coverage.
 
@@ -106,4 +110,4 @@ As of 2026-07-03, the JetBrains Mono GitHub repository shows 16 non-draft, non-p
 
 Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose JetBrains Mono, and which tradeoff matters most.
 
-> * Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
+> - Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.

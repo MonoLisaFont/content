@@ -3,7 +3,13 @@ title: "Comparison of MonoLisa vs. IBM Plex Mono"
 published: YYYY-MM-DD
 updated: 2026-07-03
 draft: true
-keywords: ["MonoLisa vs IBM Plex Mono", "IBM Plex Mono alternative", "coding fonts", "programming fonts"]
+keywords:
+  [
+    "MonoLisa vs IBM Plex Mono",
+    "IBM Plex Mono alternative",
+    "coding fonts",
+    "programming fonts",
+  ]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
@@ -11,23 +17,21 @@ MonoLisa and IBM Plex Mono are both monospaced fonts, but they optimize for diff
 
 ![Summary infographic comparing MonoLisa and IBM Plex Mono](/images/comparison-monolisa-vs-ibm-plex-mono-summary.svg)
 
-[Designer review: Does this opening save enough reading? Should the table feel closer to the BUY page comparison style?]
-
 ## Decision table
 
-| Category | Better&nbsp;fit | MonoLisa Code | IBM Plex Mono |
-| --- | --- | --- | --- |
-| **Languages\*** | MonoLisa | 593 | 410 |
-| **Writing systems** | MonoLisa | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 2 (Latin, Cyrillic) |
-| **Italics** | Similar | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Fixed weights** | MonoLisa | 10 | 8 |
-| **Variable axes** | MonoLisa | 2 (`wght`, `GRAD`) | Not recorded in this pass |
-| **Style control** | MonoLisa | 15 stylistic sets, 12 character variants | 9 stylistic sets recorded |
-| **Coding ligatures** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | No coding ligature set measured |
-| **Terminal symbols** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Box drawing and block elements measured; Powerline not measured in regular build |
-| **Proportional counterpart** | MonoLisa | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | IBM Plex Sans / Serif / Sans Condensed |
-| **Price** | IBM Plex Mono | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Free and open source |
-| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [IBM Plex GitHub repository](https://github.com/IBM/plex) |
+| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | IBM Plex Mono                                                                    |
+| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Languages\***              | MonoLisa        | 593                                                                                         | 410                                                                              |
+| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 2 (Latin, Cyrillic)                                                              |
+| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>     |
+| **Fixed weights**            | MonoLisa        | 10                                                                                          | 8                                                                                |
+| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | Not recorded in this pass                                                        |
+| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | 9 stylistic sets recorded                                                        |
+| **Coding ligatures**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No coding ligature set measured                                                  |
+| **Terminal symbols**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | Box drawing and block elements measured; Powerline not measured in regular build |
+| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | IBM Plex Sans / Serif / Sans Condensed                                           |
+| **Price**                    | IBM Plex Mono   | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                             |
+| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [IBM Plex GitHub repository](https://github.com/IBM/plex)                        |
 
 In short: MonoLisa Code wins on measured coverage, coding features, axes, and terminal completeness. IBM Plex Mono wins on price.
 
@@ -106,4 +110,4 @@ As of 2026-07-03, the IBM Plex Mono GitHub repository shows 69 non-draft, non-pr
 
 Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose IBM Plex Mono, and which tradeoff matters most.
 
-> * Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
+> - Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
