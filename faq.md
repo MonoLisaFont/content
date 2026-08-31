@@ -173,7 +173,7 @@ You can [download your purchases package at the orders page](https://www.monolis
 - **Greek (2):** Modern Greek, Pontic Greek
 - **Armenian (2):** Eastern Armenian, Western Armenian
 
-> * These figures were derived by running <code>.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base MonoLisaCodeUpright.ttf</code>. The command checks primary orthographies of living languages for base-character support with shaping disabled. Counts are orthography–script matches, so a language can contribute to more than one script total.
+> - These figures were derived by running <code>.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base MonoLisaCodeUpright.ttf</code>. The command checks primary orthographies of living languages for base-character support with shaping disabled. Counts are orthography–script matches, so a language can contribute to more than one script total.
 
 </Details>
 
@@ -388,94 +388,8 @@ Go to `Preferences → Editor → Font` and set the font to `MonoLisaCode`. Adju
 ## Visual Studio Code
 
 <Details>
-### What are the suggested settings for Visual Studio Code?
+### How to configure MonoLisa for Visual Studio Code?
 
-Make sure you are using the non-customized version with VS Code as it’s not needed there. You can customize which font features are used through configuration:
-
-```json
-{
-  "editor.fontFamily": "MonoLisaCode",
-  // When lineHeight is set to zero, VS Code will figure out the
-  // the height automatically based on the font
-  "editor.lineHeight": 0,
-  // You can use standard CSS syntax here. To enable
-  // ss02 for example, you could set "'ss02' on"
-  "editor.fontLigatures": true,
-  "editor.fontSize": 12
-}
-```
-
-Note that if you have customized the name and use a whitespace in it, it’s preferable to escape the name (i.e., `"'MonoLisa Custom'"`). [See the font-family CSS rule for specifics](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family).
-
-</Details>
-
-<Details>
-### How to make italics show up in Visual Studio Code?
-
-You have to enable them at the theme level. [See this Stack Overflow question for a couple of ways how to do it.](https://stackoverflow.com/questions/41320848/how-do-i-get-visual-studio-code-to-display-italic-fonts-in-formatted-code)
-
-</Details>
-
-<Details>
-### How to enable the script variant (ss01) for comments or function names?
-
-Make sure you are using the non-customized version with VS Code as it’s not needed there.
-
-To make the script variant work, make sure `ss01` is enabled and that `italic` font style is being applied to your theme. The configuration below does this globally for VS Code:
-
-```json
-{
-  "editor.fontFamily": "MonoLisaCode",
-  "editor.fontLigatures": "'ss01' on",
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": "comment",
-        "settings": {
-          "fontStyle": "italic"
-        }
-      }
-    ]
-  }
-}
-```
-
-[See the related Stack Overflow question](https://stackoverflow.com/questions/55054156/how-to-customise-the-textmaterules-for-multiple-themes-in-vs-code) for more information and the [customize-ui VS Code plugin](https://github.com/iocave/customize-ui).
-
-</Details>
-
-<Details>
-### How to change the font weight? How to enable variable weight?
-
-In order to alter the font weight, you should use the `editor.fontWeight` field like this:
-
-```json
-{
-  // This works for both fixed weights and variable
-  "editor.fontFamily": "MonoLisaCode",
-  "editor.fontWeight": 400,
-
-  // If you are using the variable version, set fontVariations: true
-  // After setting this, you can use any fontWeight between 100 and 900
-  "editor.fontVariations": true
-}
-```
-
-Adjust the number based on the fonts you own. 400 is regular and the rest are with 100 increments (300 for light for example and 700 for bold). [There’s more information about variable fonts in VS Code in this issue.](https://github.com/microsoft/vscode/issues/153291)
-
-</Details>
-
-<Details>
-### How to make MonoLisa take less vertical space?
-
-If the default line height of MonoLisa feels too roomy for you, try adjusting it in VS Code like this:
-
-```json
-{
-  "editor.lineHeight": 16
-}
-```
-
-Tweak the number till it looks good to you. You can use zero to use the default measurement to compare.
+[Use the official VS Code plugin](https://marketplace.visualstudio.com/items?itemName=MonoLisa.monolisa-for-vscode) as it can generate the configuration you need while allowing you to preview the font. This also works for the [trial version](https://www.monolisa.dev/buy/trial).
 
 </Details>
