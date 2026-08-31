@@ -136,6 +136,27 @@ The revalidation URL is the full website endpoint, and the secret must match
 the website's `REVALIDATION_SECRET`. All three variables are required for a
 real publish. A dry run requires no credentials and makes no network requests.
 
+### Automatic publishing from GitHub
+
+Pushes to `main` automatically publish the current FAQ, drafts, posts, and
+their referenced images when relevant content or publisher files change. The
+workflow runs the test suite first, uploads the objects to Vercel Blob, and
+then revalidates the corresponding website caches. Concurrent runs are
+serialized so two commits cannot write and revalidate at the same time.
+
+Configure these GitHub Actions repository secrets before enabling the workflow:
+
+- `BLOB_READ_WRITE_TOKEN`
+- `WEBSITE_REVALIDATION_URL`
+- `WEBSITE_REVALIDATION_SECRET`
+
+Use the same values as the local `.env.private` file. The workflow can also be
+started manually from the repository's **Actions** tab; a manual run publishes
+all current content. Publishing creates or updates objects but does not remove
+Blob objects for deleted or renamed source files.
+
+### Manual publishing
+
 Publish every draft, post, and the FAQ with:
 
 ```bash

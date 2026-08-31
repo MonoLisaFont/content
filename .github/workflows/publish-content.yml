@@ -1,0 +1,66 @@
+name: Publish website content
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/publish-content.yml
+      - 02_drafts/**
+      - 03_posts/**
+      - faq.md
+      - images/**
+      - package.json
+      - package-lock.json
+      - scripts/publish-content-to-blob.mjs
+      - scripts/revalidate-website.mjs
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-website-content
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish to Vercel Blob
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out content
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Check publishing credentials
+        shell: bash
+        env:
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+          WEBSITE_REVALIDATION_URL: ${{ secrets.WEBSITE_REVALIDATION_URL }}
+          WEBSITE_REVALIDATION_SECRET: ${{ secrets.WEBSITE_REVALIDATION_SECRET }}
+        run: |
+          test -n "$BLOB_READ_WRITE_TOKEN" || { echo "::error::GitHub Actions secret BLOB_READ_WRITE_TOKEN is not configured"; exit 1; }
+          test -n "$WEBSITE_REVALIDATION_URL" || { echo "::error::GitHub Actions secret WEBSITE_REVALIDATION_URL is not configured"; exit 1; }
+          test -n "$WEBSITE_REVALIDATION_SECRET" || { echo "::error::GitHub Actions secret WEBSITE_REVALIDATION_SECRET is not configured"; exit 1; }
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test publisher
+        run: npm test
+
+      - name: Publish content and revalidate website
+        env:
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+          WEBSITE_REVALIDATION_URL: ${{ secrets.WEBSITE_REVALIDATION_URL }}
+          WEBSITE_REVALIDATION_SECRET: ${{ secrets.WEBSITE_REVALIDATION_SECRET }}
+        run: npm run publish:content -- --all
