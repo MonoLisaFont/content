@@ -15,7 +15,10 @@ After installing the extension, run **MonoLisa: Open Configuration** from the Co
 
 The coding-font section puts controls and a live code sample side by side. You can adjust size, weight, and line height while switching the preview between JavaScript, CSS, PHP, Python, and Markdown. With a supported full variable font, the weight control is continuous; the Trial correctly limits the choice to its included Regular and Bold cuts.
 
-![The MonoLisa for VS Code coding-font panel with typography controls, a live JavaScript preview, and the proposed settings](/images/monolisa-vscode-coding-font.png)
+<picture>
+  <source srcSet="/images/monolisa-vscode-coding-font.png 1x, /images/monolisa-vscode-coding-font-2x.png 2x" />
+  <img src="/images/monolisa-vscode-coding-font.png" alt="The MonoLisa for VS Code coding-font panel with typography controls and a live JavaScript preview" width="100%" />
+</picture>
 
 The extension checks the capabilities of the MonoLisa installation instead of presenting controls that may do nothing. It also supports renamed or customized builds: enter the suffix from a downloaded MonoLisa build and let the panel rescan it.
 
@@ -25,7 +28,10 @@ Bundled preview fonts are not installed as system fonts, and commercial font fil
 
 Font family and size are only the beginning. MonoLisa contains OpenType features for ligatures, character variants, alternate zeroes, arrows, brackets, and many other details. The coding-font panel exposes the features supported by the detected build and renders each option directly in the selector, making the choice visual instead of asking you to remember tags such as `cv08` or `ss03`.
 
-![OpenType feature selectors next to the live code preview in MonoLisa for VS Code](/images/monolisa-vscode-opentype-features.png)
+<picture>
+  <source srcSet="/images/monolisa-vscode-opentype-features.png 1x, /images/monolisa-vscode-opentype-features-2x.png 2x" />
+  <img src="/images/monolisa-vscode-opentype-features.png" alt="OpenType feature selectors next to the live code preview in MonoLisa for VS Code" width="100%" />
+</picture>
 
 There is also a dedicated script-style control. It can keep everything upright, italicize comments only, or extend MonoLisa's alternate script glyphs across code. The live preview makes the difference visible before the setting reaches the editor.
 
@@ -35,7 +41,10 @@ When applied, the coding configuration covers more than the main editor. It can 
 
 MonoLisa version 3 introduced **MonoLisa Text**, a proportional companion for reading and writing outside monospaced code. The extension brings that pairing into VS Code by configuring MonoLisa Text for the rendered Markdown Preview. Sadly VS Code does not allow replacing its UI font completely yet so this was the best we could do in this department.
 
-![The prose-font panel previewing MonoLisa Text in headings, paragraphs, bold, italic, and ligature samples](/images/monolisa-vscode-prose-font.png)
+<picture>
+  <source srcSet="/images/monolisa-vscode-prose-font.png 1x, /images/monolisa-vscode-prose-font-2x.png 2x" />
+  <img src="/images/monolisa-vscode-prose-font.png" alt="The prose-font panel previewing MonoLisa Text in headings, paragraphs, bold, italic, and ligature samples" width="100%" />
+</picture>
 
 The prose section includes a sample with headings, paragraphs, bold, italic, character sets, and ligatures. Size and line height can be tuned independently from the coding font. The panel is deliberately explicit about the boundary: this setting affects **Markdown: Open Preview**, not Markdown source in the editor, the terminal, or chat.
 
@@ -52,7 +61,10 @@ The extension ships with four themes that cover a range of working environments:
 
 Selecting a theme immediately re-themes the configuration panel, providing a larger preview before it is applied to VS Code. Each theme can also be tuned along three practical dimensions: soft, balanced, or crisp contrast; muted, balanced, or vivid color; and subtle or clear comments. A small editor preview responds to each choice.
 
-![The four MonoLisa themes with controls for palette contrast, color intensity, and comment prominence](/images/monolisa-vscode-themes.png)
+<picture>
+  <source srcSet="/images/monolisa-vscode-themes.png 1x, /images/monolisa-vscode-themes-2x.png 2x" />
+  <img src="/images/monolisa-vscode-themes.png" alt="The four MonoLisa themes with controls for palette contrast, color intensity, and comment prominence" width="100%" />
+</picture>
 
 These controls are intended to make a theme adaptable without turning theme configuration into a color-by-color project. Start from the palette you prefer, make a few broad adjustments, and reset to the base palette at any time.
 
