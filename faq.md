@@ -392,4 +392,6 @@ Go to `Preferences → Editor → Font` and set the font to `MonoLisaCode`. Adju
 
 [Use the official VS Code plugin](https://marketplace.visualstudio.com/items?itemName=MonoLisa.monolisa-for-vscode) as it can generate the configuration you need while allowing you to preview the font. This also works for the [trial version](https://www.monolisa.dev/buy/trial).
 
+There's also an [Open VSX](https://open-vsx.org/extension/monolisa/monolisa-for-vscode) version of the plugin available.
+
 </Details>
