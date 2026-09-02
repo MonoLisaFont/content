@@ -1,7 +1,7 @@
 ---
 title: "Introducing MonoLisa for Visual Studio Code"
 published: YYYY-MM-DD
-updated: 2026-08-31
+updated: 2026-09-02
 draft: true
 keywords: ["MonoLisa", "VS Code", "programming fonts", "developer tools"]
 authors: ["Juho Vepsäläinen"]
@@ -87,7 +87,7 @@ For quick setup and later adjustments, the extension also provides focused Comma
 
 ## Try it and tell us what is missing
 
-[Install MonoLisa for VS Code from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MonoLisa.monolisa-for-vscode), then open the Command Palette and run **MonoLisa: Open Configuration**.
+[Install MonoLisa for VS Code from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MonoLisa.monolisa-for-vscode) or [Open VSX](https://open-vsx.org/extension/monolisa/monolisa-for-vscode), then open the Command Palette and run **MonoLisa: Open Configuration**.
 
 MonoLisa for VS Code is an initial release, and the configuration panel is meant to grow with real workflows. Try it with the [MonoLisa Trial](https://www.monolisa.dev/buy/trial?utm_source=vscode), or install your existing MonoLisa Code and Text fonts and let the extension detect them. If a font build, editor surface, or configuration choice does not behave as expected, please open an issue in the [MonoLisa feedback tracker](https://github.com/MonoLisaFont/feedback/issues).
 
