@@ -1,8 +1,7 @@
 ---
 title: "Introducing MonoLisa for Visual Studio Code"
-published: YYYY-MM-DD
+published: 2026-09-02
 updated: 2026-09-02
-draft: true
 keywords: ["MonoLisa", "VS Code", "programming fonts", "developer tools"]
 authors: ["Juho Vepsäläinen"]
 ---
