@@ -7,7 +7,7 @@ keywords: ["MonoLisa", "VS Code", "programming fonts", "developer tools"]
 authors: ["Juho Vepsäläinen"]
 ---
 
-While [Visual Studio Code](https://code.visualstudio.com/) supports OpenType features for its code editor well, configuring those features can be complex as it relies on understanding related CSS syntax. On top of this, additional configuration may be required. Because of this purpose, we have introduced [an official MonoLisa extension for VS Code](https://marketplace.visualstudio.com/items?itemName=MonoLisa.monolisa-for-vscode). Depending on the version you have installed, it guides you in configuration. On top of this, we have included a couple of our color themes and allowed customizing them to your liking. Essentially this extension moves configuration from figuring out which configuration parameters to use to making the font look the way you want which is a good step forward.
+While [Visual Studio Code](https://code.visualstudio.com/) supports OpenType features for its code editor well, configuring those features can be complex as it relies on understanding related CSS syntax. On top of this, additional configuration may be required. Because of this purpose, we have introduced [an official MonoLisa extension for VS Code](https://marketplace.visualstudio.com/items?itemName=MonoLisa.monolisa-for-vscode) ([Open VSX](https://open-vsx.org/extension/monolisa/monolisa-for-vscode)). Depending on the version you have installed, it guides you in configuration. On top of this, we have included a couple of our color themes and allowed customizing them to your liking. Essentially this extension moves configuration from figuring out which configuration parameters to use to making the font look the way you want which is a good step forward.
 
 ## Start with a live preview
 
@@ -46,7 +46,7 @@ MonoLisa version 3 introduced **MonoLisa Text**, a proportional companion for re
   <img src="/images/monolisa-vscode-prose-font.png" alt="The prose-font panel previewing MonoLisa Text in headings, paragraphs, bold, italic, and ligature samples" width="100%" />
 </picture>
 
-The prose section includes a sample with headings, paragraphs, bold, italic, character sets, and ligatures. Size and line height can be tuned independently from the coding font. The panel is deliberately explicit about the boundary: this setting affects **Markdown: Open Preview**, not Markdown source in the editor, the terminal, or chat.
+The prose section includes a sample with headings, paragraphs, bold, italic, character sets, and ligatures. Size and line height can be tuned independently of the coding font. The panel is deliberately explicit about the boundary: this setting affects **Markdown: Open Preview**, not Markdown source in the editor, the terminal, or chat.
 
 VS Code does not currently expose OpenType and Grade controls for Markdown Preview in the same way it does for the code editor. For those choices, the extension points to MonoLisa downloads, where a customized build can have the desired features pinned into the font itself.
 
