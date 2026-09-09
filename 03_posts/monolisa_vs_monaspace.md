@@ -1,8 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Monaspace"
-published: YYYY-MM-DD
-updated: 2026-08-26
-draft: true
+published: 2026-09-09
+updated: 2026-09-09
 keywords:
   [
     "MonoLisa vs Monaspace",
