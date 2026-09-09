@@ -19,6 +19,12 @@ The coding-font section puts controls and a live code sample side by side. You c
   <img src="/images/monolisa-vscode-coding-font.png" alt="The MonoLisa for VS Code coding-font panel with typography controls and a live JavaScript preview" width="100%" />
 </picture>
 
+[View full-resolution image](https://www.monolisa.dev/media/images/monolisa-vscode-coding-font-2x.png)
+
+MonoLisa Code in detail: upright code alongside italic keywords.
+
+![Close-up of MonoLisa Code showing upright code and italic keywords](/images/monolisa-vscode-coding-font-detail.png)
+
 The extension checks the capabilities of the MonoLisa installation instead of presenting controls that may do nothing. It also supports renamed or customized builds: enter the suffix from a downloaded MonoLisa build and let the panel rescan it.
 
 Bundled preview fonts are not installed as system fonts, and commercial font files are not included in the extension. To use the Trial throughout VS Code, run **MonoLisa: Get Trial Fonts**, complete the Trial flow on the MonoLisa website, install the fonts for your operating system, and reload VS Code. **MonoLisa: Apply Trial Setup** then configures the relevant editor surfaces. If you already own MonoLisa, install your fonts and use the configuration panel or the conservative **Apply Commercial Setup** preset.
@@ -32,6 +38,12 @@ Font family and size are only the beginning. MonoLisa contains OpenType features
   <img src="/images/monolisa-vscode-opentype-features.png" alt="OpenType feature selectors next to the live code preview in MonoLisa for VS Code" width="100%" />
 </picture>
 
+[View full-resolution image](https://www.monolisa.dev/media/images/monolisa-vscode-opentype-features-2x.png)
+
+A closer look at the selectors shows the coding ligature, alternate g forms, and zero styles.
+
+![Close-up of MonoLisa OpenType selectors showing ligatures, alternate g forms, and zero styles](/images/monolisa-vscode-opentype-features-detail.png)
+
 There is also a dedicated script-style control. It can keep everything upright, italicize comments only, or extend MonoLisa's alternate script glyphs across code. The live preview makes the difference visible before the setting reaches the editor.
 
 When applied, the coding configuration covers more than the main editor. It can set MonoLisa Code for the integrated terminal, debug console, source-control input, and code blocks in chat as well. The panel keeps the generated settings visible at the bottom, so it is clear which parts of VS Code the current choice affects.
@@ -44,6 +56,12 @@ MonoLisa version 3 introduced **MonoLisa Text**, a proportional companion for re
   <source srcSet="/images/monolisa-vscode-prose-font.png 1x, /images/monolisa-vscode-prose-font-2x.png 2x" />
   <img src="/images/monolisa-vscode-prose-font.png" alt="The prose-font panel previewing MonoLisa Text in headings, paragraphs, bold, italic, and ligature samples" width="100%" />
 </picture>
+
+[View full-resolution image](https://www.monolisa.dev/media/images/monolisa-vscode-prose-font-2x.png)
+
+MonoLisa Text in detail: proportional spacing in regular, bold, and italic text.
+
+![Close-up of MonoLisa Text showing proportional regular, bold, and italic samples](/images/monolisa-vscode-prose-font-detail.png)
 
 The prose section includes a sample with headings, paragraphs, bold, italic, character sets, and ligatures. Size and line height can be tuned independently of the coding font. The panel is deliberately explicit about the boundary: this setting affects **Markdown: Open Preview**, not Markdown source in the editor, the terminal, or chat.
 
@@ -64,6 +82,8 @@ Selecting a theme immediately re-themes the configuration panel, providing a lar
   <source srcSet="/images/monolisa-vscode-themes.png 1x, /images/monolisa-vscode-themes-2x.png 2x" />
   <img src="/images/monolisa-vscode-themes.png" alt="The four MonoLisa themes with controls for palette contrast, color intensity, and comment prominence" width="100%" />
 </picture>
+
+[View full-resolution image](https://www.monolisa.dev/media/images/monolisa-vscode-themes-2x.png)
 
 These controls are intended to make a theme adaptable without turning theme configuration into a color-by-color project. Start from the palette you prefer, make a few broad adjustments, and reset to the base palette at any time.
 
