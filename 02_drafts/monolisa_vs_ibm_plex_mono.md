@@ -89,10 +89,6 @@ For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block e
 
 IBM Plex Mono is free and open source. MonoLisa is a paid typeface with [free trial access](https://monolisa.dev/buy/trial) and a customizer.
 
-## Project activity
-
-As of 2026-07-03, the IBM Plex Mono GitHub repository shows 69 non-draft, non-prerelease releases, with the latest release on 2026-06-11. Across the release history returned by the GitHub API, that is about 8.31 releases per year. The repository has 73 open issues, and the median close time for the recent closed-issue sample is 31.7 days. Treat this as a maintenance/activity signal, not a type-design quality score.
-
 ## Source links
 
 - [MonoLisa](https://www.monolisa.dev/)

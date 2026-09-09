@@ -89,10 +89,6 @@ For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block e
 
 Hack is free and open source. MonoLisa is a paid typeface with [free trial access](https://monolisa.dev/buy/trial) and a customizer.
 
-## Project activity
-
-As of 2026-07-03, the Hack GitHub repository shows 15 non-draft, non-prerelease releases, with the latest release on 2018-03-06. Across the release history returned by the GitHub API, that is about 5.55 releases per year. The repository has 144 open issues, and the median close time for the recent closed-issue sample is 5.2 days. Treat this as a maintenance/activity signal, not a type-design quality score.
-
 ## Source links
 
 - [MonoLisa](https://www.monolisa.dev/)

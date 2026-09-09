@@ -17,7 +17,11 @@ MonoLisa and Monaspace are both coding type systems, but they optimize for diffe
 
 ![Summary infographic comparing MonoLisa and Monaspace](/images/comparison-monolisa-vs-monaspace-summary.svg)
 
+The font speaker totals are estimates from Hyperglot's supported language/script entries and may count speakers more than once. The worldwide bar provides an approximate population reference.
+
 ## Decision table
+
+The specimens and language-coverage measurements in this comparison use Monaspace Neon v1.400. Features shared across all five Monaspace families are identified separately in the text.
 
 | Category                     | Better&nbsp;fit     | MonoLisa Code                                                                               | Monaspace                                                                    |
 | ---------------------------- | ------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
@@ -29,7 +33,7 @@ MonoLisa and Monaspace are both coding type systems, but they optimize for diffe
 | **Style control**            | Similar             | 15 stylistic sets, 12 character variants                                                    | 10 stylistic sets, selected character variants                               |
 | **Coding ligatures**         | Similar             | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
 | **Terminal symbols**         | Similar             | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Proportional counterpart** | Similar             | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Five-family coding superfamily                                               |
+| **Proportional counterpart** | MonoLisa            | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No                                                                           |
 | **Price**                    | Monaspace           | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                         |
 | **Source**                   | -                   | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Monaspace GitHub repository](https://github.com/githubnext/monaspace)       |
 
@@ -37,7 +41,9 @@ In short: MonoLisa Code leads on measured language coverage and, in the Neon spe
 
 ## Reading texture
 
-Consider the example below to judge rhythm, spacing, punctuation weight, and identifier texture.
+Monaspace's [texture healing](https://monaspace.githubnext.com/#texture-healing) lets wider letters borrow unused space from neighboring narrow letters. It substitutes letter shapes to make the spacing more even while preserving the monospace grid. For example, an `m` next to an `l` can extend into some of the space the `l` leaves unused.
+
+The example below enables texture healing in Monaspace Neon through the `calt` contextual-alternates feature. Compare the rhythm, spacing, and punctuation weight of the two fonts to see which you prefer for reading code.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-monaspace-texture-mobile.svg" />
@@ -46,7 +52,7 @@ Consider the example below to judge rhythm, spacing, punctuation weight, and ide
 
 ## Coding features
 
-Monaspace is a modern feature-rich coding superfamily. The measured Neon build includes contextual behavior, ligatures, stylistic sets, and character variants; MonoLisa covers a more focused family with a proportional text companion.
+Monaspace includes five coordinated coding families: Neon, Argon, Xenon, Radon, and Krypton. Their shared metrics let you [mix different letter styles within code](https://monaspace.githubnext.com/), for example to distinguish comments from other syntax. MonoLisa pairs its coding family with MonoLisa Text, a proportional companion for prose and interfaces.
 
 Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. Monaspace exposes `calt`, `liga`, `ss01`-`ss10`, and selected `cvXX` features.
 
@@ -59,7 +65,7 @@ The specimen enables Monaspace's opt-in `ss01`-`ss10` coding groups so compariso
 
 ## Glyph distinction
 
-Both fonts distinguish common lookalikes, but use different shapes for some of the cues. The comparison below uses Monaspace Neon.
+Both fonts distinguish common lookalikes, but use different shapes for some of the cues. The comparison below uses Monaspace Neon, with ligatures and contextual alternates disabled in both fonts. The operator-spacing observations refer to these unjoined forms.
 
 | Pair                   | MonoLisa Code                                                                                             | Monaspace Neon                                                                                                                  |
 | ---------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -75,15 +81,11 @@ Both fonts distinguish common lookalikes, but use different shapes for some of t
 
 ## Italics and style range
 
-Monaspace ships named Italic instances for all five families on its [`slnt` axis](https://monaspace.githubnext.com/), but its v1.400 Latin designs are [predominantly oblique](https://www.w3.org/TR/css-fonts-4/#font-style-prop): the font supplies the slanted outlines and contour corrections while most letters retain their upright construction. The project page says that some letters switch at `slnt=-5.5`; inspection of the [published v1.400 variable fonts](https://github.com/githubnext/monaspace/tree/v1.400/fonts/Variable%20Fonts) shows that, for basic Latin, Argon automatically substitutes only `f`, while Xenon substitutes `f`, `h`, `i`, `k`, `l`, `m`, `n`, `r`, and `u`. Neon, Radon, and Krypton make no automatic basic-Latin substitutions on the axis, and neither `a` nor `g` switches in any family. Neon, Argon, and Krypton do switch several localized Serbian Cyrillic forms, while Xenon has broader Cyrillic substitutions; Radon has no slant-triggered substitutions.
+MonoLisa Code's italics redraw letterforms to create a clear contrast with upright text. Monaspace Neon v1.400 uses designed obliques: the letters are slanted and their contours adjusted, while their basic Latin construction stays close to the upright. Monaspace provides named Italic styles in all five families, with additional italic alternates that vary by family.
 
-Monaspace also contains a separate [OpenType `ital` substitution feature](https://learn.microsoft.com/en-us/typography/opentype/spec/features_fj#tag-ital) with additional family-specific alternates, but moving only the `slnt` axis—as in the FontGauntlet test—does not activate all of them. Some are still geometric slants rather than substantially redrawn forms. Monaspace is therefore more accurately described as a set of designed obliques with selective italic alternates, not as either a wholly synthetic slant or a fully redrawn italic system across all five families.
+The specimen below pairs upright and italic text in MonoLisa Code and Monaspace Neon. MonoLisa's stronger change in letterforms can help distinguish comments or other syntax roles that your editor displays in italics.
 
-The specimen below uses Neon. MonoLisa's more extensively redrawn italics create a stronger distinction from the upright—useful when italics identify comments or other syntax roles. The benefit is clearer differentiation, not a blanket claim that italic text is always more legible.
-
-The specimen pairs upright and italic text within each family so the degree and character of the change are visible.
-
-MonoLisa Code was measured from separate variable upright and italic files. It offers 2 axes (`wght`, `GRAD`) and 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. Monaspace exposes 3 axes (`wght`, `wdth`, `slnt`); the measured Neon v1.400 static family includes 7 weights: ExtraLight, Light, Regular, Medium, SemiBold, Bold, and ExtraBold, with upright/italic styles and width variants.
+MonoLisa Code offers 10 named weights from Hairline to Black, with separate upright and italic variable files and weight (`wght`) and grade (`GRAD`) axes. The measured Monaspace Neon family offers 7 weights from ExtraLight to ExtraBold, with variable controls for weight (`wght`), width (`wdth`), and slant (`slnt`).
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-monaspace-italics-mobile.svg" />
@@ -92,9 +94,7 @@ MonoLisa Code was measured from separate variable upright and italic files. It o
 
 ## Terminal and console support
 
-Monaspace Neon measured at Powerline 6/6, box drawing 128/128, and block elements 32/32. Its Windows descent differs from hhea/OS/2 typo metrics in v1.400.
-
-For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
+Both MonoLisa Code and Monaspace Neon cover all the terminal symbols checked: 6 Powerline symbols, 128 box-drawing characters, and 32 block elements.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-monaspace-terminal-mobile.svg" />
@@ -105,13 +105,10 @@ For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block e
 
 Monaspace is free and open source. MonoLisa is a paid typeface with [free trial access](https://monolisa.dev/buy/trial) and a customizer.
 
-## Project activity
-
-As of 2026-07-03, the Monaspace GitHub repository shows 7 non-draft, non-prerelease releases, with the latest release on 2026-03-28. Across the release history returned by the GitHub API, that is about 2.94 releases per year. The repository has 52 open issues, and the median close time for the recent closed-issue sample is 194.8 days. Treat this as a maintenance/activity signal, not a type-design quality score.
-
 ## Conclusion
 
 Choose MonoLisa Code when broader measured language coverage and strong upright-to-italic differentiation matter most. Choose Monaspace when free, open-source licensing or variable width and slant controls matter more. All five Monaspace families supply named Italic instances, but their basic-Latin construction is predominantly oblique and their form substitutions vary by family; this comparison does not characterize them as fully redrawn italics across the superfamily.
 
 > - Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
-> - Slant-triggered substitutions were checked in all five Monaspace v1.400 variable fonts with HarfBuzz shaping at `slnt=0` and `slnt=-11`; the separate `ital` feature was checked explicitly. The listed letters are basic Latin; localized Cyrillic substitutions are described separately.
+> - Italic construction was inspected in all five [Monaspace v1.400 variable fonts](https://github.com/githubnext/monaspace/tree/v1.400/fonts/Variable%20Fonts). HarfBuzz shaping at `slnt=0` and `slnt=-11` was used to check automatic slant-triggered substitutions. For basic Latin, Argon substitutes only `f`; Xenon substitutes `f`, `h`, `i`, `k`, `l`, `m`, `n`, `r`, and `u`; Neon, Radon, and Krypton make no automatic substitutions. Neither `a` nor `g` switches in any family. Neon, Argon, and Krypton also switch several localized Serbian Cyrillic forms, while Xenon has broader Cyrillic substitutions; Radon has none triggered by slant.
+> - The separate [OpenType `ital` substitution feature](https://learn.microsoft.com/en-us/typography/opentype/spec/features_fj#tag-ital) was checked explicitly. It provides additional family-specific alternates that moving the `slnt` axis alone does not necessarily activate. Some alternates remain geometric slants. The description of these designs as predominantly [oblique](https://www.w3.org/TR/css-fonts-4/#font-style-prop) reflects their retained upright construction as well as the substitution results.
