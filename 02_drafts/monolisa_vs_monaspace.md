@@ -13,7 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Monaspace are both coding type systems, but they optimize for different priorities. This draft puts the visual summary and the decision table first, so the main differences are visible before the detailed specimens.
+MonoLisa and Monaspace are both coding type systems, but they optimize for different priorities. This post highlights these differences and we have summarized the key points in the infographic below before we go into specifics.
 
 ![Summary infographic comparing MonoLisa and Monaspace](/images/comparison-monolisa-vs-monaspace-summary.svg)
 
@@ -23,7 +23,7 @@ MonoLisa and Monaspace are both coding type systems, but they optimize for diffe
 | ---------------------------- | ------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | **Languages\***              | MonoLisa            | 593                                                                                         | 368                                                                          |
 | **Writing systems**          | MonoLisa            | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 3 (Latin, Cyrillic, Greek)                                                   |
-| **Italic contrast (Neon)**  | MonoLisa            | More extensively redrawn forms create stronger contrast with the upright                    | Predominantly oblique; no automatic basic-Latin axis swaps in Neon v1.400    |
+| **Italic contrast (Neon)**   | MonoLisa            | More extensively redrawn forms create stronger contrast with the upright                    | Predominantly oblique; no automatic basic-Latin axis swaps in Neon v1.400    |
 | **Fixed weights**            | MonoLisa            | 10                                                                                          | 7 in measured Neon family                                                    |
 | **Variable axes**            | Different strengths | 2 (`wght`, `GRAD`)                                                                          | 3 (`wght`, `wdth`, `slnt`)                                                   |
 | **Style control**            | Similar             | 15 stylistic sets, 12 character variants                                                    | 10 stylistic sets, selected character variants                               |
@@ -37,9 +37,7 @@ In short: MonoLisa Code leads on measured language coverage and, in the Neon spe
 
 ## Reading texture
 
-Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
-
-[Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
+Consider the example below to judge rhythm, spacing, punctuation weight, and identifier texture.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-monaspace-texture-mobile.svg" />
@@ -61,9 +59,19 @@ The specimen enables Monaspace's opt-in `ss01`-`ss10` coding groups so compariso
 
 ## Glyph distinction
 
-This section should compare common problem pairs such as `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
+Both fonts distinguish common lookalikes, but use different shapes for some of the cues. The comparison below uses Monaspace Neon.
 
-[Marcus input: Add notes for intentional MonoLisa tradeoffs.]
+| Pair                   | MonoLisa Code                                                                                             | Monaspace Neon                                                                                                                  |
+| ---------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `0O`                   | Zero has a square interior dot that separates it from capital O.                                          | Zero has a round interior dot that separates it from capital O.                                                                 |
+| <code>1lI&#124;</code> | Lowercase l has a curved foot, distinct from the baseline of one and the bars of capital I.               | Lowercase l has a flat foot, closer to the shape of one; their upper strokes distinguish them. Capital I has bars at both ends. |
+| Brackets and quotes    | Brackets are angular, braces and parentheses curved. Quotes taper, and periods and colon dots are square. | Brackets, braces, and parentheses have distinct shapes. Quotes are straighter, and periods and colon dots are round.            |
+| Operators              | Angle brackets and equals signs form a relatively compact group in sequences such as `<=` and `>=`.       | The same sequences have more visible space between the angle bracket and equals sign.                                           |
+
+<picture>
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-monaspace-glyphs-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-monaspace-glyphs.svg" alt="Comparison of lookalike characters, punctuation, and unjoined operators in MonoLisa Code and Monaspace Neon" width="100%" />
+</picture>
 
 ## Italics and style range
 
@@ -100,20 +108,6 @@ Monaspace is free and open source. MonoLisa is a paid typeface with [free trial 
 ## Project activity
 
 As of 2026-07-03, the Monaspace GitHub repository shows 7 non-draft, non-prerelease releases, with the latest release on 2026-03-28. Across the release history returned by the GitHub API, that is about 2.94 releases per year. The repository has 52 open issues, and the median close time for the recent closed-issue sample is 194.8 days. Treat this as a maintenance/activity signal, not a type-design quality score.
-
-## Source links
-
-- [MonoLisa](https://www.monolisa.dev/)
-- [Monaspace overview](https://monaspace.githubnext.com/)
-- [Monaspace repository](https://github.com/githubnext/monaspace)
-
-## Publication checklist
-
-- [ ] Marcus design review completed.
-- [ ] License/source basis checked.
-- [ ] Rendered SVG specimens visually reviewed.
-- [ ] Measured data verified against current font files.
-- [x] Final recommendation/conclusion written.
 
 ## Conclusion
 
