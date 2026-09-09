@@ -62,7 +62,6 @@ const samples = {
     fontSize: 42,
     lineHeight: 64,
     features: "kern=1,liga=1,calt=1",
-    featureProfile: "ligatures",
     syntax: true,
     lines: [
       "a !== b && c <= d || e >= f",
@@ -129,14 +128,14 @@ const themeFills = {
 };
 
 // Some fonts expose their primary coding ligatures through opt-in features.
-// Keep those choices explicit so specimens show the intended coding feature
-// set without enabling unrelated character-shape preferences for every font.
+// Apply them to every ligatures-on sample, including texture and italics,
+// without enabling unrelated character-shape preferences for every font.
 const fontFeatureProfiles = {
   monolisa: {
     liga: ["dlig=1"],
   },
   monaspace: {
-    ligatures: [
+    liga: [
       "ss01=1",
       "ss02=1",
       "ss03=1",
@@ -177,7 +176,6 @@ function features(font, sample) {
   const profile = fontFeatureProfiles[fontKeys.get(font)] || {};
   const additions = [
     ...(sample.features.includes("liga=1") ? profile.liga || [] : []),
-    ...(sample.featureProfile ? profile[sample.featureProfile] || [] : []),
   ];
   return [sample.features, ...additions].join(",");
 }

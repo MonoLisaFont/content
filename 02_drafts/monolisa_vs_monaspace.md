@@ -43,7 +43,7 @@ In short: MonoLisa Code leads on measured language coverage and, in the Neon spe
 
 Monaspace's [texture healing](https://monaspace.githubnext.com/#texture-healing) lets wider letters borrow unused space from neighboring narrow letters. It substitutes letter shapes to make the spacing more even while preserving the monospace grid. For example, an `m` next to an `l` can extend into some of the space the `l` leaves unused.
 
-The example below enables texture healing in Monaspace Neon through the `calt` contextual-alternates feature. Compare the rhythm, spacing, and punctuation weight of the two fonts to see which you prefer for reading code.
+The example below enables texture healing in Monaspace Neon through the `calt` contextual-alternates feature, along with coding ligatures in both fonts. Compare the rhythm, spacing, and punctuation weight of the two fonts to see which you prefer for reading code.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-monaspace-texture-mobile.svg" />
@@ -56,7 +56,7 @@ Monaspace includes five coordinated coding families: Neon, Argon, Xenon, Radon, 
 
 Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. Monaspace exposes `calt`, `liga`, `ss01`-`ss10`, and selected `cvXX` features.
 
-The specimen enables Monaspace's opt-in `ss01`-`ss10` coding groups so comparisons such as `>=`, arrows, and other operator sequences use the available Monaspace forms.
+The reading-texture, coding-feature, and italic specimens enable Monaspace's opt-in `ss01`-`ss10` coding groups so comparisons such as `>=`, arrows, and other operator sequences use the available Monaspace forms.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-monaspace-ligatures-mobile.svg" />
