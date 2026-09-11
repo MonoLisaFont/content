@@ -224,7 +224,7 @@ You can [download the latest version in “My orders” section](https://www.mon
 <Details>
 ### How to install the typeface?
 
-Before installation, make sure to remove any possible earlier version of MonoLisa to avoid potential issues between different versions (esp. 1, 2, or 3).
+Extract the downloaded ZIP, then install the included `.ttf` files using the instructions for your operating system below. Restart your editor after installation so it can find the fonts.
 
 #### Windows
 
@@ -244,6 +244,10 @@ Please use an application like Fontcase to import the font assets from iCloud or
 
 1. Select and open all downloaded files (`*.ttf*`)
 2. Click on “Install font”
+
+#### Replacing an earlier version
+
+If you already have an earlier version of the same MonoLisa family installed, remove it before installing the replacement to avoid conflicts. The following instructions cover macOS.
 
 **To uninstall:**
 
@@ -280,11 +284,11 @@ Please [refer to these instructions](https://glyphsapp.com/tutorials/eliminating
 <Details>
 ### How to use the typeface in program X?
 
-Generally put, the editor support for special features included in MonoLisa is weak. VS Code documented below is an exception to this rule. For the rest, it’s preferable to use the [customize tool](https://www.monolisa.dev/orders) to generate a typeface that makes sense for your use case.
+After installing the fonts, open your editor’s font settings and select the installed MonoLisa family. Use the family name shown on your download page, including any trial or custom suffix. Adjust the font size and line height to your preference.
 
-The same goes for terminals as the majority of them don’t expose many font features, and you are lucky if you can toggle ligatures.
+Optional features, such as stylistic sets and alternate glyphs, depend on your editor and the font edition you downloaded. See the [VS Code](#how-to-configure-monolisa-for-visual-studio-code), [WebStorm](#what-are-the-suggested-settings-for-webstorm), and terminal answers below for details.
 
-Design software tends to have better support (esp. Adobe products, Figma, and Affinity Designer). For something more presentation oriented, such as Pages, using the customize tool is the way to go again.
+If your application does not expose a feature you want to use, plans with download customization let you enable supported features in the font itself before downloading. You can find the available options on [My Orders](https://www.monolisa.dev/orders). Download customization is not included in the trial.
 
 </Details>
 
@@ -390,8 +394,12 @@ Go to `Preferences → Editor → Font` and set the font to `MonoLisaCode`. Adju
 <Details>
 ### How to configure MonoLisa for Visual Studio Code?
 
-[Use the official VS Code plugin](https://marketplace.visualstudio.com/items?itemName=MonoLisa.monolisa-for-vscode) as it can generate the configuration you need while allowing you to preview the font. This also works for the [trial version](https://www.monolisa.dev/buy/trial).
+1. [Install your downloaded fonts](#how-to-install-the-typeface).
+2. Install the official MonoLisa extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MonoLisa.monolisa-for-vscode) or [Open VSX](https://open-vsx.org/extension/monolisa/monolisa-for-vscode), then reload VS Code.
+3. Open the Command Palette and run **MonoLisa: Open Configuration** to preview and apply your settings.
 
-There's also an [Open VSX](https://open-vsx.org/extension/monolisa/monolisa-for-vscode) version of the plugin available.
+For the trial, run **MonoLisa: Apply Trial Setup** after installing the fonts. The extension’s bundled trial preview does not install the fonts for use throughout the editor.
+
+See [Introducing MonoLisa for Visual Studio Code](https://www.monolisa.dev/posts/introducing_monolisa_for_vscode) for more about the configuration panel, supported font features, and themes.
 
 </Details>
