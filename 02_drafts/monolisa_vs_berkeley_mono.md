@@ -45,6 +45,12 @@ The matching text makes those details easier to locate, but the images are not a
 
 Berkeley has a practical attraction if you want to adjust how much code fits in a pane. Its [Master Fonts module](https://usgraphics.com/catalog/FX-202) provides five widths, from UltraCondensed to Normal, across ten weights and upright/oblique styles. Retina and Book require the Supertype compiler. Variable fonts are a separate module, and their available range depends on the masters purchased.
 
+The vendor's Normal and Condensed specimens below keep the wording and source scale constant. Notice how the narrower forms shorten the line while retaining the same text. This illustrates the width choice; it does not measure how many extra columns fit in a particular editor.
+
+![Berkeley Mono Normal and Condensed specimens showing HAL9000 EXABYTE at the same source scale](/images/comparison-monolisa-vs-berkeley-mono-widths.svg)
+
+*Source: U.S. Graphics, [public width specimen](https://usgraphics.com/static/products/TX-02/images/TX-02-widths.2acb5eac2353.svg), artwork © U.S. Graphics. Two rows excerpted with original outlines and equal scaling; labels and colors adapted.*
+
 MonoLisa's variable controls serve a different purpose. Weight changes the weight; grade adjusts stroke thickness while preserving character widths. There is no width or slant axis in the measured MonoLisa files. If you want a condensed version, grade will not provide one.
 
 For sloped syntax, MonoLisa offers italic styles. Berkeley calls its styles Oblique: its [2.000 release notes](https://usgraphics.com/products/berkeley-mono/releases) explicitly record the rename from Italics and the introduction of the slant axis. That is a useful distinction to try visually, not a reason to declare one approach better. Compare how much contrast you want between comments and upright code.
@@ -91,6 +97,8 @@ This comparison combines our existing MonoLisa measurements with Berkeley's publ
 We did not render with the Berkeley trial, inspect the full commercial font, or measure its language coverage, vertical metrics, glyph counts, or shaping. The attributed vector excerpt comes from a public vendor specimen, used to discuss its visible letterforms in code. It is not a matched-size specimen or a test of editor rendering.
 
 The MonoLisa code sample repeats three complete lines from the vendor’s Generic specimen. It uses the local Code upright font, HarfBuzz `hb-view`, weight 400, size 64, and a 76-unit line step in a 798 × 260 SVG. These are our display settings, not inferred Berkeley settings. The comparison retains only the three discussed lines from the vendor SVG, with backgrounds removed and both fonts using the same theme-aware syntax colors for keywords, strings, numbers, and punctuation. The panels are side by side on desktop and stacked on mobile. Regenerate the comparison SVGs with `node scripts/render-berkeley-comparison.mjs <path-to-MonoLisa-Code-upright-font>`. MonoLisa coverage comes from the series data in `01_ideas/comparison_language_coverage.json` and `01_ideas/comparison_typeface_data.csv`.
+
+The width graphic retains the Normal and Condensed rows from the public width specimen, with the same uniform scale for both. It is not a simulated horizontal compression. Source outlines and metadata are in `scripts/berkeley-public-width-excerpts.json`.
 
 The style graphic uses a four-word excerpt from the labeled Regular and Oblique specimens in the 2.000 datasheet. MonoLisa uses its actual upright and italic files at weight 400. Regenerate the additional graphics with `node scripts/render-berkeley-details.mjs`; the extracted Berkeley outlines and source metadata are stored in `scripts/berkeley-public-style-excerpts.json`.
 

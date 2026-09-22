@@ -15,3 +15,13 @@ for(const mobile of [false,true]) {
  const right=`<g transform="translate(${x} ${y})">${text('Berkeley Mono',0,0,28)}${text('Regular · vendor excerpt',0,58,18)}${vendorStyle('upright',16,130)}${text('Oblique · vendor excerpt',0,166,18)}${vendorStyle('oblique',16,238)}</g>`;
  writeFileSync(`images/comparison-monolisa-vs-berkeley-mono-styles${mobile?'-mobile':''}.svg`,svg(left+right,mobile?540:1110,mobile?570:270,'Upright and sloped styles in MonoLisa and Berkeley Mono'));
 }
+const widths=JSON.parse(readFileSync('scripts/berkeley-public-width-excerpts.json','utf8'));
+let widthBody=text('Berkeley Mono width options',0,0,28);
+Object.entries(widths.rows).forEach(([label,row],i)=>{
+ const y=62+i*142;
+ widthBody+=text(label+' · vendor excerpt',0,y,20);
+ // Uniform scaling for both rows preserves the source's relative widths.
+ widthBody+=`<g fill="${ink}" transform="translate(16 ${y+56}) scale(1.4) translate(${-row.left} ${-row.top})">${row.paths.map(d=>`<path d="${d}"/>`).join('')}</g>`;
+});
+widthBody+=text('Same vendor specimen scale; original outlines.',0,350,18);
+writeFileSync('images/comparison-monolisa-vs-berkeley-mono-widths.svg',svg(widthBody,820,400,'Berkeley Mono Normal and Condensed widths at the same source scale'));
