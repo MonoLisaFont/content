@@ -32,4 +32,8 @@ rows.forEach(([label,left,right], i) => {
 body += text('* Berkeley options depend on purchased modules.',12,758,20);
 body += text('Berkeley: vendor documentation through 2.004; no local font measurements.',12,794,19);
 writeFileSync('images/comparison-monolisa-vs-berkeley-mono-summary.svg',svg(body,1140,850,'Summary infographic comparing MonoLisa Code and Berkeley Mono'));
-writeFileSync('images/comparison-monolisa-vs-berkeley-mono-monolisa-glyphs.svg',svg(text('0 O o   1 l I |   rn m   a g',0,0,54),1040,115,'MonoLisa Code characters rendered locally at weight 400'));
+// Three complete lines transcribed from the vendor's Generic code specimen.
+// Display size and colors aid reading, but do not establish matched rendering.
+const code = ['return { i += 1,', '  get["KEY"].run()', '};'];
+const codeBody = '<rect width="798" height="260" fill="#000"/>' + code.map((line,i) => text(line,16,-4+i*76,64).replaceAll('var(--icon-primary, currentColor)', '#00c4a3')).join('');
+writeFileSync('images/comparison-monolisa-vs-berkeley-mono-monolisa-code.svg',svg(codeBody,798,260,'MonoLisa Code: the same three lines as the Berkeley vendor excerpt, rendered locally'));
