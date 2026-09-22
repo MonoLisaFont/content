@@ -5,8 +5,8 @@ const config = JSON.parse(readFileSync('scripts/comparison-fonts.local.json', 'u
 const font = [process.argv[2], config.fonts.monolisa.regular, '/Library/Fonts/MonoLisaCodeUpright.ttf'].find(p => p && existsSync(p));
 if (!font) throw new Error('Pass a local MonoLisa Code font path.');
 let id = 0;
-function text(value, x, y, size = 24) {
-  const result = spawnSync('hb-view', ['--output-format=svg', `--font-size=${size}`, '--variations=wght=400', '--', font, value], {encoding:'utf8'});
+function text(value, x, y, size = 24, fontPath = font) {
+  const result = spawnSync('hb-view', ['--output-format=svg', `--font-size=${size}`, '--variations=wght=400', '--', fontPath, value], {encoding:'utf8'});
   if (result.status !== 0) throw new Error(result.stderr);
   const prefix = `b${id++}-`;
   return result.stdout.replace(/<\?xml[^>]*>/g, '').replace('<svg ', `<svg x="${x}" y="${y}" `)
@@ -67,3 +67,5 @@ for (const mobile of [false,true]) {
   const body = panel('MonoLisa Code','Rendered locally',mono,0,0) + panel('Berkeley Mono','Vendor vector excerpt',vendor,mobile?0:632,mobile?330:0);
   writeFileSync(`images/comparison-monolisa-vs-berkeley-mono-code${mobile?'-mobile':''}.svg`,svg(body,mobile?600:1232,mobile?630:300,'MonoLisa Code and Berkeley Mono code comparison; different rendering sources'));
 }
+
+export { text, svg };
