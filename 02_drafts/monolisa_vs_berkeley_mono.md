@@ -41,6 +41,12 @@ MonoLisa's `r` has a visible foot at the baseline; Berkeley's has a simpler stem
 
 The matching text makes those details easier to locate, but the images are not a controlled rendering comparison. Both panels follow the site theme, and display sizes were chosen for readability; they do not establish equal font size, weight, or line height. Use these excerpts to compare letterforms, not relative width, darkness, or small-size sharpness. Explore the complete [Berkeley code specimens](https://usgraphics.com/products/berkeley-mono#section-code) and [MonoLisa tester](https://www.monolisa.dev/tester) before trying either in your editor.
 
+The enlarged details below isolate the same shapes. MonoLisa's foot on `r` is easy to spot here; the `e` and brackets invite a closer look at how curves meet horizontal strokes. Enlargement helps inspect construction, but it is not a small-size readability test.
+
+![Enlarged r, e, and square brackets in MonoLisa Code and Berkeley Mono, with construction notes](/images/comparison-monolisa-vs-berkeley-mono-details.svg)
+
+*Berkeley outlines excerpted from the same [U.S. Graphics Generic specimen](https://usgraphics.com/products/berkeley-mono#section-code), artwork © U.S. Graphics; MonoLisa rendered locally. Glyphs are enlarged independently, with themed colors and added annotations.*
+
 ## Width, slant, and italics
 
 Berkeley has a practical attraction if you want to adjust how much code fits in a pane. Its [Master Fonts module](https://usgraphics.com/catalog/FX-202) provides five widths, from UltraCondensed to Normal, across ten weights and upright/oblique styles. Retina and Book require the Supertype compiler. Variable fonts are a separate module, and their available range depends on the masters purchased.
@@ -97,6 +103,8 @@ This comparison combines our existing MonoLisa measurements with Berkeley's publ
 We did not render with the Berkeley trial, inspect the full commercial font, or measure its language coverage, vertical metrics, glyph counts, or shaping. The attributed vector excerpt comes from a public vendor specimen, used to discuss its visible letterforms in code. It is not a matched-size specimen or a test of editor rendering.
 
 The MonoLisa code sample repeats three complete lines from the vendor’s Generic specimen. It uses the local Code upright font, HarfBuzz `hb-view`, weight 400, size 64, and a 76-unit line step in a 798 × 260 SVG. These are our display settings, not inferred Berkeley settings. The comparison retains only the three discussed lines from the vendor SVG, with backgrounds removed and both fonts using the same theme-aware syntax colors for keywords, strings, numbers, and punctuation. The panels are side by side on desktop and stacked on mobile. Regenerate the comparison SVGs with `node scripts/render-berkeley-comparison.mjs <path-to-MonoLisa-Code-upright-font>`. MonoLisa coverage comes from the series data in `01_ideas/comparison_language_coverage.json` and `01_ideas/comparison_typeface_data.csv`.
+
+The detail graphic isolates `r`, `e`, and square brackets from the already attributed Generic excerpt. Positions and display scale are adjusted to inspect each shape; outlines are unchanged. The selected paths are stored in `scripts/berkeley-public-glyph-excerpts.json`.
 
 The width graphic retains the Normal and Condensed rows from the public width specimen, with the same uniform scale for both. It is not a simulated horizontal compression. Source outlines and metadata are in `scripts/berkeley-public-width-excerpts.json`.
 
