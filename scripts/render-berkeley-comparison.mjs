@@ -19,13 +19,46 @@ function svg(body, width, height, label) {
 // Three complete lines transcribed from the vendor's Generic code specimen.
 // Display size and colors aid reading, but do not establish matched rendering.
 const code = ['return { i += 1,', '  get["KEY"].run()', '};'];
-const ink = 'var(--icon-primary, currentColor)';
-const codeBody = code.map((line,i) => text(line,16,-4+i*76,64).replaceAll('var(--icon-primary, currentColor)', ink)).join('');
-// The vendor file contains only the three discussed lines, extracted from:
-// https://usgraphics.com/static/products/TX-02/images/TX-02-code-ticktock.eefb36c5c7fe.svg
-// Original outlines retained; backgrounds removed and both panels use the site text color.
+const syntaxFills = {
+  keyword: 'var(--comparison-syntax-keyword, var(--ml-colors-primary, #b7791f))',
+  string: 'var(--comparison-syntax-string, var(--ml-colors-primary, #b7791f))',
+  number: 'var(--comparison-syntax-number, var(--ml-colors-primary, #b7791f))',
+  punctuation: 'var(--comparison-syntax-punctuation, var(--ml-colors-comment, currentColor))',
+  identifier: 'var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))',
+};
+// Fixed specimen token ranges; shared by both fonts so highlights are identical.
+function tokenTypes(line, index) {
+  return [...line].map((char, column) => {
+    if (index === 0 && column < 6) return 'keyword';
+    if (index === 0 && char === '1') return 'number';
+    if (index === 1 && column >= 6 && column <= 10) return 'string';
+    if ('{}[],.;()'.includes(char)) return 'punctuation';
+    return 'identifier';
+  });
+}
+const codeBody = code.map((line,i) => {
+  let glyph = 0;
+  const types = tokenTypes(line,i);
+  const rendered = text(line,16,-4+i*76,64).replace(/<use\b/g, () => {
+    if (glyph >= types.length) throw new Error('Unexpected MonoLisa glyph count');
+    const type = types[glyph++];
+    return `<use fill="${syntaxFills[type]}" data-token="${type}"`;
+  });
+  if (glyph !== line.length) throw new Error('Expected one glyph per specimen character');
+  return rendered;
+}).join('');
+// Public source: https://usgraphics.com/static/products/TX-02/images/TX-02-code-ticktock.eefb36c5c7fe.svg
+// Each of the 30 vendor paths is one non-space character in reading order.
+// Original outlines retained; only fills are adapted, using the same token ranges.
+const vendorTypes = code.flatMap((line,i) => tokenTypes(line,i).filter((_,column) => line[column] !== ' '));
+let vendorGlyph = 0;
 const vendor = readFileSync('images/comparison-monolisa-vs-berkeley-mono-vendor-code.svg','utf8')
-  .replace(/<rect[^>]*\/>/g, '').replaceAll('#00c6a0', ink);
+  .replace(/<rect[^>]*\/>/g, '').replace(/fill="#00c6a0"/g, () => {
+    const type = vendorTypes[vendorGlyph++];
+    if (!type) throw new Error('Unexpected vendor glyph count');
+    return `fill="${syntaxFills[type]}" data-token="${type}"`;
+  });
+if (vendorGlyph !== vendorTypes.length) throw new Error('Missing vendor glyphs');
 function panel(label, note, content, x, y) {
   return `<g transform="translate(${x} ${y})">${text(label,0,0,28)}${text(note,0,45,18)}<g transform="translate(0 96)">${content}</g></g>`;
 }
