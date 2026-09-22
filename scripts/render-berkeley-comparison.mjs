@@ -19,5 +19,18 @@ function svg(body, width, height, label) {
 // Three complete lines transcribed from the vendor's Generic code specimen.
 // Display size and colors aid reading, but do not establish matched rendering.
 const code = ['return { i += 1,', '  get["KEY"].run()', '};'];
-const codeBody = '<rect width="798" height="260" fill="#000"/>' + code.map((line,i) => text(line,16,-4+i*76,64).replaceAll('var(--icon-primary, currentColor)', '#00c4a3')).join('');
-writeFileSync('images/comparison-monolisa-vs-berkeley-mono-monolisa-code.svg',svg(codeBody,798,260,'MonoLisa Code: the same three lines as the Berkeley vendor excerpt, rendered locally'));
+const ink = 'var(--icon-primary, currentColor)';
+const codeBody = code.map((line,i) => text(line,16,-4+i*76,64).replaceAll('var(--icon-primary, currentColor)', ink)).join('');
+// The vendor file contains only the three discussed lines, extracted from:
+// https://usgraphics.com/static/products/TX-02/images/TX-02-code-ticktock.eefb36c5c7fe.svg
+// Original outlines retained; backgrounds removed and both panels use the site text color.
+const vendor = readFileSync('images/comparison-monolisa-vs-berkeley-mono-vendor-code.svg','utf8')
+  .replace(/<rect[^>]*\/>/g, '').replaceAll('#00c6a0', ink);
+function panel(label, note, content, x, y) {
+  return `<g transform="translate(${x} ${y})">${text(label,0,0,28)}${text(note,0,45,18)}<g transform="translate(0 96)">${content}</g></g>`;
+}
+const mono = `<g transform="scale(${600/798})">${codeBody}</g>`;
+for (const mobile of [false,true]) {
+  const body = panel('MonoLisa Code','Rendered locally',mono,0,0) + panel('Berkeley Mono','Vendor vector excerpt',vendor,mobile?0:632,mobile?330:0);
+  writeFileSync(`images/comparison-monolisa-vs-berkeley-mono-code${mobile?'-mobile':''}.svg`,svg(body,mobile?600:1232,mobile?630:300,'MonoLisa Code and Berkeley Mono code comparison; different rendering sources'));
+}

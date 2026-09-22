@@ -30,19 +30,16 @@ Berkeley entries reflect vendor documentation through 2.004, not local measureme
 
 The three lines below come from Berkeley's public code specimen. They put letters and punctuation together in a way a single enlarged character cannot: look at the lowercase `r` in `return` and `run`, the shape of the `e` in `get`, and the square brackets beside the parentheses in `get["KEY"].run()`.
 
-**Berkeley Mono — vendor screenshot**
+<picture>
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-berkeley-mono-code-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-berkeley-mono-code.svg" alt="The same three code lines in MonoLisa Code and Berkeley Mono: MonoLisa rendered locally, Berkeley excerpted from the vendor's vector specimen" width="100%" />
+</picture>
 
-![Three complete lines from Berkeley Mono's public code specimen, including return and get["KEY"].run()](/images/comparison-monolisa-vs-berkeley-mono-vendor-code.png)
-
-*Source: U.S. Graphics Company, [Berkeley Mono's Generic code specimen](https://usgraphics.com/products/berkeley-mono#section-code). Cropped screenshot; specimen artwork © U.S. Graphics. The vendor's rendering settings and specimen version are not stated.*
-
-**MonoLisa Code — the same text, rendered locally**
-
-![The same return and get["KEY"].run() lines rendered in MonoLisa Code](/images/comparison-monolisa-vs-berkeley-mono-monolisa-code.svg)
+*Berkeley source: U.S. Graphics Company, [Generic code specimen](https://usgraphics.com/products/berkeley-mono#section-code), artwork © U.S. Graphics. Three lines excerpted from the public SVG with the original glyph outlines retained and colors adapted to the site theme. The vendor's rendering settings and specimen version are not stated.*
 
 MonoLisa's `r` has a visible foot at the baseline; Berkeley's has a simpler stem without that foot. In `get`, compare how the crossbar meets the curved bowl of `e`. Then follow the punctuation through the second line: the square brackets and round parentheses give the call structure its own rhythm in each font.
 
-The matching text makes those details easier to locate, but the images are not a controlled rendering comparison. Colors and display sizes were chosen for readability; they do not establish equal font size, weight, or line height. Use these excerpts to compare letterforms, not relative width, darkness, or small-size sharpness. Explore the complete [Berkeley code specimens](https://usgraphics.com/products/berkeley-mono#section-code) and [MonoLisa tester](https://www.monolisa.dev/tester) before trying either in your editor.
+The matching text makes those details easier to locate, but the images are not a controlled rendering comparison. Both panels follow the site theme, and display sizes were chosen for readability; they do not establish equal font size, weight, or line height. Use these excerpts to compare letterforms, not relative width, darkness, or small-size sharpness. Explore the complete [Berkeley code specimens](https://usgraphics.com/products/berkeley-mono#section-code) and [MonoLisa tester](https://www.monolisa.dev/tester) before trying either in your editor.
 
 ## Width, slant, and italics
 
@@ -80,10 +77,10 @@ If either font suits you, visit the [MonoLisa checkout](https://www.monolisa.dev
 
 ## Measurement notes
 
-This comparison combines our existing MonoLisa measurements with Berkeley's public documentation, checked September 22, 2026. Berkeley specifications are based on the 2.000 datasheet, current catalog, and release notes through 2.004. The intervening releases include rendering and ligature fixes, a hyphen addition, and a slant-interpolation fix; the screenshot itself is not verified as a 2.004 rendering.
+This comparison combines our existing MonoLisa measurements with Berkeley's public documentation, checked September 22, 2026. Berkeley specifications are based on the 2.000 datasheet, current catalog, and release notes through 2.004. The intervening releases include rendering and ligature fixes, a hyphen addition, and a slant-interpolation fix; the vendor specimen itself is not verified as a 2.004 rendering.
 
-We did not render with the Berkeley trial, inspect the full commercial font, or measure its language coverage, vertical metrics, glyph counts, or shaping. The attributed screenshot is an excerpt of a public vendor specimen, used to discuss its visible letterforms in code. It is not a matched-size specimen or a test of editor rendering.
+We did not render with the Berkeley trial, inspect the full commercial font, or measure its language coverage, vertical metrics, glyph counts, or shaping. The attributed vector excerpt comes from a public vendor specimen, used to discuss its visible letterforms in code. It is not a matched-size specimen or a test of editor rendering.
 
-The MonoLisa code sample repeats three complete lines from the vendor’s Generic specimen. It uses the local Code upright font, HarfBuzz `hb-view`, weight 400, size 64, and a 76-unit line step in a 798 × 260 SVG. These are our display settings, not inferred Berkeley settings. Regenerate the MonoLisa specimen with `node scripts/render-berkeley-comparison.mjs <path-to-MonoLisa-Code-upright-font>`. MonoLisa coverage comes from the series data in `01_ideas/comparison_language_coverage.json` and `01_ideas/comparison_typeface_data.csv`.
+The MonoLisa code sample repeats three complete lines from the vendor’s Generic specimen. It uses the local Code upright font, HarfBuzz `hb-view`, weight 400, size 64, and a 76-unit line step in a 798 × 260 SVG. These are our display settings, not inferred Berkeley settings. The comparison retains only the three discussed lines from the vendor SVG, with backgrounds removed and both fonts using the same theme-aware text color. The panels are side by side on desktop and stacked on mobile. Regenerate the comparison SVGs with `node scripts/render-berkeley-comparison.mjs <path-to-MonoLisa-Code-upright-font>`. MonoLisa coverage comes from the series data in `01_ideas/comparison_language_coverage.json` and `01_ideas/comparison_typeface_data.csv`.
 
 {/* Editorial review: Marcus to review design observations; Juho to add personal experience. Keep the distinction between vendor documentation and local measurements when editing. */}
