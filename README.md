@@ -45,7 +45,7 @@ For simple posts, only heading level 2 should be used as in the sample. A good l
 
 ## Comparison post graphics
 
-Every comparison post must include a summary infographic before publication, in addition to its detailed specimens. Place it after the comparison table and before the specimens. Use `/images/comparison-monolisa-vs-<typeface>-summary.svg`, with alt text naming the compared fonts. The infographic must match the post's measured font version and scope; explain any coverage or speaker-count estimates alongside it. Retain the infographic when rewriting the prose.
+Every comparison post must include a summary infographic before publication, in addition to its detailed specimens. Place it after the comparison table and before the specimens. Use `/images/comparison-monolisa-vs-<typeface>-summary.svg`, with alt text naming the compared fonts. The infographic must match the post's measured font version and scope; explain any coverage or speaker-count estimates alongside it. Retain the infographic when rewriting the prose. End each comparison with a Measurement notes section after the recommendation and trial links. Record the tools, versions, commands, scope, and limitations behind the reported measurements; clearly mark unmeasured fonts in deferred drafts.
 
 Drafts awaiting verified comparison data should track the infographic as unfinished work rather than publish a graphic with guessed values. See [the comparison series plan](01_ideas/comparison_post_series.md) for the template and graphics workflow.
 

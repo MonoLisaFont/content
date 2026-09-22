@@ -13,7 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-If JetBrains Mono feels too light or too dark in your theme, MonoLisa offers an extra adjustment: grade. It lets you fine-tune stroke thickness independently of weight. JetBrains Mono already has variable weight, italics, and ligatures, so the reason to try MonoLisa is whether that extra control helps you get the appearance you want.
+If you like JetBrains Mono's features but find its letterforms too narrow for your taste, MonoLisa is worth trying. Both offer italics, coding ligatures, and variable weight. The difference to look at first is the shape of the letters: MonoLisa's broader, rounder forms give code a different rhythm, while JetBrains Mono emphasizes tall lowercase letters within a compact width.
 
 ## At a glance
 
@@ -35,7 +35,9 @@ If JetBrains Mono feels too light or too dark in your theme, MonoLisa offers an 
 
 ## Reading texture
 
-Compare the same `parseToken` function below. Look at `input[offset + 1]`, where brackets, punctuation, and letters meet, then at the repeated braces down the page. The samples give you something more useful to judge than the number of weights: whether you like the font across a whole block of code.
+[JetBrains Mono's design](https://www.jetbrains.com/lp/mono/) emphasizes tall lowercase letters within a standard width, with rounded forms that approach rectangles. In the glyph specimen below, compare `0`, `O`, and lowercase `o` with MonoLisa's rounder forms.
+
+The `parseToken` specimen shows how those choices add up across a block of code at the same font size. Compare the line lengths as well as the letters: the space a font takes matters if you work with narrow editor panes. Try both at your usual editor size to judge the balance between letter shape and how much code fits on screen.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-texture-mobile.svg" />
@@ -84,13 +86,11 @@ Both fonts cover all 6 Powerline symbols, 128 box-drawing characters, and 32 blo
   <img src="/images/comparison-monolisa-vs-jetbrains-mono-terminal.svg" alt="Prompt separators and box drawing in MonoLisa Code and JetBrains Mono" width="100%" />
 </picture>
 
-> \* Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
-
 ## Which font should you choose?
 
-Choose JetBrains Mono if you want a free, open-source font with italics and ligatures, and its weight adjustment already gets you the appearance you want. If it already works well in your editor, keeping it is a reasonable choice.
+Choose JetBrains Mono if you like its compact letterforms and want a free, open-source font with italics and ligatures. If it already works well in your editor, keeping it is a reasonable choice.
 
-Consider MonoLisa if you want the separate grade adjustment, need Hebrew or Armenian coverage, or prefer its letterforms after comparing the specimens. If your interest is mainly grade, try it in the tester first: an extra control is only worth paying for if you find a setting you prefer.
+Consider MonoLisa if you prefer its broader, rounder letterforms, need Hebrew or Armenian coverage, or want a proportional companion for prose and interfaces. Its customizer also lets you save your preferred font features into downloaded files for editors with limited feature controls. The specimens can help you decide what to try; your own code and editor are the useful test.
 
 ## Try MonoLisa in your editor
 
@@ -98,4 +98,12 @@ The [free trial](https://www.monolisa.dev/buy/trial) lets you try MonoLisa on yo
 
 JetBrains Mono is free and open source. If you decide to buy MonoLisa after trying it, see the [checkout](https://www.monolisa.dev/buy/) for current pricing and applicable taxes.
 
-{/* Editorial review before publication: Marcus to review the design observations and grade-led opening; verify measured data against the intended font versions; visually review the specimens; confirm license/source basis and set the publication date. */}
+## Measurement notes
+
+\* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command was:
+
+```bash
+.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>
+```
+
+{/* Editorial review before publication: Marcus to review the design observations and letterform-led opening; verify measured data against the intended font versions; visually review the specimens; confirm license/source basis and set the publication date. */}

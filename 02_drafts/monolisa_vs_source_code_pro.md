@@ -106,4 +106,10 @@ Source Code Pro is free and open source. MonoLisa is a paid typeface with [free 
 
 Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose Source Code Pro, and which tradeoff matters most.
 
-> - Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
+## Measurement notes
+
+\* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command was:
+
+```bash
+.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>
+```

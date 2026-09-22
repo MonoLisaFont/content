@@ -78,4 +78,12 @@ Deferred commercial-font comparison. Operator Mono needs a license/trial review 
 
 Deferred until commercial-font access, license terms, and Marcus review are complete.
 
-> * Languages are measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled. Operator Mono awaits licensed-font measurement.
+## Measurement notes
+
+\* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command is:
+
+```bash
+.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>
+```
+
+Only MonoLisa has been measured here. Operator Mono still awaits licensed-font measurement.

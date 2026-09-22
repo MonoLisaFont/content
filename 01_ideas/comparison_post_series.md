@@ -119,6 +119,10 @@ Explain whether the competing font is free/open source or paid, whether trial ac
 ## Conclusion
 
 Summarize who should choose MonoLisa, who should choose TYPEFACE, and what tradeoff matters most.
+
+## Measurement notes
+
+Place methodology at the end, after the recommendation and trial links. Record measured font versions, tools and commands, feature settings, and limitations. Keep reproducible details here instead of interrupting the comparison; mark pending measurements explicitly.
 ```
 
 ## Graphics system

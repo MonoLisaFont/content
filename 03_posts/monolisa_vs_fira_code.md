@@ -77,8 +77,6 @@ Both fonts cover all 6 Powerline symbols, 128 box-drawing characters, and 32 blo
   <img src="/images/comparison-monolisa-vs-fira-code-terminal.svg" alt="Prompt separators and box drawing in MonoLisa Code and Fira Code" width="100%" />
 </picture>
 
-> \* Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
-
 ## Which font should you choose?
 
 Choose Fira Code if you like how it looks, use upright text, and want a free, open-source font. It already provides ligatures, character variants, and the terminal symbols measured here. You do not need to pay for a replacement just because another font has a longer feature list.
@@ -90,3 +88,11 @@ Consider MonoLisa if italic syntax is something you miss, or if you need its add
 The [free trial](https://www.monolisa.dev/buy/trial) lets you try MonoLisa on your own screen. It includes Regular and Bold with a limited character set, but omits coding ligatures, OpenType features, and grade adjustment. Use the [online tester](https://www.monolisa.dev/tester) to explore those features, then use the trial to judge the basic letterforms in your editor so you can see how the font would work out for you.
 
 Fira Code is free and open source. If you decide to buy MonoLisa after trying it, see the [checkout](https://www.monolisa.dev/buy/) for current pricing and applicable taxes.
+
+## Measurement notes
+
+\* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command was:
+
+```bash
+.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>
+```

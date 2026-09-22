@@ -103,12 +103,6 @@ Both MonoLisa Code and Monaspace Neon cover all the terminal symbols checked: 6 
   <img src="/images/comparison-monolisa-vs-monaspace-terminal.svg" alt="Terminal symbols and box drawing in MonoLisa Code and Monaspace Neon" width="100%" />
 </picture>
 
-## Measurement notes
-
-> - \* Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
-> - Italic construction was inspected in all five [Monaspace v1.400 variable fonts](https://github.com/githubnext/monaspace/tree/v1.400/fonts/Variable%20Fonts). HarfBuzz shaping at `slnt=0` and `slnt=-11` was used to check automatic slant-triggered substitutions. For basic Latin, Argon substitutes only `f`; Xenon substitutes `f`, `h`, `i`, `k`, `l`, `m`, `n`, `r`, and `u`; Neon, Radon, and Krypton make no automatic substitutions. Neither `a` nor `g` switches in any family. Neon, Argon, and Krypton also switch several localized Serbian Cyrillic forms, while Xenon has broader Cyrillic substitutions; Radon has none triggered by slant.
-> - The separate [OpenType `ital` substitution feature](https://learn.microsoft.com/en-us/typography/opentype/spec/features_fj#tag-ital) was checked explicitly. It provides additional family-specific alternates that moving the `slnt` axis alone does not necessarily activate. Some alternates remain geometric slants. The description of these designs as predominantly [oblique](https://www.w3.org/TR/css-fonts-4/#font-style-prop) reflects their retained upright construction as well as the substitution results.
-
 ## Which font should you choose?
 
 Choose Monaspace if you want a free, open-source font with texture healing, width and slant controls, or the option to mix Neon, Argon, Xenon, Radon, and Krypton in your editor. The shared metrics make those five families useful for giving comments or other syntax a different appearance while keeping the code aligned. If you like Neon's quieter change from upright to italic, that is a reason to keep it too.
@@ -120,3 +114,23 @@ Consider MonoLisa if you prefer the stronger italic contrast shown against Neon,
 The [free trial](https://www.monolisa.dev/buy/trial) lets you try MonoLisa on your own screen. It includes Regular and Bold with a limited character set, but omits coding ligatures, OpenType features, and grade adjustment. Use the [online tester](https://www.monolisa.dev/tester) to explore those features, then use the trial to see how the basic letterforms work in your editor.
 
 Monaspace is free and open source. If you decide to buy MonoLisa after trying it, see the [checkout](https://www.monolisa.dev/buy/) for current pricing and applicable taxes.
+
+## Measurement notes
+
+\* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command was:
+
+```bash
+.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>
+```
+
+Italic construction was inspected in all five [Monaspace v1.400 variable fonts](https://github.com/githubnext/monaspace/tree/v1.400/fonts/Variable%20Fonts). HarfBuzz shaping at `slnt=0` and `slnt=-11` checked which forms change automatically with slant:
+
+| Family | Basic Latin substitutions | Cyrillic substitutions |
+| --- | --- | --- |
+| Neon | None | Several localized Serbian forms |
+| Argon | `f` | Several localized Serbian forms |
+| Xenon | `f`, `h`, `i`, `k`, `l`, `m`, `n`, `r`, `u` | Broader Cyrillic substitutions |
+| Radon | None | None |
+| Krypton | None | Several localized Serbian forms |
+
+Neither `a` nor `g` changes construction through these substitutions in any family. We also checked the separate [OpenType `ital` feature](https://learn.microsoft.com/en-us/typography/opentype/spec/features_fj#tag-ital), which supplies family-specific alternates that the slant axis alone may not activate. Some of these alternates remain geometric slants. Our description of the designs as predominantly [oblique](https://www.w3.org/TR/css-fonts-4/#font-style-prop) reflects both their retained upright construction and these substitution checks.
