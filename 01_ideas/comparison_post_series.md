@@ -23,6 +23,9 @@ Use the exact comparison phrase in the title because it matches likely search in
 - Comparison of MonoLisa vs. Dank Mono
 - Comparison of MonoLisa vs. Operator Mono
 - Comparison of MonoLisa vs. PragmataPro
+- Comparison of MonoLisa vs. Berkeley Mono
+
+Berkeley Mono has a draft at `02_drafts/monolisa_vs_berkeley_mono.md`. It uses public documentation through 2.004 and a credited screenshot excerpt rather than trial-font rendering. Its summary reports features rather than unmeasured language totals. Regenerate its original SVGs with `scripts/render-berkeley-comparison.mjs`; preserve the screenshot attribution and the distinction between vendor documentation and local measurements.
 
 ## Shared comparison categories
 
