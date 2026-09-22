@@ -37,6 +37,10 @@ This table compares MonoLisa Code with Monaspace Neon. The sections below explai
 | **Price**                    | Paid; limited free trial                                | Free and open source                                                   |
 | **Source**                   | [monolisa.dev](https://www.monolisa.dev/)               | [Monaspace GitHub repository](https://github.com/githubnext/monaspace) |
 
+![Summary infographic comparing MonoLisa Code and Monaspace Neon](/images/comparison-monolisa-vs-monaspace-summary.svg)
+
+The infographic uses Monaspace Neon v1.400. Speaker totals are estimates from Hyperglot's supported language/script entries and may count speakers more than once; the worldwide bar is an approximate population reference.
+
 ## Reading texture
 
 Monaspace's [texture healing](https://monaspace.githubnext.com/#texture-healing) lets wider letters borrow unused space from neighboring narrow letters. It substitutes letter shapes to make the spacing more even while preserving the monospace grid. For example, an `m` next to an `l` can extend into some of the space the `l` leaves unused.

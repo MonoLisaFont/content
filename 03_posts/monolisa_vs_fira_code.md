@@ -30,6 +30,8 @@ If you like Fira Code but want italics for comments and keywords, MonoLisa is wo
 | **Price**                    | Paid; limited free trial                     | Free and open source                                              |
 | **Source**                   | [monolisa.dev](https://www.monolisa.dev/)    | [Fira Code GitHub repository](https://github.com/tonsky/FiraCode) |
 
+![Summary infographic comparing MonoLisa Code and Fira Code](/images/comparison-monolisa-vs-fira-code-summary.svg)
+
 ## Reading texture
 
 MonoLisa’s punctuation is more angular and heavier than Fira Code’s in this sample. Look at the commas, brackets, and braces in `parseToken`: do you prefer them to stand out, or sit more quietly alongside the letters?
