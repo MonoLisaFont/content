@@ -17,14 +17,14 @@ Berkeley Mono and MonoLisa are both paid coding fonts with ligatures and customi
 | **Variable axes** | Weight (`wght`), grade (`GRAD`) | Width (`wdth`), weight (`wght`), slant (`slnt`); modules determine range |
 | **Style range** | 10 named weights | Standard package: Regular, Bold, and their Obliques; broader family available through add-ons |
 | **Coding ligatures** | Yes | Yes |
-| **Saved customization** | Customizer | Standard compiler; Supertype adds controls |
+| **Saved customization** | Customizer saves feature choices into downloaded files | Standard compiler saves basic choices; Supertype add-on extends controls |
 | **Terminal symbols** | Powerline, box drawing, block elements measured | Documented by vendor; not measured here |
 | **Language coverage** | Latin, Cyrillic, Greek, Hebrew, Armenian measured | See vendor's character coverage; no comparable local measurement |
 | **Proportional counterpart** | MonoLisa Text, separately or in a bundle | Berkeley Mono is monospaced |
 | **Availability** | Paid; limited free trial | Paid; restricted evaluation trial |
 | **Source** | [MonoLisa](https://www.monolisa.dev/) | [U.S. Graphics](https://usgraphics.com/products/berkeley-mono) |
 
-![Summary infographic comparing MonoLisa Code and Berkeley Mono](/images/comparison-monolisa-vs-berkeley-mono-summary.svg)
+Berkeley entries reflect vendor documentation through 2.004, not local measurements. Available options depend on the purchased modules.
 
 ## Letterforms in code
 
@@ -84,6 +84,6 @@ This comparison combines our existing MonoLisa measurements with Berkeley's publ
 
 We did not render with the Berkeley trial, inspect the full commercial font, or measure its language coverage, vertical metrics, glyph counts, or shaping. The attributed screenshot is an excerpt of a public vendor specimen, used to discuss its visible letterforms in code. It is not a matched-size specimen or a test of editor rendering.
 
-The MonoLisa code sample repeats three complete lines from the vendor’s Generic specimen. It uses the local Code upright font, HarfBuzz `hb-view`, weight 400, size 64, and a 76-unit line step in a 798 × 260 SVG. These are our display settings, not inferred Berkeley settings. The summary graphic uses MonoLisa for all labels, including the Berkeley name; it is a feature summary, not a specimen of Berkeley. Regenerate both SVGs with `node scripts/render-berkeley-comparison.mjs <path-to-MonoLisa-Code-upright-font>`. MonoLisa coverage comes from the series data in `01_ideas/comparison_language_coverage.json` and `01_ideas/comparison_typeface_data.csv`.
+The MonoLisa code sample repeats three complete lines from the vendor’s Generic specimen. It uses the local Code upright font, HarfBuzz `hb-view`, weight 400, size 64, and a 76-unit line step in a 798 × 260 SVG. These are our display settings, not inferred Berkeley settings. Regenerate the MonoLisa specimen with `node scripts/render-berkeley-comparison.mjs <path-to-MonoLisa-Code-upright-font>`. MonoLisa coverage comes from the series data in `01_ideas/comparison_language_coverage.json` and `01_ideas/comparison_typeface_data.csv`.
 
 {/* Editorial review: Marcus to review design observations; Juho to add personal experience. Keep the distinction between vendor documentation and local measurements when editing. */}
