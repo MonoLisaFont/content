@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. JetBrains Mono"
 published: YYYY-MM-DD
-updated: 2026-07-03
+updated: 2026-09-22
 draft: true
 keywords:
   [
@@ -13,97 +13,87 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and JetBrains Mono are both coding fonts, but they optimize for different priorities. This draft puts the visual summary and the decision table first, so the main differences are visible before the detailed specimens.
+If JetBrains Mono feels too light or too dark in your theme, MonoLisa offers an extra adjustment: grade. It lets you fine-tune stroke thickness independently of weight. JetBrains Mono already has variable weight, italics, and ligatures, so the reason to try MonoLisa is whether that extra control helps you get the appearance you want.
 
-![Summary infographic comparing MonoLisa and JetBrains Mono](/images/comparison-monolisa-vs-jetbrains-mono-summary.svg)
+## At a glance
 
-## Decision table
-
-| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | JetBrains Mono                                                                 |
-| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| **Languages\***              | MonoLisa        | 593                                                                                         | 358                                                                            |
-| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 3 (Latin, Cyrillic, Greek)                                                     |
-| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>   |
-| **Fixed weights**            | MonoLisa        | 10                                                                                          | 8                                                                              |
-| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | 1 (`wght`)                                                                     |
-| **Style control**            | Similar         | 15 stylistic sets, 12 character variants                                                    | 4 stylistic sets, 20 character variants                                        |
-| **Coding ligatures**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>   |
-| **Terminal symbols**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>   |
-| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart                                            |
-| **Price**                    | JetBrains Mono  | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                           |
-| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [JetBrains Mono GitHub repository](https://github.com/JetBrains/JetBrainsMono) |
-
-In short: MonoLisa Code wins on coverage, axes, and family range. JetBrains Mono wins on price, while both offer ligatures, italics, and terminal symbol coverage.
+| Category | MonoLisa Code | JetBrains Mono |
+| --- | --- | --- |
+| **Languages (measured)\*** | 593 | 358 |
+| **Writing systems** | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek) |
+| **Italics** | Yes | Yes |
+| **Fixed weights** | 10 | 8 |
+| **Variable axes** | Weight (`wght`), grade (`GRAD`) | Weight (`wght`) |
+| **Style control** | 15 stylistic sets, 12 character variants | 4 stylistic sets, 20 character variants |
+| **Coding ligatures** | Yes | Yes |
+| **Terminal symbols** | Yes | Yes |
+| **Proportional counterpart** | MonoLisa Text (separate purchase or bundle) | None in the JetBrains Mono family |
+| **Price** | Paid; limited free trial | Free and open source |
+| **Source** | [monolisa.dev](https://www.monolisa.dev/) | [JetBrains Mono GitHub repository](https://github.com/JetBrains/JetBrainsMono) |
 
 ## Reading texture
 
-Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
-
-[Marcus input: Explain the most important type-design distinction in one concrete paragraph. Name the actual form or spacing choice.]
+Compare the same `parseToken` function below. Look at `input[offset + 1]`, where brackets, punctuation, and letters meet, then at the repeated braces down the page. The samples give you something more useful to judge than the number of weights: whether you like the font across a whole block of code.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-texture-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-jetbrains-mono-texture.svg" alt="Rendered SVG comparing MonoLisa and JetBrains Mono code texture" width="100%" />
+  <img src="/images/comparison-monolisa-vs-jetbrains-mono-texture.svg" alt="The same function in MonoLisa Code and JetBrains Mono" width="100%" />
 </picture>
 
-## Coding features
+## Coding ligatures and character variants
 
-Both fonts expose coding ligature support through OpenType features. MonoLisa has a broader measured stylistic-set range in this pass, while JetBrains Mono includes a compact set of coding-oriented stylistic sets and character variants.
+Both fonts support coding ligatures and alternate character forms. Compare the operators below before deciding whether either font’s treatment suits your code.
 
-Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. JetBrains Mono exposes `calt`, `zero`, `ss01`, `ss02`, `ss19`, `ss20`, `cv01`-`cv12`, `cv14`-`cv20`, and `cv99`.
+MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`–`ss15`, and `cv01`–`cv12`. JetBrains Mono exposes `calt`, `zero`, `ss01`, `ss02`, `ss19`, `ss20`, `cv01`–`cv12`, `cv14`–`cv20`, and `cv99`. A stylistic set can change several characters, so counting sets does not tell you which font offers the alternatives you want.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-ligatures-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-jetbrains-mono-ligatures.svg" alt="Rendered SVG comparing MonoLisa and JetBrains Mono operator and ligature behavior" width="100%" />
+  <img src="/images/comparison-monolisa-vs-jetbrains-mono-ligatures.svg" alt="Operators and ligatures in MonoLisa Code and JetBrains Mono" width="100%" />
 </picture>
 
-## Glyph distinction
+## Characters that are easy to confuse
 
-This section should compare common problem pairs such as `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
+The sample below disables ligatures to show the individual characters. Compare zero with capital O, then one with lowercase l, capital I, and the vertical bar. Also check `rn` beside `m`: a pair that looks distinct in isolation can feel different inside an identifier. Your usual editor size is the useful test.
 
-[Marcus input: Add notes for intentional MonoLisa tradeoffs.]
+<picture>
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-glyphs-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-jetbrains-mono-glyphs.svg" alt="Zero, O, one, l, I, and punctuation in MonoLisa Code and JetBrains Mono, with ligatures disabled" width="100%" />
+</picture>
 
 ## Italics and style range
 
-The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
+Both fonts include upright and italic styles. MonoLisa has 10 named weights, from Hairline through Black. The measured JetBrains Mono v2.304 archive has 8, from Thin through ExtraBold, in both static and variable files.
 
-MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The JetBrains Mono v2.304 archive includes 8 static weights from Thin through ExtraBold in upright and italic, plus variable upright and italic files exposing the same 8 named weights.
+MonoLisa also has a grade axis for adjusting stroke thickness while keeping character widths fixed. JetBrains Mono’s measured variable files expose weight only. Both let you choose intermediate weights; grade gives MonoLisa a separate adjustment at your chosen weight. You can explore it in the [MonoLisa tester](https://www.monolisa.dev/tester).
+
+In the italic specimen below, look at `emphasis` and `readableIdentifier` to decide how much contrast you want between upright and italic syntax.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-italics-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-jetbrains-mono-italics.svg" alt="Rendered SVG comparing MonoLisa and JetBrains Mono italic and style samples" width="100%" />
+  <img src="/images/comparison-monolisa-vs-jetbrains-mono-italics.svg" alt="Italic code and letterforms in MonoLisa Code and JetBrains Mono" width="100%" />
 </picture>
 
-## Terminal and console support
+## Terminal symbols
 
-JetBrains Mono measured at Powerline 6/6, box drawing 128/128, and block elements 32/32. Its hhea, OS/2 typo, and Windows vertical metrics align internally in v2.304.
-
-For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
+Both fonts cover all 6 Powerline symbols, 128 box-drawing characters, and 32 block elements checked in our measurements. Both also have internally aligned vertical metrics. These checks give neither font an advantage; the sample shows how each draws the prompt separators and table borders.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-terminal-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-jetbrains-mono-terminal.svg" alt="Rendered SVG comparing MonoLisa and JetBrains Mono terminal symbols and box drawing" width="100%" />
+  <img src="/images/comparison-monolisa-vs-jetbrains-mono-terminal.svg" alt="Prompt separators and box drawing in MonoLisa Code and JetBrains Mono" width="100%" />
 </picture>
 
-## Licensing and availability
+> \* Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
 
-JetBrains Mono is free and open source. MonoLisa is a paid typeface with [free trial access](https://monolisa.dev/buy/trial) and a customizer.
+## Which font should you choose?
 
-## Source links
+Choose JetBrains Mono if you want a free, open-source font with italics and ligatures, and its weight adjustment already gets you the appearance you want. If it already works well in your editor, keeping it is a reasonable choice.
 
-- [MonoLisa](https://www.monolisa.dev/)
-- [JetBrains Mono repository](https://github.com/JetBrains/JetBrainsMono)
+Consider MonoLisa if you want the separate grade adjustment, need Hebrew or Armenian coverage, or prefer its letterforms after comparing the specimens. If your interest is mainly grade, try it in the tester first: an extra control is only worth paying for if you find a setting you prefer.
 
-## Publication checklist
+## Try MonoLisa in your editor
 
-- [ ] Marcus design review completed.
-- [ ] License/source basis checked.
-- [ ] Rendered SVG specimens visually reviewed.
-- [ ] Measured data verified against current font files.
-- [ ] Final recommendation/conclusion written.
+The [free trial](https://www.monolisa.dev/buy/trial) lets you try MonoLisa on your own screen. It includes Regular and Bold with a limited character set, but omits coding ligatures, OpenType features, and grade adjustment. Use the [online tester](https://www.monolisa.dev/tester) to explore those features, then use the trial to judge the basic letterforms in your editor.
 
-## Conclusion
+JetBrains Mono is free and open source. If you decide to buy MonoLisa after trying it, see the [checkout](https://www.monolisa.dev/buy/) for current pricing and applicable taxes.
 
-Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose JetBrains Mono, and which tradeoff matters most.
-
-> - Languages were measured locally with [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) by running `.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>`: primary orthographies, living languages, base-character support, with shaping disabled.
+{/* Editorial review before publication: Marcus to review the design observations and grade-led opening; verify measured data against the intended font versions; visually review the specimens; confirm license/source basis and set the publication date. */}
