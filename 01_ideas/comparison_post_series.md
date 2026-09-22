@@ -1,7 +1,7 @@
 ---
 title: "Comparison post series"
 published: 2026-07-03
-updated: 2026-07-03
+updated: 2026-09-22
 keywords: ["typefaces", "coding fonts", "font comparison"]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
@@ -65,6 +65,8 @@ MonoLisa and TYPEFACE are both coding fonts, but they optimize for different pri
 | Proportional counterpart | Yes, MonoLisa Text | TBD |
 | Terminal symbols | Powerline/box drawing: TBD | TBD |
 
+![Summary infographic comparing MonoLisa and TYPEFACE](/images/comparison-monolisa-vs-TYPEFACE-summary.svg)
+
 ## Design intent and reading comfort
 
 Describe the visible difference in rhythm, density, x-height, counters, apertures, punctuation weight, and overall texture.
@@ -121,7 +123,11 @@ Summarize who should choose MonoLisa, who should choose TYPEFACE, and what trade
 
 ## Graphics system
 
-Each post should use the same four-image system so the series feels consistent:
+Every published comparison must include a summary infographic after its comparison table and before the detailed specimens. Keep it when revising the post. Use verified data matching the font version and family shown in the article, and explain coverage or speaker-count estimates alongside the graphic. Deferred drafts must complete this graphic before publication.
+
+Each post should use the following graphics so the series feels consistent:
+
+- Summary infographic: the main comparison at a glance, saved as `/images/comparison-monolisa-vs-<typeface>-summary.svg`.
 
 - Texture image: the same 10-15 lines of real code in both fonts, same point size, same line height, same foreground/background.
 - Glyph ambiguity image: a two-column specimen of `0O`, `1lI|`, punctuation, brackets, quotes, operators, and symbols.

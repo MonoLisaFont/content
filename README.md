@@ -43,6 +43,12 @@ This is the point where to recap the main point and potentially do a call to act
 
 For simple posts, only heading level 2 should be used as in the sample. A good length for a short post can be anywhere between 500 to 2000 words. The main point is to use clear headings to give the post a clear structure and to make it easy to scan.
 
+## Comparison post graphics
+
+Every comparison post must include a summary infographic before publication, in addition to its detailed specimens. Place it after the comparison table and before the specimens. Use `/images/comparison-monolisa-vs-<typeface>-summary.svg`, with alt text naming the compared fonts. The infographic must match the post's measured font version and scope; explain any coverage or speaker-count estimates alongside it. Retain the infographic when rewriting the prose.
+
+Drafts awaiting verified comparison data should track the infographic as unfinished work rather than publish a graphic with guessed values. See [the comparison series plan](01_ideas/comparison_post_series.md) for the template and graphics workflow.
+
 ## Editing
 
 Most of the edits can be done directly through GitHub user interface on web. It may be possible images may have to be added through Git repository, though.

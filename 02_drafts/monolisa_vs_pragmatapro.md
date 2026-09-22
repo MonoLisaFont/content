@@ -66,6 +66,8 @@ Deferred commercial-font comparison. PragmataPro needs edition-by-edition licens
 
 ## Publication checklist
 
+- [ ] Summary infographic created from verified data and included after the comparison table.
+
 - [ ] Verify license/trial availability.
 - [ ] Decide whether public rendered specimens are allowed.
 - [ ] Run fonttools and Hyperglot if a usable font file is available.

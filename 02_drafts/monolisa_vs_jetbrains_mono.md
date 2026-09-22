@@ -31,6 +31,8 @@ If JetBrains Mono feels too light or too dark in your theme, MonoLisa offers an 
 | **Price** | Paid; limited free trial | Free and open source |
 | **Source** | [monolisa.dev](https://www.monolisa.dev/) | [JetBrains Mono GitHub repository](https://github.com/JetBrains/JetBrainsMono) |
 
+![Summary infographic comparing MonoLisa Code and JetBrains Mono](/images/comparison-monolisa-vs-jetbrains-mono-summary.svg)
+
 ## Reading texture
 
 Compare the same `parseToken` function below. Look at `input[offset + 1]`, where brackets, punctuation, and letters meet, then at the repeated braces down the page. The samples give you something more useful to judge than the number of weights: whether you like the font across a whole block of code.
