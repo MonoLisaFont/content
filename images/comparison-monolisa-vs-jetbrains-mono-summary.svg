@@ -985,7 +985,7 @@
     </g>
 
 
-    <g transform="translate(-16 189.046875)">
+    <g transform="translate(-16 129.046875)">
 
 <defs>
 <g>
@@ -1048,7 +1048,7 @@
 
     </g>
 
-    <g class="chip-box strong" transform="translate(0 272)">
+    <g class="chip-box strong" transform="translate(0 212)">
       <rect width="97" height="40" rx="20"/>
 
     <g class="chip-label" transform="translate(4.5 -12.306640999999999)">
@@ -1079,7 +1079,7 @@
     </g>
     </g>
 
-    <g class="chip-box strong" transform="translate(109 272)">
+    <g class="chip-box strong" transform="translate(109 212)">
       <rect width="97" height="40" rx="20"/>
 
     <g class="chip-label" transform="translate(4 -12.306640999999999)">
@@ -1110,7 +1110,7 @@
     </g>
     </g>
 
-    <g class="chip-box strong" transform="translate(218 272)">
+    <g class="chip-box strong" transform="translate(218 212)">
       <rect width="97" height="40" rx="20"/>
 
     <g class="chip-label" transform="translate(4.5 -10.84375)">
@@ -1141,7 +1141,7 @@
     </g>
     </g>
 
-    <g class="chip-box strong" transform="translate(327 272)">
+    <g class="chip-box strong" transform="translate(327 212)">
       <rect width="97" height="40" rx="20"/>
 
     <g class="chip-label" transform="translate(4.5 -12.6035155)">
@@ -1172,7 +1172,7 @@
     </g>
     </g>
 
-    <g class="chip-box strong" transform="translate(0 324)">
+    <g class="chip-box strong" transform="translate(0 264)">
       <rect width="177" height="40" rx="20"/>
 
     <g class="chip-label" transform="translate(9 -11.185547)">
@@ -1211,7 +1211,7 @@
     </g>
     </g>
 
-    <g class="chip-box strong" transform="translate(189 324)">
+    <g class="chip-box strong" transform="translate(189 264)">
       <rect width="177" height="40" rx="20"/>
 
     <g class="chip-label" transform="translate(9 -11.173828)">
@@ -1253,7 +1253,7 @@
     </g>
     </g>
 
-    <g class="chip-box plain" transform="translate(640 272)">
+    <g class="chip-box plain" transform="translate(640 212)">
       <rect width="97" height="40" rx="20"/>
 
     <g class="chip-label" transform="translate(4.5 -10.84375)">
@@ -1284,7 +1284,7 @@
     </g>
     </g>
 
-    <g class="chip-box plain" transform="translate(749 272)">
+    <g class="chip-box plain" transform="translate(749 212)">
       <rect width="97" height="40" rx="20"/>
 
     <g class="chip-label" transform="translate(4.5 -12.6035155)">
@@ -1315,7 +1315,7 @@
     </g>
     </g>
 
-    <g class="chip-box plain" transform="translate(858 272)">
+    <g class="chip-box plain" transform="translate(858 212)">
       <rect width="177" height="40" rx="20"/>
 
     <g class="chip-label" transform="translate(9 -11.173828)">
@@ -1354,7 +1354,7 @@
     </g>
     </g>
 
-    <g class="chip-box plain" transform="translate(640 324)">
+    <g class="chip-box plain" transform="translate(640 264)">
       <rect width="177" height="40" rx="20"/>
 
     <g class="chip-label" transform="translate(9 -11.173828)">
@@ -1396,7 +1396,7 @@
     </g>
     </g>
 
-    <g class="chip-box plain" transform="translate(829 324)">
+    <g class="chip-box plain" transform="translate(829 264)">
       <rect width="177" height="40" rx="20"/>
 
     <g class="chip-label" transform="translate(9 -11.173828)">
@@ -1438,7 +1438,7 @@
     </g>
     </g>
 
-    <g class="chip-box plain" transform="translate(640 376)">
+    <g class="chip-box plain" transform="translate(640 316)">
       <rect width="97" height="40" rx="20"/>
 
     <g class="chip-label" transform="translate(4.5 -11.173828)">

@@ -374,8 +374,8 @@ function render(comparison) {
   const lowerRightColumnX = 640;
   const lowerBlockY = 700;
   const writingChipY = 42;
-  const opentypeLabelY = 230;
-  const opentypeChipY = 272;
+  const opentypeLabelY = comparison.key === "jetbrains-mono" ? 170 : 230;
+  const opentypeChipY = comparison.key === "jetbrains-mono" ? 212 : 272;
   const worldSpeakers = 8.3;
   const speakerScale = fullWidth / worldSpeakers;
   const leftSpeakerWidth = Math.round(speakerBillions(left.speakers) * speakerScale);
