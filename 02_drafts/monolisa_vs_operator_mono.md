@@ -1,33 +1,15 @@
 ---
 title: "Comparison of MonoLisa vs. Operator Mono"
 published: YYYY-MM-DD
-updated: 2026-07-03
+updated: 2026-09-25
 draft: true
 keywords: ["MonoLisa vs Operator Mono", "Operator Mono alternative", "coding fonts", "programming fonts"]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Operator Mono are both paid typefaces used by developers, but they optimize for different priorities. This draft puts the comparison status and decision table first, but it remains deferred until there is a licensed comparison basis.
+MonoLisa and Operator Mono are both paid typefaces used by developers, but they optimize for different priorities. This draft remains deferred until there is a licensed comparison basis.
 
 Draft status: Deferred commercial-font comparison. Operator Mono needs a license/trial review before this post can use measured data or rendered specimens.
-
-## Decision table
-
-| Category | Better&nbsp;fit | MonoLisa Code | Operator Mono |
-| --- | --- | --- | --- |
-| **Languages\*** | Deferred | 593 | Needs licensed-font measurement |
-| **Writing systems** | Deferred | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | Needs licensed-font measurement |
-| **Italics** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Fixed weights** | Deferred | 10 | Needs verification |
-| **Variable axes** | Deferred | 2 (`wght`, `GRAD`) | Needs verification |
-| **Style control** | Deferred | 15 stylistic sets, 12 character variants | Needs verification |
-| **Coding ligatures** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs verification |
-| **Terminal symbols** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs licensed-font measurement |
-| **Proportional counterpart** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Operator family |
-| **Price** | Deferred | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; trial availability needs verification |
-| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Operator Mono page](https://www.typography.com/fonts/operator/styles/) |
-
-In short: this comparison should stay unpublished until the licensing, source, and specimen basis is clear.
 
 ## Reading texture
 
@@ -66,7 +48,7 @@ Deferred commercial-font comparison. Operator Mono needs a license/trial review 
 
 ## Publication checklist
 
-- [ ] Summary infographic created from verified data and included after the comparison table.
+- [ ] Summary infographic created from verified data and included in a collapsed disclosure after the comparison table near the end.
 
 - [ ] Verify license/trial availability.
 - [ ] Decide whether public rendered specimens are allowed.
@@ -77,6 +59,24 @@ Deferred commercial-font comparison. Operator Mono needs a license/trial review 
 ## Conclusion
 
 Deferred until commercial-font access, license terms, and Marcus review are complete.
+
+## Decision table
+
+| Category | Better&nbsp;fit | MonoLisa Code | Operator Mono |
+| --- | --- | --- | --- |
+| **Languages\*** | Deferred | 593 | Needs licensed-font measurement |
+| **Writing systems** | Deferred | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | Needs licensed-font measurement |
+| **Italics** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Fixed weights** | Deferred | 10 | Needs verification |
+| **Variable axes** | Deferred | 2 (`wght`, `GRAD`) | Needs verification |
+| **Style control** | Deferred | 15 stylistic sets, 12 character variants | Needs verification |
+| **Coding ligatures** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs verification |
+| **Terminal symbols** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs licensed-font measurement |
+| **Proportional counterpart** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Operator family |
+| **Price** | Deferred | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; trial availability needs verification |
+| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Operator Mono page](https://www.typography.com/fonts/operator/styles/) |
+
+In short: this comparison should stay unpublished until the licensing, source, and specimen basis is clear.
 
 ## Measurement notes
 

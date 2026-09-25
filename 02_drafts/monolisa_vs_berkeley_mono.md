@@ -1,30 +1,13 @@
 ---
 title: "Comparison of MonoLisa vs. Berkeley Mono"
 published: YYYY-MM-DD
-updated: 2026-09-22
+updated: 2026-09-25
 draft: true
 keywords: ["MonoLisa vs Berkeley Mono", "Berkeley Mono alternative", "coding fonts", "programming fonts"]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
 Berkeley Mono and MonoLisa are both paid coding fonts with ligatures and customizable letterforms. If Berkeley's industrial character appeals to you but you want a different italic voice or a proportional companion for prose, MonoLisa is worth trying. If fitting code into narrower columns is your priority, Berkeley's width options deserve a closer look.
-
-## At a glance
-
-| Category | MonoLisa Code | Berkeley Mono |
-| --- | --- | --- |
-| **Sloped styles** | Italic | Oblique |
-| **Variable axes** | Weight (`wght`), grade (`GRAD`) | Width (`wdth`), weight (`wght`), slant (`slnt`); modules determine range |
-| **Style range** | 10 named weights | Standard package: Regular, Bold, and their Obliques; broader family available through add-ons |
-| **Coding ligatures** | Yes | Yes |
-| **Saved customization** | Customizer saves feature choices into downloaded files | Standard compiler saves basic choices; Supertype add-on extends controls |
-| **Terminal symbols** | Powerline, box drawing, block elements measured | Documented by vendor; not measured here |
-| **Language coverage** | Latin, Cyrillic, Greek, Hebrew, Armenian measured | See vendor's character coverage; no comparable local measurement |
-| **Proportional counterpart** | MonoLisa Text, separately or in a bundle | Berkeley Mono is monospaced |
-| **Availability** | Paid; limited free trial | Paid; restricted evaluation trial |
-| **Source** | [MonoLisa](https://www.monolisa.dev/) | [U.S. Graphics](https://usgraphics.com/products/berkeley-mono) |
-
-Berkeley entries reflect vendor documentation through 2.004, not local measurements. Available options depend on the purchased modules.
 
 ## Letterforms in code
 
@@ -95,6 +78,23 @@ Start with the [MonoLisa free trial](https://www.monolisa.dev/buy/trial). It inc
 Berkeley also offers a [trial](https://usgraphics.com/catalog/FX-050). Its restrictions matter for evaluation: slash and backslash are swapped, as are asterisk and number sign, and the vendor warns against using it for critical code. Treat those substitutions as trial limitations, not as the commercial font's design.
 
 If either font suits you, visit the [MonoLisa checkout](https://www.monolisa.dev/buy/) or [Berkeley purchase options](https://usgraphics.com/products/berkeley-mono#section-purchase) for current pricing and license choices. Berkeley distinguishes personal/developer use from commercial use.
+
+## At a glance
+
+| Category | MonoLisa Code | Berkeley Mono |
+| --- | --- | --- |
+| **Sloped styles** | Italic | Oblique |
+| **Variable axes** | Weight (`wght`), grade (`GRAD`) | Width (`wdth`), weight (`wght`), slant (`slnt`); modules determine range |
+| **Style range** | 10 named weights | Standard package: Regular, Bold, and their Obliques; broader family available through add-ons |
+| **Coding ligatures** | Yes | Yes |
+| **Saved customization** | Customizer saves feature choices into downloaded files | Standard compiler saves basic choices; Supertype add-on extends controls |
+| **Terminal symbols** | Powerline, box drawing, block elements measured | Documented by vendor; not measured here |
+| **Language coverage** | Latin, Cyrillic, Greek, Hebrew, Armenian measured | See vendor's character coverage; no comparable local measurement |
+| **Proportional counterpart** | MonoLisa Text, separately or in a bundle | Berkeley Mono is monospaced |
+| **Availability** | Paid; limited free trial | Paid; restricted evaluation trial |
+| **Source** | [MonoLisa](https://www.monolisa.dev/) | [U.S. Graphics](https://usgraphics.com/products/berkeley-mono) |
+
+Berkeley entries reflect vendor documentation through 2.004, not local measurements. Available options depend on the purchased modules.
 
 ## Measurement notes
 

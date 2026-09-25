@@ -1,33 +1,15 @@
 ---
 title: "Comparison of MonoLisa vs. Dank Mono"
 published: YYYY-MM-DD
-updated: 2026-07-03
+updated: 2026-09-25
 draft: true
 keywords: ["MonoLisa vs Dank Mono", "Dank Mono alternative", "coding fonts", "programming fonts"]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Dank Mono are both paid coding fonts, but they optimize for different priorities. This draft puts the comparison status and decision table first, but it remains deferred until there is a licensed comparison basis.
+MonoLisa and Dank Mono are both paid coding fonts, but they optimize for different priorities. This draft remains deferred until there is a licensed comparison basis.
 
 Draft status: Deferred commercial-font comparison. Dank Mono does not appear to offer a free trial in the current manual check, so this post should not be finished with rendered specimens until we have a licensed copy, written permission/specimens, or a decision to compare only against public information.
-
-## Decision table
-
-| Category | Better&nbsp;fit | MonoLisa Code | Dank Mono |
-| --- | --- | --- | --- |
-| **Languages\*** | Deferred | 593 | Needs licensed-font measurement |
-| **Writing systems** | Deferred | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | Needs licensed-font measurement |
-| **Italics** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Fixed weights** | Deferred | 10 | Needs verification |
-| **Variable axes** | Deferred | 2 (`wght`, `GRAD`) | Needs verification |
-| **Style control** | Deferred | 15 stylistic sets, 12 character variants | Needs verification |
-| **Coding ligatures** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs verification |
-| **Terminal symbols** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs licensed-font measurement |
-| **Proportional counterpart** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Needs verification |
-| **Price** | Deferred | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; no free trial found so far |
-| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Dank Mono site](https://dank.sh/) |
-
-In short: this comparison should stay unpublished until the licensing, source, and specimen basis is clear.
 
 ## Reading texture
 
@@ -66,7 +48,7 @@ Deferred commercial-font comparison. Dank Mono does not appear to offer a free t
 
 ## Publication checklist
 
-- [ ] Summary infographic created from verified data and included after the comparison table.
+- [ ] Summary infographic created from verified data and included in a collapsed disclosure after the comparison table near the end.
 
 - [ ] Verify license/trial availability.
 - [ ] Decide whether public rendered specimens are allowed.
@@ -77,6 +59,24 @@ Deferred commercial-font comparison. Dank Mono does not appear to offer a free t
 ## Conclusion
 
 Deferred until commercial-font access, license terms, and Marcus review are complete.
+
+## Decision table
+
+| Category | Better&nbsp;fit | MonoLisa Code | Dank Mono |
+| --- | --- | --- | --- |
+| **Languages\*** | Deferred | 593 | Needs licensed-font measurement |
+| **Writing systems** | Deferred | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | Needs licensed-font measurement |
+| **Italics** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Fixed weights** | Deferred | 10 | Needs verification |
+| **Variable axes** | Deferred | 2 (`wght`, `GRAD`) | Needs verification |
+| **Style control** | Deferred | 15 stylistic sets, 12 character variants | Needs verification |
+| **Coding ligatures** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs verification |
+| **Terminal symbols** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs licensed-font measurement |
+| **Proportional counterpart** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Needs verification |
+| **Price** | Deferred | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; no free trial found so far |
+| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Dank Mono site](https://dank.sh/) |
+
+In short: this comparison should stay unpublished until the licensing, source, and specimen basis is clear.
 
 ## Measurement notes
 

@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Hack"
 published: YYYY-MM-DD
-updated: 2026-07-03
+updated: 2026-09-25
 draft: true
 keywords:
   [
@@ -13,27 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Hack are both coding fonts, but they optimize for different priorities. This draft puts the visual summary and the decision table first, so the main differences are visible before the detailed specimens.
-
-![Summary infographic comparing MonoLisa and Hack](/images/comparison-monolisa-vs-hack-summary.svg)
-
-## Decision table
-
-| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | Hack                                                                         |
-| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| **Languages\***              | MonoLisa        | 593                                                                                         | 382                                                                          |
-| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 4 (Latin, Cyrillic, Armenian, Greek)                                         |
-| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Fixed weights**            | MonoLisa        | 10                                                                                          | 2                                                                            |
-| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | None measured                                                                |
-| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | None measured                                                                |
-| **Coding ligatures**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No                                                                           |
-| **Terminal symbols**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart                                          |
-| **Price**                    | Hack            | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                         |
-| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Hack GitHub repository](https://github.com/source-foundry/Hack)             |
-
-In short: MonoLisa Code wins on coverage, ligatures, variable axes, and style control. Hack wins on price and remains a strong no-frills baseline.
+MonoLisa and Hack are both coding fonts, but they optimize for different priorities. The specimens below show their differences, with a comparison table and optional infographic near the end.
 
 ## Reading texture
 
@@ -105,6 +85,30 @@ Hack is free and open source. MonoLisa is a paid typeface with [free trial acces
 ## Conclusion
 
 Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose Hack, and which tradeoff matters most.
+
+## Decision table
+
+| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | Hack                                                                         |
+| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Languages\***              | MonoLisa        | 593                                                                                         | 382                                                                          |
+| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 4 (Latin, Cyrillic, Armenian, Greek)                                         |
+| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Fixed weights**            | MonoLisa        | 10                                                                                          | 2                                                                            |
+| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | None measured                                                                |
+| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | None measured                                                                |
+| **Coding ligatures**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No                                                                           |
+| **Terminal symbols**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart                                          |
+| **Price**                    | Hack            | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                         |
+| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Hack GitHub repository](https://github.com/source-foundry/Hack)             |
+
+In short: MonoLisa Code wins on coverage, ligatures, variable axes, and style control. Hack wins on price and remains a strong no-frills baseline.
+
+<details>
+  <summary>View comparison infographic</summary>
+
+  <img src="/images/comparison-monolisa-vs-hack-summary.svg" alt="Summary infographic comparing MonoLisa and Hack" width="100%" />
+</details>
 
 ## Measurement notes
 

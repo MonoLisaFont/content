@@ -1,7 +1,7 @@
 ---
 title: "Comparison post series"
 published: 2026-07-03
-updated: 2026-09-22
+updated: 2026-09-25
 keywords: ["typefaces", "coding fonts", "font comparison"]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
@@ -31,8 +31,8 @@ Berkeley Mono has a draft at `02_drafts/monolisa_vs_berkeley_mono.md`. It uses p
 
 Every post should use the same category order:
 
-1. Quick recommendation
-2. Design intent and reading comfort
+1. Short introduction
+2. Design intent and reading comfort, with specimens
 3. Language and script coverage
 4. Coding features
 5. Glyph distinction
@@ -40,7 +40,10 @@ Every post should use the same category order:
 7. Customization and variable fonts
 8. Terminal and console support
 9. Licensing, price, and trial availability
-10. Where MonoLisa differs
+10. Recommendation and trial links
+11. Comparison table
+12. Optional summary infographic in a collapsed disclosure
+13. Measurement notes
 
 ## Post template
 
@@ -54,21 +57,6 @@ authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
 MonoLisa and TYPEFACE are both coding fonts, but they optimize for different priorities. This comparison looks at the practical differences developers are likely to notice in daily code reading: glyph clarity, ligatures, italics, language coverage, terminal support, customization, and licensing.
-
-## Quick comparison
-
-| Category | MonoLisa | TYPEFACE |
-| --- | --- | --- |
-| Pricing | Paid, with trial/customizer | TBD |
-| Coding ligatures | Yes, opt-in coding ligatures plus whitespace ligatures | TBD |
-| Italics | Yes | TBD |
-| Variable font | TBD | TBD |
-| Stylistic sets | Yes | TBD |
-| Character variants | Yes | TBD |
-| Proportional counterpart | Yes, MonoLisa Text | TBD |
-| Terminal symbols | Powerline/box drawing: TBD | TBD |
-
-![Summary infographic comparing MonoLisa and TYPEFACE](/images/comparison-monolisa-vs-TYPEFACE-summary.svg)
 
 ## Design intent and reading comfort
 
@@ -123,18 +111,39 @@ Explain whether the competing font is free/open source or paid, whether trial ac
 
 Summarize who should choose MonoLisa, who should choose TYPEFACE, and what tradeoff matters most.
 
+Include trial and tester links so readers can evaluate the fonts in their own setup.
+
+## Quick comparison
+
+| Category | MonoLisa | TYPEFACE |
+| --- | --- | --- |
+| Pricing | Paid, with trial/customizer | TBD |
+| Coding ligatures | Yes, opt-in coding ligatures plus whitespace ligatures | TBD |
+| Italics | Yes | TBD |
+| Variable font | TBD | TBD |
+| Stylistic sets | Yes | TBD |
+| Character variants | Yes | TBD |
+| Proportional counterpart | Yes, MonoLisa Text | TBD |
+| Terminal symbols | Powerline/box drawing: TBD | TBD |
+
+<details>
+  <summary>View comparison infographic</summary>
+
+  <img src="/images/comparison-monolisa-vs-TYPEFACE-summary.svg" alt="Summary infographic comparing MonoLisa and TYPEFACE" width="100%" />
+</details>
+
 ## Measurement notes
 
-Place methodology at the end, after the recommendation and trial links. Record measured font versions, tools and commands, feature settings, and limitations. Keep reproducible details here instead of interrupting the comparison; mark pending measurements explicitly.
+Place methodology at the end, after the comparison table and infographic disclosure. Record measured font versions, tools and commands, feature settings, and limitations. Keep reproducible details here instead of interrupting the comparison; mark pending measurements explicitly.
 ```
 
 ## Graphics system
 
-Every published comparison must include a summary infographic after its comparison table and before the detailed specimens. Keep it when revising the post. Use verified data matching the font version and family shown in the article, and explain coverage or speaker-count estimates alongside the graphic. Deferred drafts must complete this graphic before publication, except Berkeley Mono, whose summary is consolidated into its comparison table.
+Lead with the detailed specimens and move the comparison table near the end, after the recommendation and trial links. Every published comparison must include a summary infographic in a collapsed `<details>` element after the table and before Measurement notes. Label its `<summary>` "View comparison infographic", and omit the `open` attribute. Keep it when revising the post. Use verified data matching the font version and family shown in the article, and explain coverage or speaker-count estimates alongside the graphic inside the disclosure. Deferred drafts must complete this graphic before publication, except Berkeley Mono, whose summary is consolidated into its comparison table.
 
 Each post should use the following graphics so the series feels consistent:
 
-- Summary infographic: the main comparison at a glance, saved as `/images/comparison-monolisa-vs-<typeface>-summary.svg`.
+- Summary infographic: an optional visual reference inside the disclosure, saved as `/images/comparison-monolisa-vs-<typeface>-summary.svg`.
 
 - Texture image: the same 10-15 lines of real code in both fonts, same point size, same line height, same foreground/background.
 - Glyph ambiguity image: a two-column specimen of `0O`, `1lI|`, punctuation, brackets, quotes, operators, and symbols.

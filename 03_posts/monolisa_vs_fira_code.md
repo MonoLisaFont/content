@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Fira Code"
 published: 2026-08-11
-updated: 2026-09-22
+updated: 2026-09-25
 keywords:
   [
     "MonoLisa vs Fira Code",
@@ -13,24 +13,6 @@ authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
 If you like Fira Code but want italics for comments and keywords, MonoLisa is worth a look as Fira Code doesn't include italic styles. We'll look into further differences between these two fonts in this brief post.
-
-## At a glance
-
-| Category                     | MonoLisa Code                                | Fira Code                                                         |
-| ---------------------------- | -------------------------------------------- | ----------------------------------------------------------------- |
-| **Languages (measured)\***   | 593                                          | 395                                                               |
-| **Writing systems**          | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek)                                        |
-| **Italics**                  | Yes                                          | No                                                                |
-| **Fixed weights**            | 10                                           | 6                                                                 |
-| **Variable axes**            | Weight (`wght`), grade (`GRAD`)              | Weight (`wght`)                                                   |
-| **Style control**            | 15 stylistic sets, 12 character variants     | 10 stylistic sets, 32 character variants                          |
-| **Coding ligatures**         | Yes                                          | Yes                                                               |
-| **Terminal symbols**         | Yes                                          | Yes                                                               |
-| **Proportional counterpart** | MonoLisa Text (separate purchase or bundle)  | Yes, Fira Sans                                                    |
-| **Price**                    | Paid; limited free trial                     | Free and open source                                              |
-| **Source**                   | [monolisa.dev](https://www.monolisa.dev/)    | [Fira Code GitHub repository](https://github.com/tonsky/FiraCode) |
-
-![Summary infographic comparing MonoLisa Code and Fira Code](/images/comparison-monolisa-vs-fira-code-summary.svg)
 
 ## Reading texture
 
@@ -88,6 +70,28 @@ Consider MonoLisa if italic syntax is something you miss, or if you need its add
 The [free trial](https://www.monolisa.dev/buy/trial) lets you try MonoLisa on your own screen. It includes Regular and Bold with a limited character set, but omits coding ligatures, OpenType features, and grade adjustment. Use the [online tester](https://www.monolisa.dev/tester) to explore those features, then use the trial to judge the basic letterforms in your editor so you can see how the font would work out for you.
 
 Fira Code is free and open source. If you decide to buy MonoLisa after trying it, see the [checkout](https://www.monolisa.dev/buy/) for current pricing and applicable taxes.
+
+## At a glance
+
+| Category                     | MonoLisa Code                                | Fira Code                                                         |
+| ---------------------------- | -------------------------------------------- | ----------------------------------------------------------------- |
+| **Languages (measured)\***   | 593                                          | 395                                                               |
+| **Writing systems**          | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek)                                        |
+| **Italics**                  | Yes                                          | No                                                                |
+| **Fixed weights**            | 10                                           | 6                                                                 |
+| **Variable axes**            | Weight (`wght`), grade (`GRAD`)              | Weight (`wght`)                                                   |
+| **Style control**            | 15 stylistic sets, 12 character variants     | 10 stylistic sets, 32 character variants                          |
+| **Coding ligatures**         | Yes                                          | Yes                                                               |
+| **Terminal symbols**         | Yes                                          | Yes                                                               |
+| **Proportional counterpart** | MonoLisa Text (separate purchase or bundle)  | Yes, Fira Sans                                                    |
+| **Price**                    | Paid; limited free trial                     | Free and open source                                              |
+| **Source**                   | [monolisa.dev](https://www.monolisa.dev/)    | [Fira Code GitHub repository](https://github.com/tonsky/FiraCode) |
+
+<details>
+  <summary>View comparison infographic</summary>
+
+  <img src="/images/comparison-monolisa-vs-fira-code-summary.svg" alt="Summary infographic comparing MonoLisa Code and Fira Code" width="100%" />
+</details>
 
 ## Measurement notes
 

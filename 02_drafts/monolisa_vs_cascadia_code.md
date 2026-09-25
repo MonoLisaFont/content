@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Cascadia Code"
 published: YYYY-MM-DD
-updated: 2026-07-03
+updated: 2026-09-25
 draft: true
 keywords:
   [
@@ -13,27 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Cascadia Code are both coding fonts, but they optimize for different priorities. This draft puts the visual summary and the decision table first, so the main differences are visible before the detailed specimens.
-
-![Summary infographic comparing MonoLisa and Cascadia Code](/images/comparison-monolisa-vs-cascadia-code-summary.svg)
-
-## Decision table
-
-| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | Cascadia Code                                                                      |
-| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| **Languages\***              | MonoLisa        | 593                                                                                         | 513                                                                                |
-| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 4 (Latin, Cyrillic, Arabic, Greek)                                                 |
-| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>       |
-| **Fixed weights**            | MonoLisa        | 10                                                                                          | 6                                                                                  |
-| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | 1 (`wght`)                                                                         |
-| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | 3 stylistic sets recorded                                                          |
-| **Coding ligatures**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>       |
-| **Terminal symbols**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | Box drawing and block elements measured; standard build measured without Powerline |
-| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart                                                |
-| **Price**                    | Cascadia Code   | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                               |
-| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Cascadia Code GitHub repository](https://github.com/microsoft/cascadia-code)      |
-
-In short: MonoLisa Code wins on language coverage, style range, and measured terminal completeness. Cascadia Code wins on price.
+MonoLisa and Cascadia Code are both coding fonts, but they optimize for different priorities. The specimens below show their differences, with a comparison table and optional infographic near the end.
 
 ## Reading texture
 
@@ -105,6 +85,30 @@ Cascadia Code is free and open source. MonoLisa is a paid typeface with [free tr
 ## Conclusion
 
 Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose Cascadia Code, and which tradeoff matters most.
+
+## Decision table
+
+| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | Cascadia Code                                                                      |
+| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **Languages\***              | MonoLisa        | 593                                                                                         | 513                                                                                |
+| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 4 (Latin, Cyrillic, Arabic, Greek)                                                 |
+| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>       |
+| **Fixed weights**            | MonoLisa        | 10                                                                                          | 6                                                                                  |
+| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | 1 (`wght`)                                                                         |
+| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | 3 stylistic sets recorded                                                          |
+| **Coding ligatures**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>       |
+| **Terminal symbols**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | Box drawing and block elements measured; standard build measured without Powerline |
+| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart                                                |
+| **Price**                    | Cascadia Code   | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                               |
+| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Cascadia Code GitHub repository](https://github.com/microsoft/cascadia-code)      |
+
+In short: MonoLisa Code wins on language coverage, style range, and measured terminal completeness. Cascadia Code wins on price.
+
+<details>
+  <summary>View comparison infographic</summary>
+
+  <img src="/images/comparison-monolisa-vs-cascadia-code-summary.svg" alt="Summary infographic comparing MonoLisa and Cascadia Code" width="100%" />
+</details>
 
 ## Measurement notes
 

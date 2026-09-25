@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. IBM Plex Mono"
 published: YYYY-MM-DD
-updated: 2026-07-03
+updated: 2026-09-25
 draft: true
 keywords:
   [
@@ -13,27 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and IBM Plex Mono are both monospaced fonts, but they optimize for different priorities. This draft puts the visual summary and the decision table first, so the main differences are visible before the detailed specimens.
-
-![Summary infographic comparing MonoLisa and IBM Plex Mono](/images/comparison-monolisa-vs-ibm-plex-mono-summary.svg)
-
-## Decision table
-
-| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | IBM Plex Mono                                                                    |
-| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| **Languages\***              | MonoLisa        | 593                                                                                         | 410                                                                              |
-| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 2 (Latin, Cyrillic)                                                              |
-| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>     |
-| **Fixed weights**            | MonoLisa        | 10                                                                                          | 8                                                                                |
-| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | Not recorded in this pass                                                        |
-| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | 9 stylistic sets recorded                                                        |
-| **Coding ligatures**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No coding ligature set measured                                                  |
-| **Terminal symbols**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | Box drawing and block elements measured; Powerline not measured in regular build |
-| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | IBM Plex Sans / Serif / Sans Condensed                                           |
-| **Price**                    | IBM Plex Mono   | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                             |
-| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [IBM Plex GitHub repository](https://github.com/IBM/plex)                        |
-
-In short: MonoLisa Code wins on measured coverage, coding features, axes, and terminal completeness. IBM Plex Mono wins on price.
+MonoLisa and IBM Plex Mono are both monospaced fonts, but they optimize for different priorities. The specimens below show their differences, with a comparison table and optional infographic near the end.
 
 ## Reading texture
 
@@ -105,6 +85,30 @@ IBM Plex Mono is free and open source. MonoLisa is a paid typeface with [free tr
 ## Conclusion
 
 Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose IBM Plex Mono, and which tradeoff matters most.
+
+## Decision table
+
+| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | IBM Plex Mono                                                                    |
+| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Languages\***              | MonoLisa        | 593                                                                                         | 410                                                                              |
+| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 2 (Latin, Cyrillic)                                                              |
+| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>     |
+| **Fixed weights**            | MonoLisa        | 10                                                                                          | 8                                                                                |
+| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | Not recorded in this pass                                                        |
+| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | 9 stylistic sets recorded                                                        |
+| **Coding ligatures**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No coding ligature set measured                                                  |
+| **Terminal symbols**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | Box drawing and block elements measured; Powerline not measured in regular build |
+| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | IBM Plex Sans / Serif / Sans Condensed                                           |
+| **Price**                    | IBM Plex Mono   | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                             |
+| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [IBM Plex GitHub repository](https://github.com/IBM/plex)                        |
+
+In short: MonoLisa Code wins on measured coverage, coding features, axes, and terminal completeness. IBM Plex Mono wins on price.
+
+<details>
+  <summary>View comparison infographic</summary>
+
+  <img src="/images/comparison-monolisa-vs-ibm-plex-mono-summary.svg" alt="Summary infographic comparing MonoLisa and IBM Plex Mono" width="100%" />
+</details>
 
 ## Measurement notes
 

@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. JetBrains Mono"
 published: YYYY-MM-DD
-updated: 2026-09-22
+updated: 2026-09-25
 draft: true
 keywords:
   [
@@ -14,24 +14,6 @@ authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
 If you like JetBrains Mono's features but find its letterforms too narrow for your taste, MonoLisa is worth trying. Both offer italics, coding ligatures, and variable weight. The difference to look at first is the shape of the letters: MonoLisa's broader, rounder forms give code a different rhythm, while JetBrains Mono emphasizes tall lowercase letters within a compact width.
-
-## At a glance
-
-| Category | MonoLisa Code | JetBrains Mono |
-| --- | --- | --- |
-| **Languages (measured)\*** | 593 | 358 |
-| **Writing systems** | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek) |
-| **Italics** | Yes | Yes |
-| **Fixed weights** | 10 | 8 |
-| **Variable axes** | Weight (`wght`), grade (`GRAD`) | Weight (`wght`) |
-| **Style control** | 15 stylistic sets, 12 character variants | 4 stylistic sets, 20 character variants |
-| **Coding ligatures** | Yes | Yes |
-| **Terminal symbols** | Yes | Yes |
-| **Proportional counterpart** | MonoLisa Text (separate purchase or bundle) | None in the JetBrains Mono family |
-| **Price** | Paid; limited free trial | Free and open source |
-| **Source** | [monolisa.dev](https://www.monolisa.dev/) | [JetBrains Mono GitHub repository](https://github.com/JetBrains/JetBrainsMono) |
-
-![Summary infographic comparing MonoLisa Code and JetBrains Mono](/images/comparison-monolisa-vs-jetbrains-mono-summary.svg)
 
 ## Reading texture
 
@@ -97,6 +79,28 @@ Consider MonoLisa if you prefer its broader, rounder letterforms, need Hebrew or
 The [free trial](https://www.monolisa.dev/buy/trial) lets you try MonoLisa on your own screen. It includes Regular and Bold with a limited character set, but omits coding ligatures, OpenType features, and grade adjustment. Use the [online tester](https://www.monolisa.dev/tester) to explore those features, then use the trial to judge the basic letterforms in your editor.
 
 JetBrains Mono is free and open source. If you decide to buy MonoLisa after trying it, see the [checkout](https://www.monolisa.dev/buy/) for current pricing and applicable taxes.
+
+## At a glance
+
+| Category | MonoLisa Code | JetBrains Mono |
+| --- | --- | --- |
+| **Languages (measured)\*** | 593 | 358 |
+| **Writing systems** | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek) |
+| **Italics** | Yes | Yes |
+| **Fixed weights** | 10 | 8 |
+| **Variable axes** | Weight (`wght`), grade (`GRAD`) | Weight (`wght`) |
+| **Style control** | 15 stylistic sets, 12 character variants | 4 stylistic sets, 20 character variants |
+| **Coding ligatures** | Yes | Yes |
+| **Terminal symbols** | Yes | Yes |
+| **Proportional counterpart** | MonoLisa Text (separate purchase or bundle) | None in the JetBrains Mono family |
+| **Price** | Paid; limited free trial | Free and open source |
+| **Source** | [monolisa.dev](https://www.monolisa.dev/) | [JetBrains Mono GitHub repository](https://github.com/JetBrains/JetBrainsMono) |
+
+<details>
+  <summary>View comparison infographic</summary>
+
+  <img src="/images/comparison-monolisa-vs-jetbrains-mono-summary.svg" alt="Summary infographic comparing MonoLisa Code and JetBrains Mono" width="100%" />
+</details>
 
 ## Measurement notes
 

@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Monaspace Neon"
 published: 2026-09-09
-updated: 2026-09-22
+updated: 2026-09-25
 keywords:
   [
     "MonoLisa vs Monaspace",
@@ -18,28 +18,6 @@ Monaspace and MonoLisa offer different ways to vary the appearance of code. Mona
 For the side-by-side comparison, we use MonoLisa Code and Monaspace Neon v1.400 since choosing one Monaspace family gives us a consistent reference across the specimens. The visual observations and language measurements below apply to Neon and we discuss the wider Monaspace offering separately.
 
 One difference to look for is the change from upright to italic. MonoLisa's italic letterforms change more, while Neon's stay closer to their upright shapes. If you want comments or keywords to stand out more, that makes MonoLisa worth trying, along with the other styles included in Monaspace.
-
-## At a glance
-
-This table compares MonoLisa Code with Monaspace Neon. The sections below explain where the other Monaspace families give you additional choices.
-
-| Category                     | MonoLisa Code                                           | Monaspace Neon                                                         |
-| ---------------------------- | ------------------------------------------------------- | ---------------------------------------------------------------------- |
-| **Languages (measured)\***   | 593                                                     | 368                                                                    |
-| **Writing systems**          | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)            | 3 (Latin, Cyrillic, Greek)                                             |
-| **Italic forms**             | Redrawn letterforms with stronger contrast from upright | Neon: designed obliques that stay closer to upright forms              |
-| **Fixed weights**            | 10                                                      | 7 in measured Neon family                                              |
-| **Variable axes**            | Weight (`wght`), grade (`GRAD`)                         | Weight (`wght`), width (`wdth`), slant (`slnt`)                        |
-| **Style control**            | 15 stylistic sets, 12 character variants                | 10 stylistic sets, selected character variants                         |
-| **Coding ligatures**         | Yes                                                     | Yes                                                                    |
-| **Terminal symbols**         | Yes                                                     | Yes                                                                    |
-| **Proportional counterpart** | MonoLisa Text (separate purchase or bundle)             | No                                                                     |
-| **Price**                    | Paid; limited free trial                                | Free and open source                                                   |
-| **Source**                   | [monolisa.dev](https://www.monolisa.dev/)               | [Monaspace GitHub repository](https://github.com/githubnext/monaspace) |
-
-![Summary infographic comparing MonoLisa Code and Monaspace Neon](/images/comparison-monolisa-vs-monaspace-summary.svg)
-
-The infographic uses Monaspace Neon v1.400. Speaker totals are estimates from Hyperglot's supported language/script entries and may count speakers more than once; the worldwide bar is an approximate population reference.
 
 ## Reading texture
 
@@ -114,6 +92,32 @@ Consider MonoLisa if you prefer the stronger italic contrast shown against Neon,
 The [free trial](https://www.monolisa.dev/buy/trial) lets you try MonoLisa on your own screen. It includes Regular and Bold with a limited character set, but omits coding ligatures, OpenType features, and grade adjustment. Use the [online tester](https://www.monolisa.dev/tester) to explore those features, then use the trial to see how the basic letterforms work in your editor.
 
 Monaspace is free and open source. If you decide to buy MonoLisa after trying it, see the [checkout](https://www.monolisa.dev/buy/) for current pricing and applicable taxes.
+
+## At a glance
+
+This table compares MonoLisa Code with Monaspace Neon. The sections above explain where the other Monaspace families give you additional choices.
+
+| Category                     | MonoLisa Code                                           | Monaspace Neon                                                         |
+| ---------------------------- | ------------------------------------------------------- | ---------------------------------------------------------------------- |
+| **Languages (measured)\***   | 593                                                     | 368                                                                    |
+| **Writing systems**          | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)            | 3 (Latin, Cyrillic, Greek)                                             |
+| **Italic forms**             | Redrawn letterforms with stronger contrast from upright | Neon: designed obliques that stay closer to upright forms              |
+| **Fixed weights**            | 10                                                      | 7 in measured Neon family                                              |
+| **Variable axes**            | Weight (`wght`), grade (`GRAD`)                         | Weight (`wght`), width (`wdth`), slant (`slnt`)                        |
+| **Style control**            | 15 stylistic sets, 12 character variants                | 10 stylistic sets, selected character variants                         |
+| **Coding ligatures**         | Yes                                                     | Yes                                                                    |
+| **Terminal symbols**         | Yes                                                     | Yes                                                                    |
+| **Proportional counterpart** | MonoLisa Text (separate purchase or bundle)             | No                                                                     |
+| **Price**                    | Paid; limited free trial                                | Free and open source                                                   |
+| **Source**                   | [monolisa.dev](https://www.monolisa.dev/)               | [Monaspace GitHub repository](https://github.com/githubnext/monaspace) |
+
+<details>
+  <summary>View comparison infographic</summary>
+
+  <img src="/images/comparison-monolisa-vs-monaspace-summary.svg" alt="Summary infographic comparing MonoLisa Code and Monaspace Neon" width="100%" />
+
+  <p>The infographic uses Monaspace Neon v1.400. Speaker totals are estimates from Hyperglot's supported language/script entries and may count speakers more than once; the worldwide bar is an approximate population reference.</p>
+</details>
 
 ## Measurement notes
 
