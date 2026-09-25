@@ -97,6 +97,16 @@ const samples = {
 };
 
 const sampleOverrides = {
+  "fira-code": {
+    italics: {
+      // Match the -10° post.italicAngle in the measured MonoLisa italic file.
+      // This is an explicit specimen setting, not an editor-default claim.
+      syntheticSlants: { "fira-code": 10 },
+      measureLayout: true,
+      columnLabels: ["MonoLisa Code · Drawn italic", "Fira Code · Software slant"],
+      description: "MonoLisa uses its separately drawn italic font. Fira Code uses its upright font with a software-generated 10-degree rightward slant. Both render the same code at equal nominal sizes; editor synthesis settings may differ.",
+    },
+  },
   monaspace: {
     italics: {
       style: "normal",
@@ -149,7 +159,12 @@ function fail(message) {
   process.exitCode = 1;
 }
 
+function syntheticSlant(font, sample) {
+  return sample.style === "italic" ? sample.syntheticSlants?.[fontKeys.get(font)] : undefined;
+}
+
 function fontPath(font, sample) {
+  if (syntheticSlant(font, sample) !== undefined) return font.regular;
   if (sample.style === "italic" && font.italic && existsSync(path.resolve(root, font.italic))) {
     return font.italic;
   }
@@ -158,6 +173,7 @@ function fontPath(font, sample) {
 
 function variations(font, sample) {
   if (sample.variations) return sample.variations;
+  if (syntheticSlant(font, sample) !== undefined) return font.variations;
   if (sample.style === "italic" && font.italicVariations) return font.italicVariations;
   return font.variations;
 }
@@ -184,6 +200,8 @@ function renderLine(font, sample, line, prefix, fill = themeFills.primary) {
   ];
   const variationSettings = variations(font, sample);
   if (variationSettings) args.push(`--variations=${variationSettings}`);
+  const slant = syntheticSlant(font, sample);
+  if (slant !== undefined) args.push(`--font-slant=${Math.tan(slant * Math.PI / 180)}`);
   args.push("--", resolved, line);
 
   const result = spawnSync("hb-view", args, { cwd: root, encoding: "utf8" });
@@ -193,13 +211,13 @@ function renderLine(font, sample, line, prefix, fill = themeFills.primary) {
 
   const fragment = normalizeFragment(result.stdout, prefix, fill);
   if (sample.measureLayout) {
-    // hb-view uses 26.6 positions. Measure at the same precision so adjacent
-    // Powerline backgrounds meet at the glyph advance, without rounding drift.
+    // hb-view uses 26.6 positions. Measure at the same precision so glyph
+    // overhangs do not add space between tokens or Powerline segments.
     const shaped = spawnSync("hb-shape", [
       ...args.filter((arg) => arg !== "--output-format=svg" && !arg.startsWith("--font-size=")).slice(0, -3),
       `--font-size=${sample.fontSize * 64}`, "--output-format=json", "--", resolved, line,
     ], { cwd: root, encoding: "utf8" });
-    if (shaped.status !== 0) throw new Error(shaped.stderr || "Could not measure terminal text");
+    if (shaped.status !== 0) throw new Error(shaped.stderr || "Could not measure text advances");
     const glyphs = JSON.parse(shaped.stdout);
     fragment.advanceWidth = glyphs.reduce((sum, glyph) => sum + glyph.ax / 64, 0);
     fragment.missingGlyphs = glyphs.filter((glyph) => glyph.g === ".notdef" || glyph.g === "gid0").length;
@@ -364,7 +382,7 @@ function focusLabel(label, center, baseline, prefix, size = 24) {
   return `<g class="focus-caption" transform="translate(${center - fragment.advanceWidth / 2 - 16}, ${baseline - fragment.baselineY})">${fragment.inner}</g>`;
 }
 
-function renderFocus(competitorKey, sampleKey, fonts, stacked, width, colWidth, gutter) {
+function renderFocus(competitorKey, sampleKey, fonts, stacked, width, colWidth, gutter, sample) {
   const focus = comparisonFocus[competitorKey]?.[sampleKey];
   if (!focus) return { height: 0, body: "", description: "" };
   const pairedStyles = focus.details.some((detail) => detail.styles);
@@ -373,10 +391,13 @@ function renderFocus(competitorKey, sampleKey, fonts, stacked, width, colWidth, 
   const prepared = fonts.map((font, fontIndex) => focus.details.map((detail, detailIndex) =>
     (detail.styles ?? ["normal"]).map((style, styleIndex) => {
       const prefix = `${competitorKey}-${sampleKey}-focus-${fontIndex}-${detailIndex}-${styleIndex}`;
-      const fragment = renderLine(font, { fontSize: size, features: "kern=1,liga=0,calt=0", style, measureInk: true }, detail.char, prefix);
+      const detailSample = { fontSize: size, features: "kern=1,liga=0,calt=0", style, measureInk: true, syntheticSlants: sample.syntheticSlants };
+      const slant = syntheticSlant(font, detailSample);
+      const fragment = renderLine(font, detailSample, detail.char, prefix);
       const { ink } = fragment;
-      const bottom = Math.max(ink.y + ink.height, ...detail.marks.map((mark) => ink.y + ink.height * mark.y + size * mark.radius));
-      return { fragment, prefix, bottom };
+      const marks = detail.marksByFont?.[fontKeys.get(font)]?.[style] ?? detail.marks;
+      const bottom = Math.max(ink.y + ink.height, ...marks.map((mark) => ink.y + ink.height * mark.y + size * mark.radius));
+      return { fragment, prefix, bottom, slant, marks };
     }),
   ));
   const lowestInk = Math.max(...prepared.flat(2).map(({ bottom }) => bottom));
@@ -398,13 +419,13 @@ function renderFocus(competitorKey, sampleKey, fonts, stacked, width, colWidth, 
       const baseline = rowY + 124;
       const captionY = rowY + captionOffset;
       for (const [styleIndex, style] of styles.entries()) {
-        const { fragment, prefix } = prepared[fontIndex][detailIndex][styleIndex];
+        const { fragment, prefix, slant, marks } = prepared[fontIndex][detailIndex][styleIndex];
         const { ink } = fragment;
         const center = itemX + itemWidth * (styleIndex + 0.5) / styles.length;
         const originX = center - ink.x - ink.width / 2;
-        const circles = detail.marks.map((mark) => `<circle class="focus-circle" cx="${originX + ink.x + ink.width * mark.x}" cy="${baseline + ink.y + ink.height * mark.y}" r="${size * mark.radius}" />`).join("");
-        body.push(`<g class="focus-detail" data-character="${esc(detail.char)}" data-style="${style}">${circles}<g transform="translate(${originX - 16}, ${baseline - fragment.baselineY})">${fragment.inner}</g></g>`);
-        if (pairedStyles) body.push(focusLabel(style === "italic" ? "Italic" : "Upright", center, captionY, `${prefix}-style`, captionSize));
+        const circles = marks.map((mark) => `<circle class="focus-circle" cx="${originX + ink.x + ink.width * mark.x}" cy="${baseline + ink.y + ink.height * mark.y}" r="${size * mark.radius}" />`).join("");
+        body.push(`<g class="focus-detail" data-character="${esc(detail.char)}" data-style="${style}"${slant === undefined ? "" : ` data-synthetic-slant="${slant}"`}>${circles}<g transform="translate(${originX - 16}, ${baseline - fragment.baselineY})">${fragment.inner}</g></g>`);
+        if (pairedStyles) body.push(focusLabel(style === "italic" ? (slant === undefined ? "Italic" : "Slanted") : "Upright", center, captionY, `${prefix}-style`, captionSize));
       }
       if (!pairedStyles) body.push(focusLabel(detail.captions[fontIndex], itemX + itemWidth / 2, captionY, `${competitorKey}-${sampleKey}-focus-caption-${fontIndex}-${detailIndex}`, captionSize));
     }
@@ -431,7 +452,7 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   const bottomPadding = sample.bottomPadding ?? 28;
   const fragments = [];
   const renderedLines = [];
-  const fonts = sample.style === "italic" && !competitor.italic ? [mono] : [mono, competitor];
+  const fonts = sample.style === "italic" && !competitor.italic && syntheticSlant(competitor, sample) === undefined ? [mono] : [mono, competitor];
 
   for (const [columnIndex, font] of fonts.entries()) {
     for (const [lineIndex, line] of sample.lines.entries()) {
@@ -473,7 +494,7 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   const specimenHeight = stacked
     ? Math.ceil(marginY + blockHeight * columnCount + columnGapY * (columnCount - 1) + bottomPadding)
     : Math.ceil(marginY + blockHeight + bottomPadding);
-  const focus = renderFocus(competitorKey, sampleKey, fonts, stacked, width, colWidth, gutter);
+  const focus = renderFocus(competitorKey, sampleKey, fonts, stacked, width, colWidth, gutter, sample);
   const height = specimenHeight + focus.height;
 
   for (const [columnIndex, font] of fonts.entries()) {
@@ -484,7 +505,7 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
     const yStart = stacked ? marginY + columnIndex * (blockHeight + columnGapY) : marginY;
     fragments.push(
       renderLabel(
-        font.label,
+        sample.columnLabels?.[columnIndex] ?? font.label,
         x,
         yStart,
         `${competitorKey}-${sampleKey}-${columnIndex}-label`,
@@ -500,7 +521,7 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
       const y = yStart + effectiveLabelHeight + lineOffsets[lineIndex];
       const tokenFragments = line.tokens
         .map(({ x: tokenX, fragment }) => `
-          <g transform="translate(${tokenX - 16}, 0)">
+          <g transform="translate(${tokenX - (sample.measureLayout ? fragment.originX : 16)}, 0)">
             ${fragment.inner}
           </g>`)
         .join("\n");
@@ -512,10 +533,11 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   }
 
   const title = `${sample.title}: ${mono.label} vs. ${competitor.label}`;
+  const description = [focus.description, sample.description].filter(Boolean).join(" ");
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="${themeFills.primary}" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>${esc(title)}</title>
-  ${focus.description ? `<desc>${esc(focus.description)}</desc>` : ""}
+  ${description ? `<desc>${esc(description)}</desc>` : ""}
   <style>
     .specimen-label {
       opacity: 0.62;
@@ -539,7 +561,7 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   ${focus.body}
   <g class="comparison-specimen" transform="translate(0, ${focus.height})">${fragments.join("\n")}</g>
 </svg>
-`;
+`.replace(/[ \t]+$/gm, "");
 
   const outputPath = path.join(
     outputDir,

@@ -73,6 +73,28 @@ export const comparisonFocus = {
     },
   },
   "fira-code": {
+    italics: {
+      description: "Enlarged a and f compare upright forms with MonoLisa's drawn italics and Fira Code's software slant. Circles highlight the a construction and f lower ending. The same italic code sample follows in both fonts.",
+      details: [{
+        char: "a", styles: ["normal", "italic"],
+        marks: [mark(0.65, 0.25, 0.23)],
+      }, {
+        char: "f", styles: ["normal", "italic"],
+        marks: [mark(0.45, 0.91, 0.2)],
+        // Center on the lower stroke, whose position within the ink bounds
+        // changes with the italic hook and Fira's software slant.
+        marksByFont: {
+          monolisa: {
+            normal: [mark(0.38, 0.93, 0.2)],
+            italic: [mark(0.18, 0.94, 0.2)],
+          },
+          "fira-code": {
+            normal: [mark(0.36, 0.93, 0.2)],
+            italic: [mark(0.20, 0.93, 0.2)],
+          },
+        },
+      }],
+    },
     texture: {
       description: "Enlarged commas and opening square brackets from parseToken. Circles point to the comma tips and bracket ends in both fonts. The complete code sample follows.",
       details: [{

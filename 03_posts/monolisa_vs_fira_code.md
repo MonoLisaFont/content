@@ -43,11 +43,11 @@ Compare `0O`, then `1lI|`: which details help you separate each character? Ligat
 
 ## Italics and style range
 
-The specimen shows MonoLisa alone because Fira Code has no italic font. If your editor slants Fira Code, that is software-generated; MonoLisa supplies separately drawn italic forms. Follow the letters in `emphasis` and `readableIdentifier` to judge the style you would want for comments.
+MonoLisa supplies separately drawn italic forms; Fira Code has no italic font, so we show a software-generated slant. The enlarged pairs highlight MonoLisa's changed `a` construction and descending `f`, while Fira's upright shapes simply lean; compare those letters in the code below.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-fira-code-italics-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-fira-code-italics.svg" alt="MonoLisa Code italic samples; Fira Code has no italic styles" width="100%" />
+  <img src="/images/comparison-monolisa-vs-fira-code-italics.svg" alt="Enlarged upright and italic a and f in MonoLisa Code, compared with upright and software-slanted Fira Code, followed by the same code sample in both fonts" width="100%" />
 </picture>
 
 ## Terminal symbols
@@ -73,7 +73,7 @@ The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold w
 | ---------------------------- | -------------------------------------------- | ----------------------------------------------------------------- |
 | **Languages (measured)\***   | 593                                          | 395                                                               |
 | **Writing systems**          | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek)                                        |
-| **Italics**                  | Yes                                          | No                                                                |
+| **Drawn italics**            | Yes                                          | No                                                                |
 | **Fixed weights**            | 10                                           | 6                                                                 |
 | **Variable axes**            | Weight (`wght`), grade (`GRAD`)              | Weight (`wght`)                                                   |
 | **Style control**            | 15 stylistic sets, 12 character variants     | 10 stylistic sets, 32 character variants                          |
@@ -91,6 +91,8 @@ The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold w
 
 ## Measurement notes
 
+The italic comparison renders MonoLisa's italic font file beside Fira Code Regular with a 10° rightward software slant. The angle matches the magnitude of `post.italicAngle` in the measured MonoLisa file; HarfBuzz applies it with `--font-slant=0.17632698070846498` (the tangent of 10°). Both the enlarged details and the code use this setting. Fira's upright outlines and advance widths are otherwise unchanged. This is a reproducible example of synthesis, not a claim about every editor's default angle. Regenerate with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json fira-code`.
+
 The terminal windows use identical text at a nominal 22 px with 33 px table line spacing, ligatures disabled, and the same theme colors. Powerline separators and standard Unicode block progress bars come from each font's own outlines. Segment backgrounds follow measured glyph advances; missing characters retain the font's missing-glyph outline with no fallback. Actual terminal line-height and fallback settings may change the joins. Regenerate with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --terminal-only`.
 
 \* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command was:
@@ -101,4 +103,4 @@ The terminal windows use identical text at a nominal 22 px with 33 px table line
 
 MonoLisa Code exposes `liga`, `dlig`, `calt`, `zero`, `ss01`–`ss15`, and `cv01`–`cv12`; Fira Code exposes `calt`, `zero`, `ss01`–`ss10`, and `cv01`–`cv32`. MonoLisa has 10 named weights in upright and italic styles. Fira Code has 6 fixed weights; its variable file has 5 named upright weights from Light through Bold. Both fonts cover Powerline 6/6, box drawing 128/128, and block elements 32/32, with internally aligned vertical metrics.
 
-The enlarged details use the same font files as the complete specimens, at equal nominal sizes for both fonts. Glyphs are centered independently without changing their proportions. The circles are annotations behind the original outlines; upright and italic details use their respective font files. Regenerate them with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --focus-only`.
+The enlarged details use the same font files as the complete specimens, at equal nominal sizes for both fonts. Glyphs are centered independently. The circles are annotations behind the outlines; MonoLisa's upright and italic details use their respective font files, while Fira's slanted details use the synthesis described above. Regenerate them with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --focus-only`.
