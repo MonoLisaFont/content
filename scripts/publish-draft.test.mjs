@@ -18,6 +18,7 @@ import {
   publishDraft,
   publishDevToWithImages,
   localPublicationDate,
+  rewriteDevToDisclosures,
   rewriteDevToImages,
   rewriteDevToLinks,
   updatePublicationFrontmatter,
@@ -780,6 +781,26 @@ test("an invalid DEV API key fails before moving an image-free post", async (t) 
   await assert.rejects(readFile(targetPath), /ENOENT/);
 });
 
+test("DEV disclosures preserve image content and leave code examples unchanged", () => {
+  const disclosure = '<details>\n  <summary>View comparison infographic</summary>\n\n  <img src="https://example.com/summary.png" alt="Summary" />\n</details>';
+  const example = `\`\`\`html\n${disclosure}\n\`\`\``;
+  const output = rewriteDevToDisclosures(`${disclosure}\n\n${example}`);
+  assert.equal(
+    output,
+    '{% details View comparison infographic %}\n\n  <img src="https://example.com/summary.png" alt="Summary" />\n{% enddetails %}' + `\n\n${example}`,
+  );
+  assert.equal(rewriteDevToDisclosures('Use `<details>` and `</details>`.'), 'Use `<details>` and `</details>`.');
+});
+
+test("DEV disclosures preserve fenced code within the collapsed content", () => {
+  const code = "```html\n<details><summary>Example</summary></details>\n```";
+  assert.equal(
+    rewriteDevToDisclosures(`<details>\n<summary>Example markup</summary>\n${code}\n</details>`),
+    `{% details Example markup %}\n${code}\n{% enddetails %}`,
+  );
+  assert.throws(() => rewriteDevToDisclosures("<details><summary>Unclosed</summary>"), /Unclosed disclosure/);
+});
+
 test("publishDevToWithImages checkpoints and reuses DEV-hosted image copies", async () => {
   const events = [];
   let articleOptions;
@@ -815,7 +836,7 @@ test("publishDevToWithImages checkpoints and reuses DEV-hosted image copies", as
     post: {
       slug: "example",
       title: "Example",
-      body: "![Diagram](/images/example.svg#detail)\n\n[Release](/releases/3.000)",
+      body: "<details><summary>Diagram</summary>\n\n![Diagram](/images/example.svg#detail)\n\n</details>\n\n[Release](/releases/3.000)",
       keywords: ["fonts"],
     },
     sessionCookie: "_dev_to_session=session-secret",
@@ -857,6 +878,9 @@ test("publishDevToWithImages checkpoints and reuses DEV-hosted image copies", as
     /https:\/\/media2\.dev\.to\/uploads\/example\.png/,
   );
   assert.doesNotMatch(articleOptions.post.bodyMarkdown, /#detail|\/images\//);
+  assert.match(articleOptions.post.bodyMarkdown, /\{% details Diagram %\}/);
+  assert.match(articleOptions.post.bodyMarkdown, /\{% enddetails %\}/);
+  assert.doesNotMatch(articleOptions.post.bodyMarkdown, /<\/?(?:details|summary)>/);
   assert.match(
     articleOptions.post.bodyMarkdown,
     /https:\/\/www\.monolisa\.dev\/releases\/3\.000/,

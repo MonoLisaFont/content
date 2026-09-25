@@ -111,6 +111,10 @@ so SVGs are converted in memory to PNG with `rsvg-convert` before upload. The
 SVG remains unchanged in the repository and on Blob, and the generated PNG is
 not written into `images/`.
 
+Collapsed `<details>` blocks with a plain-text `<summary>` are converted to
+DEV's [Liquid disclosure format](https://dev.to/p/editor_guide). This keeps the
+optional comparison infographic collapsed; DEV strips the raw HTML wrapper.
+
 Install [librsvg](https://gitlab.gnome.org/GNOME/librsvg) so
 `rsvg-convert --version` works before publishing an SVG-bearing post. DEV does
 not expose image upload through its API-key API, so this command uses the same

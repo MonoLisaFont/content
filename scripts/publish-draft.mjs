@@ -370,6 +370,30 @@ export function rewriteDevToImages(
   );
 }
 
+// DEV strips raw details/summary HTML; its Liquid block preserves disclosure.
+// https://dev.to/p/editor_guide#supported-nonurl-embeds
+export function rewriteDevToDisclosures(markdown) {
+  let depth = 0;
+  const rewritten = transformMarkdownOutsideCode(markdown, (prose) =>
+    prose.replace(
+      /<details>\s*<summary>([^<\n]+)<\/summary>|<\/details>/gi,
+      (match, summary) => {
+        if (summary !== undefined) {
+          depth += 1;
+          return `{% details ${summary.trim()} %}`;
+        }
+        if (depth > 0) {
+          depth -= 1;
+          return "{% enddetails %}";
+        }
+        return match;
+      },
+    ),
+  );
+  if (depth !== 0) throw new Error("Unclosed disclosure in DEV Markdown.");
+  return rewritten;
+}
+
 export function rewriteDevToLinks(markdown, canonicalBase) {
   const base = canonicalBase.replace(/\/+$/, "");
   const origin = new URL(base).origin;
@@ -564,11 +588,13 @@ export async function publishDevToWithImages(
       imageUrls.set(asset.localPath, url);
     }
 
-    const bodyMarkdown = rewriteDevToLinks(
-      rewriteDevToImages(post.body, imageUrls, {
-        preserveReferenceSuffix: false,
-      }),
-      canonicalBase,
+    const bodyMarkdown = rewriteDevToDisclosures(
+      rewriteDevToLinks(
+        rewriteDevToImages(post.body, imageUrls, {
+          preserveReferenceSuffix: false,
+        }),
+        canonicalBase,
+      ),
     );
     const unresolvedImages = [...new Set(referencedImagePaths(bodyMarkdown))];
     if (unresolvedImages.length > 0) {
