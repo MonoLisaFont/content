@@ -13,11 +13,11 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-Source Code Pro and MonoLisa both offer italics and proportional companion families. Coding ligatures are a clearer difference: Source Code Pro keeps the operators separate in these specimens, while MonoLisa can join them. Start with the shapes you see most often in your own code.
+Source Code Pro keeps `!==` and `->` as separate characters in these samples; MonoLisa can join them. Both offer italics and related fonts for prose, so the useful starting point is whether you want ligatures in the code you read every day.
 
 ## Reading texture
 
-Read the same `parseToken` function in both fonts. Follow the punctuation through the nested braces, then look at the spacing within identifiers. Compare how readily you can pick out the structure without enlarging the sample or focusing on a single character.
+MonoLisa's braces and commas have heavier strokes in this sample; Source Code Pro's punctuation sits more lightly beside the letters. The closing braces down the left of the function make that contrast visible across several lines of code.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-source-code-pro-texture-mobile.svg" />
@@ -26,7 +26,7 @@ Read the same `parseToken` function in both fonts. Follow the punctuation throug
 
 ## Coding ligatures and character variants
 
-Compare `!==` and the arrows: Source Code Pro shows the separate characters, while MonoLisa offers joined forms. No coding ligature set was measured in Source Code Pro. MonoLisa lets you choose whether to use its coding ligatures, so preference matters more than the feature count.
+Source Code Pro shows the individual characters in `!==`, `->`, and `===`; MonoLisa joins them into single symbols. MonoLisa's ligatures are optional, so you can also keep separate operators if you find the familiar character sequences easier to recognize.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-source-code-pro-ligatures-mobile.svg" />
@@ -44,7 +44,7 @@ MonoLisa uses square dots in the zero, periods, and colons; Source Code Pro uses
 
 ## Italics and style range
 
-Both fonts have italic styles. Compare the `a` in `alpha`, the `f` in `quickFix`, and the shape of the whole `readableIdentifier`. The measured static families have ten MonoLisa weights and seven Source Code Pro weights; choose the italic voice before counting styles.
+MonoLisa's italic `f` curls below the baseline, while Source Code Pro's stops at it. The difference appears in both `if` and `readableIdentifier`; these are useful details to check if your theme puts comments, parameters, or keywords in italics.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-source-code-pro-italics-mobile.svg" />
@@ -53,7 +53,7 @@ Both fonts have italic styles. Compare the `a` in `alpha`, the `f` in `quickFix`
 
 ## Terminal symbols
 
-Both fonts cover all the Powerline, box-drawing, and block symbols checked here. Follow the colored prompt joins, table borders, and progress bars. Source Code Pro's vertical metrics differ between font tables, so check line spacing in your terminal as well as the shapes shown here.
+Both fonts include the prompt separators, table borders, and block characters shown here. Check the vertical table edges in your own terminal too: its line-height setting can add space between rows, changing how the borders join even when the characters are present.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-source-code-pro-terminal-mobile.svg" />
@@ -62,27 +62,27 @@ Both fonts cover all the Powerline, box-drawing, and block symbols checked here.
 
 ## Which font should you choose?
 
-Choose Source Code Pro if you like its letterforms and want a free, open-source font with separate operators and the Source Sans companion. Consider MonoLisa if you prefer its shapes, want coding ligatures, or need its Hebrew and Armenian coverage. Both can serve code alongside a related proportional family.
+Choose Source Code Pro for a free font with separate operators and a related family for prose. Try MonoLisa if you want optional ligatures or prefer its heavier punctuation and descending italic `f` in these samples; test those details in your usual theme.
 
 ## Try MonoLisa in your editor
 
 The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold with a limited character set. Use it to judge letterforms in your editor; explore coding ligatures, OpenType features, and grade adjustment in the [online tester](https://www.monolisa.dev/tester), since those are omitted from the trial. See [checkout](https://www.monolisa.dev/buy/) for current pricing.
 
-## Decision table
+## At a glance
 
-| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | Source Code Pro                                                                     |
-| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| **Languages\***              | MonoLisa        | 593                                                                                         | 413                                                                                 |
-| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 3 (Latin, Cyrillic, Greek)                                                          |
-| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>        |
-| **Fixed weights**            | MonoLisa        | 10                                                                                          | 7                                                                                   |
-| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | Not measured in this pass                                                           |
-| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | 7 stylistic sets, selected character variants                                       |
-| **Coding ligatures**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No coding ligature set measured                                                     |
-| **Terminal symbols**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>        |
-| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Source Sans family relation                                                         |
-| **Price**                    | Source Code Pro | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                                |
-| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Source Code Pro GitHub repository](https://github.com/adobe-fonts/source-code-pro) |
+| Category | MonoLisa Code | Source Code Pro |
+| ---------------------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| **Languages\*** | 593 | 413 |
+| **Writing systems** | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek) |
+| **Italics** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Fixed weights** | 10 | 7 |
+| **Variable axes** | 2 (`wght`, `GRAD`) | Not measured in this pass |
+| **Style control** | 15 stylistic sets, 12 character variants | 7 stylistic sets, selected character variants |
+| **Coding ligatures** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | No coding ligature set measured |
+| **Terminal symbols** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Proportional counterpart** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Source Sans family relation |
+| **Price** | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Free and open source |
+| **Source** | [monolisa.dev](https://www.monolisa.dev/) | [Source Code Pro GitHub repository](https://github.com/adobe-fonts/source-code-pro) |
 
 <details>
   <summary>View comparison infographic</summary>

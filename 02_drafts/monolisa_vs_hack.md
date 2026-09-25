@@ -13,11 +13,11 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-Hack offers a straightforward setup with Regular, Bold, and their italics. MonoLisa adds coding ligatures and more control over weight and letter variants. The specimens below show whether those differences—and the shapes themselves—would matter in your editor.
+If Regular looks too light and Bold too heavy in your editor, these fonts give you different choices: Hack supplies those two weights, while MonoLisa offers intermediate weights and variable adjustment. The code samples also show Hack's separate operators beside MonoLisa's optional ligatures.
 
 ## Reading texture
 
-Read the same `parseToken` function in both fonts, following the brackets and commas as well as the letters. Notice the gaps in identifiers and around operators; the combination of dark strokes and empty space gives each block its texture.
+The `next !== ""` condition shows one difference in the code: MonoLisa joins `!==` into one symbol, while Hack leaves three characters. Hack's version of the same function also occupies less horizontal space at this size, visible along the first line.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-texture-mobile.svg" />
@@ -26,7 +26,7 @@ Read the same `parseToken` function in both fonts, following the brackets and co
 
 ## Coding ligatures and character variants
 
-Hack keeps the operators as separate characters; no coding ligature set was measured. Compare its `!==` and arrows with MonoLisa's joined forms. MonoLisa's coding ligatures are optional, so you can also keep the separate-character appearance if that is easier for you to read.
+Hack displays `!==` as three characters and `->` as a hyphen followed by an angle. MonoLisa's optional ligatures join each sequence while preserving the code you typed; turn them off if you prefer to see the separate operators.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-ligatures-mobile.svg" />
@@ -44,7 +44,7 @@ Compare the zeros: Hack has an oval fill, while MonoLisa has a small square dot.
 
 ## Italics and style range
 
-Both fonts include italics: compare the `f` in `quickFix` and the repeated letters in `readableIdentifier`. Hack's measured family has two weights; MonoLisa has ten named weights plus variable adjustment, giving you more choices when Regular feels too light or Bold too heavy.
+MonoLisa's italic `f` curls below the baseline; Hack's ends on it, as `if` shows. Weight is another practical difference: Hack's measured family has Regular and Bold, while MonoLisa offers weights between them for adjusting how dark your comments and code appear.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-italics-mobile.svg" />
@@ -53,7 +53,7 @@ Both fonts include italics: compare the `f` in `quickFix` and the repeated lette
 
 ## Terminal symbols
 
-Both fonts cover the Powerline, box-drawing, and block symbols checked here. Compare the colored prompt joins, continuous table borders, and progress bars. Hack's vertical metrics differ between font tables, so also check line spacing in your terminal.
+Both fonts include the prompt separators, table borders, and block characters shown here. Use the vertical table edges to check whether the borders remain continuous at your terminal's line-height setting; extra space between rows can change the result you see.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-terminal-mobile.svg" />
@@ -62,27 +62,27 @@ Both fonts cover the Powerline, box-drawing, and block symbols checked here. Com
 
 ## Which font should you choose?
 
-Choose Hack if you like its letterforms and want a free, open-source font with a small set of styles and separate operators. Consider MonoLisa if you prefer its forms, want coding ligatures or finer weight control, or need broader language coverage. Its customizer can save alternate-letter choices for editors with limited feature support.
+Choose Hack for a free font with a small set of styles and separate operators. Try MonoLisa if you want joined operators or finer control over stroke weight. Start with the operator shapes above, then use the tester to explore weights between Regular and Bold.
 
 ## Try MonoLisa in your editor
 
 The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold with a limited character set. Use it to judge letterforms in your editor; explore coding ligatures, OpenType features, and grade adjustment in the [online tester](https://www.monolisa.dev/tester), since those are omitted from the trial. See [checkout](https://www.monolisa.dev/buy/) for current pricing.
 
-## Decision table
+## At a glance
 
-| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | Hack                                                                         |
-| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| **Languages\***              | MonoLisa        | 593                                                                                         | 382                                                                          |
-| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 4 (Latin, Cyrillic, Armenian, Greek)                                         |
-| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Fixed weights**            | MonoLisa        | 10                                                                                          | 2                                                                            |
-| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | None measured                                                                |
-| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | None measured                                                                |
-| **Coding ligatures**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No                                                                           |
-| **Terminal symbols**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart                                          |
-| **Price**                    | Hack            | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                         |
-| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Hack GitHub repository](https://github.com/source-foundry/Hack)             |
+| Category | MonoLisa Code | Hack |
+| ---------------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Languages\*** | 593 | 382 |
+| **Writing systems** | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 4 (Latin, Cyrillic, Armenian, Greek) |
+| **Italics** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Fixed weights** | 10 | 2 |
+| **Variable axes** | 2 (`wght`, `GRAD`) | None measured |
+| **Style control** | 15 stylistic sets, 12 character variants | None measured |
+| **Coding ligatures** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | No |
+| **Terminal symbols** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Proportional counterpart** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | No obvious proportional counterpart |
+| **Price** | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Free and open source |
+| **Source** | [monolisa.dev](https://www.monolisa.dev/) | [Hack GitHub repository](https://github.com/source-foundry/Hack) |
 
 <details>
   <summary>View comparison infographic</summary>

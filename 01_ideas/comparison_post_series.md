@@ -31,6 +31,8 @@ Berkeley Mono has a draft at `02_drafts/monolisa_vs_berkeley_mono.md`. It uses p
 
 Aim for 300–500 words of main prose, excluding headings, the table, infographic disclosure, and Measurement notes. Start with the main visible difference, then give each specimen one or two sentences pointing to specific letters, operators, or spacing. Use the landing page's focus on distinction, italic construction, width, and spacing as inspiration, but base every observation on the fonts actually shown. Keep feature-tag lists and weight inventories in the table or notes. Avoid repeating the same specifications in the introduction, body, and recommendation.
 
+Tie the opening to a reader's setup: italic comments, narrow editor panes, code in documentation, or terminal prompts. Each specimen paragraph should name something visible before asking readers to compare it. Use plain descriptions of shapes and spacing in the main prose; keep vertical metrics and shaping-feature terminology in Measurement notes. Tables should contain factual font columns without a “Better fit” verdict or automatic winners based on feature counts.
+
 Use this order, combining sections when the specimens support it:
 
 1. Short introduction
@@ -96,7 +98,7 @@ Direct attention to the colored prompt joins, table borders, or block progress b
 
 ## Conclusion
 
-Give a brief recommendation based on the main differences shown. State whether the competing font is free or paid without repeating the full feature list.
+Give one or two reasons to choose each font, based on the main differences shown and the reader's setup. State whether the competing font is free or paid without repeating the full feature list. Keep conditional preferences in this paragraph rather than ranking every row of the table.
 
 Include trial and tester links so readers can evaluate the fonts in their own setup.
 

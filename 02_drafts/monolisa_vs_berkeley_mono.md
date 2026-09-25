@@ -7,7 +7,7 @@ keywords: ["MonoLisa vs Berkeley Mono", "Berkeley Mono alternative", "coding fon
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-Berkeley Mono offers condensed widths and adjustable slant; MonoLisa offers distinct italic forms and grade adjustment. Both are paid coding fonts with ligatures and customization. Compare the letterforms below before deciding which controls matter to your setup.
+Berkeley Mono offers condensed widths for fitting more code across an editor pane. MonoLisa keeps its character widths fixed and offers grade adjustment for changing stroke thickness; the specimens also show how their sloped letterforms differ. Both are paid coding fonts.
 
 ## Letterforms in code
 
@@ -51,7 +51,7 @@ MonoLisa's terminal symbols are measured locally. Berkeley documents its coverag
 
 ## Which font should you choose?
 
-Choose Berkeley if you prefer its industrial forms or need condensed widths and configurable slant. Consider MonoLisa if you prefer its italic contrast, want grade adjustment, or need the proportional MonoLisa Text companion.
+Choose Berkeley for condensed widths or adjustable slant. Try MonoLisa if you prefer the changed italic `a` shown here or want to alter stroke thickness without changing line lengths; compare the package that includes the controls you would actually use.
 
 ## Try them in your editor
 

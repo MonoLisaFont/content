@@ -50,21 +50,21 @@ Deferred commercial-font comparison. Dank Mono does not appear to offer a free t
 
 Deferred until commercial-font access, license terms, and Marcus review are complete.
 
-## Decision table
+## At a glance
 
-| Category | Better&nbsp;fit | MonoLisa Code | Dank Mono |
-| --- | --- | --- | --- |
-| **Languages\*** | Deferred | 593 | Needs licensed-font measurement |
-| **Writing systems** | Deferred | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | Needs licensed-font measurement |
-| **Italics** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Fixed weights** | Deferred | 10 | Needs verification |
-| **Variable axes** | Deferred | 2 (`wght`, `GRAD`) | Needs verification |
-| **Style control** | Deferred | 15 stylistic sets, 12 character variants | Needs verification |
-| **Coding ligatures** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs verification |
-| **Terminal symbols** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs licensed-font measurement |
-| **Proportional counterpart** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Needs verification |
-| **Price** | Deferred | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; no free trial found so far |
-| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Dank Mono site](https://dank.sh/) |
+| Category | MonoLisa Code | Dank Mono |
+| --- | --- | --- |
+| **Languages\*** | 593 | Needs licensed-font measurement |
+| **Writing systems** | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | Needs licensed-font measurement |
+| **Italics** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Fixed weights** | 10 | Needs verification |
+| **Variable axes** | 2 (`wght`, `GRAD`) | Needs verification |
+| **Style control** | 15 stylistic sets, 12 character variants | Needs verification |
+| **Coding ligatures** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs verification |
+| **Terminal symbols** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs licensed-font measurement |
+| **Proportional counterpart** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Needs verification |
+| **Price** | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; no free trial found so far |
+| **Source** | [monolisa.dev](https://www.monolisa.dev/) | [Dank Mono site](https://dank.sh/) |
 
 ## Measurement notes
 

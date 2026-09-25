@@ -12,11 +12,11 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-Fira Code and MonoLisa both offer coding ligatures, but italic syntax is a clear difference: Fira Code has no italic styles. Compare the punctuation and letterforms below, then decide whether MonoLisa's italics would add something to your editor.
+If your editor theme uses italic comments or keywords, Fira Code and MonoLisa offer different looks. Fira Code's upright letters can be slanted by software; MonoLisa provides separately drawn italics. The specimens also compare punctuation and coding ligatures at the same size.
 
 ## Reading texture
 
-The enlarged commas and bracket ends show MonoLisa's more angular, heavier punctuation in this sample. Follow those shapes through `parseToken` below: do you prefer them to stand out, or sit more quietly alongside the letters?
+MonoLisa's commas and bracket ends are more angular and heavier in this sample. The enlargements isolate those details; in `parseToken`, they give punctuation more emphasis beside the letters, especially around the array access and the returned object.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-fira-code-texture-mobile.svg" />
@@ -25,7 +25,7 @@ The enlarged commas and bracket ends show MonoLisa's more angular, heavier punct
 
 ## Coding ligatures and character variants
 
-Compare `!==`, `<=`, and the arrows: both fonts join coding sequences, but the resulting shapes differ. Look at the space around each operator as well as its outline; the same expression can feel more or less crowded.
+Fira Code links the two ampersands in `&&`, while MonoLisa keeps two distinct shapes. Both join `!==` and the arrows, so the choice is also about how familiar each symbol remains when you scan an expression.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-fira-code-ligatures-mobile.svg" />
@@ -52,7 +52,7 @@ MonoLisa supplies separately drawn italic forms; Fira Code has no italic font, s
 
 ## Terminal symbols
 
-Both fonts cover the Powerline, box-drawing, and block symbols checked in our measurements. Follow the colored prompt joins, table borders, and progress bars below: coverage is shared, so the useful comparison is how those shapes look together.
+Both fonts include the prompt separators, table borders, and progress-bar characters shown below. The colored segments show how the Powerline arrows meet their backgrounds; the table gives you horizontal and vertical joins to check at your own terminal's line spacing.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-fira-code-terminal-mobile.svg" />
@@ -61,7 +61,7 @@ Both fonts cover the Powerline, box-drawing, and block symbols checked in our me
 
 ## Which font should you choose?
 
-Choose Fira Code if you prefer its appearance and want a free, open-source font with ligatures. Consider MonoLisa if you want designed italic styles, Hebrew or Armenian coverage, or a proportional companion through MonoLisa Text. Its customizer can save feature choices into downloaded files for editors with limited OpenType controls.
+Choose Fira Code for a free, open-source font with coding ligatures. Try MonoLisa if you want the distinct italic letterforms shown here or prefer its more prominent punctuation; use a file with both comments and code to judge those differences in your editor.
 
 ## Try MonoLisa in your editor
 

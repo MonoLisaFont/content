@@ -13,11 +13,11 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-Recursive can move between monospaced and proportional text, restrained and more casual forms, and different slants. Here we compare the static **Rec Mono Linear** build with MonoLisa Code. Its specimens represent that build, rather than every setting available in Recursive.
+If you switch between code and prose, Recursive can cover both within one variable font family. The specimens use the static **Rec Mono Linear** build, so focus on its slashed zero, italic `f`, and terminal coverage; the wider family's adjustable styles are outside this sample.
 
 ## Reading texture
 
-Follow the nested braces and repeated `input` references in `parseToken`. Compare the space inside letters and between neighboring strokes. Recursive's wider range of variable styles invites experimentation; this Linear sample gives you one consistent reference against MonoLisa.
+The zero in `offset = 0` has a slash in Rec Mono Linear and a square dot in MonoLisa. The line also runs longer in MonoLisa at this size; these differences are visible in ordinary code before you explore Recursive's other styles.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-recursive-mono-texture-mobile.svg" />
@@ -26,7 +26,7 @@ Follow the nested braces and repeated `input` references in `parseToken`. Compar
 
 ## Coding ligatures and character variants
 
-Both specimens shape coding sequences such as `>=`, `->`, and `!==`. Compare the resulting joins and the gaps around them. Rec Mono Linear applies its coding substitutions through a required contextual feature, so its behavior can differ from optional ligature switches in your editor.
+Rec Mono Linear draws `<=` and `>=` with a horizontal bar below the angle; MonoLisa's lower stroke follows the diagonal. Both join `!==` and the arrows, but Recursive's joins may respond differently to your editor's ligature switch; the shaping details are in Measurement notes.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-recursive-mono-ligatures-mobile.svg" />
@@ -44,7 +44,7 @@ Recursive's zero has a diagonal slash; MonoLisa's has a square dot. Compare how 
 
 ## Italics and style range
 
-Compare the `a` in `alpha` and the `f` in `quickFix` across the italic samples. Beyond this static build, Recursive offers slant and cursive controls; MonoLisa supplies separate italic files and a grade control that changes stroke thickness without changing character widths.
+MonoLisa's italic `f` extends below the baseline; Rec Mono Linear's ends on it. Recursive's variable font also offers slant and cursive settings, so this static sample represents one choice you could make for italic comments within the wider family's range.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-recursive-mono-italics-mobile.svg" />
@@ -62,27 +62,27 @@ The measured Rec Mono Linear file includes the Powerline symbols checked here bu
 
 ## Which font should you choose?
 
-Choose Recursive if you want a free, open-source system with several ways to vary letter style. Consider MonoLisa if you prefer its forms, need the measured box-drawing coverage, or work beyond Recursive's measured Latin language coverage. Check the specific Recursive build and settings you intend to use before making that choice.
+Choose Recursive if you want a free system for experimenting with code and prose styles. Try MonoLisa if you prefer its letterforms and need box-drawing or block symbols in the same font; those symbols are absent from the Rec Mono Linear file shown here.
 
 ## Try MonoLisa in your editor
 
 The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold with a limited character set. Use it to judge letterforms in your editor; explore coding ligatures, OpenType features, and grade adjustment in the [online tester](https://www.monolisa.dev/tester), since those are omitted from the trial. See [checkout](https://www.monolisa.dev/buy/) for current pricing.
 
-## Decision table
+## At a glance
 
-| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | Recursive Mono                                                                               |
-| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| **Languages\***              | MonoLisa        | 593                                                                                         | 345                                                                                          |
-| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 1 (Latin)                                                                                    |
-| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                 |
-| **Fixed weights**            | MonoLisa        | 10                                                                                          | 2 static Rec Mono Linear weights; variable font spans 8 named mono weights                   |
-| **Variable axes**            | Recursive Mono  | 2 (`wght`, `GRAD`)                                                                          | 5 (`MONO`, `CASL`, `wght`, `slnt`, `CRSV`)                                                   |
-| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | None measured in static Rec Mono Linear                                                      |
-| **Coding ligatures**         | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, through `rclt` |
-| **Terminal symbols**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | Powerline measured; box drawing and block elements not present in static Rec Mono Linear     |
-| **Proportional counterpart** | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Sans and Mono in one system                                                                  |
-| **Price**                    | Recursive Mono  | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                                         |
-| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Recursive GitHub repository](https://github.com/arrowtype/recursive)                        |
+| Category | MonoLisa Code | Recursive Mono |
+| ---------------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **Languages\*** | 593 | 345 |
+| **Writing systems** | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 1 (Latin) |
+| **Italics** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Fixed weights** | 10 | 2 static Rec Mono Linear weights; variable font spans 8 named mono weights |
+| **Variable axes** | 2 (`wght`, `GRAD`) | 5 (`MONO`, `CASL`, `wght`, `slnt`, `CRSV`) |
+| **Style control** | 15 stylistic sets, 12 character variants | None measured in static Rec Mono Linear |
+| **Coding ligatures** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, through `rclt` |
+| **Terminal symbols** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Powerline measured; box drawing and block elements not present in static Rec Mono Linear |
+| **Proportional counterpart** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | Sans and Mono in one system |
+| **Price** | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Free and open source |
+| **Source** | [monolisa.dev](https://www.monolisa.dev/) | [Recursive GitHub repository](https://github.com/arrowtype/recursive) |
 
 <details>
   <summary>View comparison infographic</summary>

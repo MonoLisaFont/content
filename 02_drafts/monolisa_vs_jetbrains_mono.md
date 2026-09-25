@@ -13,11 +13,11 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-Both JetBrains Mono and MonoLisa offer italics and coding ligatures. Start with their proportions: JetBrains Mono has compact letterforms and tall lowercase letters, while MonoLisa's broader, rounder forms give code a different rhythm.
+At the same font size, JetBrains Mono fits the code into a narrower line, while MonoLisa gives its rounded letters more horizontal space. Both include italics and ligatures, so if those are your essentials, the specimens can help you choose between their proportions.
 
 ## Reading texture
 
-Follow the same lines in `parseToken` and compare how much horizontal space they occupy. [JetBrains Mono](https://www.jetbrains.com/lp/mono/) emphasizes tall lowercase letters within a standard width; MonoLisa leaves more room for rounded forms. Which balance suits your editor panes?
+[JetBrains Mono](https://www.jetbrains.com/lp/mono/) combines tall lowercase letters with a narrower character width than MonoLisa in this sample. The first `parseToken` line ends earlier in its panel; the `o` in MonoLisa's `offset` also shows the rounder curves enlarged below.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-texture-mobile.svg" />
@@ -26,7 +26,7 @@ Follow the same lines in `parseToken` and compare how much horizontal space they
 
 ## Coding ligatures and character variants
 
-Compare the joins in `!==`, `<=`, and the arrows below. Both fonts also offer alternate character forms: choose the actual shapes you want, since a larger number of stylistic sets does not necessarily mean more useful choices.
+In `<=` and `>=`, MonoLisa's lower stroke follows the angle, while JetBrains Mono uses a horizontal bar. Both fonts also offer alternate letterforms; use the specific shapes you want as a guide, since feature counts alone do not show those differences.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-ligatures-mobile.svg" />
@@ -44,7 +44,7 @@ Look at `0`, `O`, and lowercase `o`: JetBrains Mono's curves approach rectangles
 
 ## Italics and style range
 
-Both fonts include italic styles. Follow `emphasis` and `readableIdentifier` to compare their letter shapes, then try the same words as comments in your editor. MonoLisa also offers grade adjustment: it changes stroke thickness while preserving character widths, independently of your chosen weight.
+Both italic samples have a descending `f`, visible in `if`, so that shape is a similarity here. MonoLisa also lets you adjust stroke thickness through grade without changing character widths, giving you another way to darken text while preserving line lengths.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-italics-mobile.svg" />
@@ -53,7 +53,7 @@ Both fonts include italic styles. Follow `emphasis` and `readableIdentifier` to 
 
 ## Terminal symbols
 
-Both fonts cover the Powerline, box-drawing, and block symbols checked here, with internally aligned vertical metrics. Compare the colored prompt joins, table borders, and progress bars; these coverage checks give neither font an advantage.
+Both fonts include the prompt separators, table borders, and block characters shown here. The colored segments expose the joins around the Powerline arrows; use the table's vertical edges to check line spacing in your terminal as well as the individual symbol shapes.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-terminal-mobile.svg" />
@@ -62,7 +62,7 @@ Both fonts cover the Powerline, box-drawing, and block symbols checked here, wit
 
 ## Which font should you choose?
 
-Choose JetBrains Mono if you like its compact forms and want a free, open-source font with italics and ligatures. Consider MonoLisa if you prefer its broader shapes, want grade adjustment, need Hebrew or Armenian coverage, or want a proportional companion through MonoLisa Text. Try the same file in both before deciding.
+Choose JetBrains Mono for compact, free letterforms with italics and ligatures. Try MonoLisa if you prefer the rounder curves shown here or want to adjust stroke thickness without changing character widths; test the same file in your usual pane size.
 
 ## Try MonoLisa in your editor
 

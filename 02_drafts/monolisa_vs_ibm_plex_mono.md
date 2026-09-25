@@ -13,11 +13,11 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-IBM Plex Mono belongs to a family with Sans and Serif companions. MonoLisa pairs its coding font with MonoLisa Text. If you want a consistent appearance across code and prose, compare the letterforms first, then the coding and terminal features below.
+If you use code snippets in documentation, IBM Plex gives you Mono, Sans, and Serif companions. MonoLisa pairs Code with Text. For the editor itself, the specimens highlight two differences: operator ligatures and the Powerline symbols used in prompts.
 
 ## Reading texture
 
-Follow the `return` statements and the brackets in `parseToken`. Compare how the letters sit beside punctuation and how much empty space surrounds each group. A matching family name is useful for design work, but the code itself should feel comfortable to read.
+The colons in `kind:` and `value:` use square dots in MonoLisa and round dots in Plex. MonoLisa's wider character cells also make the same lines run longer, a difference to consider when code and prose share a narrow documentation column.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-ibm-plex-mono-texture-mobile.svg" />
@@ -26,7 +26,7 @@ Follow the `return` statements and the brackets in `parseToken`. Compare how the
 
 ## Coding ligatures and character variants
 
-IBM Plex Mono keeps the operators separate in this specimen; no coding ligature set was measured. Compare `!==`, `<=`, and the arrows with MonoLisa's joined forms. Decide whether those joins help you recognize a token or whether you prefer its individual characters.
+Plex keeps `!==` as three characters and `->` as a hyphen followed by an angle; MonoLisa joins each sequence in this specimen. MonoLisa's ligatures are optional, so you can choose whether to join operators without changing the code itself.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-ibm-plex-mono-ligatures-mobile.svg" />
@@ -44,7 +44,7 @@ Compare the square dot inside MonoLisa's zero with Plex's round dot, then inspec
 
 ## Italics and style range
 
-Both fonts include italic styles across several weights. Follow the `f` in `quickFix`, then the `a` in `alpha`, to compare the construction of individual letters. The longer `readableIdentifier` shows how those forms work together in italic syntax.
+Both fonts give italic `f` a hook below the baseline, visible in `if`. The longer `readableIdentifier` shows that shape among repeated shorter letters; try the same identifier in italic comments to judge how the letters work together at your reading size.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-ibm-plex-mono-italics-mobile.svg" />
@@ -53,7 +53,7 @@ Both fonts include italic styles across several weights. Follow the `f` in `quic
 
 ## Terminal symbols
 
-Both measured fonts contain box drawing and block elements. The Plex Mono file lacks the Powerline symbols checked here, while MonoLisa includes them. Compare the missing glyphs in Plex's colored prompt and status line with the table and progress bars below.
+Both fonts include the table borders and block characters shown here. Plex's sampled file lacks the Powerline symbols used in the colored prompt and status line, so those rows contain missing-glyph boxes; MonoLisa supplies the separators and branch symbol.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-ibm-plex-mono-terminal-mobile.svg" />
@@ -62,27 +62,27 @@ Both measured fonts contain box drawing and block elements. The Plex Mono file l
 
 ## Which font should you choose?
 
-Choose IBM Plex Mono if you prefer its design and want free, open-source Sans and Serif companions. Consider MonoLisa if you like its letterforms and want optional coding ligatures, measured Powerline coverage, or grade adjustment. Both offer proportional companions, so that feature alone need not decide the comparison.
+Choose IBM Plex Mono if you want a free type family for code, documentation, and headings. Try MonoLisa if coding ligatures or built-in Powerline symbols matter in your editor and terminal; both offer related fonts for ordinary text.
 
 ## Try MonoLisa in your editor
 
 The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold with a limited character set. Use it to judge letterforms in your editor; explore coding ligatures, OpenType features, and grade adjustment in the [online tester](https://www.monolisa.dev/tester), since those are omitted from the trial. See [checkout](https://www.monolisa.dev/buy/) for current pricing.
 
-## Decision table
+## At a glance
 
-| Category                     | Better&nbsp;fit | MonoLisa Code                                                                               | IBM Plex Mono                                                                    |
-| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| **Languages\***              | MonoLisa        | 593                                                                                         | 410                                                                              |
-| **Writing systems**          | MonoLisa        | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian)                                                | 2 (Latin, Cyrillic)                                                              |
-| **Italics**                  | Similar         | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>     |
-| **Fixed weights**            | MonoLisa        | 10                                                                                          | 8                                                                                |
-| **Variable axes**            | MonoLisa        | 2 (`wght`, `GRAD`)                                                                          | Not recorded in this pass                                                        |
-| **Style control**            | MonoLisa        | 15 stylistic sets, 12 character variants                                                    | 9 stylistic sets recorded                                                        |
-| **Coding ligatures**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | No coding ligature set measured                                                  |
-| **Terminal symbols**         | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>                | Box drawing and block elements measured; Powerline not measured in regular build |
-| **Proportional counterpart** | MonoLisa        | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | IBM Plex Sans / Serif / Sans Condensed                                           |
-| **Price**                    | IBM Plex Mono   | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                             |
-| **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [IBM Plex GitHub repository](https://github.com/IBM/plex)                        |
+| Category | MonoLisa Code | IBM Plex Mono |
+| ---------------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Languages\*** | 593 | 410 |
+| **Writing systems** | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 2 (Latin, Cyrillic) |
+| **Italics** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Fixed weights** | 10 | 8 |
+| **Variable axes** | 2 (`wght`, `GRAD`) | Not recorded in this pass |
+| **Style control** | 15 stylistic sets, 12 character variants | 9 stylistic sets recorded |
+| **Coding ligatures** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | No coding ligature set measured |
+| **Terminal symbols** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Box drawing and block elements measured; Powerline not measured in regular build |
+| **Proportional counterpart** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | IBM Plex Sans / Serif / Sans Condensed |
+| **Price** | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Free and open source |
+| **Source** | [monolisa.dev](https://www.monolisa.dev/) | [IBM Plex GitHub repository](https://github.com/IBM/plex) |
 
 <details>
   <summary>View comparison infographic</summary>

@@ -13,7 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-Monaspace offers five coordinated coding families; this comparison uses **Neon v1.400**. Look for two differences: how Neon's texture healing balances neighboring letters, and how closely its italic shapes resemble the upright forms beside MonoLisa's more pronounced changes.
+Monaspace lets you [mix five coding families](https://monaspace.githubnext.com/) while keeping code aligned. We use **Neon v1.400** here, whose italics stay close to its upright shapes; MonoLisa changes the `a` and `f` more visibly. If your theme uses italic comments, start with that contrast.
 
 ## Reading texture
 
@@ -26,7 +26,7 @@ Monaspace's [texture healing](https://monaspace.githubnext.com/#texture-healing)
 
 ## Coding ligatures and character variants
 
-Both fonts join operators into coding ligatures. Compare `>=`, `!==`, and the arrows below; Monaspace's optional ligature groups are enabled. Beyond Neon, Monaspace lets you [mix its five families](https://monaspace.githubnext.com/) to give comments or keywords their own letter style while keeping code aligned.
+Both fonts combine operators into ligatures, including `!==` and the arrows shown below. Monaspace's optional ligature groups are enabled here; if you mix its families for comments and keywords, you can still keep those sections aligned with the surrounding code.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-monaspace-ligatures-mobile.svg" />
@@ -44,7 +44,7 @@ Look inside the zero: MonoLisa uses a square dot, Neon a round one. Lowercase `l
 
 ## Italics and style range
 
-Start with the highlighted `a` and `f` from `affinity`, then compare the upright and italic code below. MonoLisa changes letter construction more; Neon's designed obliques retain more of the upright shapes. Other Monaspace families have different italic alternates, so Neon does not represent every available treatment.
+MonoLisa's italic `a` changes shape and its `f` drops below the baseline. Neon's `a` keeps the upright shape, and its `f` retains the horizontal foot visible in the upright sample; other Monaspace families have different italic forms.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-monaspace-italics-mobile.svg" />
@@ -53,7 +53,7 @@ Start with the highlighted `a` and `f` from `affinity`, then compare the upright
 
 ## Terminal symbols
 
-Both fonts cover all the Powerline, box-drawing, and block symbols checked here. Look at the joins between colored prompt segments, the table corners, and the progress bars; compare their appearance rather than missing coverage.
+Both fonts include the prompt separators, table borders, and block characters used here. The colored prompt shows how the arrows meet their backgrounds, while the table and progress bars let you check adjoining characters at the line spacing you use in your terminal.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-monaspace-terminal-mobile.svg" />
@@ -62,7 +62,7 @@ Both fonts cover all the Powerline, box-drawing, and block symbols checked here.
 
 ## Which font should you choose?
 
-Choose Monaspace if you want a free, open-source family with texture healing, width and slant controls, or several letter styles to mix. Consider MonoLisa if you prefer its stronger italic contrast against Neon, need Hebrew or Armenian coverage, or want a proportional companion through MonoLisa Text. Its grade control adjusts stroke thickness without changing character widths.
+Choose Monaspace for a free family you can mix and tune, especially if you want comments to use a different family from code. Try MonoLisa if you prefer its more distinct italic forms or want to adjust stroke thickness without changing character widths.
 
 ## Try MonoLisa in your editor
 

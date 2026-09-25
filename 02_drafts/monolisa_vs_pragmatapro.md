@@ -50,21 +50,21 @@ Deferred commercial-font comparison. PragmataPro needs edition-by-edition licens
 
 Deferred until commercial-font access, license terms, and Marcus review are complete.
 
-## Decision table
+## At a glance
 
-| Category | Better&nbsp;fit | MonoLisa Code | PragmataPro |
-| --- | --- | --- | --- |
-| **Languages\*** | Deferred | 593 | Needs licensed-font measurement |
-| **Writing systems** | Deferred | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | Needs licensed-font measurement |
-| **Italics** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
-| **Fixed weights** | Deferred | 10 | Needs verification by edition |
-| **Variable axes** | Deferred | 2 (`wght`, `GRAD`) | Needs verification by edition |
-| **Style control** | Deferred | 15 stylistic sets, 12 character variants | Needs verification |
-| **Coding ligatures** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Yes in full versions; verify by edition |
-| **Terminal symbols** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs licensed-font measurement |
-| **Proportional counterpart** | Deferred | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | PragmataPro / PragmataPro Mono variants |
-| **Price** | Deferred | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; trial/testing availability needs verification |
-| **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [PragmataPro page](https://fsd.it/shop/fonts/pragmatapro/) |
+| Category | MonoLisa Code | PragmataPro |
+| --- | --- | --- |
+| **Languages\*** | 593 | Needs licensed-font measurement |
+| **Writing systems** | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | Needs licensed-font measurement |
+| **Italics** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> |
+| **Fixed weights** | 10 | Needs verification by edition |
+| **Variable axes** | 2 (`wght`, `GRAD`) | Needs verification by edition |
+| **Style control** | 15 stylistic sets, 12 character variants | Needs verification |
+| **Coding ligatures** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Yes in full versions; verify by edition |
+| **Terminal symbols** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span> | Needs licensed-font measurement |
+| **Proportional counterpart** | <span style={{ color: "var(--ml-colors-primary, currentColor)" }}>Yes</span>, MonoLisa Text | PragmataPro / PragmataPro Mono variants |
+| **Price** | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; trial/testing availability needs verification |
+| **Source** | [monolisa.dev](https://www.monolisa.dev/) | [PragmataPro page](https://fsd.it/shop/fonts/pragmatapro/) |
 
 ## Measurement notes
 
