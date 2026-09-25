@@ -13,78 +13,60 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Hack are both coding fonts, but they optimize for different priorities. The specimens below show their differences, with a comparison table and optional infographic near the end.
+Hack offers a straightforward setup with Regular, Bold, and their italics. MonoLisa adds coding ligatures and more control over weight and letter variants. The specimens below show whether those differences—and the shapes themselves—would matter in your editor.
 
 ## Reading texture
 
-Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
-
-[Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
+Read the same `parseToken` function in both fonts, following the brackets and commas as well as the letters. Notice the gaps in identifiers and around operators; the combination of dark strokes and empty space gives each block its texture.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-texture-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-hack-texture.svg" alt="Rendered SVG comparing MonoLisa and Hack code texture" width="100%" />
 </picture>
 
-## Coding features
+## Coding ligatures and character variants
 
-Hack is a useful no-frills baseline because no coding ligature feature set was measured. MonoLisa exposes coding ligatures, stylistic sets, and character variants; Hack keeps the feature surface smaller.
-
-Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. Hack exposes `aalt`, `frac`, `locl`, `ordn`, `sinf`, `subs`, and `sups`; no coding ligature feature set measured.
+Hack keeps the operators as separate characters; no coding ligature set was measured. Compare its `!==` and arrows with MonoLisa's joined forms. MonoLisa's coding ligatures are optional, so you can also keep the separate-character appearance if that is easier for you to read.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-ligatures-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-hack-ligatures.svg" alt="Rendered SVG comparing MonoLisa and Hack operator and ligature behavior" width="100%" />
 </picture>
 
-## Glyph distinction
+## Characters that are easy to confuse
 
-This section should compare common problem pairs such as `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
+Compare the zeros: Hack has an oval fill, while MonoLisa has a small square dot. Then follow `1lI|` and `rn m` to see which details keep the characters distinct. Ligatures are disabled in this specimen.
 
-[Marcus input: Add notes for intentional MonoLisa tradeoffs.]
+<picture>
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-glyphs-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-hack-glyphs.svg" alt="Enlarged zeros with circles around the square dot in MonoLisa Code and oval fill in Hack, followed by the full character sample" width="100%" />
+</picture>
 
 ## Italics and style range
 
-The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
-
-MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The Hack v3.003 TTF archive includes 2 weights, Regular and Bold, each with upright and italic styles.
+Both fonts include italics: compare the `f` in `quickFix` and the repeated letters in `readableIdentifier`. Hack's measured family has two weights; MonoLisa has ten named weights plus variable adjustment, giving you more choices when Regular feels too light or Bold too heavy.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-italics-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-hack-italics.svg" alt="Rendered SVG comparing MonoLisa and Hack italic and style samples" width="100%" />
 </picture>
 
-## Terminal and console support
+## Terminal symbols
 
-Hack measured at Powerline 6/6, box drawing 128/128, and block elements 32/32. Its typo metrics and line gap differ from hhea/Windows metrics in v3.003.
-
-For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
+Both fonts cover the Powerline, box-drawing, and block symbols checked here. Compare the prompt and table as a continuous line. Hack's vertical metrics differ between font tables, so also check line spacing in the terminal you actually use.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-hack-terminal-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-hack-terminal.svg" alt="Rendered SVG comparing MonoLisa and Hack terminal symbols and box drawing" width="100%" />
 </picture>
 
-## Licensing and availability
+## Which font should you choose?
 
-Hack is free and open source. MonoLisa is a paid typeface with [free trial access](https://monolisa.dev/buy/trial) and a customizer.
+Choose Hack if you like its letterforms and want a free, open-source font with a small set of styles and separate operators. Consider MonoLisa if you prefer its forms, want coding ligatures or finer weight control, or need broader language coverage. Its customizer can save alternate-letter choices for editors with limited feature support.
 
-## Source links
+## Try MonoLisa in your editor
 
-- [MonoLisa](https://www.monolisa.dev/)
-- [Hack repository](https://github.com/source-foundry/Hack)
-
-## Publication checklist
-
-- [ ] Marcus design review completed.
-- [ ] License/source basis checked.
-- [ ] Rendered SVG specimens visually reviewed.
-- [ ] Measured data verified against current font files.
-- [ ] Final recommendation/conclusion written.
-
-## Conclusion
-
-Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose Hack, and which tradeoff matters most.
+The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold with a limited character set. Use it to judge letterforms in your editor; explore coding ligatures, OpenType features, and grade adjustment in the [online tester](https://www.monolisa.dev/tester), since those are omitted from the trial. See [checkout](https://www.monolisa.dev/buy/) for current pricing.
 
 ## Decision table
 
@@ -102,8 +84,6 @@ Draft conclusion pending Marcus review. The measured data is ready; the remainin
 | **Price**                    | Hack            | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                         |
 | **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Hack GitHub repository](https://github.com/source-foundry/Hack)             |
 
-In short: MonoLisa Code wins on coverage, ligatures, variable axes, and style control. Hack wins on price and remains a strong no-frills baseline.
-
 <details>
   <summary>View comparison infographic</summary>
 
@@ -117,3 +97,15 @@ In short: MonoLisa Code wins on coverage, ligatures, variable axes, and style co
 ```bash
 .venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>
 ```
+
+Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. Hack exposes `aalt`, `frac`, `locl`, `ordn`, `sinf`, `subs`, and `sups`; no coding ligature feature set measured.
+
+MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The Hack v3.003 TTF archive includes 2 weights, Regular and Bold, each with upright and italic styles.
+
+Hack measured at Powerline 6/6, box drawing 128/128, and block elements 32/32. Its typo metrics and line gap differ from hhea/Windows metrics in v3.003.
+
+For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
+
+{/* Editorial review before publication: Marcus to review the design observations and recommendation; verify measured data against the intended font versions; visually review all specimens, including the added glyph comparison; confirm license/source basis and set the publication date. */}
+
+The enlarged details use the same font files as the complete specimens, at equal nominal sizes for both fonts. Glyphs are centered independently without changing their proportions. The circles are annotations behind the original outlines; upright and italic details use their respective font files. Regenerate them with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --focus-only`.

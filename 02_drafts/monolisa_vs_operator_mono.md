@@ -15,7 +15,7 @@ Draft status: Deferred commercial-font comparison. Operator Mono needs a license
 
 Deferred until a licensed comparison basis exists.
 
-[Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
+{/* Marcus review: Explain the most important type-design distinction in one concrete paragraph. */}
 
 ## Coding features
 
@@ -25,7 +25,7 @@ Deferred until Operator Mono can be inspected from a licensed file or documented
 
 Deferred until rendered specimens are allowed. If no license or permission is available, replace this section with a public-information-only comparison and link to official specimens instead of embedding our own renders.
 
-[Marcus input: Add notes for intentional MonoLisa tradeoffs once a valid comparison basis exists.]
+{/* Marcus review: Add notes for intentional MonoLisa tradeoffs once a valid comparison basis exists. */}
 
 ## Italics and style range
 
@@ -45,16 +45,6 @@ Deferred commercial-font comparison. Operator Mono needs a license/trial review 
 
 - [MonoLisa](https://www.monolisa.dev/)
 - [Operator Mono page](https://www.typography.com/fonts/operator/styles/)
-
-## Publication checklist
-
-- [ ] Summary infographic created from verified data and included in a collapsed disclosure after the comparison table near the end.
-
-- [ ] Verify license/trial availability.
-- [ ] Decide whether public rendered specimens are allowed.
-- [ ] Run fonttools and Hyperglot if a usable font file is available.
-- [ ] Ask Marcus to review design claims before publication.
-- [ ] Replace deferred placeholders or keep post unpublished.
 
 ## Conclusion
 
@@ -76,8 +66,6 @@ Deferred until commercial-font access, license terms, and Marcus review are comp
 | **Price** | Deferred | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; trial availability needs verification |
 | **Source** | - | [monolisa.dev](https://www.monolisa.dev/) | [Operator Mono page](https://www.typography.com/fonts/operator/styles/) |
 
-In short: this comparison should stay unpublished until the licensing, source, and specimen basis is clear.
-
 ## Measurement notes
 
 \* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command is:
@@ -87,3 +75,18 @@ In short: this comparison should stay unpublished until the licensing, source, a
 ```
 
 Only MonoLisa has been measured here. Operator Mono still awaits licensed-font measurement.
+
+{/*
+Editorial publication checklist:
+
+- [ ] Summary infographic created from verified data and included in a collapsed disclosure after the comparison table near the end.
+
+- [ ] Verify license/trial availability.
+- [ ] Decide whether public rendered specimens are allowed.
+- [ ] Run fonttools and Hyperglot if a usable font file is available.
+- [ ] Ask Marcus to review design claims before publication.
+- [ ] Replace deferred placeholders or keep post unpublished.
+- [ ] Keep final main prose to 300–500 words, excluding headings, the table, infographic, and Measurement notes.
+- [ ] Use one or two sentences per specimen to highlight a visible difference in a specific letter, operator, or spacing choice.
+- [ ] Keep detailed feature lists in the reference sections. Do not invent observations to fill the length target.
+*/}

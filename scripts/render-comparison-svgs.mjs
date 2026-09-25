@@ -3,6 +3,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
+import { comparisonFocus } from "./comparison-focus.mjs";
 
 const root = process.cwd();
 const configPath = process.argv[2] || "scripts/comparison-fonts.local.json";
@@ -201,7 +202,21 @@ function renderLine(font, sample, line, prefix, fill = themeFills.primary) {
     throw new Error(result.stderr || `hb-view failed for ${font.label}`);
   }
 
-  return normalizeFragment(result.stdout, prefix, fill);
+  const fragment = normalizeFragment(result.stdout, prefix, fill);
+  if (sample.measureInk) {
+    const shaped = spawnSync("hb-shape", [
+      ...args.filter((arg) => arg !== "--output-format=svg").slice(0, -3),
+      "--output-format=json", "--show-extents", "--", resolved, line,
+    ], { cwd: root, encoding: "utf8" });
+    if (shaped.status !== 0) throw new Error(shaped.stderr || "Could not measure focus glyph");
+    const glyphs = JSON.parse(shaped.stdout);
+    if (glyphs.length !== 1 || glyphs[0].g === ".notdef") {
+      throw new Error(`Expected one supported focus glyph: ${font.label} ${line}`);
+    }
+    const { xb, yb, w, h } = glyphs[0];
+    fragment.ink = { x: xb, y: -yb, width: w, height: -h };
+  }
+  return fragment;
 }
 
 function normalizeFragment(svg, prefix, fill) {
@@ -412,6 +427,60 @@ function esc(value) {
     .replace(/"/g, "&quot;");
 }
 
+function focusLabel(label, center, baseline, prefix, size = 24) {
+  const fragment = renderLine(mono, { fontSize: size, features: "kern=1,liga=0,calt=0", variations: "wght=400" }, label, prefix);
+  return `<g class="focus-caption" transform="translate(${center - fragment.advanceWidth / 2 - 16}, ${baseline - fragment.baselineY})">${fragment.inner}</g>`;
+}
+
+function renderFocus(competitorKey, sampleKey, fonts, stacked, width, colWidth, gutter) {
+  const focus = comparisonFocus[competitorKey]?.[sampleKey];
+  if (!focus) return { height: 0, body: "", description: "" };
+  const pairedStyles = focus.details.some((detail) => detail.styles);
+  const size = pairedStyles ? 108 : 140;
+  const captionSize = pairedStyles ? (stacked ? 22 : 20) : (stacked ? 28 : 24);
+  const prepared = fonts.map((font, fontIndex) => focus.details.map((detail, detailIndex) =>
+    (detail.styles ?? ["normal"]).map((style, styleIndex) => {
+      const prefix = `${competitorKey}-${sampleKey}-focus-${fontIndex}-${detailIndex}-${styleIndex}`;
+      const fragment = renderLine(font, { fontSize: size, features: "kern=1,liga=0,calt=0", style, measureInk: true }, detail.char, prefix);
+      const { ink } = fragment;
+      const bottom = Math.max(ink.y + ink.height, ...detail.marks.map((mark) => ink.y + ink.height * mark.y + size * mark.radius));
+      return { fragment, prefix, bottom };
+    }),
+  ));
+  const lowestInk = Math.max(...prepared.flat(2).map(({ bottom }) => bottom));
+  // Captions clear both descenders and their circle, at a shared baseline.
+  const captionOffset = Math.max(166, 124 + lowestInk + 20 + captionSize);
+  const rowHeight = captionOffset + 56;
+  const height = 58 + rowHeight * (stacked ? focus.details.length : 1);
+  const body = [];
+  for (const [fontIndex, font] of fonts.entries()) {
+    const panelWidth = stacked ? (width - 32) / 2 : colWidth;
+    const panelX = stacked ? fontIndex * (panelWidth + 32) : fontIndex * (colWidth + gutter);
+    const label = competitorKey === "monaspace" && fontIndex === 1 ? "Monaspace Neon" : font.label;
+    body.push(renderLabel(label, panelX, 30, `${competitorKey}-${sampleKey}-focus-label-${fontIndex}`, stacked ? 26 : 24));
+    for (const [detailIndex, detail] of focus.details.entries()) {
+      const itemWidth = stacked ? panelWidth : panelWidth / focus.details.length;
+      const itemX = panelX + (stacked ? 0 : detailIndex * itemWidth);
+      const rowY = 50 + (stacked ? detailIndex * rowHeight : 0);
+      const styles = detail.styles ?? ["normal"];
+      const baseline = rowY + 124;
+      const captionY = rowY + captionOffset;
+      for (const [styleIndex, style] of styles.entries()) {
+        const { fragment, prefix } = prepared[fontIndex][detailIndex][styleIndex];
+        const { ink } = fragment;
+        const center = itemX + itemWidth * (styleIndex + 0.5) / styles.length;
+        const originX = center - ink.x - ink.width / 2;
+        const circles = detail.marks.map((mark) => `<circle class="focus-circle" cx="${originX + ink.x + ink.width * mark.x}" cy="${baseline + ink.y + ink.height * mark.y}" r="${size * mark.radius}" />`).join("");
+        body.push(`<g class="focus-detail" data-character="${esc(detail.char)}" data-style="${style}">${circles}<g transform="translate(${originX - 16}, ${baseline - fragment.baselineY})">${fragment.inner}</g></g>`);
+        if (pairedStyles) body.push(focusLabel(style === "italic" ? "Italic" : "Upright", center, captionY, `${prefix}-style`, captionSize));
+      }
+      if (!pairedStyles) body.push(focusLabel(detail.captions[fontIndex], itemX + itemWidth / 2, captionY, `${competitorKey}-${sampleKey}-focus-caption-${fontIndex}-${detailIndex}`, captionSize));
+    }
+  }
+  body.push(`<line class="focus-divider" x1="0" y1="${height - 12}" x2="${width}" y2="${height - 12}" />`);
+  return { height, body: `<g class="comparison-focus" aria-hidden="true">${body.join("\n")}</g>`.replace(/[ \t]+$/gm, ""), description: focus.description };
+}
+
 function renderSample(competitorKey, sampleKey, sample, options = {}) {
   const competitor = config.fonts[competitorKey];
   if (!competitor) throw new Error(`Unknown comparison font: ${competitorKey}`);
@@ -462,9 +531,11 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   const columnGapY = stacked ? 68 : 0;
   const blockHeight = effectiveLabelHeight + lineCursor;
   const width = marginX * 2 + colWidth * visibleColumnCount + gutter * (visibleColumnCount - 1);
-  const height = stacked
+  const specimenHeight = stacked
     ? Math.ceil(marginY + blockHeight * columnCount + columnGapY * (columnCount - 1) + bottomPadding)
     : Math.ceil(marginY + blockHeight + bottomPadding);
+  const focus = renderFocus(competitorKey, sampleKey, fonts, stacked, width, colWidth, gutter);
+  const height = specimenHeight + focus.height;
 
   for (const [columnIndex, font] of fonts.entries()) {
     const x = stacked
@@ -505,6 +576,7 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="${themeFills.primary}" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>${esc(title)}</title>
+  ${focus.description ? `<desc>${esc(focus.description)}</desc>` : ""}
   <style>
     .specimen-label {
       opacity: 0.62;
@@ -514,8 +586,19 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
       stroke-opacity: 0.55;
       stroke-width: 2;
     }
+    .focus-circle {
+      fill: ${themeFills.accent};
+      fill-opacity: 0.28;
+    }
+    .focus-caption { opacity: 0.8; }
+    .focus-divider {
+      stroke: ${themeFills.primary};
+      stroke-opacity: 0.14;
+      stroke-width: 1;
+    }
   </style>
-  ${fragments.join("\n")}
+  ${focus.body}
+  <g class="comparison-specimen" transform="translate(0, ${focus.height})">${fragments.join("\n")}</g>
 </svg>
 `;
 
@@ -527,7 +610,8 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   return outputPath;
 }
 
-const requested = process.argv.slice(3);
+const focusOnly = process.argv.includes("--focus-only");
+const requested = process.argv.slice(3).filter((arg) => arg !== "--focus-only");
 const comparisons = requested.length ? requested : config.comparisons;
 let rendered = 0;
 
@@ -538,6 +622,7 @@ if (!existsSync(path.resolve(root, mono.regular))) {
 
 for (const competitorKey of comparisons) {
   for (const [sampleKey, sample] of Object.entries(samples)) {
+    if (focusOnly && !comparisonFocus[competitorKey]?.[sampleKey]) continue;
     const comparisonSample = {
       ...sample,
       ...sampleOverrides[competitorKey]?.[sampleKey],
@@ -555,6 +640,7 @@ for (const competitorKey of comparisons) {
       rendered += 1;
     } catch (error) {
       console.warn(`Skipped ${competitorKey}/${sampleKey}: ${error.message}`);
+      if (focusOnly) process.exitCode = 1;
     }
   }
 }

@@ -13,78 +13,60 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and Recursive Mono are both coding-capable typefaces, but they optimize for different priorities. The specimens below show their differences, with a comparison table and optional infographic near the end.
+Recursive can move between monospaced and proportional text, restrained and more casual forms, and different slants. Here we compare the static **Rec Mono Linear** build with MonoLisa Code. Its specimens represent that build, rather than every setting available in Recursive.
 
 ## Reading texture
 
-Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
-
-[Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
+Follow the nested braces and repeated `input` references in `parseToken`. Compare the space inside letters and between neighboring strokes. Recursive's wider range of variable styles invites experimentation; this Linear sample gives you one consistent reference against MonoLisa.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-recursive-mono-texture-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-recursive-mono-texture.svg" alt="Rendered SVG comparing MonoLisa and Recursive Mono code texture" width="100%" />
 </picture>
 
-## Coding features
+## Coding ligatures and character variants
 
-Recursive Mono is most interesting as a variable type system with mono/sans, casual/linear, weight, slant, and cursive axes. In the static Rec Mono Linear file measured here, `rclt` shapes coding sequences including `>=`, `->`, and `!==` by default.
-
-Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. Recursive Mono exposes its coding forms through `calt` and `rclt`.
+Both specimens shape coding sequences such as `>=`, `->`, and `!==`. Compare the resulting joins and the gaps around them. Rec Mono Linear applies its coding substitutions through a required contextual feature, so its behavior can differ from optional ligature switches in your editor.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-recursive-mono-ligatures-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-recursive-mono-ligatures.svg" alt="Rendered SVG comparing MonoLisa and Recursive Mono operator and ligature behavior" width="100%" />
 </picture>
 
-## Glyph distinction
+## Characters that are easy to confuse
 
-This section should compare common problem pairs such as `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
+Recursive's zero has a diagonal slash; MonoLisa's has a square dot. Compare how each separates `0` from `O`, then check `1lI|` and `rn m`. These cues are worth trying at the size you normally use, especially inside longer identifiers.
 
-[Marcus input: Add notes for intentional MonoLisa tradeoffs.]
+<picture>
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-recursive-mono-glyphs-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-recursive-mono-glyphs.svg" alt="Enlarged zeros with circles around the square dot in MonoLisa Code and diagonal slash in Rec Mono Linear, followed by the full character sample" width="100%" />
+</picture>
 
 ## Italics and style range
 
-The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
-
-MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The static Rec Mono Linear files measured here include 2 weights, Regular and Bold, each with upright and italic styles; the Recursive v1.085 variable font spans 8 named mono weights from Light through ExtraBlack.
+Compare the `a` in `alpha` and the `f` in `quickFix` across the italic samples. Beyond this static build, Recursive offers slant and cursive controls; MonoLisa supplies separate italic files and a grade control that changes stroke thickness without changing character widths.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-recursive-mono-italics-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-recursive-mono-italics.svg" alt="Rendered SVG comparing MonoLisa and Recursive Mono italic and style samples" width="100%" />
 </picture>
 
-## Terminal and console support
+## Terminal symbols
 
-The static Rec Mono Linear file measured at Powerline 6/6, box drawing 0/128, and block elements 0/32. Its Windows metrics differ from hhea/OS/2 typo metrics in v1.085.
-
-For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
+The measured Rec Mono Linear file includes the Powerline symbols checked here but lacks the tested box-drawing and block characters. MonoLisa covers all three groups. Inspect the table borders: another font may supply missing characters in your terminal, changing their appearance.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-recursive-mono-terminal-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-recursive-mono-terminal.svg" alt="Rendered SVG comparing MonoLisa and Recursive Mono terminal symbols and box drawing" width="100%" />
 </picture>
 
-## Licensing and availability
+## Which font should you choose?
 
-Recursive Mono is free and open source. MonoLisa is a paid typeface with [free trial access](https://monolisa.dev/buy/trial) and a customizer.
+Choose Recursive if you want a free, open-source system with several ways to vary letter style. Consider MonoLisa if you prefer its forms, need the measured box-drawing coverage, or work beyond Recursive's measured Latin language coverage. Check the specific Recursive build and settings you intend to use before making that choice.
 
-## Source links
+## Try MonoLisa in your editor
 
-- [MonoLisa](https://www.monolisa.dev/)
-- [Recursive repository](https://github.com/arrowtype/recursive)
-
-## Publication checklist
-
-- [ ] Marcus design review completed.
-- [ ] License/source basis checked.
-- [ ] Rendered SVG specimens visually reviewed.
-- [ ] Measured data verified against current font files.
-- [ ] Final recommendation/conclusion written.
-
-## Conclusion
-
-Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose Recursive Mono, and which tradeoff matters most.
+The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold with a limited character set. Use it to judge letterforms in your editor; explore coding ligatures, OpenType features, and grade adjustment in the [online tester](https://www.monolisa.dev/tester), since those are omitted from the trial. See [checkout](https://www.monolisa.dev/buy/) for current pricing.
 
 ## Decision table
 
@@ -102,8 +84,6 @@ Draft conclusion pending Marcus review. The measured data is ready; the remainin
 | **Price**                    | Recursive Mono  | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                                         |
 | **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [Recursive GitHub repository](https://github.com/arrowtype/recursive)                        |
 
-In short: MonoLisa Code wins on measured coverage, coding features, and terminal symbols. Recursive Mono wins on axis range and price.
-
 <details>
   <summary>View comparison infographic</summary>
 
@@ -117,3 +97,17 @@ In short: MonoLisa Code wins on measured coverage, coding features, and terminal
 ```bash
 .venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>
 ```
+
+Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. Recursive Mono exposes its coding forms through `calt` and `rclt`.
+
+MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The static Rec Mono Linear files measured here include 2 weights, Regular and Bold, each with upright and italic styles; the Recursive v1.085 variable font spans 8 named mono weights from Light through ExtraBlack.
+
+The static Rec Mono Linear file measured at Powerline 6/6, box drawing 0/128, and block elements 0/32. Its Windows metrics differ from hhea/OS/2 typo metrics in v1.085.
+
+For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
+
+The static Rec Mono Linear file shapes coding sequences through `rclt`, including `>=`, `->`, and `!==`. The wider Recursive variable system exposes `MONO`, `CASL`, `wght`, `slnt`, and `CRSV`; those axes are not demonstrated by this static specimen.
+
+{/* Editorial review before publication: Marcus to review the design observations and recommendation; verify measured data against the intended font versions; visually review all specimens, including the added glyph comparison; confirm license/source basis and set the publication date. */}
+
+The enlarged details use the same font files as the complete specimens, at equal nominal sizes for both fonts. Glyphs are centered independently without changing their proportions. The circles are annotations behind the original outlines; upright and italic details use their respective font files. Regenerate them with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --focus-only`.

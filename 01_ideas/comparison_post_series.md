@@ -29,25 +29,24 @@ Berkeley Mono has a draft at `02_drafts/monolisa_vs_berkeley_mono.md`. It uses p
 
 ## Shared comparison categories
 
-Every post should use the same category order:
+Aim for 300–500 words of main prose, excluding headings, the table, infographic disclosure, and Measurement notes. Start with the main visible difference, then give each specimen one or two sentences pointing to specific letters, operators, or spacing. Use the landing page's focus on distinction, italic construction, width, and spacing as inspiration, but base every observation on the fonts actually shown. Keep feature-tag lists and weight inventories in the table or notes. Avoid repeating the same specifications in the introduction, body, and recommendation.
+
+Use this order, combining sections when the specimens support it:
 
 1. Short introduction
 2. Design intent and reading comfort, with specimens
-3. Language and script coverage
-4. Coding features
-5. Glyph distinction
-6. Italics and style range
-7. Customization and variable fonts
-8. Terminal and console support
-9. Licensing, price, and trial availability
-10. Recommendation and trial links
-11. Comparison table
-12. Optional summary infographic in a collapsed disclosure
-13. Measurement notes
+3. Coding features, with an operator specimen
+4. Glyph distinction, with a specimen
+5. Italics and style range, with a specimen
+6. Terminal symbols, with a specimen
+7. Recommendation and trial links
+8. Comparison table, including language coverage, customization, and availability
+9. Optional summary infographic in a collapsed disclosure
+10. Measurement notes
 
 ## Post template
 
-```markdown
+````markdown
 ---
 title: "Comparison of MonoLisa vs. TYPEFACE"
 published: YYYY-MM-DD
@@ -56,25 +55,17 @@ keywords: ["MonoLisa vs TYPEFACE", "TYPEFACE alternative", "coding fonts", "prog
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and TYPEFACE are both coding fonts, but they optimize for different priorities. This comparison looks at the practical differences developers are likely to notice in daily code reading: glyph clarity, ligatures, italics, language coverage, terminal support, customization, and licensing.
+[Write a short introduction naming the main difference the specimens will show.]
 
 ## Design intent and reading comfort
 
-Describe the visible difference in rhythm, density, x-height, counters, apertures, punctuation weight, and overall texture.
-
-[Marcus input: Explain the most important type-design distinction in one concrete paragraph. Avoid vague terms like "better"; name the actual form or spacing choice.]
+Point to one visible difference in the code sample, such as letter width, punctuation weight, or the space between strokes. Name a token the reader can find in the image.
 
 ![MonoLisa and TYPEFACE code texture comparison](/images/comparison-monolisa-vs-TYPEFACE-texture.png)
 
-## Language and script coverage
-
-Compare advertised language/script support using the data table below. If Hyperglot is used later, record the exact test date and font version.
-
-[Marcus input: Confirm whether the advertised coverage is the right comparison basis or whether we should measure from font files.]
-
 ## Coding features
 
-Discuss ligatures, OpenType feature control, character variants, stylistic sets, slashed/dotted zero options, and whether features are enabled by default.
+Point to a specific operator or arrow and explain the visible difference. Put complete OpenType tag lists in Measurement notes.
 
 ![MonoLisa and TYPEFACE ligature comparison](/images/comparison-monolisa-vs-TYPEFACE-ligatures.png)
 
@@ -87,29 +78,25 @@ Use a fixed specimen that exposes common ambiguity:
 rn m vv w ' " ` , . : ; / \ - _ + * # @ &
 ```
 
-[Marcus input: Add notes for any glyph where MonoLisa makes an intentional tradeoff, such as shape, spacing, serif placement, terminal angle, or punctuation weight.]
+Name one or two distinguishing cues in the specimen, such as the mark inside zero or the foot on lowercase l.
 
 ![MonoLisa and TYPEFACE ambiguous glyph comparison](/images/comparison-monolisa-vs-TYPEFACE-glyphs.png)
 
 ## Italics and style range
 
-Compare italic and oblique construction, cursive forms, weights, width options, and whether the family can cover editor UI plus code.
+Point to a letter that changes between the shown styles. Explain how that affects the appearance of italic syntax; keep full style inventories in the table or notes.
 
 ![MonoLisa and TYPEFACE italic comparison](/images/comparison-monolisa-vs-TYPEFACE-italics.png)
 
 ## Terminal and console support
 
-Compare Powerline symbols, box drawing, block elements, and equal vertical metrics. Use terminal output and box-drawing samples, not prose alone.
+Direct attention to prompt separators or table borders. Briefly identify any missing symbols and the measured build; put counts and vertical-metric details in Measurement notes.
 
 ![MonoLisa and TYPEFACE terminal comparison](/images/comparison-monolisa-vs-TYPEFACE-terminal.png)
 
-## Licensing and availability
-
-Explain whether the competing font is free/open source or paid, whether trial access exists, and whether the user can test it before buying.
-
 ## Conclusion
 
-Summarize who should choose MonoLisa, who should choose TYPEFACE, and what tradeoff matters most.
+Give a brief recommendation based on the main differences shown. State whether the competing font is free or paid without repeating the full feature list.
 
 Include trial and tester links so readers can evaluate the fonts in their own setup.
 
@@ -135,7 +122,9 @@ Include trial and tester links so readers can evaluate the fonts in their own se
 ## Measurement notes
 
 Place methodology at the end, after the comparison table and infographic disclosure. Record measured font versions, tools and commands, feature settings, and limitations. Keep reproducible details here instead of interrupting the comparison; mark pending measurements explicitly.
-```
+
+{/* Editorial review: Marcus to review the design observations and recommendation; verify data, sources, permissions, specimens, and the 300–500-word main-prose target before publication. Deferred comparisons must not invent observations to fill the target length. */}
+````
 
 ## Graphics system
 
@@ -149,6 +138,10 @@ Each post should use the following graphics so the series feels consistent:
 - Glyph ambiguity image: a two-column specimen of `0O`, `1lI|`, punctuation, brackets, quotes, operators, and symbols.
 - Ligature/control image: the same operator-heavy snippet with ligatures off and on where possible.
 - Terminal image: a box-drawing table, Powerline prompt, git diff, and log lines.
+
+Use enlarged details to connect graphics to specific observations in the copy. Keep the full specimen below the enlargement; limit the emphasis to one or two features, with the same soft circle treatment on both fonts. Circle fills sit behind the glyph outlines and inherit the site's accent color. Short captions identify the feature without ranking the fonts. On mobile, keep matching enlarged details adjacent even when the full font specimens stack vertically.
+
+The shared renderer reads focus definitions from `scripts/comparison-focus.mjs`. These currently cover zero marks, punctuation dots, curved letter outlines, lowercase l feet, Fira's comma/bracket details, and Monaspace's upright/italic a and f. Add a highlight only where the supplied font files and the post's observations support it. Use `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --focus-only` to regenerate the affected graphics, or insert a comparison key before `--focus-only` for one font. Berkeley's existing enlarged r comparison uses the same circle treatment through `scripts/render-berkeley-details.mjs`, preserving the vendor outlines and its separate rendering scope.
 
 Recommended image filenames:
 

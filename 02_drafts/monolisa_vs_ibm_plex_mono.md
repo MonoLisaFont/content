@@ -13,78 +13,60 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-MonoLisa and IBM Plex Mono are both monospaced fonts, but they optimize for different priorities. The specimens below show their differences, with a comparison table and optional infographic near the end.
+IBM Plex Mono belongs to a family with Sans and Serif companions. MonoLisa pairs its coding font with MonoLisa Text. If you want a consistent appearance across code and prose, compare the letterforms first, then the coding and terminal features below.
 
 ## Reading texture
 
-Use this specimen to judge rhythm, spacing, punctuation weight, and identifier texture.
-
-[Marcus input: Explain the most important type-design distinction in one concrete paragraph.]
+Follow the `return` statements and the brackets in `parseToken`. Compare how the letters sit beside punctuation and how much empty space surrounds each group. A matching family name is useful for design work, but the code itself should feel comfortable to read.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-ibm-plex-mono-texture-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-ibm-plex-mono-texture.svg" alt="Rendered SVG comparing MonoLisa and IBM Plex Mono code texture" width="100%" />
 </picture>
 
-## Coding features
+## Coding ligatures and character variants
 
-IBM Plex Mono is best treated as part of the broader IBM Plex superfamily rather than as a ligature-heavy coding specialist. The measured file includes stylistic sets and zero handling but no coding ligature feature set.
-
-Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. IBM Plex Mono exposes `zero` and `ss01`-`ss09`; no coding ligature feature set measured.
+IBM Plex Mono keeps the operators separate in this specimen; no coding ligature set was measured. Compare `!==`, `<=`, and the arrows with MonoLisa's joined forms. Decide whether those joins help you recognize a token or whether you prefer its individual characters.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-ibm-plex-mono-ligatures-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-ibm-plex-mono-ligatures.svg" alt="Rendered SVG comparing MonoLisa and IBM Plex Mono operator and ligature behavior" width="100%" />
 </picture>
 
-## Glyph distinction
+## Characters that are easy to confuse
 
-This section should compare common problem pairs such as `0O`, `1lI|`, brackets, quotes, punctuation, and operators.
+Compare the square dot inside MonoLisa's zero with Plex's round dot, then inspect the feet and bars in `1lI|`. Periods and colons also give the punctuation a different character: square dots in MonoLisa, round ones in Plex.
 
-[Marcus input: Add notes for intentional MonoLisa tradeoffs.]
+<picture>
+  <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-ibm-plex-mono-glyphs-mobile.svg" />
+  <img src="/images/comparison-monolisa-vs-ibm-plex-mono-glyphs.svg" alt="Enlarged zero and colon dots highlighted with circles in MonoLisa Code and IBM Plex Mono, followed by the full character sample" width="100%" />
+</picture>
 
 ## Italics and style range
 
-The italic/style specimen has been rendered for review. Confirm whether the comparison should emphasize true italics, cursive forms, slant behavior, or family width/weight range.
-
-MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The official IBM Plex Mono TTF set includes 8 weights: Thin, ExtraLight, Light, Regular, Text, Medium, SemiBold, and Bold, each with upright and italic styles.
+Both fonts include italic styles across several weights. Follow the `f` in `quickFix`, then the `a` in `alpha`, to compare the construction of individual letters. The longer `readableIdentifier` shows how those forms work together in italic syntax.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-ibm-plex-mono-italics-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-ibm-plex-mono-italics.svg" alt="Rendered SVG comparing MonoLisa and IBM Plex Mono italic and style samples" width="100%" />
 </picture>
 
-## Terminal and console support
+## Terminal symbols
 
-IBM Plex Mono measured at Powerline 0/6, box drawing 128/128, and block elements 32/32. Its typo metrics and line gap differ from hhea/Windows metrics in v2.005.
-
-For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
+Both measured fonts contain box drawing and block elements. The Plex Mono file lacks the Powerline symbols checked here, while MonoLisa includes them. Look at the prompt separators as well as the table: ordinary terminal text and symbol-heavy prompts make different demands.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-ibm-plex-mono-terminal-mobile.svg" />
   <img src="/images/comparison-monolisa-vs-ibm-plex-mono-terminal.svg" alt="Rendered SVG comparing MonoLisa and IBM Plex Mono terminal symbols and box drawing" width="100%" />
 </picture>
 
-## Licensing and availability
+## Which font should you choose?
 
-IBM Plex Mono is free and open source. MonoLisa is a paid typeface with [free trial access](https://monolisa.dev/buy/trial) and a customizer.
+Choose IBM Plex Mono if you prefer its design and want free, open-source Sans and Serif companions. Consider MonoLisa if you like its letterforms and want optional coding ligatures, measured Powerline coverage, or grade adjustment. Both offer proportional companions, so that feature alone need not decide the comparison.
 
-## Source links
+## Try MonoLisa in your editor
 
-- [MonoLisa](https://www.monolisa.dev/)
-- [IBM Plex repository](https://github.com/IBM/plex)
-
-## Publication checklist
-
-- [ ] Marcus design review completed.
-- [ ] License/source basis checked.
-- [ ] Rendered SVG specimens visually reviewed.
-- [ ] Measured data verified against current font files.
-- [ ] Final recommendation/conclusion written.
-
-## Conclusion
-
-Draft conclusion pending Marcus review. The measured data is ready; the remaining work is the qualitative design call: who should choose MonoLisa, who should choose IBM Plex Mono, and which tradeoff matters most.
+The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold with a limited character set. Use it to judge letterforms in your editor; explore coding ligatures, OpenType features, and grade adjustment in the [online tester](https://www.monolisa.dev/tester), since those are omitted from the trial. See [checkout](https://www.monolisa.dev/buy/) for current pricing.
 
 ## Decision table
 
@@ -102,8 +84,6 @@ Draft conclusion pending Marcus review. The measured data is ready; the remainin
 | **Price**                    | IBM Plex Mono   | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer        | Free and open source                                                             |
 | **Source**                   | -               | [monolisa.dev](https://www.monolisa.dev/)                                                   | [IBM Plex GitHub repository](https://github.com/IBM/plex)                        |
 
-In short: MonoLisa Code wins on measured coverage, coding features, axes, and terminal completeness. IBM Plex Mono wins on price.
-
 <details>
   <summary>View comparison infographic</summary>
 
@@ -117,3 +97,15 @@ In short: MonoLisa Code wins on measured coverage, coding features, axes, and te
 ```bash
 .venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>
 ```
+
+Measured feature summary: MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`-`ss15`, and `cv01`-`cv12`. IBM Plex Mono exposes `zero` and `ss01`-`ss09`; no coding ligature feature set measured.
+
+MonoLisa Code measured as variable upright and italic files with 10 named weights: Hairline, Thin, ExtraLight, Light, Regular, Medium, SemiBold, Bold, ExtraBold, and Black. The official IBM Plex Mono TTF set includes 8 weights: Thin, ExtraLight, Light, Regular, Text, Medium, SemiBold, and Bold, each with upright and italic styles.
+
+IBM Plex Mono measured at Powerline 0/6, box drawing 128/128, and block elements 32/32. Its typo metrics and line gap differ from hhea/Windows metrics in v2.005.
+
+For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block elements 32/32, with aligned hhea, OS/2 typo, and Windows vertical metrics.
+
+{/* Editorial review before publication: Marcus to review the design observations and recommendation; verify measured data against the intended font versions; visually review all specimens, including the added glyph comparison; confirm license/source basis and set the publication date. */}
+
+The enlarged details use the same font files as the complete specimens, at equal nominal sizes for both fonts. Glyphs are centered independently without changing their proportions. The circles are annotations behind the original outlines; upright and italic details use their respective font files. Regenerate them with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --focus-only`.
