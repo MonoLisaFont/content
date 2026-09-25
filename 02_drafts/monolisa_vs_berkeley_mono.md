@@ -78,6 +78,8 @@ Berkeley entries reflect vendor documentation through 2.004, not local measureme
 
 ## Measurement notes
 
+A matching terminal-window specimen remains pending access to licensed Berkeley font files. Use the shared prompt, box-drawing, Unicode block, and status-line layout when those files can be measured; the vendor letterform outlines do not establish terminal coverage.
+
 This comparison combines our existing MonoLisa measurements with Berkeley's public documentation, checked September 22, 2026. Berkeley specifications are based on the 2.000 datasheet, current catalog, and release notes through 2.004. The intervening releases include rendering and ligature fixes, a hyphen addition, and a slant-interpolation fix; the vendor specimen itself is not verified as a 2.004 rendering.
 
 We did not render with the Berkeley trial, inspect the full commercial font, or measure its language coverage, vertical metrics, glyph counts, or shaping. The attributed vector excerpt comes from a public vendor specimen, used to discuss its visible letterforms in code. It is not a matched-size specimen or a test of editor rendering.

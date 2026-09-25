@@ -90,7 +90,7 @@ Point to a letter that changes between the shown styles. Explain how that affect
 
 ## Terminal and console support
 
-Direct attention to prompt separators or table borders. Briefly identify any missing symbols and the measured build; put counts and vertical-metric details in Measurement notes.
+Direct attention to the colored prompt joins, table borders, or block progress bars. Use the landing page's terminal-window styling and the same sample in both fonts. Briefly identify any missing symbols and the measured build; put counts and vertical-metric details in Measurement notes.
 
 ![MonoLisa and TYPEFACE terminal comparison](/images/comparison-monolisa-vs-TYPEFACE-terminal.png)
 
@@ -137,11 +137,13 @@ Each post should use the following graphics so the series feels consistent:
 - Texture image: the same 10-15 lines of real code in both fonts, same point size, same line height, same foreground/background.
 - Glyph ambiguity image: a two-column specimen of `0O`, `1lI|`, punctuation, brackets, quotes, operators, and symbols.
 - Ligature/control image: the same operator-heavy snippet with ligatures off and on where possible.
-- Terminal image: a box-drawing table, Powerline prompt, git diff, and log lines.
+- Terminal image: matching terminal windows with a colored Powerline prompt, box-drawing table, standard Unicode block progress bars, and a compact status line, following the landing page's “Symbols for Terminal” treatment. Keep the same content, font size, line height, and colors in both panels; stack the panels on mobile.
 
 Use enlarged details to connect graphics to specific observations in the copy. Keep the full specimen below the enlargement; limit the emphasis to one or two features, with the same soft circle treatment on both fonts. Circle fills sit behind the glyph outlines and inherit the site's accent color. Short captions identify the feature without ranking the fonts. On mobile, keep matching enlarged details adjacent even when the full font specimens stack vertically.
 
 The shared renderer reads focus definitions from `scripts/comparison-focus.mjs`. These currently cover zero marks, punctuation dots, curved letter outlines, lowercase l feet, Fira's comma/bracket details, and Monaspace's upright/italic a and f. Add a highlight only where the supplied font files and the post's observations support it. Use `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --focus-only` to regenerate the affected graphics, or insert a comparison key before `--focus-only` for one font. Berkeley's existing enlarged r comparison uses the same circle treatment through `scripts/render-berkeley-details.mjs`, preserving the vendor outlines and its separate rendering scope.
+
+The terminal layout lives in `scripts/render-terminal-comparison.mjs`. Regenerate desktop and mobile specimens with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --terminal-only`, optionally adding a font key before the flag. The renderer measures actual glyph advances for segment backgrounds and draws every character from its font file, including missing-glyph outlines. It does not insert fallback fonts or replacement arrows. Use standard Unicode blocks for the shared progress rows, rather than MonoLisa's private-use progress symbols. Explain missing symbols beside the specimen and note that actual terminal line spacing and fallback settings can change the result. Berkeley and deferred commercial comparisons should adopt this format when licensed files can be measured; do not invent competitor specimens from unverified coverage claims.
 
 Recommended image filenames:
 

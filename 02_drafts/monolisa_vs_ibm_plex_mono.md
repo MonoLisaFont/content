@@ -53,11 +53,11 @@ Both fonts include italic styles across several weights. Follow the `f` in `quic
 
 ## Terminal symbols
 
-Both measured fonts contain box drawing and block elements. The Plex Mono file lacks the Powerline symbols checked here, while MonoLisa includes them. Look at the prompt separators as well as the table: ordinary terminal text and symbol-heavy prompts make different demands.
+Both measured fonts contain box drawing and block elements. The Plex Mono file lacks the Powerline symbols checked here, while MonoLisa includes them. Compare the missing glyphs in Plex's colored prompt and status line with the table and progress bars below.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-ibm-plex-mono-terminal-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-ibm-plex-mono-terminal.svg" alt="Rendered SVG comparing MonoLisa and IBM Plex Mono terminal symbols and box drawing" width="100%" />
+  <img src="/images/comparison-monolisa-vs-ibm-plex-mono-terminal.svg" alt="Matching terminal windows with colored Powerline prompts, box-drawing tables, block progress bars, and status lines in MonoLisa Code and IBM Plex Mono" width="100%" />
 </picture>
 
 ## Which font should you choose?
@@ -91,6 +91,8 @@ The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold w
 </details>
 
 ## Measurement notes
+
+The terminal windows use identical text at a nominal 22 px with 33 px table line spacing, ligatures disabled, and the same theme colors. Powerline separators and standard Unicode block progress bars come from each font's own outlines. Segment backgrounds follow measured glyph advances; missing characters retain the font's missing-glyph outline with no fallback. Actual terminal line-height and fallback settings may change the joins. Regenerate with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --terminal-only`.
 
 \* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command was:
 

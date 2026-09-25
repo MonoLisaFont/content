@@ -35,7 +35,7 @@ MonoLisa Code measured as variable upright and italic files with 10 named weight
 
 ## Terminal and console support
 
-Deferred until the font file can be measured for Powerline symbols, box drawing, block elements, and vertical metrics. Do not reuse the free-font terminal claims here.
+Deferred until the font file can be measured for Powerline symbols, box drawing, block elements, and vertical metrics. Do not reuse the free-font terminal claims here. Once licensed files are available, use the shared terminal-window layout with colored prompts, a box-drawing table, Unicode block progress bars, and a status line.
 
 ## Licensing and availability
 

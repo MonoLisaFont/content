@@ -53,11 +53,11 @@ Start with the highlighted `a` and `f` from `affinity`, then compare the upright
 
 ## Terminal symbols
 
-Both fonts cover all the Powerline, box-drawing, and block symbols checked here. Look at the joins between prompt segments and the corners of the table; the difference to judge in this specimen is appearance, rather than missing coverage.
+Both fonts cover all the Powerline, box-drawing, and block symbols checked here. Look at the joins between colored prompt segments, the table corners, and the progress bars; compare their appearance rather than missing coverage.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-monaspace-terminal-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-monaspace-terminal.svg" alt="Terminal symbols and box drawing in MonoLisa Code and Monaspace Neon" width="100%" />
+  <img src="/images/comparison-monolisa-vs-monaspace-terminal.svg" alt="Matching terminal windows with colored Powerline prompts, box-drawing tables, block progress bars, and status lines in MonoLisa Code and Monaspace Neon" width="100%" />
 </picture>
 
 ## Which font should you choose?
@@ -95,6 +95,8 @@ This table compares MonoLisa Code with Monaspace Neon v1.400.
 </details>
 
 ## Measurement notes
+
+The terminal windows use identical text at a nominal 22 px with 33 px table line spacing, ligatures disabled, and the same theme colors. Powerline separators and standard Unicode block progress bars come from each font's own outlines. Segment backgrounds follow measured glyph advances; missing characters retain the font's missing-glyph outline with no fallback. Actual terminal line-height and fallback settings may change the joins. Regenerate with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --terminal-only`.
 
 \* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command was:
 

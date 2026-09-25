@@ -53,11 +53,11 @@ Both fonts supply italic styles. Follow the `a` in `alpha` and the `f` in `quick
 
 ## Terminal symbols
 
-Both measured fonts include box drawing and block elements. The standard Cascadia Code build lacks the Powerline symbols checked here; use its PL build if you need them. Missing symbols in this specimen describe that build, not the whole Cascadia family.
+Both measured fonts include box drawing and block elements. The standard Cascadia Code build lacks the Powerline symbols checked here: look at the missing glyphs between colored prompt segments. Its PL build provides Powerline support, so this specimen describes the standard build only.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-cascadia-code-terminal-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-cascadia-code-terminal.svg" alt="Rendered SVG comparing MonoLisa and Cascadia Code terminal symbols and box drawing" width="100%" />
+  <img src="/images/comparison-monolisa-vs-cascadia-code-terminal.svg" alt="Matching terminal windows with colored Powerline prompts, box-drawing tables, block progress bars, and status lines in MonoLisa Code and Cascadia Code" width="100%" />
 </picture>
 
 ## Which font should you choose?
@@ -91,6 +91,8 @@ The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold w
 </details>
 
 ## Measurement notes
+
+The terminal windows use identical text at a nominal 22 px with 33 px table line spacing, ligatures disabled, and the same theme colors. Powerline separators and standard Unicode block progress bars come from each font's own outlines. Segment backgrounds follow measured glyph advances; missing characters retain the font's missing-glyph outline with no fallback. Actual terminal line-height and fallback settings may change the joins. Regenerate with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --terminal-only`.
 
 \* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command was:
 

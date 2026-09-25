@@ -52,11 +52,11 @@ The specimen shows MonoLisa alone because Fira Code has no italic font. If your 
 
 ## Terminal symbols
 
-Both fonts cover the Powerline, box-drawing, and block symbols checked in our measurements. Follow the prompt separators and table borders below: coverage is shared, so the useful comparison here is how those shapes look together.
+Both fonts cover the Powerline, box-drawing, and block symbols checked in our measurements. Follow the colored prompt joins, table borders, and progress bars below: coverage is shared, so the useful comparison is how those shapes look together.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-fira-code-terminal-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-fira-code-terminal.svg" alt="Prompt separators and box drawing in MonoLisa Code and Fira Code" width="100%" />
+  <img src="/images/comparison-monolisa-vs-fira-code-terminal.svg" alt="Matching terminal windows with colored Powerline prompts, box-drawing tables, block progress bars, and status lines in MonoLisa Code and Fira Code" width="100%" />
 </picture>
 
 ## Which font should you choose?
@@ -90,6 +90,8 @@ The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold w
 </details>
 
 ## Measurement notes
+
+The terminal windows use identical text at a nominal 22 px with 33 px table line spacing, ligatures disabled, and the same theme colors. Powerline separators and standard Unicode block progress bars come from each font's own outlines. Segment backgrounds follow measured glyph advances; missing characters retain the font's missing-glyph outline with no fallback. Actual terminal line-height and fallback settings may change the joins. Regenerate with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --terminal-only`.
 
 \* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command was:
 

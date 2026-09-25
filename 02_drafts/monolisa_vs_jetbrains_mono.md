@@ -53,11 +53,11 @@ Both fonts include italic styles. Follow `emphasis` and `readableIdentifier` to 
 
 ## Terminal symbols
 
-Both fonts cover the Powerline, box-drawing, and block symbols checked here, with internally aligned vertical metrics. The specimen lets you compare the prompt separators and table borders; these coverage checks give neither font an advantage.
+Both fonts cover the Powerline, box-drawing, and block symbols checked here, with internally aligned vertical metrics. Compare the colored prompt joins, table borders, and progress bars; these coverage checks give neither font an advantage.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-terminal-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-jetbrains-mono-terminal.svg" alt="Prompt separators and box drawing in MonoLisa Code and JetBrains Mono" width="100%" />
+  <img src="/images/comparison-monolisa-vs-jetbrains-mono-terminal.svg" alt="Matching terminal windows with colored Powerline prompts, box-drawing tables, block progress bars, and status lines in MonoLisa Code and JetBrains Mono" width="100%" />
 </picture>
 
 ## Which font should you choose?
@@ -91,6 +91,8 @@ The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold w
 </details>
 
 ## Measurement notes
+
+The terminal windows use identical text at a nominal 22 px with 33 px table line spacing, ligatures disabled, and the same theme colors. Powerline separators and standard Unicode block progress bars come from each font's own outlines. Segment backgrounds follow measured glyph advances; missing characters retain the font's missing-glyph outline with no fallback. Actual terminal line-height and fallback settings may change the joins. Regenerate with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --terminal-only`.
 
 \* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command was:
 

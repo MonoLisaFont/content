@@ -4,6 +4,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { comparisonFocus } from "./comparison-focus.mjs";
+import { renderTerminalComparison } from "./render-terminal-comparison.mjs";
 
 const root = process.cwd();
 const configPath = process.argv[2] || "scripts/comparison-fonts.local.json";
@@ -91,19 +92,7 @@ const samples = {
   },
   terminal: {
     title: "Terminal Symbols",
-    codeExample: true,
-    fontSize: 34,
-    lineHeight: 54,
-    features: "kern=1,liga=0,calt=0",
     terminal: true,
-    lines: [
-      "main \uE0B0 feature/render-fonts \uE0B0 npm test",
-      "+ added: src/render.ts",
-      "- removed: tmp/cache.json",
-      "┌────────┬────────┬────────┐",
-      "│ status │ tests  │ build  │",
-      "└────────┴────────┴────────┘",
-    ],
   },
 };
 
@@ -203,6 +192,18 @@ function renderLine(font, sample, line, prefix, fill = themeFills.primary) {
   }
 
   const fragment = normalizeFragment(result.stdout, prefix, fill);
+  if (sample.measureLayout) {
+    // hb-view uses 26.6 positions. Measure at the same precision so adjacent
+    // Powerline backgrounds meet at the glyph advance, without rounding drift.
+    const shaped = spawnSync("hb-shape", [
+      ...args.filter((arg) => arg !== "--output-format=svg" && !arg.startsWith("--font-size=")).slice(0, -3),
+      `--font-size=${sample.fontSize * 64}`, "--output-format=json", "--", resolved, line,
+    ], { cwd: root, encoding: "utf8" });
+    if (shaped.status !== 0) throw new Error(shaped.stderr || "Could not measure terminal text");
+    const glyphs = JSON.parse(shaped.stdout);
+    fragment.advanceWidth = glyphs.reduce((sum, glyph) => sum + glyph.ax / 64, 0);
+    fragment.missingGlyphs = glyphs.filter((glyph) => glyph.g === ".notdef" || glyph.g === "gid0").length;
+  }
   if (sample.measureInk) {
     const shaped = spawnSync("hb-shape", [
       ...args.filter((arg) => arg !== "--output-format=svg").slice(0, -3),
@@ -223,6 +224,7 @@ function normalizeFragment(svg, prefix, fill) {
   const viewBox = svg.match(/viewBox="([^"]+)"/)?.[1] || "0 0 100 100";
   const [, , width, height] = viewBox.split(/\s+/).map(Number);
   const baselineY = Number(svg.match(/<use[^>]*\sy="([^"]+)"/)?.[1] || 0);
+  const originX = Number(svg.match(/<use[^>]*\sx="([^"]+)"/)?.[1] || 16);
   let inner = svg
     .replace(/<\?xml[^>]*>\s*/g, "")
     .replace(/<svg[^>]*>/, "")
@@ -237,7 +239,7 @@ function normalizeFragment(svg, prefix, fill) {
     .replace(/fill-opacity="1"/g, "")
     .replace(/fill="rgb\(100%, 100%, 100%\)"/g, 'fill="none"');
 
-  return { width, height, advanceWidth: Math.max(0, width - 32), baselineY, inner };
+  return { width, height, advanceWidth: Math.max(0, width - 32), originX, baselineY, inner };
 }
 
 const syntaxFills = {
@@ -250,12 +252,6 @@ const syntaxFills = {
   punctuation: "var(--comparison-syntax-punctuation, var(--ml-colors-comment, currentColor))",
   identifier: "var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))",
   whitespace: "var(--comparison-syntax-identifier, var(--ml-colors-text, currentColor))",
-  terminalBranch: "var(--comparison-terminal-branch, var(--ml-colors-primary, #b7791f))",
-  terminalPath: "var(--comparison-terminal-path, var(--ml-colors-text, currentColor))",
-  terminalCommand: "var(--comparison-terminal-command, var(--ml-colors-text, currentColor))",
-  terminalAdd: "var(--comparison-terminal-add, var(--ml-colors-primary, #b7791f))",
-  terminalRemove: "var(--comparison-terminal-remove, var(--ml-colors-text, currentColor))",
-  terminalBox: "var(--comparison-terminal-box, var(--ml-colors-text, currentColor))",
 };
 
 function tokenizeCode(line) {
@@ -301,67 +297,12 @@ function tokenizeCode(line) {
   return tokens;
 }
 
-function tokenizeTerminal(line) {
-  if (line.startsWith("+")) {
-    return [
-      { value: "+", type: "terminalAdd" },
-      ...tokenizeCode(line.slice(1)).map((token) => ({
-        ...token,
-        type: token.type === "identifier" ? "terminalAdd" : token.type,
-      })),
-    ];
-  }
-
-  if (line.startsWith("-")) {
-    return [
-      { value: "-", type: "terminalRemove" },
-      ...tokenizeCode(line.slice(1)).map((token) => ({
-        ...token,
-        type: token.type === "identifier" ? "terminalRemove" : token.type,
-      })),
-    ];
-  }
-
-  if (/^[┌┬┐│└┴┘─\sstatusbuildtes]+$/.test(line)) {
-    return tokenizeCode(line).map((token) => ({
-      ...token,
-      type: /[┌┬┐│└┴┘─]/.test(token.value) ? "terminalBox" : token.type,
-    }));
-  }
-
-  const tokens = [];
-  let index = 0;
-  const tokenPattern = /\s+|\uE0B0|[^\s\uE0B0]+/gu;
-  for (const match of line.matchAll(tokenPattern)) {
-    const value = match[0];
-    let type = "identifier";
-    if (/^\s+$/.test(value)) type = "whitespace";
-    else if (value === "\uE0B0") type = "operator";
-    else if (index === 0) type = "terminalBranch";
-    else if (value.includes("/")) type = "terminalPath";
-    else type = "terminalCommand";
-    tokens.push({ value, type });
-    index += 1;
-  }
-
-  return tokens;
-}
-
-function isTerminalTableLine(line) {
-  return /^[┌┬┐│└┴┘─\sstatusbuildtes]+$/.test(line);
-}
-
-function tokensForLine(sample, line) {
-  if (sample.terminal) return tokenizeTerminal(line);
-  return tokenizeCode(line);
-}
-
 function renderCodeLine(font, sample, line, prefix) {
   if (line.length === 0) {
     return { width: 0, height: sample.fontSize, tokens: [] };
   }
 
-  if (!sample.syntax && !sample.terminal) {
+  if (!sample.syntax) {
     const fragment = renderLine(font, sample, line, prefix);
     return {
       width: fragment.width,
@@ -370,17 +311,8 @@ function renderCodeLine(font, sample, line, prefix) {
     };
   }
 
-  if (sample.terminal && isTerminalTableLine(line)) {
-    const fragment = renderLine(font, sample, line, prefix, syntaxFills.terminalBox);
-    return {
-      width: fragment.width,
-      height: fragment.height,
-      tokens: [{ x: 16, fragment }],
-    };
-  }
-
   let x = 0;
-  const tokens = tokensForLine(sample, line).map((token, tokenIndex) => {
+  const tokens = tokenizeCode(line).map((token, tokenIndex) => {
     const fragment = renderLine(
       font,
       sample,
@@ -485,6 +417,13 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   const competitor = config.fonts[competitorKey];
   if (!competitor) throw new Error(`Unknown comparison font: ${competitorKey}`);
   const stacked = options.layout === "stacked";
+
+  if (sample.terminal) {
+    const svg = renderTerminalComparison({ competitorKey, fonts: [mono, competitor], stacked, renderLine, esc });
+    const outputPath = path.join(outputDir, `comparison-monolisa-vs-${competitorKey}-terminal${stacked ? "-mobile" : ""}.svg`);
+    writeFileSync(outputPath, svg);
+    return outputPath;
+  }
 
   const marginX = 0;
   const marginY = sample.marginY ?? 32;
@@ -611,7 +550,8 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
 }
 
 const focusOnly = process.argv.includes("--focus-only");
-const requested = process.argv.slice(3).filter((arg) => arg !== "--focus-only");
+const terminalOnly = process.argv.includes("--terminal-only");
+const requested = process.argv.slice(3).filter((arg) => !["--focus-only", "--terminal-only"].includes(arg));
 const comparisons = requested.length ? requested : config.comparisons;
 let rendered = 0;
 
@@ -622,6 +562,7 @@ if (!existsSync(path.resolve(root, mono.regular))) {
 
 for (const competitorKey of comparisons) {
   for (const [sampleKey, sample] of Object.entries(samples)) {
+    if (terminalOnly && sampleKey !== "terminal") continue;
     if (focusOnly && !comparisonFocus[competitorKey]?.[sampleKey]) continue;
     const comparisonSample = {
       ...sample,
@@ -640,7 +581,7 @@ for (const competitorKey of comparisons) {
       rendered += 1;
     } catch (error) {
       console.warn(`Skipped ${competitorKey}/${sampleKey}: ${error.message}`);
-      if (focusOnly) process.exitCode = 1;
+      if (focusOnly || terminalOnly) process.exitCode = 1;
     }
   }
 }
