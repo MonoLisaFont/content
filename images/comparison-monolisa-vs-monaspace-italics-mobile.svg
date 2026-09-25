@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="560" height="975.84" viewBox="0 0 560 975.84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, var(--ml-colors-text, currentColor))" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="560" height="981.96" viewBox="0 0 560 981.96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--comparison-primary, var(--ml-colors-text, currentColor))" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <title>Italic Forms: MonoLisa Code vs. Monaspace</title>
   <desc>Enlarged a and f from affinity, shown upright then italic in each font. Circles point to the a construction and f lower ending; the full upright and italic code samples follow.</desc>
   <style>
@@ -90,7 +90,7 @@
 <use xlink:href="#monaspace-italics-focus-0-0-0-glyph-0-0" x="16" y="128.3125"/>
 </g>
 </g></g>
-<g class="focus-caption" transform="translate(0.5, 210.54500000000002)">
+<g class="focus-caption" transform="translate(0.5, 213.605)">
 <defs>
 <g>
 <g id="monaspace-italics-focus-0-0-0-style-glyph-0-0">
@@ -138,7 +138,7 @@
 <use xlink:href="#monaspace-italics-focus-0-0-1-glyph-0-0" x="16" y="128.3125"/>
 </g>
 </g></g>
-<g class="focus-caption" transform="translate(140, 210.54500000000002)">
+<g class="focus-caption" transform="translate(140, 213.605)">
 <defs>
 <g>
 <g id="monaspace-italics-focus-0-0-1-style-glyph-0-0">
@@ -170,7 +170,7 @@
 <use xlink:href="#monaspace-italics-focus-0-0-1-style-glyph-0-5" x="86.390625" y="38.875"/>
 </g>
 </g>
-<g class="focus-detail" data-character="f" data-style="normal"><circle class="focus-circle" cx="63.3" cy="422.13" r="21.6" /><g transform="translate(15, 301.1075)">
+<g class="focus-detail" data-character="f" data-style="normal"><circle class="focus-circle" cx="59.519999999999996" cy="426.81" r="21.6" /><g transform="translate(15, 304.1675)">
 <defs>
 <g>
 <g id="monaspace-italics-focus-0-1-0-glyph-0-0">
@@ -182,7 +182,7 @@
 <use xlink:href="#monaspace-italics-focus-0-1-0-glyph-0-0" x="16" y="128.3125"/>
 </g>
 </g></g>
-<g class="focus-caption" transform="translate(0.5, 465.96500000000003)">
+<g class="focus-caption" transform="translate(0.5, 472.08500000000004)">
 <defs>
 <g>
 <g id="monaspace-italics-focus-0-1-0-style-glyph-0-0">
@@ -218,7 +218,7 @@
 <use xlink:href="#monaspace-italics-focus-0-1-0-style-glyph-0-6" x="100.46875" y="38.875"/>
 </g>
 </g>
-<g class="focus-detail" data-character="f" data-style="italic"><circle class="focus-circle" cx="194.5" cy="441.24" r="21.6" /><g transform="translate(146, 301.1075)">
+<g class="focus-detail" data-character="f" data-style="italic"><circle class="focus-circle" cx="175.6" cy="447.36" r="21.6" /><g transform="translate(146, 304.1675)">
 <defs>
 <g>
 <g id="monaspace-italics-focus-0-1-1-glyph-0-0">
@@ -230,7 +230,7 @@
 <use xlink:href="#monaspace-italics-focus-0-1-1-glyph-0-0" x="16" y="128.3125"/>
 </g>
 </g></g>
-<g class="focus-caption" transform="translate(140, 465.96500000000003)">
+<g class="focus-caption" transform="translate(140, 472.08500000000004)">
 <defs>
 <g>
 <g id="monaspace-italics-focus-0-1-1-style-glyph-0-0">
@@ -328,7 +328,7 @@
 <use xlink:href="#monaspace-italics-focus-1-0-0-glyph-0-0" x="16" y="118.0625"/>
 </g>
 </g></g>
-<g class="focus-caption" transform="translate(296.5, 210.54500000000002)">
+<g class="focus-caption" transform="translate(296.5, 213.605)">
 <defs>
 <g>
 <g id="monaspace-italics-focus-1-0-0-style-glyph-0-0">
@@ -376,7 +376,7 @@
 <use xlink:href="#monaspace-italics-focus-1-0-1-glyph-0-0" x="16" y="118.0625"/>
 </g>
 </g></g>
-<g class="focus-caption" transform="translate(436, 210.54500000000002)">
+<g class="focus-caption" transform="translate(436, 213.605)">
 <defs>
 <g>
 <g id="monaspace-italics-focus-1-0-1-style-glyph-0-0">
@@ -408,7 +408,7 @@
 <use xlink:href="#monaspace-italics-focus-1-0-1-style-glyph-0-5" x="86.390625" y="38.875"/>
 </g>
 </g>
-<g class="focus-detail" data-character="f" data-style="normal"><circle class="focus-circle" cx="359.2" cy="421.68" r="21.6" /><g transform="translate(313, 311.3575)">
+<g class="focus-detail" data-character="f" data-style="normal"><circle class="focus-circle" cx="359.2" cy="424.74" r="21.6" /><g transform="translate(313, 314.4175)">
 <defs>
 <g>
 <g id="monaspace-italics-focus-1-1-0-glyph-0-0">
@@ -420,7 +420,7 @@
 <use xlink:href="#monaspace-italics-focus-1-1-0-glyph-0-0" x="16" y="118.0625"/>
 </g>
 </g></g>
-<g class="focus-caption" transform="translate(296.5, 465.96500000000003)">
+<g class="focus-caption" transform="translate(296.5, 472.08500000000004)">
 <defs>
 <g>
 <g id="monaspace-italics-focus-1-1-0-style-glyph-0-0">
@@ -456,7 +456,7 @@
 <use xlink:href="#monaspace-italics-focus-1-1-0-style-glyph-0-6" x="100.46875" y="38.875"/>
 </g>
 </g>
-<g class="focus-detail" data-character="f" data-style="italic"><circle class="focus-circle" cx="490.55" cy="421.68" r="21.6" /><g transform="translate(440.5, 311.3575)">
+<g class="focus-detail" data-character="f" data-style="italic"><circle class="focus-circle" cx="490.55" cy="424.74" r="21.6" /><g transform="translate(440.5, 314.4175)">
 <defs>
 <g>
 <g id="monaspace-italics-focus-1-1-1-glyph-0-0">
@@ -468,7 +468,7 @@
 <use xlink:href="#monaspace-italics-focus-1-1-1-glyph-0-0" x="16" y="118.0625"/>
 </g>
 </g></g>
-<g class="focus-caption" transform="translate(436, 465.96500000000003)">
+<g class="focus-caption" transform="translate(436, 472.08500000000004)">
 <defs>
 <g>
 <g id="monaspace-italics-focus-1-1-1-style-glyph-0-0">
@@ -500,10 +500,10 @@
 <use xlink:href="#monaspace-italics-focus-1-1-1-style-glyph-0-5" x="86.390625" y="38.875"/>
 </g>
 </g>
-<line class="focus-divider" x1="0" y1="556.84" x2="560" y2="556.84" /></g>
-  <g class="comparison-specimen" transform="translate(0, 568.84)">
+<line class="focus-divider" x1="0" y1="562.96" x2="560" y2="562.96" /></g>
+  <g class="comparison-specimen" transform="translate(0, 574.96)">
       <g class="specimen-label" transform="translate(-16, -12.796875)">
-        
+
 <defs>
 <g>
 <g id="monaspace-italics-0-label-glyph-0-0">
@@ -559,9 +559,9 @@
       </g>
 
       <g transform="translate(0, 40) scale(0.47619047619047616)">
-        
+
           <g transform="translate(-16, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-0-0-0-glyph-0-0">
@@ -601,9 +601,9 @@
       </g>
 
       <g transform="translate(0, 68.57142857142857) scale(0.47619047619047616)">
-        
+
           <g transform="translate(-16, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-0-1-0-glyph-0-0">
@@ -634,12 +634,12 @@
           </g>
 
           <g transform="translate(118, 0)">
-            
+
 
           </g>
 
           <g transform="translate(145, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-0-1-2-glyph-0-0">
@@ -676,12 +676,12 @@
           </g>
 
           <g transform="translate(360, 0)">
-            
+
 
           </g>
 
           <g transform="translate(387, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-0-1-4-glyph-0-0">
@@ -696,12 +696,12 @@
           </g>
 
           <g transform="translate(414, 0)">
-            
+
 
           </g>
 
           <g transform="translate(441, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-0-1-6-glyph-0-0">
@@ -746,7 +746,7 @@
           </g>
 
           <g transform="translate(710, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-0-1-7-glyph-0-0">
@@ -762,9 +762,9 @@
       </g>
 
       <g transform="translate(0, 110) scale(0.47619047619047616)">
-        
+
           <g transform="translate(-16, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-0-3-0-glyph-0-0">
@@ -797,9 +797,9 @@
       </g>
 
       <g transform="translate(0, 138.57142857142856) scale(0.47619047619047616)">
-        
+
           <g transform="translate(-16, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-0-4-0-glyph-0-0">
@@ -830,12 +830,12 @@
           </g>
 
           <g transform="translate(118, 0)">
-            
+
 
           </g>
 
           <g transform="translate(145, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-0-4-2-glyph-0-0">
@@ -872,12 +872,12 @@
           </g>
 
           <g transform="translate(361, 0)">
-            
+
 
           </g>
 
           <g transform="translate(388, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-0-4-4-glyph-0-0">
@@ -892,12 +892,12 @@
           </g>
 
           <g transform="translate(415, 0)">
-            
+
 
           </g>
 
           <g transform="translate(442, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-0-4-6-glyph-0-0">
@@ -942,7 +942,7 @@
           </g>
 
           <g transform="translate(711, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-0-4-7-glyph-0-0">
@@ -958,7 +958,7 @@
       </g>
 
       <g class="specimen-label" transform="translate(-16, 198.34598214285714)">
-        
+
 <defs>
 <g>
 <g id="monaspace-italics-1-label-glyph-0-0">
@@ -1002,9 +1002,9 @@
       </g>
 
       <g transform="translate(0, 251.14285714285714) scale(0.47619047619047616)">
-        
+
           <g transform="translate(-16, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-1-0-0-glyph-0-0">
@@ -1044,9 +1044,9 @@
       </g>
 
       <g transform="translate(0, 279.7142857142857) scale(0.47619047619047616)">
-        
+
           <g transform="translate(-16, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-1-1-0-glyph-0-0">
@@ -1077,12 +1077,12 @@
           </g>
 
           <g transform="translate(114, 0)">
-            
+
 
           </g>
 
           <g transform="translate(140, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-1-1-2-glyph-0-0">
@@ -1119,12 +1119,12 @@
           </g>
 
           <g transform="translate(348, 0)">
-            
+
 
           </g>
 
           <g transform="translate(374, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-1-1-4-glyph-0-0">
@@ -1139,12 +1139,12 @@
           </g>
 
           <g transform="translate(400, 0)">
-            
+
 
           </g>
 
           <g transform="translate(426, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-1-1-6-glyph-0-0">
@@ -1189,7 +1189,7 @@
           </g>
 
           <g transform="translate(686, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-1-1-7-glyph-0-0">
@@ -1205,9 +1205,9 @@
       </g>
 
       <g transform="translate(0, 321.1428571428571) scale(0.47619047619047616)">
-        
+
           <g transform="translate(-16, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-1-3-0-glyph-0-0">
@@ -1243,9 +1243,9 @@
       </g>
 
       <g transform="translate(0, 349.7142857142857) scale(0.47619047619047616)">
-        
+
           <g transform="translate(-16, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-1-4-0-glyph-0-0">
@@ -1276,12 +1276,12 @@
           </g>
 
           <g transform="translate(114, 0)">
-            
+
 
           </g>
 
           <g transform="translate(140, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-1-4-2-glyph-0-0">
@@ -1318,12 +1318,12 @@
           </g>
 
           <g transform="translate(350, 0)">
-            
+
 
           </g>
 
           <g transform="translate(376, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-1-4-4-glyph-0-0">
@@ -1338,12 +1338,12 @@
           </g>
 
           <g transform="translate(402, 0)">
-            
+
 
           </g>
 
           <g transform="translate(428, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-1-4-6-glyph-0-0">
@@ -1388,7 +1388,7 @@
           </g>
 
           <g transform="translate(688, 0)">
-            
+
 <defs>
 <g>
 <g id="monaspace-italics-1-4-7-glyph-0-0">

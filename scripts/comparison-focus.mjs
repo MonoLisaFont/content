@@ -30,6 +30,12 @@ export const comparisonFocus = {
       }, {
         char: "f", styles: ["normal", "italic"],
         marks: [mark(0.45, 0.91, 0.2)],
+        marksByFont: {
+          monolisa: {
+            normal: [mark(0.38, 0.93, 0.2)],
+            italic: [mark(0.18, 0.94, 0.2)],
+          },
+        },
       }],
     },
   },
