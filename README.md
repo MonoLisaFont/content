@@ -228,6 +228,28 @@ npm run website:revalidate -- --pathname images/example.svg
 
 ## Publishing to dev.to
 
+### Cover images
+
+Every DEV article should have a topic-specific 2000 × 840 PNG cover. Designs,
+outlined SVG sources, the gallery, and research notes live in
+[social_media/devto](social_media/devto/README.md).
+
+```bash
+npm run render:devto-covers
+npm run publish:devto-covers -- --all --dry-run
+npm run publish:devto-covers -- --all
+```
+
+Pass a post slug instead of `--all` to update one cover. The publisher uses
+`DEVTO_API_KEY` and `BLOB_READ_WRITE_TOKEN`, hosts immutable cover assets under
+the separate `devto-covers/` Blob prefix, and changes only the cover of an
+existing published article. It does not republish the body or create posts.
+Run it after `publish:draft --devto` for a new post with a registered cover
+design. The regular article publishers omit the cover field, preserving covers
+when updating article text.
+
+### Friction series
+
 The friction series can be prepared for dev.to with:
 
 ```bash

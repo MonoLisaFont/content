@@ -1,0 +1,18 @@
+[
+  { "slug": "monolisa_vs_fira_code", "kind": "comparison", "font": "fira-code", "label": "Fira Code", "caption": "Software slant · 10°" },
+  { "slug": "monolisa_vs_monaspace", "kind": "comparison", "font": "monaspace", "label": "Monaspace Neon", "caption": "Neon italics" },
+  { "slug": "introducing_monolisa_for_vscode", "kind": "editor", "category": "TOOLS FOR DEVELOPERS", "lines": ["MonoLisa", "for VS Code"] },
+  { "slug": "monolisa_v3", "kind": "release", "category": "VERSION 3", "lines": ["Meet", "MonoLisa Text"] },
+  { "slug": "what_are_font_ligatures", "kind": "ligatures", "category": "TYPE EXPLAINED", "lines": ["What are", "font ligatures?"] },
+  { "slug": "what_are_serifs", "kind": "serifs", "category": "TYPE EXPLAINED", "lines": ["What are", "serifs?"] },
+  { "slug": "friction_in_software_development", "kind": "overview", "category": "FRICTION / 01", "lines": ["Friction in", "software", "development"] },
+  { "slug": "visual_friction", "kind": "visual", "category": "FRICTION / 02", "lines": ["Visual", "friction"] },
+  { "slug": "cognitive_friction", "kind": "cognitive", "category": "FRICTION / 03", "lines": ["Cognitive", "friction"] },
+  { "slug": "mechanical_friction", "kind": "mechanical", "category": "FRICTION / 04", "lines": ["Mechanical", "friction"] },
+  { "slug": "context_friction", "kind": "context", "category": "FRICTION / 05", "lines": ["Context", "friction"] },
+  { "slug": "typography_friction", "kind": "typography", "category": "FRICTION / 06", "lines": ["Typography", "friction"] },
+  { "slug": "process_friction", "kind": "process", "category": "FRICTION / 07", "lines": ["Process", "friction"] },
+  { "slug": "toolchain_friction", "kind": "toolchain", "category": "FRICTION / 08", "lines": ["Toolchain", "friction"] },
+  { "slug": "communication_friction", "kind": "communication", "category": "FRICTION / 09", "lines": ["Communication", "friction"] },
+  { "slug": "organizational_friction", "kind": "organizational", "category": "FRICTION / 10", "lines": ["Organizational", "friction"] }
+]

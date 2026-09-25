@@ -10,3 +10,7 @@ devto-friction-payloads/
 .venv-hyperglot/
 .hyperglot-cache
 scripts/comparison-fonts.local.json
+.devto-covers-state.json
+.devto-covers-state.json.*.tmp
+.devto-covers-state.json.lock
+.devto-cover-backups/

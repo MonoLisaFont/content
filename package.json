@@ -6,6 +6,8 @@
     "publish:content": "node scripts/publish-content-to-blob.mjs",
     "publish:draft": "node scripts/publish-draft.mjs",
     "render:social-comparisons": "node scripts/render-comparison-social-cards.mjs",
+    "render:devto-covers": "node scripts/render-devto-covers.mjs",
+    "publish:devto-covers": "node scripts/publish-devto-covers.mjs",
     "test": "node --test ./scripts/*.test.mjs",
     "website:revalidate": "node scripts/revalidate-website.mjs"
   },
