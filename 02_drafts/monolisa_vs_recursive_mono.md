@@ -26,7 +26,7 @@ The zero in `offset = 0` has a slash in Rec Mono Linear and a square dot in Mono
 
 ## Coding ligatures and character variants
 
-Rec Mono Linear draws `<=` and `>=` with a horizontal bar below the angle; MonoLisa's lower stroke follows the diagonal. Both join `!==` and the arrows, but Recursive's joins may respond differently to your editor's ligature switch; the shaping details are in Measurement notes.
+Rec Mono Linear and MonoLisa both use slanted lower strokes in `<=` and `>=`. Both join `!==` and the arrows, but Recursive's joins may respond differently to your editor's ligature switch; the shaping details are in Measurement notes.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-recursive-mono-ligatures-mobile.svg" />

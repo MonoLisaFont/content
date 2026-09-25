@@ -26,7 +26,7 @@ At the same font size, JetBrains Mono fits the code into a narrower line, while 
 
 ## Coding ligatures and character variants
 
-In `<=` and `>=`, MonoLisa's lower stroke follows the angle, while JetBrains Mono uses a horizontal bar. Both fonts also offer alternate letterforms; use the specific shapes you want as a guide, since feature counts alone do not show those differences.
+The `<=` and `>=` ligatures have similar shapes here: both fonts use a slanted lower stroke. Both also offer alternate letterforms; try the variants you use most in your editor.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-ligatures-mobile.svg" />
