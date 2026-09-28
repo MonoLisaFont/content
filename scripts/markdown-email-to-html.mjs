@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, extname, join } from "node:path";
+import { tagEmailCampaignLinks } from "./campaign-links.mjs";
 
 const inputPath = process.argv[2];
 const outputPath = process.argv[3] || defaultOutputPath(inputPath);
@@ -12,7 +13,12 @@ if (!inputPath) {
 
 const markdown = await readFile(inputPath, "utf8");
 const content = stripHeadmatter(markdown);
-const html = renderDocument(content, titleFromPath(inputPath));
+const campaign = campaignFromHeadmatter(markdown);
+if (basename(dirname(inputPath)) === "drafts" && !campaign) {
+  throw new Error("Planned emails in drafts/ must define all four UTM fields.");
+}
+const rendered = renderDocument(content, titleFromPath(inputPath));
+const html = campaign ? tagEmailCampaignLinks(rendered, campaign) : rendered;
 
 await writeFile(outputPath, html);
 console.log(`Wrote ${outputPath}`);
@@ -49,6 +55,17 @@ function stripHeadmatter(markdown) {
   }
 
   return markdown.slice(afterClosing + 1).trim();
+}
+
+function campaignFromHeadmatter(markdown) {
+  const headmatter = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1];
+  if (!headmatter) return null;
+  const campaign = {};
+  for (const field of ["source", "medium", "campaign", "content"]) {
+    campaign[field] = headmatter.match(new RegExp(`^utm_${field}:\\s*(.*?)\\s*$`, "m"))?.[1];
+  }
+  if (Object.values(campaign).every((value) => value === undefined)) return null;
+  return campaign;
 }
 
 function renderDocument(markdown, title) {

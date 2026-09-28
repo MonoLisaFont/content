@@ -6,6 +6,7 @@ This repository contains content to publish through the blog and dev.to. It has 
 - `02_drafts` is where drafting posts is done. In other words, this is where most of the work happens until a post is published by moving it to the `03_posts` directory. Each post follows Markdown format with a YAML headmatter to declare metadata related to it (i.e., `published`, `keywords` etc.).
 - `03_posts` contains published content. The website picks this up automatically and the content has to be published separately to dev.to while using a canonical link pointing to the website to gain SEO benefits.
 - `images` contains images included to the posts. Ideally these should be optimized already since there are no guarantees that publishing platforms (website, dev.to) would do it for you. [Kraken](https://kraken.io/web-interface) is a good option for web-based optimization.
+- `emails/drafts` contains planned messages, and `emails/sent` archives messages after delivery. See [email draft conventions](emails/drafts/README.md).
 
 ## Post schema
 
@@ -129,6 +130,14 @@ ignored `.devto-state.json` file. Image entries are keyed by a content hash, so
 retries reuse uploaded copies when the source has not changed. The script also
 checks existing articles by canonical URL before creating one, which makes
 retries update the same article.
+
+DEV article bodies tag MonoLisa website links with `utm_source=devto`,
+`utm_medium=syndication`, `utm_campaign=blog-syndication`, and a post-specific
+`utm_content`. The canonical URL and website Markdown remain clean. Existing
+DEV articles can be refreshed with the same `publish:draft --devto` command,
+using their original `02_drafts/<slug>.md` input path; the command resumes from
+`03_posts/<slug>.md` when the draft is already published. Preview with
+`--dry-run` first.
 
 All credentials are validated before the local move. Once the local promotion
 succeeds, a later Blob or DEV failure is intentionally not rolled back. Run the
@@ -275,3 +284,18 @@ After reviewing the drafts on dev.to, publish them with:
 ```bash
 node scripts/publish-friction-to-devto.mjs --publish --canonical-base https://monolisa.dev/posts
 ```
+
+The syndicated friction bodies use the same DEV campaign tags on links back to
+the MonoLisa website. Crosslinks that stay on dev.to are left alone. Running
+the `--publish` command again refreshes existing articles with attributed links.
+
+For a body-only update of existing DEV articles, run:
+
+```bash
+node scripts/refresh-devto-attribution.mjs --dry-run
+node scripts/refresh-devto-attribution.mjs --apply
+```
+
+This reads the two local DEV state files, fetches each live article, verifies
+its canonical URL, and updates only articles with untagged MonoLisa links. It
+backs up the original bodies to an ignored local JSON file before writing.

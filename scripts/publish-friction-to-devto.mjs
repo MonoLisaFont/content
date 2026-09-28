@@ -2,6 +2,8 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { tagDevToMarkdownLinks } from "./campaign-markdown.mjs";
+import { rewriteDevToLinks } from "./publish-draft.mjs";
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const postsDir = join(root, "03_posts");
@@ -181,7 +183,11 @@ async function publishDrafts(posts, state) {
 }
 
 function buildPayload(post, state, published) {
-  const body = rewriteLinks(post.body, state);
+  const linkedBody = rewriteLinks(post.body, state);
+  const body = tagDevToMarkdownLinks(
+    canonicalBase ? rewriteDevToLinks(linkedBody, canonicalBase) : linkedBody,
+    post.slug,
+  );
 
   return {
     article: {

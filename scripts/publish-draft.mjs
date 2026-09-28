@@ -32,6 +32,7 @@ import {
   readDevToAssetSources,
   resolveDevToSession,
 } from "./devto-images.mjs";
+import { tagDevToMarkdownLinks } from "./campaign-markdown.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const DRAFT_DIRECTORY = "02_drafts";
@@ -588,13 +589,16 @@ export async function publishDevToWithImages(
       imageUrls.set(asset.localPath, url);
     }
 
-    const bodyMarkdown = rewriteDevToDisclosures(
-      rewriteDevToLinks(
-        rewriteDevToImages(post.body, imageUrls, {
-          preserveReferenceSuffix: false,
-        }),
-        canonicalBase,
+    const bodyMarkdown = tagDevToMarkdownLinks(
+      rewriteDevToDisclosures(
+        rewriteDevToLinks(
+          rewriteDevToImages(post.body, imageUrls, {
+            preserveReferenceSuffix: false,
+          }),
+          canonicalBase,
+        ),
       ),
+      post.slug,
     );
     const unresolvedImages = [...new Set(referencedImagePaths(bodyMarkdown))];
     if (unresolvedImages.length > 0) {
