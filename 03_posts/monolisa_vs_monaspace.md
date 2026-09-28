@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Monaspace Neon"
 published: 2026-09-09
-updated: 2026-09-25
+updated: 2026-09-28
 keywords:
   [
     "MonoLisa vs Monaspace",
@@ -13,7 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-Monaspace lets you [mix five coding families](https://monaspace.githubnext.com/) while keeping code aligned. We use **Neon v1.400** here, whose italics stay close to its upright shapes; MonoLisa changes the `a` and `f` more visibly. If your theme uses italic comments, start with that contrast.
+Monaspace lets you [mix five coding families](https://monaspace.githubnext.com/) while keeping code aligned; this article compares one of them, **Neon v1.400**, with MonoLisa Code. The paired specimens cover code texture, ligatures, letterforms, italics, and terminal symbols, with notes on what each sample can and cannot show. If your editor theme uses italic comments, pay particular attention to the `a` and `f` comparison.
 
 ## Reading texture
 

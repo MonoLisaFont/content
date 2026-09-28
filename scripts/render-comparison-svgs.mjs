@@ -97,6 +97,17 @@ const samples = {
 };
 
 const sampleOverrides = {
+  "jetbrains-mono": {
+    italics: {
+      lines: [
+        "const filtered = file.filter(isFinal);",
+        "",
+        "if (config.finalize) return profile;",
+        "",
+        "alpha beta gamma delta epsilon",
+      ],
+    },
+  },
   "fira-code": {
     italics: {
       // Match the -10° post.italicAngle in the measured MonoLisa italic file.

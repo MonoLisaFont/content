@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. IBM Plex Mono"
 published: YYYY-MM-DD
-updated: 2026-09-25
+updated: 2026-09-28
 draft: true
 keywords:
   [
@@ -13,7 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-If you use code snippets in documentation, IBM Plex gives you Mono, Sans, and Serif companions. MonoLisa pairs Code with Text. For the editor itself, the specimens highlight two differences: operator ligatures and the Powerline symbols used in prompts.
+This comparison is for anyone weighing IBM Plex Mono against MonoLisa Code in an editor or in documentation. We set the same code in both fonts, then look at punctuation, ligatures, italics, and terminal symbols before considering their companion fonts for prose. The specimens should help you decide which details matter in the places where you actually read code.
 
 ## Reading texture
 

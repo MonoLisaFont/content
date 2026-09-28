@@ -1,13 +1,13 @@
 ---
 title: "Comparison of MonoLisa vs. Berkeley Mono"
 published: YYYY-MM-DD
-updated: 2026-09-25
+updated: 2026-09-28
 draft: true
 keywords: ["MonoLisa vs Berkeley Mono", "Berkeley Mono alternative", "coding fonts", "programming fonts"]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-Berkeley Mono offers condensed widths for fitting more code across an editor pane. MonoLisa keeps its character widths fixed and offers grade adjustment for changing stroke thickness; the specimens also show how their sloped letterforms differ. Both are paid coding fonts.
+If you are choosing between MonoLisa and Berkeley Mono, the useful questions go beyond how many characters fit on a line. This comparison looks at letterforms in code, available widths and sloped styles, and the customization each font offers. The Berkeley examples come from public vendor specimens rather than a locally tested font file, so use them to inspect visible design choices, then try the fonts in your own editor before deciding.
 
 ## Letterforms in code
 

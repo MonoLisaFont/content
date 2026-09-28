@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. JetBrains Mono"
 published: YYYY-MM-DD
-updated: 2026-09-25
+updated: 2026-09-28
 draft: true
 keywords:
   [
@@ -13,7 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-At the same font size, JetBrains Mono fits the code into a narrower line, while MonoLisa gives its rounded letters more horizontal space. Both include italics and ligatures, so if those are your essentials, the specimens can help you choose between their proportions.
+If you are choosing between MonoLisa Code and JetBrains Mono, this comparison shows the same code in both fonts and explains where to look. We move from line width and letter shapes to ligatures, italics, and terminal symbols. The enlarged italic `f` and the `fi` pairs below it are worth a closer look if small interruptions in a word affect your reading flow.
 
 ## Reading texture
 
@@ -44,11 +44,11 @@ Look at `0`, `O`, and lowercase `o`: JetBrains Mono's curves approach rectangles
 
 ## Italics and style range
 
-Both italic samples have a descending `f`, visible in `if`, so that shape is a similarity here. MonoLisa also lets you adjust stroke thickness through grade without changing character widths, giving you another way to darken text while preserving line lengths.
+The enlarged italic `f` shows how differently the two fonts draw its upper curve and descending stroke. Look at the `fi` pairs in `filtered`, `file`, and `profile` below it: JetBrains Mono's tighter pair can interrupt the flow of the word, while MonoLisa leaves more room around the letters. Check the words at your usual editor size too; that is where the difference matters. MonoLisa also lets you adjust stroke thickness through grade without changing character widths.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-italics-mobile.svg" />
-  <img src="/images/comparison-monolisa-vs-jetbrains-mono-italics.svg" alt="Italic code and letterforms in MonoLisa Code and JetBrains Mono" width="100%" />
+  <img src="/images/comparison-monolisa-vs-jetbrains-mono-italics.svg" alt="Enlarged italic f and code with fi pairs in MonoLisa Code and JetBrains Mono" width="100%" />
 </picture>
 
 ## Terminal symbols
@@ -62,7 +62,9 @@ Both fonts include the prompt separators, table borders, and block characters sh
 
 ## Which font should you choose?
 
-Choose JetBrains Mono for compact, free letterforms with italics and ligatures. Try MonoLisa if you prefer the rounder curves shown here or want to adjust stroke thickness without changing character widths; test the same file in your usual pane size.
+JetBrains Mono is free, and its compact width may suit a narrow editor pane. MonoLisa offers rounder curves and grade adjustment; its italic `fi` is also worth testing in a file you read every day.
+
+At the same font size, JetBrains Mono fits the code into a narrower line, while MonoLisa gives its rounded letters more horizontal space. Both include italics and ligatures, so if those are your essentials, the specimens can help you choose between their proportions.
 
 ## Try MonoLisa in your editor
 

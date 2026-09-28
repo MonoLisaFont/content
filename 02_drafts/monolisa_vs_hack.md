@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Hack"
 published: YYYY-MM-DD
-updated: 2026-09-25
+updated: 2026-09-28
 draft: true
 keywords:
   [
@@ -13,7 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-If Regular looks too light and Bold too heavy in your editor, these fonts give you different choices: Hack supplies those two weights, while MonoLisa offers intermediate weights and variable adjustment. The code samples also show Hack's separate operators beside MonoLisa's optional ligatures.
+Hack and MonoLisa take different approaches to coding typography, and the choice is easier to make with the same text in both. This article compares their reading texture, operator shapes, easily confused characters, italics, weights, and terminal symbols. If you are especially sensitive to weight or want to know how `!==` appears in each font, those sections give you a place to start.
 
 ## Reading texture
 

@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Fira Code"
 published: 2026-08-11
-updated: 2026-09-25
+updated: 2026-09-28
 keywords:
   [
     "MonoLisa vs Fira Code",
@@ -12,7 +12,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-If your editor theme uses italic comments or keywords, Fira Code and MonoLisa offer different looks. Fira Code's upright letters can be slanted by software; MonoLisa provides separately drawn italics. The specimens also compare punctuation and coding ligatures at the same size.
+If you are weighing Fira Code against MonoLisa Code, this article shows the same code in both fonts and calls out the details that may change how it reads. We compare punctuation, ligatures, ambiguous characters, italics, and terminal symbols before summarizing the feature differences. The italic specimen uses a software slant for Fira Code and a separately drawn italic for MonoLisa, so keep that setup in mind as you look through the examples.
 
 ## Reading texture
 

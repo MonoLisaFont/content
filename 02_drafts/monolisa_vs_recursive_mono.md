@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Recursive Mono"
 published: YYYY-MM-DD
-updated: 2026-09-25
+updated: 2026-09-28
 draft: true
 keywords:
   [
@@ -13,7 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-If you switch between code and prose, Recursive can cover both within one variable font family. The specimens use the static **Rec Mono Linear** build, so focus on its slashed zero, italic `f`, and terminal coverage; the wider family's adjustable styles are outside this sample.
+Recursive is a broad variable font family, so this comparison needs a specific starting point: the specimens use its static **Rec Mono Linear** build beside MonoLisa Code. We examine the same code in both fonts, then compare ambiguous characters, ligatures, italics, and terminal symbols. If you also move between code and prose, the article notes where Recursive's wider family offers options that these particular specimens do not show.
 
 ## Reading texture
 

@@ -40,6 +40,14 @@ export const comparisonFocus = {
     },
   },
   "jetbrains-mono": {
+    italics: {
+      description: "Enlarged italic f letterforms and code with repeated fi pairs in both fonts. Compare how the f leads into the following i at a normal reading size.",
+      details: [{
+        char: "f",
+        styles: ["italic"],
+        marks: [],
+      }],
+    },
     glyphs: {
       description: "Enlarged capital O and lowercase o compare MonoLisa's rounder curves with JetBrains Mono's more rectangular curves. Circles mark the upper right curves. The complete character sample follows.",
       details: ["O", "o"].map((char) => ({

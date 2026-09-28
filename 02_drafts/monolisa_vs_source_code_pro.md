@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Source Code Pro"
 published: YYYY-MM-DD
-updated: 2026-09-25
+updated: 2026-09-28
 draft: true
 keywords:
   [
@@ -13,7 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-Source Code Pro keeps `!==` and `->` as separate characters in these samples; MonoLisa can join them. Both offer italics and related fonts for prose, so the useful starting point is whether you want ligatures in the code you read every day.
+This article puts Source Code Pro and MonoLisa Code side by side in the same code and terminal samples. It walks through punctuation, operator ligatures, ambiguous characters, italics, and the related fonts each family offers for prose. Start with the specimens rather than the feature list: a detail such as separate versus joined operators is easiest to judge in a line you might actually read.
 
 ## Reading texture
 

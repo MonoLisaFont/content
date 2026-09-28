@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Cascadia Code"
 published: YYYY-MM-DD
-updated: 2026-09-25
+updated: 2026-09-28
 draft: true
 keywords:
   [
@@ -13,7 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-If you want a free font with italics and coding ligatures, Cascadia Code covers both. The specimens show how its tighter lines and round punctuation compare with MonoLisa's wider letters and square dots; terminal users should also check the Powerline difference below.
+If you are comparing MonoLisa with the free Cascadia Code, this article shows what changes when the same code is set in each font. We look at line width, punctuation, ligatures, italics, and terminal symbols, with paired specimens you can inspect at your usual reading size. The terminal section also distinguishes Cascadia Code from its separate Powerline build, which matters if your prompt uses those symbols.
 
 ## Reading texture
 
