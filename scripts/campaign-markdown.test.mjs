@@ -37,7 +37,7 @@ test("email renderer tags website links in output only", async (t) => {
   const source = join(directory, "launch.md");
   const output = join(directory, "launch.html");
   const markdown = `---
-title: Launch
+title: Launch notes & updates
 utm_source: monolisa
 utm_medium: email
 utm_campaign: v3-release
@@ -51,6 +51,7 @@ utm_content: earlier-buyers
   await writeFile(source, markdown);
   await execFileAsync(process.execPath, ["scripts/markdown-email-to-html.mjs", source, output]);
   const html = await readFile(output, "utf8");
+  assert.match(html, /<title>Launch notes &amp; updates<\/title>/);
   assert.match(html, /view=full&amp;utm_source=monolisa&amp;utm_medium=email&amp;utm_campaign=v3-release&amp;utm_content=earlier-buyers#features/);
   assert.match(html, /href="https:\/\/example.com\/"/);
   assert.match(html, /<img src="https:\/\/www.monolisa.dev\/media\/images\/monolisa-vscode-coding-font.png" alt="The coding panel" width="640"/);
@@ -74,6 +75,7 @@ utm_content: vscode-and-blog
   const payload = buildEmailPreviewPayload(markdown, "emails/drafts/example.md");
   assert.equal(payload.schemaVersion, 1);
   assert.equal(payload.title, "Internal working title");
+  assert.match(payload.html, /<title>Internal working title<\/title>/);
   assert.equal(payload.subject, "A VS Code update");
   assert.equal(payload.preheader, "A live preview for the font");
   assert.match(payload.html, /utm_source=monolisa&amp;utm_medium=email/);

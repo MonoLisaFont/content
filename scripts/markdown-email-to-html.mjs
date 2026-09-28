@@ -10,23 +10,25 @@ export function renderEmailHtml(markdown, inputPath) {
   if (basename(dirname(inputPath)) === "drafts" && !campaign) {
     throw new Error("Planned emails in drafts/ must define all four UTM fields.");
   }
-  const rendered = renderDocument(content, titleFromPath(inputPath));
+  const rendered = renderDocument(
+    content,
+    headmatterField(markdown, "title") || titleFromPath(inputPath),
+  );
   return campaign ? tagEmailCampaignLinks(rendered, campaign) : rendered;
 }
 
 export function buildEmailPreviewPayload(markdown, inputPath) {
-  const headmatter = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1];
-  if (!headmatter) throw new Error(`${inputPath} needs email front matter.`);
-  const field = (name) =>
-    headmatter.match(new RegExp(`^${name}:\\s*(.*?)\\s*$`, "m"))?.[1]?.trim();
-  const subject = field("subject");
-  const preheader = field("preheader");
+  if (!emailHeadmatter(markdown)) {
+    throw new Error(`${inputPath} needs email front matter.`);
+  }
+  const subject = headmatterField(markdown, "subject");
+  const preheader = headmatterField(markdown, "preheader");
   if (!subject || !preheader) {
     throw new Error(`${inputPath} needs a subject and preheader for preview.`);
   }
   return {
     schemaVersion: 1,
-    title: field("title") || titleFromPath(inputPath),
+    title: headmatterField(markdown, "title") || titleFromPath(inputPath),
     subject,
     preheader,
     html: renderEmailHtml(markdown, inputPath),
@@ -65,6 +67,15 @@ function titleFromPath(path) {
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
+function emailHeadmatter(markdown) {
+  return markdown.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1];
+}
+
+function headmatterField(markdown, name) {
+  return emailHeadmatter(markdown)
+    ?.match(new RegExp(`^${name}:\\s*(.*?)\\s*$`, "m"))?.[1]?.trim();
+}
+
 function stripHeadmatter(markdown) {
   if (!markdown.startsWith("---\n")) {
     return markdown.trim();
@@ -86,7 +97,7 @@ function stripHeadmatter(markdown) {
 }
 
 function campaignFromHeadmatter(markdown) {
-  const headmatter = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1];
+  const headmatter = emailHeadmatter(markdown);
   if (!headmatter) return null;
   const campaign = {};
   for (const field of ["source", "medium", "campaign", "content"]) {
