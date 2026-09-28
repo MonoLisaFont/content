@@ -41,3 +41,5 @@ It turns out there's a lot of subtlety in font design and many details that are 
 Andrey, Juho, and Marcus
 
 PS. We are working on the first patch release of v3 and likely the next post will be exactly about that.
+
+<p><a href="{{ unsubscribe_url }}">Unsubscribe</a></p>

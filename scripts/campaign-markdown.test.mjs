@@ -47,6 +47,8 @@ utm_content: earlier-buyers
 [Read](https://monolisa.dev/posts/monolisa_v3/?view=full#features) and [External](https://example.com/).
 
 ![The coding panel](https://www.monolisa.dev/media/images/monolisa-vscode-coding-font.png)
+
+<p><a href="{{ unsubscribe_url }}">Unsubscribe</a></p>
 `;
   await writeFile(source, markdown);
   await execFileAsync(process.execPath, ["scripts/markdown-email-to-html.mjs", source, output]);
@@ -56,6 +58,8 @@ utm_content: earlier-buyers
   assert.match(html, /href="https:\/\/example.com\/"/);
   assert.match(html, /<img src="https:\/\/www.monolisa.dev\/media\/images\/monolisa-vscode-coding-font.png" alt="The coding panel" width="640"/);
   assert.doesNotMatch(html, /src="[^"]*utm_source/);
+  assert.match(html, /<p><a href="\{\{ unsubscribe_url \}\}">Unsubscribe<\/a><\/p>/);
+  assert.doesNotMatch(html, /&lt;p&gt;&lt;a href=/);
   assert.equal(await readFile(source, "utf8"), markdown);
 });
 

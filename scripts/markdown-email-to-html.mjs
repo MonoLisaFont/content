@@ -4,6 +4,8 @@ import { basename, dirname, extname, join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { tagEmailCampaignLinks } from "./campaign-links.mjs";
 
+const UNSUBSCRIBE_HTML = '<p><a href="{{ unsubscribe_url }}">Unsubscribe</a></p>';
+
 export function renderEmailHtml(markdown, inputPath) {
   const content = stripHeadmatter(markdown);
   const campaign = campaignFromHeadmatter(markdown);
@@ -165,6 +167,14 @@ function renderBlocks(markdown) {
       flushParagraph();
       flushList();
       blocks.push('      <hr style="border: 0; border-top: 1px solid #dddddd; margin: 28px 0;">');
+      continue;
+    }
+
+    // MailRelay replaces this token when the campaign is sent.
+    if (trimmed === UNSUBSCRIBE_HTML) {
+      flushParagraph();
+      flushList();
+      blocks.push(`      ${UNSUBSCRIBE_HTML}`);
       continue;
     }
 

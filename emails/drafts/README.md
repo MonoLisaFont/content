@@ -21,6 +21,10 @@ Standalone `![alt text](https://...)` lines render as full-width email images.
 Use public HTTPS image URLs and descriptive alt text. Generate a preview with
 `node scripts/markdown-email-to-html.mjs emails/drafts/<name>.md`.
 
+For MailRelay, end each draft with the exact line
+`<p><a href="{{ unsubscribe_url }}">Unsubscribe</a></p>`. The renderer preserves
+the token in the HTML for MailRelay to replace when sending.
+
 Pushes to `main` publish each draft as a JSON preview payload in Vercel Blob.
 Colleagues can open `https://www.monolisa.dev/mail-previews/<name>` to review
 the subject, preheader, and rendered email. The preview is public and marked
