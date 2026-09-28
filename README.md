@@ -167,8 +167,8 @@ real publish. A dry run requires no credentials and makes no network requests.
 
 ### Automatic publishing from GitHub
 
-Pushes to `main` automatically publish the current FAQ, drafts, posts, and
-their referenced images when relevant content or publisher files change. The
+Pushes to `main` automatically publish the current FAQ, blog drafts, posts,
+email draft previews, and referenced images when relevant files change. The
 workflow runs the test suite first, uploads the objects to Vercel Blob, and
 then revalidates the corresponding website caches. Concurrent runs are
 serialized so two commits cannot write and revalidate at the same time.
@@ -180,13 +180,13 @@ Configure these GitHub Actions repository secrets before enabling the workflow:
 - `WEBSITE_REVALIDATION_SECRET`
 
 Use the same values as the local `.env.private` file. The workflow can also be
-started manually from the repository's **Actions** tab; a manual run publishes
-all current content. Publishing creates or updates objects but does not remove
-Blob objects for deleted or renamed source files.
+started manually from the repository's **Actions** tab. A full run removes
+email preview payloads whose source draft has moved or been deleted. Other
+published Blob paths still require explicit unpublishing.
 
 ### Manual publishing
 
-Publish every draft, post, and the FAQ with:
+Publish every blog draft, post, email preview, and the FAQ with:
 
 ```bash
 npm run publish:content -- --all
@@ -218,7 +218,10 @@ npm run publish:content -- images
 ```
 
 Drafts are stored at `drafts/<filename>` and published posts at
-`posts/<filename>`. The FAQ is stored at `faq.md`. These are stable public URLs;
+`posts/<filename>`. Email previews are JSON payloads at
+`mail-previews/<filename>.json`; the website serves them at
+`/mail-previews/<filename>`. The FAQ is stored at `faq.md`. These are stable
+public URLs;
 an update can take up to a minute to propagate through Vercel Blob's cache. Use
 `--dry-run` to inspect both the uploads and cache invalidation payloads without
 contacting Vercel.

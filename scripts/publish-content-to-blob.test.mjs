@@ -5,6 +5,8 @@ import { fileURLToPath } from "node:url";
 
 import {
   localImagePathForReference,
+  collectFiles,
+  pruneEmailPreviews,
   publishContentFiles,
   referencedImagePaths,
   unpublishContentPathnames,
@@ -14,6 +16,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const imageFile = resolve(root, "images/example.svg");
 const faqFile = resolve(root, "faq.md");
 const draftFile = resolve(root, "02_drafts/example.md");
+const emailFile = resolve(root, "emails/drafts/post_v3_update.md");
 const unsafeImageFile = resolve(
   root,
   "images/my image $(do-not-run);it's.svg",
@@ -214,6 +217,50 @@ test("publishContentFiles deduplicates deterministic Blob pathnames", async () =
       { pathname: "faq.md", url: "https://blob.example/faq.md" },
     ],
   );
+});
+
+test("email drafts publish as rendered JSON without website revalidation", async () => {
+  const files = await collectFiles({ all: false, inputs: ["emails/drafts"] });
+  assert.deepEqual(files, [emailFile]);
+  const uploads = [];
+  const revalidations = [];
+  await publishContentFiles(files, { env }, {
+    logger: silentLogger,
+    putBlob: async (pathname, body, options) => {
+      uploads.push({ pathname, payload: JSON.parse(body), options });
+      return { url: `https://blob.example/${pathname}` };
+    },
+    revalidateWebsiteImpl: async (pathname) => revalidations.push(pathname),
+  });
+  assert.equal(uploads[0].pathname, "mail-previews/post_v3_update.json");
+  assert.equal(uploads[0].options.contentType, "application/json; charset=utf-8");
+  assert.equal(uploads[0].payload.subject, "VS Code plugin for MonoLisa + recent work");
+  assert.match(uploads[0].payload.html, /utm_campaign=post-v3-update/);
+  assert.deepEqual(revalidations, []);
+});
+
+test("full publication prunes only stale email preview payloads", async () => {
+  const listed = [];
+  const deleted = [];
+  const stale = await pruneEmailPreviews(
+    ["mail-previews/post_v3_update.json"],
+    { env },
+    {
+      logger: silentLogger,
+      listBlobsImpl: async (options) => {
+        listed.push(options);
+        return { blobs: [
+          { pathname: "mail-previews/post_v3_update.json" },
+          { pathname: "mail-previews/old_draft.json" },
+          { pathname: "mail-previews/nested/keep.json" },
+        ], hasMore: false };
+      },
+      unpublishImpl: async (pathnames) => deleted.push(...pathnames),
+    },
+  );
+  assert.deepEqual(stale, ["mail-previews/old_draft.json"]);
+  assert.deepEqual(deleted, stale);
+  assert.equal(listed[0].prefix, "mail-previews/");
 });
 
 test("unpublishContentPathnames deletes deterministic objects before revalidating", async () => {

@@ -1,27 +1,55 @@
 #!/usr/bin/env node
 import { readFile, writeFile } from "node:fs/promises";
 import { basename, dirname, extname, join } from "node:path";
+import { pathToFileURL } from "node:url";
 import { tagEmailCampaignLinks } from "./campaign-links.mjs";
 
-const inputPath = process.argv[2];
-const outputPath = process.argv[3] || defaultOutputPath(inputPath);
-
-if (!inputPath) {
-  console.error("Usage: node scripts/markdown-email-to-html.mjs <input.md> [output.html]");
-  process.exit(1);
+export function renderEmailHtml(markdown, inputPath) {
+  const content = stripHeadmatter(markdown);
+  const campaign = campaignFromHeadmatter(markdown);
+  if (basename(dirname(inputPath)) === "drafts" && !campaign) {
+    throw new Error("Planned emails in drafts/ must define all four UTM fields.");
+  }
+  const rendered = renderDocument(content, titleFromPath(inputPath));
+  return campaign ? tagEmailCampaignLinks(rendered, campaign) : rendered;
 }
 
-const markdown = await readFile(inputPath, "utf8");
-const content = stripHeadmatter(markdown);
-const campaign = campaignFromHeadmatter(markdown);
-if (basename(dirname(inputPath)) === "drafts" && !campaign) {
-  throw new Error("Planned emails in drafts/ must define all four UTM fields.");
+export function buildEmailPreviewPayload(markdown, inputPath) {
+  const headmatter = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)?.[1];
+  if (!headmatter) throw new Error(`${inputPath} needs email front matter.`);
+  const field = (name) =>
+    headmatter.match(new RegExp(`^${name}:\\s*(.*?)\\s*$`, "m"))?.[1]?.trim();
+  const subject = field("subject");
+  const preheader = field("preheader");
+  if (!subject || !preheader) {
+    throw new Error(`${inputPath} needs a subject and preheader for preview.`);
+  }
+  return {
+    schemaVersion: 1,
+    title: field("title") || titleFromPath(inputPath),
+    subject,
+    preheader,
+    html: renderEmailHtml(markdown, inputPath),
+  };
 }
-const rendered = renderDocument(content, titleFromPath(inputPath));
-const html = campaign ? tagEmailCampaignLinks(rendered, campaign) : rendered;
 
-await writeFile(outputPath, html);
-console.log(`Wrote ${outputPath}`);
+async function main(argv = process.argv.slice(2)) {
+  const inputPath = argv[0];
+  if (!inputPath || argv.length > 2) {
+    throw new Error("Usage: node scripts/markdown-email-to-html.mjs <input.md> [output.html]");
+  }
+  const outputPath = argv[1] || defaultOutputPath(inputPath);
+  const markdown = await readFile(inputPath, "utf8");
+  await writeFile(outputPath, renderEmailHtml(markdown, inputPath));
+  console.log(`Wrote ${outputPath}`);
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => {
+    console.error(error instanceof Error ? error.message : String(error));
+    process.exitCode = 1;
+  });
+}
 
 function defaultOutputPath(path) {
   if (!path) {

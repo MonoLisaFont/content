@@ -4,8 +4,9 @@ import { readdir, readFile, stat } from "node:fs/promises";
 import { dirname, extname, relative, resolve, sep } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
-import { del as deleteBlob, put } from "@vercel/blob";
+import { del as deleteBlob, list as listBlobs, put } from "@vercel/blob";
 import dotenv from "dotenv";
+import { buildEmailPreviewPayload } from "./markdown-email-to-html.mjs";
 import {
   getWebsiteRevalidationConfig,
   revalidateWebsitePathname,
@@ -17,6 +18,8 @@ const COLLECTIONS = new Map([
   ["02_drafts", "drafts"],
   ["03_posts", "posts"],
 ]);
+const EMAIL_DRAFT_DIRECTORY = "emails/drafts";
+const EMAIL_PREVIEW_PREFIX = "mail-previews/";
 const STANDALONE_FILES = new Map([["faq.md", "faq.md"]]);
 const IMAGE_DIRECTORY = "images";
 const IMAGE_CONTENT_TYPES = new Map([
@@ -37,16 +40,18 @@ Usage:
   npm run publish:content -- --all
   npm run publish:content -- 02_drafts/my-post.md 03_posts/another-post.md faq.md
   npm run publish:content -- 02_drafts
+  npm run publish:content -- emails/drafts
   npm run publish:content -- images
   npm run publish:content -- images/example.png
 
 Options:
-  --all      Publish every draft and post plus faq.md
+  --all      Publish posts, drafts, email previews, and faq.md; prune old email previews
   --dry-run  Show uploads and invalidations without making network requests
   --help     Show this help
 
 Objects use deterministic paths such as drafts/my-post.md,
-posts/another-post.md, and images/example.png; the FAQ is stored as faq.md.
+posts/another-post.md, mail-previews/my-email.json, and images/example.png;
+the FAQ is stored as faq.md.
 Images referenced by selected Markdown files are published first. Existing
 objects are overwritten. Website caches are invalidated after every upload
 succeeds.`;
@@ -82,6 +87,14 @@ function blobPathFor(path) {
   const localPath = repositoryPath(path);
   const standaloneBlobPath = STANDALONE_FILES.get(localPath);
   if (standaloneBlobPath) return standaloneBlobPath;
+
+  if (localPath.startsWith(`${EMAIL_DRAFT_DIRECTORY}/`)) {
+    const filename = localPath.slice(EMAIL_DRAFT_DIRECTORY.length + 1);
+    if (!/^[a-z0-9][a-z0-9_-]*\.md$/.test(filename)) {
+      throw new Error(`${localPath} must be a direct email draft with a safe Markdown filename`);
+    }
+    return `${EMAIL_PREVIEW_PREFIX}${filename.slice(0, -3)}.json`;
+  }
 
   const [directory, ...rest] = localPath.split("/");
   if (
@@ -123,7 +136,9 @@ async function markdownFilesIn(directory) {
     withFileTypes: true,
   });
   return entries
-    .filter((entry) => entry.isFile() && extname(entry.name) === ".md")
+    .filter((entry) =>
+      entry.isFile() && extname(entry.name) === ".md" &&
+      !(directory === EMAIL_DRAFT_DIRECTORY && entry.name === "README.md"))
     .map((entry) => resolve(root, directory, entry.name));
 }
 
@@ -157,8 +172,9 @@ async function filesForInput(input) {
 
   if (metadata.isDirectory()) {
     if (localPath === IMAGE_DIRECTORY) return imageFiles();
+    if (localPath === EMAIL_DRAFT_DIRECTORY) return markdownFilesIn(localPath);
     if (!COLLECTIONS.has(localPath)) {
-      throw new Error(`${input} must be 02_drafts, 03_posts, or images`);
+      throw new Error(`${input} must be 02_drafts, 03_posts, emails/drafts, or images`);
     }
     return markdownFilesIn(localPath);
   }
@@ -776,6 +792,7 @@ export async function collectFiles(options) {
     for (const directory of COLLECTIONS.keys()) {
       paths.push(...(await markdownFilesIn(directory)));
     }
+    paths.push(...(await markdownFilesIn(EMAIL_DRAFT_DIRECTORY)));
     for (const file of STANDALONE_FILES.keys()) paths.push(resolve(root, file));
   }
   for (const input of options.inputs) paths.push(...(await filesForInput(input)));
@@ -790,6 +807,9 @@ export async function collectFiles(options) {
 }
 
 function contentTypeFor(path) {
+  if (repositoryPath(path).startsWith(`${EMAIL_DRAFT_DIRECTORY}/`)) {
+    return "application/json; charset=utf-8";
+  }
   if (!isImagePath(path)) return "text/markdown; charset=utf-8";
   return IMAGE_CONTENT_TYPES.get(extname(path).toLowerCase());
 }
@@ -836,27 +856,40 @@ export async function publishContentFiles(
     ).values(),
   ];
   const pathnames = publications.map(({ pathname }) => pathname);
+  const revalidationPathnames = pathnames.filter(
+    (pathname) => !pathname.startsWith(EMAIL_PREVIEW_PREFIX),
+  );
 
   if (dryRun) {
     for (const { localPath, pathname } of publications) {
       logger.log(`${localPath} -> ${pathname}`);
     }
-    for (const pathname of pathnames) {
+    for (const pathname of revalidationPathnames) {
       logger.log(
         `Would revalidate website caches: ${JSON.stringify({ pathname })}`,
       );
     }
     logger.log(
-      `Would publish ${publications.length} ${plural(publications.length, "file")} and revalidate ${pathnames.length} website cache ${plural(pathnames.length, "pathname")}.`,
+      `Would publish ${publications.length} ${plural(publications.length, "file")} and revalidate ${revalidationPathnames.length} website cache ${plural(revalidationPathnames.length, "pathname")}.`,
     );
     return { publications, pathnames };
   }
 
   const { token, url, secret } = validateContentPublishingConfig(env);
   const uploadedPublications = [];
+  const emailBodies = new Map();
+
+  // Validate every email before uploading any object in the batch.
+  for (const { file, pathname } of publications) {
+    if (!pathname.startsWith(EMAIL_PREVIEW_PREFIX)) continue;
+    const markdown = await readFileImpl(file);
+    emailBodies.set(file, Buffer.from(`${JSON.stringify(
+      buildEmailPreviewPayload(String(markdown), file),
+    )}\n`));
+  }
 
   for (const { file, localPath, pathname } of publications) {
-    const body = await readFileImpl(file);
+    const body = emailBodies.get(file) ?? (await readFileImpl(file));
     const blob = await putBlob(pathname, body, {
       access: "public",
       token,
@@ -869,14 +902,14 @@ export async function publishContentFiles(
     uploadedPublications.push({ file, localPath, pathname, url: blob.url });
   }
 
-  for (let index = 0; index < pathnames.length; index++) {
-    const pathname = pathnames[index];
+  for (let index = 0; index < revalidationPathnames.length; index++) {
+    const pathname = revalidationPathnames[index];
     try {
       await revalidateWebsiteImpl(pathname, { url, secret });
     } catch (error) {
       const detail = error instanceof Error ? error.message : error;
       const safeDetail = redactSecret(detail, secret);
-      const retryCommands = pathnames
+      const retryCommands = revalidationPathnames
         .slice(index)
         .map(
           (pendingPathname) =>
@@ -895,7 +928,7 @@ export async function publishContentFiles(
   }
 
   logger.log(
-    `Published ${publications.length} ${plural(publications.length, "file")} and revalidated ${pathnames.length} website cache ${plural(pathnames.length, "pathname")}.`,
+    `Published ${publications.length} ${plural(publications.length, "file")} and revalidated ${revalidationPathnames.length} website cache ${plural(revalidationPathnames.length, "pathname")}.`,
   );
   return { publications: uploadedPublications, pathnames };
 }
@@ -923,15 +956,20 @@ export async function unpublishContentPathnames(
   } = {},
 ) {
   const uniquePathnames = [...new Set(pathnames.map(validateBlobPathname))];
+  const revalidationPathnames = uniquePathnames.filter(
+    (pathname) => !pathname.startsWith(EMAIL_PREVIEW_PREFIX),
+  );
 
   if (uniquePathnames.length === 0) return { pathnames: [] };
 
   if (dryRun) {
     for (const pathname of uniquePathnames) {
       logger.log(`Would delete Blob object: ${pathname}`);
-      logger.log(
-        `Would revalidate website caches: ${JSON.stringify({ pathname })}`,
-      );
+      if (revalidationPathnames.includes(pathname)) {
+        logger.log(
+          `Would revalidate website caches: ${JSON.stringify({ pathname })}`,
+        );
+      }
     }
     return { pathnames: uniquePathnames };
   }
@@ -945,15 +983,16 @@ export async function unpublishContentPathnames(
     throw new Error(redactSecret(detail, token));
   }
 
-  for (let index = 0; index < uniquePathnames.length; index += 1) {
-    const pathname = uniquePathnames[index];
-    logger.log(`Deleted ${pathname} from Blob.`);
+  for (const pathname of uniquePathnames) logger.log(`Deleted ${pathname} from Blob.`);
+
+  for (let index = 0; index < revalidationPathnames.length; index += 1) {
+    const pathname = revalidationPathnames[index];
     try {
       await revalidateWebsiteImpl(pathname, { url, secret });
     } catch (error) {
       const detail = error instanceof Error ? error.message : error;
       const safeDetail = redactSecret(detail, secret);
-      const retryCommands = uniquePathnames
+      const retryCommands = revalidationPathnames
         .slice(index)
         .map(
           (pendingPathname) =>
@@ -974,6 +1013,47 @@ export async function unpublishContentPathnames(
   return { pathnames: uniquePathnames };
 }
 
+export async function pruneEmailPreviews(
+  expectedPathnames,
+  { env = process.env, dryRun = false } = {},
+  {
+    listBlobsImpl = listBlobs,
+    unpublishImpl = unpublishContentPathnames,
+    logger = console,
+  } = {},
+) {
+  if (dryRun) {
+    logger.log("Would remove remote email previews absent from emails/drafts (remote listing skipped in dry run).");
+    return [];
+  }
+  const { token } = validateContentPublishingConfig(env);
+  const expected = new Set(expectedPathnames);
+  const stale = [];
+  let cursor;
+  do {
+    const page = await listBlobsImpl({
+      prefix: EMAIL_PREVIEW_PREFIX,
+      cursor,
+      limit: 1000,
+      token,
+    });
+    for (const blob of page.blobs) {
+      if (
+        /^mail-previews\/[a-z0-9][a-z0-9_-]*\.json$/.test(blob.pathname) &&
+        !expected.has(blob.pathname)
+      ) stale.push(blob.pathname);
+    }
+    if (page.hasMore && !page.cursor) {
+      throw new Error("Blob listing returned hasMore without a cursor.");
+    }
+    cursor = page.hasMore ? page.cursor : undefined;
+  } while (cursor);
+  if (stale.length) {
+    await unpublishImpl(stale, { env }, { logger });
+  }
+  return stale;
+}
+
 export async function runContentPublisher(
   argv = process.argv.slice(2),
   env = process.env,
@@ -982,7 +1062,21 @@ export async function runContentPublisher(
   const options = parseArgs(argv);
   const collectFilesImpl = dependencies.collectFilesImpl ?? collectFiles;
   const files = await collectFilesImpl(options);
-  return publishContentFiles(files, { dryRun: options.dryRun, env }, dependencies);
+  const published = await publishContentFiles(
+    files,
+    { dryRun: options.dryRun, env },
+    dependencies,
+  );
+  if (options.all) {
+    const pruneImpl = dependencies.pruneEmailPreviewsImpl ?? pruneEmailPreviews;
+    await pruneImpl(
+      published.pathnames.filter((pathname) =>
+        pathname.startsWith(EMAIL_PREVIEW_PREFIX)),
+      { env, dryRun: options.dryRun },
+      dependencies,
+    );
+  }
+  return published;
 }
 
 const isMain =

@@ -20,3 +20,9 @@ this does not change links in a message that has already been sent.
 Standalone `![alt text](https://...)` lines render as full-width email images.
 Use public HTTPS image URLs and descriptive alt text. Generate a preview with
 `node scripts/markdown-email-to-html.mjs emails/drafts/<name>.md`.
+
+Pushes to `main` publish each draft as a JSON preview payload in Vercel Blob.
+Colleagues can open `https://www.monolisa.dev/mail-previews/<name>` to review
+the subject, preheader, and rendered email. The preview is public and marked
+`noindex`; anyone with the URL can view it. The automatic publisher removes
+the preview Blob after its Markdown source leaves `emails/drafts/`.

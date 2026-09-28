@@ -7,6 +7,7 @@ import { join } from "node:path";
 import test from "node:test";
 
 import { tagDevToMarkdownLinks } from "./campaign-markdown.mjs";
+import { buildEmailPreviewPayload } from "./markdown-email-to-html.mjs";
 
 const execFileAsync = promisify(execFile);
 
@@ -55,4 +56,29 @@ utm_content: earlier-buyers
   assert.match(html, /<img src="https:\/\/www.monolisa.dev\/media\/images\/monolisa-vscode-coding-font.png" alt="The coding panel" width="640"/);
   assert.doesNotMatch(html, /src="[^"]*utm_source/);
   assert.equal(await readFile(source, "utf8"), markdown);
+});
+
+test("email preview payload carries reviewed metadata and the send-ready HTML", () => {
+  const markdown = `---
+title: Internal working title
+subject: A VS Code update
+preheader: A live preview for the font
+utm_source: monolisa
+utm_medium: email
+utm_campaign: post-v3-update
+utm_content: vscode-and-blog
+---
+
+[Read more](https://www.monolisa.dev/posts/example)
+`;
+  const payload = buildEmailPreviewPayload(markdown, "emails/drafts/example.md");
+  assert.equal(payload.schemaVersion, 1);
+  assert.equal(payload.title, "Internal working title");
+  assert.equal(payload.subject, "A VS Code update");
+  assert.equal(payload.preheader, "A live preview for the font");
+  assert.match(payload.html, /utm_source=monolisa&amp;utm_medium=email/);
+  assert.throws(
+    () => buildEmailPreviewPayload(markdown.replace("preheader: A live preview for the font\n", ""), "emails/drafts/example.md"),
+    /subject and preheader/,
+  );
 });

@@ -8,11 +8,14 @@ on:
       - .github/workflows/publish-content.yml
       - 02_drafts/**
       - 03_posts/**
+      - emails/drafts/**
       - faq.md
       - images/**
       - package.json
       - package-lock.json
       - scripts/publish-content-to-blob.mjs
+      - scripts/markdown-email-to-html.mjs
+      - scripts/campaign-links.mjs
       - scripts/revalidate-website.mjs
   workflow_dispatch:
 
