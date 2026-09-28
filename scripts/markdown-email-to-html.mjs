@@ -136,6 +136,15 @@ function renderBlocks(markdown) {
       continue;
     }
 
+    const image = trimmed.match(/^!\[([^\]]+)\]\((https:\/\/[^\s)]+)\)$/);
+    if (image) {
+      flushParagraph();
+      flushList();
+      const [, alt, source] = image;
+      blocks.push(`      <img src="${escapeHtml(source)}" alt="${escapeHtml(alt)}" width="640" style="display: block; width: 100%; max-width: 640px; height: auto; margin: 20px 0; border: 1px solid #d8e3e9; border-radius: 6px;">`);
+      continue;
+    }
+
     if (trimmed.startsWith("- ")) {
       flushParagraph();
       list.push(trimmed.slice(2));

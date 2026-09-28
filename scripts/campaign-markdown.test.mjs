@@ -44,11 +44,15 @@ utm_content: earlier-buyers
 ---
 
 [Read](https://monolisa.dev/posts/monolisa_v3/?view=full#features) and [External](https://example.com/).
+
+![The coding panel](https://www.monolisa.dev/media/images/monolisa-vscode-coding-font.png)
 `;
   await writeFile(source, markdown);
   await execFileAsync(process.execPath, ["scripts/markdown-email-to-html.mjs", source, output]);
   const html = await readFile(output, "utf8");
   assert.match(html, /view=full&amp;utm_source=monolisa&amp;utm_medium=email&amp;utm_campaign=v3-release&amp;utm_content=earlier-buyers#features/);
   assert.match(html, /href="https:\/\/example.com\/"/);
+  assert.match(html, /<img src="https:\/\/www.monolisa.dev\/media\/images\/monolisa-vscode-coding-font.png" alt="The coding panel" width="640"/);
+  assert.doesNotMatch(html, /src="[^"]*utm_source/);
   assert.equal(await readFile(source, "utf8"), markdown);
 });

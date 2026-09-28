@@ -16,3 +16,7 @@ as lowercase words separated by hyphens. The renderer preserves existing query
 parameters and anchors and leaves external links alone. Review the generated
 HTML before sending. Move the source Markdown to `emails/sent/` after delivery;
 this does not change links in a message that has already been sent.
+
+Standalone `![alt text](https://...)` lines render as full-width email images.
+Use public HTTPS image URLs and descriptive alt text. Generate a preview with
+`node scripts/markdown-email-to-html.mjs emails/drafts/<name>.md`.
