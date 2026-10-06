@@ -76,7 +76,8 @@ Berkeley's [trial](https://usgraphics.com/catalog/FX-050) swaps slash/backslash 
 
 Berkeley entries reflect vendor documentation through 2.004, not local measurements. Available options depend on the purchased modules.
 
-## Measurement notes
+<details>
+  <summary>Measurement notes</summary>
 
 A matching terminal-window specimen remains pending access to licensed Berkeley font files. Use the shared prompt, box-drawing, Unicode block, and status-line layout when those files can be measured; the vendor letterform outlines do not establish terminal coverage.
 
@@ -99,3 +100,5 @@ Berkeley's documented [Master Fonts module](https://usgraphics.com/catalog/FX-20
 The Standard compiler saves basic choices; the Supertype add-on extends the controls. We have not shaped identical operator sequences with the full Berkeley font; use the vendor's [ligature explorer](https://usgraphics.com/products/berkeley-mono/ligatures) to inspect its offering. MonoLisa's measured files have weight and grade axes, not width or slant.
 
 The Generic excerpt retains three complete lines and original outlines, with colors adapted. Its rendering settings and font version are not stated. The enlarged details do not establish relative width, darkness, or small-size sharpness; the width sample illustrates a design option, not extra editor-column capacity. See the full [Berkeley code specimens](https://usgraphics.com/products/berkeley-mono#section-code) for context.
+
+</details>

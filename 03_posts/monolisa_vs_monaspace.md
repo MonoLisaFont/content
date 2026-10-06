@@ -94,7 +94,8 @@ This table compares MonoLisa Code with Monaspace Neon v1.400.
   <p>The infographic uses Monaspace Neon v1.400. Speaker totals are estimates from Hyperglot's supported language/script entries and may count speakers more than once; the worldwide bar is an approximate population reference.</p>
 </details>
 
-## Measurement notes
+<details>
+  <summary>Measurement notes</summary>
 
 The terminal windows use identical text at a nominal 22 px with 33 px table line spacing, ligatures disabled, and the same theme colors. Powerline separators and standard Unicode block progress bars come from each font's own outlines. Segment backgrounds follow measured glyph advances; missing characters retain the font's missing-glyph outline with no fallback. Actual terminal line-height and fallback settings may change the joins. Regenerate with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --terminal-only`.
 
@@ -128,3 +129,5 @@ Additional glyph observations from the specimen, with ligatures and contextual a
 | Operators              | Angle brackets and equals signs form a relatively compact group in sequences such as `<=` and `>=`.       | The same sequences have more visible space between the angle bracket and equals sign.                                           |
 
 The enlarged details use the same font files as the complete specimens, at equal nominal sizes for both fonts. Glyphs are centered independently without changing their proportions. The circles are annotations behind the original outlines; upright and italic details use their respective font files. Regenerate them with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --focus-only`.
+
+</details>

@@ -66,7 +66,8 @@ Deferred until commercial-font access, license terms, and Marcus review are comp
 | **Price** | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; no free trial found so far |
 | **Source** | [monolisa.dev](https://www.monolisa.dev/) | [Dank Mono site](https://dank.sh/) |
 
-## Measurement notes
+<details>
+  <summary>Measurement notes</summary>
 
 \* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command is:
 
@@ -75,6 +76,8 @@ Deferred until commercial-font access, license terms, and Marcus review are comp
 ```
 
 Only MonoLisa has been measured here. Dank Mono still awaits licensed-font measurement.
+
+</details>
 
 {/*
 Editorial publication checklist:

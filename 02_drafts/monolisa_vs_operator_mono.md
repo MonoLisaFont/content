@@ -66,7 +66,8 @@ Deferred until commercial-font access, license terms, and Marcus review are comp
 | **Price** | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; trial availability needs verification |
 | **Source** | [monolisa.dev](https://www.monolisa.dev/) | [Operator Mono page](https://www.typography.com/fonts/operator/styles/) |
 
-## Measurement notes
+<details>
+  <summary>Measurement notes</summary>
 
 \* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command is:
 
@@ -75,6 +76,8 @@ Deferred until commercial-font access, license terms, and Marcus review are comp
 ```
 
 Only MonoLisa has been measured here. Operator Mono still awaits licensed-font measurement.
+
+</details>
 
 {/*
 Editorial publication checklist:

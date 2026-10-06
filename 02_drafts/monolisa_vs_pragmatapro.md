@@ -66,7 +66,8 @@ Deferred until commercial-font access, license terms, and Marcus review are comp
 | **Price** | Paid, including [free trial access](https://monolisa.dev/buy/trial) and a customizer | Paid; trial/testing availability needs verification |
 | **Source** | [monolisa.dev](https://www.monolisa.dev/) | [PragmataPro page](https://fsd.it/shop/fonts/pragmatapro/) |
 
-## Measurement notes
+<details>
+  <summary>Measurement notes</summary>
 
 \* Language counts use [Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot), run locally with primary orthographies, living languages, and base-character support. Shaping is disabled. The command is:
 
@@ -75,6 +76,8 @@ Deferred until commercial-font access, license terms, and Marcus review are comp
 ```
 
 Only MonoLisa has been measured here. PragmataPro still awaits licensed-font measurement.
+
+</details>
 
 {/*
 Editorial publication checklist:

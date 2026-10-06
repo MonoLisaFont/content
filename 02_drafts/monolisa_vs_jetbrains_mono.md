@@ -90,7 +90,8 @@ The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold w
   <img src="/images/comparison-monolisa-vs-jetbrains-mono-summary.svg" alt="Summary infographic comparing MonoLisa Code and JetBrains Mono" width="100%" />
 </details>
 
-## Measurement notes
+<details>
+  <summary>Measurement notes</summary>
 
 The terminal windows use identical text at a nominal 22 px with 33 px table line spacing, ligatures disabled, and the same theme colors. Powerline separators and standard Unicode block progress bars come from each font's own outlines. Segment backgrounds follow measured glyph advances; missing characters retain the font's missing-glyph outline with no fallback. Actual terminal line-height and fallback settings may change the joins. Regenerate with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --terminal-only`.
 
@@ -103,3 +104,5 @@ The terminal windows use identical text at a nominal 22 px with 33 px table line
 MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`–`ss15`, and `cv01`–`cv12`. JetBrains Mono exposes `calt`, `zero`, `ss01`, `ss02`, `ss19`, `ss20`, `cv01`–`cv12`, `cv14`–`cv20`, and `cv99`. MonoLisa has 10 named weights, Hairline through Black, and weight/grade axes. JetBrains Mono v2.304 has 8 named weights, Thin through ExtraBold, in static and variable upright/italic files; its measured variable files expose weight only. Both fonts cover Powerline 6/6, box drawing 128/128, and block elements 32/32, with internally aligned vertical metrics.
 
 The enlarged details use the same font files as the complete specimens, at equal nominal sizes for both fonts. Glyphs are centered independently without changing their proportions. The circles are annotations behind the original outlines; upright and italic details use their respective font files. Regenerate them with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --focus-only`.
+
+</details>

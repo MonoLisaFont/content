@@ -44,7 +44,7 @@ Use this order, combining sections when the specimens support it:
 7. Recommendation and trial links
 8. Comparison table, including language coverage, customization, and availability
 9. Optional summary infographic in a collapsed disclosure
-10. Measurement notes
+10. Measurement notes in a collapsed disclosure
 
 ## Post template
 
@@ -121,16 +121,19 @@ Include trial and tester links so readers can evaluate the fonts in their own se
   <img src="/images/comparison-monolisa-vs-TYPEFACE-summary.svg" alt="Summary infographic comparing MonoLisa and TYPEFACE" width="100%" />
 </details>
 
-## Measurement notes
+<details>
+  <summary>Measurement notes</summary>
 
 Place methodology at the end, after the comparison table and infographic disclosure. Record measured font versions, tools and commands, feature settings, and limitations. Keep reproducible details here instead of interrupting the comparison; mark pending measurements explicitly.
+
+</details>
 
 {/* Editorial review: Marcus to review the design observations and recommendation; verify data, sources, permissions, specimens, and the 300–500-word main-prose target before publication. Deferred comparisons must not invent observations to fill the target length. */}
 ````
 
 ## Graphics system
 
-Lead with the detailed specimens and move the comparison table near the end, after the recommendation and trial links. Every published comparison must include a summary infographic in a collapsed `<details>` element after the table and before Measurement notes. Label its `<summary>` "View comparison infographic", and omit the `open` attribute. Keep it when revising the post. Use verified data matching the font version and family shown in the article, and explain coverage or speaker-count estimates alongside the graphic inside the disclosure. Deferred drafts must complete this graphic before publication, except Berkeley Mono, whose summary is consolidated into its comparison table.
+Lead with the detailed specimens and move the comparison table near the end, after the recommendation and trial links. Every published comparison must include a summary infographic in a collapsed `<details>` element after the table and before Measurement notes. Label its `<summary>` "View comparison infographic", and omit the `open` attribute. Keep it when revising the post. Use verified data matching the font version and family shown in the article, and explain coverage or speaker-count estimates alongside the graphic inside the disclosure. Deferred drafts must complete this graphic before publication, except Berkeley Mono, whose summary is consolidated into its comparison table. Put Measurement notes in their own collapsed `<details>` element at the end, labeled `<summary>Measurement notes</summary>`, also without the `open` attribute.
 
 Each post should use the following graphics so the series feels consistent:
 

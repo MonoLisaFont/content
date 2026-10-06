@@ -90,7 +90,8 @@ The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold w
   <img src="/images/comparison-monolisa-vs-ibm-plex-mono-summary.svg" alt="Summary infographic comparing MonoLisa and IBM Plex Mono" width="100%" />
 </details>
 
-## Measurement notes
+<details>
+  <summary>Measurement notes</summary>
 
 The terminal windows use identical text at a nominal 22 px with 33 px table line spacing, ligatures disabled, and the same theme colors. Powerline separators and standard Unicode block progress bars come from each font's own outlines. Segment backgrounds follow measured glyph advances; missing characters retain the font's missing-glyph outline with no fallback. Actual terminal line-height and fallback settings may change the joins. Regenerate with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --terminal-only`.
 
@@ -111,3 +112,5 @@ For comparison, MonoLisa measured at Powerline 6/6, box drawing 128/128, block e
 {/* Editorial review before publication: Marcus to review the design observations and recommendation; verify measured data against the intended font versions; visually review all specimens, including the added glyph comparison; confirm license/source basis and set the publication date. */}
 
 The enlarged details use the same font files as the complete specimens, at equal nominal sizes for both fonts. Glyphs are centered independently without changing their proportions. The circles are annotations behind the original outlines; upright and italic details use their respective font files. Regenerate them with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --focus-only`.
+
+</details>

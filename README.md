@@ -46,7 +46,7 @@ For simple posts, only heading level 2 should be used as in the sample. A good l
 
 ## Comparison post graphics
 
-Lead each comparison with a short introduction and the detailed specimens. Follow the visual comparisons with the recommendation and trial links, then the comparison table near the end. End with Measurement notes recording the tools, versions, commands, scope, and limitations behind the reported measurements; clearly mark unmeasured fonts in deferred drafts.
+Lead each comparison with a short introduction and the detailed specimens. Follow the visual comparisons with the recommendation and trial links, then the comparison table near the end. End with Measurement notes recording the tools, versions, commands, scope, and limitations behind the reported measurements; clearly mark unmeasured fonts in deferred drafts. Put these notes inside a collapsed `<details>` element with `<summary>Measurement notes</summary>`, after the infographic disclosure when present. Omit the `open` attribute so this secondary information stays optional in the reading flow.
 
 Aim for 300–500 words of main prose, excluding headings, the comparison table, the optional infographic, and Measurement notes. Use one or two sentences beside each specimen to identify a visible difference and point to a specific letter, operator, or spacing choice. Let the images demonstrate the comparison. Keep feature-tag lists, weight inventories, and measurement details in the reference sections, and avoid repeating specifications in the introduction and recommendation. The landing page's focus on distinction, italic construction, width, and spacing is useful inspiration; ground each comparison in the actual specimens. Keep draft review tasks in editorial comments and do not invent observations for deferred comparisons.
 
@@ -125,7 +125,8 @@ not written into `images/`.
 
 Collapsed `<details>` blocks with a plain-text `<summary>` are converted to
 DEV's [Liquid disclosure format](https://dev.to/p/editor_guide). This keeps the
-optional comparison infographic collapsed; DEV strips the raw HTML wrapper.
+optional comparison infographic and Measurement notes collapsed; DEV strips
+the raw HTML wrapper.
 
 Install [librsvg](https://gitlab.gnome.org/GNOME/librsvg) so
 `rsvg-convert --version` works before publishing an SVG-bearing post. DEV does

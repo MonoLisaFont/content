@@ -89,7 +89,8 @@ The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold w
   <img src="/images/comparison-monolisa-vs-fira-code-summary.svg" alt="Summary infographic comparing MonoLisa Code and Fira Code" width="100%" />
 </details>
 
-## Measurement notes
+<details>
+  <summary>Measurement notes</summary>
 
 The italic comparison renders MonoLisa's italic font file beside Fira Code Regular with a 10° rightward software slant. The angle matches the magnitude of `post.italicAngle` in the measured MonoLisa file; HarfBuzz applies it with `--font-slant=0.17632698070846498` (the tangent of 10°). Both the enlarged details and the code use this setting. Fira's upright outlines and advance widths are otherwise unchanged. This is a reproducible example of synthesis, not a claim about every editor's default angle. Regenerate with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json fira-code`.
 
@@ -104,3 +105,5 @@ The terminal windows use identical text at a nominal 22 px with 33 px table line
 MonoLisa Code exposes `liga`, `dlig`, `calt`, `zero`, `ss01`–`ss15`, and `cv01`–`cv12`; Fira Code exposes `calt`, `zero`, `ss01`–`ss10`, and `cv01`–`cv32`. MonoLisa has 10 named weights in upright and italic styles. Fira Code has 6 fixed weights; its variable file has 5 named upright weights from Light through Bold. Both fonts cover Powerline 6/6, box drawing 128/128, and block elements 32/32, with internally aligned vertical metrics.
 
 The enlarged details use the same font files as the complete specimens, at equal nominal sizes for both fonts. Glyphs are centered independently. The circles are annotations behind the outlines; MonoLisa's upright and italic details use their respective font files, while Fira's slanted details use the synthesis described above. Regenerate them with `node scripts/render-comparison-svgs.mjs scripts/comparison-fonts.local.json --focus-only`.
+
+</details>
