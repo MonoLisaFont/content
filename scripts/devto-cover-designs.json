@@ -1,6 +1,7 @@
 [
   { "slug": "monolisa_vs_fira_code", "kind": "comparison", "font": "fira-code", "label": "Fira Code", "caption": "Software slant · 10°" },
   { "slug": "monolisa_vs_monaspace", "kind": "comparison", "font": "monaspace", "label": "Monaspace Neon", "caption": "Neon italics" },
+  { "slug": "monolisa_vs_jetbrains_mono", "kind": "comparison", "font": "jetbrains-mono", "label": "JetBrains Mono", "caption": "Drawn italics" },
   { "slug": "introducing_monolisa_for_vscode", "kind": "editor", "category": "TOOLS FOR DEVELOPERS", "lines": ["MonoLisa", "for VS Code"] },
   { "slug": "monolisa_v3", "kind": "release", "category": "VERSION 3", "lines": ["Meet", "MonoLisa Text"] },
   { "slug": "what_are_font_ligatures", "kind": "ligatures", "category": "TYPE EXPLAINED", "lines": ["What are", "font ligatures?"] },

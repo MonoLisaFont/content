@@ -27,7 +27,8 @@ decisions, not a claim of measured engagement improvement.
 
 The comparison covers show actual `af` outlines at equal nominal sizes. Fira
 Code uses the same 10° software slant documented in its article; Monaspace uses
-Neon's italic file. Both sides receive the same visual emphasis. The ligature
+Neon's italic file, and JetBrains Mono uses its separate italic file. Both sides
+receive the same visual emphasis. The ligature
 cover shows MonoLisa Code's `!=` before and after enabling `dlig`; the serif
 cover uses Georgia's capital `I`. Friction illustrations connect to each
 article's specific subject: interrupted context, process queues, tool
@@ -94,6 +95,7 @@ the full article backup over subsequent editorial changes.
 | Comparison | Comparison |
 | --- | --- |
 | ![MonoLisa vs. Fira Code](monolisa_vs_fira_code.png) | ![MonoLisa vs. Monaspace Neon](monolisa_vs_monaspace.png) |
+| ![MonoLisa vs. JetBrains Mono](monolisa_vs_jetbrains_mono.png) | |
 
 | Tools and release | Typography |
 | --- | --- |

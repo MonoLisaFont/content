@@ -1,8 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. JetBrains Mono"
-published: YYYY-MM-DD
+published: 2026-10-06
 updated: 2026-10-06
-draft: true
 keywords:
   [
     "MonoLisa vs JetBrains Mono",
@@ -60,7 +59,7 @@ The enlarged italic `f` shows how differently the two fonts draw its upper curve
 
 ## Adjusting stroke thickness independently of weight
 
-MonoLisa's grade control lets you fine-tune stroke thickness at a chosen weight. All three lines below use Regular; compare the strokes in `count` and `100` as grade changes.
+MonoLisa's grade control lets you tune stroke darkness for a light or dark editor background while retaining your selected weight. All three lines below use Regular; compare the strokes in `count` and `100` as grade changes.
 
 Both MonoLisa Code and JetBrains Mono also keep character spacing fixed when weight changes, so unchanged line lengths are not a unique benefit of grade here. In the proportional MonoLisa Text family, grade preserves character positions and line breaks that a weight change can alter.
 
@@ -80,7 +79,9 @@ Both fonts include the prompt separators, table borders, and block characters sh
 
 ## Which font should you choose?
 
-JetBrains Mono is free, and its compact width may suit a narrow editor pane. Try MonoLisa if you prefer rounder curves and wider glyphs, or want a separate grade control for fine-tuning stroke thickness at a chosen weight. Both include italics and ligatures; compare their proportions at your usual editor size. MonoLisa also offers a proportional companion, MonoLisa Text.
+JetBrains Mono is free, and its compact width may suit a narrow editor pane. Try MonoLisa if you prefer rounder curves and wider glyphs. Both include italics and ligatures. MonoLisa also offers independent grade adjustment and a proportional companion, MonoLisa Text.
+
+Judge reading comfort by trying both fonts with your own code at your usual editor size. Sara Vieira explains why this matters to her in our [customer testimonials](https://www.monolisa.dev/), saying: “As someone with an eye condition this font makes my life way easier.”
 
 ## Try MonoLisa in your editor
 
