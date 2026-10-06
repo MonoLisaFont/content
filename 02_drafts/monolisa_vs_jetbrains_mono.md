@@ -13,7 +13,7 @@ keywords:
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
 ---
 
-If you are choosing between MonoLisa Code and JetBrains Mono, this comparison shows the same code in both fonts and explains where to look. We move from line width and letter shapes to ligatures, italics, and terminal symbols. The enlarged italic `f` and the `fi` pairs below it are worth a closer look if small interruptions in a word affect your reading flow.
+In this comparison, we look at MonoLisa Code against JetBrains Mono through different lenses. The typefaces have subtle differences if you know where to look. It is these small details that are easy to overlook. Before overview, we'll go through specific examples.
 
 ## Reading texture
 
@@ -26,7 +26,7 @@ If you are choosing between MonoLisa Code and JetBrains Mono, this comparison sh
 
 ## Coding ligatures and character variants
 
-The `<=` and `>=` ligatures have similar shapes here: both fonts use a slanted lower stroke. Both also offer alternate letterforms; try the variants you use most in your editor.
+The `<=` and `>=` ligatures have similar shapes here as both fonts use a slanted lower stroke. Both also offer alternate letterforms.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-ligatures-mobile.svg" />
@@ -35,7 +35,7 @@ The `<=` and `>=` ligatures have similar shapes here: both fonts use a slanted l
 
 ## Characters that are easy to confuse
 
-Look at `0`, `O`, and lowercase `o`: JetBrains Mono's curves approach rectangles, while MonoLisa's are rounder. Then compare `1lI|` and `rn m`, with ligatures disabled, to see which cues you recognize most easily at your normal reading size.
+Look at `0`, `O`, and lowercase `o` as JetBrains Mono's curves approach rectangles, while MonoLisa's are rounder. Then compare `1lI|` and `rn m`, with ligatures disabled, to see which cues you recognize most easily at your normal reading size.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-glyphs-mobile.svg" />
@@ -44,7 +44,7 @@ Look at `0`, `O`, and lowercase `o`: JetBrains Mono's curves approach rectangles
 
 ## Italics and style range
 
-The enlarged italic `f` shows how differently the two fonts draw its upper curve and descending stroke. Look at the `fi` pairs in `filtered`, `file`, and `profile` below it: JetBrains Mono's tighter pair can interrupt the flow of the word, while MonoLisa leaves more room around the letters. Check the words at your usual editor size too; that is where the difference matters. MonoLisa also lets you adjust stroke thickness through grade without changing character widths.
+The enlarged italic `f` shows how differently the two fonts draw its upper curve and descending stroke. Look at the `fi` pairs in `filtered`, `file`, and `profile` below it: JetBrains Mono's tighter pair can interrupt the flow of the word, while MonoLisa leaves more room around the letters. Note that MonoLisa also lets you adjust stroke thickness through grade without changing character widths.
 
 <picture>
   <source media="(max-width: 640px)" srcSet="/images/comparison-monolisa-vs-jetbrains-mono-italics-mobile.svg" />
@@ -62,9 +62,7 @@ Both fonts include the prompt separators, table borders, and block characters sh
 
 ## Which font should you choose?
 
-JetBrains Mono is free, and its compact width may suit a narrow editor pane. MonoLisa offers rounder curves and grade adjustment; its italic `fi` is also worth testing in a file you read every day.
-
-At the same font size, JetBrains Mono fits the code into a narrower line, while MonoLisa gives its rounded letters more horizontal space. Both include italics and ligatures, so if those are your essentials, the specimens can help you choose between their proportions.
+JetBrains Mono is free, and its compact width may suit a narrow editor pane. In contrast, MonoLisa offers rounder curves and grade adjustment while going with wider glyphs. Both include italics and ligatures, so if those are your essentials, the specimens can help you choose between their proportions. Note that MonoLisa includes a proportional counterpart to complement the monospaced version.
 
 ## Try MonoLisa in your editor
 
@@ -72,19 +70,19 @@ The [free trial](https://www.monolisa.dev/buy/trial) includes Regular and Bold w
 
 ## At a glance
 
-| Category | MonoLisa Code | JetBrains Mono |
-| --- | --- | --- |
-| **Languages (measured)\*** | 593 | 358 |
-| **Writing systems** | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek) |
-| **Italics** | Yes | Yes |
-| **Fixed weights** | 10 | 8 |
-| **Variable axes** | Weight (`wght`), grade (`GRAD`) | Weight (`wght`) |
-| **Style control** | 15 stylistic sets, 12 character variants | 4 stylistic sets, 20 character variants |
-| **Coding ligatures** | Yes | Yes |
-| **Terminal symbols** | Yes | Yes |
-| **Proportional counterpart** | MonoLisa Text (separate purchase or bundle) | None in the JetBrains Mono family |
-| **Price** | Paid; limited free trial | Free and open source |
-| **Source** | [monolisa.dev](https://www.monolisa.dev/) | [JetBrains Mono GitHub repository](https://github.com/JetBrains/JetBrainsMono) |
+| Category                     | MonoLisa Code                                | JetBrains Mono                                                                 |
+| ---------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Languages (measured)\***   | 593                                          | 358                                                                            |
+| **Writing systems**          | 5 (Latin, Cyrillic, Greek, Hebrew, Armenian) | 3 (Latin, Cyrillic, Greek)                                                     |
+| **Italics**                  | Yes                                          | Yes                                                                            |
+| **Fixed weights**            | 10                                           | 8                                                                              |
+| **Variable axes**            | Weight (`wght`), grade (`GRAD`)              | Weight (`wght`)                                                                |
+| **Style control**            | 15 stylistic sets, 12 character variants     | 4 stylistic sets, 20 character variants                                        |
+| **Coding ligatures**         | Yes                                          | Yes                                                                            |
+| **Terminal symbols**         | Yes                                          | Yes                                                                            |
+| **Proportional counterpart** | MonoLisa Text (separate purchase or bundle)  | None in the JetBrains Mono family                                              |
+| **Price**                    | Paid; limited free trial                     | Free and open source                                                           |
+| **Source**                   | [monolisa.dev](https://www.monolisa.dev/)    | [JetBrains Mono GitHub repository](https://github.com/JetBrains/JetBrainsMono) |
 
 <details>
   <summary>View comparison infographic</summary>
@@ -102,7 +100,7 @@ The terminal windows use identical text at a nominal 22 px with 33 px table line
 .venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base <font-file>
 ```
 
-{/* Editorial review before publication: Marcus to review the design observations and letterform-led opening; verify measured data against the intended font versions; visually review the specimens; confirm license/source basis and set the publication date. */}
+{/_ Editorial review before publication: Marcus to review the design observations and letterform-led opening; verify measured data against the intended font versions; visually review the specimens; confirm license/source basis and set the publication date. _/}
 
 MonoLisa exposes `liga`, `dlig`, `calt`, `zero`, `ss01`–`ss15`, and `cv01`–`cv12`. JetBrains Mono exposes `calt`, `zero`, `ss01`, `ss02`, `ss19`, `ss20`, `cv01`–`cv12`, `cv14`–`cv20`, and `cv99`. MonoLisa has 10 named weights, Hairline through Black, and weight/grade axes. JetBrains Mono v2.304 has 8 named weights, Thin through ExtraBold, in static and variable upright/italic files; its measured variable files expose weight only. Both fonts cover Powerline 6/6, box drawing 128/128, and block elements 32/32, with internally aligned vertical metrics.
 
