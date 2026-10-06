@@ -5,6 +5,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { comparisonFocus } from "./comparison-focus.mjs";
 import { renderTerminalComparison } from "./render-terminal-comparison.mjs";
+import { renderComparisonControls } from "./render-comparison-controls.mjs";
 
 const root = process.cwd();
 const configPath = process.argv[2] || "scripts/comparison-fonts.local.json";
@@ -130,6 +131,13 @@ const sampleOverrides = {
       ],
       lineStyles: ["normal", "normal", "normal", "italic", "italic"],
     },
+  },
+};
+
+const additionalSamples = {
+  "jetbrains-mono": {
+    variants: { controls: "variants" },
+    grade: { controls: "grade" },
   },
 };
 
@@ -450,6 +458,20 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
   if (!competitor) throw new Error(`Unknown comparison font: ${competitorKey}`);
   const stacked = options.layout === "stacked";
 
+  if (sample.controls) {
+    const svg = renderComparisonControls({
+      kind: sample.controls,
+      fonts: [mono, competitor],
+      stacked,
+      renderLine,
+      renderLabel,
+      esc,
+    });
+    const outputPath = path.join(outputDir, `comparison-monolisa-vs-${competitorKey}-${sampleKey}${stacked ? "-mobile" : ""}.svg`);
+    writeFileSync(outputPath, svg);
+    return outputPath;
+  }
+
   if (sample.terminal) {
     const svg = renderTerminalComparison({ competitorKey, fonts: [mono, competitor], stacked, renderLine, esc });
     const outputPath = path.join(outputDir, `comparison-monolisa-vs-${competitorKey}-terminal${stacked ? "-mobile" : ""}.svg`);
@@ -584,7 +606,8 @@ function renderSample(competitorKey, sampleKey, sample, options = {}) {
 
 const focusOnly = process.argv.includes("--focus-only");
 const terminalOnly = process.argv.includes("--terminal-only");
-const requested = process.argv.slice(3).filter((arg) => !["--focus-only", "--terminal-only"].includes(arg));
+const controlsOnly = process.argv.includes("--controls-only");
+const requested = process.argv.slice(3).filter((arg) => !["--focus-only", "--terminal-only", "--controls-only"].includes(arg));
 const comparisons = requested.length ? requested : config.comparisons;
 let rendered = 0;
 
@@ -594,8 +617,9 @@ if (!existsSync(path.resolve(root, mono.regular))) {
 }
 
 for (const competitorKey of comparisons) {
-  for (const [sampleKey, sample] of Object.entries(samples)) {
+  for (const [sampleKey, sample] of Object.entries({ ...samples, ...additionalSamples[competitorKey] })) {
     if (terminalOnly && sampleKey !== "terminal") continue;
+    if (controlsOnly && !sample.controls) continue;
     if (focusOnly && !comparisonFocus[competitorKey]?.[sampleKey]) continue;
     const comparisonSample = {
       ...sample,
@@ -614,7 +638,7 @@ for (const competitorKey of comparisons) {
       rendered += 1;
     } catch (error) {
       console.warn(`Skipped ${competitorKey}/${sampleKey}: ${error.message}`);
-      if (focusOnly || terminalOnly) process.exitCode = 1;
+      if (focusOnly || terminalOnly || controlsOnly) process.exitCode = 1;
     }
   }
 }

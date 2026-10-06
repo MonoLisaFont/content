@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Berkeley Mono"
 published: YYYY-MM-DD
-updated: 2026-09-28
+updated: 2026-10-06
 draft: true
 keywords: ["MonoLisa vs Berkeley Mono", "Berkeley Mono alternative", "coding fonts", "programming fonts"]
 authors: ["Juho Vepsäläinen", "Marcus Sterz"]
@@ -28,7 +28,7 @@ The circles mark the baseline ending of each `r` in the enlarged details. Use th
 
 ## Width, slant, and italics
 
-Berkeley's Normal and Condensed samples show how narrower letters shorten the same phrase. MonoLisa's grade control serves another purpose: it adjusts stroke thickness while preserving character widths.
+Berkeley's Normal and Condensed samples show how narrower letters shorten the same phrase. MonoLisa's grade control serves another purpose: it adjusts stroke thickness independently of the selected weight.
 
 ![Berkeley Mono Normal and Condensed specimens showing HAL9000 EXABYTE at the same source scale](/images/comparison-monolisa-vs-berkeley-mono-widths.svg)
 
@@ -51,7 +51,7 @@ MonoLisa's terminal symbols are measured locally. Berkeley documents its coverag
 
 ## Which font should you choose?
 
-Choose Berkeley for condensed widths or adjustable slant. Try MonoLisa if you prefer the changed italic `a` shown here or want to alter stroke thickness without changing line lengths; compare the package that includes the controls you would actually use.
+Choose Berkeley for condensed widths or adjustable slant. Try MonoLisa if you prefer the changed italic `a` shown here or want a separate grade control for tuning stroke thickness at a chosen weight; compare the package that includes the controls you would actually use.
 
 ## Try them in your editor
 

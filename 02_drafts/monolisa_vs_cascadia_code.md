@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Cascadia Code"
 published: YYYY-MM-DD
-updated: 2026-09-28
+updated: 2026-10-06
 draft: true
 keywords:
   [
@@ -62,7 +62,7 @@ The files shown here both include table borders and block characters. Cascadia's
 
 ## Which font should you choose?
 
-Cascadia Code is a free option with both italics and ligatures. Try MonoLisa if you prefer its wider letterforms and square punctuation, or want to fine-tune stroke thickness without changing line lengths; judge those differences at the size you normally use.
+Cascadia Code is a free option with both italics and ligatures. Try MonoLisa if you prefer its wider letterforms and square punctuation, or want a separate grade control for fine-tuning stroke thickness at a chosen weight; judge those differences at the size you normally use.
 
 ## Try MonoLisa in your editor
 

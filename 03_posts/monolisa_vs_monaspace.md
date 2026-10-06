@@ -1,7 +1,7 @@
 ---
 title: "Comparison of MonoLisa vs. Monaspace Neon"
 published: 2026-09-09
-updated: 2026-09-28
+updated: 2026-10-06
 keywords:
   [
     "MonoLisa vs Monaspace",
@@ -62,7 +62,7 @@ Both fonts include the prompt separators, table borders, and block characters us
 
 ## Which font should you choose?
 
-Choose Monaspace for a free family you can mix and tune, especially if you want comments to use a different family from code. Try MonoLisa if you prefer its more distinct italic forms or want to adjust stroke thickness without changing character widths.
+Choose Monaspace for a free family you can mix and tune, especially if you want comments to use a different family from code. Try MonoLisa if you prefer its more distinct italic forms or want a separate grade control for adjusting stroke thickness at a chosen weight.
 
 ## Try MonoLisa in your editor
 
