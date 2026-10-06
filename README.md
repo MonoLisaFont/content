@@ -64,6 +64,17 @@ Terminal graphics follow the landing page's “Symbols for Terminal” treatment
 
 Most of the edits can be done directly through GitHub user interface on web. It may be possible images may have to be added through Git repository, though.
 
+Run `npm install` to install dependencies and enable the Git pre-push hook.
+Before each push, the hook compiles every Markdown file directly inside
+`02_drafts` and `03_posts`, plus `faq.md`, as MDX. It checks the committed
+content at each outgoing branch or tag, reports invalid syntax with a file,
+line, and column, and blocks the push on failure. Fixes must be committed
+before pushing again.
+
+To check your working files, including new drafts, run `npm run check:mdx`.
+The publishing workflow runs the same check before uploading content.
+Editorial comments must use MDX syntax: `{/* comment */}`.
+
 ## Publishing a draft
 
 Preview a promotion without changing files or contacting external services:

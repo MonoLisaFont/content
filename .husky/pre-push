@@ -1,0 +1,1 @@
+node scripts/check-mdx.mjs --pre-push

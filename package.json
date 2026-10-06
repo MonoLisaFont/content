@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "check:mdx": "node scripts/check-mdx.mjs",
+    "prepare": "husky",
     "publish:content": "node scripts/publish-content-to-blob.mjs",
     "publish:draft": "node scripts/publish-draft.mjs",
     "render:social-comparisons": "node scripts/render-comparison-social-cards.mjs",
@@ -14,5 +16,12 @@
   "dependencies": {
     "@vercel/blob": "2.6.1",
     "dotenv": "17.4.2"
+  },
+  "devDependencies": {
+    "@mdx-js/mdx": "3.1.1",
+    "husky": "9.1.7",
+    "remark-frontmatter": "5.0.0",
+    "remark-gfm": "4.0.1",
+    "remark-smartypants": "2.1.0"
   }
 }
