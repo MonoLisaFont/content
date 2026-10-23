@@ -16,7 +16,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const imageFile = resolve(root, "images/example.svg");
 const faqFile = resolve(root, "faq.md");
 const draftFile = resolve(root, "02_drafts/example.md");
-const emailFile = resolve(root, "emails/drafts/post_v3_update.md");
+const emailFile = resolve(root, "emails/drafts/jectives_monolisa_review.md");
 const unsafeImageFile = resolve(
   root,
   "images/my image $(do-not-run);it's.svg",
@@ -232,10 +232,10 @@ test("email drafts publish as rendered JSON without website revalidation", async
     },
     revalidateWebsiteImpl: async (pathname) => revalidations.push(pathname),
   });
-  assert.equal(uploads[0].pathname, "mail-previews/post_v3_update.json");
+  assert.equal(uploads[0].pathname, "mail-previews/jectives_monolisa_review.json");
   assert.equal(uploads[0].options.contentType, "application/json; charset=utf-8");
-  assert.equal(uploads[0].payload.subject, "VS Code plugin for MonoLisa + recent work");
-  assert.match(uploads[0].payload.html, /utm_campaign=post-v3-update/);
+  assert.equal(uploads[0].payload.subject, "A closer look at MonoLisa Code and Text");
+  assert.match(uploads[0].payload.html, /utm_campaign=jectives-monolisa-review/);
   assert.deepEqual(revalidations, []);
 });
 
