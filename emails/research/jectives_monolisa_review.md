@@ -6,7 +6,7 @@ Working copy: [email draft](../drafts/jectives_monolisa_review.md). These notes 
 
 ## Suggested angle
 
-Lead with the host's personal experience switching his everyday writing and coding from Roboto and Roboto Mono to MonoLisa. Following colleague feedback, the draft puts this testimonial immediately after the introduction, with a short quotation and a link to his account at 1:37:40. The host reports almost two months of use, demonstrates both families, and gives MonoLisa Text substantial attention. This makes a useful follow-up to the previous email's focus on VS Code configuration. Keep the video as the main call to action and the online tester as a secondary link.
+Lead with Curtis Simpson's personal experience switching his everyday writing and coding from Roboto and Roboto Mono to MonoLisa. Following colleague feedback, the draft puts this testimonial immediately after the introduction, with a short quotation. The separate prompt to hear him describe the switch was removed during review; the source timestamp remains in the notes below. Curtis reports almost two months of use, demonstrates both families, and gives MonoLisa Text substantial attention. This makes a useful follow-up to the previous email's focus on VS Code configuration. Keep the video as the main call to action and the online tester as a secondary link.
 
 ## Useful moments
 
@@ -29,7 +29,15 @@ Lead with the host's personal experience switching his everyday writing and codi
 - More personal alternative: **Almost two months with MonoLisa**.
 - Text-led alternative: **MonoLisa beyond the code editor**.
 - For a shorter email, keep the introduction, link to the full chapter, and retain only the Code-to-Text highlight.
-- A still from the Affinity demonstration around 1:30 or the body-copy comparison around 1:38 would illustrate the Text angle. The draft currently links to the video without reproducing its imagery.
+
+## Images in this draft
+
+The user supplied two screenshots on October 23, 2026. The draft includes optimized versions at 1280 pixels wide, displayed at up to 640 pixels in the email:
+
+- `images/jectives-curtis-simpson-marcus-sterz.jpg`: the split-screen conversation, resized and compressed as a progressive JPEG. The on-screen label supplies Curtis Simpson's name. The caption identifies the interview with Marcus; it does not present this as a frame from the public review chapter.
+- `images/jectives-monolisa-text-specimen.png`: the Affinity specimen, cropped to the letter, numeral, and punctuation rows, then resized and reduced to a 128-color PNG. The crop removes application controls and the partially clipped title while keeping the demonstrated letterforms unchanged.
+
+Both exports have metadata stripped. Original screenshots remain unchanged in Downloads. The email uses public `/media/images/` URLs; publish these repository images explicitly with `npm run publish:content -- images/jectives-curtis-simpson-marcus-sterz.jpg images/jectives-monolisa-text-specimen.png` before publishing the email preview, because these absolute website URLs are not collected as local image dependencies by the publisher.
 
 ## Attribution and review boundaries
 

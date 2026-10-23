@@ -12,9 +12,13 @@ utm_content: code-and-text
 
 Hi,
 
-In [Typography News No. 71, Jectives takes a close look at MonoLisa Code and Text](https://www.youtube.com/watch?v=qGhrWv8vQCw&t=4327s). The host had been using them for almost two months across his everyday setup: Code in his text editors, and Text in Obsidian, his Linux interface, and the browser.
+In [Typography News No. 71](https://www.youtube.com/watch?v=qGhrWv8vQCw&t=4327s), Curtis Simpson of Jectives takes a close look at MonoLisa Code and Text. He had been using them for almost two months across his everyday setup: Code in his text editors, and Text in Obsidian, his Linux interface, and the browser.
 
-He describes switching from Roboto and Roboto Mono to MonoLisa for his everyday writing and coding. His reaction: **“I was just shocked at how much more I enjoyed it.”** [Hear him describe the switch (1:37:40)](https://www.youtube.com/watch?v=qGhrWv8vQCw&t=5860s).
+He describes switching from Roboto and Roboto Mono to MonoLisa for his everyday writing and coding. His reaction: **“I was just shocked at how much more I enjoyed it.”**
+
+![Curtis Simpson and MonoLisa designer Marcus Sterz in a split-screen video conversation](https://www.monolisa.dev/media/images/jectives-curtis-simpson-marcus-sterz.jpg)
+
+Curtis Simpson in conversation with MonoLisa designer Marcus Sterz.
 
 The MonoLisa section runs for about 29 minutes. Besides showing the fonts in everyday use, it explores the letterforms and OpenType features in Affinity. A few places you might enjoy:
 
@@ -23,6 +27,8 @@ The MonoLisa section runs for about 29 minutes. Besides showing the fonts in eve
 - [From Code to Text (1:29:42)](https://www.youtube.com/watch?v=qGhrWv8vQCw&t=5382s): how MonoLisa's character carries over into a proportional font for reading, writing, and interfaces.
 
 We particularly enjoyed the attention given to MonoLisa Text. Seeing it used for everyday writing and across a desktop gives a different view of the family than a code specimen alone.
+
+![MonoLisa Text uppercase and lowercase letters, numerals, and punctuation, with alternate forms highlighted in green](https://www.monolisa.dev/media/images/jectives-monolisa-text-specimen.png)
 
 If the walkthrough makes you curious about a particular letter or setting, [try it in the online tester](https://www.monolisa.dev/tester).
 
