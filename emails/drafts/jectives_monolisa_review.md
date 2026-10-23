@@ -1,9 +1,9 @@
 ---
 title: Jectives takes a closer look at MonoLisa Code and Text
 subject: A closer look at MonoLisa Code and Text
-preheader: A typographer's take after almost two months of everyday use
+preheader: From Roboto to MonoLisa for everyday writing and coding
 target: People on the mailing list
-purpose: Share Jectives' MonoLisa walkthrough and invite readers to explore the details
+purpose: Share Jectives' everyday-use testimonial and MonoLisa walkthrough
 utm_source: monolisa
 utm_medium: email
 utm_campaign: jectives-monolisa-review
@@ -12,9 +12,9 @@ utm_content: code-and-text
 
 Hi,
 
-We spend a lot of time thinking about the small details in MonoLisa. It's interesting to see which ones someone else notices after living with the typeface for a while.
+In [Typography News No. 71, Jectives takes a close look at MonoLisa Code and Text](https://www.youtube.com/watch?v=qGhrWv8vQCw&t=4327s). The host had been using them for almost two months across his everyday setup: Code in his text editors, and Text in Obsidian, his Linux interface, and the browser.
 
-In [Typography News No. 71, Jectives takes a close look at MonoLisa Code and Text](https://www.youtube.com/watch?v=qGhrWv8vQCw&t=4327s). The host had been using them for almost two months, with Code in text editors and Text in Obsidian, the Linux interface, and the browser.
+He describes switching from Roboto and Roboto Mono to MonoLisa for his everyday writing and coding. His reaction: **“I was just shocked at how much more I enjoyed it.”** [Hear him describe the switch (1:37:40)](https://www.youtube.com/watch?v=qGhrWv8vQCw&t=5860s).
 
 The MonoLisa section runs for about 29 minutes. Besides showing the fonts in everyday use, it explores the letterforms and OpenType features in Affinity. A few places you might enjoy:
 
