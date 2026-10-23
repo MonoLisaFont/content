@@ -5,7 +5,6 @@ import { fileURLToPath } from "node:url";
 
 import {
   localImagePathForReference,
-  collectFiles,
   pruneEmailPreviews,
   publishContentFiles,
   referencedImagePaths,
@@ -16,7 +15,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const imageFile = resolve(root, "images/example.svg");
 const faqFile = resolve(root, "faq.md");
 const draftFile = resolve(root, "02_drafts/example.md");
-const emailFile = resolve(root, "emails/drafts/jectives_monolisa_review.md");
+const emailFile = resolve(root, "emails/drafts/example.md");
 const unsafeImageFile = resolve(
   root,
   "images/my image $(do-not-run);it's.svg",
@@ -220,22 +219,33 @@ test("publishContentFiles deduplicates deterministic Blob pathnames", async () =
 });
 
 test("email drafts publish as rendered JSON without website revalidation", async () => {
-  const files = await collectFiles({ all: false, inputs: ["emails/drafts"] });
-  assert.deepEqual(files, [emailFile]);
+  const files = [emailFile];
   const uploads = [];
   const revalidations = [];
   await publishContentFiles(files, { env }, {
     logger: silentLogger,
+    readFileImpl: async () => Buffer.from(`---
+title: Example email
+subject: An example update
+preheader: Preview of the update
+utm_source: monolisa
+utm_medium: email
+utm_campaign: example-update
+utm_content: example-email
+---
+
+[Try the tester](https://www.monolisa.dev/tester)
+`),
     putBlob: async (pathname, body, options) => {
       uploads.push({ pathname, payload: JSON.parse(body), options });
       return { url: `https://blob.example/${pathname}` };
     },
     revalidateWebsiteImpl: async (pathname) => revalidations.push(pathname),
   });
-  assert.equal(uploads[0].pathname, "mail-previews/jectives_monolisa_review.json");
+  assert.equal(uploads[0].pathname, "mail-previews/example.json");
   assert.equal(uploads[0].options.contentType, "application/json; charset=utf-8");
-  assert.equal(uploads[0].payload.subject, "A closer look at MonoLisa Code and Text");
-  assert.match(uploads[0].payload.html, /utm_campaign=jectives-monolisa-review/);
+  assert.equal(uploads[0].payload.subject, "An example update");
+  assert.match(uploads[0].payload.html, /utm_campaign=example-update/);
   assert.deepEqual(revalidations, []);
 });
 

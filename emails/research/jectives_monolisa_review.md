@@ -2,7 +2,7 @@
 
 Source: [Typography News No. 71 by Jectives](https://www.youtube.com/watch?v=qGhrWv8vQCw&t=4327s), published October 7, 2026. The MonoLisa chapter is **1:12:07–1:40:41** (28 minutes, 34 seconds).
 
-Working copy: [email draft](../drafts/jectives_monolisa_review.md). These notes are outside `emails/drafts/` so they are not included in the public email preview.
+Sent October 23, 2026: [archived email](../sent/jectives_monolisa_review.md). These editorial notes remain outside `emails/drafts/`.
 
 ## Suggested angle
 
