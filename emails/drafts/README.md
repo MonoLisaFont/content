@@ -1,5 +1,9 @@
 # Planned emails
 
+Include a clear call to action in every mailing-list message. Choose a specific
+next step that supports conversion and fits the message and its audience, and
+link directly to where readers can take it.
+
 Write one Markdown file per planned message here. Add these fields to its front
 matter so `scripts/markdown-email-to-html.mjs` tags every MonoLisa website link
 in the generated HTML:
