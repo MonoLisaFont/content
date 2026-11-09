@@ -6,13 +6,19 @@ keywords: ["release", "MonoLisa", "Georgian"]
 authors: ["Andrey Okonetchnikov", "Marcus Sterz", "Juho Vepsäläinen"]
 ---
 
-The first update to [MonoLisa version 3](/posts/monolisa_v3) brings Georgian support to both MonoLisa Code and MonoLisa Text. Version 3.001 also adds a dotted zero to tabular figures in MonoLisa Text and makes a series of refinements across the two families.
+The first update to [MonoLisa version 3](/posts/monolisa_v3) brings Georgian support to both MonoLisa Code and MonoLisa Text. Version 3.001 also adds a dotted zero to tabular figures in MonoLisa Text and makes a series of refinements across the two families. Alongside the font update, we've improved the web font download page so you can preview your choices before downloading.
 
 ## Georgian joins MonoLisa
 
 MonoLisa Code and MonoLisa Text now support the Georgian script and language. This extends the scripts available in both the monospaced family for code and its proportional companion for text.
 
 ![MonoLisa type specimens in Latin, Cyrillic, Greek, Armenian, Hebrew, and the newly added Georgian script](/images/monolisa-georgian-3-001.png)
+
+## Preview your web font before downloading
+
+The web font download page now shows a live preview as you choose character ranges and OpenType features. You can start with a preset or fine-tune individual Unicode ranges, then see how your selection affects the sample and the available glyphs.
+
+The page also shows the exact size of the resulting font files, including a per-file breakdown, so you can balance language coverage and features against download size before adding the font to a website. A usage example provides CSS for the selected features. You can find the web font download through [My orders](/orders).
 
 ## A dotted zero for tabular figures
 
