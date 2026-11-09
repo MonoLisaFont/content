@@ -32,7 +32,7 @@ We've also made a collection of smaller fixes across the two families:
 - In MonoLisa Text, we've corrected `đ` and the Vietnamese dong sign (`₫`) in all three upright masters.
 - In both Code and Text, we've optimized the Turkish lira sign (`₺`) and the tenge sign (`₸`), the latter in all masters.
 
-We hope you enjoy the update!
+If you already own MonoLisa, [download the latest version from My orders](https://www.monolisa.dev/orders) using your checkout email and order number. We hope you enjoy the update!
 
 --
 Andrey, Juho, and Marcus
