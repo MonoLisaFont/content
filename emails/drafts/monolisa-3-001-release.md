@@ -22,7 +22,9 @@ Both font families now support the Georgian script and language. Here's how Geor
 
 ## Preview your web font before downloading
 
-The web font download page now lets you preview your character ranges and OpenType feature choices before downloading. It also shows the exact size of the resulting font files and provides a CSS usage example, making it easier to choose what you need for your website.
+Choose a character preset, fine-tune individual Unicode ranges, and preview your OpenType feature choices before downloading. The web font download page shows the exact size of the resulting font files and provides a CSS usage example, making it easier to choose what you need for your website.
+
+![MonoLisa Text web font customizer with the Latin preset selected, a live text preview, and a download-size summary](https://raw.githubusercontent.com/MonoLisaFont/content/main/images/monolisa-webfont-customize-3-001.jpeg)
 
 ## A dotted zero for tabular figures
 

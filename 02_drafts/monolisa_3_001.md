@@ -18,6 +18,10 @@ MonoLisa Code and MonoLisa Text now support the Georgian script and language. Th
 
 The web font download page now shows a live preview as you choose character ranges and OpenType features. You can start with a preset or fine-tune individual Unicode ranges, then see how your selection affects the sample and the available glyphs.
 
+![MonoLisa Text web font customizer with the Latin preset selected, a live text preview, Unicode range controls, and a download-size summary](/images/monolisa-webfont-customize-3-001.jpeg)
+
+*MonoLisa Text with the Latin preset selected. The download size shown is specific to this selection.*
+
 The page also shows the exact size of the resulting font files, including a per-file breakdown, so you can balance language coverage and features against download size before adding the font to a website. A usage example provides CSS for the selected features. You can find the web font download through [My orders](/orders).
 
 ## A dotted zero for tabular figures
