@@ -1,6 +1,6 @@
 ---
 title: "MonoLisa 3.001: Georgian support and refinements"
-published: 2026-11-09
+published: 2026-11-10
 updated: 2026-11-09
 keywords: ["release", "MonoLisa", "Georgian"]
 authors: ["Andrey Okonetchnikov", "Marcus Sterz", "Juho Vepsäläinen"]
@@ -20,7 +20,7 @@ The web font download page now shows a live preview as you choose character rang
 
 ![MonoLisa Text web font customizer with the Latin preset selected, a live text preview, Unicode range controls, and a download-size summary](/images/monolisa-webfont-customize-3-001.jpeg)
 
-*MonoLisa Text with the Latin preset selected. The download size shown is specific to this selection.*
+_MonoLisa Text with the Latin preset selected. The download size shown is specific to this selection._
 
 The page also shows the exact size of the resulting font files, including a per-file breakdown, so you can balance language coverage and features against download size before adding the font to a website. A usage example provides CSS for the selected features. You can find the web font download through [My orders](/orders).
 
