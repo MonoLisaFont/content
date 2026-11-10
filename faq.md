@@ -165,15 +165,18 @@ You can [download your purchases package at the orders page](https://www.monolis
 <Details>
 ### What languages does MonoLisa support?
 
-[Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) reports that MonoLisa supports 593 primary orthographies for living languages across five scripts:
+[Hyperglot 0.8.1](https://github.com/rosettatype/hyperglot) reports that MonoLisa Code 3.001 supports 597 primary orthographies for living languages across six scripts:
 
 - **Latin (496):** English, Spanish, French, German, Portuguese, Italian, ... and more
 - **Cyrillic (88):** Russian, Ukrainian, Bulgarian, Serbian, ... and more
 - **Hebrew (5):** Hebrew, Eastern Yiddish, Western Yiddish, Bukharic, Judeo-Persian
+- **Georgian (4):** Georgian, Laz, Mingrelian, Svan
 - **Greek (2):** Modern Greek, Pontic Greek
 - **Armenian (2):** Eastern Armenian, Western Armenian
 
-> - These figures were derived by running <code>.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base MonoLisaCodeUpright.ttf</code>. The command checks primary orthographies of living languages for base-character support with shaping disabled. Counts are orthography–script matches, so a language can contribute to more than one script total.
+Georgian support is available in both MonoLisa Code and MonoLisa Text from [version 3.001](https://www.monolisa.dev/posts/monolisa_3_001).
+
+> - These figures were derived by running <code>.venv-hyperglot/bin/hyperglot --no-shaping --orthography primary --status living --check base MonoLisaCodeUpright.ttf</code> on version 3.001. The command checks primary orthographies of living languages for base-character support with shaping disabled. Counts are orthography–script matches, so a language can contribute to more than one script total.
 
 </Details>
 
