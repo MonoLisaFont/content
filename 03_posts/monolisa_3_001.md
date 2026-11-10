@@ -1,7 +1,7 @@
 ---
 title: "MonoLisa 3.001: Georgian support and refinements"
 published: 2026-11-10
-updated: 2026-11-09
+updated: 2026-11-10
 keywords: ["release", "MonoLisa", "Georgian"]
 authors: ["Andrey Okonetchnikov", "Marcus Sterz", "Juho Vepsäläinen"]
 ---
