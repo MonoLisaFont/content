@@ -57,7 +57,7 @@ function bars(x, y, widths, color = C.blue, gap = 19) {
   return widths.map((w, i) => rect(x + (i % 3 === 1 ? 20 : 0), y + gap * i, w, 7, color, 3)).join("");
 }
 
-function motif(kind) {
+function motif(kind, sample = "Aa") {
   const code = (s, x, y, size = 90, opts = {}) => type(s, x, y, size, { font: fonts.code, fill: C.cream, ...opts });
   switch (kind) {
     case "editor":
@@ -66,8 +66,8 @@ function motif(kind) {
         code("Aa", 639, 228, 100) + rect(779, 152, 3, 83, C.gold) +
         bars(639, 264, [199, 147, 174], C.muted, 17);
     case "release":
-      return code("Aa", 608, 211, 140, { fill: C.blue }) +
-        type("Aa", 754, 328, 152, { font: fonts.text, fill: C.gold }) +
+      return code(sample, 608, 211, 140, { fill: C.blue }) +
+        type(sample, 754, 328, 152, { font: fonts.text, fill: C.gold }) +
         code("CODE", 619, 260, 15, { fill: C.blue }) + code("TEXT", 819, 358, 15, { fill: C.gold });
     case "ligatures":
       return code("!=", 759, 179, 126, { center: true, features: "liga=0,calt=0" }) +
@@ -151,7 +151,7 @@ function render(design) {
       art += type(line, 61, (three ? 185 : 205) + i * (three ? 63 : 72), 62, { weight: 550, maxWidth: 451 });
     });
     art += type(design.slug.endsWith("_friction") ? "IN SOFTWARE DEVELOPMENT" : "monolisa.dev", 64, 365, 14, { fill: C.muted });
-    art += motif(design.kind);
+    art += motif(design.kind, design.sample);
   }
   const title = design.kind === "comparison" ? `MonoLisa Code vs. ${design.label}` : design.lines.join(" ");
   return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2000" height="840" viewBox="0 0 1000 420" role="img" aria-labelledby="title"><title id="title">${escape(title)}</title>${art}</svg>\n`;

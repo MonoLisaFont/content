@@ -57,6 +57,13 @@ Add its illustration in `scripts/render-devto-covers.mjs` when needed. Review
 the SVG and PNG after rendering; commit both. Headings use MonoLisa Text,
 specimens use MonoLisa Code or the named comparison font.
 
+The 3.001 release cover uses the Georgian sample `აბ` from both MonoLisa
+families. Render it with 3.001 font files: point the config’s MonoLisa Code
+paths at `font/versions/3.001/CODE/OTVAR/` and set `MONOLISA_TEXT_FONT` to the
+3.001 `TEXT/OTVAR/MonoLisaTextUpright.ttf`. The default 3.000 comparison
+fonts predate Georgian support. The release motif accepts an optional `sample`
+in the design entry; other release covers retain `Aa`.
+
 ## Publish or refresh covers
 
 ```bash
@@ -101,6 +108,7 @@ the full article backup over subsequent editorial changes.
 | --- | --- |
 | ![MonoLisa for VS Code](introducing_monolisa_for_vscode.png) | ![What are font ligatures?](what_are_font_ligatures.png) |
 | ![Meet MonoLisa Text](monolisa_v3.png) | ![What are serifs?](what_are_serifs.png) |
+| ![MonoLisa 3.001: Georgian support](monolisa_3_001.png) | |
 
 | Friction series | Friction series |
 | --- | --- |

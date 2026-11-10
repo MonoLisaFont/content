@@ -4,6 +4,7 @@
   { "slug": "monolisa_vs_jetbrains_mono", "kind": "comparison", "font": "jetbrains-mono", "label": "JetBrains Mono", "caption": "Drawn italics" },
   { "slug": "introducing_monolisa_for_vscode", "kind": "editor", "category": "TOOLS FOR DEVELOPERS", "lines": ["MonoLisa", "for VS Code"] },
   { "slug": "monolisa_v3", "kind": "release", "category": "VERSION 3", "lines": ["Meet", "MonoLisa Text"] },
+  { "slug": "monolisa_3_001", "kind": "release", "category": "VERSION 3.001", "lines": ["Georgian", "support"], "sample": "აბ" },
   { "slug": "what_are_font_ligatures", "kind": "ligatures", "category": "TYPE EXPLAINED", "lines": ["What are", "font ligatures?"] },
   { "slug": "what_are_serifs", "kind": "serifs", "category": "TYPE EXPLAINED", "lines": ["What are", "serifs?"] },
   { "slug": "friction_in_software_development", "kind": "overview", "category": "FRICTION / 01", "lines": ["Friction in", "software", "development"] },
