@@ -1,0 +1,26 @@
+# Paddle purchase segmentation in Mailrelay
+
+Send a MonoLisa v3 upgrade campaign to the intended Mailrelay audience while excluding subscribers who already own both Code and Text. Use Paddle Classic as the source of purchase state and Mailrelay as the source of mailing eligibility. For the first campaign, backfill an ownership tag from a fresh Transactions CSV. For recurring campaigns, extend the existing Paddle webhook and reconcile periodically.
+
+## Purchase rule
+
+| Paddle Classic product | Production product ID |
+| --- | --- |
+| v3 Developer + Text | `925532` |
+| v3 Developer | `925531` |
+| v3 Text | `926417` |
+
+For an upgrade campaign, apply the ownership tag when a person has an active bundle order or active orders for both standalone products. My Orders treats the two standalone purchases as equivalent to the bundle. Count completed and partially refunded orders toward ownership and exclude fully refunded and disputed orders, consistent with the site's entitlement logic. For a campaign scoped to the bundle SKU itself, use `925532` only. [Product IDs](../../../website/shared/product_ids.ts) · [Upgrade logic](../../../website/docs/upgrade-logic.md) · [Order entitlements](../../../website/app/orders/orderEntitlements.ts)
+
+## Backfill for the first campaign
+
+1. **Export Transactions from Paddle Classic.** Cover the full sales history of the relevant v3 products. Read `Order ID`, `Order Status`, `Product ID`, and `Customer Email`. Check the separate Refunds report by order ID for full refunds. Include manually invoiced orders separately if any of these products were sold that way, since the Transactions report omits manual invoices. [Paddle Transactions report](https://www.paddle.com/help/manage/reporting/a-comprehensive-insight-into-the-transactions-report) · [Paddle Refunds report](https://www.paddle.com/help/manage/reporting/understanding-the-refunds-report)
+2. **Match orders to existing subscribers.** Trim and lowercase both email addresses and evaluate all relevant orders per address. Use the paginated `GET /api/v1/subscribers` endpoint to get subscriber IDs, emails, and tags. A checkout address that differs from the newsletter address needs a verified link between the two. Report counts for qualifying owners, matched subscribers, unmatched owners, and proposed tag changes before applying updates. [Mailrelay subscriber lookup](https://apidocs.mailrelay.com/tag/subscribers/GET/subscribers)
+3. **Write the ownership tag.** Create `Owns MonoLisa v3 Developer + Text` in Mailrelay and use `POST /api/v1/subscribers/{id}/tags` for matched subscriber IDs. Mailrelay ignores a tag that the subscriber already has, so the backfill can be rerun. Use `DELETE` on the same endpoint to remove stale ownership tags when reconciling against a complete snapshot. These endpoints update the tag on an existing contact. The site's `backfill:mailrelay` command supports checkout opt-ins to the **MonoLisa customers** group. Reuse its CSV parsing and dry-run pattern for a dedicated tagging command. [Add tags API](https://apidocs.mailrelay.com/tag/subscribers/POST/subscribers/%7Bsubscriber_id%7D/tags) · [Remove tags API](https://apidocs.mailrelay.com/tag/subscribers/DELETE/subscribers/%7Bsubscriber_id%7D/tags) · [Existing backfill](../../../website/docs/mailrelay-customers.md)
+4. **Build and preview the Mailrelay segment.** Under **Subscribers → Segmentation**, match all conditions. Require membership in the intended mailing group and set **Subscriber tags → Has none of** to the ownership tag. Group 1, **MonoLisa customers**, also includes opted-in free trials. Before sending, compare the preview count with the backfill counts and spot-check a bundle owner, an owner of both standalone products, and an eligible Developer-only subscriber. [Mailrelay tag segmentation](https://help.mailrelay.com/en/support/solutions/articles/103000411315-tags) · [Campaign recipient preview](https://help.mailrelay.com/en/support/solutions/articles/103000424825)
+
+## Keep the tag current
+
+Extend the signed Paddle Classic webhook in `website/app/api/webhooks/paddle/route.ts`. On `payment_succeeded` or `payment_refunded` for a relevant product, recompute the buyer's ownership across their relevant orders before adding or removing the tag. This handles a refund when another qualifying order still grants ownership. Keep this lookup and tagging independent of the checkout marketing checkbox so it also covers people who already subscribed through another route. Use the existing Mailrelay configuration in `website/utils/mailrelay.ts`. [Paddle webhook](../../../website/app/api/webhooks/paddle/route.ts) · [Mailrelay client](../../../website/utils/mailrelay.ts)
+
+Reconcile before campaigns to catch missed events, disputes, and people who subscribe after buying. A fresh CSV is the initial reconciliation source. The Classic API is a candidate for automating this step. The website's client supports queries by product ID and currently reads one page per request. Verify pagination and compare full API results with a fresh export before using an API snapshot to remove tags. The first dry run should establish live match rates and expected recipient counts. [Classic transaction client](../../../website/utils/paddle-api/index.ts)
