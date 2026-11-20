@@ -14,7 +14,7 @@ Hi,
 
 To honor the Black Week, we are running a campaign that gives you **30% off your usual upgrade price** until Sunday, November 29th.
 
-The largest change since version two has been the addition of MonoLisa Text for use cases beyond code. Besides that we refactored the font so it's easier to enable exactly the features you want using our customization tool. We have also set up a VS Code plugin improving user experience within this widely used editor. You can see examples of both below.
+The largest change since version two has been the addition of MonoLisa Text for use cases beyond code such as applications, presentations, books etc. Besides that we refactored the font so it's easier to enable exactly the features you want using our customization tool. We have also set up a VS Code plugin improving user experience within this widely used editor. You can see examples of both below.
 
 ![The MonoLisa VS Code extension showing three separate equal signs beside the joined ligature](https://www.monolisa.dev/media/images/monolisa-vscode-opentype-features-detail.png)
 
