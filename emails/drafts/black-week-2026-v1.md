@@ -12,21 +12,19 @@ utm_content: v1-owners
 
 Hi,
 
-If you’ve been thinking about upgrading from MonoLisa 1, Black Week gives you **30% off your usual upgrade price** through Sunday, November 29. With Developer + Text, you get the latest coding font and a matching family for writing.
+As a part of Black Week, we are running a campaign giving you **30% off your usual upgrade price** through Sunday, November 29 making this a good chance to upgrade to the latest version of the typeface. Besides coding, there's also a typeface for writing available now in version three.
 
 Since v1, we’ve redrawn letters across scripts and refined symbols to make MonoLisa easier to read. The five lowercase letters below show some of that work. The red circles mark where curves meet straight strokes, a detail that helps give each letter its distinct shape.
 
 ![Lowercase a, b, d, p, and q in MonoLisa Code, with red dots marking the joins between curves and stems](https://raw.githubusercontent.com/MonoLisaFont/content/main/images/monolisa-v3-upright-letterforms.png)
 
-Your feedback has helped us catch details we missed. Thanks to reader reports, we adjusted the weight of the em dash and fixed an italic `ü` whose two dots could look like one.
-
-What else has changed since v1?
+A lot of this work has been motivated by user feedback, and we tend to address issues over time. To give you a better idea, consider the following improvements since version 1:
 
 - **In your editor and terminal**, you can use the same custom font, with your choice of letter shapes and symbols built in. We’ve also added progress bars and marks like `✓` and `✗` for test results.
-- **On your personal site**, you can set an article in MonoLisa Text and the code samples in MonoLisa Code.
+- **On your personal site**, you can set an article in MonoLisa Text and the code samples in MonoLisa Code as web usage is supported out of the box even for the personal license.
 - **When writing in other languages**, you’ll find broader Latin and Cyrillic coverage, refined Vietnamese accents, and support for Armenian, Hebrew, and Georgian.
 
-[See my upgrade options](https://www.monolisa.dev/orders)
+[See your upgrade options after signing in at orders.](https://www.monolisa.dev/orders)
 
 --
 Andrey, Juho, and Marcus
