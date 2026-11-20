@@ -10,15 +10,15 @@ Use the first matching row. For the personal upgrade emails, v1 and v2 each have
 
 | `monolisatier` value | Ownership from active Paddle Classic orders | Black Week email |
 | --- | --- | --- |
-| `unknown` | Ownership or identity still needs verification | None |
+| `unknown` | Ownership still needs verification | [General Black Week offer](../drafts/black-week-2026-trial.md) if eligible under the fallback rule below |
 | `commercial` | Creator `925533` or active Indie, Company or Enterprise subscription (`765053`, `772304`, `772305`) | None |
 | `v3_code_text` | Developer + Text bundle `925532`, or both standalone Code `925531` and Text `926417` | None |
 | `v3_text` | Standalone v3 Text `926417` only among the v3 families | None |
 | `v3_code` | Standalone v3 Developer Code `925531` only among the v3 families | [Add Text to Code](../drafts/black-week-2026-v3-code.md) |
 | `v2` | Basic `798586`, Plus `798587`, or Complete `798588` | [Upgrade from v2](../drafts/black-week-2026-v2.md) |
 | `v1` | Personal `578353`, Plus `638029`, Plus Upgrade `638030`, or Professional `580502` | [Upgrade from v1](../drafts/black-week-2026-v1.md) |
-| `trial` | Current Trial `925530` or legacy Trial `661578` only | [Get the full Code + Text bundle](../drafts/black-week-2026-trial.md) |
-| `none` | Reconciliation found no active license or trial | None |
+| `trial` | Current Trial `925530` or legacy Trial `661578` only | [General Black Week offer](../drafts/black-week-2026-trial.md) |
+| `none` | Reconciliation found no active license or trial | [General Black Week offer](../drafts/black-week-2026-trial.md) |
 
 ## 1. Backfill existing subscribers from the Paddle CSV
 
@@ -37,19 +37,21 @@ Verify the tier write on a test subscriber before wiring it into checkout. Mailr
 
 ## Decisions from website issue #1185
 
-- **Field and segments.** Use groups 1 and 3 for the current newsletter audience. Issue #1185 identifies group 5 as a separate website welcome group. A group-5-only contact is outside this rollout. Within the two lists, use `none` and `trial` for a general prospect audience. Paid owners have `v1`, `v2`, `v3_code`, `v3_text`, `v3_code_text` or `commercial`. Hold `unknown` out of both. [Mailrelay segment conditions](https://help.mailrelay.com/en/support/solutions/articles/103000156746-segmentations)
+- **Field and segments.** Use groups 1 and 3 for the current newsletter audience. Issue #1185 identifies group 5 as a separate website welcome group. A group-5-only contact is outside this rollout. Within the two lists, `none` and `trial` identify known prospects. Paid owners have `v1`, `v2`, `v3_code`, `v3_text`, `v3_code_text` or `commercial`. An uncategorized subscriber keeps their original field value when receiving the general offer. [Mailrelay segment conditions](https://help.mailrelay.com/en/support/solutions/articles/103000156746-segmentations)
 - **Refunds.** Use the remaining active licenses. A full refund of someone’s last paid order can return them to `trial` or `none`. A partial refund retains that order’s entitlement.
 - **Privacy notice.** The published policy describes Paddle for online sales. It does not explicitly describe using license ownership to tailor newsletters. Suggested wording for the privacy review follows. “If you subscribe to the MonoLisa newsletter, we use the MonoLisa licenses you own to send relevant product and upgrade offers.” Consent evidence is tracked separately in #1168, and newsletter signup can proceed independently. [Published privacy policy](https://www.iubenda.com/privacy-policy/25140137/legal) · [Privacy review #1166](https://github.com/MonoLisaFont/website/pull/1166) · [Consent evidence #1168](https://github.com/MonoLisaFont/website/issues/1168)
 
 ## Verify and send once
 
-Build four Black Week segments across the two lists. Each uses **(group 1 OR group 3) AND eligible for newsletter delivery AND tier equals the draft’s value**. In Mailrelay, use **Match any** for the two membership conditions and **Match all** between membership and the other filters. Trial setup tips alone do not confer newsletter consent. [Mailrelay segment conditions](https://help.mailrelay.com/en/support/solutions/articles/103000156746-segmentations)
+Build four Black Week segments. All four require **(group 1 OR group 3) AND eligible for newsletter delivery**. The three owner emails each require an exact tier match (`v1`, `v2`, or `v3_code`). For the fourth email, use **Match any** for `trial`, `none`, `unknown`, or **Blank**. Combine the audience and tier conditions with **Match all**. Trial setup tips alone do not confer newsletter consent. [Mailrelay segment conditions](https://help.mailrelay.com/en/support/solutions/articles/103000156746-segmentations) · [Custom field filters](https://help.mailrelay.com/en/support/solutions/articles/103000236461-custom-fields-and-campaign-segmentation)
+
+**Fallback rule.** Before freezing the roster, check uncategorized subscribers against available ownership matches and verified aliases. Where a match establishes a tier, update the field and use the draft or exclusion in the table. Hold conflicting identities or consent. The remaining eligible subscribers with an unknown or blank tier receive the same general offer as Trial users in a single delivery. It describes the public sale and links to the [buy page](https://www.monolisa.dev/buy), which anyone can open without an order number.
 
 Keep one private campaign roster across both lists with one row per person, selected subscriber ID and address, frozen draft and delivery status. For verified aliases, prefer the designated newsletter address, then the latest explicit opt-in, then the lowest subscriber ID. Hold conflicting identities or consent. Someone in both groups who owns v2 appears once on the v2 delivery list. [Mailrelay sending guide](https://help.mailrelay.com/en/support/solutions/articles/103000424825)
 
 - **Freeze the four delivery lists before the first send.** Save each segment as a static campaign group and reconcile its members to exactly the selected subscriber IDs on the roster. Remove alternate addresses. All six pairwise intersections must be empty by person key, subscriber ID and normalized address. The sum of group sizes must equal the number of distinct assigned people. Select only the corresponding static group when preparing each delivery. [Mailrelay segment and group behavior](https://help.mailrelay.com/en/support/solutions/articles/103000156746)
-- **Spot-check overlaps.** Trial + v1 + v2 gets the v2 email. V2 + v3 Code gets the v3 Code email. Code + Text bought separately gets no email, including when a verified alias holds the second purchase. V2 + standalone v3 Text gets no email. A newsletter subscriber with only a legacy trial gets the Trial email. A trial-tips-only contact gets no email.
-- **Recheck eligibility before each delivery.** Remove anyone who has unsubscribed, changed tier or otherwise ceased to qualify for their assigned copy. Compare the final preview with the roster after suppressions. A Trial recipient who buys Code between sends stays out of the v3 Code delivery even though the ownership field now reads `v3_code`.
+- **Spot-check overlaps.** Trial + v1 + v2 gets the v2 email. V2 + v3 Code gets the v3 Code email. Code + Text bought separately gets no email, including when a verified alias holds the second purchase. V2 + standalone v3 Text gets no email. A newsletter subscriber with only a legacy trial and an eligible subscriber with a blank tier both receive the general offer. A blank-tier subscriber in both groups receives it once. A trial-tips-only contact gets no email.
+- **Recheck eligibility before each delivery.** Remove anyone who has unsubscribed or whose current ownership or consent no longer qualifies them for their assigned draft. Compare the final preview with the roster after suppressions. A Trial recipient who buys Code between sends stays out of the v3 Code delivery even though the ownership field now reads `v3_code`.
 - **Reserve once across all four sends.** Use one sending operator and one roster for `black-week-2026`. At launch or restart, reconcile any existing Black Week deliveries under **Reports → Sent campaigns**. Before submitting each variant, reserve its recipients in the roster. Save the Mailrelay delivery ID when scheduling or queueing succeeds. Anyone already reserved, scheduled, queued or sent is ineligible for another delivery in this campaign.
 - **Recover the original delivery on a retry.** After a timeout, pause or partial failure, look up the recorded delivery and resume it where possible. A replacement send may include only people confirmed never queued in any of the four deliveries. Hold uncertain rows and use delivery records to reconcile them. Opens and clicks cannot establish who was queued. [Sending and delivery reports](https://help.mailrelay.com/en/support/solutions/articles/103000424825)
 
