@@ -23,7 +23,7 @@ Here’s what else you’ll find in v3.
 - **A companion for writing.** Developer + Text pairs MonoLisa Code with MonoLisa Text, a proportional family for prose. On a personal site you can set an article in Text and its examples in Code, then download webfonts containing just the character ranges you need.
 - **Broader language support.** We expanded Latin and Cyrillic coverage, refined Vietnamese accents, and added Armenian, Hebrew, and Georgian.
 
-During Black Week, you get **30% off your paid upgrade** through Sunday, November 29 at 23:59 UTC.
+During Black Week, you get **30% off your paid upgrade** through Sunday, November 29.
 
 [See my upgrade options](https://www.monolisa.dev/orders)
 

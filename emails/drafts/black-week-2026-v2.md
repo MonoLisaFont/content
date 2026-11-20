@@ -20,7 +20,7 @@ Here’s how the two versions of `===` look in our VS Code extension.
 
 With **Developer + Text**, you also get a proportional companion to the coding font. On a personal blog, you can set the explanation in Text and the code sample in Code. Both families now support Armenian, Hebrew, and Georgian as well.
 
-Black Week takes **30% off paid upgrades** through Sunday, November 29 at 23:59 UTC.
+Black Week takes **30% off paid upgrades** through Sunday, November 29.
 
 [See my upgrade options](https://www.monolisa.dev/orders)
 

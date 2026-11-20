@@ -22,7 +22,7 @@ Choose the form you prefer in the customizer. When you select that font in your 
 
 Developer + Text gives you the full MonoLisa Code family for your editor and MonoLisa Text for writing. You can also use the pair on a personal site, with Text for the posts and Code for the examples.
 
-During Black Week, the bundle is **30% off** through Sunday, November 29 at 23:59 UTC.
+During Black Week, the bundle is **30% off** through Sunday, November 29.
 
 [See my Code + Text offer](https://www.monolisa.dev/orders)
 

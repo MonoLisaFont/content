@@ -18,7 +18,7 @@ Take the word “small” in the paragraph below. In MonoLisa Code, the m takes 
 
 That’s what Text adds to the family you already own. You can use it for notes or pair the two on your personal blog, with Text for the story of how you built something and Code for the snippets people can try themselves.
 
-Through Sunday, November 29 at 23:59 UTC, Black Week takes **30% off your usual upgrade price** when you add Text to your Developer license.
+During Black Week, you can add Text to your Developer license for **30% off your usual upgrade price** through Sunday, November 29.
 
 [See my price to add MonoLisa Text](https://www.monolisa.dev/orders)
 
