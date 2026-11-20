@@ -12,7 +12,7 @@ utm_content: v1-owners
 
 Hi,
 
-As a part of Black Week, we are running a campaign giving you **30% off your usual upgrade price** through Sunday, November 29 making this a good chance to upgrade to the latest version of the typeface. Besides coding, there's also a typeface for writing available now in version three.
+As a part of the Black Week, we are running a campaign giving you **30% off your usual upgrade price** through Sunday, November 29 making this a good chance to upgrade to the latest version of the typeface. Besides coding, there's also a typeface for writing available now in version three.
 
 Since v1, we’ve redrawn letters across scripts and refined symbols to make MonoLisa easier to read. The five lowercase letters below show some of that work. The red circles mark where curves meet straight strokes, a detail that helps give each letter its distinct shape.
 
