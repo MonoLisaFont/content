@@ -12,7 +12,11 @@ utm_content: v1-owners
 
 Hi,
 
-One place you can see what’s changed since MonoLisa 1 is in the word `debug`. We redrew the `d` and the `b`, along with `p` and `q`, to make them easier to tell apart at editor sizes. Here’s what else you’ll find in v3.
+One place you can see what’s changed since MonoLisa 1 is in the word `debug`. We redrew the `d` and the `b`, along with `p` and `q`, to make them easier to tell apart at editor sizes. The red dots show where the curves meet the stems.
+
+![Lowercase a, b, d, p, and q in MonoLisa Code, with red dots marking the joins between curves and stems](https://raw.githubusercontent.com/MonoLisaFont/content/main/images/monolisa-v3-upright-letterforms.png)
+
+Here’s what else you’ll find in v3.
 
 - **More control over your coding font.** You can draw `->` as an arrow and keep `===` as three separate signs. Save that combination in a custom font and it follows you from your editor to your terminal.
 - **New terminal symbols.** We drew glyphs for progress bars and added check and cross marks such as `✓` and `✗` for output like test results.

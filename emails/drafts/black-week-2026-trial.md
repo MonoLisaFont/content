@@ -14,7 +14,11 @@ Hi,
 
 It can take a little fiddling to get a font just right in your editor. We built the MonoLisa customizer so you can take those choices with you when you open another app.
 
-With the full version, you can choose the letterforms and coding ligatures you like, preview them together, and download a font with those choices built in. Say you like `->` drawn as an arrow and `===` as three separate signs. Make that choice once, then pick your customized font by name in each app.
+With the full version, you can preview the letterforms and coding ligatures you like, then download a font with those choices built in. Take the `!==` in the line below. Would you keep the three characters separate or join them into one symbol?
+
+![The same line of code, ready !== false, shown with three separate operator characters above and a joined symbol below](https://www.monolisa.dev/static/emails/code-ligatures.png)
+
+Choose the form you prefer in the customizer. When you select that font in your editor or terminal, the choice comes with it.
 
 Developer + Text gives you the full MonoLisa Code family for your editor and MonoLisa Text for writing. You can also use the pair on a personal site, with Text for the posts and Code for the examples.
 
