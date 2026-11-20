@@ -35,11 +35,17 @@ const saved = {
   custom_fields: { ...subscriber.custom_fields, 1: String(options.get("v2")) },
 };
 const page = (records, total) => Response.json(records, { headers: { Total: String(total) } });
+const startTime = Date.parse("2026-11-20T10:00:00Z");
+const subscriberQuota = {
+  "X-RateLimit-Limit": "300",
+  "X-RateLimit-Remaining": "290",
+  "X-RateLimit-Reset": String(startTime / 1000 + 60),
+};
 
 function setup(...responses) {
   const calls = [];
   const waits = [];
-  let time = 0;
+  let time = startTime;
   const client = createMailrelayClient({
     accountDomain: "test.ipzmarketing.com",
     apiKey: "test",
@@ -122,6 +128,82 @@ test("reads retry transient failures, honor Retry-After, and distinguish missing
   assert.equal(await setup(new Response(null, { status: 404 })).client.getSubscriber(7), null);
   await assert.rejects(setup(Response.json(null)).client.getSubscriber(7));
   await assert.rejects(setup(Response.json({ ...subscriber, id: 8 })).client.getSubscriber(7));
+});
+
+test("uses the subscriber allowance for the eligibility read, tier write and verification", async () => {
+  const { client, waits } = setup(
+    Response.json(subscriber, { headers: subscriberQuota }),
+    new Response(null, { status: 204, headers: subscriberQuota }),
+    Response.json(saved)
+  );
+  const current = await client.getSubscriber(7);
+  assert.deepEqual(await client.writeTier(current, "v2", options), saved);
+  assert.deepEqual(waits, [250, 250]);
+});
+
+test("restores conservative spacing when a subscriber response omits usable quota information", async () => {
+  for (const headers of [
+    {},
+    { ...subscriberQuota, "X-RateLimit-Limit": "250", "X-RateLimit-Remaining": "200" },
+    { ...subscriberQuota, "X-RateLimit-Remaining": "invalid" },
+    { ...subscriberQuota, "X-RateLimit-Remaining": "301" },
+    { ...subscriberQuota, "X-RateLimit-Reset": String(startTime / 1000 - 1) },
+    { ...subscriberQuota, "X-RateLimit-Reset": String(startTime / 1000 + 300) },
+  ]) {
+    const { client, waits } = setup(
+      Response.json(subscriber, { headers: subscriberQuota }),
+      Response.json(subscriber, { headers }),
+      Response.json(subscriber)
+    );
+    await Promise.all([client.getSubscriber(7), client.getSubscriber(7), client.getSubscriber(7)]);
+    assert.deepEqual(waits, [250, 1500], JSON.stringify(headers));
+  }
+});
+
+test("keeps the custom field lookup on the slower schedule", async () => {
+  const { client, waits } = setup(
+    Response.json(field, { headers: subscriberQuota }),
+    Response.json(subscriber)
+  );
+  await client.getTierField();
+  await client.getSubscriber(7);
+  assert.deepEqual(waits, [1500]);
+});
+
+test("queued reads wait until reset once the account reaches its reserved quota", async () => {
+  for (const [limit, remaining] of [
+    ["300", "60"],
+    ["250", "50"],
+  ]) {
+    const headers = {
+      "X-RateLimit-Limit": limit,
+      "X-RateLimit-Remaining": remaining,
+      "X-RateLimit-Reset": String(startTime / 1000 + 8),
+    };
+    const { client, waits } = setup(
+      Response.json(subscriber, { headers }),
+      Response.json(subscriber)
+    );
+    await Promise.all([client.getSubscriber(7), client.getSubscriber(7)]);
+    assert.deepEqual(waits, [8000], `limit ${limit}`);
+  }
+});
+
+test("a rate-limited read waits for both Retry-After and the quota reset", async () => {
+  for (const retryAfter of [2, 9]) {
+    const headers = {
+      ...subscriberQuota,
+      "X-RateLimit-Remaining": "0",
+      "X-RateLimit-Reset": String(startTime / 1000 + 4),
+      "Retry-After": String(retryAfter),
+    };
+    const { client, waits } = setup(
+      new Response(null, { status: 429, headers }),
+      Response.json(subscriber)
+    );
+    assert.deepEqual(await client.getSubscriber(7), subscriber);
+    assert.deepEqual(waits, [Math.max(4, retryAfter) * 1000]);
+  }
 });
 
 test("writes only the numeric option, targets an existing subscriber and verifies the saved record", async () => {

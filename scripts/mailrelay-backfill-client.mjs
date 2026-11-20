@@ -16,14 +16,16 @@ const tierKeys = ["1", "monolisatier"];
 const groups = [1, 3];
 const pageSize = 1000;
 const maxAttempts = 3;
-const positiveId = (value) => Number.isSafeInteger(value) && value > 0;
+const fallbackIntervalMs = 1500;
+const subscriberIntervalMs = 250; // 240 of the documented 300 requests per minute.
+const positiveInteger = (value) => Number.isSafeInteger(value) && value > 0;
 const isObject = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
 const sortedGroups = (groups) => [...groups].sort((a, b) => a.group_id - b.group_id);
 
 function validateSubscriber(record) {
   if (
     !isObject(record) ||
-    !positiveId(record.id) ||
+    !positiveInteger(record.id) ||
     typeof record.email !== "string" ||
     !record.email.trim() ||
     typeof record.status !== "string" ||
@@ -32,7 +34,7 @@ function validateSubscriber(record) {
     !Number.isFinite(Date.parse(record.updated_at)) ||
     !isObject(record.custom_fields) ||
     !Array.isArray(record.groups) ||
-    !record.groups.every((g) => isObject(g) && positiveId(g.group_id))
+    !record.groups.every((g) => isObject(g) && positiveInteger(g.group_id))
   ) {
     throw new Error("Invalid Mailrelay subscriber response.");
   }
@@ -78,14 +80,39 @@ function retryDelay(header, now, attempt) {
   return Number.isFinite(date) ? Math.max(0, date - now) : 1000 * 2 ** attempt;
 }
 
+function requestInterval(path, response, startedAt, minIntervalMs) {
+  const { headers } = response;
+  const limit = Number(headers.get("X-RateLimit-Limit") || NaN);
+  const remaining = Number(headers.get("X-RateLimit-Remaining") || NaN);
+  const reset = Number(headers.get("X-RateLimit-Reset") || NaN);
+  const untilReset = reset * 1000 - startedAt;
+  const fallback = minIntervalMs ?? fallbackIntervalMs;
+  if (
+    !positiveInteger(limit) ||
+    !Number.isSafeInteger(remaining) ||
+    remaining < 0 ||
+    remaining > limit ||
+    !positiveInteger(reset) ||
+    untilReset <= 0 ||
+    untilReset > 2 ** 31 - 1 // Node timers cannot represent longer waits.
+  ) {
+    return fallback;
+  }
+
+  const subscriberWindow =
+    response.ok && /^subscribers[/?]/.test(path) && limit === 300 && untilReset <= 60_000;
+  const interval = subscriberWindow ? (minIntervalMs ?? subscriberIntervalMs) : fallback;
+  // Other clients share this window. Leave the final fifth for them.
+  return remaining <= Math.ceil(limit / 5) ? Math.max(interval, untilReset) : interval;
+}
+
 export function createMailrelayClient({
   accountDomain,
   apiKey,
   fetchImpl = fetch,
   sleep = delay,
   now = Date.now,
-  // Leave some of the account's request quota available to the checkout webhook.
-  minIntervalMs = 1500,
+  minIntervalMs,
   timeoutMs = 30000,
 }) {
   if (
@@ -106,7 +133,8 @@ export function createMailrelayClient({
       for (let attempt = 0; attempt < maxAttempts; attempt++) {
         const wait = nextRequest - now();
         if (wait > 0) await sleep(wait);
-        nextRequest = now() + minIntervalMs;
+        const startedAt = now();
+        nextRequest = startedAt + (minIntervalMs ?? fallbackIntervalMs);
         let response;
         try {
           response = await fetchImpl(`https://${accountDomain}/api/v1/${path}`, {
@@ -120,6 +148,7 @@ export function createMailrelayClient({
             },
             ...(body ? { body: JSON.stringify(body) } : {}),
           });
+          nextRequest = startedAt + requestInterval(path, response, startedAt, minIntervalMs);
           if (response.ok && method === "GET")
             return { data: await response.json(), headers: response.headers };
           await response.body?.cancel();
@@ -165,7 +194,7 @@ export function createMailrelayClient({
     for (const item of data.custom_field_options) {
       if (
         !tiers.includes(item?.label) ||
-        !positiveId(item.id) ||
+        !positiveInteger(item.id) ||
         options.has(item.label) ||
         ids.has(item.id)
       ) {
@@ -227,7 +256,7 @@ export function createMailrelayClient({
   }
 
   async function getSubscriber(id) {
-    if (!positiveId(id)) throw new Error("Invalid Mailrelay subscriber ID.");
+    if (!positiveInteger(id)) throw new Error("Invalid Mailrelay subscriber ID.");
     const { data, missing } = await request(`subscribers/${id}?include_groups=true`);
     if (missing) return null;
     const subscriber = validateSubscriber(data);
@@ -240,7 +269,7 @@ export function createMailrelayClient({
     if (!subscriber.groups.some((g) => groups.includes(g.group_id)))
       throw new Error("Subscriber is outside the backfill audience.");
     const optionId = options.get(tier);
-    if (!positiveId(optionId)) throw new Error("Unknown Mailrelay tier option.");
+    if (!positiveInteger(optionId)) throw new Error("Unknown Mailrelay tier option.");
     const originalTier = storedTier(subscriber, options);
     if (originalTier === tier) return subscriber;
 
