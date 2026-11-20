@@ -12,15 +12,15 @@ utm_content: v3-code-owners
 
 Hi,
 
-You already have MonoLisa Code. Through Sunday, November 29, you can add MonoLisa Text to your Developer license for **30% off your usual upgrade price**.
+While you already own MonoLisa Code, now is a good chance to buy MonoLisa Text as well as we offer **30% off your usual upgrade price** during the Black Week until Sunday, 29th of November.
 
-Look at the word “small” in the paragraph below. In Code, the wide `m` and narrow `l` each get the same amount of space. In Text, each letter takes the space it needs, so the two l’s sit closer together.
+To give a better idea of Text, look at the word “small” in the paragraph below. In Code, the wide `m` and narrow `l` each get the same amount of space. In Text, each letter takes the space it needs, so the two l’s sit closer together.
 
 ![A paragraph in MonoLisa Text showing the different widths of the letters in “the small choices add up”](https://www.monolisa.dev/media/images/monolisa-vscode-prose-font-detail.png)
 
-Use Text in your notes app, or pair the two fonts on a personal blog. Text can tell the story of what you built, with Code for the snippets your readers can try.
+Text has been designed for all those use cases where Code doesn't cut it, for example a personal blog or a presentation.
 
-[See my price to add MonoLisa Text](https://www.monolisa.dev/orders)
+[See my upgrade options](https://www.monolisa.dev/orders)
 
 --
 Andrey, Juho, and Marcus

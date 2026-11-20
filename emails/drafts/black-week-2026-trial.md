@@ -12,13 +12,11 @@ utm_content: general-offer
 
 Hi,
 
-For Black Week, the full MonoLisa Code + Text bundle is **30% off through Sunday, November 29**.
-
-With the full version, you can set up the font once for the way you read code. In the MonoLisa customizer, give your zeros a slash so you can tell `0` from `O` in a log, or give italic comments a handwritten look. Your choices become part of the font you download, so they work even in a terminal that has no menu for them.
+For Black Week, the full MonoLisa Code + Text bundle is **30% off through Sunday, November 29**. Besides the typeface, buying the full version gives you access to the customizer available through the website so that the features work even in environments with poor support for modern font features. You will also get access to features like the script variant showcased below.
 
 ![The comment “A little more character” in regular italics and in handwritten script italics](https://www.monolisa.dev/static/emails/script-italics.png)
 
-When you’re ready to share what you built, the bundle includes webfonts for your personal site. Set a project walkthrough in MonoLisa Text and the code samples in MonoLisa Code. Both come with the full range of weights.
+The full bundle includes MonoLisa Text useful for all the use cases beyond Code meaning you can use it for text-heavy places like websites or presentations. Both come with the full range of weights while being variable.
 
 [See Black Week pricing](https://www.monolisa.dev/buy)
 

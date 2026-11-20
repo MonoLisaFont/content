@@ -12,15 +12,13 @@ utm_content: v2-owners
 
 Hi,
 
-For Black Week, you can move from MonoLisa 2 to Developer + Text for **30% off your usual upgrade price**. The offer runs through Sunday, November 29.
+To honor Black Week, we are running a campaign that gives you **30% off your usual upgrade price** until Sunday, November 29th.
 
-Want `->` to look like an arrow and `===` to stay three separate equal signs? In v3 you can choose arrows and comparisons independently. Here’s what the choice for `===` looks like in VS Code. To use the same choices in your terminal, build them into your download with the MonoLisa customizer.
+The largest change since version two has been the addition of MonoLisa Text for use cases beyond code. Besides that we refactored the font so it's easier to enable exactly the features you want using our customization tool. We have also set up a VS Code plugin improving user experience within this widely used editor. You can see examples of both below.
 
 ![The MonoLisa VS Code extension showing three separate equal signs beside the joined ligature](https://www.monolisa.dev/media/images/monolisa-vscode-opentype-features-detail.png)
 
-MonoLisa Text is the proportional companion to Code. Use it for anything from a button label in an app mockup to a long read on your personal website. In a presentation, you can use Text to explain an idea and Code for the snippet your audience can try.
-
-Both families support Armenian, Hebrew, and Georgian alongside the Latin, Cyrillic, and Greek scripts you already have in v2.
+In addition, we have improved language support and both support Armenian, Hebrew, and Georgian alongside the Latin, Cyrillic, and Greek scripts you already have in v2.
 
 [See my upgrade options](https://www.monolisa.dev/orders)
 
