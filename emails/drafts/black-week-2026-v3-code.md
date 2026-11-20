@@ -25,4 +25,6 @@ Use Text in your notes app, or pair the two fonts on a personal blog. Text can t
 --
 Andrey, Juho, and Marcus
 
+P.S. Need your order number? [Email me my orders](https://www.monolisa.dev/login/forgot).
+
 <p><a href="{{ unsubscribe_url }}">Unsubscribe</a></p>

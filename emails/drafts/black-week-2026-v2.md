@@ -27,4 +27,6 @@ Both families support Armenian, Hebrew, and Georgian alongside the Latin, Cyrill
 --
 Andrey, Juho, and Marcus
 
+P.S. Need your order number? [Email me my orders](https://www.monolisa.dev/login/forgot).
+
 <p><a href="{{ unsubscribe_url }}">Unsubscribe</a></p>
