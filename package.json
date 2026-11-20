@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "backfill:mailrelay-tiers": "node scripts/backfill-mailrelay-tiers.mjs",
     "check:mdx": "node scripts/check-mdx.mjs",
     "prepare": "husky",
     "publish:content": "node scripts/publish-content-to-blob.mjs",
