@@ -1,7 +1,7 @@
 ---
 title: Black Week upgrade for MonoLisa 2 owners
 subject: MonoLisa – Black Week takes 30% off your upgrade from v2
-preheader: Choose how arrows and equal signs look in Code, and use Text for writing.
+preheader: Choose how symbols look in Code and put Text to work in slides, websites, and app mockups.
 target: Mailing-list subscribers whose latest paid MonoLisa license is v2
 purpose: Show v2 owners what changed in Code and what the Developer + Text upgrade adds
 utm_source: monolisa
@@ -18,7 +18,9 @@ Want `->` to look like an arrow and `===` to stay three separate equal signs? In
 
 ![The MonoLisa VS Code extension showing three separate equal signs beside the joined ligature](https://www.monolisa.dev/media/images/monolisa-vscode-opentype-features-detail.png)
 
-The bundle also includes MonoLisa Text for notes and longer writing. On a personal blog, you can use Text for the explanation and Code for the example. Both families support Armenian, Hebrew, and Georgian.
+MonoLisa Text is the proportional companion to Code. Use it for anything from a button label in an app mockup to a long read on your personal website. In a presentation, you can use Text to explain an idea and Code for the snippet your audience can try.
+
+Both families support Armenian, Hebrew, and Georgian alongside the Latin, Cyrillic, and Greek scripts you already have in v2.
 
 [See my upgrade options](https://www.monolisa.dev/orders)
 

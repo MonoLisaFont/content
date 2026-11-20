@@ -14,9 +14,11 @@ Hi,
 
 If you’ve been thinking about upgrading from MonoLisa 1, Black Week gives you **30% off your usual upgrade price** through Sunday, November 29. With Developer + Text, you get the latest coding font and a matching family for writing.
 
-Think of the `d` and `b` in `debug`. We redrew them, along with `p` and `q`, to make the letters easier to tell apart. Look at where each curve meets the straight stroke.
+Since v1, we’ve redrawn letters across scripts and refined symbols to make MonoLisa easier to read. The five lowercase letters below show some of that work. The red circles mark where curves meet straight strokes, a detail that helps give each letter its distinct shape.
 
 ![Lowercase a, b, d, p, and q in MonoLisa Code, with red dots marking the joins between curves and stems](https://raw.githubusercontent.com/MonoLisaFont/content/main/images/monolisa-v3-upright-letterforms.png)
+
+Your feedback has helped us catch details we missed. Thanks to reader reports, we adjusted the weight of the em dash and fixed an italic `ü` whose two dots could look like one.
 
 What else has changed since v1?
 
