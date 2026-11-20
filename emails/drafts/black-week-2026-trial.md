@@ -1,7 +1,7 @@
 ---
 title: Black Week for MonoLisa Trial users
 subject: MonoLisa – Black Week ends Nov 29. Save 30% on Code + Text
-preheader: Choose your own letterforms and ligatures with the full Code + Text bundle, now 30% off.
+preheader: Take your font settings with you from your editor to your terminal.
 target: Mailing list subscribers with a MonoLisa trial and no paid license
 purpose: Show how a customized font carries the reader's choices between apps
 utm_source: monolisa
@@ -12,17 +12,13 @@ utm_content: trial-users
 
 Hi,
 
-It can take a little fiddling to get a font just right in your editor. We built the MonoLisa customizer so you can take those choices with you when you open another app.
+If you’d like to move up from the Trial, the full Code + Text bundle is **30% off for Black Week** through Sunday, November 29.
 
-With the full version, you can preview the letterforms and coding ligatures you like, then download a font with those choices built in. Take the `!==` in the line below. Would you keep the three characters separate or join them into one symbol?
+One reason to upgrade is that you can build your preferences into the font itself. Take the `!==` below. Would you keep the three characters separate or draw them as one symbol?
 
 ![The same line of code, ready !== false, shown with three separate operator characters above and a joined symbol below](https://www.monolisa.dev/static/emails/code-ligatures.png)
 
-Choose the form you prefer in the customizer. When you select that font in your editor or terminal, the choice comes with it.
-
-Developer + Text gives you the full MonoLisa Code family for your editor and MonoLisa Text for writing. You can also use the pair on a personal site, with Text for the posts and Code for the examples.
-
-During Black Week, the bundle is **30% off** through Sunday, November 29.
+Choose the form you like in the MonoLisa customizer, then download your font. Select it by name in your editor or terminal and the choice comes with it. You also get MonoLisa Text for writing, so you can use the pair on a personal site.
 
 [See my Code + Text offer](https://www.monolisa.dev/orders)
 
