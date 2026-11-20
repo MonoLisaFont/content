@@ -1,9 +1,9 @@
 ---
 title: Black Week for MonoLisa Trial users
 subject: MonoLisa – Black Week ends Nov 29. Save 30% on Code + Text
-preheader: Take your font settings with you from your editor to your terminal.
+preheader: Build a font for your editor and terminal, then bring Code and Text to your personal site.
 target: Mailing list subscribers with a MonoLisa trial and no paid license
-purpose: Show how a customized font carries the reader's choices between apps
+purpose: Show what a custom download and personal webfonts add to the Trial
 utm_source: monolisa
 utm_medium: email
 utm_campaign: black-week-2026
@@ -12,13 +12,13 @@ utm_content: trial-users
 
 Hi,
 
-If you’d like to move up from the Trial, the full Code + Text bundle is **30% off for Black Week** through Sunday, November 29.
+If MonoLisa feels at home in your editor, Black Week is a good time to make it yours. The full Code + Text bundle is **30% off through Sunday, November 29**.
 
-One reason to upgrade is that you can build your preferences into the font itself. Take the `!==` below. Would you keep the three characters separate or draw them as one symbol?
+With the full version, you can set up the font once for the way you read code. In the MonoLisa customizer, give your zeros a slash so you can tell `0` from `O` in a log, or give italic comments a handwritten look. Your choices become part of the font you download, so they work even in a terminal that has no menu for them.
 
-![The same line of code, ready !== false, shown with three separate operator characters above and a joined symbol below](https://www.monolisa.dev/static/emails/code-ligatures.png)
+![The comment “A little more character” in regular italics and in handwritten script italics](https://www.monolisa.dev/static/emails/script-italics.png)
 
-Choose the form you like in the MonoLisa customizer, then download your font. Select it by name in your editor or terminal and the choice comes with it. You also get MonoLisa Text for writing, so you can use the pair on a personal site.
+When you’re ready to share what you built, the bundle includes webfonts for your personal site. Set a project walkthrough in MonoLisa Text and the code samples in MonoLisa Code. Both come with the full range of weights.
 
 [See my Code + Text offer](https://www.monolisa.dev/orders)
 
