@@ -18,6 +18,7 @@ const pageSize = 1000;
 const maxAttempts = 3;
 const positiveId = (value) => Number.isSafeInteger(value) && value > 0;
 const isObject = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
+const sortedGroups = (groups) => [...groups].sort((a, b) => a.group_id - b.group_id);
 
 function validateSubscriber(record) {
   if (
@@ -64,7 +65,7 @@ function unchangedFields(subscriber) {
   const { updated_at, custom_fields, groups, ...otherFields } = subscriber;
   return {
     ...otherFields,
-    groups: [...groups].sort((a, b) => a.group_id - b.group_id),
+    groups: sortedGroups(groups),
     custom_fields: Object.fromEntries(
       Object.entries(custom_fields).filter(([key]) => !tierKeys.includes(key))
     ),
@@ -204,7 +205,8 @@ export function createMailrelayClient({
         }
         total = Number(header);
         for (const item of data) {
-          const subscriber = validateSubscriber(item);
+          validateSubscriber(item);
+          const subscriber = { ...item, groups: sortedGroups(item.groups) };
           if (subscriber.id <= lastId || !subscriber.groups.some((g) => g.group_id === group)) {
             throw new Error("Mailrelay returned an unexpected subscriber for this group page.");
           }

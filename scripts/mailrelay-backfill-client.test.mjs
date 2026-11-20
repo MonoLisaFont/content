@@ -85,7 +85,7 @@ test("paginates both groups, merges overlapping records once, and enforces pacin
   const { client, calls, waits } = setup(
     page([subscriber], 2),
     page([other], 2),
-    page([subscriber], 1)
+    page([{ ...subscriber, groups: [...subscriber.groups].reverse() }], 1)
   );
   assert.deepEqual(await client.listSubscribers(), [subscriber, other]);
   assert.deepEqual(
@@ -103,6 +103,7 @@ test("paginates both groups, merges overlapping records once, and enforces pacin
   assert.deepEqual(waits, [1500, 1500]);
   for (const pages of [
     [page([subscriber], 1), page([{ ...subscriber, status: "inactive" }], 1)],
+    [page([subscriber], 1), page([{ ...subscriber, groups: [{ group_id: 3 }] }], 1)],
     [page([subscriber], 2), page([], 2)],
     [page([subscriber], 2), page([subscriber], 2)],
     [page([subscriber], 2), page([other], 3)],
