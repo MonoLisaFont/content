@@ -12,7 +12,7 @@ utm_content: general-offer
 
 Hi,
 
-For Black Week, the full MonoLisa Code + Text bundle is **30% off through Sunday, November 29**. Besides the typeface, buying the full version gives you access to the customizer available through the website so that the features work even in environments with poor support for modern font features. You will also get access to features like the script variant showcased below.
+For the Black Week, the full MonoLisa Code + Text bundle is **30% off through Sunday, November 29**. Besides the typeface, buying the full version gives you access to the customizer available through the website so that the features work even in environments with poor support for modern font features. You will also get access to features like the script variant showcased below.
 
 ![The comment “A little more character” in regular italics and in handwritten script italics](https://www.monolisa.dev/static/emails/script-italics.png)
 
